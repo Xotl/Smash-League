@@ -19,7 +19,7 @@ const categorizeSlackMessages = (messagesArray) => {
                 return result// Slack bot is not tagged in this message, just ignore it
             }
 
-            const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG), '')
+            const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG, 'gm'), '')
             const isChallengeMessage = (new RegExp(CHALLENGE_REGEX, 'gm')).test(messageWithoutBotTag)
 
             if (isChallengeMessage) {
@@ -69,7 +69,7 @@ const categorizeSlackMessages = (messagesArray) => {
     return resultCategorized
 }
 
-const getRankingPlaceByUserId = (userId, ranking) => {
+const getRankingPlaceByPlayerId = (userId, ranking) => {
     for (let idx = 0; idx < ranking.length; idx++) {
         const people = ranking[0]
         if (people.includes(userId)) {
@@ -94,7 +94,7 @@ const getNumberOfChallengesAllowed = place => {
     return total
 }
 
-const getTotalOfChallengesDoneByPlayer = (activeChallenges = [], completedChallenges = []) => activeChallenges.length + completedChallenges.length
+const getTotalOfChallengesDoneByPlayer = (activePlayerChallenges = [], completedPlayerChallenges = []) => activePlayerChallenges.length + completedPlayerChallenges.length
 
 const isValidChallenge = (challengerId, playerChallengedId, activeChallenges = [], completedChallenges = []) => {
     const isAlreadyChallenged = activeChallenges.includes(playerChallengedId) || completedChallenges.includes(playerChallengedId)
@@ -107,7 +107,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
             const challengerId = challenge.challenger
             const challengerActiveChallenges = activeChallenges[challengerId]
             const challengerCompletedChallenges = completedChallenges[challengerId]
-            const playerPlace = getRankingPlaceByUserId(challengerId, ranking)
+            const playerPlace = getRankingPlaceByPlayerId(challengerId, ranking)
             const numberOfChallengesAllowed = getNumberOfChallengesAllowed(playerPlace)
             const currentNumOfChallengesFromPlayer = getTotalOfChallengesDoneByPlayer(challengerActiveChallenges, challengerCompletedChallenges)
 
@@ -118,52 +118,97 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
 
             let challengesLeft = numberOfChallengesAllowed - currentNumOfChallengesFromPlayer
 
-            for (let idx = 0; challengesLeft > 0 || idx > challenge.peopleChallenged.length; idx++) {
+            for (let idx = 0; challengesLeft > 0 && idx < challenge.peopleChallenged.length; idx++) {
                 if (isValidChallenge(challengerId, playerId, challengerActiveChallenges, challengerCompletedChallenges)) {
+                    validChallenges[challengerId][playerId] = true
                     challengesLeft--
-                    validChallenges[]
                 }
             }
 
-            challenge.peopleChallenged.forEach(
-                playerId => {
-                    if (isValidChallenge(challengerId, playerId, challengerActiveChallenges, challengerCompletedChallenges)) {
-                        if (!validChallenges[challengerId]) {
-                            validChallenges[challengerId] = {}
-                        }
-                        validChallenges[challengerId][playerId] = true
-                        challengesLeft--
-                    }
-                }
-            )
-            
+            return validChallenges
         },
         {}
     )
+
+    
+
+    const newActiveChallenges = { ...activeChallenges }
+
+    Object.keys(newValidChallenges).forEach(
+        playerId => {
+            if (!newActiveChallenges[playerId]) {// First challenges
+                newActiveChallenges[playerId] = Object.keys(newValidChallenges[playerId])
+            }
+            else {// Adds Challenges
+                newActiveChallenges[playerId] = [ ...activeChallenges[playerId], ...Object.keys( newValidChallenges[playerId] ) ]
+            }
+        }
+    )
+
+    return newActiveChallenges
+}
+
+const playerACanChallengePlayerB = (playerA, playerB, ranking) => {
+    const playerAPlace = getRankingPlaceByPlayerId(playerA, ranking)
+    const playerBPlace = getRankingPlaceByPlayerId(playerB, ranking)
+
+    const diff = playerAPlace - playerBPlace
+
+    if (playerBPlace <= 8) {// Top 8 player
+        return diff > 0 && diff <= 2
+    }
+
+    // Non Top 8 player
+    return diff > 0 && diff <= 5
+}
+
+const validateReportedResultsAndDetermineChallenger = (reportedResults, ranking, activeChallenges, completedChallenges) => {
+    const validatedResults = reportedResults.reduce(
+        (resultsArray, reportedResult) => {
+            // if (reportedResult)
+        }, []
+    )
+}
+
+const getUpdatedChallengesAndScoreboard = (reportedResults, scoreboard, completedChallenges, activeChallenges) => {
+
+    const resultObj = { scoreboard: { ...scoreboard }, active_challenges: { ...activeChallenges }, completed_challenges: { ...completedChallenges } }
+    // reportedResults.forEach(
+    //     (matchResult) => {
+
+    //     }
+    // )
+    return resultObj
 }
 
 const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
-    if (typeof activities === 'object') {
+    if (typeof activities !== 'object') {
         throw new Error(`The "activities" argument must be an object but received "${typeof activities}" instead.`)
     }
 
-    if (typeof rankingObj === 'object') {
+    if (typeof rankingObj !== 'object') {
         throw new Error(`The "rankingObj" argument must be an object but received "${typeof rankingObj}" instead.`)
     }
 
     const { reportedResults = [], challenges = [] } = activities
+    const { ranking, in_progress: { active_challenges, completed_challenges, scoreboard } } = rankingObj
 
 
+    // const newScoreboard = { ...scoreboard }
+    const newActiveChallenges = calculateNewChallenges(challenges, ranking, active_challenges, completed_challenges)
+    // const validatedReportedResults = validateReportedResultsAndDetermineChallenger(reportedResults, ranking, newActiveChallenges, )
 
-    const newScoreboard = { ...inProgressRankingObj.scoreboard }
-    const newActiveChallenges = calculateNewChallenges()
-    const newCompletedChallenges = []
+    const {
+        active_challenges:updatedActiveChallenges,
+        completed_challenges:newCompletedChallenges,
+        scoreboard:newScoreboard
+    } = getUpdatedChallengesAndScoreboard(reportedResults, scoreboard, completed_challenges, active_challenges)
 
-    activities.reportedResults.forEach(
-        ({ winner }) => {
-            newScoreboard[winner] += 3
-        }
-    )
+    // activities.reportedResults.forEach(
+    //     ({ winner }) => {
+    //         newScoreboard[winner] += 3
+    //     }
+    // )
 }
 
 
