@@ -165,7 +165,26 @@ const playerACanChallengePlayerB = (playerA, playerB, ranking) => {
 const validateReportedResultsAndDetermineChallenger = (reportedResults, ranking, activeChallenges, completedChallenges) => {
     const validatedResults = reportedResults.reduce(
         (resultsArray, reportedResult) => {
-            // if (reportedResult)
+            const { player1, player2, player1Result, player2Result, winner } = reportedResult
+            
+            let validChallenger = null// Null means non of the two players can challenge the other
+            let playerChallenged = null
+            if (playerACanChallengePlayerB(player1, player2, ranking)) {
+                validChallenger = player1
+                playerChallenged = player2
+            }
+            else if (playerACanChallengePlayerB(player2, player1, ranking)) {
+                validChallenger = player2
+                playerChallenged = player1
+            }
+
+            if (!validChallenger || completedChallenges[validChallenger].includes(playerChallenged)) {
+                // Non of the players could challenge the other one or match between these players already registered
+                return resultsArray
+            }
+
+            resultsArray.push({ challenger: validChallenger, playerChallenged, ...reportedResult })
+            return resultsArray
         }, []
     )
 }
