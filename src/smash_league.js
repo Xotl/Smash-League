@@ -81,12 +81,12 @@ const getRankingPlaceByPlayerId = (userId, ranking) => {
 }
 
 const getNumberOfChallengesAllowed = place => {
-    let tmp = place - 11
+    let tmp = place - 9
     if (tmp < 0) {
         tmp = 0
     }
 
-    let total = 2 + tmp
+    let total = (place > 2) ?  2 + tmp : place - 1
     if (total > 5) {
         total = 5
     }
@@ -233,5 +233,6 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
 
 module.exports = {
     categorizeSlackMessages,
-    digestActivitiesAndGetUpdatedRankingObj
+    digestActivitiesAndGetUpdatedRankingObj,
+    getNumberOfChallengesAllowed
 }
