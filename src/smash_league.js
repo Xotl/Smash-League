@@ -112,6 +112,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
             const currentNumOfChallengesFromPlayer = getTotalOfChallengesDoneByPlayer(challengerActiveChallenges, challengerCompletedChallenges)
 
             if (currentNumOfChallengesFromPlayer >= numberOfChallengesAllowed) {
+                console.log(`Ignored challenge because player "${challengerId}" reached limit of challenges allowed: ${JSON.stringify(challenge)}`)
                 // Player can no longer challenge people, maximum challenges reached
                 return validChallenges
             }
@@ -129,6 +130,9 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
 
                     validChallenges[challengerId][playerChallenged] = true
                     challengesLeft--
+                }
+                else {
+                    console.log(`Ignored challenge from "${challengerId}" to ${playerChallenged} because is not a valid.`)
                 }
             }
 
@@ -190,6 +194,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             }
 
             if (!validChallenger) {
+                console.log(`Ignored result because is not a valid challenge: ${JSON.stringify(reportedResult)}`)
                 return// Non of the players could challenge the other one, ignoring result
             }
 
@@ -198,6 +203,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
                     ({players}) =>  players.includes(validChallenger) && players.includes(playerChallenged)
                 )
                 if (matchBetweenPlayersExists) {
+                    console.log(`Ignored result because match between players already exists: ${JSON.stringify(reportedResult)}`)
                     return// Match between these players already registered, ignoring result
                 }
 
@@ -239,6 +245,24 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
     return resultObj
 }
 
+const getRankingFromScoreboard = scoreboard => {
+    const scoreDict = Object.keys(scoreboard).reduce(
+        (resultObj, playerId) => {
+            const score = scoreboard[playerId]
+
+            if (!resultObj[score]) {
+                resultObj[score] = []
+            }
+
+            resultObj[score].push(playerId)
+            return resultObj
+        },
+        {}
+    )
+
+    return Object.keys(scoreDict).sort( (a,b) => b - a ).map(score => scoreDict[score])
+}
+
 const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
     if (typeof activities !== 'object') {
         throw new Error(`The "activities" argument must be an object but received "${typeof activities}" instead.`)
@@ -248,13 +272,12 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
         throw new Error(`The "rankingObj" argument must be an object but received "${typeof rankingObj}" instead.`)
     }
 
+    console.log(`Activities to digets: ${JSON.stringify(activities)}`)
+    console.log(`Current ranking object: ${JSON.stringify(rankingObj)}`)
+
     const { reportedResults = [], challenges = [] } = activities
     const { ranking, in_progress: { active_challenges, completed_challenges, scoreboard } } = rankingObj
-
-
-    // const newScoreboard = { ...scoreboard }
     const newActiveChallenges = calculateNewChallenges(challenges, ranking, active_challenges, completed_challenges)
-    // const validatedReportedResults = validateReportedResultsAndDetermineChallenger(reportedResults, ranking, newActiveChallenges, )
 
     return getUpdatedChallengesAndScoreboard(reportedResults, ranking, scoreboard, completed_challenges, newActiveChallenges)
 }
@@ -262,5 +285,6 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
 
 module.exports = {
     categorizeSlackMessages,
-    digestActivitiesAndGetUpdatedRankingObj
+    digestActivitiesAndGetUpdatedRankingObj,
+    getRankingFromScoreboard
 }

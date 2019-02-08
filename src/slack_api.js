@@ -1,6 +1,7 @@
 'use strict'
 const
-    Request = require('request')
+    Request = require('request'),
+    Utils = require('./utils')
 
 
 const
@@ -23,12 +24,21 @@ const getMessagesFromPrivateChannel = async (channel, opts = {}) => {
         throw new Error('Slack channel ID is required.')
     }
 
-    const { latest, oldest, inclusive } = opts;
+    let { latest, oldest, inclusive } = opts;
+
+    if (latest instanceof Date) {
+        latest = Utils.GetEpochUnixFromDate(latest)
+    }
+
+    if (oldest instanceof Date) {
+        oldest = Utils.GetEpochUnixFromDate(oldest)
+    }
     
     return new Promise((resolve, reject) => {
         Request(SLACK_GROUPS_HISTORY_METHOD, {
             qs: {
                 token: SLACK_API_TOKEN,
+                count: 1000, 
                 channel, inclusive, latest, oldest
             }
         }, (err, response, body) => {
