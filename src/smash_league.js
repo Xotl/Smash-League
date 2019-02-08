@@ -160,11 +160,11 @@ const canPlayerAChallengePlayerB = (playerA, playerB, ranking) => {
     const playerBPlace = getRankingPlaceByPlayerId(playerB, ranking)
     const diff = playerAPlace - playerBPlace
 
-    if (diff < 1 && diff > 5) {
+    if (diff < 1 || diff > 5) {
         return false// There's no way playerA can challenge playerB
     }
 
-    const numAllowedChallengesForPlayerA = getNumberOfChallengesAllowed(playerA)
+    const numAllowedChallengesForPlayerA = getNumberOfChallengesAllowed(playerAPlace)
     return diff <= numAllowedChallengesForPlayerA
 }
 
