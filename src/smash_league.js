@@ -155,7 +155,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
     return newActiveChallenges
 }
 
-const playerACanChallengePlayerB = (playerA, playerB, ranking) => {
+const canPlayerAChallengePlayerB = (playerA, playerB, ranking) => {
     const playerAPlace = getRankingPlaceByPlayerId(playerA, ranking)
     const playerBPlace = getRankingPlaceByPlayerId(playerB, ranking)
     const diff = playerAPlace - playerBPlace
@@ -180,11 +180,11 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             
             let validChallenger = null// Null means non of the two players can challenge the other
             let playerChallenged = null
-            if (playerACanChallengePlayerB(player1, player2, ranking)) {
+            if (canPlayerAChallengePlayerB(player1, player2, ranking)) {
                 validChallenger = player1
                 playerChallenged = player2
             }
-            else if (playerACanChallengePlayerB(player2, player1, ranking)) {
+            else if (canPlayerAChallengePlayerB(player2, player1, ranking)) {
                 validChallenger = player2
                 playerChallenged = player1
             }
