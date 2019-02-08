@@ -16,7 +16,8 @@ async function Main() {
     const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
     const newRankingObj = SmashLeague.digestActivitiesAndGetUpdatedRankingObj(activities, Ranking)
     
-    console.log('Wow, such debugging', newRankingObj, activities.challenges, activities.reportedResults)
+    console.log('Wow, such activities', activities.challenges, activities.reportedResults)
+    console.log('Wow, such new ranking', newRankingObj)
 }
 
 Main().catch(console.error)

@@ -71,13 +71,13 @@ const categorizeSlackMessages = (messagesArray) => {
 
 const getRankingPlaceByPlayerId = (userId, ranking) => {
     for (let idx = 0; idx < ranking.length; idx++) {
-        const people = ranking[0]
+        const people = ranking[idx]
         if (people.includes(userId)) {
             return idx + 1
         }
     }
 
-    return undefined// Means unranked
+    return ranking.length + 1// Means unranked
 }
 
 const getNumberOfChallengesAllowed = place => {
@@ -111,16 +111,23 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
             const numberOfChallengesAllowed = getNumberOfChallengesAllowed(playerPlace)
             const currentNumOfChallengesFromPlayer = getTotalOfChallengesDoneByPlayer(challengerActiveChallenges, challengerCompletedChallenges)
 
-            if (numberOfChallengesAllowed >= currentNumOfChallengesFromPlayer) {
+            if (currentNumOfChallengesFromPlayer >= numberOfChallengesAllowed) {
                 // Player can no longer challenge people, maximum challenges reached
                 return validChallenges
             }
 
+            
             let challengesLeft = numberOfChallengesAllowed - currentNumOfChallengesFromPlayer
-
+            
             for (let idx = 0; challengesLeft > 0 && idx < challenge.peopleChallenged.length; idx++) {
-                if (isValidChallenge(challengerId, playerId, challengerActiveChallenges, challengerCompletedChallenges)) {
-                    validChallenges[challengerId][playerId] = true
+                const playerChallenged = challenge.peopleChallenged[idx]
+                if (isValidChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges)) {
+                    
+                    if (!validChallenges[challengerId]) {
+                        validChallenges[challengerId] = {}
+                    }
+
+                    validChallenges[challengerId][playerChallenged] = true
                     challengesLeft--
                 }
             }
@@ -162,10 +169,15 @@ const playerACanChallengePlayerB = (playerA, playerB, ranking) => {
     return diff > 0 && diff <= 5
 }
 
-const validateReportedResultsAndDetermineChallenger = (reportedResults, ranking, activeChallenges, completedChallenges) => {
-    const validatedResults = reportedResults.reduce(
-        (resultsArray, reportedResult) => {
-            const { player1, player2, player1Result, player2Result, winner } = reportedResult
+const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard, completedChallenges, activeChallenges) => {
+    const updatedCompletedChallenges = { ...completedChallenges }
+    const updatedActiveChallenges = { ...activeChallenges }
+    const updatedScoreboard = { ...scoreboard }
+    const resultObj = { scoreboard: updatedScoreboard, active_challenges: updatedActiveChallenges, completed_challenges: updatedCompletedChallenges }
+
+    reportedResults.forEach(
+        reportedResult => {
+            const { player1, player2, winner } = reportedResult
             
             let validChallenger = null// Null means non of the two players can challenge the other
             let playerChallenged = null
@@ -178,25 +190,53 @@ const validateReportedResultsAndDetermineChallenger = (reportedResults, ranking,
                 playerChallenged = player1
             }
 
-            if (!validChallenger || completedChallenges[validChallenger].includes(playerChallenged)) {
-                // Non of the players could challenge the other one or match between these players already registered
-                return resultsArray
+            if (!validChallenger) {
+                return// Non of the players could challenge the other one, ignoring result
             }
 
-            resultsArray.push({ challenger: validChallenger, playerChallenged, ...reportedResult })
-            return resultsArray
-        }, []
+            if (Array.isArray( updatedCompletedChallenges[validChallenger] )) {// Checks if player already have completed challenges
+                const matchBetweenPlayersExists = updatedCompletedChallenges[validChallenger].find(
+                    ({players}) =>  players.includes(validChallenger) && players.includes(playerChallenged)
+                )
+                if (matchBetweenPlayersExists) {
+                    return// Match between these players already registered, ignoring result
+                }
+
+                // Valid match result, let's clone the array if not yet cloned to safely modify it
+                if (updatedCompletedChallenges[validChallenger] === completedChallenges[validChallenger]) {
+                    updatedCompletedChallenges[validChallenger] = [ ...completedChallenges[validChallenger] ]
+                }
+            }
+            else {// First challenge completed by this player
+                updatedCompletedChallenges[validChallenger] = []
+            }
+
+            // Adds the result to completed challenges
+            updatedCompletedChallenges[validChallenger].push({ challenger: validChallenger, playerChallenged, ...reportedResult })
+            
+
+
+            // Removes the active challenge because now is completed, if challenge got reported previously
+            let indexOfPlayerChallenged = -1
+
+            if (Array.isArray(updatedActiveChallenges[validChallenger])) {// Looks if challenge was reported 
+                indexOfPlayerChallenged = updatedActiveChallenges[validChallenger].indexOf(playerChallenged)
+            }
+
+            if (indexOfPlayerChallenged >= 0) {
+                // Let's clone the array if not yet cloned to safely modify it
+                if (updatedActiveChallenges[validChallenger] === activeChallenges[validChallenger]) {
+                    updatedActiveChallenges[validChallenger] = [ ...activeChallenges[validChallenger] ]
+                }
+
+                updatedActiveChallenges[validChallenger].splice(indexOfPlayerChallenged, 1)
+            }
+            
+            // Apply points to winner score
+            updatedScoreboard[winner] += winner === validChallenger ? 3 : 1
+        }
     )
-}
 
-const getUpdatedChallengesAndScoreboard = (reportedResults, scoreboard, completedChallenges, activeChallenges) => {
-
-    const resultObj = { scoreboard: { ...scoreboard }, active_challenges: { ...activeChallenges }, completed_challenges: { ...completedChallenges } }
-    // reportedResults.forEach(
-    //     (matchResult) => {
-
-    //     }
-    // )
     return resultObj
 }
 
@@ -217,17 +257,7 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
     const newActiveChallenges = calculateNewChallenges(challenges, ranking, active_challenges, completed_challenges)
     // const validatedReportedResults = validateReportedResultsAndDetermineChallenger(reportedResults, ranking, newActiveChallenges, )
 
-    const {
-        active_challenges:updatedActiveChallenges,
-        completed_challenges:newCompletedChallenges,
-        scoreboard:newScoreboard
-    } = getUpdatedChallengesAndScoreboard(reportedResults, scoreboard, completed_challenges, active_challenges)
-
-    // activities.reportedResults.forEach(
-    //     ({ winner }) => {
-    //         newScoreboard[winner] += 3
-    //     }
-    // )
+    return getUpdatedChallengesAndScoreboard(reportedResults, ranking, scoreboard, completed_challenges, newActiveChallenges)
 }
 
 
