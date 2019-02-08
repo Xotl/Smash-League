@@ -158,15 +158,14 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
 const playerACanChallengePlayerB = (playerA, playerB, ranking) => {
     const playerAPlace = getRankingPlaceByPlayerId(playerA, ranking)
     const playerBPlace = getRankingPlaceByPlayerId(playerB, ranking)
-
     const diff = playerAPlace - playerBPlace
 
-    if (playerBPlace <= 8) {// Top 8 player
-        return diff > 0 && diff <= 2
+    if (diff < 1 && diff > 5) {
+        return false// There's no way playerA can challenge playerB
     }
 
-    // Non Top 8 player
-    return diff > 0 && diff <= 5
+    const numAllowedChallengesForPlayerA = getNumberOfChallengesAllowed(playerA)
+    return diff <= numAllowedChallengesForPlayerA
 }
 
 const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard, completedChallenges, activeChallenges) => {
@@ -263,6 +262,5 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
 
 module.exports = {
     categorizeSlackMessages,
-    digestActivitiesAndGetUpdatedRankingObj,
-    getNumberOfChallengesAllowed
+    digestActivitiesAndGetUpdatedRankingObj
 }
