@@ -11,7 +11,7 @@ install:
 
 script:
   - mkdir ${TRAVIS_BUILD_DIR}/output
-  - docker run --it --rm -v ${TRAVIS_BUILD_DIR}/output:/usr/app/release -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
+  - docker run --rm -v ${TRAVIS_BUILD_DIR}/output:/usr/app/release -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
 # deploy:
   # - provider: releases
