@@ -65,7 +65,7 @@ const updateRankingMarkdownFile = async rankingObj => {
     return new Promise(
         (resolve, reject) => {
             fs.writeFile(
-                path.join(__dirname, '../', 'release', 'RANKING.md'),
+                path.join(__dirname, '../', 'ranking-info', 'RANKING.md'),
                 output,
                 (err) => {
                     if (err) {
