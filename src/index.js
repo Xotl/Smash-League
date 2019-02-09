@@ -37,12 +37,13 @@ async function Main() {
     }
     
     
-    console.log('Wow, such newRankingObj', newRankingObj)
-    console.log('Wow, such in_progress', newRankingObj.in_progress)
-    console.log('Wow, such ranking', SmashLeague.getRankingFromScoreboard(newInProgressObj.scoreboard))
+    // console.log('Wow, such newRankingObj', newRankingObj)
+    // console.log('Wow, such in_progress', newRankingObj.in_progress)
+    // console.log('Wow, such ranking', SmashLeague.getRankingFromScoreboard(newInProgressObj.scoreboard))
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
     await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
+    console.log('Finished.')
 }
 
 Main().catch(console.error)
