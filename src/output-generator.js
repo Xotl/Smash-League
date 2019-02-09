@@ -22,7 +22,7 @@ const getRankingTemplate = () => new Promise(
 const updateRankingJsonFile = rankingObj => new Promise(
     (resolve, reject) => {
         fs.writeFile(
-            './release/ranking.json',
+            './ranking-info/ranking.json',
             JSON.stringify(rankingObj, null, 4),
             (err) => {
                 if (err) {

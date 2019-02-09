@@ -1,7 +1,7 @@
 'use strict'
 const Slack = require('./slack-api')
 const SmashLeague = require('./smash-league')
-const Ranking = require('../release/ranking.json')
+const Ranking = require('../ranking-info/ranking.json')
 const Config = require('../config.json')
 const Utils = require('./utils')
 const OutputGenerator = require('./output-generator')
