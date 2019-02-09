@@ -1,24 +1,29 @@
 {
-    "last_update_ts": 2,
+    "last_update_ts": 1549746424.644,
     "ranking": [
-        ["U3TSWQUHE"],
-        ["U3V96QK5M", "U3UGF00BD"]
+        [
+            "U3TSWQUHE"
+        ],
+        [
+            "U3V96QK5M",
+            "U3UGF00BD"
+        ]
     ],
     "scoreboard": {
-        "U3TSWQUHE": 4,
+        "U3TSWQUHE": 5,
         "U3V96QK5M": 2,
         "U3UGF00BD": 2
     },
     "unknown_users": [],
     "in_progress": {
-        "last_update_ts": 2,
         "scoreboard": {
-            "U3TSWQUHE": 4,
+            "U3TSWQUHE": 5,
             "U3V96QK5M": 2,
             "U3UGF00BD": 2
         },
         "active_challenges": {},
         "completed_challenges": {},
+        "last_update_ts": 1549746424.644,
         "reported_results": []
     }
 }
