@@ -27,7 +27,5 @@ deploy:
     local-dir: release/
     varbose: true
     on:
-      branches:
-        only:
-          - gh-test
+      branches: gh-test
       
