@@ -1,4 +1,10 @@
 # Smash League
+#### Table of contents
+* [Ranking System Rules](#ranking-system-rules)
+    * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result?)
+* [Current Ruleset](#current-ruleset)
+    * [Initial stages](#initial-stages)
+    * [Counterpicks](#counterpicks)
 
 ## Ranking System Rules
 
@@ -16,6 +22,34 @@ You can have as many challenges as the following table shows:
 - 12th onwards: 5 weekly challanges
 
 Also, the times you can be challenged is limitless.
+
+### How do i challenge people or report a result?
+Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
+
+#### Challenge people
+Just tag the bot and then continue with the word `reto` and finish with the player or players that you want to challenge.
+
+Examples of valid challenges expressions:
+* `@Smash League` reto a `@Xotl` y a `@Aldo`
+* `@Smash League` te reto `@Irving`
+* `@Smash League` reto a `@Minion`
+* `@Smash League` los reto `@Aldo`, `@Irving`, `@Minion`, `@Xotl`... ¿o les da frío?
+
+**NOTE: Any non valid challenge will be ignored by the bot**
+
+You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash_league.js#L5) for more details.
+
+#### Reporting a resutl after a match
+Tag the bot and then post the result in the next format: {playerA} {result A}-{result B} {playerB}
+
+Examples of valid results expressions:
+* `@Smash League` `@Xotl` 3-1 `@César`
+* `@Smash League` ¡Toma Pancho! `@Ángel` 3-0 `@Pancho`
+* `@Smash League` :snowman: `@Pancho` 2-3 `@José`, ése Pancho no trae nada
+
+**NOTE: Any non valid result will be ignored by the bot**
+You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash_league.js#L6) for more details.
+
 
 ## Current Ruleset
 

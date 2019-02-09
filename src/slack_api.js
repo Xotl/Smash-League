@@ -15,10 +15,6 @@ if (!SLACK_API_TOKEN) {
 }
 
 
-// https://tacosespaciales.slack.com/messages/GFY345QV8
-
-
-
 const getMessagesFromPrivateChannel = async (channel, opts = {}) => {
     if (channel === undefined) {
         throw new Error('Slack channel ID is required.')

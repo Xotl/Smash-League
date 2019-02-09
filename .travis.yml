@@ -1,0 +1,33 @@
+# language: node_js
+
+services:
+  - docker
+
+# before_install:
+#   - docker pull node:9
+
+install:
+  - docker build -t smash-league .
+
+script:
+  - mkdir ${TRAVIS_BUILD_DIR}/release
+  - docker run --it --rm -v ${TRAVIS_BUILD_DIR}/build:/usr/app/build -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
+
+# deploy:
+  # - provider: releases
+  #   api_key: $GITHUB_OAUTH_TOKEN
+  #   file: release/cards.json
+  #   skip_cleanup: true
+  #   on:
+  #     tags: false
+  # - provider: pages
+  #   skip-cleanup: true
+  #   github-token: $GITHUB_OAUTH_TOKEN
+  #   keep-history: true
+  #   local-dir: release/
+  #   varbose: true
+  #   on:
+  #     branches:
+  #       only:
+  #         - master
+      
