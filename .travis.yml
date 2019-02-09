@@ -21,6 +21,7 @@ deploy:
   #   on:
   #     tags: false
   - provider: pages
+    target-branch: "gh-test"
     skip-cleanup: true
     github-token: $GITHUB_OAUTH_TOKEN
     keep-history: true
