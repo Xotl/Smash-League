@@ -15,12 +15,7 @@ async function Main() {
     const lastInProgressUpdated = Utils.GetDateObjFromEpochTS(Ranking.in_progress.last_update_ts)
     const opts = { latest: now, oldest: lastInProgressUpdated }
 
-    let slackResponse
-    try {
-        slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
-    }
-    catch (err) { return console.error(err) }
-
+    const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
     const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
     const newInProgressObj = SmashLeague.digestActivitiesAndGetUpdatedRankingObj(activities, Ranking)
 

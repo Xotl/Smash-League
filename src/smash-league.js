@@ -10,7 +10,7 @@ const GetUserIDFromUserTag = userTag => userTag.slice(2, -1)
 
 const categorizeSlackMessages = (messagesArray) => {
     if (!Array.isArray(messagesArray)) {
-        throw new Error('The argument messagesArray must be an Array')
+        throw new Error('The argument messagesArray must be an Array.')
     }
 
     const resultCategorized = messagesArray.reduce(

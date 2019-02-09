@@ -12,22 +12,21 @@ install:
 script:
   # - mkdir ${TRAVIS_BUILD_DIR}/release
   - docker run --rm -v ${TRAVIS_BUILD_DIR}/release:/usr/app/release -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
-  - ./src/push.sh
 
-# deploy:
+deploy:
   # - provider: releases
   #   api_key: $GITHUB_OAUTH_TOKEN
   #   file: release/cards.json
   #   skip_cleanup: true
   #   on:
   #     tags: false
-  # - provider: pages
-  #   target-branch: gh-test
-  #   skip-cleanup: true
-  #   github-token: $GITHUB_OAUTH_TOKEN
-  #   keep-history: true
-  #   local-dir: release/
-  #   varbose: true
-  #   on:
-  #     all_branches: true
+  - provider: pages
+    target-branch: $TRAVIS_BRANCH
+    skip-cleanup: true
+    github-token: $GITHUB_OAUTH_TOKEN
+    keep-history: true
+    local-dir: $TRAVIS_BUILD_DIR
+    varbose: true
+    on:
+      all_branches: true
       
