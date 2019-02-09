@@ -1,24 +1,24 @@
 'use strict'
 
 const fs = require('fs')
-const MILISECONDS_24HOURS = 86400000// 24 hours in miliseconds
+const path = require('path')
 
-const isItTimeToCommitInProgress = (current, last) => {
-
-    const diff = current.getTime() - last.getTime()
-    if (diff < 0) {
-        return false
+const getRankingTemplate = () => new Promise(
+    (resolve, reject) => {
+        fs.readFile(
+            path.join(__dirname, '../RANKING-template.md'),
+            { encoding: 'utf8'},
+            (err, data) => {
+                if (err) {
+                    reject(err)
+                }
+                resolve(data)
+            }
+        )
     }
+)
 
-    if ( (current.getDay() === 6 && last.getDay() !== 6) || diff >= MILISECONDS_24HOURS ) {
-        // if current is saturday and last is not or there's at least 24 hours of difference
-        return true
-    }
-
-    return false
-}
-
-const updateRankingJsonFile = async rankingObj => new Promise(
+const updateRankingJsonFile = rankingObj => new Promise(
     (resolve, reject) => {
         fs.writeFile(
             './release/ranking.json',
@@ -36,13 +36,9 @@ const updateRankingJsonFile = async rankingObj => new Promise(
 
 const updateRankingMarkdownFile = async rankingObj => {
 
+    const template = await getRankingTemplate()
     const rankingMarkdown = rankingObj.rank
-    const output = 
-`
-# Ranking
-
-
-`
+    const output = ''
 
     return new Promise(
         (resolve, reject) => {
@@ -62,7 +58,6 @@ const updateRankingMarkdownFile = async rankingObj => {
 
 
 module.exports = {
-    isItTimeToCommitInProgress,
     updateRankingJsonFile,
     updateRankingMarkdownFile
 }

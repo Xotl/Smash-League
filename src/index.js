@@ -27,7 +27,7 @@ async function Main() {
     newInProgressObj.last_update_ts = Utils.GetEpochUnixFromDate(now)
     const newRankingObj = { ...Ranking, ...{ in_progress: newInProgressObj} }
 
-    if (OutputGenerator.isItTimeToCommitInProgress(now, lastInProgressUpdated)) {
+    if (SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)) {
         newRankingObj.last_update_ts = newInProgressObj.last_update_ts
         newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(newInProgressObj.scoreboard)
         newRankingObj.scoreboard = newInProgressObj.scoreboard

@@ -1,7 +1,7 @@
 'use strict'
 const Config = require('../config.json')
 
-// const BOT_TAG_REGEX = `\<\@${Config.bot_id}\>`
+const MILISECONDS_24HOURS = 86400000// 24 hours in miliseconds
 const CHALLENGE_REGEX = `^.*?reto.*?<@.*?>`
 const REPORTED_RESULT_REGEX = `(<@.*?>).*?([0-9].*)-.*([0-9)]).*(<@.*?>)`
 const USERS_TAGGED_REGEX = `<@.*?>`
@@ -282,9 +282,25 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
     return getUpdatedChallengesAndScoreboard(reportedResults, ranking, scoreboard, completed_challenges, newActiveChallenges)
 }
 
+const isItTimeToCommitInProgress = (current, last) => {
+
+    const diff = current.getTime() - last.getTime()
+    if (diff < 0) {
+        return false
+    }
+
+    if ( (current.getDay() === 6 && last.getDay() !== 6) || diff >= MILISECONDS_24HOURS ) {
+        // if current is saturday and last is not or there's at least 24 hours of difference
+        return true
+    }
+
+    return false
+}
+
 
 module.exports = {
     categorizeSlackMessages,
     digestActivitiesAndGetUpdatedRankingObj,
-    getRankingFromScoreboard
+    getRankingFromScoreboard,
+    isItTimeToCommitInProgress
 }
