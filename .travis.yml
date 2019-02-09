@@ -13,7 +13,7 @@ script:
   # - mkdir ${TRAVIS_BUILD_DIR}/release
   - docker run --rm -v ${TRAVIS_BUILD_DIR}/release:/usr/app/release -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
-# deploy:
+deploy:
   # - provider: releases
   #   api_key: $GITHUB_OAUTH_TOKEN
   #   file: release/cards.json
