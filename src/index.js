@@ -1,10 +1,10 @@
 'use strict'
-const Slack = require('./slack_api')
-const SmashLeague = require('./smash_league')
+const Slack = require('./slack-api')
+const SmashLeague = require('./smash-league')
 const Ranking = require('../release/ranking.json')
 const Config = require('../config.json')
 const Utils = require('./utils')
-const OutputGenerator = require('./output_generator')
+const OutputGenerator = require('./output-generator')
 
 
 const SMASH_SLACK_CHANNEL_ID = Config.slack_channel_id
