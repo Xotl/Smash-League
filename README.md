@@ -1,7 +1,9 @@
 # Smash League
 #### Table of contents
 * [Ranking System Rules](#ranking-system-rules)
-* [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result?)
+* [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
+    * [Challenge people](#challenge-people)
+    * [Reporting a resutl after a match](#reporting-a-resutl-after-a-match)
 * [Current Ruleset](#current-ruleset)
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
