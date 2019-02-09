@@ -43,7 +43,13 @@ async function Main() {
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
     await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
-    console.log('Finished.')
+    console.log('Finished Successfully.')
 }
 
-Main().catch(console.error)
+Main().catch(
+    err => {
+        console.error(err)
+        console.log('Finished with errors.')
+        process.exit(1);
+    }
+)
