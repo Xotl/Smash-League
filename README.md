@@ -1,7 +1,7 @@
 # Smash League
 #### Table of contents
 * [Ranking System Rules](#ranking-system-rules)
-    * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result?)
+* [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result?)
 * [Current Ruleset](#current-ruleset)
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
@@ -23,10 +23,10 @@ You can have as many challenges as the following table shows:
 
 Also, the times you can be challenged is limitless.
 
-### How do i challenge people or report a result?
+## How do i challenge people or report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
 
-#### Challenge people
+### Challenge people
 Just tag the bot and then continue with the word `reto` and finish with the player or players that you want to challenge.
 
 Examples of valid challenges expressions:
@@ -39,7 +39,7 @@ Examples of valid challenges expressions:
 
 You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash_league.js#L5) for more details.
 
-#### Reporting a resutl after a match
+### Reporting a resutl after a match
 Tag the bot and then post the result in the next format: {playerA} {result A}-{result B} {playerB}
 
 Examples of valid results expressions:
