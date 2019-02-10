@@ -18,7 +18,7 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 ## In progress this week
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
-The last update for all of the below categories occurred **Sun, 10 Feb 2019 23:14:51 GMT**.
+The last update for all of the below categories occurred **Sun, 10 Feb 2019 23:17:32 GMT**.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
