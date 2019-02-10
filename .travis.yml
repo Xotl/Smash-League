@@ -11,7 +11,7 @@ script:
       - docker run --rm smash-league npm test
       - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
-if: NOT ($TRAVIS_COMMIT_MESSAGE =~ /Deploy .* to .*:.*/)
+if: NOT ($TRAVIS_COMMIT_MESSAGE =~ /^Deploy .* to .*\:.*$/)
 
 deploy:
   - provider: pages
@@ -23,5 +23,5 @@ deploy:
     varbose: true
     on:
       all_branches: true
-      condition: NOT ($TRAVIS_COMMIT_MESSAGE =~ /Deploy .* to .*:.*/) OR $TRAVIS_EVENT_TYPE = cron OR $TRAVIS_EVENT_TYPE = api
+      condition: NOT ($TRAVIS_COMMIT_MESSAGE =~ /^Deploy .* to .*:.*$/) OR $TRAVIS_EVENT_TYPE = cron OR $TRAVIS_EVENT_TYPE = api
       
