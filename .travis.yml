@@ -6,6 +6,12 @@ services:
 install:
   - docker build -t smash-league .
 
+stages:
+  - name: Test
+    if: $TRAVIS_EVENT_TYPE = pull_request
+    script:
+      - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league npm test
+
 script:
   - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
