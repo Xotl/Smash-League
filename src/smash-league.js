@@ -302,5 +302,6 @@ module.exports = {
     categorizeSlackMessages,
     digestActivitiesAndGetUpdatedRankingObj,
     getRankingFromScoreboard,
-    isItTimeToCommitInProgress
+    isItTimeToCommitInProgress,
+    getRankingPlaceByPlayerId
 }
