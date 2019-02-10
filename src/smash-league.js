@@ -303,5 +303,8 @@ module.exports = {
     digestActivitiesAndGetUpdatedRankingObj,
     getRankingFromScoreboard,
     isItTimeToCommitInProgress,
-    getRankingPlaceByPlayerId
+    getRankingPlaceByPlayerId,
+    getNumberOfChallengesAllowed,
+    canPlayerAChallengePlayerB,
+    getUpdatedChallengesAndScoreboard
 }
