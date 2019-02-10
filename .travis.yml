@@ -6,8 +6,13 @@ services:
 install:
   - docker build -t smash-league .
 
-script:
-  - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
+stages:
+  - name: Test
+    script:
+      - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league npm test
+  - name: Build
+    script:
+      - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
 deploy:
   - provider: pages
@@ -19,4 +24,5 @@ deploy:
     varbose: true
     on:
       all_branches: true
+      condition: $TRAVIS_EVENT_TYPE = cron OR $TRAVIS_EVENT_TYPE = api
       
