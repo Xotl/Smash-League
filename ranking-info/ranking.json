@@ -1,30 +1,96 @@
 {
-    "last_update_ts": 1549823484.278,
+    "last_update_ts": 1549836299.429,
     "ranking": [
         [
-            "U3TSWQUHE"
+            "UDBD59WLT"
         ],
         [
-            "U8NH8QSG1"
+            "U61MBQTR8"
         ],
         [
-            "U3V96QK5M",
-            "U3UGF00BD"
+            "U8QS8T0CX"
+        ],
+        [
+            "U8THDCVJ7",
+            "UBA5M220K"
+        ],
+        [
+            "UB616ENA0"
+        ],
+        [
+            "U6457D5KQ"
+        ],
+        [
+            "U87CK0E4A"
+        ],
+        [
+            "U8M6QT7EF"
+        ],
+        [
+            "U7VAPLNCR"
+        ],
+        [
+            "UAGR4S57G"
+        ],
+        [
+            "UBRCZ6G4B"
+        ],
+        [
+            "U8A96RCEA",
+            "UBRMBGR6Z",
+            "UE82A6MNY",
+            "UEWUZCYJF",
+            "U6H8DDV25",
+            "U622XCTAA",
+            "U8CEKPXQR",
+            "UBHGVCY4X"
         ]
     ],
     "scoreboard": {
-        "U3TSWQUHE": 8,
-        "U3V96QK5M": 2,
-        "U3UGF00BD": 2,
-        "U8NH8QSG1": 6
+        "U8A96RCEA": 0,
+        "U61MBQTR8": 20,
+        "U7VAPLNCR": 5,
+        "UBRMBGR6Z": 0,
+        "UE82A6MNY": 0,
+        "U8QS8T0CX": 18,
+        "UB616ENA0": 15,
+        "UEWUZCYJF": 0,
+        "UDBD59WLT": 21,
+        "U6H8DDV25": 0,
+        "U8M6QT7EF": 9,
+        "U87CK0E4A": 11,
+        "U8THDCVJ7": 17,
+        "U622XCTAA": 0,
+        "U8CEKPXQR": 0,
+        "U6457D5KQ": 12,
+        "UBA5M220K": 17,
+        "UAGR4S57G": 4,
+        "UBHGVCY4X": 0,
+        "UBRCZ6G4B": 3
     },
     "unknown_users": [],
     "in_progress": {
         "scoreboard": {
-            "U3TSWQUHE": 9,
-            "U3V96QK5M": 2,
-            "U3UGF00BD": 2,
-            "U8NH8QSG1": 9
+            "U8A96RCEA": 0,
+            "U61MBQTR8": 20,
+            "U7VAPLNCR": 5,
+            "UBRMBGR6Z": 0,
+            "UE82A6MNY": 0,
+            "U8QS8T0CX": 18,
+            "UB616ENA0": 15,
+            "UEWUZCYJF": 0,
+            "UDBD59WLT": 21,
+            "U6H8DDV25": 0,
+            "U8M6QT7EF": 9,
+            "U87CK0E4A": 11,
+            "U8THDCVJ7": 17,
+            "U622XCTAA": 0,
+            "U8CEKPXQR": 0,
+            "U6457D5KQ": 12,
+            "UBA5M220K": 17,
+            "UAGR4S57G": 4,
+            "UBHGVCY4X": 0,
+            "UBRCZ6G4B": 3
         },
         "active_challenges": {
             "U3UGF00BD": [
@@ -64,6 +130,6 @@
                 }
             ]
         },
-        "last_update_ts": 1549827075.771
+        "last_update_ts": 1549836299.429
     }
 }
