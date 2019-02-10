@@ -1,8 +1,11 @@
 {
-    "last_update_ts": 1549746424.644,
+    "last_update_ts": 1549823484.278,
     "ranking": [
         [
             "U3TSWQUHE"
+        ],
+        [
+            "U8NH8QSG1"
         ],
         [
             "U3V96QK5M",
@@ -10,20 +13,57 @@
         ]
     ],
     "scoreboard": {
-        "U3TSWQUHE": 5,
+        "U3TSWQUHE": 8,
         "U3V96QK5M": 2,
-        "U3UGF00BD": 2
+        "U3UGF00BD": 2,
+        "U8NH8QSG1": 6
     },
     "unknown_users": [],
     "in_progress": {
         "scoreboard": {
-            "U3TSWQUHE": 5,
+            "U3TSWQUHE": 9,
             "U3V96QK5M": 2,
-            "U3UGF00BD": 2
+            "U3UGF00BD": 2,
+            "U8NH8QSG1": 9
         },
-        "active_challenges": {},
-        "completed_challenges": {},
-        "last_update_ts": 1549746424.644,
-        "reported_results": []
+        "active_challenges": {
+            "U3UGF00BD": [
+                "U3TSWQUHE",
+                "U3UG9PQSF"
+            ]
+        },
+        "completed_challenges": {
+            "U8NH8QSG1": [
+                {
+                    "challenger": "U8NH8QSG1",
+                    "playerChallenged": "U3TSWQUHE",
+                    "winner": "U8NH8QSG1",
+                    "player1": "U8NH8QSG1",
+                    "player2": "U3TSWQUHE",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "U8NH8QSG1",
+                        "U3TSWQUHE"
+                    ]
+                }
+            ],
+            "U3V96QK5M": [
+                {
+                    "challenger": "U3V96QK5M",
+                    "playerChallenged": "U3TSWQUHE",
+                    "winner": "U3TSWQUHE",
+                    "player1": "U3TSWQUHE",
+                    "player2": "U3V96QK5M",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "U3TSWQUHE",
+                        "U3V96QK5M"
+                    ]
+                }
+            ]
+        },
+        "last_update_ts": 1549827075.771
     }
 }
