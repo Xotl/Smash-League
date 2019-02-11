@@ -7,11 +7,10 @@ install:
   - docker build -t smash-league .
 
 script:
-      - echo $TRAVIS_COMMIT_MESSAGE
       - docker run --rm smash-league npm test
       - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
-if: sender != traviscibot
+if: sender != traviscibot || env(TRAVIS_EVENT_TYPE) != push
 
 deploy:
   - provider: pages
@@ -23,5 +22,5 @@ deploy:
     varbose: true
     on:
       all_branches: true
-      condition: sender != traviscibot OR env(TRAVIS_EVENT_TYPE) = cron OR env(TRAVIS_EVENT_TYPE) = api
+      condition: (sender != traviscibot && env(TRAVIS_EVENT_TYPE) = push) || env(TRAVIS_EVENT_TYPE) != push
       
