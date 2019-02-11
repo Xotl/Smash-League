@@ -92,44 +92,8 @@
             "UBHGVCY4X": 0,
             "UBRCZ6G4B": 3
         },
-        "active_challenges": {
-            "U3UGF00BD": [
-                "U3TSWQUHE",
-                "U3UG9PQSF"
-            ]
-        },
-        "completed_challenges": {
-            "U8NH8QSG1": [
-                {
-                    "challenger": "U8NH8QSG1",
-                    "playerChallenged": "U3TSWQUHE",
-                    "winner": "U8NH8QSG1",
-                    "player1": "U8NH8QSG1",
-                    "player2": "U3TSWQUHE",
-                    "player1Result": 3,
-                    "player2Result": 1,
-                    "players": [
-                        "U8NH8QSG1",
-                        "U3TSWQUHE"
-                    ]
-                }
-            ],
-            "U3V96QK5M": [
-                {
-                    "challenger": "U3V96QK5M",
-                    "playerChallenged": "U3TSWQUHE",
-                    "winner": "U3TSWQUHE",
-                    "player1": "U3TSWQUHE",
-                    "player2": "U3V96QK5M",
-                    "player1Result": 3,
-                    "player2Result": 2,
-                    "players": [
-                        "U3TSWQUHE",
-                        "U3V96QK5M"
-                    ]
-                }
-            ]
-        },
-        "last_update_ts": 1549861507.866
+        "active_challenges": {},
+        "completed_challenges": {},
+        "last_update_ts": 1549861648.813
     }
 }

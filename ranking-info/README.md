@@ -18,18 +18,17 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 ## In progress this week
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
-The last update for all of the below categories occurred **Mon, 11 Feb 2019 05:05:07 GMT**.
+The last update for all of the below categories occurred **Mon, 11 Feb 2019 05:07:28 GMT**.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `Xotl` challenged `Manco`, `U3UG9PQSF`.
+
 
 ### Competed challenges
 Matches that already happened during this week.
 
-* `U8NH8QSG1` challenged `Manco` and **won** *3-1*.
-* `Medinilla` challenged `Manco` and **lost** *3-2*.
+
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
