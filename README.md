@@ -1,4 +1,8 @@
-# Smash League
+# Smash League ![Travis Status](https://travis-ci.org/Xotl/Smash-League.svg?branch=master)
+
+## Looking for the current ranking?
+If your are looking for the current rank table and scoreboard [visit the `ranking-info` folder](./ranking-info/) of this repo.
+
 #### Table of contents
 * [Ranking System Rules](#ranking-system-rules)
 * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
