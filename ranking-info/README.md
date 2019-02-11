@@ -2,14 +2,14 @@
 
 Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 
-1. `César Gutman` - 21 points
-2. `Xotl` - 24 points
-3. `Aldo` - 22 points
-4. `Neku`, `José "El Iceberg" Rosales` - 21 points
-5. `Ángel Lee` - 19 points
-6. `D.I.O.` - 13 points
-7. `Fer Señior` - 12 points
-8. `El Minion` - 16 points
+1. `Xotl` - 24 points
+2. `Aldo` - 22 points
+3. `César Gutman`, `Neku` - 21 points
+4. `Ángel Lee` - 19 points
+5. `José "El Iceberg" Rosales` - 18 points
+6. `El Minion` - 16 points
+7. `D.I.O.` - 13 points
+8. `Fer Señior` - 12 points
 9. `Gilberto "Gil" Ruelas` - 8 points
 10. `Michel` - 4 points
 11. `Niightz` - 3 points
@@ -18,7 +18,7 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 ## In progress this week
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
-The last update for all of the below categories occurred **Mon, 11 Feb 2019 16:10:09 GMT**.
+The last update for all of the below categories occurred **Mon, 11 Feb 2019 16:15:54 GMT**.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
