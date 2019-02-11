@@ -20,17 +20,12 @@ async function Main() {
     const newInProgressObj = SmashLeague.digestActivitiesAndGetUpdatedRankingObj(activities, Ranking)
 
     newInProgressObj.last_update_ts = Utils.GetEpochUnixFromDate(now)
-    const newRankingObj = { ...Ranking, ...{ in_progress: newInProgressObj} }
+    let newRankingObj = { ...Ranking, ...{ in_progress: newInProgressObj} }
 
     // console.log('Wow, such in_progress', newRankingObj.in_progress.completed_challenges)
 
     if (SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)) {
-        newRankingObj.last_update_ts = newInProgressObj.last_update_ts
-        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(newInProgressObj.scoreboard)
-        newRankingObj.scoreboard = newInProgressObj.scoreboard
-        newInProgressObj.active_challenges = {}
-        newInProgressObj.completed_challenges = {}
-        newInProgressObj.reported_results = []
+        newRankingObj = SmashLeague.commitInProgress(newRankingObj)
     }
     
     

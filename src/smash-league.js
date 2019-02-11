@@ -238,7 +238,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             }
             
             // Apply points to winner score
-            updatedScoreboard[winner] += winner === validChallenger ? 3 : 1
+            updatedScoreboard[winner] =  (updatedScoreboard[winner] || 0) + winner === validChallenger ? 3 : 1
         }
     )
 
@@ -297,6 +297,19 @@ const isItTimeToCommitInProgress = (current, last) => {
     return false
 }
 
+const commitInProgress = rankingObj => {
+    const result = { ...rankingObj }
+    const inProgress = { ...result.in_progress }
+
+    result.last_update_ts = inProgress.last_update_ts
+    result.ranking = SmashLeague.getRankingFromScoreboard(inProgress.scoreboard)
+    result.scoreboard = inProgress.scoreboard
+    inProgress.active_challenges = {}
+    inProgress.completed_challenges = {}
+    inProgress.reported_results = []
+    return result
+}
+
 
 module.exports = {
     categorizeSlackMessages,
@@ -306,5 +319,6 @@ module.exports = {
     getRankingPlaceByPlayerId,
     getNumberOfChallengesAllowed,
     canPlayerAChallengePlayerB,
-    getUpdatedChallengesAndScoreboard
+    getUpdatedChallengesAndScoreboard,
+    commitInProgress
 }

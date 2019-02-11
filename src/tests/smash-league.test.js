@@ -1,59 +1,37 @@
 const SmashLeague = require('../smash-league')
+const SmashLeagueTestConstants = require('./smash-league.test.constants')
 
-const RankingArray = [
-    ['Xotl'],
-    ['Manco', 'Aldo'],
-    ['Pancho'],
-    ['Angel_Lee'],
-    ['lrgilberto'],// 5th
-    ['KntrllMester'],
-    ['Chino'],
-    ['Niightz'],
-    ['Samuel'],
-    ['FerSeñior'],// 10th
-    ['medinilla'],
-    ['michxrt'],
-    ['Gustavo'],
-    ['Carlos Lopez', 'David', 'Beto']// 14th
-]
+const RankingArray = SmashLeagueTestConstants.RankingArray
+const Scoreboard = SmashLeagueTestConstants.Scoreboard
 
-const Scoreboard = {
-    'Xotl': 6,
-    'Manco': 6,
-    'Aldo': 6,
-    'Pancho': 6,
-    'Angel_Lee': 6,
-    'lrgilberto': 6,
-    'KntrllMester': 6,
-    'Chino': 6,
-    'Niightz': 6,
-    'Samuel': 6,
-    'FerSeñior': 6,
-    'medinilla': 6,
-    'michxrt': 6,
-}
 
-// describe('Smash League Challenges & Scoreboard', ()=> {
-    
+// describe('Smash League Challenges & Scoreboard', () => {
+
 //     test('getUpdatedChallengesAndScoreboard', () => {
-//         expect(
-//             SmashLeague.getUpdatedChallengesAndScoreboard('Xotl', RankingArray)
-//         ).toBe(1);
+
+//         const newInprogressObj = SmashLeague.getUpdatedChallengesAndScoreboard(
+//             SmashLeagueTestConstants.reportedResults1, 
+//             RankingArray, Scoreboard, 
+//             SmashLeagueTestConstants.completedChallenges1, 
+//             SmashLeagueTestConstants.activeChallenges1
+//         )
+
+//         expect(newInprogressObj).toBe(1);
 //     })
 // })
 
 
-describe('Smash League Ranking', ()=> {
+describe('Smash League Ranking', () => {
 
     test('getRankingPlaceByPlayerId', () => {
         expect(
             SmashLeague.getRankingPlaceByPlayerId('Xotl', RankingArray)
         ).toBe(1);
-    
+
         expect(
             SmashLeague.getRankingPlaceByPlayerId('Aldo', RankingArray)
         ).toBe(2);
-    
+
         expect(
             SmashLeague.getRankingPlaceByPlayerId('David', RankingArray)
         ).toBe(14);
@@ -61,7 +39,7 @@ describe('Smash League Ranking', ()=> {
         expect(
             SmashLeague.getRankingPlaceByPlayerId('Carlos Lopez', RankingArray)
         ).toBe(14);
-    
+
         expect(
             SmashLeague.getRankingPlaceByPlayerId('Player not yet in ranking', RankingArray)
         ).toBe(RankingArray.length + 1);
