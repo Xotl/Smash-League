@@ -5,30 +5,34 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 1. `Xotl` - 24 points
 2. `Aldo` - 22 points
 3. `César Gutman`, `Neku` - 21 points
-4. `Ángel Lee` - 19 points
-5. `José "El Iceberg" Rosales` - 18 points
-6. `El Minion` - 16 points
-7. `D.I.O.` - 13 points
-8. `Fer Señior` - 12 points
-9. `Gilberto "Gil" Ruelas` - 8 points
-10. `Michel` - 4 points
-11. `Niightz` - 3 points
-12. `Carlos López`, `Alan`, `Alberto Ortiz`, `El Chino`, `Medininja`, `Gustavo "Díganme El Jefazo" Mejía`, `Homero`, `Néstor` - 0 points
+4. `El Minion` - 16 points
+5. `D.I.O.` - 13 points
+6. `Fer Señior` - 12 points
+7. `Gilberto "Gil" Ruelas` - 8 points
+8. `Michel` - 4 points
+9. `Niightz` - 3 points
+10. `Ángel Lee`, `José "El Iceberg" Rosales` - 19 points
+11. `Carlos López`, `Alan`, `Alberto Ortiz`, `El Chino`, `Medininja`, `Gustavo "Díganme El Jefazo" Mejía`, `Homero`, `Néstor` - 0 points
 
 ## In progress this week
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
-The last update for all of the below categories occurred **Mon, 11 Feb 2019 16:15:54 GMT**.
+The last update for all of the below categories occurred **Mon, 11 Feb 2019 19:10:51 GMT**.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
 * Player `D.I.O.` challenged `Ángel Lee`.
+* Player `José "El Iceberg" Rosales` challenged `Neku`.
+* Player `César Gutman` challenged `Aldo`, `Xotl`.
+* Player `Neku` challenged `Aldo`, `Xotl`.
+* Player `Ángel Lee` challenged `Neku`.
 
 ### Competed challenges
 Matches that already happened during this week.
 
-
+* `José "El Iceberg" Rosales` challenged `Ángel Lee` and **won** *3-0*.
+* `Ángel Lee` challenged `César Gutman` and **won** *3-2*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -37,18 +41,18 @@ The current points earned by winning matches this week.
 * Aldo: 22
 * Neku: 21
 * César Gutman: 21
-* Ángel Lee: 19
-* José "El Iceberg" Rosales: 18
 * El Minion: 16
 * D.I.O.: 13
 * Fer Señior: 12
 * Gilberto "Gil" Ruelas: 8
 * Michel: 4
 * Niightz: 3
+* Ángel Lee: 1
+* José "El Iceberg" Rosales: 1
 * Medininja: 0
+* El Chino: 0
 * Gustavo "Díganme El Jefazo" Mejía: 0
 * Homero: 0
-* El Chino: 0
 * Alberto Ortiz: 0
 * Alan: 0
 * Néstor: 0
