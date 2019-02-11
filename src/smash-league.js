@@ -302,7 +302,7 @@ const commitInProgress = rankingObj => {
     const inProgress = { ...result.in_progress }
 
     result.last_update_ts = inProgress.last_update_ts
-    result.ranking = SmashLeague.getRankingFromScoreboard(inProgress.scoreboard)
+    result.ranking = getRankingFromScoreboard(inProgress.scoreboard)
     result.scoreboard = inProgress.scoreboard
     inProgress.active_challenges = {}
     inProgress.completed_challenges = {}

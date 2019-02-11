@@ -20,7 +20,13 @@ async function Main() {
     const newInProgressObj = SmashLeague.digestActivitiesAndGetUpdatedRankingObj(activities, Ranking)
 
     newInProgressObj.last_update_ts = Utils.GetEpochUnixFromDate(now)
-    let newRankingObj = { ...Ranking, ...{ in_progress: newInProgressObj} }
+    let newRankingObj = {
+        ...Ranking, 
+        ...{ 
+            in_progress: newInProgressObj, 
+            ranking: SmashLeague.getRankingFromScoreboard(newInProgressObj.scoreboard)
+        } 
+    }
 
     // console.log('Wow, such in_progress', newRankingObj.in_progress.completed_challenges)
 
