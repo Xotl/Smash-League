@@ -25,12 +25,7 @@ async function Main() {
     // console.log('Wow, such in_progress', newRankingObj.in_progress.completed_challenges)
 
     if (SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)) {
-        newRankingObj.last_update_ts = newInProgressObj.last_update_ts
-        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(newInProgressObj.scoreboard)
-        newRankingObj.scoreboard = newInProgressObj.scoreboard
-        newInProgressObj.active_challenges = {}
-        newInProgressObj.completed_challenges = {}
-        newInProgressObj.reported_results = []
+        newRankingObj = SmashLeague.commitInProgress(newRankingObj)
     }
     
     
