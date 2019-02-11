@@ -7,7 +7,7 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
 * [Ranking System Rules](#ranking-system-rules)
 * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
     * [Challenge people](#challenge-people)
-    * [Reporting a resutl after a match](#reporting-a-resutl-after-a-match)
+    * [Reporting a result after a match](#reporting-a-result-after-a-match)
 * [Current Ruleset](#current-ruleset)
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
@@ -43,9 +43,9 @@ Examples of valid challenges expressions:
 
 **NOTE: Any non valid challenge will be ignored by the bot**
 
-You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash_league.js#L5) for more details.
+You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash-league.js#L5) for more details.
 
-### Reporting a resutl after a match
+### Reporting a result after a match
 Tag the bot and then post the result in the next format: {playerA} {result A}-{result B} {playerB}
 
 Examples of valid results expressions:
@@ -54,7 +54,7 @@ Examples of valid results expressions:
 * `@Smash League` :snowman: `@Pancho` 2-3 `@José`, ése Pancho no trae nada
 
 **NOTE: Any non valid result will be ignored by the bot**
-You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash_league.js#L6) for more details.
+You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash-league.js#L6) for more details.
 
 
 ## Current Ruleset
