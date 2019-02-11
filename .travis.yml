@@ -22,5 +22,4 @@ deploy:
     varbose: true
     on:
       all_branches: true
-      condition: type IN (cron, api) OR sender != traviscibot
       
