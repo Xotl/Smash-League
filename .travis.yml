@@ -10,7 +10,7 @@ script:
       - docker run --rm smash-league npm test
       - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
-if: sender != traviscibot || env(TRAVIS_EVENT_TYPE) != push
+if: NOT (sender = traviscibot AND type = push)
 
 deploy:
   - provider: pages
@@ -22,5 +22,5 @@ deploy:
     varbose: true
     on:
       all_branches: true
-      condition: (sender != traviscibot && env(TRAVIS_EVENT_TYPE) = push) || env(TRAVIS_EVENT_TYPE) != push
+      condition: type IN (cron, api) OR sender != traviscibot
       
