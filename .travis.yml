@@ -10,7 +10,7 @@ script:
       - docker run --rm smash-league npm test
       - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} smash-league
 
-if: NOT (sender = traviscibot AND type = push)
+if: sender != traviscibot
 
 deploy:
   - provider: pages
