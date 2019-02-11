@@ -29,7 +29,7 @@ async function Main() {
     }
     else {
         // Updates ranking table in case there's a manual change in current scoreboard
-        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(Ranking.ranking)
+        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(newRankingObj.scoreboard)
     }
     
     

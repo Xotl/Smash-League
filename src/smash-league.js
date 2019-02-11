@@ -303,8 +303,8 @@ const commitInProgress = rankingObj => {
     const inProgress = { ...result.in_progress }
 
     result.last_update_ts = inProgress.last_update_ts
-    result.ranking = getRankingFromScoreboard(inProgress.scoreboard)
     result.scoreboard = inProgress.scoreboard
+    result.ranking = getRankingFromScoreboard(result.scoreboard)
     inProgress.active_challenges = {}
     inProgress.completed_challenges = {}
     inProgress.reported_results = []

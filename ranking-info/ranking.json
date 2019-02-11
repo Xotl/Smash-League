@@ -2,37 +2,38 @@
     "last_update_ts": 1549836299.429,
     "ranking": [
         [
-            "0"
+            "U61MBQTR8"
         ],
         [
-            "10"
+            "U8QS8T0CX"
         ],
         [
-            "2"
+            "UDBD59WLT",
+            "U8THDCVJ7"
         ],
         [
-            "3"
+            "UB616ENA0"
         ],
         [
-            "4"
+            "UBA5M220K"
         ],
         [
-            "1"
+            "U8M6QT7EF"
         ],
         [
-            "6"
+            "U6457D5KQ"
         ],
         [
-            "7"
+            "U87CK0E4A"
         ],
         [
-            "8"
+            "U7VAPLNCR"
         ],
         [
-            "9"
+            "UAGR4S57G"
         ],
         [
-            "5"
+            "UBRCZ6G4B"
         ]
     ],
     "scoreboard": {
@@ -66,7 +67,7 @@
             "UBRMBGR6Z": 0,
             "UE82A6MNY": 0,
             "U8QS8T0CX": 22,
-            "UB616ENA0": 22,
+            "UB616ENA0": 19,
             "UEWUZCYJF": 0,
             "UDBD59WLT": 21,
             "U6H8DDV25": 0,
@@ -76,59 +77,13 @@
             "U622XCTAA": 0,
             "U8CEKPXQR": 0,
             "U6457D5KQ": 13,
-            "UBA5M220K": 21,
+            "UBA5M220K": 18,
             "UAGR4S57G": 4,
             "UBHGVCY4X": 0,
             "UBRCZ6G4B": 3
         },
-        "active_challenges": {
-            "UBA5M220K": [
-                "U8THDCVJ7"
-            ],
-            "UDBD59WLT": [
-                "U8QS8T0CX",
-                "U61MBQTR8"
-            ],
-            "U8THDCVJ7": [
-                "U8QS8T0CX",
-                "U61MBQTR8"
-            ],
-            "UB616ENA0": [
-                "U8THDCVJ7"
-            ]
-        },
-        "completed_challenges": {
-            "UBA5M220K": [
-                {
-                    "challenger": "UBA5M220K",
-                    "playerChallenged": "UB616ENA0",
-                    "winner": "UBA5M220K",
-                    "player1": "UBA5M220K",
-                    "player2": "UB616ENA0",
-                    "player1Result": 3,
-                    "player2Result": 0,
-                    "players": [
-                        "UBA5M220K",
-                        "UB616ENA0"
-                    ]
-                }
-            ],
-            "UB616ENA0": [
-                {
-                    "challenger": "UB616ENA0",
-                    "playerChallenged": "UDBD59WLT",
-                    "winner": "UB616ENA0",
-                    "player1": "UB616ENA0",
-                    "player2": "UDBD59WLT",
-                    "player1Result": 3,
-                    "player2Result": 2,
-                    "players": [
-                        "UB616ENA0",
-                        "UDBD59WLT"
-                    ]
-                }
-            ]
-        },
-        "last_update_ts": 1549916141.851
+        "active_challenges": {},
+        "completed_challenges": {},
+        "last_update_ts": 1549900737.253
     }
 }
