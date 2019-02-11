@@ -23,5 +23,5 @@ deploy:
     varbose: true
     on:
       all_branches: true
-      condition: sender != traviscibot OR $TRAVIS_EVENT_TYPE = cron OR $TRAVIS_EVENT_TYPE = api
+      condition: sender != traviscibot OR env(TRAVIS_EVENT_TYPE) = cron OR env(TRAVIS_EVENT_TYPE) = api
       
