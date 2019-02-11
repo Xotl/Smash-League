@@ -238,7 +238,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             }
             
             // Apply points to winner score
-            updatedScoreboard[winner] += winner === validChallenger ? 3 : 1
+            updatedScoreboard[winner] =  (updatedScoreboard[winner] || 0) + winner === validChallenger ? 3 : 1
         }
     )
 
