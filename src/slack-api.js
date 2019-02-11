@@ -44,12 +44,19 @@ const getMessagesFromPrivateChannel = async (channel, opts = {}) => {
 
             if (response && response.statusCode === 200) {
                 if (typeof body === 'string') {
+                    let jsonParsedBody
                     try {
-                        return resolve(JSON.parse(body))
+                        jsonParsedBody = JSON.parse(body)
                     }
                     catch(err) {
                         return reject(err)
                     }
+
+                    if (jsonParsedBody.ok) {
+                        return resolve(jsonParsedBody)
+                    }
+
+                    return reject(new Error('Slack response not OK: ' + jsonParsedBody.error))
                 }
 
                 return resolve(body)
