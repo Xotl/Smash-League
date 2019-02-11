@@ -92,8 +92,12 @@
             "UBHGVCY4X": 0,
             "UBRCZ6G4B": 3
         },
-        "active_challenges": {},
+        "active_challenges": {
+            "U6457D5KQ": [
+                "UB616ENA0"
+            ]
+        },
         "completed_challenges": {},
-        "last_update_ts": 1549864232.349
+        "last_update_ts": 1549900963.35
     }
 }
