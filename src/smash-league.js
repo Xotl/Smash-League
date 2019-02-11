@@ -163,11 +163,11 @@ const canPlayerAChallengePlayerB = (playerA, playerB, ranking) => {
     const playerAPlace = getRankingPlaceByPlayerId(playerA, ranking)
     const playerBPlace = getRankingPlaceByPlayerId(playerB, ranking)
     const diff = playerAPlace - playerBPlace
-
+    
     if (diff < 1 || diff > 5) {
         return false// There's no way playerA can challenge playerB
     }
-
+    
     const numAllowedChallengesForPlayerA = getNumberOfChallengesAllowed(playerAPlace)
     return diff <= numAllowedChallengesForPlayerA
 }
@@ -238,7 +238,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             }
             
             // Apply points to winner score
-            updatedScoreboard[winner] += (updatedScoreboard[winner] || 0) + winner === validChallenger ? 3 : 1
+            updatedScoreboard[winner] = (updatedScoreboard[winner] || 0) + (winner === validChallenger ? 3 : 1)
         }
     )
 
@@ -260,6 +260,7 @@ const getRankingFromScoreboard = scoreboard => {
         {}
     )
 
+    delete scoreDict[0]// Removing the people with 0 points from the ranking
     return Object.keys(scoreDict).sort( (a,b) => b - a ).map(score => scoreDict[score])
 }
 
