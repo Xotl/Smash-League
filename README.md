@@ -57,4 +57,3 @@ A player cannot deliberately persuade another player to play on a stage that the
 - Delfino Plaza
 - Warioware
 - Halberd (Brawl)
-- Skyloft
