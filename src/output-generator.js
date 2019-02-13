@@ -87,7 +87,7 @@ const getCompletedChallengesMarkdown = completedChallengesObj => {
                     const nonNumericResult = challengerId === challenge.winner ? 'won' : 'lost'
                     return `* \`${challengerName}\` challenged \`${challengedPlayerName}\` and **${nonNumericResult}** *${challenge[winnerPlayer + 'Result']}-${challenge[loserPlayer + 'Result']}*.`
                 }
-            )
+            ).join('\n')
         }
     ).join('\n')
 }

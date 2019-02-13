@@ -4,17 +4,15 @@ Last updated **{{last_updated}}**.
 
 {{ranking_bullets}}
 
-## In progress this week
+## In progress this week *{{inprogress_last_updated}}*
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
-
-The last update for all of the below categories occurred **{{inprogress_last_updated}}**.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
 {{active_challenges}}
 
-### Competed challenges
+### Completed challenges
 Matches that already happened during this week.
 
 {{completed_challenges}}

@@ -243,7 +243,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
                     updatedActiveChallenges[validChallenger].splice(indexOfPlayerChallenged, 1)
                 }
             }
-            
+
             // Apply points to winner score
             updatedScoreboard[winner] = (updatedScoreboard[winner] || 0) + (winner === validChallenger ? 3 : 1)
         }
@@ -297,8 +297,8 @@ const isItTimeToCommitInProgress = (current, last) => {
         return false
     }
 
-    if ( (current.getDay() === 6 && last.getDay() !== 6) || diff >= MILISECONDS_24HOURS ) {
-        // if current is saturday and last is not or there's at least 24 hours of difference
+    if ( current.getDay() === 7 && (last.getDay() !== 7 || diff >= MILISECONDS_24HOURS) ) {
+        // if current is sunday and last is not, or there's at least 24 hours of difference
         return true
     }
 
