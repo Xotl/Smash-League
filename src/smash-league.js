@@ -229,12 +229,19 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             }
 
             if (indexOfPlayerChallenged >= 0) {
-                // Let's clone the array if not yet cloned to safely modify it
-                if (updatedActiveChallenges[validChallenger] === activeChallenges[validChallenger]) {
-                    updatedActiveChallenges[validChallenger] = [ ...activeChallenges[validChallenger] ]
-                }
 
-                updatedActiveChallenges[validChallenger].splice(indexOfPlayerChallenged, 1)
+                if (updatedActiveChallenges[validChallenger].length === 1) {
+                    // Last one in the list, let's clean the list of active challenges
+                    delete updatedActiveChallenges[validChallenger]
+                }
+                else {
+                    // Let's clone the array if not yet cloned to safely modify it
+                    if (updatedActiveChallenges[validChallenger] === activeChallenges[validChallenger]) {
+                        updatedActiveChallenges[validChallenger] = [ ...activeChallenges[validChallenger] ]
+                    }
+    
+                    updatedActiveChallenges[validChallenger].splice(indexOfPlayerChallenged, 1)
+                }
             }
             
             // Apply points to winner score
