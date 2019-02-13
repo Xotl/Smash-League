@@ -12,6 +12,8 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
 
+Smash League is a bot used to handle the ranking of the Official Internal Smash League.
+
 ## Ranking System Rules
 
 This is a point-based ranking system. The more points you have, the best you are placed in the ranking.
@@ -59,15 +61,22 @@ You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master
 
 ## Current Ruleset
 
-Stocks: 3
-Time limit: 8 min.
-Hazards: off.
-Miis: Any moveset.
-Game one striking: (p1 - p2 - p2 - p1). In case both players don’t want to strike, the default starter stage will be Smashville.
+This is the recommended ruleset for the offcial league matches:
+
+- Stocks: 3
+- Time limit: 8 min.
+- Hazards: off.
+- Miis: Any moveset.
+- Game one striking: (p1 - p2 - p2 - p1). In case both players don’t want to strike, the default starter stage will be **Smashville**.
 
 If case of time out, the winner will be decided by the winner screen. In case of a tie, the winner will be the player with less damage at the end of the match. In case of a tie of damage or double KO, the players will play a one stock 3 minutes round on the same stage to decide the winner. In case of a player SD, the winner will be decided by the winner screen.
+
 After each game, the winner bans 2 stages. Players may not counter pick to any stage they have won on during the set.
 In case any player wants to switch characters between rounds, the winner player should change first. Once the loser player changes character the winner player cannot do it.
+
+If both players agree, they can play on any stage without bans nor restrictions, but the players should pick only legal stages. If the players can't decide the stage to pick, then they should use the striking rules.
+
+A player cannot deliberately persuade another player to play on a stage that the character or player has a clear advantage over the other player or character. If any witness of the match identifies this kind of behavior, the match will be declared invalid and the offender player will be punished by losing league points.
 
 ### Initial stages:
 
@@ -88,4 +97,3 @@ In case any player wants to switch characters between rounds, the winner player 
 - Delfino Plaza
 - Warioware
 - Halberd (Brawl)
-- Skyloft
