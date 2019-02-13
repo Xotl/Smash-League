@@ -108,6 +108,7 @@ If you want to contribute, you can rise issues or create your PR.
 * Install Docker
 * Run `docker build -t smash-league .`
 * Run `docker run -it --rm -v ${PWD}/src:/usr/app/src -v ${PWD}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN="Your Slack API token here" smash-league`
+* You can run the test by running the `docker run -it --rm -v ${PWD}/src:/usr/app/src -v ${PWD}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN="Your Slack API token here" smash-league npm test` command
 
-Note: We mount the `src` & `ranking-info` for development, so you can see your changes without building again the Docker image.
+Note: We mount the `src` & `ranking-info` folders for development, so you can see your changes without building again the Docker image.
 
