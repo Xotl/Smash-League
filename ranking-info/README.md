@@ -14,10 +14,8 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 10. `Michel` - 4 points
 11. `Niightz` - 3 points
 
-## In progress this week
-This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
-
-The last update for all of the below categories occurred **Wed, 13 Feb 2019 05:38:32 GMT**.
+## In progress this week *Wed, 13 Feb 2019 16:05:37 GMT*
+This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
@@ -26,11 +24,12 @@ These are the current active challenges, which is a list of the people who have 
 * Player `César Gutman` challenged `Aldo`.
 * Player `Neku` challenged `Aldo`, `Xotl`.
 
-### Competed challenges
+### Completed challenges
 Matches that already happened during this week.
 
 * `José "El Iceberg" Rosales` challenged `Ángel Lee` and **won** *3-0*.
-* `Ángel Lee` challenged `César Gutman` and **won** *3-2*.,* `Ángel Lee` challenged `Neku` and **won** *3-1*.
+* `Ángel Lee` challenged `César Gutman` and **won** *3-2*.
+* `Ángel Lee` challenged `Neku` and **won** *3-1*.
 * `Fer Señior` challenged `D.I.O.` and **won** *3-0*.
 * `D.I.O.` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
 * `César Gutman` challenged `Xotl` and **lost** *3-0*.
