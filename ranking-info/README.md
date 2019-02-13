@@ -17,7 +17,7 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 ## In progress this week
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
-The last update for all of the below categories occurred **Wed, 13 Feb 2019 04:00:05 GMT**.
+The last update for all of the below categories occurred **Wed, 13 Feb 2019 04:04:58 GMT**.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
@@ -25,9 +25,6 @@ These are the current active challenges, which is a list of the people who have 
 * Player `José "El Iceberg" Rosales` challenged `Neku`.
 * Player `César Gutman` challenged `Aldo`.
 * Player `Neku` challenged `Aldo`, `Xotl`.
-* Player `Ángel Lee` challenged .
-* Player `Fer Señior` challenged .
-* Player `D.I.O.` challenged .
 
 ### Competed challenges
 Matches that already happened during this week.
