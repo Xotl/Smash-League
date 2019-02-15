@@ -14,7 +14,7 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 10. `Michel` - 4 points
 11. `Niightz` - 3 points
 
-## In progress this week *Thu, 14 Feb 2019 05:40:05 GMT*
+## In progress this week *Fri, 15 Feb 2019 05:39:11 GMT*
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
@@ -22,9 +22,9 @@ These are the current active challenges, which is a list of the people who have 
 
 * Player `Neku` challenged `Aldo`.
 * Player `Aldo` challenged `Xotl`.
-* Player `Alan` challenged `Gustavo "Díganme El Jefazo" Mejía`, `Homero`, `Niightz`.
-* Player `El Minion` challenged `José "El Iceberg" Rosales`.
+* Player `Alan` challenged `Gustavo "Díganme El Jefazo" Mejía`, `Homero`, `Niightz`, `Fer Señior`.
 * Player `D.I.O.` challenged `El Minion`.
+* Player `El Chino` challenged `Niightz`.
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -40,13 +40,16 @@ Matches that already happened during this week.
 * `César Gutman` challenged `Aldo` and **lost** *3-2*.
 * `El Chino` challenged `D.I.O.` and **lost** *3-1*.
 * `Neku` challenged `Xotl` and **lost** *3-0*.
+* `UDR61HJCD` challenged `Fer Señior` and **won** *3-0*.
+* `El Minion` challenged `Ángel Lee` and **lost** *3-2*.
+* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
 
+* José "El Iceberg" Rosales: 26
 * Xotl: 26
-* Ángel Lee: 25
-* José "El Iceberg" Rosales: 25
+* Ángel Lee: 26
 * Aldo: 23
 * Neku: 21
 * César Gutman: 21
@@ -56,11 +59,12 @@ The current points earned by winning matches this week.
 * Gilberto "Gil" Ruelas: 8
 * Michel: 4
 * Niightz: 3
-* Medininja: 0
+* UDR61HJCD: 3
 * Gustavo "Díganme El Jefazo" Mejía: 0
 * Homero: 0
+* Medininja: 0
 * El Chino: 0
 * Alberto Ortiz: 0
-* Alan: 0
 * Néstor: 0
+* Alan: 0
 * Carlos López: 0
