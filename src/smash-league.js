@@ -284,7 +284,7 @@ const isItTimeToCommitInProgress = (current, last) => {
         return false
     }
 
-    if ( current.getDay() === 7 && (last.getDay() !== 7 || diff >= MILISECONDS_24HOURS) ) {
+    if ( current.getDay() === 0 && (last.getDay() !== 0 || diff >= MILISECONDS_24HOURS) ) {
         // if current is sunday and last is not, or there's at least 24 hours of difference
         return true
     }
