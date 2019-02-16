@@ -5,7 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/",
-    "test": "jest"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/*.test.js",
+      "!**/*.test.constants.js",
+      "!**/node_modules/**"
+    ]
   },
   "author": "Edgardo Campos (Xotl)",
   "license": "MIT",
