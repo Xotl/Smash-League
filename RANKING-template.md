@@ -5,7 +5,7 @@ Last updated **{{last_updated}}**.
 {{ranking_bullets}}
 
 ## In progress this week *{{inprogress_last_updated}}*
-This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
+This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
