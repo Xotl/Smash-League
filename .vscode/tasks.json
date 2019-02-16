@@ -6,7 +6,21 @@
         {
             "label": "Build Docker image",
             "type": "shell",
-            "command": "docker build -t smash-league ."
+            "command": "docker build -t smash-league .",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "command": "docker run --rm smash-league npm test",
+            "dependsOn": [ "Build Docker image"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         }
     ]
 }

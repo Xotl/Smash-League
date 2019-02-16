@@ -6,6 +6,9 @@ const CHALLENGE_REGEX = `^.*?reto.*?<@.*?>`
 const REPORTED_RESULT_REGEX = `(<@.*?>).*?([0-9].*)-.*([0-9)]).*(<@.*?>)`
 const USERS_TAGGED_REGEX = `<@.*?>`
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
+const POINTS_IF_CHALLENGER_WINS = 3
+const POINTS_IF_PLAYER_CHALLENGED_WINS = 1
+const POINTS_IF_PLAYER_CHALLENGED_LOSES = 1
 const GetUserIDFromUserTag = userTag => userTag.slice(2, -1)
 
 const categorizeSlackMessages = (messagesArray) => {
@@ -232,7 +235,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             }
 
             // Apply points to winner score
-            updatedScoreboard[winner] = (updatedScoreboard[winner] || 0) + (winner === validChallenger ? 3 : 1)
+            updatedScoreboard[winner] = (updatedScoreboard[winner] || 0) + (winner === validChallenger ? POINTS_IF_CHALLENGER_WINS : POINTS_IF_PLAYER_CHALLENGED_WINS)
         }
     )
 
@@ -267,14 +270,43 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
         throw new Error(`The "rankingObj" argument must be an object but received "${typeof rankingObj}" instead.`)
     }
 
-    console.log(`Activities to digets: ${JSON.stringify(activities)}`)
-    console.log(`Current ranking object: ${JSON.stringify(rankingObj)}`)
+    console.log(`--- Activities to digets:\n${JSON.stringify(activities)}\n---\n`)
+    console.log(`--- Current ranking object:\n${JSON.stringify(rankingObj)}\n---\n`)
 
     const { reportedResults = [], challenges = [] } = activities
     const { ranking, in_progress: { active_challenges, completed_challenges, scoreboard } } = rankingObj
     const newActiveChallenges = calculateNewChallenges(challenges, ranking, active_challenges, completed_challenges)
 
     return getUpdatedChallengesAndScoreboard(reportedResults, ranking, scoreboard, completed_challenges, newActiveChallenges)
+}
+
+const applyScoreForChallengesNotCompleted = (scoreboard, activeChallenges) => {
+    return Object.keys(activeChallenges).reduce(
+        (newScoreboard, challengerId) => {
+
+            if (typeof newScoreboard[challengerId] !== 'number') {
+                // We add a initial value in case this is their first points
+                newScoreboard[challengerId] = 0
+            }
+
+            activeChallenges[challengerId].forEach(
+                playerChallengedId => {
+                    newScoreboard[challengerId] += POINTS_IF_CHALLENGER_WINS
+
+                    if (newScoreboard[playerChallengedId]) {
+                        newScoreboard[playerChallengedId] -= POINTS_IF_PLAYER_CHALLENGED_LOSES
+                    }
+
+                    if (newScoreboard[playerChallengedId] < 0) {
+                        newScoreboard[playerChallengedId] = 0
+                    }
+                }
+            )
+
+            return newScoreboard
+        },
+        { ...scoreboard }
+    )
 }
 
 const isItTimeToCommitInProgress = (current, last) => {
@@ -284,7 +316,7 @@ const isItTimeToCommitInProgress = (current, last) => {
         return false
     }
 
-    if ( current.getDay() === 7 && (last.getDay() !== 7 || diff >= MILISECONDS_24HOURS) ) {
+    if ( current.getDay() === 0 && (last.getDay() !== 0 || diff >= MILISECONDS_24HOURS) ) {
         // if current is sunday and last is not, or there's at least 24 hours of difference
         return true
     }
@@ -295,6 +327,8 @@ const isItTimeToCommitInProgress = (current, last) => {
 const commitInProgress = rankingObj => {
     const result = { ...rankingObj }
     const inProgress = { ...result.in_progress }
+
+    inProgress.scoreboard = applyScoreForChallengesNotCompleted(inProgress.scoreboard, inProgress.activeChallenges)
 
     result.last_update_ts = inProgress.last_update_ts
     result.scoreboard = inProgress.scoreboard
@@ -315,5 +349,6 @@ module.exports = {
     getNumberOfChallengesAllowed,
     canPlayerAChallengePlayerB,
     getUpdatedChallengesAndScoreboard,
-    commitInProgress
+    commitInProgress,
+    applyScoreForChallengesNotCompleted
 }
