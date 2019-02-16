@@ -48,7 +48,7 @@ Examples of valid challenges expressions:
 
 **NOTE: Any non valid challenge will be ignored by the bot**
 
-You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash-league.js#L5) for more details.
+You can check [the regexp used](src/smash-league.js#L5) for more details.
 
 ### Reporting a result after a match
 Tag the bot and then post the result in the next format: {playerA} {result A}-{result B} {playerB}
@@ -59,7 +59,7 @@ Examples of valid results expressions:
 * `@Smash League` :snowman: `@Pancho` 2-3 `@José`, ése Pancho no trae nada
 
 **NOTE: Any non valid result will be ignored by the bot**
-You can check [the regexp used](https://github.com/Xotl/Smash-League/blob/master/src/smash-league.js#L6) for more details.
+You can check [the regexp used](src/smash-league.js#L6) for more details.
 
 
 ## Current Ruleset
@@ -108,7 +108,7 @@ If you want to contribute, you can rise issues or create your PR.
 ### Running and debugging with VS Code
 * Install Docker
 * Install Visual Studio Code
-* Add your [Slack API token in `.vscode/launch.json`(./.vscode/launch.json#18) file
+* Add your [Slack API token in `.vscode/launch.json`(.vscode/launch.json#18) file
 * Press `F5` to run & debug the project in VS Code
 
 *Note: Might not work on Windows*

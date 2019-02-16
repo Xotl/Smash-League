@@ -96,16 +96,16 @@ const getNumberOfChallengesAllowed = place => {
 
 const getTotalOfChallengesDoneByPlayer = (activePlayerChallenges = [], completedPlayerChallenges = []) => activePlayerChallenges.length + completedPlayerChallenges.length
 
-const isValidChallenge = (challengerId, playerChallengedId, activeChallenges = [], completedChallenges = []) => {
+const isValidChallenge = (challengerId, playerChallengedId, activeChallenges = [], completedChallenges = [], ranking = []) => {
     const isAlreadyChallenged = activeChallenges.includes(playerChallengedId) || completedChallenges.includes(playerChallengedId)
-    return !isAlreadyChallenged && challengerId !== playerChallengedId
+    return !isAlreadyChallenged && challengerId !== playerChallengedId && canPlayerAChallengePlayerB(challengerId, playerChallengedId, ranking)
 }
 
 const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, completedChallenges) => {
-    const newValidChallenges = newChallenges.reduce(
+    return newChallenges.reduce(
         (validChallenges, challenge) => {
             const challengerId = challenge.challenger
-            const challengerActiveChallenges = activeChallenges[challengerId]
+            const challengerActiveChallenges = validChallenges[challengerId]
             const challengerCompletedChallenges = completedChallenges[challengerId]
             const playerPlace = getRankingPlaceByPlayerId(challengerId, ranking)
             const numberOfChallengesAllowed = getNumberOfChallengesAllowed(playerPlace)
@@ -122,13 +122,17 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
             
             for (let idx = 0; challengesLeft > 0 && idx < challenge.peopleChallenged.length; idx++) {
                 const playerChallenged = challenge.peopleChallenged[idx]
-                if (isValidChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges)) {
+                if (isValidChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges, ranking)) {
                     
-                    if (!validChallenges[challengerId]) {
-                        validChallenges[challengerId] = {}
+                    if (!validChallenges[challengerId]) {// No previous active challenges 
+                        validChallenges[challengerId] = []
+                    }
+                    else if (validChallenges[challengerId] === activeChallenges[challengerId]) {
+                        // Cloning the array to safely modify it
+                        validChallenges[challengerId] = [ ...activeChallenges[challengerId] ]
                     }
 
-                    validChallenges[challengerId][playerChallenged] = true
+                    validChallenges[challengerId].push(playerChallenged)
                     challengesLeft--
                 }
                 else {
@@ -138,25 +142,8 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
 
             return validChallenges
         },
-        {}
+        { ...activeChallenges }
     )
-
-    
-
-    const newActiveChallenges = { ...activeChallenges }
-
-    Object.keys(newValidChallenges).forEach(
-        playerId => {
-            if (!newActiveChallenges[playerId]) {// First challenges
-                newActiveChallenges[playerId] = Object.keys(newValidChallenges[playerId])
-            }
-            else {// Adds Challenges
-                newActiveChallenges[playerId] = [ ...activeChallenges[playerId], ...Object.keys( newValidChallenges[playerId] ) ]
-            }
-        }
-    )
-
-    return newActiveChallenges
 }
 
 const canPlayerAChallengePlayerB = (playerA, playerB, ranking) => {
@@ -221,7 +208,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             
 
 
-            // Removes the active challenge because now is completed, if challenge got reported previously
+            // Removes the active challenge because now is completed, only if challenge got reported previously
             let indexOfPlayerChallenged = -1
 
             if (Array.isArray(updatedActiveChallenges[validChallenger])) {// Looks if challenge was reported 
