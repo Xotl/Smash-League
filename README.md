@@ -105,7 +105,7 @@ A player cannot deliberately persuade another player to play on a stage that the
 ## Want to contribute?
 If you want to contribute, you can rise issues or create your PR.
 
-### Running & debugging with VS Code
+### Running and debugging with VS Code
 * Install Docker
 * Install Visual Studio Code
 * Add your [Slack API token in `.vscode/launch.json`(./.vscode/launch.json#18) file
