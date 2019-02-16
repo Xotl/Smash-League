@@ -4,7 +4,7 @@ services:
   - docker
 
 install:
-  - docker build -t smash-league .
+  - docker build --build-arg NODE_ENV=prod -t smash-league .
 
 script:
       - docker run --rm smash-league npm test
