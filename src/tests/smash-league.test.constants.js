@@ -43,7 +43,8 @@ module.exports = {
 
     activeChallenges1: {
         UB616ENA0: ['U8THDCVJ7',  'UBA5M220K'],
-        UEWUZCYJF: ['UE82A6MNY']
+        UEWUZCYJF: ['UE82A6MNY'],
+        "Non-ranked-player": ['U8THDCVJ7']
     },
 
     completedChallenges1: {
