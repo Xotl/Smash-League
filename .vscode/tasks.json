@@ -6,11 +6,7 @@
         {
             "label": "Build Docker image",
             "type": "shell",
-            "command": "docker build -t smash-league .",
-            "presentation": {
-                "reveal": "always",
-                "panel": "new"
-            }
+            "command": "docker build -t smash-league ."
         }
     ]
 }
