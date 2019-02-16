@@ -14,14 +14,14 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 10. `Michel` - 4 points
 11. `Niightz` - 3 points
 
-## In progress this week *Sat, 16 Feb 2019 15:50:01 GMT*
+## In progress this week *Sat, 16 Feb 2019 17:41:12 GMT*
 This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
 * Player `Neku` challenged `Aldo`.
-* Player `Alan` challenged `Gustavo "Díganme El Jefazo" Mejía`, `Homero`, `Niightz`.
+* Player `Alan` challenged `Niightz`.
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -36,14 +36,14 @@ Matches that already happened during this week.
 * `D.I.O.` challenged `El Minion` and **lost** *3-0*.
 * `César Gutman` challenged `Xotl` and **lost** *3-0*.
 * `César Gutman` challenged `Aldo` and **lost** *3-2*.
-* `El Chino` challenged `D.I.O.` and **lost** *3-1*.
+* `Alan` challenged `Fer Señior` and **won** *3-0*.
+* `Aldo` challenged `Xotl` and **lost** *3-2*.
 * `El Chino` challenged `Niightz` and **lost** *3-1*.
-* `Neku` challenged `Xotl` and **lost** *3-0*.
+* `El Chino` challenged `D.I.O.` and **lost** *3-1*.
 * `UDR61HJCD` challenged `Fer Señior` and **won** *3-0*.
 * `El Minion` challenged `Ángel Lee` and **lost** *3-2*.
 * `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
-* `Alan` challenged `Fer Señior` and **won** *3-0*.
-* `Aldo` challenged `Xotl` and **lost** *3-2*.
+* `Neku` challenged `Xotl` and **lost** *3-0*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
