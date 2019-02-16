@@ -12,7 +12,8 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
 * [Want to contribute?](#Want-to-contribute)
-    * [How to run the project locally](#How-to-run-the-project-locally)
+    * [Running & debugging with VS Code](#Running-&-debugging-with-VS-Code)
+    * [How to run the project locally using Docker](#How-to-run-the-project-locally-using-Docker)
 
 Smash League is a bot used to handle the ranking of the Official Internal Smash League.
 
@@ -104,7 +105,14 @@ A player cannot deliberately persuade another player to play on a stage that the
 ## Want to contribute?
 If you want to contribute, you can rise issues or create your PR.
 
-### How to run the project locally
+### Running & debugging with VS Code
+* Install Docker
+* Install Visual Studio Code
+* Press `F5` to run & debug the project in VS Code
+
+*Note: Might not work on Windows*
+
+### How to run the project locally using Docker
 * Install Docker
 * Run `docker build -t smash-league .`
 * Run `docker run -it --rm -v ${PWD}/src:/usr/app/src -v ${PWD}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN="Your Slack API token here" smash-league`
