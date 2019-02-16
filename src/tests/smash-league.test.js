@@ -20,8 +20,38 @@ const Scoreboard = SmashLeagueTestConstants.Scoreboard
 //     })
 // })
 
+describe('Smash League - Other functionality', () => {
+    test('isItTimeToCommitInProgress', () => {
+        let lastDate, currentDate
 
-describe('Smash League Ranking', () => {
+        lastDate = new Date('2019-02-12T03:24:00')
+        currentDate = new Date('2019-02-14T00:22:00')
+        expect(
+            SmashLeague.isItTimeToCommitInProgress(currentDate, lastDate)
+        ).toBe(false)
+
+        lastDate = new Date('2019-02-10T02:02:00')
+        currentDate = new Date('2019-02-10T05:11:00')
+        expect(
+            SmashLeague.isItTimeToCommitInProgress(currentDate, lastDate)
+        ).toBe(false)
+
+        lastDate = new Date('2019-02-09T12:02:00')
+        currentDate = new Date('2019-02-10T01:11:00')
+        expect(
+            SmashLeague.isItTimeToCommitInProgress(currentDate, lastDate)
+        ).toBe(true)
+
+        lastDate = new Date('2019-02-10T02:02:00')
+        currentDate = new Date('2019-02-17T05:11:00')
+        expect(
+            SmashLeague.isItTimeToCommitInProgress(currentDate, lastDate)
+        ).toBe(true)
+    })
+})
+
+
+describe('Smash League - Ranking', () => {
 
     test('getRankingPlaceByPlayerId', () => {
         expect(
@@ -78,6 +108,10 @@ describe('Smash League Ranking', () => {
     test('canPlayerAChallengePlayerB', () => {
         expect(
             SmashLeague.canPlayerAChallengePlayerB('Aldo', 'Gustavo', RankingArray)
+        ).toBe(false);
+
+        expect(
+            SmashLeague.canPlayerAChallengePlayerB('Non ranked', 'Another non ranked', RankingArray)
         ).toBe(false);
 
         expect(
