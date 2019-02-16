@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch in Docker",
+            "name": "Run project",
             "preLaunchTask": "Build Docker image",
             "runtimeExecutable": "docker",
             "runtimeArgs": [
@@ -21,7 +21,28 @@
             ],
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
-            "port": 9229
+            "port": 9229,
+            // "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug tests",
+            "preLaunchTask": "Build Docker image",
+            "runtimeExecutable": "docker",
+            "runtimeArgs": [
+                "run", "--rm",
+                "-p", "9229:9229",
+                "-v", "${workspaceFolder}/src:/usr/app/src",
+                "smash-league",
+                "node", "--inspect-brk=0.0.0.0:9229", "./node_modules/.bin/jest",
+                "--runInBand"
+            ],
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/usr/app",
+            "port": 9229,
+            // "console": "integratedTerminal",
+            // "internalConsoleOptions": "neverOpen"
         }
     ]
 }
