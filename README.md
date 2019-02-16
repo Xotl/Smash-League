@@ -1,4 +1,4 @@
-# Smash League ![Travis Status](https://travis-ci.org/Xotl/Smash-League.svg?branch=master)
+# Smash League [![Travis Status](https://travis-ci.org/Xotl/Smash-League.svg?branch=master)](https://travis-ci.org/Xotl/Smash-League)
 
 ## Looking for the current ranking?
 If your are looking for the current rank table and scoreboard [visit the `ranking-info` folder](./ranking-info/) of this repo.
@@ -12,7 +12,7 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
 * [Want to contribute?](#Want-to-contribute)
-    * [Running & debugging with VS Code](#Running-&-debugging-with-VS-Code)
+    * [Running and debugging with VS Code](#Running-and-debugging-with-VS-Code)
     * [How to run the project locally using Docker](#How-to-run-the-project-locally-using-Docker)
 
 Smash League is a bot used to handle the ranking of the Official Internal Smash League.
