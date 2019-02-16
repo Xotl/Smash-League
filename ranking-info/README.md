@@ -14,8 +14,8 @@ Last updated **Sun, 10 Feb 2019 22:04:59 GMT**.
 10. `Michel` - 4 points
 11. `Niightz` - 3 points
 
-## In progress this week *Sat, 16 Feb 2019 17:41:12 GMT*
-This section shows the progress of the week. Every saturday the below categories will be reseted and the Ranking will get updated.
+## In progress this week *Sat, 16 Feb 2019 20:30:03 GMT*
+This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
