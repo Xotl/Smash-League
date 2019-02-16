@@ -108,6 +108,7 @@ If you want to contribute, you can rise issues or create your PR.
 ### Running & debugging with VS Code
 * Install Docker
 * Install Visual Studio Code
+* Add your [Slack API token in `.vscode/launch.json`(./.vscode/launch.json#18) file
 * Press `F5` to run & debug the project in VS Code
 
 *Note: Might not work on Windows*
