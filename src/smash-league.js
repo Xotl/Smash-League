@@ -384,7 +384,7 @@ const commitInProgress = rankingObj => {
     const result = { ...rankingObj }
     const inProgress = { ...result.in_progress }
 
-    inProgress.scoreboard = applyScoreForChallengesNotCompleted(inProgress.scoreboard, inProgress.activeChallenges)
+    inProgress.scoreboard = applyScoreForChallengesNotCompleted(inProgress.scoreboard, inProgress.active_challenges)
 
     result.last_update_ts = inProgress.last_update_ts
     result.scoreboard = inProgress.scoreboard
