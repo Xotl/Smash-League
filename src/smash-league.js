@@ -392,6 +392,7 @@ const commitInProgress = rankingObj => {
     inProgress.active_challenges = {}
     inProgress.completed_challenges = {}
     inProgress.reported_results = []
+    result.in_progress = inProgress
     return result
 }
 
