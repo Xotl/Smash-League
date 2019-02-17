@@ -99,12 +99,57 @@ const getNumberOfChallengesAllowed = place => {
 
 const getTotalOfChallengesDoneByPlayer = (activePlayerChallenges = [], completedPlayerChallenges = []) => activePlayerChallenges.length + completedPlayerChallenges.length
 
-const isValidChallenge = (challengerId, playerChallengedId, activeChallenges = [], completedChallenges = [], ranking = []) => {
-    const isAlreadyChallenged = activeChallenges.includes(playerChallengedId) || completedChallenges.includes(playerChallengedId)
-    return !isAlreadyChallenged && challengerId !== playerChallengedId && canPlayerAChallengePlayerB(challengerId, playerChallengedId, ranking)
+const doesPlayerAlreadyFoughtOrChallengedThatPlace = (playerId, playerActiveChallenges = [], playerCompletedChallenges = [], ranking) => {
+    const place = typeof playerId === 'string' ? getRankingPlaceByPlayerId(playerId, ranking) : playerId
+
+    for (let idx = 0; idx < playerActiveChallenges.length; idx++) {
+        if ( getRankingPlaceByPlayerId(playerActiveChallenges[idx], ranking) === place) {
+            return true
+        }
+    }
+    
+    for (let idx = 0; idx < playerCompletedChallenges.length; idx++) {
+        if ( getRankingPlaceByPlayerId(playerCompletedChallenges[idx].playerChallenged, ranking) === place) {
+            return true
+        }
+    }
+
+    return false
 }
 
-const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, completedChallenges) => {
+const isPlayerUnranked = (playerId, ranking) => {
+    const place = typeof playerId === 'string' ? getRankingPlaceByPlayerId(playerId, ranking) : playerId
+    return place > ranking.length
+}
+
+const isValidChallenge = (challengerId, playerChallengedId, challengerActiveChallenges = [], challengerCompletedChallenges = [], ranking = [], scoreboard = {}) => {
+
+    if (challengerId === playerChallengedId) {
+        return false// He tried to fool the bot by challenging himself ¬¬'
+    }
+
+    if (challengerActiveChallenges.includes(playerChallengedId)) {
+        return false// Duplicated challenge
+    }
+
+    const challengerPlace = getRankingPlaceByPlayerId(challengerId, ranking)
+
+    if (isPlayerUnranked(challengerPlace, ranking) && scoreboard[ playerChallengedId ] === 0) {
+        // Unranked player challenged a player with 0 points
+        return false
+    }
+    
+    if ( doesMatchBetweenPlayersAlreadyHappened(challengerId, playerChallengedId, challengerCompletedChallenges) ) {
+        return false// Match already happened, challenge can't happen now
+    }
+
+    if ( doesPlayerAlreadyFoughtOrChallengedThatPlace(playerChallengedId, challengerActiveChallenges, challengerCompletedChallenges, ranking) ) {
+        return false// Player can't challenge or fight multiple players in the same place
+    }
+    return canPlayerAChallengePlayerB(challengerId, playerChallengedId, ranking)
+}
+
+const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, completedChallenges, scoreboard) => {
     return newChallenges.reduce(
         (validChallenges, challenge) => {
             const challengerId = challenge.challenger
@@ -125,7 +170,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
             
             for (let idx = 0; challengesLeft > 0 && idx < challenge.peopleChallenged.length; idx++) {
                 const playerChallenged = challenge.peopleChallenged[idx]
-                if (isValidChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges, ranking)) {
+                if (isValidChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges, ranking, scoreboard)) {
                     
                     if (!validChallenges[challengerId]) {// No previous active challenges 
                         validChallenges[challengerId] = []
@@ -139,7 +184,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
                     challengesLeft--
                 }
                 else {
-                    console.log(`Ignored challenge from "${challengerId}" to ${playerChallenged} because is not a valid.`)
+                    console.log(`Ignored challenge from "${challengerId}" to "${playerChallenged}" because is not a valid.`)
                 }
             }
 
@@ -147,6 +192,12 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
         },
         { ...activeChallenges }
     )
+}
+
+const doesMatchBetweenPlayersAlreadyHappened = (challenger, playerChallenged, completedPlayerChallenges) => {
+    return completedPlayerChallenges.find(
+        ({players}) =>  players.includes(challenger) && players.includes(playerChallenged)
+    ) !== undefined
 }
 
 const canPlayerAChallengePlayerB = (playerA, playerB, ranking) => {
@@ -188,32 +239,37 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
                 return// Non of the players could challenge the other one, ignoring result
             }
 
-            if (Array.isArray( updatedCompletedChallenges[validChallenger] )) {// Checks if player already have completed challenges
-                const matchBetweenPlayersExists = updatedCompletedChallenges[validChallenger].find(
-                    ({players}) =>  players.includes(validChallenger) && players.includes(playerChallenged)
+            
+            if (// Checks if challenge already got validated before otherwise does a full check
+                updatedActiveChallenges[validChallenger].includes(playerChallenged) || 
+                isValidChallenge(
+                    validChallenger, playerChallenged,
+                    updatedActiveChallenges[validChallenger],
+                    updatedCompletedChallenges[validChallenger],
+                    ranking,
+                    scoreboard
                 )
-                if (matchBetweenPlayersExists) {
-                    console.log(`Ignored result because match between players already exists: ${JSON.stringify(reportedResult)}`)
-                    return// Match between these players already registered, ignoring result
-                }
-
-                // Valid match result, let's clone the array if not yet cloned to safely modify it
-                if (updatedCompletedChallenges[validChallenger] === completedChallenges[validChallenger]) {
-                    updatedCompletedChallenges[validChallenger] = [ ...completedChallenges[validChallenger] ]
-                }
+            )
+            {
+                console.log(`Ignored result because match between players is not valid: ${JSON.stringify(reportedResult)}`)
             }
-            else {// First challenge completed by this player
+
+            if ( !Array.isArray( updatedCompletedChallenges[validChallenger] ) ) {
+                // Player does not have any completed matches yet
                 updatedCompletedChallenges[validChallenger] = []
             }
+            else if (updatedCompletedChallenges[validChallenger] === completedChallenges[validChallenger]) {
+                // Let's clone the array if not yet cloned to safely modify it
+                updatedCompletedChallenges[validChallenger] = [ ...completedChallenges[validChallenger] ]
+            }
+
 
             // Adds the result to completed challenges
             updatedCompletedChallenges[validChallenger].push({ challenger: validChallenger, playerChallenged, ...reportedResult })
             
 
-
             // Removes the active challenge because now is completed, only if challenge got reported previously
             let indexOfPlayerChallenged = -1
-
             if (Array.isArray(updatedActiveChallenges[validChallenger])) {// Looks if challenge was reported 
                 indexOfPlayerChallenged = updatedActiveChallenges[validChallenger].indexOf(playerChallenged)
             }
@@ -275,7 +331,7 @@ const digestActivitiesAndGetUpdatedRankingObj = (activities, rankingObj) => {
 
     const { reportedResults = [], challenges = [] } = activities
     const { ranking, in_progress: { active_challenges, completed_challenges, scoreboard } } = rankingObj
-    const newActiveChallenges = calculateNewChallenges(challenges, ranking, active_challenges, completed_challenges)
+    const newActiveChallenges = calculateNewChallenges(challenges, ranking, active_challenges, completed_challenges, scoreboard)
 
     return getUpdatedChallengesAndScoreboard(reportedResults, ranking, scoreboard, completed_challenges, newActiveChallenges)
 }
@@ -328,7 +384,7 @@ const commitInProgress = rankingObj => {
     const result = { ...rankingObj }
     const inProgress = { ...result.in_progress }
 
-    inProgress.scoreboard = applyScoreForChallengesNotCompleted(inProgress.scoreboard, inProgress.activeChallenges)
+    inProgress.scoreboard = applyScoreForChallengesNotCompleted(inProgress.scoreboard, inProgress.active_challenges)
 
     result.last_update_ts = inProgress.last_update_ts
     result.scoreboard = inProgress.scoreboard
@@ -336,6 +392,7 @@ const commitInProgress = rankingObj => {
     inProgress.active_challenges = {}
     inProgress.completed_challenges = {}
     inProgress.reported_results = []
+    result.in_progress = inProgress
     return result
 }
 
@@ -350,5 +407,6 @@ module.exports = {
     canPlayerAChallengePlayerB,
     getUpdatedChallengesAndScoreboard,
     commitInProgress,
-    applyScoreForChallengesNotCompleted
+    applyScoreForChallengesNotCompleted,
+    isValidChallenge
 }

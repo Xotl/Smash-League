@@ -1,10 +1,8 @@
 'use strict'
-
 const fs = require('fs')
 const path = require('path')
 const Utils = require('./utils')
 const Config = require('../config.json')
-
 
 
 const getPlayerNameById = playerId => Config.users_dict[playerId] || playerId
@@ -122,7 +120,44 @@ const updateRankingMarkdownFile = async rankingObj => {
 }
 
 
+const updateHistoryLog = async inProgressObj => {
+    const filePath = path.join(__dirname, '..', 'ranking-info', 'history-log.md')
+    const newStringToAppend = `## Commit from ${Utils.GetDateObjFromEpochTS(inProgressObj.last_update_ts).toUTCString()}
+### Completed challenges
+${getCompletedChallengesMarkdown(inProgressObj.completed_challenges)}
+### Incompleted challenges
+${getActiveChallengesMarkdown(inProgressObj.active_challenges)}
+
+
+`
+
+    const newDataBuffer = Buffer.from(newStringToAppend)
+    return new Promise(
+        (resolve, reject) => {
+            fs.readFile(filePath, (err, data) => {// Reads current file data
+                if (err) return reject({err})
+                fs.open(filePath, 'w', (err, fd) => {// Opens file to write on it
+                    if (err) return reject({err, fd})
+                    fs.writeSync(fd, newDataBuffer, 0, newDataBuffer.length, 0)
+                    fs.writeSync(fd, data, 0, data.length, newDataBuffer.length)
+                    fs.closeSync(fd)
+                    resolve()
+                })
+            })
+        }
+    ).catch(obj => {
+        if(typeof obj.fd === 'number') {
+            fs.closeSync(obj.fd)
+        }
+        throw obj.err
+    })
+}
+
+    
+
+
 module.exports = {
     updateRankingJsonFile,
-    updateRankingMarkdownFile
+    updateRankingMarkdownFile,
+    updateHistoryLog
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-    RankingArray: [
+    RANKING_ARRAY1: [
         ['Xotl'],
         ['Manco', 'Aldo'],
         ['Pancho'],
@@ -17,8 +17,23 @@ module.exports = {
         ['Gustavo'],
         ['Carlos Lopez', 'David', 'Beto']// 14th
     ],
+
+    RANKING_ARRAY2: [
+        [ "UDBD59WLT" ],
+        [ "U61MBQTR8" ],
+        [ "U8QS8T0CX" ],// 3rd
+        [ "UBA5M220K", "U8THDCVJ7"  ],
+        [ "UB616ENA0" ],// 5th
+        [ "U87CK0E4A" ],
+        [ "U6457D5KQ" ],
+        [ "U8M6QT7EF" ],
+        [ "U7VAPLNCR" ],
+        [ "UAGR4S57G" ],// 10th
+        [ "UBRCZ6G4B", "UBRMBGR6Z" ],
+        [ "U8A96RCEA", "UE82A6MNY", "UEWUZCYJF", "U6H8DDV25", "U622XCTAA", "U8CEKPXQR", "UBHGVCY4X" ]// 12th
+    ],
     
-    Scoreboard: {
+    SCOREBOARD: {
         "UDBD59WLT": 21,
         "U61MBQTR8": 20,
         "U8QS8T0CX": 18,
@@ -31,7 +46,7 @@ module.exports = {
         "U7VAPLNCR": 5,
         "UAGR4S57G": 4,
         "UBRCZ6G4B": 3,
-        "UBRMBGR6Z": 0,
+        "UBRMBGR6Z": 3,
         "U8A96RCEA": 0,
         "UE82A6MNY": 0,
         "UEWUZCYJF": 0,
@@ -41,13 +56,14 @@ module.exports = {
         "UBHGVCY4X": 0
     },
 
-    activeChallenges1: {
-        UB616ENA0: ['U8THDCVJ7',  'UBA5M220K'],
+    ACTIVE_CHALLENGES1: {
+        UB616ENA0: ['U8THDCVJ7',  'U8QS8T0CX'],
         UEWUZCYJF: ['UE82A6MNY'],
-        "Non-ranked-player": ['U8THDCVJ7']
+        U87CK0E4A: ['U8THDCVJ7'],
+        "Non ranked player": ['U8THDCVJ7']
     },
 
-    completedChallenges1: {
+    COMPLETED_CHALLENGES1: {
         UBHGVCY4X: [
             {
                 "challenger": "UBHGVCY4X", "playerChallenged": "UBRCZ6G4B", "winner": "UBHGVCY4X", 
@@ -66,7 +82,7 @@ module.exports = {
         ]
     },
 
-    reportedResults1: [
+    REPORTED_RESULTS1: [
         {
             "winner": "U8NH8QSG1", "player1": "U8NH8QSG1", "player2": "U3TSWQUHE",
             "player1Result": 3, "player2Result": 1, "players": ["U8NH8QSG1", "U3TSWQUHE"]
@@ -77,7 +93,7 @@ module.exports = {
         },
     ],
 
-    challenges1: [
+    CHALLENGES1: [
         { "challenger": "U3UGF00BD", "peopleChallenged": ["U3TSWQUHE", "U3UG9PQSF"] }
     ]
 }
