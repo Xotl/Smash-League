@@ -22,19 +22,14 @@ async function Main() {
     newInProgressObj.last_update_ts = Utils.GetEpochUnixFromDate(now)
     let newRankingObj = { ...Ranking, in_progress: newInProgressObj }
 
-    // console.log('Wow, such in_progress', newRankingObj.in_progress.completed_challenges)
-
     if (SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
+        OutputGenerator.updateHistoryLog(newInProgressObj)
     }
     else {
         // Updates ranking table in case there's a manual change in current scoreboard
         newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(newRankingObj.scoreboard)
     }
-    
-    
-    // console.log('Wow, such newRankingObj', newRankingObj)
-    // console.log('Wow, such ranking', SmashLeague.getRankingFromScoreboard(newInProgressObj.scoreboard))
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
     await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
