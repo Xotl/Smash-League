@@ -22,7 +22,8 @@ async function Main() {
     newInProgressObj.last_update_ts = Utils.GetEpochUnixFromDate(now)
     let newRankingObj = { ...Ranking, in_progress: newInProgressObj }
 
-    if (SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)) {
+    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)
+    if (isItTimeToCommit) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
         OutputGenerator.updateHistoryLog(newInProgressObj)
     }
@@ -33,6 +34,23 @@ async function Main() {
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
     await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
+
+    if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
+        if (isItTimeToCommit) {
+            Slack.postMessageInChannel(
+                '¡Ha iniciando un nuevo ranking esta semana!, ya pueden revisar en qué lugar quedaron.\n' +
+                'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
+                , SMASH_SLACK_CHANNEL_ID
+            )
+        }
+        else {
+            Slack.postMessageInChannel(
+                'Aquí reportando que ya actualicé el scoreboard -> ' +
+                'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
+                , SMASH_SLACK_CHANNEL_ID
+            )
+        }
+    }
     console.log('Finished Successfully.')
 }
 
