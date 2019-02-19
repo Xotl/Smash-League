@@ -67,7 +67,7 @@
     "in_progress": {
         "scoreboard": {
             "U8A96RCEA": 0,
-            "U61MBQTR8": 28,
+            "U61MBQTR8": 29,
             "U7VAPLNCR": 9,
             "UBRMBGR6Z": 6,
             "UE82A6MNY": 0,
@@ -97,9 +97,6 @@
             ],
             "U6457D5KQ": [
                 "U87CK0E4A"
-            ],
-            "UBA5M220K": [
-                "U61MBQTR8"
             ],
             "U8QS8T0CX": [
                 "UB616ENA0",
@@ -172,8 +169,23 @@
                         "U8THDCVJ7"
                     ]
                 }
+            ],
+            "UBA5M220K": [
+                {
+                    "challenger": "UBA5M220K",
+                    "playerChallenged": "U61MBQTR8",
+                    "winner": "U61MBQTR8",
+                    "player1": "U61MBQTR8",
+                    "player2": "UBA5M220K",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "U61MBQTR8",
+                        "UBA5M220K"
+                    ]
+                }
             ]
         },
-        "last_update_ts": 1550554885.945
+        "last_update_ts": 1550615562.873
     }
 }
