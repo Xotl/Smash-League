@@ -15,32 +15,41 @@ Last updated **Sun, 17 Feb 2019 22:18:07 GMT**.
 11. `Michel` - 4 points
 12. `Niightz`, `Sammy` - 3 points
 
-## In progress this week *Mon, 18 Feb 2019 05:40:23 GMT*
+## In progress this week *Tue, 19 Feb 2019 05:41:25 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-
+* Player `Gilberto "Gil" Ruelas` challenged `Fer Señior`.
+* Player `Alan` challenged `D.I.O.`.
+* Player `D.I.O.` challenged `Fer Señior`.
+* Player `José "El Iceberg" Rosales` challenged `Xotl`.
+* Player `Aldo` challenged `Ángel Lee`, `Neku`.
+* Player `Neku` challenged `Ángel Lee`.
+* Player `César Gutman` challenged `Aldo`.
 
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
+* `Sammy` challenged `Gilberto "Gil" Ruelas` and **lost** *3-0*.
+* `Ángel Lee` challenged `Xotl` and **lost** *3-2*.
+* `César Gutman` challenged `Neku` and **won** *3-0*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
 
-* Xotl: 27
+* Xotl: 28
+* José "El Iceberg" Rosales: 27
 * Ángel Lee: 26
-* José "El Iceberg" Rosales: 26
+* César Gutman: 24
 * Neku: 24
 * Aldo: 22
-* César Gutman: 21
 * El Minion: 18
 * Fer Señior: 15
 * D.I.O.: 14
-* Gilberto "Gil" Ruelas: 8
+* Gilberto "Gil" Ruelas: 9
 * Alan: 6
 * Michel: 4
 * Niightz: 3
