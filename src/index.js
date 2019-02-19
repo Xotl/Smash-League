@@ -44,6 +44,7 @@ async function Main() {
             )
         }
         else {
+            console.log('The Travis event type is:', process.env.TRAVIS_EVENT_TYPE)
             switch(process.env.TRAVIS_EVENT_TYPE) {
                 case 'push':
                     Slack.postMessageInChannel(
@@ -60,8 +61,6 @@ async function Main() {
                         , SMASH_SLACK_CHANNEL_ID
                     )                    
                     break;
-
-
             }
         }
     }
