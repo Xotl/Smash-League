@@ -44,11 +44,25 @@ async function Main() {
             )
         }
         else {
-            Slack.postMessageInChannel(
-                'Aquí reportando que ya actualicé el scoreboard -> ' +
-                'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-                , SMASH_SLACK_CHANNEL_ID
-            )
+            switch(process.env.TRAVIS_EVENT_TYPE) {
+                case 'push':
+                    Slack.postMessageInChannel(
+                        '¡He sido actualizado!... espero que sean nuevos features y no bugs :unamused:\n' +
+                        'Y con la actualizacion también busqué mensajes nuevos para actualizar el ranking (si es que hubo actividad).\n' +
+                        'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
+                        , SMASH_SLACK_CHANNEL_ID
+                    )                    
+                    break;
+                case 'cron':
+                    Slack.postMessageInChannel(
+                        'Aquí reportando que ya actualicé el scoreboard ->' +
+                        'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
+                        , SMASH_SLACK_CHANNEL_ID
+                    )                    
+                    break;
+
+
+            }
         }
     }
     console.log('Finished Successfully.')
