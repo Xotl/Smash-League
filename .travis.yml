@@ -8,6 +8,7 @@ install:
 
 script:
       - docker run --rm smash-league npm test
+      - ls -a
       - docker run --rm -v ${TRAVIS_BUILD_DIR}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN=${SLACK_API_TOKEN} -e TRAVIS_BRANCH=${TRAVIS_BRANCH} -e TRAVIS_EVENT_TYPE=${TRAVIS_EVENT_TYPE} -e CI=${CI} smash-league
 
 if: commit_message =~ /^(?!Deploy .* to .*\:.*).+/ OR type IN (cron, api)
