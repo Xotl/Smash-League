@@ -48,7 +48,7 @@ const getRankingBulletsMarkdown = (rankingArray, scoreboardObj) => {
 }
 
 const getScoreboardMarkdown = scoreboardObj => {
-    return '|Player|Points|\n|---|---|---|\n' + Object.keys(scoreboardObj).sort(
+    return '|Player|Points|\n|---|---|\n' + Object.keys(scoreboardObj).sort(
         (a, b) => scoreboardObj[b] - scoreboardObj[a]
     )
     .map(
