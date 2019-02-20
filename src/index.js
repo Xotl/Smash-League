@@ -48,13 +48,13 @@ async function Main() {
             switch(process.env.TRAVIS_EVENT_TYPE) {
                 case 'push':
                     Slack.postMessageInChannel(
-                        '¡He sido actualizado!... espero que sean nuevos features y no sólo bugs. :unamused:\n' +
+                        '¡He sido actualizado!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n' +
                         'Y con la actualizacion también busqué mensajes nuevos para actualizar el ranking (si es que hubo actividad).\n' +
                         'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
                         , SMASH_SLACK_CHANNEL_ID
                     )                    
                     break;
-                    
+
                 case 'cron':
                 default:
                     Slack.postMessageInChannel(
