@@ -54,7 +54,9 @@ async function Main() {
                         , SMASH_SLACK_CHANNEL_ID
                     )                    
                     break;
+                    
                 case 'cron':
+                default:
                     Slack.postMessageInChannel(
                         'Aquí reportando que ya actualicé el scoreboard.' +
                         'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
