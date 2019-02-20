@@ -16,6 +16,10 @@ const categorizeSlackMessages = (messagesArray) => {
         throw new Error('The argument messagesArray must be an Array.')
     }
 
+    messagesArray = messagesArray.sort(// Sorts from oldest to latest
+        (a, b) => Number(a.ts) - Number(b.ts)
+    )
+
     const resultCategorized = messagesArray.reduce(
         (result, { text:message, user }) => {
             if (-1 === message.indexOf(BOT_SLACK_TAG)) {
