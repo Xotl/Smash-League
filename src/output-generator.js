@@ -38,7 +38,7 @@ const updateRankingJsonFile = rankingObj => new Promise(
 )
 
 const getRankingBulletsMarkdown = (rankingArray, scoreboardObj) => {
-    return '|#|User|Points|\n|---|---|---|\n' + rankingArray.map(
+    return '|#|Player|Points|\n|---|---|---|\n' + rankingArray.map(
         (players, idx) => {
             const points = scoreboardObj[ players[0] ]
             const playersNames = players.map( playerId => `\`${getPlayerNameById(playerId)}\`` ).join(', ')
