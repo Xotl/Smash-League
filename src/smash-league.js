@@ -16,6 +16,10 @@ const categorizeSlackMessages = (messagesArray) => {
         throw new Error('The argument messagesArray must be an Array.')
     }
 
+    messagesArray = messagesArray.sort(// Sorts from oldest to latest
+        (a, b) => Number(a.ts) - Number(b.ts)
+    )
+
     const resultCategorized = messagesArray.reduce(
         (result, { text:message, user }) => {
             if (-1 === message.indexOf(BOT_SLACK_TAG)) {
@@ -153,7 +157,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
     return newChallenges.reduce(
         (validChallenges, challenge) => {
             const challengerId = challenge.challenger
-            const challengerActiveChallenges = validChallenges[challengerId]
+            let challengerActiveChallenges = validChallenges[challengerId]
             const challengerCompletedChallenges = completedChallenges[challengerId]
             const playerPlace = getRankingPlaceByPlayerId(challengerId, ranking)
             const numberOfChallengesAllowed = getNumberOfChallengesAllowed(playerPlace)
@@ -172,15 +176,16 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
                 const playerChallenged = challenge.peopleChallenged[idx]
                 if (isValidChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges, ranking, scoreboard)) {
                     
-                    if (!validChallenges[challengerId]) {// No previous active challenges 
-                        validChallenges[challengerId] = []
+                    if (!challengerActiveChallenges) {// No previous active challenges 
+                        challengerActiveChallenges = []
+                        validChallenges[challengerId] = challengerActiveChallenges
                     }
-                    else if (validChallenges[challengerId] === activeChallenges[challengerId]) {
+                    else if (challengerActiveChallenges === activeChallenges[challengerId]) {
                         // Cloning the array to safely modify it
-                        validChallenges[challengerId] = [ ...activeChallenges[challengerId] ]
+                        challengerActiveChallenges = [ ...activeChallenges[challengerId] ]
                     }
 
-                    validChallenges[challengerId].push(playerChallenged)
+                    challengerActiveChallenges.push(playerChallenged)
                     challengesLeft--
                 }
                 else {

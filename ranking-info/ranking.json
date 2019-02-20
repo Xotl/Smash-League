@@ -67,14 +67,14 @@
     "in_progress": {
         "scoreboard": {
             "U8A96RCEA": 0,
-            "U61MBQTR8": 29,
-            "U7VAPLNCR": 9,
+            "U61MBQTR8": 27,
+            "U7VAPLNCR": 8,
             "UBRMBGR6Z": 6,
             "UE82A6MNY": 0,
             "U8QS8T0CX": 22,
             "UB616ENA0": 26,
             "UEWUZCYJF": 0,
-            "UDBD59WLT": 24,
+            "UDBD59WLT": 21,
             "U6H8DDV25": 0,
             "U8M6QT7EF": 18,
             "U87CK0E4A": 15,
@@ -82,110 +82,14 @@
             "U622XCTAA": 0,
             "U8CEKPXQR": 0,
             "U6457D5KQ": 14,
-            "UBA5M220K": 27,
+            "UBA5M220K": 26,
             "UAGR4S57G": 4,
             "UBHGVCY4X": 0,
             "UBRCZ6G4B": 3,
             "UDR61HJCD": 3
         },
-        "active_challenges": {
-            "U7VAPLNCR": [
-                "U87CK0E4A"
-            ],
-            "UBRMBGR6Z": [
-                "U6457D5KQ"
-            ],
-            "U6457D5KQ": [
-                "U87CK0E4A"
-            ],
-            "U8QS8T0CX": [
-                "UB616ENA0",
-                "U8THDCVJ7"
-            ],
-            "U8THDCVJ7": [
-                "UB616ENA0"
-            ],
-            "UDBD59WLT": [
-                "U8QS8T0CX"
-            ]
-        },
-        "completed_challenges": {
-            "U8THDCVJ7": [
-                {
-                    "challenger": "U8THDCVJ7",
-                    "playerChallenged": "UBA5M220K",
-                    "winner": "UBA5M220K",
-                    "player1": "UBA5M220K",
-                    "player2": "U8THDCVJ7",
-                    "player1Result": 3,
-                    "player2Result": 1,
-                    "players": [
-                        "UBA5M220K",
-                        "U8THDCVJ7"
-                    ]
-                }
-            ],
-            "UDR61HJCD": [
-                {
-                    "challenger": "UDR61HJCD",
-                    "playerChallenged": "U7VAPLNCR",
-                    "winner": "U7VAPLNCR",
-                    "player1": "U7VAPLNCR",
-                    "player2": "UDR61HJCD",
-                    "player1Result": 3,
-                    "player2Result": 0,
-                    "players": [
-                        "U7VAPLNCR",
-                        "UDR61HJCD"
-                    ]
-                }
-            ],
-            "UB616ENA0": [
-                {
-                    "challenger": "UB616ENA0",
-                    "playerChallenged": "U61MBQTR8",
-                    "winner": "U61MBQTR8",
-                    "player1": "U61MBQTR8",
-                    "player2": "UB616ENA0",
-                    "player1Result": 3,
-                    "player2Result": 2,
-                    "players": [
-                        "U61MBQTR8",
-                        "UB616ENA0"
-                    ]
-                }
-            ],
-            "UDBD59WLT": [
-                {
-                    "challenger": "UDBD59WLT",
-                    "playerChallenged": "U8THDCVJ7",
-                    "winner": "UDBD59WLT",
-                    "player1": "UDBD59WLT",
-                    "player2": "U8THDCVJ7",
-                    "player1Result": 3,
-                    "player2Result": 0,
-                    "players": [
-                        "UDBD59WLT",
-                        "U8THDCVJ7"
-                    ]
-                }
-            ],
-            "UBA5M220K": [
-                {
-                    "challenger": "UBA5M220K",
-                    "playerChallenged": "U61MBQTR8",
-                    "winner": "U61MBQTR8",
-                    "player1": "U61MBQTR8",
-                    "player2": "UBA5M220K",
-                    "player1Result": 3,
-                    "player2Result": 1,
-                    "players": [
-                        "U61MBQTR8",
-                        "UBA5M220K"
-                    ]
-                }
-            ]
-        },
-        "last_update_ts": 1550617053.756
+        "active_challenges": {},
+        "completed_challenges": {},
+        "last_update_ts": 1550468423.46
     }
 }
