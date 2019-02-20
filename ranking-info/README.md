@@ -2,7 +2,7 @@
 
 Last updated **Sun, 17 Feb 2019 22:18:07 GMT**.
 
-|#|User|Points|
+|#|Player|Points|
 |---|---|---|
 |1|`Xotl`|27|
 |2|`Angel Lee`, `José "El Iceberg" Rosales`|26|
@@ -17,27 +17,28 @@ Last updated **Sun, 17 Feb 2019 22:18:07 GMT**.
 |11|`Michel`|4|
 |12|`Niightz`, `Sammy`|3|
 
-## In progress this week *Tue, 19 Feb 2019 22:57:33 GMT*
+## In progress this week *Wed, 20 Feb 2019 03:51:29 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `Gilberto "Gil" Ruelas` challenged `Fer Señior`.
-* Player `Alan` challenged `D.I.O.`.
-* Player `D.I.O.` challenged `Fer Señior`.
-* Player `Aldo` challenged `Angel Lee`, `Neku`.
-* Player `Neku` challenged `Angel Lee`.
 * Player `César Gutman` challenged `Aldo`.
+* Player `Aldo` challenged `Neku`, `José "El Iceberg" Rosales`.
+* Player `Alan` challenged `Fer Señior`, `Gilberto "Gil" Ruelas`.
+* Player `Gilberto "Gil" Ruelas` challenged `Fer Señior`, `D.I.O.`.
 
 ### Completed challenges
 Matches that already happened during this week.
 
-* `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
-* `Sammy` challenged `Gilberto "Gil" Ruelas` and **lost** *3-0*.
-* `Angel Lee` challenged `Xotl` and **lost** *3-2*.
 * `César Gutman` challenged `Neku` and **won** *3-0*.
+* `Angel Lee` challenged `Xotl` and **lost** *3-2*.
+* `Sammy` challenged `Gilberto "Gil" Ruelas` and **lost** *3-0*.
+* `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
+* `Alan` challenged `D.I.O.` and **won** *3-0*.
+* `D.I.O.` challenged `El Minion` and **lost** *3-0*.
+* `D.I.O.` challenged `Fer Señior` and **won** *3-0*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -48,11 +49,11 @@ The current points earned by winning matches this week.
 * César Gutman: 24
 * Neku: 24
 * Aldo: 22
-* El Minion: 18
+* El Minion: 19
+* D.I.O.: 17
 * Fer Señior: 15
-* D.I.O.: 14
 * Gilberto "Gil" Ruelas: 9
-* Alan: 6
+* Alan: 9
 * Michel: 4
 * Niightz: 3
 * Sammy: 3
