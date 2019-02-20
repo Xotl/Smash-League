@@ -3,6 +3,7 @@ const Slack = require('./slack-api')
 const SmashLeague = require('./smash-league')
 const Ranking = require('../ranking-info/ranking.json')
 const Config = require('../config.json')
+const { version } = require('../package.json')
 const Utils = require('./utils')
 const OutputGenerator = require('./output-generator')
 
@@ -48,8 +49,8 @@ async function Main() {
             switch(process.env.TRAVIS_EVENT_TYPE) {
                 case 'push':
                     Slack.postMessageInChannel(
-                        '¡He sido actualizado!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n' +
-                        'Y con la actualizacion también busqué mensajes nuevos para actualizar el ranking (si es que hubo actividad).\n' +
+                        `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n` +
+                        'Y también aproveché a buscar mensajes nuevos para actualizar el ranking (si es que hubo actividad).\n' +
                         'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
                         , SMASH_SLACK_CHANNEL_ID
                     )                    

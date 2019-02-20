@@ -1,0 +1,7 @@
+.git
+.gitignore
+.travis.yml
+Dockerfile
+LICENSE
+README.md
+.vscode
