@@ -17,7 +17,7 @@ Last updated **Sun, 17 Feb 2019 22:18:07 GMT**.
 |11|`Michel`|4|
 |12|`Niightz`, `Sammy`|3|
 
-## In progress this week *Wed, 20 Feb 2019 05:02:57 GMT*
+## In progress this week *Wed, 20 Feb 2019 05:16:16 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
@@ -44,7 +44,7 @@ Matches that already happened during this week.
 The current points earned by winning matches this week.
 
 |Player|Points|
-|---|---|---|
+|---|---|
 |Xotl|29|
 |José "El Iceberg" Rosales|27|
 |Angel Lee|26|
