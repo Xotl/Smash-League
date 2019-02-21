@@ -68,13 +68,13 @@
         "scoreboard": {
             "U8A96RCEA": 0,
             "U61MBQTR8": 29,
-            "U7VAPLNCR": 15,
+            "U7VAPLNCR": 16,
             "UBRMBGR6Z": 9,
             "UE82A6MNY": 0,
             "U8QS8T0CX": 22,
             "UB616ENA0": 26,
             "UEWUZCYJF": 0,
-            "UDBD59WLT": 24,
+            "UDBD59WLT": 25,
             "U6H8DDV25": 0,
             "U8M6QT7EF": 19,
             "U87CK0E4A": 15,
@@ -97,8 +97,10 @@
                 "UBA5M220K"
             ],
             "UBRMBGR6Z": [
-                "U87CK0E4A",
-                "U7VAPLNCR"
+                "U87CK0E4A"
+            ],
+            "U8M6QT7EF": [
+                "U8QS8T0CX"
             ]
         },
         "completed_challenges": {
@@ -190,6 +192,19 @@
                         "UBRMBGR6Z",
                         "U6457D5KQ"
                     ]
+                },
+                {
+                    "challenger": "UBRMBGR6Z",
+                    "playerChallenged": "U7VAPLNCR",
+                    "winner": "U7VAPLNCR",
+                    "player1": "UBRMBGR6Z",
+                    "player2": "U7VAPLNCR",
+                    "player1Result": 2,
+                    "player2Result": 3,
+                    "players": [
+                        "UBRMBGR6Z",
+                        "U7VAPLNCR"
+                    ]
                 }
             ],
             "U6457D5KQ": [
@@ -247,8 +262,23 @@
                         "U6457D5KQ"
                     ]
                 }
+            ],
+            "U8M6QT7EF": [
+                {
+                    "challenger": "U8M6QT7EF",
+                    "playerChallenged": "UDBD59WLT",
+                    "winner": "UDBD59WLT",
+                    "player1": "U8M6QT7EF",
+                    "player2": "UDBD59WLT",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "U8M6QT7EF",
+                        "UDBD59WLT"
+                    ]
+                }
             ]
         },
-        "last_update_ts": 1550679550.686
+        "last_update_ts": 1550727708.246
     }
 }
