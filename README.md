@@ -23,6 +23,11 @@ This is a point-based ranking system. The more points you have, the best you are
 
 To earn points, the players need to challenge the players to earn points in case of a victory. If the challenger wins the match, he will optain 3 points. If the challenged player is the winner, he will gain one single point.
 
+To know if you can challenge someone, you have to follow this three questions:
+- Is the person above you in the ranking?
+- Do they not have the same rank as you?
+- Do you have challenges left?
+
 You can have as many challenges as the following table shows:
 
 - 1st place: 0 weekly challanges
@@ -32,7 +37,14 @@ You can have as many challenges as the following table shows:
 - 11th place: 4 weekly challanges
 - 12th onwards: 5 weekly challanges
 
-Also, the times you can be challenged is limitless.
+The rules to challenge or be challenged by someone are:
+
+- You may challenge any player that has a rank superior of yours up to the number of challenges you have that week (check the list above). 
+- You may not challange any player of the same rank as yours, the bot will ignore those challenges. 
+- In the case of a tie in rank, you may only challenge one player of said rank.
+- Also, the times You may be challenged is limitless.
+
+For **example**: Jon Doe (rank 6) wants to challenge Rick (7), but Rick is a rank lower than him, so he may not challenge him. Then, he looks the ranking list, and saw that Mary (5) is one rank above him. So the challenge is possible.
 
 ## How do i challenge people or report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
