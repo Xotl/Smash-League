@@ -10,10 +10,11 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
 * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
     * [Challenge people](#challenge-people)
     * [Reporting a result after a match](#reporting-a-result-after-a-match)
-* [Current Ruleset](#current-ruleset)
+* [Match Rules](#match-rules)
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
 * [Want to contribute?](#Want-to-contribute)
+    * [Current Smash ruleset](#Current-Smash-ruleset)
     * [Running and debugging with VS Code](#Running-and-debugging-with-VS-Code)
     * [How to run the project locally using Docker](#How-to-run-the-project-locally-using-Docker)
 
@@ -26,9 +27,9 @@ This is a point-based ranking system. The more points you have, the best you are
 To earn points, the players need to challenge the players to earn points in case of a victory. If the challenger wins the match, he will optain 3 points. If the challenged player is the winner, he will gain one single point.
 
 
-### Rules
+### Rules to challenge
 The rules to challenge or be challenged by someone are:
-1. You may challenge any player that has a rank superior of yours up to the number of challenges you have that week *(check the list below)*
+1. You may challenge any player that has a rank superior of yours up to the number of challenges you have that week. <sup>[(check the list below)](#How-many-people-can-i-challenge)</sup>
 1. You cannot challenge people in the same place that you are.
 1. People with 0 points can't be challenged.
 1. Unranked people cannot be challenged.
@@ -39,7 +40,7 @@ The rules to challenge or be challenged by someone are:
 To know if you can challenge someone, you have to follow this three questions:
 - Is the person above you in the ranking?
 - Do you have challenges left?
-- is the difference of ranking places between you and the player you want to challenge is no more than the maximum weekly challenges that you have?
+- is the difference of ranking places between you and the player you want to challenge no more than the maximum weekly challenges that you have?
 
 If the answer is *yes* to the 3 questions, then you're good to challenge that player. 
 
@@ -54,6 +55,8 @@ You can have as many challenges as the following table shows:
 - 10th place: 3 weekly challanges
 - 11th place: 4 weekly challanges
 - 12th onwards: 5 weekly challanges
+
+To see the rules during a match see [the Match Rules](#Match-Rules) section below.
 
 ## How do i challenge people or report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
@@ -83,7 +86,13 @@ Examples of valid results expressions:
 You can check [the regexp used](src/smash-league.js#L6) for more details.
 
 
-## Current Ruleset
+## Match Rules
+
+The players must play a *1vs1* match to determine a winner. The winner is the first one to win 3 games.
+
+Couching during an in progress game is not allowed. Please stick to the rules.
+
+### Current Smash ruleset
 
 This is the recommended ruleset for the offcial league matches:
 
@@ -102,7 +111,7 @@ If both players agree, they can play on any stage without bans nor restrictions,
 
 A player cannot deliberately persuade another player to play on a stage that the character or player has a clear advantage over the other player or character. If any witness of the match identifies this kind of behavior, the match will be declared invalid and the offender player will be punished by losing league points.
 
-### Initial stages:
+#### Initial stages:
 
 - Smashville
 - Pokemon Stadium 2
@@ -110,7 +119,7 @@ A player cannot deliberately persuade another player to play on a stage that the
 - Battlefield (or any stage on Battlefield)
 - Final Destination (or any omega)
 
-### Counterpicks:
+#### Counterpicks:
 
 - Unova Pokemon League
 - Town and City
@@ -129,7 +138,7 @@ If you want to contribute, you can rise issues or create your PR.
 ### Running and debugging with VS Code
 * Install Docker
 * Install Visual Studio Code
-* Add your [Slack API token in `.vscode/launch.json`(\.vscode/launch.json#18) file
+* Add your [Slack API token in `.vscode/launch.json`(/.vscode/launch.json#18) file
 * Press `F5` to run & debug the project in VS Code
 
 *Note: Might not work on Windows*
