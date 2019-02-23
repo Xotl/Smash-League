@@ -4,7 +4,9 @@
 If your are looking for the current rank table and scoreboard [visit the `ranking-info` folder](./ranking-info/) of this repo.
 
 #### Table of contents
-* [Ranking System Rules](#ranking-system-rules)
+* [Ranking Rules](#ranking-rules)
+    * [Rules](#rules)
+    * [How many people can i challenge?](#How-many-people-can-i-challenge)
 * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
     * [Challenge people](#challenge-people)
     * [Reporting a result after a match](#reporting-a-result-after-a-match)
@@ -17,17 +19,33 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
 
 Smash League is a bot used to handle the ranking of the Official Internal Smash League.
 
-## Ranking System Rules
+## Ranking Rules
 
 This is a point-based ranking system. The more points you have, the best you are placed in the ranking.
 
 To earn points, the players need to challenge the players to earn points in case of a victory. If the challenger wins the match, he will optain 3 points. If the challenged player is the winner, he will gain one single point.
 
+
+### Rules
+The rules to challenge or be challenged by someone are:
+1. You may challenge any player that has a rank superior of yours up to the number of challenges you have that week *(check the list below)*
+1. You cannot challenge people in the same place that you are.
+1. People with 0 points can't be challenged.
+1. Unranked people cannot be challenged.
+1. In the case of a tie in rank, you may only challenge one player of said rank.
+1. Also, the times You may be challenged is limitless.
+
+
 To know if you can challenge someone, you have to follow this three questions:
 - Is the person above you in the ranking?
-- Do they not have the same rank as you?
 - Do you have challenges left?
+- is the difference of ranking places between you and the player you want to challenge is no more than the maximum weekly challenges that you have?
 
+If the answer is *yes* to the 3 questions, then you're good to challenge that player. 
+
+For **example**: Jon Doe (rank 6) wants to challenge Rick (5), but Rick is a rank lower than him, so he may not challenge him. Then, he looks the ranking list, and saw that Mary (7) is one rank above him. So the challenge is possible.
+
+### How many people can i challenge?
 You can have as many challenges as the following table shows:
 
 - 1st place: 0 weekly challanges
@@ -36,15 +54,6 @@ You can have as many challenges as the following table shows:
 - 10th place: 3 weekly challanges
 - 11th place: 4 weekly challanges
 - 12th onwards: 5 weekly challanges
-
-The rules to challenge or be challenged by someone are:
-
-- You may challenge any player that has a rank superior of yours up to the number of challenges you have that week (check the list above). 
-- You may not challange any player of the same rank as yours, the bot will ignore those challenges. 
-- In the case of a tie in rank, you may only challenge one player of said rank.
-- Also, the times You may be challenged is limitless.
-
-For **example**: Jon Doe (rank 6) wants to challenge Rick (7), but Rick is a rank lower than him, so he may not challenge him. Then, he looks the ranking list, and saw that Mary (5) is one rank above him. So the challenge is possible.
 
 ## How do i challenge people or report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
@@ -120,7 +129,7 @@ If you want to contribute, you can rise issues or create your PR.
 ### Running and debugging with VS Code
 * Install Docker
 * Install Visual Studio Code
-* Add your [Slack API token in `.vscode/launch.json`(.vscode/launch.json#18) file
+* Add your [Slack API token in `.vscode/launch.json`(\.vscode/launch.json#18) file
 * Press `F5` to run & debug the project in VS Code
 
 *Note: Might not work on Windows*
@@ -133,3 +142,4 @@ If you want to contribute, you can rise issues or create your PR.
 
 Note: We mount the `src` & `ranking-info` folders for development, so you can see your changes without building again the Docker image.
 
+ 
