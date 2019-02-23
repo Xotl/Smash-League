@@ -103,22 +103,33 @@ const getNumberOfChallengesAllowed = place => {
 
 const getTotalOfChallengesDoneByPlayer = (activePlayerChallenges = [], completedPlayerChallenges = []) => activePlayerChallenges.length + completedPlayerChallenges.length
 
-const doesPlayerAlreadyFoughtOrChallengedThatPlace = (playerId, playerActiveChallenges = [], playerCompletedChallenges = [], ranking) => {
+const doesPlayerAlreadyFoughtAgainstThatPlace = (playerId, playerCompletedChallenges = [], ranking) => {
     const place = typeof playerId === 'string' ? getRankingPlaceByPlayerId(playerId, ranking) : playerId
-
-    for (let idx = 0; idx < playerActiveChallenges.length; idx++) {
-        if ( getRankingPlaceByPlayerId(playerActiveChallenges[idx], ranking) === place) {
-            return true
-        }
-    }
-    
     for (let idx = 0; idx < playerCompletedChallenges.length; idx++) {
         if ( getRankingPlaceByPlayerId(playerCompletedChallenges[idx].playerChallenged, ranking) === place) {
             return true
         }
     }
-
     return false
+}
+
+const doesPlayerAlreadyChallengedThatPlace = (playerId, playerActiveChallenges = [], ranking, excludePlayer = false) => {
+    const place = typeof playerId === 'string' ? getRankingPlaceByPlayerId(playerId, ranking) : playerId
+    for (let idx = 0; idx < playerActiveChallenges.length; idx++) {
+        if (excludePlayer && playerId === playerActiveChallenges[idx]) {
+            continue
+        }
+        if ( getRankingPlaceByPlayerId(playerActiveChallenges[idx], ranking) === place ) {
+            return true
+        }
+    }
+    return false
+}
+
+const doesPlayerAlreadyFoughtOrChallengedThatPlace = (playerId, playerActiveChallenges = [], playerCompletedChallenges = [], ranking) => {
+    const place = typeof playerId === 'string' ? getRankingPlaceByPlayerId(playerId, ranking) : playerId
+    return doesPlayerAlreadyFoughtAgainstThatPlace(place, playerActiveChallenges, playerCompletedChallenges, ranking) ||
+        doesPlayerAlreadyChallengedThatPlace(place, playerActiveChallenges, playerCompletedChallenges, ranking)
 }
 
 const isPlayerUnranked = (playerId, ranking) => {
@@ -126,31 +137,51 @@ const isPlayerUnranked = (playerId, ranking) => {
     return place > ranking.length
 }
 
-const isValidChallenge = (challengerId, playerChallengedId, challengerActiveChallenges = [], challengerCompletedChallenges = [], ranking = [], scoreboard = {}) => {
 
+const isValidChallenge = (challengerId, playerChallengedId, challengerActiveChallenges = [], challengerCompletedChallenges = [], ranking = [], scoreboard = {}) => {
     if (challengerId === playerChallengedId) {
         return false// He tried to fool the bot by challenging himself ¬¬'
-    }
-
-    if (challengerActiveChallenges.includes(playerChallengedId)) {
-        return false// Duplicated challenge
     }
 
     const challengerPlace = getRankingPlaceByPlayerId(challengerId, ranking)
 
     if (isPlayerUnranked(challengerPlace, ranking) && scoreboard[ playerChallengedId ] === 0) {
+        console.log(`- Unranked player ${Config.users_dict[challengerId] || challengerId} challenged a player with 0 points (${Config.users_dict[playerChallengedId] || playerChallengedId}).`)
         // Unranked player challenged a player with 0 points
         return false
     }
-    
-    if ( doesMatchBetweenPlayersAlreadyHappened(challengerId, playerChallengedId, challengerCompletedChallenges) ) {
-        return false// Match already happened, challenge can't happen now
+
+    if ( doesPlayerAlreadyFoughtAgainstThatPlace(playerChallengedId, challengerCompletedChallenges, ranking) ) {
+        console.log(`- Player ${Config.users_dict[challengerId] || challengerId} already fought a player in the same place as ${Config.users_dict[playerChallengedId] || playerChallengedId}.`)
+        return false;// Player can't fight multiple players in the same place
     }
 
-    if ( doesPlayerAlreadyFoughtOrChallengedThatPlace(playerChallengedId, challengerActiveChallenges, challengerCompletedChallenges, ranking) ) {
-        return false// Player can't challenge or fight multiple players in the same place
-    }
     return canPlayerAChallengePlayerB(challengerId, playerChallengedId, ranking)
+}
+
+const isValidMatch = (challengerId, playerChallengedId, challengerActiveChallenges = [], challengerCompletedChallenges = [], ranking = [], scoreboard = {}) => {
+    
+    if ( doesPlayerAlreadyChallengedThatPlace(playerChallengedId, challengerActiveChallenges, ranking, true) ) {
+        console.log(`- Player ${Config.users_dict[challengerId] || challengerId} already challenged a player in the same place as ${Config.users_dict[playerChallengedId] || playerChallengedId}.`)
+        return false;// Player can't challenge multiple players in the same place
+    }
+
+    return isValidChallenge(challengerId, playerChallengedId, challengerActiveChallenges, challengerCompletedChallenges, ranking ,scoreboard)
+}
+
+const isValidActiveChallenge = (challengerId, playerChallengedId, challengerActiveChallenges = [], challengerCompletedChallenges = [], ranking = [], scoreboard = {}) => {
+
+    if (challengerActiveChallenges.includes(playerChallengedId)) {
+        console.log(`- Player ${Config.users_dict[challengerId] || challengerId} already challenged ${Config.users_dict[playerChallengedId] || playerChallengedId}.`)
+        return false// Duplicated challenge
+    }
+
+    if ( doesPlayerAlreadyChallengedThatPlace(playerChallengedId, challengerActiveChallenges, ranking) ) {
+        console.log(`- Player ${Config.users_dict[challengerId] || challengerId} already challenged a player in the same place as ${Config.users_dict[playerChallengedId] || playerChallengedId}.`)
+        return false;// Player can't challenge multiple players in the same place
+    }
+    
+    return isValidChallenge(challengerId, playerChallengedId, challengerActiveChallenges, challengerCompletedChallenges, ranking ,scoreboard)
 }
 
 const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, completedChallenges, scoreboard) => {
@@ -164,7 +195,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
             const currentNumOfChallengesFromPlayer = getTotalOfChallengesDoneByPlayer(challengerActiveChallenges, challengerCompletedChallenges)
 
             if (currentNumOfChallengesFromPlayer >= numberOfChallengesAllowed) {
-                console.log(`Ignored challenge because player "${challengerId}" reached limit of challenges allowed: ${JSON.stringify(challenge)}`)
+                console.log(`Ignored challenge because player "${Config.users_dict[challengerId] || challengerId}" reached limit of challenges allowed: ${JSON.stringify(challenge)}`)
                 // Player can no longer challenge people, maximum challenges reached
                 return validChallenges
             }
@@ -174,7 +205,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
             
             for (let idx = 0; challengesLeft > 0 && idx < challenge.peopleChallenged.length; idx++) {
                 const playerChallenged = challenge.peopleChallenged[idx]
-                if (isValidChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges, ranking, scoreboard)) {
+                if (isValidActiveChallenge(challengerId, playerChallenged, challengerActiveChallenges, challengerCompletedChallenges, ranking, scoreboard)) {
                     
                     if (!challengerActiveChallenges) {// No previous active challenges 
                         challengerActiveChallenges = []
@@ -189,7 +220,7 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
                     challengesLeft--
                 }
                 else {
-                    console.log(`Ignored challenge from "${challengerId}" to "${playerChallenged}" because is not a valid.`)
+                    console.log(`Ignored challenge from "${Config.users_dict[challengerId] || challengerId}" to "${Config.users_dict[playerChallenged] || playerChallenged}" because is not valid.`)
                 }
             }
 
@@ -197,12 +228,6 @@ const calculateNewChallenges = (newChallenges = [], ranking, activeChallenges, c
         },
         { ...activeChallenges }
     )
-}
-
-const doesMatchBetweenPlayersAlreadyHappened = (challenger, playerChallenged, completedPlayerChallenges) => {
-    return completedPlayerChallenges.find(
-        ({players}) =>  players.includes(challenger) && players.includes(playerChallenged)
-    ) !== undefined
 }
 
 const canPlayerAChallengePlayerB = (playerA, playerB, ranking) => {
@@ -240,14 +265,13 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             }
 
             if (!validChallenger) {
-                console.log(`Ignored result because is not a valid challenge: ${JSON.stringify(reportedResult)}`)
+                console.log(`Ignored result between players "${Config.users_dict[player1] || player1}" & "${Config.users_dict[player2] || player2}" because they can't challenge each other: ${JSON.stringify(reportedResult)}`)
                 return// Non of the players could challenge the other one, ignoring result
             }
 
             
             if (// Checks if challenge already got validated before otherwise does a full check
-                updatedActiveChallenges[validChallenger].includes(playerChallenged) || 
-                isValidChallenge(
+                !isValidMatch(
                     validChallenger, playerChallenged,
                     updatedActiveChallenges[validChallenger],
                     updatedCompletedChallenges[validChallenger],
@@ -257,6 +281,7 @@ const getUpdatedChallengesAndScoreboard = (reportedResults, ranking, scoreboard,
             )
             {
                 console.log(`Ignored result because match between players is not valid: ${JSON.stringify(reportedResult)}`)
+                return
             }
 
             if ( !Array.isArray( updatedCompletedChallenges[validChallenger] ) ) {
@@ -413,5 +438,5 @@ module.exports = {
     getUpdatedChallengesAndScoreboard,
     commitInProgress,
     applyScoreForChallengesNotCompleted,
-    isValidChallenge
+    isValidActiveChallenge
 }

@@ -17,7 +17,7 @@ Last updated **Sun, 17 Feb 2019 22:18:07 GMT**.
 |11|`Michel`|4|
 |12|`Niightz`, `Sammy`|3|
 
-## In progress this week *Fri, 22 Feb 2019 18:13:53 GMT*
+## In progress this week *Fri, 22 Feb 2019 05:43:07 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
@@ -25,7 +25,6 @@ These are the current active challenges, which is a list of the people who have 
 
 * Player `Aldo` challenged `Neku`, `José "El Iceberg" Rosales`.
 * Player `Alan` challenged `Fer Señior`.
-* Player `UBD38N45P` challenged `Michel`.
 
 ### Completed challenges
 Matches that already happened during this week.
