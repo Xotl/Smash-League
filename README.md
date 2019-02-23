@@ -10,7 +10,7 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
 * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
     * [Challenge people](#challenge-people)
     * [Reporting a result after a match](#reporting-a-result-after-a-match)
-* [Match Ruleset](#match-ruleset)
+* [Match Rules](#match-rules)
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
 * [Want to contribute?](#Want-to-contribute)
@@ -55,7 +55,7 @@ You can have as many challenges as the following table shows:
 - 11th place: 4 weekly challanges
 - 12th onwards: 5 weekly challanges
 
-To see the rules during a match see [the Match Ruleset](#Match-Ruleset) below.
+To see the rules during a match see [the Match Rules](#Match-Rules) section below.
 
 ## How do i challenge people or report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
@@ -85,7 +85,11 @@ Examples of valid results expressions:
 You can check [the regexp used](src/smash-league.js#L6) for more details.
 
 
-## Match Ruleset
+## Match Rules
+
+The players must play a *1vs1* match to determine a winner. The winner is the first one to win 3 matches.
+
+### Current Smash ruleset
 
 This is the recommended ruleset for the offcial league matches:
 
@@ -104,7 +108,7 @@ If both players agree, they can play on any stage without bans nor restrictions,
 
 A player cannot deliberately persuade another player to play on a stage that the character or player has a clear advantage over the other player or character. If any witness of the match identifies this kind of behavior, the match will be declared invalid and the offender player will be punished by losing league points.
 
-### Initial stages:
+#### Initial stages:
 
 - Smashville
 - Pokemon Stadium 2
@@ -112,7 +116,7 @@ A player cannot deliberately persuade another player to play on a stage that the
 - Battlefield (or any stage on Battlefield)
 - Final Destination (or any omega)
 
-### Counterpicks:
+#### Counterpicks:
 
 - Unova Pokemon League
 - Town and City
