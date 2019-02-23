@@ -14,6 +14,7 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
 * [Want to contribute?](#Want-to-contribute)
+    * [Current Smash ruleset](#Current-Smash-ruleset)
     * [Running and debugging with VS Code](#Running-and-debugging-with-VS-Code)
     * [How to run the project locally using Docker](#How-to-run-the-project-locally-using-Docker)
 
