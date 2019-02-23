@@ -87,7 +87,9 @@ You can check [the regexp used](src/smash-league.js#L6) for more details.
 
 ## Match Rules
 
-The players must play a *1vs1* match to determine a winner. The winner is the first one to win 3 matches.
+The players must play a *1vs1* match to determine a winner. The winner is the first one to win 3 games.
+
+Couching during an in progress game is not allowed. Please stick to the rules.
 
 ### Current Smash ruleset
 
