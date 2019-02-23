@@ -10,7 +10,7 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
 * [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
     * [Challenge people](#challenge-people)
     * [Reporting a result after a match](#reporting-a-result-after-a-match)
-* [Current Ruleset](#current-ruleset)
+* [Match Ruleset](#match-ruleset)
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
 * [Want to contribute?](#Want-to-contribute)
@@ -26,7 +26,7 @@ This is a point-based ranking system. The more points you have, the best you are
 To earn points, the players need to challenge the players to earn points in case of a victory. If the challenger wins the match, he will optain 3 points. If the challenged player is the winner, he will gain one single point.
 
 
-### Rules
+### Rules to challenge
 The rules to challenge or be challenged by someone are:
 1. You may challenge any player that has a rank superior of yours up to the number of challenges you have that week. <sup>[(check the list below)](#How-many-people-can-i-challenge)</sup>
 1. You cannot challenge people in the same place that you are.
@@ -54,6 +54,8 @@ You can have as many challenges as the following table shows:
 - 10th place: 3 weekly challanges
 - 11th place: 4 weekly challanges
 - 12th onwards: 5 weekly challanges
+
+To see the rules during a match see [the Match Ruleset](#Match-Ruleset) below.
 
 ## How do i challenge people or report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
@@ -83,7 +85,7 @@ Examples of valid results expressions:
 You can check [the regexp used](src/smash-league.js#L6) for more details.
 
 
-## Current Ruleset
+## Match Ruleset
 
 This is the recommended ruleset for the offcial league matches:
 
