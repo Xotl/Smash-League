@@ -6,46 +6,46 @@ const {
 
 const {
     applyScoreForChallengesNotCompleted, isItTimeToCommitInProgress, getRankingPlaceByPlayerId,
-    getNumberOfChallengesAllowed, canPlayerAChallengePlayerB, isValidChallenge
+    getNumberOfChallengesAllowed, canPlayerAChallengePlayerB, isValidActiveChallenge
 } = require('../smash-league')
 
 
 describe('Smash League Challenges & Scoreboard', () => {
-    test('isValidChallenge', () => {
+    test('isValidActiveChallenge', () => {
         expect(// Already consumed the max of 2 challenges 
-            isValidChallenge('UB616ENA0', 'U8THDCVJ7', ACTIVE_CHALLENGES1['UB616ENA0'], COMPLETED_CHALLENGES1['UB616ENA0'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('UB616ENA0', 'U8THDCVJ7', ACTIVE_CHALLENGES1['UB616ENA0'], COMPLETED_CHALLENGES1['UB616ENA0'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(false)
 
         expect(// Duplicated challenge
-            isValidChallenge('UEWUZCYJF', 'UE82A6MNY', ACTIVE_CHALLENGES1['UEWUZCYJF'], COMPLETED_CHALLENGES1['UEWUZCYJF'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('UEWUZCYJF', 'UE82A6MNY', ACTIVE_CHALLENGES1['UEWUZCYJF'], COMPLETED_CHALLENGES1['UEWUZCYJF'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(false)
 
         expect(// Same place challenge
-            isValidChallenge('U8THDCVJ7', 'UBA5M220K', ACTIVE_CHALLENGES1['U8THDCVJ7'], COMPLETED_CHALLENGES1['U8THDCVJ7'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('U8THDCVJ7', 'UBA5M220K', ACTIVE_CHALLENGES1['U8THDCVJ7'], COMPLETED_CHALLENGES1['U8THDCVJ7'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(false)
 
         expect(// Same place challenge with unranked
-            isValidChallenge('Non ranked player', 'UBHGVCY4X', ACTIVE_CHALLENGES1['Non ranked player'], COMPLETED_CHALLENGES1['Non ranked player'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('Non ranked player', 'UBHGVCY4X', ACTIVE_CHALLENGES1['Non ranked player'], COMPLETED_CHALLENGES1['Non ranked player'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(false)
 
         expect(// Completed challenge between players
-            isValidChallenge('UBHGVCY4X', 'UBRCZ6G4B', ACTIVE_CHALLENGES1['UBHGVCY4X'], COMPLETED_CHALLENGES1['UBHGVCY4X'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('UBHGVCY4X', 'UBRCZ6G4B', ACTIVE_CHALLENGES1['UBHGVCY4X'], COMPLETED_CHALLENGES1['UBHGVCY4X'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(false)
 
         expect(// More than one player on the same place challenge
-            isValidChallenge('U87CK0E4A', 'UBA5M220K', ACTIVE_CHALLENGES1['U87CK0E4A'], COMPLETED_CHALLENGES1['U87CK0E4A'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('U87CK0E4A', 'UBA5M220K', ACTIVE_CHALLENGES1['U87CK0E4A'], COMPLETED_CHALLENGES1['U87CK0E4A'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(false)
 
         expect(// Player fought already with another player in the same place
-            isValidChallenge('UBHGVCY4X', 'UBRMBGR6Z', ACTIVE_CHALLENGES1['UBHGVCY4X'], COMPLETED_CHALLENGES1['UBHGVCY4X'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('UBHGVCY4X', 'UBRMBGR6Z', ACTIVE_CHALLENGES1['UBHGVCY4X'], COMPLETED_CHALLENGES1['UBHGVCY4X'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(false)
         
         expect(// Simple valid challenge with unranked player
-            isValidChallenge('Another unranked player', 'UBRMBGR6Z', ACTIVE_CHALLENGES1['Another unranked player'], COMPLETED_CHALLENGES1['Another unranked player'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('Another unranked player', 'UBRMBGR6Z', ACTIVE_CHALLENGES1['Another unranked player'], COMPLETED_CHALLENGES1['Another unranked player'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(true)
 
         expect(// Simple valid challenge
-            isValidChallenge('UEWUZCYJF', 'U7VAPLNCR', ACTIVE_CHALLENGES1['UEWUZCYJF'], COMPLETED_CHALLENGES1['UEWUZCYJF'], RANKING_ARRAY2, SCOREBOARD)
+            isValidActiveChallenge('UEWUZCYJF', 'U7VAPLNCR', ACTIVE_CHALLENGES1['UEWUZCYJF'], COMPLETED_CHALLENGES1['UEWUZCYJF'], RANKING_ARRAY2, SCOREBOARD)
         ).toBe(true)
     })
 
