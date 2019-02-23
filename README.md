@@ -28,7 +28,7 @@ To earn points, the players need to challenge the players to earn points in case
 
 ### Rules
 The rules to challenge or be challenged by someone are:
-1. You may challenge any player that has a rank superior of yours up to the number of challenges you have that week. [^(check the list below)^]((#How-many-people-can-i-challenge))
+1. You may challenge any player that has a rank superior of yours up to the number of challenges you have that week. <sup>[(check the list below)]((#How-many-people-can-i-challenge))</sup>
 1. You cannot challenge people in the same place that you are.
 1. People with 0 points can't be challenged.
 1. Unranked people cannot be challenged.
@@ -129,7 +129,7 @@ If you want to contribute, you can rise issues or create your PR.
 ### Running and debugging with VS Code
 * Install Docker
 * Install Visual Studio Code
-* Add your [Slack API token in `.vscode/launch.json`(./.vscode/launch.json#18) file
+* Add your [Slack API token in `.vscode/launch.json`(/.vscode/launch.json#18) file
 * Press `F5` to run & debug the project in VS Code
 
 *Note: Might not work on Windows*
