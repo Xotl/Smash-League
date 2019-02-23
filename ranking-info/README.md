@@ -17,14 +17,13 @@ Last updated **Sun, 17 Feb 2019 22:18:07 GMT**.
 |11|`Michel`|4|
 |12|`Niightz`, `Sammy`|3|
 
-## In progress this week *Fri, 22 Feb 2019 05:43:07 GMT*
+## In progress this week *Sat, 23 Feb 2019 21:59:23 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `Aldo` challenged `Neku`, `José "El Iceberg" Rosales`.
-* Player `Alan` challenged `Fer Señior`.
+* Player `UBD38N45P` challenged `Michel`.
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -33,16 +32,20 @@ Matches that already happened during this week.
 * `César Gutman` challenged `Aldo` and **won** *3-1*.
 * `Angel Lee` challenged `Xotl` and **lost** *3-2*.
 * `Sammy` challenged `Gilberto "Gil" Ruelas` and **lost** *3-0*.
+* `Sammy` challenged `Fer Señior` and **lost** *3-2*.
+* `Sammy` challenged `Alan` and **lost** *3-0*.
 * `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
 * `Alan` challenged `D.I.O.` and **won** *3-0*.
 * `Alan` challenged `Gilberto "Gil" Ruelas` and **lost** *3-2*.
+* `Alan` challenged `Fer Señior` and **won** *3-1*.
 * `D.I.O.` challenged `El Minion` and **lost** *3-0*.
 * `D.I.O.` challenged `Fer Señior` and **won** *3-0*.
 * `Gilberto "Gil" Ruelas` challenged `Fer Señior` and **won** *3-0*.
 * `Gilberto "Gil" Ruelas` challenged `D.I.O.` and **won** *3-0*.
 * `El Minion` challenged `César Gutman` and **lost** *3-0*.
 * `El Minion` challenged `Aldo` and **lost** *3-0*.
+* `El Chino` challenged `Sammy` and **won** *3-0*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -57,16 +60,16 @@ The current points earned by winning matches this week.
 |Aldo|23|
 |El Minion|19|
 |D.I.O.|17|
+|Fer Señior|16|
 |Gilberto "Gil" Ruelas|16|
-|Fer Señior|15|
-|Alan|9|
+|Alan|13|
 |Michel|4|
 |Niightz|3|
+|El Chino|3|
 |Sammy|3|
 |Homero|0|
 |Gustavo "Díganme El Jefazo" Mejía|0|
 |Medininja|0|
-|El Chino|0|
 |Néstor|0|
 |Alberto Ortiz|0|
 |Carlos López|0|
