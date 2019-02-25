@@ -16,7 +16,7 @@ Last updated **Sun, 24 Feb 2019 05:43:51 GMT**.
 |10|`Alan`|13|
 |11|`El Chino`, `Michel`, `Niightz`, `Sammy`, `UBD38N45P`|3|
 
-## In progress this week *Sun, 24 Feb 2019 05:43:51 GMT*
+## In progress this week *Mon, 25 Feb 2019 05:44:26 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
