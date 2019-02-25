@@ -44,7 +44,7 @@ To know if you can challenge someone, you have to follow this three questions:
 
 If the answer is *yes* to the 3 questions, then you're good to challenge that player. 
 
-For **example**: Jon Doe (rank 6) wants to challenge Rick (5), but Rick is a rank lower than him, so he may not challenge him. Then, he looks the ranking list, and saw that Mary (7) is one rank above him. So the challenge is possible.
+For **example**: Jon Doe (rank 6) wants to challenge Rick (7), but Rick is a rank lower than him, so he may not challenge him. Then, he looks the ranking list, and saw that Mary (5) is one rank above him. So the challenge is possible.
 
 ### How many people can i challenge?
 You can have as many challenges as the following table shows:
