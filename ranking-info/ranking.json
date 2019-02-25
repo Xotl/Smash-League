@@ -73,7 +73,7 @@
             "UBRMBGR6Z": 13,
             "UE82A6MNY": 0,
             "U8QS8T0CX": 23,
-            "UB616ENA0": 26,
+            "UB616ENA0": 32,
             "UEWUZCYJF": 3,
             "UDBD59WLT": 28,
             "U6H8DDV25": 0,
@@ -90,8 +90,71 @@
             "UDR61HJCD": 3,
             "UBD38N45P": 3
         },
-        "active_challenges": {},
-        "completed_challenges": {},
-        "last_update_ts": 1551073466.775
+        "active_challenges": {
+            "U8THDCVJ7": [
+                "UB616ENA0",
+                "UBA5M220K"
+            ],
+            "UBA5M220K": [
+                "UDBD59WLT",
+                "U61MBQTR8"
+            ],
+            "U8QS8T0CX": [
+                "U8THDCVJ7",
+                "UB616ENA0"
+            ],
+            "UDBD59WLT": [
+                "U61MBQTR8"
+            ],
+            "UBRMBGR6Z": [
+                "U87CK0E4A",
+                "U6457D5KQ"
+            ],
+            "UDR61HJCD": [
+                "UBRMBGR6Z"
+            ],
+            "UBD38N45P": [
+                "UBRMBGR6Z"
+            ],
+            "U7VAPLNCR": [
+                "U6457D5KQ",
+                "U8M6QT7EF"
+            ],
+            "U8M6QT7EF": [
+                "U8QS8T0CX",
+                "U8THDCVJ7"
+            ]
+        },
+        "completed_challenges": {
+            "UB616ENA0": [
+                {
+                    "challenger": "UB616ENA0",
+                    "playerChallenged": "UBA5M220K",
+                    "winner": "UB616ENA0",
+                    "player1": "UBA5M220K",
+                    "player2": "UB616ENA0",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "UBA5M220K",
+                        "UB616ENA0"
+                    ]
+                },
+                {
+                    "challenger": "UB616ENA0",
+                    "playerChallenged": "UDBD59WLT",
+                    "winner": "UB616ENA0",
+                    "player1": "UDBD59WLT",
+                    "player2": "UB616ENA0",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "UDBD59WLT",
+                        "UB616ENA0"
+                    ]
+                }
+            ]
+        },
+        "last_update_ts": 1551122479.159
     }
 }
