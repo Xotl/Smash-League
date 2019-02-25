@@ -18,8 +18,9 @@
 * `El Minion` challenged `César Gutman` and **lost** *3-0*.
 * `El Minion` challenged `Aldo` and **lost** *3-0*.
 * `El Chino` challenged `Sammy` and **won** *3-0*.
+* `El Chino` challenged `Fer Señior` and **won** *3-0*.<sup>(courtesy)</sup>
 ### Incompleted challenges
-* Player `UBD38N45P` challenged `Michel`.
+* Player `David` challenged `Michel`.
 
 
 ## Commit from Sun, 17 Feb 2019 22:18:07 GMT
