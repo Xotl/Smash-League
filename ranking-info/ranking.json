@@ -75,9 +75,9 @@
             "UBRMBGR6Z": 15,
             "UE82A6MNY": 0,
             "U8QS8T0CX": 24,
-            "UB616ENA0": 33,
+            "UB616ENA0": 34,
             "UEWUZCYJF": 6,
-            "UDBD59WLT": 28,
+            "UDBD59WLT": 29,
             "U6H8DDV25": 0,
             "U8M6QT7EF": 19,
             "U87CK0E4A": 16,
@@ -85,7 +85,7 @@
             "U622XCTAA": 0,
             "U8CEKPXQR": 0,
             "U6457D5KQ": 17,
-            "UBA5M220K": 27,
+            "UBA5M220K": 28,
             "UAGR4S57G": 3,
             "UBHGVCY4X": 0,
             "UBRCZ6G4B": 3,
@@ -93,12 +93,7 @@
             "UBD38N45P": 3
         },
         "active_challenges": {
-            "U8THDCVJ7": [
-                "UB616ENA0",
-                "UBA5M220K"
-            ],
             "UBA5M220K": [
-                "UDBD59WLT",
                 "U61MBQTR8"
             ],
             "U8QS8T0CX": [
@@ -227,8 +222,51 @@
                         "U8QS8T0CX"
                     ]
                 }
+            ],
+            "U8THDCVJ7": [
+                {
+                    "challenger": "U8THDCVJ7",
+                    "playerChallenged": "UB616ENA0",
+                    "winner": "UB616ENA0",
+                    "player1": "U8THDCVJ7",
+                    "player2": "UB616ENA0",
+                    "player1Result": 2,
+                    "player2Result": 3,
+                    "players": [
+                        "U8THDCVJ7",
+                        "UB616ENA0"
+                    ]
+                },
+                {
+                    "challenger": "U8THDCVJ7",
+                    "playerChallenged": "UBA5M220K",
+                    "winner": "UBA5M220K",
+                    "player1": "U8THDCVJ7",
+                    "player2": "UBA5M220K",
+                    "player1Result": 2,
+                    "player2Result": 3,
+                    "players": [
+                        "U8THDCVJ7",
+                        "UBA5M220K"
+                    ]
+                }
+            ],
+            "UBA5M220K": [
+                {
+                    "challenger": "UBA5M220K",
+                    "playerChallenged": "UDBD59WLT",
+                    "winner": "UDBD59WLT",
+                    "player1": "UDBD59WLT",
+                    "player2": "UBA5M220K",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "UDBD59WLT",
+                        "UBA5M220K"
+                    ]
+                }
             ]
         },
-        "last_update_ts": 1551159870.743
+        "last_update_ts": 1551246298.724
     }
 }
