@@ -17,20 +17,19 @@ Last updated **Sun, 24 Feb 2019 05:43:51 GMT**.
 |11|`El Chino`|6|
 |12|`Michel`, `Niightz`, `Sammy`, `David`|3|
 
-## In progress this week *Wed, 27 Feb 2019 05:44:58 GMT*
+## In progress this week *Thu, 28 Feb 2019 05:45:19 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `José "El Iceberg" Rosales` challenged `Xotl`.
 * Player `Aldo` challenged `Neku`.
-* Player `César Gutman` challenged `Xotl`.
-* Player `Alan` challenged `Fer Señior`, `D.I.O.`.
+* Player `Alan` challenged `Fer Señior`.
 * Player `Gilberto "Gil" Ruelas` challenged `D.I.O.`.
 * Player `El Minion` challenged `Neku`.
 * Player `Fer Señior` challenged `D.I.O.`.
 * Player `Medininja` challenged `El Chino`.
+* Player `D.I.O.` challenged `El Minion`, `Aldo`.
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -45,6 +44,9 @@ Matches that already happened during this week.
 * `Neku` challenged `Angel Lee` and **lost** *3-2*.
 * `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
 * `José "El Iceberg" Rosales` challenged `César Gutman` and **lost** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-0*.
+* `César Gutman` challenged `Xotl` and **lost** *3-0*.
+* `Alan` challenged `D.I.O.` and **won** *3-0*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -52,16 +54,16 @@ The current points earned by winning matches this week.
 |Player|Points|
 |---|---|
 |Angel Lee|34|
+|Xotl|31|
 |César Gutman|29|
-|Xotl|29|
 |José "El Iceberg" Rosales|28|
 |Aldo|24|
 |Neku|24|
 |Gilberto "Gil" Ruelas|19|
 |El Minion|19|
+|Alan|18|
 |D.I.O.|17|
 |Fer Señior|16|
-|Alan|15|
 |El Chino|6|
 |Niightz|3|
 |Michel|3|
