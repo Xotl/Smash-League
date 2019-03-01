@@ -17,7 +17,7 @@ Last updated **Sun, 24 Feb 2019 05:43:51 GMT**.
 |11|`El Chino`|6|
 |12|`Michel`, `Niightz`, `Sammy`, `David`|3|
 
-## In progress this week *Thu, 28 Feb 2019 05:45:19 GMT*
+## In progress this week *Fri, 01 Mar 2019 05:46:01 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
@@ -30,6 +30,7 @@ These are the current active challenges, which is a list of the people who have 
 * Player `Fer Señior` challenged `D.I.O.`.
 * Player `Medininja` challenged `El Chino`.
 * Player `D.I.O.` challenged `El Minion`, `Aldo`.
+* Player `Michel` challenged `Alan`.
 
 ### Completed challenges
 Matches that already happened during this week.
