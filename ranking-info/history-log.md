@@ -1,3 +1,34 @@
+## Commit from Sun, 03 Mar 2019 05:47:30 GMT
+### Completed challenges
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Angel Lee` challenged `César Gutman` and **won** *3-0*.
+* `Aldo` challenged `Angel Lee` and **lost** *3-1*.
+* `Gilberto "Gil" Ruelas` challenged `El Minion` and **won** *3-0*.
+* `Gilberto "Gil" Ruelas` challenged `D.I.O.` and **won** *3-0*.
+* `David` challenged `Alan` and **lost** *3-0*.
+* `Sammy` challenged `Alan` and **lost** *3-1*.
+* `Sammy` challenged `Fer Señior` and **won** *3-2*.
+* `Sammy` challenged `El Chino` and **won** *3-1*.
+* `El Minion` challenged `Aldo` and **lost** *3-1*.
+* `Neku` challenged `Angel Lee` and **lost** *3-2*.
+* `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
+* `José "El Iceberg" Rosales` challenged `César Gutman` and **lost** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-0*.
+* `César Gutman` challenged `Xotl` and **lost** *3-0*.
+* `Alan` challenged `D.I.O.` and **won** *3-0*.
+* `El Chino` challenged `Fer Señior` and **lost** *3-1*.
+* `El Chino` challenged `D.I.O.` and **won** *3-2*.
+* `Fer Señior` challenged `D.I.O.` and **won** *3-0*.
+* `Medininja` challenged `El Chino` and **lost** *3-2*.
+* `Michel` challenged `Alan` and **won** *3-2*.
+* `D.I.O.` challenged `El Minion` and **lost** *3-0*.
+### Incompleted challenges
+* Player `Aldo` challenged `Neku`.
+* Player `Alan` challenged `Fer Señior`.
+* Player `El Minion` challenged `Neku`.
+* Player `D.I.O.` challenged `Aldo`.
+
+
 ## Commit from Sun, 24 Feb 2019 05:43:51 GMT
 ### Completed challenges
 * `César Gutman` challenged `Neku` and **won** *3-0*.
