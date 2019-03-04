@@ -18,7 +18,7 @@ Last updated **Sun, 03 Mar 2019 00:00:00 GMT**.
 |12|`Michel`|6|
 |13|`Niightz`, `David`|3|
 
-## In progress this week *Mon, 04 Mar 2019 00:26:44 GMT*
+## In progress this week *Mon, 04 Mar 2019 05:47:44 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
