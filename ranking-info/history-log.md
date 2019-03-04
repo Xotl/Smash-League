@@ -1,4 +1,4 @@
-## Commit from Sun, 03 Mar 2019 05:47:30 GMT
+## Commit from Sun, 03 Mar 2019 00:00:00 GMT
 ### Completed challenges
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
 * `Angel Lee` challenged `César Gutman` and **won** *3-0*.
@@ -23,7 +23,6 @@
 * `Michel` challenged `Alan` and **won** *3-2*.
 * `D.I.O.` challenged `El Minion` and **lost** *3-0*.
 ### Incompleted challenges
-* Player `Aldo` challenged `Neku`.
 * Player `Alan` challenged `Fer Señior`.
 * Player `El Minion` challenged `Neku`.
 * Player `D.I.O.` challenged `Aldo`.

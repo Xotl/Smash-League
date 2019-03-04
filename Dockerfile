@@ -9,7 +9,7 @@ RUN npm install
 
 ARG NODE_ENV=dev
 
-RUN if [ $NODE_ENV = "dev" ] ; then npm install -g firebase-tools ; fi
+# RUN if [ $NODE_ENV = "dev" ] ; then npm install -g firebase-tools ; fi
 
 COPY . .
 RUN if [ $NODE_ENV != "dev" ] ; then npm version patch; fi
