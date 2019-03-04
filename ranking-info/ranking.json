@@ -1,9 +1,6 @@
 {
-    "last_update_ts": 1551592050.674,
+    "last_update_ts": 1550987031.472,
     "ranking": [
-        [
-            "UB616ENA0"
-        ],
         [
             "U61MBQTR8"
         ],
@@ -14,60 +11,59 @@
             "UBA5M220K"
         ],
         [
+            "UB616ENA0"
+        ],
+        [
+            "U8THDCVJ7"
+        ],
+        [
             "U8QS8T0CX"
         ],
         [
             "U8M6QT7EF"
         ],
         [
+            "U6457D5KQ"
+        ],
+        [
             "U7VAPLNCR",
-            "U8THDCVJ7"
+            "U87CK0E4A"
         ],
         [
             "UBRMBGR6Z"
         ],
         [
-            "U6457D5KQ"
-        ],
-        [
-            "U87CK0E4A"
-        ],
-        [
             "UEWUZCYJF"
         ],
         [
-            "UDR61HJCD"
-        ],
-        [
-            "UAGR4S57G"
-        ],
-        [
+            "UAGR4S57G",
             "UBRCZ6G4B",
+            "UDR61HJCD",
             "UBD38N45P"
         ]
     ],
     "scoreboard": {
         "U8A96RCEA": 0,
-        "U61MBQTR8": 31,
-        "U7VAPLNCR": 22,
-        "UBRMBGR6Z": 21,
+        "U61MBQTR8": 29,
+        "U7VAPLNCR": 16,
+        "UBRMBGR6Z": 13,
         "UE82A6MNY": 0,
-        "U8QS8T0CX": 26,
-        "UB616ENA0": 34,
-        "UEWUZCYJF": 10,
-        "UDBD59WLT": 29,
+        "U8QS8T0CX": 23,
+        "UB616ENA0": 26,
+        "UEWUZCYJF": 6,
+        "UDBD59WLT": 28,
         "U6H8DDV25": 0,
-        "U8M6QT7EF": 23,
-        "U87CK0E4A": 19,
-        "U8THDCVJ7": 22,
+        "U8M6QT7EF": 19,
+        "U87CK0E4A": 16,
+        "U8THDCVJ7": 24,
         "U622XCTAA": 0,
         "U8CEKPXQR": 0,
-        "U6457D5KQ": 20,
-        "UBA5M220K": 28,
-        "UAGR4S57G": 6,
+        "U6457D5KQ": 17,
+        "UBA5M220K": 27,
+        "UAGR4S57G": 3,
         "UBHGVCY4X": 0,
         "UBRCZ6G4B": 3,
-        "UDR61HJCD": 9,
+        "UDR61HJCD": 3,
         "UBD38N45P": 3
     },
     "unknown_users": [],
@@ -76,19 +72,19 @@
             "U8A96RCEA": 0,
             "U61MBQTR8": 31,
             "U7VAPLNCR": 22,
-            "UBRMBGR6Z": 21,
+            "UBRMBGR6Z": 18,
             "UE82A6MNY": 0,
-            "U8QS8T0CX": 26,
+            "U8QS8T0CX": 24,
             "UB616ENA0": 34,
             "UEWUZCYJF": 10,
             "UDBD59WLT": 29,
             "U6H8DDV25": 0,
-            "U8M6QT7EF": 23,
-            "U87CK0E4A": 19,
-            "U8THDCVJ7": 22,
+            "U8M6QT7EF": 20,
+            "U87CK0E4A": 20,
+            "U8THDCVJ7": 24,
             "U622XCTAA": 0,
             "U8CEKPXQR": 0,
-            "U6457D5KQ": 20,
+            "U6457D5KQ": 17,
             "UBA5M220K": 28,
             "UAGR4S57G": 6,
             "UBHGVCY4X": 0,
@@ -96,9 +92,335 @@
             "UDR61HJCD": 9,
             "UBD38N45P": 3
         },
-        "active_challenges": {},
-        "completed_challenges": {},
-        "last_update_ts": 1551592050.674,
-        "reported_results": []
+        "active_challenges": {
+            "UBRMBGR6Z": [
+                "U87CK0E4A"
+            ],
+            "U8M6QT7EF": [
+                "U8THDCVJ7"
+            ],
+            "U6457D5KQ": [
+                "U8QS8T0CX"
+            ]
+        },
+        "completed_challenges": {
+            "UB616ENA0": [
+                {
+                    "challenger": "UB616ENA0",
+                    "playerChallenged": "UBA5M220K",
+                    "winner": "UB616ENA0",
+                    "player1": "UBA5M220K",
+                    "player2": "UB616ENA0",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "UBA5M220K",
+                        "UB616ENA0"
+                    ]
+                },
+                {
+                    "challenger": "UB616ENA0",
+                    "playerChallenged": "UDBD59WLT",
+                    "winner": "UB616ENA0",
+                    "player1": "UDBD59WLT",
+                    "player2": "UB616ENA0",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "UDBD59WLT",
+                        "UB616ENA0"
+                    ]
+                }
+            ],
+            "U8QS8T0CX": [
+                {
+                    "challenger": "U8QS8T0CX",
+                    "playerChallenged": "UB616ENA0",
+                    "winner": "UB616ENA0",
+                    "player1": "UB616ENA0",
+                    "player2": "U8QS8T0CX",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "UB616ENA0",
+                        "U8QS8T0CX"
+                    ]
+                }
+            ],
+            "U7VAPLNCR": [
+                {
+                    "challenger": "U7VAPLNCR",
+                    "playerChallenged": "U8M6QT7EF",
+                    "winner": "U7VAPLNCR",
+                    "player1": "U7VAPLNCR",
+                    "player2": "U8M6QT7EF",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "U7VAPLNCR",
+                        "U8M6QT7EF"
+                    ]
+                },
+                {
+                    "challenger": "U7VAPLNCR",
+                    "playerChallenged": "U6457D5KQ",
+                    "winner": "U7VAPLNCR",
+                    "player1": "U7VAPLNCR",
+                    "player2": "U6457D5KQ",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "U7VAPLNCR",
+                        "U6457D5KQ"
+                    ]
+                }
+            ],
+            "UBD38N45P": [
+                {
+                    "challenger": "UBD38N45P",
+                    "playerChallenged": "UBRMBGR6Z",
+                    "winner": "UBRMBGR6Z",
+                    "player1": "UBRMBGR6Z",
+                    "player2": "UBD38N45P",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "UBRMBGR6Z",
+                        "UBD38N45P"
+                    ]
+                }
+            ],
+            "UDR61HJCD": [
+                {
+                    "challenger": "UDR61HJCD",
+                    "playerChallenged": "UBRMBGR6Z",
+                    "winner": "UBRMBGR6Z",
+                    "player1": "UBRMBGR6Z",
+                    "player2": "UDR61HJCD",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "UBRMBGR6Z",
+                        "UDR61HJCD"
+                    ]
+                },
+                {
+                    "challenger": "UDR61HJCD",
+                    "playerChallenged": "U87CK0E4A",
+                    "winner": "UDR61HJCD",
+                    "player1": "U87CK0E4A",
+                    "player2": "UDR61HJCD",
+                    "player1Result": 2,
+                    "player2Result": 3,
+                    "players": [
+                        "U87CK0E4A",
+                        "UDR61HJCD"
+                    ]
+                },
+                {
+                    "challenger": "UDR61HJCD",
+                    "playerChallenged": "UEWUZCYJF",
+                    "winner": "UDR61HJCD",
+                    "player1": "UEWUZCYJF",
+                    "player2": "UDR61HJCD",
+                    "player1Result": 1,
+                    "player2Result": 3,
+                    "players": [
+                        "UEWUZCYJF",
+                        "UDR61HJCD"
+                    ]
+                }
+            ],
+            "U8M6QT7EF": [
+                {
+                    "challenger": "U8M6QT7EF",
+                    "playerChallenged": "U8QS8T0CX",
+                    "winner": "U8QS8T0CX",
+                    "player1": "U8M6QT7EF",
+                    "player2": "U8QS8T0CX",
+                    "player1Result": 1,
+                    "player2Result": 3,
+                    "players": [
+                        "U8M6QT7EF",
+                        "U8QS8T0CX"
+                    ]
+                }
+            ],
+            "U8THDCVJ7": [
+                {
+                    "challenger": "U8THDCVJ7",
+                    "playerChallenged": "UB616ENA0",
+                    "winner": "UB616ENA0",
+                    "player1": "U8THDCVJ7",
+                    "player2": "UB616ENA0",
+                    "player1Result": 2,
+                    "player2Result": 3,
+                    "players": [
+                        "U8THDCVJ7",
+                        "UB616ENA0"
+                    ]
+                },
+                {
+                    "challenger": "U8THDCVJ7",
+                    "playerChallenged": "UBA5M220K",
+                    "winner": "UBA5M220K",
+                    "player1": "U8THDCVJ7",
+                    "player2": "UBA5M220K",
+                    "player1Result": 2,
+                    "player2Result": 3,
+                    "players": [
+                        "U8THDCVJ7",
+                        "UBA5M220K"
+                    ]
+                }
+            ],
+            "UBA5M220K": [
+                {
+                    "challenger": "UBA5M220K",
+                    "playerChallenged": "UDBD59WLT",
+                    "winner": "UDBD59WLT",
+                    "player1": "UDBD59WLT",
+                    "player2": "UBA5M220K",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "UDBD59WLT",
+                        "UBA5M220K"
+                    ]
+                },
+                {
+                    "challenger": "UBA5M220K",
+                    "playerChallenged": "U61MBQTR8",
+                    "winner": "U61MBQTR8",
+                    "player1": "U61MBQTR8",
+                    "player2": "UBA5M220K",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "U61MBQTR8",
+                        "UBA5M220K"
+                    ]
+                }
+            ],
+            "UDBD59WLT": [
+                {
+                    "challenger": "UDBD59WLT",
+                    "playerChallenged": "U61MBQTR8",
+                    "winner": "U61MBQTR8",
+                    "player1": "U61MBQTR8",
+                    "player2": "UDBD59WLT",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "U61MBQTR8",
+                        "UDBD59WLT"
+                    ]
+                }
+            ],
+            "UBRMBGR6Z": [
+                {
+                    "challenger": "UBRMBGR6Z",
+                    "playerChallenged": "U6457D5KQ",
+                    "winner": "UBRMBGR6Z",
+                    "player1": "UBRMBGR6Z",
+                    "player2": "U6457D5KQ",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "UBRMBGR6Z",
+                        "U6457D5KQ"
+                    ]
+                }
+            ],
+            "UEWUZCYJF": [
+                {
+                    "challenger": "UEWUZCYJF",
+                    "playerChallenged": "U87CK0E4A",
+                    "winner": "U87CK0E4A",
+                    "player1": "U87CK0E4A",
+                    "player2": "UEWUZCYJF",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "U87CK0E4A",
+                        "UEWUZCYJF"
+                    ]
+                },
+                {
+                    "challenger": "UEWUZCYJF",
+                    "playerChallenged": "U6457D5KQ",
+                    "winner": "UEWUZCYJF",
+                    "player1": "UEWUZCYJF",
+                    "player2": "U6457D5KQ",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "UEWUZCYJF",
+                        "U6457D5KQ"
+                    ]
+                }
+            ],
+            "U87CK0E4A": [
+                {
+                    "challenger": "U87CK0E4A",
+                    "playerChallenged": "U6457D5KQ",
+                    "winner": "U87CK0E4A",
+                    "player1": "U6457D5KQ",
+                    "player2": "U87CK0E4A",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "U6457D5KQ",
+                        "U87CK0E4A"
+                    ]
+                }
+            ],
+            "U6H8DDV25": [
+                {
+                    "challenger": "U6H8DDV25",
+                    "playerChallenged": "UEWUZCYJF",
+                    "winner": "UEWUZCYJF",
+                    "player1": "UEWUZCYJF",
+                    "player2": "U6H8DDV25",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "UEWUZCYJF",
+                        "U6H8DDV25"
+                    ]
+                }
+            ],
+            "UAGR4S57G": [
+                {
+                    "challenger": "UAGR4S57G",
+                    "playerChallenged": "UBRMBGR6Z",
+                    "winner": "UAGR4S57G",
+                    "player1": "UAGR4S57G",
+                    "player2": "UBRMBGR6Z",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "UAGR4S57G",
+                        "UBRMBGR6Z"
+                    ]
+                }
+            ],
+            "U6457D5KQ": [
+                {
+                    "challenger": "U6457D5KQ",
+                    "playerChallenged": "U8M6QT7EF",
+                    "winner": "U8M6QT7EF",
+                    "player1": "U8M6QT7EF",
+                    "player2": "U6457D5KQ",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "U8M6QT7EF",
+                        "U6457D5KQ"
+                    ]
+                }
+            ]
+        },
+        "last_update_ts": 1551505593.595
     }
 }
