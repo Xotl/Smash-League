@@ -18,20 +18,22 @@ Last updated **Sun, 03 Mar 2019 00:00:00 GMT**.
 |12|`Michel`|6|
 |13|`Niightz`, `David`|3|
 
-## In progress this week *Tue, 05 Mar 2019 05:47:45 GMT*
+## In progress this week *Wed, 06 Mar 2019 05:48:44 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `José "El Iceberg" Rosales` challenged `César Gutman`, `Xotl`.
-* Player `Neku` challenged `César Gutman`.
+* Player `José "El Iceberg" Rosales` challenged `Xotl`.
 * Player `Gilberto "Gil" Ruelas` challenged `José "El Iceberg" Rosales`, `Neku`.
+* Player `Alan` challenged `Gilberto "Gil" Ruelas`.
+* Player `César Gutman` challenged `Xotl`.
 
 ### Completed challenges
 Matches that already happened during this week.
 
 * `Neku` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
+* `Neku` challenged `César Gutman` and **lost** *3-0*.
 * `Xotl` challenged `Angel Lee` and **won** *3-1*.
 * `Sammy` challenged `D.I.O.` and **won** *3-2*.
 * `Sammy` challenged `Alan` and **lost** *3-0*.
@@ -39,16 +41,19 @@ Matches that already happened during this week.
 * `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
 * `El Chino` challenged `D.I.O.` and **lost** *3-2*.
 * `Alan` challenged `Neku` and **lost** *3-2*.
+* `José "El Iceberg" Rosales` challenged `César Gutman` and **won** *3-2*.
+* `David` challenged `Michel` and **lost** *3-1*.
+* `César Gutman` challenged `Angel Lee` and **lost** *3-2*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
 
 |Player|Points|
 |---|---|
-|Angel Lee|34|
+|Angel Lee|35|
 |Xotl|34|
-|César Gutman|29|
-|José "El Iceberg" Rosales|29|
+|José "El Iceberg" Rosales|32|
+|César Gutman|30|
 |Neku|27|
 |Aldo|23|
 |El Minion|23|
@@ -58,7 +63,7 @@ The current points earned by winning matches this week.
 |Fer Señior|19|
 |Sammy|12|
 |El Chino|10|
-|Michel|6|
+|Michel|7|
 |David|3|
 |Niightz|3|
 |Homero|0|
