@@ -73,7 +73,7 @@
         "scoreboard": {
             "U8A96RCEA": 0,
             "U61MBQTR8": 36,
-            "U7VAPLNCR": 25,
+            "U7VAPLNCR": 26,
             "UBRMBGR6Z": 22,
             "UE82A6MNY": 0,
             "U8QS8T0CX": 23,
@@ -91,12 +91,19 @@
             "UAGR4S57G": 7,
             "UBHGVCY4X": 0,
             "UBRCZ6G4B": 3,
-            "UDR61HJCD": 12,
+            "UDR61HJCD": 13,
             "UBD38N45P": 3
         },
         "active_challenges": {
-            "UBRMBGR6Z": [
+            "U6457D5KQ": [
+                "UBRMBGR6Z",
                 "U7VAPLNCR"
+            ],
+            "U8A96RCEA": [
+                "UAGR4S57G",
+                "UEWUZCYJF",
+                "UBRCZ6G4B",
+                "U87CK0E4A"
             ]
         },
         "completed_challenges": {
@@ -229,6 +236,19 @@
                         "U8THDCVJ7",
                         "UBRMBGR6Z"
                     ]
+                },
+                {
+                    "challenger": "UBRMBGR6Z",
+                    "playerChallenged": "U7VAPLNCR",
+                    "winner": "U7VAPLNCR",
+                    "player1": "UBRMBGR6Z",
+                    "player2": "U7VAPLNCR",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "UBRMBGR6Z",
+                        "U7VAPLNCR"
+                    ]
                 }
             ],
             "UBA5M220K": [
@@ -271,6 +291,19 @@
                     "players": [
                         "UAGR4S57G",
                         "UBD38N45P"
+                    ]
+                },
+                {
+                    "challenger": "UBD38N45P",
+                    "playerChallenged": "UDR61HJCD",
+                    "winner": "UDR61HJCD",
+                    "player1": "UBD38N45P",
+                    "player2": "UDR61HJCD",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "UBD38N45P",
+                        "UDR61HJCD"
                     ]
                 }
             ],
@@ -331,6 +364,6 @@
                 }
             ]
         },
-        "last_update_ts": 1551937717.137
+        "last_update_ts": 1552024159.075
     }
 }
