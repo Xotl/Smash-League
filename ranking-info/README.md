@@ -8,7 +8,7 @@ Last updated **Sun, 03 Mar 2019 00:00:00 GMT**.
 |2|`Xotl`|31|
 |3|`César Gutman`|29|
 |4|`José "El Iceberg" Rosales`|28|
-|5|`El Minion`, `Neku`|23|
+|5|`El Minion`, `Neku`, `Aldo`|23|
 |6|`Gilberto "Gil" Ruelas`|22|
 |7|`Alan`|21|
 |8|`D.I.O.`|20|
@@ -18,7 +18,7 @@ Last updated **Sun, 03 Mar 2019 00:00:00 GMT**.
 |12|`Michel`|6|
 |13|`Niightz`, `David`|3|
 
-## In progress this week *Sat, 09 Mar 2019 16:51:10 GMT*
+## In progress this week *Sat, 09 Mar 2019 16:57:23 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
@@ -68,17 +68,11 @@ The current points earned by winning matches this week.
 |Gilberto "Gil" Ruelas|27|
 |D.I.O.|25|
 |El Minion|23|
-|Aldo|23|
 |Alan|22|
 |Fer Señior|20|
 |Sammy|16|
 |El Chino|12|
 |Michel|7|
-|Carlos López|3|
 |Niightz|3|
+|Carlos López|3|
 |David|3|
-|Homero|0|
-|Gustavo "Díganme El Jefazo" Mejía|0|
-|Néstor|0|
-|Medininja|0|
-|Alberto Ortiz|0|
