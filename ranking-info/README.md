@@ -8,7 +8,7 @@ Last updated **Sun, 03 Mar 2019 00:00:00 GMT**.
 |2|`Xotl`|31|
 |3|`César Gutman`|29|
 |4|`José "El Iceberg" Rosales`|28|
-|5|`Aldo`, `El Minion`, `Neku`|23|
+|5|`El Minion`, `Neku`|23|
 |6|`Gilberto "Gil" Ruelas`|22|
 |7|`Alan`|21|
 |8|`D.I.O.`|20|
@@ -18,13 +18,13 @@ Last updated **Sun, 03 Mar 2019 00:00:00 GMT**.
 |12|`Michel`|6|
 |13|`Niightz`, `David`|3|
 
-## In progress this week *Sat, 09 Mar 2019 05:49:59 GMT*
+## In progress this week *Sat, 09 Mar 2019 16:51:10 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `Carlos López` challenged `El Chino`, `Niightz`, `Fer Señior`.
+
 
 ### Completed challenges
 Matches that already happened during this week.
