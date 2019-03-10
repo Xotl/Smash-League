@@ -1,24 +1,25 @@
 # Ranking
 
-Last updated **Sun, 03 Mar 2019 00:00:00 GMT**.
+Last updated **Sun, 10 Mar 2019 05:50:27 GMT**.
 
 |#|Player|Points|
 |---|---|---|
-|1|`Angel Lee`|34|
-|2|`Xotl`|31|
-|3|`César Gutman`|29|
-|4|`José "El Iceberg" Rosales`|28|
-|5|`El Minion`, `Neku`, `Aldo`|23|
-|6|`Gilberto "Gil" Ruelas`|22|
-|7|`Alan`|21|
-|8|`D.I.O.`|20|
-|9|`Fer Señior`|19|
-|10|`El Chino`|10|
-|11|`Sammy`|9|
-|12|`Michel`|6|
-|13|`Niightz`, `David`|3|
+|1|`Xotl`|36|
+|2|`Angel Lee`|35|
+|3|`José "El Iceberg" Rosales`|32|
+|4|`César Gutman`|30|
+|5|`Neku`|28|
+|6|`Gilberto "Gil" Ruelas`|27|
+|7|`D.I.O.`|25|
+|8|`El Minion`|23|
+|9|`Alan`|22|
+|10|`Fer Señior`|20|
+|11|`Sammy`|16|
+|12|`El Chino`|12|
+|13|`Michel`|7|
+|14|`Carlos López`, `Niightz`, `David`|3|
 
-## In progress this week *Sat, 09 Mar 2019 16:57:23 GMT*
+## In progress this week *Sun, 10 Mar 2019 05:50:27 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
@@ -29,31 +30,7 @@ These are the current active challenges, which is a list of the people who have 
 ### Completed challenges
 Matches that already happened during this week.
 
-* `Neku` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
-* `Neku` challenged `César Gutman` and **lost** *3-0*.
-* `Xotl` challenged `Angel Lee` and **won** *3-1*.
-* `Sammy` challenged `D.I.O.` and **won** *3-2*.
-* `Sammy` challenged `Alan` and **lost** *3-0*.
-* `Sammy` challenged `Fer Señior` and **won** *3-2*.
-* `Sammy` challenged `El Chino` and **lost** *3-2*.
-* `Fer Señior` challenged `D.I.O.` and **lost** *3-2*.
-* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
-* `El Chino` challenged `D.I.O.` and **lost** *3-2*.
-* `El Chino` challenged `Fer Señior` and **lost** *3-2*.
-* `Alan` challenged `Neku` and **lost** *3-2*.
-* `Alan` challenged `Gilberto "Gil" Ruelas` and **lost** *3-0*.
-* `José "El Iceberg" Rosales` challenged `César Gutman` and **won** *3-2*.
-* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-2*.
-* `David` challenged `Michel` and **lost** *3-1*.
-* `David` challenged `Sammy` and **lost** *3-0*.
-* `David` challenged `El Chino` and **lost** *3-1*.
-* `César Gutman` challenged `Angel Lee` and **lost** *3-2*.
-* `César Gutman` challenged `Xotl` and **lost** *3-1*.
-* `Gilberto "Gil" Ruelas` challenged `Neku` and **lost** *3-0*.
-* `Gilberto "Gil" Ruelas` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
-* `Carlos López` challenged `Michel` and **won** *3-2*.
-* `D.I.O.` challenged `Gilberto "Gil" Ruelas` and **lost** *3-0*.
-* `D.I.O.` challenged `Alan` and **won** *3-2*.
+
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
