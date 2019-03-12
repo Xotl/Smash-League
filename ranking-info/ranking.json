@@ -74,18 +74,65 @@
             "UB616ENA0": 35,
             "UEWUZCYJF": 12,
             "UDBD59WLT": 30,
-            "U8M6QT7EF": 23,
+            "U8M6QT7EF": 24,
             "U87CK0E4A": 20,
             "U8THDCVJ7": 28,
             "U6457D5KQ": 25,
             "UBA5M220K": 32,
-            "UAGR4S57G": 7,
+            "UAGR4S57G": 10,
             "UBRCZ6G4B": 3,
             "UDR61HJCD": 16,
             "UBD38N45P": 3
         },
-        "active_challenges": {},
-        "completed_challenges": {},
-        "last_update_ts": 1552283494.794
+        "active_challenges": {
+            "UBA5M220K": [
+                "U61MBQTR8",
+                "UB616ENA0"
+            ],
+            "UB616ENA0": [
+                "U61MBQTR8"
+            ],
+            "U8THDCVJ7": [
+                "UBA5M220K",
+                "UDBD59WLT"
+            ],
+            "UDBD59WLT": [
+                "UB616ENA0",
+                "UBA5M220K"
+            ]
+        },
+        "completed_challenges": {
+            "UDR61HJCD": [
+                {
+                    "challenger": "UDR61HJCD",
+                    "playerChallenged": "U8M6QT7EF",
+                    "winner": "U8M6QT7EF",
+                    "player1": "U8M6QT7EF",
+                    "player2": "UDR61HJCD",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "U8M6QT7EF",
+                        "UDR61HJCD"
+                    ]
+                }
+            ],
+            "UAGR4S57G": [
+                {
+                    "challenger": "UAGR4S57G",
+                    "playerChallenged": "UDR61HJCD",
+                    "winner": "UAGR4S57G",
+                    "player1": "UAGR4S57G",
+                    "player2": "UDR61HJCD",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "UAGR4S57G",
+                        "UDR61HJCD"
+                    ]
+                }
+            ]
+        },
+        "last_update_ts": 1552369934.974
     }
 }
