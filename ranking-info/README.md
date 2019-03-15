@@ -19,21 +19,20 @@ Last updated **Sun, 10 Mar 2019 05:50:27 GMT**.
 |13|`Michel`|7|
 |14|`Carlos López`, `Niightz`, `David`|3|
 
-## In progress this week *Thu, 14 Mar 2019 05:53:45 GMT*
+## In progress this week *Fri, 15 Mar 2019 05:54:09 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `El Minion` challenged `Gilberto "Gil" Ruelas`.
-* Player `David` challenged `El Chino`.
-* Player `Michel` challenged `El Chino`.
+* Player `Gilberto "Gil" Ruelas` challenged `Neku`.
 
 ### Completed challenges
 Matches that already happened during this week.
 
 * `Sammy` challenged `El Minion` and **lost** *3-0*.
 * `Michel` challenged `Sammy` and **won** *3-0*.
+* `Michel` challenged `El Chino` and **won** *3-2*.
 * `Neku` challenged `César Gutman` and **lost** *3-1*.
 * `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-0*.
@@ -45,7 +44,10 @@ Matches that already happened during this week.
 * `Alan` challenged `El Minion` and **won** *3-2*.
 * `Carlos López` challenged `Michel` and **lost** *3-0*.
 * `El Minion` challenged `D.I.O.` and **lost** *3-2*.
+* `El Minion` challenged `Gilberto "Gil" Ruelas` and **lost** *3-0*.
 * `Angel Lee` challenged `Xotl` and **lost** *3-2*.
+* `David` challenged `El Chino` and **lost** *3-1*.
+* `Gilberto "Gil" Ruelas` challenged `César Gutman` and **lost** *3-0*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -55,16 +57,16 @@ The current points earned by winning matches this week.
 |Xotl|38|
 |Angel Lee|36|
 |José "El Iceberg" Rosales|36|
-|César Gutman|34|
+|César Gutman|35|
 |Neku|29|
 |Alan|28|
-|Gilberto "Gil" Ruelas|27|
+|Gilberto "Gil" Ruelas|28|
 |D.I.O.|26|
 |El Minion|24|
 |Fer Señior|20|
 |Sammy|16|
-|El Chino|12|
-|Michel|11|
+|Michel|14|
+|El Chino|13|
 |Niightz|3|
 |Carlos López|3|
 |David|3|
