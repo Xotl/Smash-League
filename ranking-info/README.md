@@ -18,7 +18,7 @@ Last updated **Sun, 17 Mar 2019 05:55:11 GMT**.
 |12|`El Chino`|13|
 |13|`Carlos López`, `Niightz`, `David`, `Medininja`|3|
 
-## In progress this week *Sun, 17 Mar 2019 05:55:11 GMT*
+## In progress this week *Mon, 18 Mar 2019 05:55:58 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
