@@ -68,25 +68,125 @@
     "in_progress": {
         "scoreboard": {
             "U8A96RCEA": 3,
-            "U61MBQTR8": 38,
+            "U61MBQTR8": 40,
             "U7VAPLNCR": 29,
             "UBRMBGR6Z": 28,
             "UB616ENA0": 36,
             "UEWUZCYJF": 13,
-            "UDBD59WLT": 35,
+            "UDBD59WLT": 39,
             "U8M6QT7EF": 24,
             "U87CK0E4A": 21,
-            "U8THDCVJ7": 30,
+            "U8THDCVJ7": 33,
             "U6457D5KQ": 27,
             "UBA5M220K": 36,
-            "UAGR4S57G": 14,
+            "UAGR4S57G": 15,
             "UBRCZ6G4B": 3,
             "UDR61HJCD": 20,
             "UBD38N45P": 3,
             "U6H8DDV25": 3
         },
-        "active_challenges": {},
-        "completed_challenges": {},
-        "last_update_ts": 1552974996.465
+        "active_challenges": {
+            "UBD38N45P": [
+                "UEWUZCYJF"
+            ],
+            "U8M6QT7EF": [
+                "U6457D5KQ",
+                "UBRMBGR6Z"
+            ],
+            "UDBD59WLT": [
+                "U61MBQTR8"
+            ]
+        },
+        "completed_challenges": {
+            "UBA5M220K": [
+                {
+                    "challenger": "UBA5M220K",
+                    "playerChallenged": "U61MBQTR8",
+                    "winner": "U61MBQTR8",
+                    "player1": "UBA5M220K",
+                    "player2": "U61MBQTR8",
+                    "player1Result": 1,
+                    "player2Result": 3,
+                    "players": [
+                        "UBA5M220K",
+                        "U61MBQTR8"
+                    ]
+                }
+            ],
+            "U8THDCVJ7": [
+                {
+                    "challenger": "U8THDCVJ7",
+                    "playerChallenged": "UDBD59WLT",
+                    "winner": "UDBD59WLT",
+                    "player1": "UDBD59WLT",
+                    "player2": "U8THDCVJ7",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "UDBD59WLT",
+                        "U8THDCVJ7"
+                    ]
+                },
+                {
+                    "challenger": "U8THDCVJ7",
+                    "playerChallenged": "UB616ENA0",
+                    "winner": "U8THDCVJ7",
+                    "player1": "U8THDCVJ7",
+                    "player2": "UB616ENA0",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "U8THDCVJ7",
+                        "UB616ENA0"
+                    ]
+                }
+            ],
+            "UB616ENA0": [
+                {
+                    "challenger": "UB616ENA0",
+                    "playerChallenged": "U61MBQTR8",
+                    "winner": "U61MBQTR8",
+                    "player1": "UB616ENA0",
+                    "player2": "U61MBQTR8",
+                    "player1Result": 2,
+                    "player2Result": 3,
+                    "players": [
+                        "UB616ENA0",
+                        "U61MBQTR8"
+                    ]
+                }
+            ],
+            "UBD38N45P": [
+                {
+                    "challenger": "UBD38N45P",
+                    "playerChallenged": "UAGR4S57G",
+                    "winner": "UAGR4S57G",
+                    "player1": "UAGR4S57G",
+                    "player2": "UBD38N45P",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "UAGR4S57G",
+                        "UBD38N45P"
+                    ]
+                }
+            ],
+            "UDBD59WLT": [
+                {
+                    "challenger": "UDBD59WLT",
+                    "playerChallenged": "UBA5M220K",
+                    "winner": "UDBD59WLT",
+                    "player1": "UDBD59WLT",
+                    "player2": "UBA5M220K",
+                    "player1Result": 3,
+                    "player2Result": 2,
+                    "players": [
+                        "UDBD59WLT",
+                        "UBA5M220K"
+                    ]
+                }
+            ]
+        },
+        "last_update_ts": 1553061463.305
     }
 }
