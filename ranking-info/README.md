@@ -18,14 +18,14 @@ Last updated **Sun, 17 Mar 2019 05:55:11 GMT**.
 |12|`El Chino`|13|
 |13|`Carlos López`, `Niightz`, `David`, `Medininja`|3|
 
-## In progress this week *Fri, 22 Mar 2019 05:59:08 GMT*
+## In progress this week *Sat, 23 Mar 2019 05:59:17 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
 * Player `Alan` challenged `Neku`, `Gilberto "Gil" Ruelas`.
-* Player `D.I.O.` challenged `Gilberto "Gil" Ruelas`.
+* Player `David` challenged `Sammy`, `Fer Señior`.
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -42,11 +42,16 @@ Matches that already happened during this week.
 * `El Minion` challenged `D.I.O.` and **won** *3-1*.
 * `El Chino` challenged `Sammy` and **won** *3-0*.
 * `El Chino` challenged `Fer Señior` and **lost** *3-0*.
+* `El Chino` challenged `D.I.O.` and **lost** *3-2*.
 * `Medininja` challenged `El Chino` and **won** *3-0*.
 * `Sammy` challenged `El Minion` and **lost** *3-2*.
 * `Sammy` challenged `Fer Señior` and **won** *3-0*.
+* `Sammy` challenged `D.I.O.` and **lost** *3-2*.
 * `D.I.O.` challenged `Alan` and **lost** *3-2*.
+* `D.I.O.` challenged `Gilberto "Gil" Ruelas` and **lost** *3-2*.
 * `Fer Señior` challenged `D.I.O.` and **won** *3-2*.
+* `Gilberto "Gil" Ruelas` challenged `Neku` and **lost** *3-0*.
+* `Gilberto "Gil" Ruelas` challenged `César Gutman` and **lost** *3-1*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -54,14 +59,14 @@ The current points earned by winning matches this week.
 |Player|Points|
 |---|---|
 |Xotl|41|
-|César Gutman|39|
+|César Gutman|40|
 |Angel Lee|36|
 |José "El Iceberg" Rosales|36|
-|Neku|33|
+|Neku|34|
 |El Minion|31|
+|Gilberto "Gil" Ruelas|30|
 |Alan|29|
-|Gilberto "Gil" Ruelas|29|
-|D.I.O.|27|
+|D.I.O.|29|
 |Fer Señior|25|
 |Sammy|23|
 |El Chino|17|
