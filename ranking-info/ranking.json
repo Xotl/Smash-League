@@ -81,11 +81,11 @@
             "U8THDCVJ7": 34,
             "U6457D5KQ": 29,
             "UBA5M220K": 37,
-            "UAGR4S57G": 15,
+            "UAGR4S57G": 16,
             "UBRCZ6G4B": 3,
-            "UDR61HJCD": 22,
-            "UBD38N45P": 9,
-            "U6H8DDV25": 6
+            "UDR61HJCD": 23,
+            "UBD38N45P": 10,
+            "U6H8DDV25": 9
         },
         "active_challenges": {
             "U8M6QT7EF": [
@@ -96,10 +96,6 @@
                 "U87CK0E4A"
             ],
             "U6H8DDV25": [
-                "UDR61HJCD",
-                "UEWUZCYJF",
-                "UBD38N45P",
-                "UAGR4S57G",
                 "U87CK0E4A"
             ]
         },
@@ -217,8 +213,62 @@
                         "UBA5M220K"
                     ]
                 }
+            ],
+            "U6H8DDV25": [
+                {
+                    "challenger": "U6H8DDV25",
+                    "playerChallenged": "UBD38N45P",
+                    "winner": "UBD38N45P",
+                    "player1": "UBD38N45P",
+                    "player2": "U6H8DDV25",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "UBD38N45P",
+                        "U6H8DDV25"
+                    ]
+                },
+                {
+                    "challenger": "U6H8DDV25",
+                    "playerChallenged": "UAGR4S57G",
+                    "winner": "UAGR4S57G",
+                    "player1": "UAGR4S57G",
+                    "player2": "U6H8DDV25",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "UAGR4S57G",
+                        "U6H8DDV25"
+                    ]
+                },
+                {
+                    "challenger": "U6H8DDV25",
+                    "playerChallenged": "UDR61HJCD",
+                    "winner": "UDR61HJCD",
+                    "player1": "UDR61HJCD",
+                    "player2": "U6H8DDV25",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "UDR61HJCD",
+                        "U6H8DDV25"
+                    ]
+                },
+                {
+                    "challenger": "U6H8DDV25",
+                    "playerChallenged": "UEWUZCYJF",
+                    "winner": "U6H8DDV25",
+                    "player1": "UEWUZCYJF",
+                    "player2": "U6H8DDV25",
+                    "player1Result": 0,
+                    "player2Result": 3,
+                    "players": [
+                        "UEWUZCYJF",
+                        "U6H8DDV25"
+                    ]
+                }
             ]
         },
-        "last_update_ts": 1553580008.595
+        "last_update_ts": 1553666473.182
     }
 }
