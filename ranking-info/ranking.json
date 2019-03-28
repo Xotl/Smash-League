@@ -83,7 +83,7 @@
             "UBA5M220K": 37,
             "UAGR4S57G": 16,
             "UBRCZ6G4B": 3,
-            "UDR61HJCD": 23,
+            "UDR61HJCD": 26,
             "UBD38N45P": 10,
             "U6H8DDV25": 9
         },
@@ -92,11 +92,13 @@
                 "U8THDCVJ7"
             ],
             "UDR61HJCD": [
-                "UBRMBGR6Z",
                 "U87CK0E4A"
             ],
             "U6H8DDV25": [
                 "U87CK0E4A"
+            ],
+            "UBD38N45P": [
+                "UEWUZCYJF"
             ]
         },
         "completed_challenges": {
@@ -267,8 +269,23 @@
                         "U6H8DDV25"
                     ]
                 }
+            ],
+            "UDR61HJCD": [
+                {
+                    "challenger": "UDR61HJCD",
+                    "playerChallenged": "UBRMBGR6Z",
+                    "winner": "UDR61HJCD",
+                    "player1": "UDR61HJCD",
+                    "player2": "UBRMBGR6Z",
+                    "player1Result": 3,
+                    "player2Result": 1,
+                    "players": [
+                        "UDR61HJCD",
+                        "UBRMBGR6Z"
+                    ]
+                }
             ]
         },
-        "last_update_ts": 1553666473.182
+        "last_update_ts": 1553752907.287
     }
 }

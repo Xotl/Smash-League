@@ -19,15 +19,16 @@ Last updated **Sun, 24 Mar 2019 00:06:12 GMT**.
 |13|`Medininja`|6|
 |14|`Carlos López`, `Niightz`|3|
 
-## In progress this week *Wed, 27 Mar 2019 06:01:13 GMT*
+## In progress this week *Thu, 28 Mar 2019 06:01:47 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
 * Player `El Minion` challenged `Neku`.
-* Player `Sammy` challenged `Alan`, `Fer Señior`.
+* Player `Sammy` challenged `Fer Señior`.
 * Player `Medininja` challenged `Fer Señior`.
+* Player `David` challenged `El Chino`.
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -44,6 +45,7 @@ Matches that already happened during this week.
 * `Medininja` challenged `Michel` and **lost** *3-1*.
 * `Medininja` challenged `Sammy` and **lost** *3-0*.
 * `Medininja` challenged `El Chino` and **won** *3-0*.
+* `Sammy` challenged `Alan` and **won** *3-1*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -59,8 +61,8 @@ The current points earned by winning matches this week.
 |Gilberto "Gil" Ruelas|30|
 |Alan|29|
 |D.I.O.|29|
+|Sammy|26|
 |Fer Señior|24|
-|Sammy|23|
 |El Chino|17|
 |Michel|16|
 |David|10|
