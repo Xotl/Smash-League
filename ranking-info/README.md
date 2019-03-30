@@ -19,16 +19,13 @@ Last updated **Sun, 24 Mar 2019 00:06:12 GMT**.
 |13|`Medininja`|6|
 |14|`Carlos López`, `Niightz`|3|
 
-## In progress this week *Fri, 29 Mar 2019 06:02:31 GMT*
+## In progress this week *Sat, 30 Mar 2019 06:02:55 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Active challenges
 These are the current active challenges, which is a list of the people who have challenged other people.
 
-* Player `Sammy` challenged `Fer Señior`.
-* Player `Medininja` challenged `Fer Señior`.
 * Player `D.I.O.` challenged `Gilberto "Gil" Ruelas`.
-* Player `Alan` challenged `Gilberto "Gil" Ruelas`.
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -46,13 +43,20 @@ Matches that already happened during this week.
 * `Medininja` challenged `Michel` and **lost** *3-1*.
 * `Medininja` challenged `Sammy` and **lost** *3-0*.
 * `Medininja` challenged `El Chino` and **won** *3-0*.
+* `Medininja` challenged `Fer Señior` and **lost** *3-0*.
 * `Sammy` challenged `Alan` and **won** *3-1*.
+* `Sammy` challenged `Fer Señior` and **lost** *3-0*.
 * `David` challenged `El Chino` and **lost** *3-1*.
+* `David` challenged `Sammy` and **lost** *3-1*.
 * `Fer Señior` challenged `D.I.O.` and **lost** *3-2*.
+* `Fer Señior` challenged `Gilberto "Gil" Ruelas` and **lost** *3-1*.
 * `El Chino` challenged `D.I.O.` and **lost** *3-2*.
+* `El Chino` challenged `Fer Señior` and **lost** *3-1*.
 * `Alan` challenged `El Minion` and **lost** *3-1*.
+* `Alan` challenged `Gilberto "Gil" Ruelas` and **lost** *3-2*.
 * `D.I.O.` challenged `El Minion` and **won** *3-1*.
 * `Gilberto "Gil" Ruelas` challenged `Neku` and **lost** *3-0*.
+* `Gilberto "Gil" Ruelas` challenged `El Minion` and **lost** *3-2*.
 
 ### Current Scoreboard
 The current points earned by winning matches this week.
@@ -65,11 +69,11 @@ The current points earned by winning matches this week.
 |José "El Iceberg" Rosales|37|
 |Neku|36|
 |D.I.O.|34|
-|El Minion|32|
-|Gilberto "Gil" Ruelas|30|
+|El Minion|33|
+|Gilberto "Gil" Ruelas|32|
 |Alan|29|
-|Sammy|26|
-|Fer Señior|24|
+|Fer Señior|27|
+|Sammy|27|
 |El Chino|18|
 |Michel|16|
 |David|10|
