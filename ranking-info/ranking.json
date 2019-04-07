@@ -1,5 +1,13 @@
 {
     "last_update_ts": 1554012202.785,
+    "season": {
+        "start": 1554012202.785,
+        "end": 123
+    },
+    "current_week": {
+        "start": 123,
+        "end": 123
+    },
     "ranking": [
         [
             "U61MBQTR8"
@@ -69,26 +77,128 @@
     "unknown_users": [],
     "in_progress": {
         "scoreboard": {
-            "U8A96RCEA": 3,
-            "U61MBQTR8": 44,
-            "U7VAPLNCR": 31,
-            "UBRMBGR6Z": 29,
-            "UB616ENA0": 40,
-            "UEWUZCYJF": 18,
-            "UDBD59WLT": 42,
-            "U8M6QT7EF": 33,
-            "U87CK0E4A": 27,
-            "U8THDCVJ7": 36,
-            "U6457D5KQ": 37,
-            "UBA5M220K": 37,
-            "UAGR4S57G": 16,
-            "UBRCZ6G4B": 3,
-            "UDR61HJCD": 27,
-            "UBD38N45P": 10,
-            "U6H8DDV25": 9
+            "U8A96RCEA": {
+                "points_earned": 0,
+                "points": 3,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "U61MBQTR8": {
+                "points_earned": 0,
+                "points": 44,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "U7VAPLNCR": {
+                "points_earned": 0,
+                "points": 31,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UBRMBGR6Z": {
+                "points_earned": 0,
+                "points": 29,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UB616ENA0": {
+                "points_earned": 0,
+                "points": 40,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UEWUZCYJF": {
+                "points_earned": 0,
+                "points": 18,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UDBD59WLT": {
+                "points_earned": 0,
+                "points": 42,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "U8M6QT7EF": {
+                "points_earned": 0,
+                "points": 33,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "U87CK0E4A": {
+                "points_earned": 0,
+                "points": 27,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "U8THDCVJ7": {
+                "points_earned": 0,
+                "points": 36,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "U6457D5KQ": {
+                "points_earned": 0,
+                "points": 37,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UBA5M220K": {
+                "points_earned": 0,
+                "points": 37,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UAGR4S57G": {
+                "points_earned": 0,
+                "points": 16,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UBRCZ6G4B": {
+                "points_earned": 0,
+                "points": 3,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UDR61HJCD": {
+                "points_earned": 0,
+                "points": 27,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "UBD38N45P": {
+                "points_earned": 0,
+                "points": 10,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "U6H8DDV25": {
+                "points_earned": 0,
+                "points": 9,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            }
         },
         "active_challenges": {},
-        "completed_challenges": {},
+        "completed_challenges": [],
         "last_update_ts": 1554012202.785,
         "reported_results": []
     }
