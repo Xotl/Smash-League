@@ -13,24 +13,29 @@ const SMASH_SLACK_CHANNEL_ID = Config.slack_channel_id
 
 async function Main() {
     const now = new Date()
-    const lastInProgressUpdated = Utils.GetDateObjFromEpochTS(Ranking.in_progress.last_update_ts)
+    const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts)
     const opts = { latest: now, oldest: lastInProgressUpdated }
-
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
-    const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
-    const newInProgressObj = SmashLeague.digestActivitiesAndGetUpdatedRankingObj(activities, Ranking)
 
-    newInProgressObj.last_update_ts = Utils.GetEpochUnixFromDate(now)
+    const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
+    
+
+    const ignoredActivities = Utils.setIgnoredActivityLogObject({})
+    const newInProgressObj = SmashLeague.applyActivitiesToRanking(activities, Ranking)
+    Utils.showInConsoleIgnoredActivities(ignoredActivities)
+
+
+    newInProgressObj.last_update_ts = now.getTime()
     let newRankingObj = { ...Ranking, in_progress: newInProgressObj }
 
-    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)
+    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, Ranking.current_week)
     if (isItTimeToCommit) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
         OutputGenerator.updateHistoryLog(newInProgressObj)
     }
     else {
         // Updates ranking table in case there's a manual change in current scoreboard
-        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(newRankingObj.scoreboard)
+        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard)
     }
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
