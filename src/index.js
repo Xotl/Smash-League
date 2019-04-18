@@ -42,35 +42,13 @@ async function Main() {
     await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
 
     if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
-        if (isItTimeToCommit) {
-            Slack.postMessageInChannel(
-                '¡Ha iniciando un nuevo ranking esta semana!, ya pueden revisar en qué lugar quedaron.\n' +
-                'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-                , SMASH_SLACK_CHANNEL_ID
-            )
+        let messageToPost;
+        if (process.env.TRAVIS_EVENT_TYPE === 'push') {
+            messageToPost = `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n`
         }
-        else {
-            console.log('The Travis event type is:', process.env.TRAVIS_EVENT_TYPE)
-            switch(process.env.TRAVIS_EVENT_TYPE) {
-                case 'push':
-                    Slack.postMessageInChannel(
-                        `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n` +
-                        'Y también aproveché a buscar mensajes nuevos para actualizar el ranking (si es que hubo actividad).\n' +
-                        'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-                        , SMASH_SLACK_CHANNEL_ID
-                    )                    
-                    break;
 
-                case 'cron':
-                default:
-                    Slack.postMessageInChannel(
-                        'Aquí reportando que ya actualicé el scoreboard.' +
-                        'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-                        , SMASH_SLACK_CHANNEL_ID
-                    )                    
-                    break;
-            }
-        }
+        messageToPost += SmashLeague.getMessageToNotifyUsers(isItTimeToCommit, )
+        Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID)
     }
     console.log('Finished Successfully.')
 }

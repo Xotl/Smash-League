@@ -255,8 +255,8 @@ const calculatePointsFromPlayerScore = playerScore => {
     return points + stand_points + range - coins
 }
 
-const applyEndOfWeekRulesToPlayerScore = (playerId, playerScore) => {
-    const playerPlace = getRankingPlaceByPlayerId(playerId)
+const applyEndOfWeekRulesToPlayerScore = (playerId, playerScore, rankingTable) => {
+    const playerPlace = getRankingPlaceByPlayerId(playerId, rankingTable)
     const initialCoins = getInitialCoinsForPlayer(playerPlace)
     return {
         stand_points: 0,
@@ -313,6 +313,16 @@ const commitInProgress = rankingObj => {
     return result
 }
 
+const getMessageToNotifyUsers = (weekCommited, totalValidActivities, totalIgnoredActivities, endOfSeason) => {
+    if (weekCommited) {
+        return '¡Ha iniciando un nuevo ranking esta semana!, ya pueden revisar en qué lugar quedaron.\n' +
+                'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
+    }
+
+    return 'Aquí reportando que ya actualicé el scoreboard.' +
+            'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
+}
+
 
 module.exports = {
     categorizeSlackMessages,
@@ -321,4 +331,7 @@ module.exports = {
     getRankingPlaceByPlayerId,
     commitInProgress,
     applyActivitiesToRanking,
+    getMessageToNotifyUsers,
+    applyEndOfWeekRulesToPlayerScore,
+    calculatePointsFromPlayerScore
 }
