@@ -33,27 +33,126 @@ module.exports = {
         [ "U8A96RCEA", "UE82A6MNY", "UEWUZCYJF", "U6H8DDV25", "U622XCTAA", "U8CEKPXQR", "UBHGVCY4X" ]// 12th
     ],
     
-    SCOREBOARD: {
-        "UDBD59WLT": 21,
-        "U61MBQTR8": 20,
-        "U8QS8T0CX": 18,
-        "UBA5M220K": 17,
-        "U8THDCVJ7": 17,
-        "UB616ENA0": 15,
-        "U87CK0E4A": 11,
-        "U6457D5KQ": 12,
-        "U8M6QT7EF": 9,
-        "U7VAPLNCR": 5,
-        "UAGR4S57G": 4,
-        "UBRCZ6G4B": 3,
-        "UBRMBGR6Z": 3,
-        "U8A96RCEA": 0,
-        "UE82A6MNY": 0,
-        "UEWUZCYJF": 0,
-        "U6H8DDV25": 0,
-        "U622XCTAA": 0,
-        "U8CEKPXQR": 0,
-        "UBHGVCY4X": 0
+    SCOREBOARD1: {
+        "U8A96RCEA": {
+            "stand_points": 0,
+            "points": 3,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "U61MBQTR8": {
+            "stand_points": 2,
+            "points": 44,
+            "coins": 1,
+            "range": 1,
+            "completed_challenges": []
+        },
+        "U7VAPLNCR": {
+            "stand_points": 0,
+            "points": 31,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "UBRMBGR6Z": {
+            "stand_points": 0,
+            "points": 29,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "UB616ENA0": {
+            "stand_points": 0,
+            "points": 40,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "UEWUZCYJF": {
+            "stand_points": 0,
+            "points": 18,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "UDBD59WLT": {
+            "stand_points": 0,
+            "points": 42,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "U8M6QT7EF": {
+            "stand_points": 0,
+            "points": 33,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "U87CK0E4A": {
+            "stand_points": 0,
+            "points": 27,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "U8THDCVJ7": {
+            "stand_points": 0,
+            "points": 36,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "U6457D5KQ": {
+            "stand_points": 0,
+            "points": 37,
+            "coins": 2,
+            "range": 2,
+            "completed_challenges": []
+        },
+        "UBA5M220K": {
+            "stand_points": 0,
+            "points": 37,
+            "coins": 1,
+            "range": 1,
+            "completed_challenges": []
+        },
+        "UAGR4S57G": {
+            "stand_points": 0,
+            "points": 16,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "UBRCZ6G4B": {
+            "stand_points": 0,
+            "points": 3,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "UDR61HJCD": {
+            "stand_points": 0,
+            "points": 27,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "UBD38N45P": {
+            "stand_points": 0,
+            "points": 10,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        },
+        "U6H8DDV25": {
+            "stand_points": 0,
+            "points": 9,
+            "coins": 0,
+            "range": 0,
+            "completed_challenges": []
+        }
     },
 
     ACTIVE_CHALLENGES1: {
