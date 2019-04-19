@@ -313,6 +313,7 @@ const commitInProgress = rankingObj => {
     return result
 }
 
+/* istanbul ignore next */
 const getMessageToNotifyUsers = (weekCommited, totalValidActivities, totalIgnoredActivities, endOfSeason) => {
     if (weekCommited) {
         return '¡Ha iniciando un nuevo ranking esta semana!, ya pueden revisar en qué lugar quedaron.\n' +
