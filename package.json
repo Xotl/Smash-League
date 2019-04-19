@@ -17,6 +17,7 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/src/index.js",
+      "/src/slack-api.js",
       "/src/output-generator.js"
     ]
   },
