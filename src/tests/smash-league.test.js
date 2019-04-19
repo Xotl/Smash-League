@@ -1,15 +1,53 @@
 'use strict'
 const {
-    RANKING_ARRAY1, RANKING_ARRAY2, SCOREBOARD1, ACTIVE_CHALLENGES1, COMPLETED_CHALLENGES1,
+    RANKING_ARRAY1, RANKING_ARRAY2, SCOREBOARD1, ACTIVITIES1, SLACK_MESSAGES1,
     REPORTED_RESULTS1, CHALLENGES1
 } = require('./smash-league.test.constants')
 
 const {
-    getNextWeekTimes, applyEndOfWeekRulesToPlayerScore, applyActivitiesToRanking
+    getNextWeekTimes, applyEndOfWeekRulesToPlayerScore, applyActivitiesToRanking,
+    categorizeSlackMessages
 } = require('../smash-league')
 
 
 describe('Smash League Challenges & Scoreboard', () => {
+
+    test('categorizeSlackMessages', () => {
+        expect( _ => categorizeSlackMessages() )
+            .toThrowError('The argument messagesArray must be an Array.')
+
+        expect(
+            categorizeSlackMessages(SLACK_MESSAGES1)
+        ).toEqual({
+            challenges: [],
+            reportedResults: [
+                {
+                    winner: 'U61MBQTR8',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 1, player2Result: 3,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+                {
+                    winner: 'UDBD59WLT',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 3, player2Result: 2,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+                {
+                    winner: 'UDBD59WLT',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 3, player2Result: 2,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+                {
+                    winner: 'U61MBQTR8',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 1, player2Result: 3,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+            ]
+        })
+    })
 
     test('getNextWeekTimes', () => {
         const date1 =  new Date(2019, 2, 31), date2 =  new Date(2019, 3, 7)
@@ -53,53 +91,9 @@ describe('Smash League Challenges & Scoreboard', () => {
     test('applyActivitiesToRanking', () => {
         const rankingObj = {
             ranking: RANKING_ARRAY2,  in_progress: { scoreboard: SCOREBOARD1 }
-        },
-        activities1 = [
-            {// Valid index #0
-                winner: 'U6457D5KQ',
-                player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
-                player1Result: 3, player2Result: 2,
-                players: ['U6457D5KQ', 'U87CK0E4A']
-            },
-            {// Invalid due to UDBD59WLT is unreachable for U6457D5KQ
-                winner: 'UDBD59WLT',
-                player1: 'U6457D5KQ', player2: 'UDBD59WLT', 
-                player1Result: 0, player2Result: 3,
-                players: ['U6457D5KQ', 'UDBD59WLT']
-            },
-            {// Valid index #2
-                winner: 'UBA5M220K',
-                player1: 'U6457D5KQ', player2: 'UBA5M220K', 
-                player1Result: 0, player2Result: 3,
-                players: ['U6457D5KQ', 'UBA5M220K']
-            },
-            {// Invalid because U6457D5KQ previuosly fought against U87CK0E4A and won
-                winner: 'U6457D5KQ',
-                player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
-                player1Result: 3, player2Result: 1,
-                players: ['U6457D5KQ', 'U87CK0E4A']
-            },
-            {// Valid index #4
-                winner: 'UBA5M220K',
-                player1: 'U6457D5KQ', player2: 'UBA5M220K', 
-                player1Result: 1, player2Result: 3,
-                players: ['U6457D5KQ', 'UBA5M220K']
-            },
-            {// Valid index #5
-                winner: 'UDBD59WLT',
-                player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
-                player1Result: 3, player2Result: 0,
-                players: ['U61MBQTR8', 'UDBD59WLT']
-            },
-            {// Invalid because doesn't have coins left
-                winner: 'U61MBQTR8',
-                player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
-                player1Result: 2, player2Result: 3,
-                players: ['U61MBQTR8', 'UDBD59WLT']
-            }
-        ]
+        }
 
-        const newRankingObj = applyActivitiesToRanking( {challenges: activities1}, rankingObj )
+        const newRankingObj = applyActivitiesToRanking( {challenges: ACTIVITIES1}, rankingObj )
         expect(newRankingObj.ranking).toEqual(RANKING_ARRAY2)// No change in ranking table
         expect(newRankingObj.in_progress.scoreboard).toEqual({
             ...newRankingObj.in_progress.scoreboard,
@@ -109,9 +103,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "coins": 0,
                 "range": 3,
                 "completed_challenges": [
-                    activities1[0],
-                    activities1[2],
-                    activities1[4]
+                    ACTIVITIES1[0], ACTIVITIES1[2], ACTIVITIES1[4]
                 ]
             },
             "UBA5M220K": {
@@ -126,7 +118,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "points": 44,
                 "coins": 0,
                 "range": 1,
-                "completed_challenges": [ activities1[5] ]
+                "completed_challenges": [ ACTIVITIES1[5] ]
             },
             "UDBD59WLT": {
                 "stand_points": 1,

@@ -155,44 +155,91 @@ module.exports = {
         }
     },
 
-    ACTIVE_CHALLENGES1: {
-        UB616ENA0: ['U8THDCVJ7',  'U8QS8T0CX'],
-        UEWUZCYJF: ['UE82A6MNY'],
-        U87CK0E4A: ['U8THDCVJ7'],
-        "Non ranked player": ['U8THDCVJ7']
-    },
-
-    COMPLETED_CHALLENGES1: {
-        UBHGVCY4X: [
-            {
-                "challenger": "UBHGVCY4X", "playerChallenged": "UBRCZ6G4B", "winner": "UBHGVCY4X", 
-                "player1": "UBHGVCY4X", "player2": "UBRCZ6G4B",
-                "player1Result": 3, "player2Result": 1,
-                "players": [ "UBHGVCY4X", "UBRCZ6G4B" ]
-            }
-        ],
-        U6457D5KQ: [
-            {
-                "challenger": "U6457D5KQ", "playerChallenged": "UB616ENA0", "winner": "U6457D5KQ", 
-                "player1": "U6457D5KQ", "player2": "UB616ENA0",
-                "player1Result": 3, "player2Result": 1,
-                "players": [ "U6457D5KQ", "UB616ENA0" ]
-            }
-        ]
-    },
-
-    REPORTED_RESULTS1: [
-        {
-            "winner": "U8NH8QSG1", "player1": "U8NH8QSG1", "player2": "U3TSWQUHE",
-            "player1Result": 3, "player2Result": 1, "players": ["U8NH8QSG1", "U3TSWQUHE"]
+    ACTIVITIES1: [
+        {// Valid index #0
+            winner: 'U6457D5KQ',
+            player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
+            player1Result: 3, player2Result: 2,
+            players: ['U6457D5KQ', 'U87CK0E4A']
         },
-        {
-            "winner": "U8NH8QSG1", "player1": "U8NH8QSG1", "player2": "U3TSWQUHE",
-            "player1Result": 3, "player2Result": 1, "players": ["U8NH8QSG1", "U3TSWQUHE"]
+        {// Invalid due to UDBD59WLT is unreachable for U6457D5KQ
+            winner: 'UDBD59WLT',
+            player1: 'U6457D5KQ', player2: 'UDBD59WLT', 
+            player1Result: 0, player2Result: 3,
+            players: ['U6457D5KQ', 'UDBD59WLT']
         },
+        {// Valid index #2
+            winner: 'UBA5M220K',
+            player1: 'U6457D5KQ', player2: 'UBA5M220K', 
+            player1Result: 0, player2Result: 3,
+            players: ['U6457D5KQ', 'UBA5M220K']
+        },
+        {// Invalid because U6457D5KQ previuosly fought against U87CK0E4A and won
+            winner: 'U6457D5KQ',
+            player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
+            player1Result: 3, player2Result: 1,
+            players: ['U6457D5KQ', 'U87CK0E4A']
+        },
+        {// Valid index #4
+            winner: 'UBA5M220K',
+            player1: 'U6457D5KQ', player2: 'UBA5M220K', 
+            player1Result: 1, player2Result: 3,
+            players: ['U6457D5KQ', 'UBA5M220K']
+        },
+        {// Valid index #5
+            winner: 'UDBD59WLT',
+            player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+            player1Result: 3, player2Result: 0,
+            players: ['U61MBQTR8', 'UDBD59WLT']
+        },
+        {// Invalid because doesn't have coins left
+            winner: 'U61MBQTR8',
+            player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+            player1Result: 2, player2Result: 3,
+            players: ['U61MBQTR8', 'UDBD59WLT']
+        }
     ],
 
-    CHALLENGES1: [
-        { "challenger": "U3UGF00BD", "peopleChallenged": ["U3TSWQUHE", "U3UG9PQSF"] }
+    SLACK_MESSAGES1: [
+        {// Valid, spaces both sides of result
+            "text": "<@UFY8P0WRF> <@UDBD59WLT> 3 - 2 <@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 2
+        },
+        {// Valid spaces only on one side of result
+            "text": "<@UFY8P0WRF> <@UDBD59WLT>1- 3 <@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 1
+        },
+        {// Valid spaces only on one second side of result
+            "text": "<@UFY8P0WRF> <@UDBD59WLT> 1 -3<@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 10
+        },
+        {// Invalid first result
+            "text": "<@UFY8P0WRF> <@UDBD59WLT> adasd - 3 <@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 7
+        },
+        {// Invalid second result
+            "text": "<@UFY8P0WRF> <@UDBD59WLT> 2 - 12sdasd <@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 8
+        },
+        {// Invalid both results
+            "text": "<@UFY8P0WRF> <@UDBD59WLT> 122adasd - tres <@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 9
+        },
+        {// Invalid, bot not tagged
+            "text": "<@sasdasdas> <@UDBD59WLT> 3 - 2 <@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 5
+        },
+        {// Valid no spaces
+            "text": "<@UFY8P0WRF><@UDBD59WLT>3-2<@U61MBQTR8>",
+            "user": "UDBD59WLT",
+            "ts": 6
+        }
     ]
 }
