@@ -89,10 +89,10 @@ const getRankingPlaceByPlayerId = (userId, ranking) => {
     return ranking.length + 1// Means unranked
 }
 
-const doesPlayerAAlreadyWonAgainstThatPlace = (playerAId, completedChallenges, place) => completedChallenges.find(
+const doesPlayerAAlreadyWonAgainstThatPlace = (playerAId, completedChallenges, place, ranking) => completedChallenges.find(
     match => 
         match.winner === playerAId && 
-        place === getRankingPlaceByPlayerId(match.player1 === playerAId ? match.player2 : match.player1)
+        place === getRankingPlaceByPlayerId(match.player1 === playerAId ? match.player2 : match.player1, ranking)
 )
 
 const identifyPlayers = (playerAId, playerBId, rankingTable) => {
@@ -102,17 +102,17 @@ const identifyPlayers = (playerAId, playerBId, rankingTable) => {
     if (playerAPlace > playerBPlace) {// playerA is below playerB in ranking
         return {
             challengerId: playerAId,
-            challengerPlace: playerAId,
+            challengerPlace: playerAPlace,
             playerChallengedId: playerBId,
-            playerChallengedPlace: playerBId
+            playerChallengedPlace: playerBPlace
         }
     }
 
     return {
         challengerId: playerBId,
-        challengerPlace: playerBId,
+        challengerPlace: playerBPlace,
         playerChallengedId: playerAId,
-        playerChallengedPlace: playerAId
+        playerChallengedPlace: playerAPlace
     }
 }
 
@@ -141,12 +141,12 @@ const isReportedResultValid = (reportedResult, rankingTable, scoreboard) => {
         return false
     }
 
-    if ( (challengerPlace - playerChallengedPlace) < challenger.range ) {// Challenger out of range
+    if ( (challengerPlace - playerChallengedPlace) > challenger.range ) {// Challenger out of range
         logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" (place ${challengerPlace}) cannot reach "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace}) with only ${challenger.range} of range`, reportedResult)
         return false
     }
 
-    if ( doesPlayerAAlreadyWonAgainstThatPlace(challengerId, challenger.completed_challenges, playerChallengedPlace) ) {
+    if ( doesPlayerAAlreadyWonAgainstThatPlace(challengerId, challenger.completed_challenges, playerChallengedPlace, rankingTable) ) {
         logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" already won against a player in the same place as "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace})`, reportedResult)
         return false
     }
@@ -192,7 +192,7 @@ const applyActivitiesToRanking = (activities, rankingObj) => {
                 return currentScoreboard // if not valid we simply ignore this match
             }
             
-            const { player1, player2, player1Result, player2Result, winner } = reportedResult
+            const { player1, player2, player1Result, player2Result, winner } = match
             const {
                 challengerId, challengerPlace,
                 playerChallengedId, playerChallengedPlace
@@ -333,5 +333,6 @@ module.exports = {
     applyActivitiesToRanking,
     getMessageToNotifyUsers,
     applyEndOfWeekRulesToPlayerScore,
-    calculatePointsFromPlayerScore
+    calculatePointsFromPlayerScore,
+    getNextWeekTimes
 }
