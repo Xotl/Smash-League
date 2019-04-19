@@ -4,7 +4,7 @@ const { logIgnoredChallenge } = require('./utils')
 
 const MILISECONDS_24HOURS = 86400000// 24 hours in miliseconds
 const CHALLENGE_REGEX = `^.*?reto.*?<@.*?>`
-const REPORTED_RESULT_REGEX = `(<@.*?>).*?([0-9].*)-.*([0-9)]).*(<@.*?>)`
+const REPORTED_RESULT_REGEX = String.raw`(<@\w+?>)\s*?(\d)\s*?\-\s*?(\d)\s*?(<@\w+?>)`
 const USERS_TAGGED_REGEX = `<@.*?>`
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
 
