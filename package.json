@@ -13,6 +13,11 @@
       "!**/*.test.js",
       "!**/*.test.constants.js",
       "!**/node_modules/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/index.js",
+      "/src/output-generator.js"
     ]
   },
   "author": "Edgardo Campos (Xotl)",
