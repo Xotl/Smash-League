@@ -227,7 +227,7 @@ const applyActivitiesToRanking = (activities, rankingObj) => {
     }
 }
 
-const getNextWeekTimes = lastEndOfWeek => {
+const getNextWeekObject = lastEndOfWeek => {
     const endDate = new Date(lastEndOfWeek)
     endDate.setDate(endDate.getDate() + 7);
     return {
@@ -250,27 +250,18 @@ const getInitialCoinsForPlayer = playerPlace => {
     return result > 5 ? 5 : result
 }
 
-const calculatePointsFromPlayerScore = playerScore => {
+const calculatePointsFromPlayerScore = (playerScore, playerPlace) => {
     const { stand_points, points, coins, range} = playerScore
-    return points + stand_points + range - coins
-}
-
-const applyEndOfWeekRulesToPlayerScore = (playerId, playerScore, rankingTable) => {
-    const playerPlace = getRankingPlaceByPlayerId(playerId, rankingTable)
     const initialCoins = getInitialCoinsForPlayer(playerPlace)
-    return {
-        stand_points: 0,
-        points: calculatePointsFromPlayerScore(playerScore),
-        coins: initialCoins,
-        range: initialCoins,
-        completed_challenges: []
-    }
+    return points + stand_points + range - initialCoins
 }
 
-const getRankingFromScoreboard = scoreboard => {
+const getRankingFromScoreboard = (scoreboard, rankingTable) => {
     const scoreDict = Object.keys(scoreboard).reduce(
         (resultObj, playerId) => {
-            const score = calculatePointsFromPlayerScore(scoreboard[playerId]) + (scoreboard[playerId].range / 1000)
+            const playerPlace = getRankingPlaceByPlayerId(playerId, rankingTable)
+            const initialCoins = getInitialCoinsForPlayer(playerPlace)
+            const score = scoreboard[playerId].points + ( (scoreboard[playerId].range - initialCoins) / 1000 )
 
             if (score < 1) {// Ignoring the people with 0 points from the ranking
                 return resultObj
@@ -286,29 +277,47 @@ const getRankingFromScoreboard = scoreboard => {
         {}
     )
 
-    return Object.keys(scoreDict).sort( (a,b) => b - a ).map(score => scoreDict[score])
+    return Object.keys(scoreDict).sort( (a, b) => b - a ).map(score => scoreDict[score])
 }
 
 const commitInProgress = rankingObj => {
     const result = { ...rankingObj }
     const inProgress = { ...result.in_progress }
 
-    // Apllies score and resets values to all players
-    inProgress.scoreboard = Object.keys(inProgress.scoreboard).reduce(
-        (newScoreboard, playerId) => {
-            newScoreboard[playerId] = applyEndOfWeekRulesToPlayerScore(playerId, inProgress.scoreboard[playerId])
-            return newScoreboard
+    // Creates a clone of all player's score with updated points
+    const newScoreboard = Object.keys(inProgress.scoreboard).reduce(
+        (tmpScoreboard, playerId) => {
+            const playerPlace = getRankingPlaceByPlayerId(playerId, rankingObj.ranking)
+            tmpScoreboard[playerId] = {
+                ...inProgress.scoreboard[playerId],
+                points: calculatePointsFromPlayerScore(inProgress.scoreboard[playerId], playerPlace)
+            }
+            // tmpScoreboard[playerId] = applyEndOfWeekRulesToPlayerScore(inProgress.scoreboard[playerId], playerPlace)
+            return tmpScoreboard
         },
         {}
     )
 
-    result.current_week = getNextWeekTimes(rankingObj.current_week.end)
+    // We need to generate the new ranking table in order to know how many coins tha players should get
+    result.ranking = getRankingFromScoreboard(newScoreboard, rankingObj.ranking)
+    
+    // Applies inital completed_challenges, stand_points, coins and range
+    Object.keys(newScoreboard).forEach(
+        playerId => {
+            const playerPlace = getRankingPlaceByPlayerId(playerId, result.ranking)
+            const initialCoins = getInitialCoinsForPlayer(playerPlace)
+            newScoreboard[playerId].coins = initialCoins
+            newScoreboard[playerId].range = initialCoins
+            newScoreboard[playerId].stand_points = 0
+            newScoreboard[playerId].completed_challenges = []
+        }
+    )
+
+    
+    inProgress.scoreboard = newScoreboard
+    result.current_week = getNextWeekObject(rankingObj.current_week.end)
     result.last_update_ts = inProgress.last_update_ts
     result.scoreboard = inProgress.scoreboard
-    result.ranking = getRankingFromScoreboard(result.scoreboard)
-    // inProgress.active_challenges = {}
-    // inProgress.completed_challenges = {}
-    // inProgress.reported_results = []
     result.in_progress = inProgress
     return result
 }
@@ -333,7 +342,6 @@ module.exports = {
     commitInProgress,
     applyActivitiesToRanking,
     getMessageToNotifyUsers,
-    applyEndOfWeekRulesToPlayerScore,
     calculatePointsFromPlayerScore,
-    getNextWeekTimes
+    getNextWeekObject
 }
