@@ -155,6 +155,145 @@ module.exports = {
         }
     },
 
+    RANKING_OBJECT1: {
+        "last_update_ts": 19,
+        "season": {
+            "start": 10,
+            "end": 300
+        },
+        "current_week": {
+            "start": 20,
+            "end": 1554012000000
+        },
+        "ranking": [
+            ["U61MBQTR8"],// 1st place
+            ["U7VAPLNCR"],// 2nd place
+            [],[],[],[],
+            ["UBRMBGR6Z"],// 7th place
+            ["UDR61HJCD"],// 8th place
+            [],[],[],
+            ["U8A96RCEA"]// 12th place
+        ],
+        "in_progress": {
+            "scoreboard": {
+                "UDR61HJCD": {
+                    "stand_points": 4,
+                    "points": 27,
+                    "coins": 0,
+                    "range": 6,
+                    "completed_challenges": []
+                },
+                "U8A96RCEA": {
+                    "stand_points": 0,
+                    "points": 3,
+                    "coins": 0,
+                    "range": 3,
+                    "completed_challenges": [
+                        {
+                            winner: 'U6457D5KQ', player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
+                            player1Result: 3, player2Result: 2, players: ['U6457D5KQ', 'U87CK0E4A']
+                        },
+                        {
+                            winner: 'U6457D5KQ', player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
+                            player1Result: 3, player2Result: 2, players: ['U6457D5KQ', 'U87CK0E4A']
+                        }
+                    ]
+                },
+                "U61MBQTR8": {
+                    "stand_points": 1,
+                    "points": 44,
+                    "coins": 0,
+                    "range": 0,
+                    "completed_challenges": [
+                        {
+                            winner: 'U6457D5KQ', player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
+                            player1Result: 3, player2Result: 2, players: ['U6457D5KQ', 'U87CK0E4A']
+                        }
+                    ]
+                },
+                "U7VAPLNCR": {
+                    "stand_points": 2,
+                    "points": 43,
+                    "coins": 1,
+                    "range": 2,
+                    "completed_challenges": [
+                        {
+                            winner: 'U6457D5KQ', player1: 'U6457D5KQ', player2: 'U87CK0E4A', 
+                            player1Result: 3, player2Result: 2, players: ['U6457D5KQ', 'U87CK0E4A']
+                        }
+                    ]
+                },
+                "UBRMBGR6Z": {
+                    "stand_points": 4,
+                    "points": 29,
+                    "coins": 1,
+                    "range": 4,
+                    "completed_challenges": []
+                }
+            },
+            "last_update_ts": 27
+        }
+    },
+
+    RANKING_OBJECT2: {
+        "last_update_ts": 27,
+        "season": {
+            "start": 10,
+            "end": 300
+        },
+        "current_week": {
+            "start": 1554012000001,
+            "end": 1554616800000
+        },
+        "ranking": [
+            ["U7VAPLNCR"],// 1st place
+            ["U61MBQTR8"],// 2nd place
+            ["UDR61HJCD"],
+            ["UBRMBGR6Z"],
+            ["U8A96RCEA"]// 5th place
+        ],
+        "in_progress": {
+            "scoreboard": {
+                "U8A96RCEA": {
+                    "stand_points": 0,
+                    "points": 3,
+                    "coins": 1,
+                    "range": 1,
+                    "completed_challenges": []
+                },
+                "U61MBQTR8": {
+                    "stand_points": 0,
+                    "points": 45,
+                    "coins": 1,
+                    "range": 1,
+                    "completed_challenges": []
+                },
+                "U7VAPLNCR": {
+                    "stand_points": 0,
+                    "points": 46,
+                    "coins": 0,
+                    "range": 0,
+                    "completed_challenges": []
+                },
+                "UBRMBGR6Z": {
+                    "stand_points": 0,
+                    "points": 35,
+                    "coins": 1,
+                    "range": 1,
+                    "completed_challenges": []
+                },
+                "UDR61HJCD": {
+                    "stand_points": 0,
+                    "points": 35,
+                    "coins": 1,
+                    "range": 1,
+                    "completed_challenges": []
+                }
+            },
+            "last_update_ts": 27
+        }
+    },
+
     ACTIVITIES1: [
         {// Valid index #0
             winner: 'U6457D5KQ',

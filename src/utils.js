@@ -9,8 +9,8 @@ const GetEpochUnixFromDate = (dateObj) => {
     return dateObj.getTime() / 1000
 }
 
-let ignoredActivityObject
-const setIgnoredActivityLogObject = obj => ignoredActivityObject = obj
+let ignoredActivityObject /* istanbul ignore next */
+const setIgnoredActivityLogObject = obj => ignoredActivityObject = obj /* istanbul ignore next */
 const logIgnoredActivity = (reason, activity, type) => {
     if (typeof ignoredActivityObject !== 'object') {
         return
@@ -23,10 +23,12 @@ const logIgnoredActivity = (reason, activity, type) => {
     ignoredActivityObject[type].push({ reason, activity })
 }
 
+/* istanbul ignore next */
 const logIgnoredChallenge = (reason, activity) => {
     logIgnoredActivity(reason, activity, 'challenge')
 }
 
+/* istanbul ignore next */
 const showInConsoleIgnoredActivities = ignoredActivities => {
     console.log('############## Ignored activities ##############')
     Object.keys(ignoredActivities).forEach(

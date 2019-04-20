@@ -1,16 +1,25 @@
 'use strict'
 const {
     RANKING_ARRAY1, RANKING_ARRAY2, SCOREBOARD1, ACTIVITIES1, SLACK_MESSAGES1,
-    REPORTED_RESULTS1, CHALLENGES1
+    RANKING_OBJECT1, RANKING_OBJECT2
 } = require('./smash-league.test.constants')
 
 const {
-    getNextWeekTimes, applyEndOfWeekRulesToPlayerScore, applyActivitiesToRanking,
-    categorizeSlackMessages
+    getNextWeekObject, calculatePointsFromPlayerScore, applyActivitiesToRanking,
+    categorizeSlackMessages, commitInProgress
 } = require('../smash-league')
 
 
 describe('Smash League Challenges & Scoreboard', () => {
+
+    test('commitInProgress', () => {
+        expect( commitInProgress(RANKING_OBJECT1) )
+        .toEqual({
+            ...RANKING_OBJECT2, 
+            scoreboard: RANKING_OBJECT2.in_progress.scoreboard
+        })
+    })
+
 
     test('categorizeSlackMessages', () => {
         expect( _ => categorizeSlackMessages() )
@@ -49,43 +58,31 @@ describe('Smash League Challenges & Scoreboard', () => {
         })
     })
 
-    test('getNextWeekTimes', () => {
+    test('getNextWeekObject', () => {
         const date1 =  new Date(2019, 2, 31), date2 =  new Date(2019, 3, 7)
         expect(
-            getNextWeekTimes(date1.getTime())
+            getNextWeekObject(date1.getTime())
         ).toEqual({
             start: date1.getTime() + 1, end: date2.getTime()
         })
     })
 
-    test('applyEndOfWeekRulesToPlayerScore', () => {
-        const playerScore1 = { "stand_points": 3, "points": 4, "coins": 2, "range": 1 }
+    test('calculatePointsFromPlayerScore', () => {
+        const playerScore1 = { "stand_points": 1, "points": 2, "coins": 0, "range": 2 }
         expect(
-            applyEndOfWeekRulesToPlayerScore( 'Xotl', playerScore1, RANKING_ARRAY1 )
-        ).toEqual({
-            stand_points: 0, points: 6, coins: 0, range: 0,
-            completed_challenges: []
-        })
+            calculatePointsFromPlayerScore( playerScore1, 1 )// Xotl
+        ).toBe( 5 )
         expect(
-            applyEndOfWeekRulesToPlayerScore( 'FerSeñior', playerScore1, RANKING_ARRAY1 )
-        ).toEqual({
-            stand_points: 0, points: 6, coins: 2, range: 2,
-            completed_challenges: []
-        })
-
-        const playerScore2 = { "stand_points": 1, "points": 2, "coins": 0, "range": 2 }
+            calculatePointsFromPlayerScore( playerScore1, 10 )// FerSeñior
+        ).toBe( 3 )
+                
+        const playerScore2 = { "stand_points": 3, "points": 4, "coins": 2, "range": 1 }
         expect(
-            applyEndOfWeekRulesToPlayerScore( 'lrgilberto', playerScore2, RANKING_ARRAY1 )
-        ).toEqual({
-            stand_points: 0, points: 5, coins: 1, range: 1,
-            completed_challenges: []
-        })
+            calculatePointsFromPlayerScore( playerScore2, 5 )// lrgilberto
+        ).toBe( 7 )
         expect(
-            applyEndOfWeekRulesToPlayerScore( 'David', playerScore2, RANKING_ARRAY1 )
-        ).toEqual({
-            stand_points: 0, points: 5, coins: 3, range: 3,
-            completed_challenges: []
-        })
+            calculatePointsFromPlayerScore( playerScore2, 14 )// David
+        ).toBe( 5 )
     })
 
     test('applyActivitiesToRanking', () => {
