@@ -110,7 +110,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 ]
             },
             "UBA5M220K": {
-                "stand_points": 2,
+                "stand_points": 1,
                 "points": 37,
                 "coins": 1,
                 "range": 1,
@@ -133,9 +133,9 @@ describe('Smash League Challenges & Scoreboard', () => {
             "newPlayer": {
                 "stand_points": 0,
                 "points": 0,
-                "coins": 2,
+                "coins": 1,
                 "range": 4,
-                "completed_challenges": [ ACTIVITIES1[7], ACTIVITIES1[8] ]
+                "completed_challenges": [ ACTIVITIES1[7], ACTIVITIES1[8], ACTIVITIES1[9] ]
             },
             "U7VAPLNCR": {
                 "stand_points": 1,

@@ -95,6 +95,10 @@ const doesPlayerAAlreadyWonAgainstThatPlace = (playerAId, completedChallenges, p
         place === getRankingPlaceByPlayerId(match.player1 === playerAId ? match.player2 : match.player1, ranking)
 )
 
+const doesPlayerChallengedAlreadyWonAgainstThatChallenger = (playerChallengedId, challengersCompletedChallenges) => challengersCompletedChallenges.find(
+    match => match.winner === playerChallengedId
+)
+
 const identifyPlayers = (playerAId, playerBId, rankingTable) => {
     const playerAPlace = getRankingPlaceByPlayerId(playerAId, rankingTable)
     const playerBPlace = getRankingPlaceByPlayerId(playerBId, rankingTable)
@@ -207,16 +211,18 @@ const applyActivitiesToRanking = (activities, rankingObj) => {
             if (scoreboard[challengerId] && challengerScore.completed_challenges === scoreboard[challengerId].completed_challenges) {
                 challengerScore.completed_challenges = [...scoreboard[challengerId].completed_challenges]
             }
-            challengerScore.completed_challenges.push(match)
-
             
             if (winner === challengerId) {
                 currentScoreboard[challengerId] = applyChallengerWinsScoringRules(challengerScore)
             }
             else {// Winner is player challenged
                 currentScoreboard[challengerId] = applyChallengerLosesScoringRules(challengerScore)
-                currentScoreboard[playerChallengedId] = applyPlayerChallengedWinsScoringRules(currentScoreboard[playerChallengedId])
+                if ( !doesPlayerChallengedAlreadyWonAgainstThatChallenger(playerChallengedId, challengerScore.completed_challenges) ) {
+                    currentScoreboard[playerChallengedId] = applyPlayerChallengedWinsScoringRules(currentScoreboard[playerChallengedId])
+                }
             }
+
+            challengerScore.completed_challenges.push(match)
 
             return currentScoreboard
         },

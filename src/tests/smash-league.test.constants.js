@@ -348,6 +348,12 @@ module.exports = {
             player1: 'newPlayer', player2: 'U7VAPLNCR',
             player1Result: 2, player2Result: 3,
             players: ['newPlayer', 'U7VAPLNCR']
+        },
+        {// Valid index #9: new player joins the battle! and lost again
+            winner: 'U7VAPLNCR',
+            player1: 'newPlayer', player2: 'U7VAPLNCR',
+            player1Result: 0, player2Result: 3,
+            players: ['newPlayer', 'U7VAPLNCR']
         }
     ],
 
