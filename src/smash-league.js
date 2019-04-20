@@ -116,25 +116,28 @@ const identifyPlayers = (playerAId, playerBId, rankingTable) => {
     }
 }
 
-const isReportedResultValid = (reportedResult, rankingTable, scoreboard) => {
-    // {
-    //     winner: player1Result > player2Result ? player1 : player2,
-    //     player1, player2, player1Result, player2Result,
-    //     players: [player1, player2]
-    // }
+const getUnrankedPlayerScore = playerPlace => {
+    const initialCoins = getInitialCoinsForPlayer(playerPlace)
+    return {
+        stand_points: 0, points: 0,
+        coins: initialCoins, range: initialCoins,
+        completed_challenges: []
+    }
+}
 
-    const { player1, player2 } = reportedResult
+const isReportedResultValid = (identifiedPlayersObj, rankingTable, playerScoreboard, reportedResult) => {
+
     const {
         challengerId, challengerPlace,
         playerChallengedId, playerChallengedPlace
-    } = identifyPlayers(player1, player2, rankingTable)
+    } = identifiedPlayersObj
 
     if (challengerPlace === playerChallengedPlace) {// They cannot challenge people in the same place
         logIgnoredChallenge(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place.`, reportedResult)
         return false
     }
 
-    const challenger = scoreboard[challengerId]
+    const challenger = playerScoreboard
 
     if (challenger.coins < 1) {// No remaining coins, so no more challenges
         logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" has 0 coins, so he cannot challenge "${getPlayerAlias(playerChallengedId)}"`, reportedResult)
@@ -188,19 +191,20 @@ const applyActivitiesToRanking = (activities, rankingObj) => {
             //     players: [player1, player2]
             // }
 
-            if ( !isReportedResultValid(match, rankingTable, currentScoreboard) ) {
-                return currentScoreboard // if not valid we simply ignore this match
-            }
-            
             const { player1, player2, player1Result, player2Result, winner } = match
+            const identifiedPlayersObj = identifyPlayers(player1, player2, rankingTable)
             const {
                 challengerId, challengerPlace,
                 playerChallengedId, playerChallengedPlace
-            } = identifyPlayers(player1, player2, rankingTable)
-            const challengerScore = currentScoreboard[challengerId]
+            } = identifiedPlayersObj
+            const challengerScore = currentScoreboard[challengerId] || getUnrankedPlayerScore(challengerPlace)
 
 
-            if (challengerScore.completed_challenges === scoreboard[challengerId].completed_challenges) {
+            if ( !isReportedResultValid(identifiedPlayersObj, rankingTable, challengerScore, match) ) {
+                return currentScoreboard // if not valid we simply ignore this match
+            }
+
+            if (scoreboard[challengerId] && challengerScore.completed_challenges === scoreboard[challengerId].completed_challenges) {
                 challengerScore.completed_challenges = [...scoreboard[challengerId].completed_challenges]
             }
             challengerScore.completed_challenges.push(match)

@@ -336,6 +336,18 @@ module.exports = {
             player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
             player1Result: 2, player2Result: 3,
             players: ['U61MBQTR8', 'UDBD59WLT']
+        },
+        {// Valid index #7: new player joins the battle! and won
+            winner: 'newPlayer',
+            player1: 'newPlayer', player2: 'UAGR4S57G',
+            player1Result: 3, player2Result: 2,
+            players: ['newPlayer', 'UAGR4S57G']
+        },
+        {// Valid index #8: new player joins the battle! and lost
+            winner: 'U7VAPLNCR',
+            player1: 'newPlayer', player2: 'U7VAPLNCR',
+            player1Result: 2, player2Result: 3,
+            players: ['newPlayer', 'U7VAPLNCR']
         }
     ],
 

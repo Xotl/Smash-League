@@ -86,6 +86,12 @@ describe('Smash League Challenges & Scoreboard', () => {
     })
 
     test('applyActivitiesToRanking', () => {
+
+        expect( _ => applyActivitiesToRanking() )
+            .toThrowError('The "activities" argument must be an object but received "undefined" instead.')
+        expect( _ => applyActivitiesToRanking({}) )
+            .toThrowError('The "rankingObj" argument must be an object but received "undefined" instead.')
+
         const rankingObj = {
             ranking: RANKING_ARRAY2,  in_progress: { scoreboard: SCOREBOARD1 }
         }
@@ -93,7 +99,7 @@ describe('Smash League Challenges & Scoreboard', () => {
         const newRankingObj = applyActivitiesToRanking( {challenges: ACTIVITIES1}, rankingObj )
         expect(newRankingObj.ranking).toEqual(RANKING_ARRAY2)// No change in ranking table
         expect(newRankingObj.in_progress.scoreboard).toEqual({
-            ...newRankingObj.in_progress.scoreboard,
+            ...SCOREBOARD1,
             "U6457D5KQ": {
                 "stand_points": 0,
                 "points": 37,
@@ -120,6 +126,20 @@ describe('Smash League Challenges & Scoreboard', () => {
             "UDBD59WLT": {
                 "stand_points": 1,
                 "points": 42,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "newPlayer": {
+                "stand_points": 0,
+                "points": 0,
+                "coins": 2,
+                "range": 4,
+                "completed_challenges": [ ACTIVITIES1[7], ACTIVITIES1[8] ]
+            },
+            "U7VAPLNCR": {
+                "stand_points": 1,
+                "points": 31,
                 "coins": 0,
                 "range": 0,
                 "completed_challenges": []
