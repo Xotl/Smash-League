@@ -5,7 +5,7 @@ const {
 } = require('./smash-league.test.constants')
 
 const {
-    getNextWeekObject, calculatePointsFromPlayerScore, applyActivitiesToRanking,
+    getNextWeekObject, calculatePointsFromPlayerScore, updateInProgressScoreboard,
     categorizeSlackMessages, commitInProgress
 } = require('../smash-league')
 
@@ -85,20 +85,19 @@ describe('Smash League Challenges & Scoreboard', () => {
         ).toBe( 5 )
     })
 
-    test('applyActivitiesToRanking', () => {
+    test('updateInProgressScoreboard', () => {
 
-        expect( _ => applyActivitiesToRanking() )
+        expect( _ => updateInProgressScoreboard() )
             .toThrowError('The "activities" argument must be an object but received "undefined" instead.')
-        expect( _ => applyActivitiesToRanking({}) )
+        expect( _ => updateInProgressScoreboard({}) )
             .toThrowError('The "rankingObj" argument must be an object but received "undefined" instead.')
 
         const rankingObj = {
             ranking: RANKING_ARRAY2,  in_progress: { scoreboard: SCOREBOARD1 }
         }
 
-        const newRankingObj = applyActivitiesToRanking( {challenges: ACTIVITIES1}, rankingObj )
-        expect(newRankingObj.ranking).toEqual(RANKING_ARRAY2)// No change in ranking table
-        expect(newRankingObj.in_progress.scoreboard).toEqual({
+        const newInProgress = updateInProgressScoreboard( {challenges: ACTIVITIES1}, rankingObj )
+        expect(newInProgress.scoreboard).toEqual({
             ...SCOREBOARD1,
             "U6457D5KQ": {
                 "stand_points": 0,

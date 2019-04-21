@@ -16,12 +16,15 @@ async function Main() {
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts)
     const opts = { latest: now, oldest: lastInProgressUpdated }
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
-
     const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
     
 
-    const ignoredActivities = Utils.setIgnoredActivityLogObject({})
-    const newInProgressObj = SmashLeague.applyActivitiesToRanking(activities, Ranking)
+    // We create & set the Object that will have all the data of the 
+    // ignored activites logged by "logIgnoredActivity" function
+    const ignoredActivities = {}
+    Utils.setIgnoredActivityLogObject(ignoredActivities)
+
+    const newInProgressObj = SmashLeague.updateInProgressScoreboard(activities, Ranking)
     Utils.showInConsoleIgnoredActivities(ignoredActivities)
 
 

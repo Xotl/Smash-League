@@ -176,7 +176,7 @@ const applyPlayerChallengedWinsScoringRules = playerChallengedScore => ({
     stand_points: playerChallengedScore.stand_points + 1
 })
 
-const applyActivitiesToRanking = (activities, rankingObj) => {
+const updateInProgressScoreboard = (activities, rankingObj) => {
 
     if (typeof activities !== 'object') {
         throw new Error(`The "activities" argument must be an object but received "${typeof activities}" instead.`)
@@ -230,10 +230,8 @@ const applyActivitiesToRanking = (activities, rankingObj) => {
     )
 
     return {
-        ...rankingObj,
-        in_progress: {
-            scoreboard: newScoreboard
-        }
+        ...rankingObj.in_progress,
+        scoreboard: newScoreboard
     }
 }
 
@@ -350,7 +348,7 @@ module.exports = {
     isItTimeToCommitInProgress,
     getRankingPlaceByPlayerId,
     commitInProgress,
-    applyActivitiesToRanking,
+    updateInProgressScoreboard,
     getMessageToNotifyUsers,
     calculatePointsFromPlayerScore,
     getNextWeekObject
