@@ -1,7 +1,7 @@
 'use strict'
 
 const {
-    GetDateObjFromEpochTS, setIgnoredActivityLogObject, logIgnoredActivity,
+    GetEpochUnixFromDate, GetDateObjFromEpochTS, setIgnoredActivityLogObject, logIgnoredActivity,
     logIgnoredChallenge, showInConsoleIgnoredActivities
 } = require('../utils')
 
@@ -11,6 +11,14 @@ describe('Utils', () => {
     test('GetDateObjFromEpochTS', () => {
         expect( GetDateObjFromEpochTS(1554012202.785).toISOString() )
         .toBe( '2019-03-31T06:03:22.785Z' )
+    })
+
+    test('GetEpochUnixFromDate', () => {
+        expect( _ => GetEpochUnixFromDate( 1554012202785 ) )
+        .toThrow()
+
+        expect( GetEpochUnixFromDate( new Date(1554012202785) ) )
+        .toBe( 1554012202.785 )
     })
 
     const reason = 'My message',  tmpActivities = {}, activity = {},
