@@ -24,26 +24,30 @@ async function Main() {
     const ignoredActivities = {}
     Utils.setIgnoredActivityLogObject(ignoredActivities)
 
+    // Updates ranking table in case there's a manual change in current scoreboard
+    Ranking.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard)
+
+    // Now using the activities let's do the calculations to get the new in_progress object
     const newInProgressObj = SmashLeague.updateInProgressScoreboard(activities, Ranking)
+    newInProgressObj.last_update_ts = now.getTime()
+
+    // Log the ignored activities so we can debug Production in the Travis log
     Utils.showInConsoleIgnoredActivities(ignoredActivities)
 
 
-    newInProgressObj.last_update_ts = now.getTime()
     let newRankingObj = { ...Ranking, in_progress: newInProgressObj }
+    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, newRankingObj.current_week)
 
-    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, Ranking.current_week)
     if (isItTimeToCommit) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
         OutputGenerator.updateHistoryLog(newInProgressObj)
-    }
-    else {
-        // Updates ranking table in case there's a manual change in current scoreboard
-        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard)
     }
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
     await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
 
+
+    // Only post in slack if it's a master Job
     if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
         let messageToPost;
         if (process.env.TRAVIS_EVENT_TYPE === 'push') {
