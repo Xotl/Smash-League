@@ -306,7 +306,9 @@ const commitInProgress = rankingObj => {
         {}
     )
 
-    // We need to generate the new ranking table in order to know how many coins tha players should get
+    // We need to generate the new ranking table in order to know how many coins 
+    // the players should get at the end of week. Also we use the old ranking to 
+    // calculatethe initial coins they have for the Tie-breaker.
     result.ranking = getRankingFromScoreboard(newScoreboard, rankingObj.ranking)
     
     // Applies inital completed_challenges, stand_points, coins and range
