@@ -25,7 +25,7 @@ async function Main() {
     Utils.setIgnoredActivityLogObject(ignoredActivities)
 
     // Updates ranking table in case there's a manual change in current scoreboard
-    Ranking.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard)
+    Ranking.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard, Ranking.ranking)
 
     // Now using the activities let's do the calculations to get the new in_progress object
     const newInProgressObj = SmashLeague.updateInProgressScoreboard(activities, Ranking)
