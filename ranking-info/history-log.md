@@ -1,3 +1,29 @@
+## Commit from Mon, 29 Apr 2019 02:16:09 GMT
+The week started at *Sun, 28 Apr 2019 14:00:00 GMT* and ended *Sun, 05 May 2019 14:00:00 GMT*.
+### End of week players score summary
+|Player|Coins|Range|Stand points|
+|------|-----|-----|------------|
+|Xotl - 14pts|0|0|0|
+|César Gutman - 13pts|0|0|0|
+|Angel Lee - 12pts|0|0|0|
+|José "El Iceberg" Rosales - 11pts|0|0|0|
+|D.I.O. - 11pts|0|0|0|
+|Neku - 10pts|0|0|0|
+|El Minion - 9pts|0|0|0|
+|Gilberto "Gil" Ruelas - 8pts|0|0|0|
+|Alan - 7pts|0|0|0|
+|Fer Señior - 6pts|0|0|0|
+|Sammy - 6pts|0|0|0|
+|El Chino - 5pts|0|0|0|
+|Michel - 4pts|0|0|0|
+|David - 3pts|0|0|0|
+|Medininja - 2pts|0|0|0|
+|Niightz - 1pts|0|0|0|
+|Carlos López - 1pts|0|0|0|
+### Completed challenges
+
+
+
 ## Commit from Sun, 31 Mar 2019 06:03:22 GMT
 ### Completed challenges
 * `Angel Lee` challenged `César Gutman` and **won** *3-2*.
