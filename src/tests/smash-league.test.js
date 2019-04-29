@@ -1,253 +1,148 @@
 'use strict'
 const {
-    RANKING_ARRAY1, RANKING_ARRAY2, SCOREBOARD, ACTIVE_CHALLENGES1, COMPLETED_CHALLENGES1,
-    REPORTED_RESULTS1, CHALLENGES1
+    RANKING_ARRAY1, RANKING_ARRAY2, SCOREBOARD1, ACTIVITIES1, SLACK_MESSAGES1,
+    RANKING_OBJECT1, RANKING_OBJECT2
 } = require('./smash-league.test.constants')
 
 const {
-    applyScoreForChallengesNotCompleted, isItTimeToCommitInProgress, getRankingPlaceByPlayerId,
-    getNumberOfChallengesAllowed, canPlayerAChallengePlayerB, isValidActiveChallenge
+    getNextWeekObject, calculatePointsFromPlayerScore, updateInProgressScoreboard,
+    categorizeSlackMessages, commitInProgress
 } = require('../smash-league')
 
 
 describe('Smash League Challenges & Scoreboard', () => {
-    test('isValidActiveChallenge', () => {
-        expect(// Already consumed the max of 2 challenges 
-            isValidActiveChallenge('UB616ENA0', 'U8THDCVJ7', ACTIVE_CHALLENGES1['UB616ENA0'], COMPLETED_CHALLENGES1['UB616ENA0'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(false)
 
-        expect(// Duplicated challenge
-            isValidActiveChallenge('UEWUZCYJF', 'UE82A6MNY', ACTIVE_CHALLENGES1['UEWUZCYJF'], COMPLETED_CHALLENGES1['UEWUZCYJF'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(false)
-
-        expect(// Same place challenge
-            isValidActiveChallenge('U8THDCVJ7', 'UBA5M220K', ACTIVE_CHALLENGES1['U8THDCVJ7'], COMPLETED_CHALLENGES1['U8THDCVJ7'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(false)
-
-        expect(// Same place challenge with unranked
-            isValidActiveChallenge('Non ranked player', 'UBHGVCY4X', ACTIVE_CHALLENGES1['Non ranked player'], COMPLETED_CHALLENGES1['Non ranked player'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(false)
-
-        expect(// Completed challenge between players
-            isValidActiveChallenge('UBHGVCY4X', 'UBRCZ6G4B', ACTIVE_CHALLENGES1['UBHGVCY4X'], COMPLETED_CHALLENGES1['UBHGVCY4X'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(false)
-
-        expect(// More than one player on the same place challenge
-            isValidActiveChallenge('U87CK0E4A', 'UBA5M220K', ACTIVE_CHALLENGES1['U87CK0E4A'], COMPLETED_CHALLENGES1['U87CK0E4A'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(false)
-
-        expect(// Player fought already with another player in the same place
-            isValidActiveChallenge('UBHGVCY4X', 'UBRMBGR6Z', ACTIVE_CHALLENGES1['UBHGVCY4X'], COMPLETED_CHALLENGES1['UBHGVCY4X'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(false)
-        
-        expect(// Simple valid challenge with unranked player
-            isValidActiveChallenge('Another unranked player', 'UBRMBGR6Z', ACTIVE_CHALLENGES1['Another unranked player'], COMPLETED_CHALLENGES1['Another unranked player'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(true)
-
-        expect(// Simple valid challenge
-            isValidActiveChallenge('UEWUZCYJF', 'U7VAPLNCR', ACTIVE_CHALLENGES1['UEWUZCYJF'], COMPLETED_CHALLENGES1['UEWUZCYJF'], RANKING_ARRAY2, SCOREBOARD)
-        ).toBe(true)
-    })
-
-    test('applyScoreForChallengesNotCompleted', () => {
-        let newScoreboard
-        
-        newScoreboard = applyScoreForChallengesNotCompleted(SCOREBOARD, ACTIVE_CHALLENGES1)
-        expect(newScoreboard['UB616ENA0']).toBe(21)// Wins points
-        expect(newScoreboard['UEWUZCYJF']).toBe(3)// Wins points
-        expect(newScoreboard['Non ranked player']).toBe(3)// Wins points
-        expect(newScoreboard['U8THDCVJ7']).toBe(14)// Loses points
-        expect(newScoreboard['U8QS8T0CX']).toBe(17)// Loses points
-        expect(newScoreboard['UE82A6MNY']).toBe(0)// Loses points
+    test('commitInProgress', () => {
+        expect( commitInProgress(RANKING_OBJECT1) )
+        .toEqual({
+            ...RANKING_OBJECT2, 
+            scoreboard: RANKING_OBJECT2.in_progress.scoreboard
+        })
     })
 
 
-    // test('getUpdatedChallengesAndScoreboard', () => {
-    //     const newInprogressObj = getUpdatedChallengesAndScoreboard(
-    //         SmashLeagueTestConstants.reportedResults1, 
-    //         RANKING_ARRAY1, SCOREBOARD, 
-    //         SmashLeagueTestConstants.completedChallenges1, 
-    //         ACTIVE_CHALLENGES1
-    //     )
+    test('categorizeSlackMessages', () => {
+        expect( _ => categorizeSlackMessages() )
+            .toThrowError('The argument messagesArray must be an Array.')
 
-    //     expect(newInprogressObj).toBe(1);
-    // })
-})
-
-
-describe('Smash League - Other functionality', () => {
-    test('isItTimeToCommitInProgress', () => {
-        let lastDate, currentDate
-
-        lastDate = new Date('2019-02-12T03:24:00')
-        currentDate = new Date('2019-02-14T00:22:00')
         expect(
-            isItTimeToCommitInProgress(currentDate, lastDate)
-        ).toBe(false)
-
-        lastDate = new Date('2019-02-10T02:02:00')
-        currentDate = new Date('2019-02-10T05:11:00')
-        expect(
-            isItTimeToCommitInProgress(currentDate, lastDate)
-        ).toBe(false)
-
-        lastDate = new Date('2019-02-09T12:02:00')
-        currentDate = new Date('2019-02-10T01:11:00')
-        expect(
-            isItTimeToCommitInProgress(currentDate, lastDate)
-        ).toBe(true)
-
-        lastDate = new Date('2019-02-10T02:02:00')
-        currentDate = new Date('2019-02-17T05:11:00')
-        expect(
-            isItTimeToCommitInProgress(currentDate, lastDate)
-        ).toBe(true)
+            categorizeSlackMessages(SLACK_MESSAGES1)
+        ).toEqual({
+            challenges: [],
+            reportedResults: [
+                {
+                    winner: 'U61MBQTR8',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 1, player2Result: 3,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+                {
+                    winner: 'UDBD59WLT',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 3, player2Result: 2,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+                {
+                    winner: 'UDBD59WLT',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 3, player2Result: 2,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+                {
+                    winner: 'U61MBQTR8',
+                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+                    player1Result: 1, player2Result: 3,
+                    players: ['UDBD59WLT', 'U61MBQTR8']
+                },
+            ]
+        })
     })
-})
 
-
-describe('Smash League - Ranking', () => {
-
-    test('getRankingPlaceByPlayerId', () => {
+    test('getNextWeekObject', () => {
+        const date1 =  new Date(2019, 2, 31), date2 =  new Date(2019, 3, 7)
         expect(
-            getRankingPlaceByPlayerId('Xotl', RANKING_ARRAY1)
-        ).toBe(1);
+            getNextWeekObject(date1.getTime())
+        ).toEqual({
+            start: date1.getTime() + 1, end: date2.getTime()
+        })
+    })
 
+    test('calculatePointsFromPlayerScore', () => {
+        const playerScore1 = { "stand_points": 1, "points": 2, "coins": 0, "range": 2 }
         expect(
-            getRankingPlaceByPlayerId('Aldo', RANKING_ARRAY1)
-        ).toBe(2);
-
+            calculatePointsFromPlayerScore( playerScore1, 1 )// Xotl
+        ).toBe( 5 )
         expect(
-            getRankingPlaceByPlayerId('David', RANKING_ARRAY1)
-        ).toBe(14);
-
+            calculatePointsFromPlayerScore( playerScore1, 10 )// FerSeñior
+        ).toBe( 3 )
+                
+        const playerScore2 = { "stand_points": 3, "points": 4, "coins": 2, "range": 1 }
         expect(
-            getRankingPlaceByPlayerId('Carlos Lopez', RANKING_ARRAY1)
-        ).toBe(14);
-
+            calculatePointsFromPlayerScore( playerScore2, 5 )// lrgilberto
+        ).toBe( 7 )
         expect(
-            getRankingPlaceByPlayerId('Player not yet in ranking', RANKING_ARRAY1)
-        ).toBe(RANKING_ARRAY1.length + 1);
-    });
+            calculatePointsFromPlayerScore( playerScore2, 14 )// David
+        ).toBe( 5 )
+    })
 
-    test('getNumberOfChallengesAllowed', () => {
-        expect(
-            getNumberOfChallengesAllowed(1)
-        ).toBe(0);
+    test('updateInProgressScoreboard', () => {
 
-        expect(
-            getNumberOfChallengesAllowed(2)
-        ).toBe(1);
+        expect( _ => updateInProgressScoreboard() )
+            .toThrowError('The "activities" argument must be an object but received "undefined" instead.')
+        expect( _ => updateInProgressScoreboard({}) )
+            .toThrowError('The "rankingObj" argument must be an object but received "undefined" instead.')
 
-        for (let place = 3; place <= 9; place++) {//3rd to 9th
-            expect(
-                getNumberOfChallengesAllowed(place)
-            ).toBe(2);
+        const rankingObj = {
+            ranking: RANKING_ARRAY2,  in_progress: { scoreboard: SCOREBOARD1 }
         }
 
-        expect(
-            getNumberOfChallengesAllowed(10)
-        ).toBe(3);
-
-        expect(
-            getNumberOfChallengesAllowed(11)
-        ).toBe(4);
-
-        for (let place = 12; place <= 50; place++) {//12th and beyond
-            expect(
-                getNumberOfChallengesAllowed(place)
-            ).toBe(5);
-        }
+        const newInProgress = updateInProgressScoreboard( {challenges: ACTIVITIES1}, rankingObj )
+        expect(newInProgress.scoreboard).toEqual({
+            ...SCOREBOARD1,
+            "U6457D5KQ": {
+                "stand_points": 0,
+                "points": 37,
+                "coins": 0,
+                "range": 3,
+                "completed_challenges": [
+                    ACTIVITIES1[0], ACTIVITIES1[2], ACTIVITIES1[4]
+                ]
+            },
+            "UBA5M220K": {
+                "stand_points": 1,
+                "points": 37,
+                "coins": 1,
+                "range": 1,
+                "completed_challenges": []
+            },
+            "U61MBQTR8": {
+                "stand_points": 2,
+                "points": 44,
+                "coins": 0,
+                "range": 1,
+                "completed_challenges": [ ACTIVITIES1[5] ]
+            },
+            "UDBD59WLT": {
+                "stand_points": 1,
+                "points": 42,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            },
+            "newPlayer": {
+                "stand_points": 0,
+                "points": 0,
+                "coins": 1,
+                "range": 4,
+                "completed_challenges": [ ACTIVITIES1[7], ACTIVITIES1[8], ACTIVITIES1[9] ]
+            },
+            "U7VAPLNCR": {
+                "stand_points": 1,
+                "points": 31,
+                "coins": 0,
+                "range": 0,
+                "completed_challenges": []
+            }
+        })
     })
-
-    test('canPlayerAChallengePlayerB', () => {
-        expect(
-            canPlayerAChallengePlayerB('Aldo', 'Gustavo', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Non ranked', 'Another non ranked', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Gustavo', 'Aldo', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Carlos Lopez', 'David', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Beto', 'Carlos Lopez', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Gustavo', 'Carlos Lopez', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('KntrllMester', 'Xotl', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('michxrt', 'KntrllMester', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('FerSeñior', 'Non ranked player', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Pancho', 'Non ranked player', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Beto', 'Non ranked player', RANKING_ARRAY1)
-        ).toBe(false);
-
-        expect(
-            canPlayerAChallengePlayerB('Carlos Lopez', 'Samuel', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('David', 'Gustavo', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('KntrllMester', 'Angel_Lee', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('FerSeñior', 'Chino', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('medinilla', 'Chino', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('michxrt', 'Chino', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('FerSeñior', 'Niightz', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('Gustavo', 'Niightz', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('Gustavo', 'michxrt', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('Non ranked player', 'David', RANKING_ARRAY1)
-        ).toBe(true);
-
-        expect(
-            canPlayerAChallengePlayerB('Non ranked player', 'FerSeñior', RANKING_ARRAY1)
-        ).toBe(true);
-    })
-
 })

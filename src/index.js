@@ -13,59 +13,49 @@ const SMASH_SLACK_CHANNEL_ID = Config.slack_channel_id
 
 async function Main() {
     const now = new Date()
-    const lastInProgressUpdated = Utils.GetDateObjFromEpochTS(Ranking.in_progress.last_update_ts)
+    const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts)
     const opts = { latest: now, oldest: lastInProgressUpdated }
-
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
     const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
-    const newInProgressObj = SmashLeague.digestActivitiesAndGetUpdatedRankingObj(activities, Ranking)
+    
 
-    newInProgressObj.last_update_ts = Utils.GetEpochUnixFromDate(now)
+    // We create & set the Object that will have all the data of the 
+    // ignored activites logged by "logIgnoredActivity" function
+    const ignoredActivities = {}
+    Utils.setIgnoredActivityLogObject(ignoredActivities)
+
+    // Updates ranking table in case there's a manual change in current scoreboard
+    Ranking.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard, Ranking.ranking)
+
+    // Now using the activities let's do the calculations to get the new in_progress object
+    const newInProgressObj = SmashLeague.updateInProgressScoreboard(activities, Ranking)
+    newInProgressObj.last_update_ts = now.getTime()
+
+    // Log the ignored activities so we can debug Production in the Travis log
+    Utils.showInConsoleIgnoredActivities(ignoredActivities)
+
+
     let newRankingObj = { ...Ranking, in_progress: newInProgressObj }
+    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, newRankingObj.current_week)
 
-    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, lastInProgressUpdated)
     if (isItTimeToCommit) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
-        OutputGenerator.updateHistoryLog(newInProgressObj)
-    }
-    else {
-        // Updates ranking table in case there's a manual change in current scoreboard
-        newRankingObj.ranking = SmashLeague.getRankingFromScoreboard(newRankingObj.scoreboard)
+        OutputGenerator.updateHistoryLog(newInProgressObj, newRankingObj.current_week)
     }
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
     await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
 
-    if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
-        if (isItTimeToCommit) {
-            Slack.postMessageInChannel(
-                '¡Ha iniciando un nuevo ranking esta semana!, ya pueden revisar en qué lugar quedaron.\n' +
-                'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-                , SMASH_SLACK_CHANNEL_ID
-            )
-        }
-        else {
-            console.log('The Travis event type is:', process.env.TRAVIS_EVENT_TYPE)
-            switch(process.env.TRAVIS_EVENT_TYPE) {
-                case 'push':
-                    Slack.postMessageInChannel(
-                        `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n` +
-                        'Y también aproveché a buscar mensajes nuevos para actualizar el ranking (si es que hubo actividad).\n' +
-                        'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-                        , SMASH_SLACK_CHANNEL_ID
-                    )                    
-                    break;
 
-                case 'cron':
-                default:
-                    Slack.postMessageInChannel(
-                        'Aquí reportando que ya actualicé el scoreboard.' +
-                        'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-                        , SMASH_SLACK_CHANNEL_ID
-                    )                    
-                    break;
-            }
+    // Only post in slack if it's a master Job
+    if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
+        let messageToPost;
+        if (process.env.TRAVIS_EVENT_TYPE === 'push') {
+            messageToPost = `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n`
         }
+
+        messageToPost += SmashLeague.getMessageToNotifyUsers(isItTimeToCommit, )
+        Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID)
     }
     console.log('Finished Successfully.')
 }

@@ -1,6 +1,6 @@
 {
   "name": "smash-league",
-  "version": "1.1.51",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,12 @@
       "!**/*.test.js",
       "!**/*.test.constants.js",
       "!**/node_modules/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/index.js",
+      "/src/slack-api.js",
+      "/src/output-generator.js"
     ]
   },
   "author": "Edgardo Campos (Xotl)",
