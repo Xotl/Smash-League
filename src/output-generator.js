@@ -78,9 +78,9 @@ const getEndOfWeekSummaryMarkdown = scoreboardObj => {
 } 
 
 const getCompletedChallengesMarkdown = scoreboard => {
-    return Object.keys(scoreboard).map(
-        challengerId => {
-            return scoreboard[challengerId].completed_challenges.map(
+    return Object.keys(scoreboard).reduce(
+        (resultArray, challengerId) => {
+            const str = scoreboard[challengerId].completed_challenges.map(
                 challenge => {
                     const challengerName = getPlayerNameById(challengerId)
                     const challengedPlayerName = getPlayerNameById(challenge.player1 !== challengerId ? challenge.player1 : challenge.player2)
@@ -90,7 +90,14 @@ const getCompletedChallengesMarkdown = scoreboard => {
                     return `* \`${challengerName}\` challenged \`${challengedPlayerName}\` and **${nonNumericResult}** *${challenge[winnerPlayer + 'Result']}-${challenge[loserPlayer + 'Result']}*.`
                 }
             ).join('\n')
-        }
+
+            if (str.length > 0) {
+                resultArray.push(str)
+            }
+
+            return resultArray
+        },
+        []
     ).join('\n')
 }
 
@@ -102,6 +109,8 @@ const updateRankingMarkdownFile = async rankingObj => {
         .replace(/\{\{ranking_bullets\}\}/gm, getRankingBulletsMarkdown(rankingObj.ranking, rankingObj.scoreboard))
         .replace(/\{\{inprogress_last_updated\}\}/gm, (new Date(rankingObj.in_progress.last_update_ts)).toUTCString())
         .replace(/\{\{inprogress_scoreboard\}\}/gm, getScoreboardMarkdown(rankingObj.in_progress.scoreboard))
+        .replace(/\{\{completed_challenges\}\}/gm, getCompletedChallengesMarkdown(rankingObj.in_progress.scoreboard))
+        
 
     return new Promise(
         (resolve, reject) => {
