@@ -19,7 +19,7 @@ Last updated **Mon, 29 Apr 2019 02:16:09 GMT**.
 |13|`Medininja`|2|
 |14|`Carlos López`, `Niightz`|1|
 
-## In progress this week *Mon, 29 Apr 2019 02:16:09 GMT*
+## In progress this week *Tue, 30 Apr 2019 02:18:20 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
