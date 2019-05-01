@@ -19,7 +19,7 @@ Last updated **Sun, 28 Apr 2019 17:00:00 GMT**.
 |13|`Medininja`|2|
 |14|`Carlos López`, `Niightz`|1|
 
-## In progress this week *Sun, 28 Apr 2019 17:00:00 GMT*
+## In progress this week *Wed, 01 May 2019 20:21:30 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -28,7 +28,7 @@ The current points earned by winning matches this week.
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
 |Xotl|0|0|0|14|
-|César Gutman|1|1|0|13|
+|César Gutman|1|2|0|13|
 |Angel Lee|1|1|0|12|
 |José "El Iceberg" Rosales|1|1|0|11|
 |D.I.O.|1|1|0|11|
@@ -36,9 +36,9 @@ The current points earned by winning matches this week.
 |El Minion|2|2|0|9|
 |Gilberto "Gil" Ruelas|2|2|0|8|
 |Alan|2|2|0|7|
-|Fer Señior|2|2|0|6|
+|Fer Señior|2|2|1|6|
 |Sammy|2|2|0|6|
-|El Chino|2|2|0|5|
+|El Chino|1|2|0|5|
 |Michel|3|3|0|4|
 |David|3|3|0|3|
 |Medininja|3|3|0|2|
@@ -48,4 +48,5 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `El Chino` challenged `Fer Señior` and **lost** *3-1*.
+* `César Gutman` challenged `Xotl` and **won** *3-2*.
