@@ -367,8 +367,8 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
 
         ignoredActivities = '\n\nAdemás, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar ' + 
                             ignoredActivities.length + ' mensajes en donde me taggearon. :unamused:' +
-                            '\nEstos fueron los motivos' + '```' + ignoredMessages  + '```' +
-                            'Léanse las reglas por favor -> https://github.com/Xotl/Smash-League#ranking-rules'
+                            '\nEstos fueron los motivos:\n' + '```\n' + ignoredMessages  + '\n```' +
+                            '\nLéanse las reglas por favor -> https://github.com/Xotl/Smash-League#ranking-rules'
 
     }
 
