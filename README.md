@@ -10,14 +10,12 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
     * [How many range do i start with?](#How-many-range-do-i-start-with)
     * [How many people can i challenge?](#How-many-people-can-i-challenge)
     * [Example of how the points are calculated & earned](#Example-of-how-the-points-are-calculated-&-earned)
-* [How do i challenge people or report a result?](#how-do-i-challenge-people-or-report-a-result)
-    * [Challenge people](#challenge-people)
-    * [Reporting a result after a match](#reporting-a-result-after-a-match)
+* [How do i report a result?](#How-do-i-report-a-result)
 * [Match Rules](#match-rules)
     * [Initial stages](#initial-stages)
     * [Counterpicks](#counterpicks)
-* [Want to contribute?](#Want-to-contribute)
     * [Current Smash ruleset](#Current-Smash-ruleset)
+* [Want to contribute?](#Want-to-contribute)
     * [Running and debugging with VS Code](#Running-and-debugging-with-VS-Code)
     * [How to run the project locally using Docker](#How-to-run-the-project-locally-using-Docker)
 
@@ -104,7 +102,6 @@ Then we add the earned points to the points we have, in this case 10 **points**.
 ## How do i report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
 
-### Reporting a result after a match
 Tag the bot and then post the result in the next format: {playerA} {result A}-{result B} {playerB}
 
 Examples of valid results expressions:

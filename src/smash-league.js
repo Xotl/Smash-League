@@ -64,12 +64,14 @@ const categorizeSlackMessages = (messagesArray) => {
                 }
 
                 // if it comes here, is just a random message where the bot got tagged
+                result.ignoredMessagesCount++
                 return result
             }
         }, 
         {
             challenges: [],
-            reportedResults: []
+            reportedResults: [],
+            ignoredMessagesCount: 0
         }
     )
 
@@ -266,7 +268,8 @@ const calculatePointsFromPlayerScore = playerScore => {
 const getRankingFromScoreboard = scoreboard => {
     const scoreDict = Object.keys(scoreboard).reduce(
         (resultObj, playerId) => {
-            const score = scoreboard[playerId].points + ( scoreboard[playerId].initial_coins / 1000 )
+            const { points, initial_coins, range} = scoreboard[playerId]
+            const score = points + ( (range - initial_coins) / 1000 )
 
             if (score < 1) {// Ignoring the people with 0 points from the ranking
                 return resultObj
@@ -333,14 +336,61 @@ const commitInProgress = rankingObj => {
 }
 
 /* istanbul ignore next */
-const getMessageToNotifyUsers = (weekCommited, totalValidActivities, totalIgnoredActivities, endOfSeason) => {
+const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActivities, 
+            ignoredMessagesCount, season, isNewVersion) => {
     if (weekCommited) {
         return '¡Ha iniciando un nuevo ranking esta semana!, ya pueden revisar en qué lugar quedaron.\n' +
                 'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
     }
 
-    return 'Aquí reportando que ya actualicé el scoreboard.' +
-            'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
+    let totalValidActivitiesTxt = ''
+    if (totalValidActivities === 0) {
+        if (isNewVersion) {
+            totalValidActivitiesTxt = 'Aprovechando el update revisé y no encontré actividad nueva. :disapointed:'
+        }
+        else {
+            totalValidActivitiesTxt = 'Parece que no hubo actividad desde la ùltima vez que revisé, ' + 
+                '¿será que son vacaciones o fin de semana?. :thinking_face:'
+        }
+    }
+    else {
+        if (isNewVersion) {
+            totalValidActivitiesTxt = 'Aprovechando el update actualicé el scoreboard.\n' + 
+                'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md'
+        }
+        else {
+            totalValidActivitiesTxt = 'Aquí reportando que ya actualicé el scoreboard.\n' +
+               'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md'
+        }
+    }
+
+    let ignoredMessagesTxt = ''
+    if (ignoredMessagesCount > 0) {
+        ignoredMessagesTxt = '\n\nPor cierto, les recuerdo que sólo soy una máquina y hubo ' + ignoredMessagesCount +
+            (ignoredMessagesCount > 0 ? ' mensajes' : ' mensaje')  + 
+            ' donde me taggearon pero no entedí qué querían. :sweat_smile:' + 
+            '\nRecuerden seguir el formato para poder entenderles.'
+    }
+
+    let ignoredActivitiesTxt = ''
+    if (ignoredActivities.length > 0) {
+        const ignoredMessages = Object.keys(ignoredActivities).map(
+            type => {
+                ignoredActivities[type].map(
+                    ({ reason }) => `* ${reason}`
+                ).join('\n')
+            }
+        ).join('\n')
+
+        ignoredActivitiesTxt = '\n\nAdemás, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar ' + 
+                            ignoredActivities.length + (ignoredActivities.length > 0 ? ' mensajes' : ' mensaje')  + 
+                            ' en donde me taggearon. :unamused:' +
+                            '\nEstos fueron los motivos:\n' + '```\n' + ignoredMessages  + '\n```' +
+                            '\nLéanse las reglas por favor -> https://github.com/Xotl/Smash-League#ranking-rules'
+
+    }
+
+    return totalValidActivitiesTxt + ignoredMessagesTxt + ignoredActivitiesTxt
 }
 
 
