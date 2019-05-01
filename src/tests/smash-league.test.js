@@ -68,21 +68,15 @@ describe('Smash League Challenges & Scoreboard', () => {
     })
 
     test('calculatePointsFromPlayerScore', () => {
-        const playerScore1 = { "stand_points": 1, "points": 2, "coins": 0, "range": 2 }
+        const playerScore1 = { "initial_coins": 0, "stand_points": 1, "points": 2, "coins": 0, "range": 2 }
         expect(
-            calculatePointsFromPlayerScore( playerScore1, 1 )// Xotl
+            calculatePointsFromPlayerScore( playerScore1 )// Xotl
         ).toBe( 5 )
-        expect(
-            calculatePointsFromPlayerScore( playerScore1, 10 )// FerSeñior
-        ).toBe( 3 )
                 
-        const playerScore2 = { "stand_points": 3, "points": 4, "coins": 2, "range": 1 }
+        const playerScore2 = { "initial_coins": 2, "stand_points": 3, "points": 4, "coins": 1, "range": 5 }
         expect(
-            calculatePointsFromPlayerScore( playerScore2, 5 )// lrgilberto
-        ).toBe( 7 )
-        expect(
-            calculatePointsFromPlayerScore( playerScore2, 14 )// David
-        ).toBe( 5 )
+            calculatePointsFromPlayerScore( playerScore2 )// lrgilberto
+        ).toBe( 9 )
     })
 
     test('updateInProgressScoreboard', () => {
@@ -96,10 +90,11 @@ describe('Smash League Challenges & Scoreboard', () => {
             ranking: RANKING_ARRAY2,  in_progress: { scoreboard: SCOREBOARD1 }
         }
 
-        const newInProgress = updateInProgressScoreboard( {challenges: ACTIVITIES1}, rankingObj )
+        const newInProgress = updateInProgressScoreboard( {reportedResults: ACTIVITIES1}, rankingObj )
         expect(newInProgress.scoreboard).toEqual({
             ...SCOREBOARD1,
             "U6457D5KQ": {
+                "initial_coins": 0,
                 "stand_points": 0,
                 "points": 37,
                 "coins": 0,
@@ -109,6 +104,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 ]
             },
             "UBA5M220K": {
+                "initial_coins": 0,
                 "stand_points": 1,
                 "points": 37,
                 "coins": 1,
@@ -116,6 +112,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "completed_challenges": []
             },
             "U61MBQTR8": {
+                "initial_coins": 0,
                 "stand_points": 2,
                 "points": 44,
                 "coins": 0,
@@ -123,6 +120,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "completed_challenges": [ ACTIVITIES1[5] ]
             },
             "UDBD59WLT": {
+                "initial_coins": 0,
                 "stand_points": 1,
                 "points": 42,
                 "coins": 0,
@@ -130,6 +128,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "completed_challenges": []
             },
             "newPlayer": {
+                "initial_coins": 3,
                 "stand_points": 0,
                 "points": 0,
                 "coins": 1,
@@ -137,6 +136,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "completed_challenges": [ ACTIVITIES1[7], ACTIVITIES1[8], ACTIVITIES1[9] ]
             },
             "U7VAPLNCR": {
+                "initial_coins": 0,
                 "stand_points": 1,
                 "points": 31,
                 "coins": 0,
