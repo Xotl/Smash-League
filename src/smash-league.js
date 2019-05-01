@@ -343,8 +343,25 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
     }
 
-    if (totalValidActivities === 0 && !isNewVersion) {
-        return 'Parece que no hubo actividad desde la ùltima vez que revisé, ¿será que son vacaciones? :thinking_face:'
+    let totalValidActivitiesTxt = ''
+    if (totalValidActivities === 0) {
+        if (isNewVersion) {
+            totalValidActivitiesTxt = 'Aprovechando el update revisé y no encontré actividad nueva. :disapointed:'
+        }
+        else {
+            totalValidActivitiesTxt = 'Parece que no hubo actividad desde la ùltima vez que revisé, ' + 
+                '¿será que son vacaciones o fin de semana?. :thinking_face:'
+        }
+    }
+    else {
+        if (isNewVersion) {
+            totalValidActivitiesTxt = 'Aprovechando el update actualicé el scoreboard.\n' + 
+                'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md'
+        }
+        else {
+            totalValidActivitiesTxt = 'Aquí reportando que ya actualicé el scoreboard.\n' +
+               'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md'
+        }
     }
 
     let ignoredMessagesTxt = ''
@@ -372,9 +389,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
 
     }
 
-    return 'Aquí reportando que ya actualicé el scoreboard.\n' +
-           'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md' +
-           + ignoredMessagesTxt + ignoredActivitiesTxt
+    return totalValidActivitiesTxt + ignoredMessagesTxt + ignoredActivitiesTxt
 }
 
 
