@@ -23,9 +23,7 @@ const categorizeSlackMessages = (messagesArray) => {
     const resultCategorized = messagesArray.reduce(
         (result, { text:message, user }) => {
             if (-1 === message.indexOf(BOT_SLACK_TAG)) {
-                // Slack bot is not tagged in this message, just ignore it
-                result.ignoredMessagesCount++
-                return result
+                return result// Slack bot is not tagged in this message, just ignore it
             }
 
             const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG, 'gm'), '')
@@ -66,6 +64,7 @@ const categorizeSlackMessages = (messagesArray) => {
                 }
 
                 // if it comes here, is just a random message where the bot got tagged
+                result.ignoredMessagesCount++
                 return result
             }
         }, 
