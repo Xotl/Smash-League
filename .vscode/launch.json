@@ -15,7 +15,7 @@
                 "-p", "9229:9229",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "-v", "${workspaceFolder}/ranking-info:/usr/app/ranking-info",
-                "-e", "SLACK_API_TOKEN=xoxp-14061308097-205725843858-542295024849-39a07b5219ac7213d4823135e51bff51",
+                "-e", "SLACK_API_TOKEN=Your-token-here",
                 "smash-league",
                 "node", "--inspect-brk=0.0.0.0:9229", "src/"
             ],
