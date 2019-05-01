@@ -15,14 +15,13 @@
                 "-p", "9229:9229",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "-v", "${workspaceFolder}/ranking-info:/usr/app/ranking-info",
-                "-e", "SLACK_API_TOKEN=Your slack api token here",
                 "smash-league",
-                "node", "--inspect-brk=0.0.0.0:9229", "src/"
+                "npm", "run", "start:debug"
             ],
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
             "port": 9229,
-            // "console": "integratedTerminal"
+            // "console":"integratedTerminal",
         },
         {
             "type": "node",
@@ -35,14 +34,17 @@
                 "-p", "9229:9229",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "smash-league",
-                "node", "--inspect-brk=0.0.0.0:9229", "./node_modules/.bin/jest",
-                "--runInBand"
+                "node", "--inspect-brk=0.0.0.0:9229",
+                "./node_modules/.bin/jest", 
+                "--runInBand", "--no-cache", "--coverage",
             ],
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
             "port": 9229,
-            // "console": "integratedTerminal",
-            // "internalConsoleOptions": "neverOpen"
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "disableOptimisticBPs": true,
+            // "console":"integratedTerminal",
         }
     ]
 }

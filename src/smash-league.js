@@ -124,7 +124,7 @@ const getUnrankedPlayerScore = playerPlace => {
     const initialCoins = getInitialCoinsForPlayer(playerPlace)
     return {
         stand_points: 0, points: 0,
-        coins: initialCoins, range: initialCoins,
+        initial_coins: initialCoins, coins: initialCoins, range: initialCoins,
         completed_challenges: []
     }
 }
@@ -186,8 +186,8 @@ const updateInProgressScoreboard = (activities, rankingObj) => {
         throw new Error(`The "rankingObj" argument must be an object but received "${typeof rankingObj}" instead.`)
     }
 
-    const { challenges } = activities, {ranking: rankingTable,  in_progress: { scoreboard } } = rankingObj
-    const newScoreboard = challenges.reduce(
+    const { reportedResults } = activities, {ranking: rankingTable,  in_progress: { scoreboard } } = rankingObj
+    const newScoreboard = reportedResults.reduce(
         (currentScoreboard, match) => {
             // {
             //     winner: player1Result > player2Result ? player1 : player2,
@@ -258,18 +258,15 @@ const getInitialCoinsForPlayer = playerPlace => {
     return result > 5 ? 5 : result
 }
 
-const calculatePointsFromPlayerScore = (playerScore, playerPlace) => {
-    const { stand_points, points, coins, range} = playerScore
-    const initialCoins = getInitialCoinsForPlayer(playerPlace)
-    return points + stand_points + range - initialCoins
+const calculatePointsFromPlayerScore = playerScore => {
+    const { stand_points, points, coins, range, initial_coins} = playerScore
+    return points + stand_points + range - initial_coins - coins
 }
 
-const getRankingFromScoreboard = (scoreboard, rankingTable) => {
+const getRankingFromScoreboard = scoreboard => {
     const scoreDict = Object.keys(scoreboard).reduce(
         (resultObj, playerId) => {
-            const playerPlace = getRankingPlaceByPlayerId(playerId, rankingTable)
-            const initialCoins = getInitialCoinsForPlayer(playerPlace)
-            const score = scoreboard[playerId].points + ( (scoreboard[playerId].range - initialCoins) / 1000 )
+            const score = scoreboard[playerId].points + ( scoreboard[playerId].initial_coins / 1000 )
 
             if (score < 1) {// Ignoring the people with 0 points from the ranking
                 return resultObj
@@ -309,16 +306,17 @@ const commitInProgress = rankingObj => {
     // We need to generate the new ranking table in order to know how many coins 
     // the players should get at the end of week. Also we use the old ranking to 
     // calculatethe initial coins they have for the Tie-breaker.
-    result.ranking = getRankingFromScoreboard(newScoreboard, rankingObj.ranking)
+    result.ranking = getRankingFromScoreboard(newScoreboard)
     
     // Now that the new score has been calculated that's how the week ended
     result.scoreboard = newScoreboard
 
-    // Applies inital completed_challenges, stand_points, coins and range
+    // Applies inital completed_challenges, initial_coins, stand_points, coins and range
     Object.keys(newScoreboard).forEach(
         playerId => {
             const playerPlace = getRankingPlaceByPlayerId(playerId, result.ranking)
             const initialCoins = getInitialCoinsForPlayer(playerPlace)
+            newScoreboard[playerId].initial_coins = initialCoins
             newScoreboard[playerId].coins = initialCoins
             newScoreboard[playerId].range = initialCoins
             newScoreboard[playerId].stand_points = 0
@@ -328,9 +326,9 @@ const commitInProgress = rankingObj => {
 
     
     inProgress.scoreboard = newScoreboard
-    result.current_week = getNextWeekObject(rankingObj.current_week.end)
     result.last_update_ts = inProgress.last_update_ts
     result.in_progress = inProgress
+    result.current_week = getNextWeekObject(result.last_update_ts)
     return result
 }
 

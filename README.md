@@ -168,15 +168,16 @@ If you want to contribute, you can rise issues or create your PR.
 ### Running and debugging with VS Code
 * Install Docker
 * Install Visual Studio Code
-* Add your [Slack API token in `.vscode/launch.json`(/.vscode/launch.json#18) file
+* Add your Slack API token in a `.env` file. You can use [the `.env.TEMPLATE` file](/.env.TEMPLATE) as example.
 * Press `F5` to run & debug the project in VS Code
 
 *Note: Might not work on Windows*
 
 ### How to run the project locally using Docker
 * Install Docker
+* Add your Slack API token in a `.env` file. You can use [the `.env.TEMPLATE` file](/.env.TEMPLATE) as example.
 * Run `docker build -t smash-league .`
-* Run `docker run -it --rm -v ${PWD}/src:/usr/app/src -v ${PWD}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN="Your Slack API token here" smash-league`
+* Run `docker run -it --rm -v ${PWD}/src:/usr/app/src -v ${PWD}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN="Your Slack API token here" smash-league npm run start:debug`
 * You can run the test by running the `docker run -it --rm -v ${PWD}/src:/usr/app/src -v ${PWD}/ranking-info:/usr/app/ranking-info -e SLACK_API_TOKEN="Your Slack API token here" smash-league npm test` command
 
 Note: We mount the `src` & `ranking-info` folders for development, so you can see your changes without building again the Docker image.

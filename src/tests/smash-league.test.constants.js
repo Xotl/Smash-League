@@ -35,6 +35,7 @@ module.exports = {
     
     SCOREBOARD1: {
         "U8A96RCEA": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 3,
             "coins": 0,
@@ -42,6 +43,7 @@ module.exports = {
             "completed_challenges": []
         },
         "U61MBQTR8": {
+            "initial_coins": 0,
             "stand_points": 2,
             "points": 44,
             "coins": 1,
@@ -49,6 +51,7 @@ module.exports = {
             "completed_challenges": []
         },
         "U7VAPLNCR": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 31,
             "coins": 0,
@@ -56,6 +59,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UBRMBGR6Z": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 29,
             "coins": 0,
@@ -63,6 +67,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UB616ENA0": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 40,
             "coins": 0,
@@ -70,6 +75,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UEWUZCYJF": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 18,
             "coins": 0,
@@ -77,6 +83,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UDBD59WLT": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 42,
             "coins": 0,
@@ -84,6 +91,7 @@ module.exports = {
             "completed_challenges": []
         },
         "U8M6QT7EF": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 33,
             "coins": 0,
@@ -91,6 +99,7 @@ module.exports = {
             "completed_challenges": []
         },
         "U87CK0E4A": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 27,
             "coins": 0,
@@ -98,6 +107,7 @@ module.exports = {
             "completed_challenges": []
         },
         "U8THDCVJ7": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 36,
             "coins": 0,
@@ -105,6 +115,7 @@ module.exports = {
             "completed_challenges": []
         },
         "U6457D5KQ": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 37,
             "coins": 2,
@@ -112,6 +123,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UBA5M220K": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 37,
             "coins": 1,
@@ -119,6 +131,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UAGR4S57G": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 16,
             "coins": 0,
@@ -126,6 +139,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UBRCZ6G4B": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 3,
             "coins": 0,
@@ -133,6 +147,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UDR61HJCD": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 27,
             "coins": 0,
@@ -140,6 +155,7 @@ module.exports = {
             "completed_challenges": []
         },
         "UBD38N45P": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 10,
             "coins": 0,
@@ -147,6 +163,7 @@ module.exports = {
             "completed_challenges": []
         },
         "U6H8DDV25": {
+            "initial_coins": 0,
             "stand_points": 0,
             "points": 9,
             "coins": 0,
@@ -158,8 +175,8 @@ module.exports = {
     RANKING_OBJECT1: {
         "last_update_ts": 19,
         "season": {
-            "start": 10,
-            "end": 300
+            "start": 1556470800001,
+            "end": 1557075600000
         },
         "current_week": {
             "start": 20,
@@ -177,6 +194,7 @@ module.exports = {
         "in_progress": {
             "scoreboard": {
                 "UDR61HJCD": {
+                    "initial_coins": 2,
                     "stand_points": 4,
                     "points": 27,
                     "coins": 0,
@@ -184,6 +202,7 @@ module.exports = {
                     "completed_challenges": []
                 },
                 "U8A96RCEA": {
+                    "initial_coins": 3,
                     "stand_points": 0,
                     "points": 3,
                     "coins": 0,
@@ -200,6 +219,7 @@ module.exports = {
                     ]
                 },
                 "U61MBQTR8": {
+                    "initial_coins": 0,
                     "stand_points": 1,
                     "points": 44,
                     "coins": 0,
@@ -212,6 +232,7 @@ module.exports = {
                     ]
                 },
                 "U7VAPLNCR": {
+                    "initial_coins": 1,
                     "stand_points": 2,
                     "points": 43,
                     "coins": 1,
@@ -224,6 +245,7 @@ module.exports = {
                     ]
                 },
                 "UBRMBGR6Z": {
+                    "initial_coins": 2,
                     "stand_points": 4,
                     "points": 29,
                     "coins": 1,
@@ -231,19 +253,19 @@ module.exports = {
                     "completed_challenges": []
                 }
             },
-            "last_update_ts": 27
+            "last_update_ts": 1556470800000
         }
     },
 
     RANKING_OBJECT2: {
-        "last_update_ts": 27,
+        "last_update_ts": 1556470800000,
         "season": {
-            "start": 10,
-            "end": 300
+            "start": 1556470800001,
+            "end": 1557075600000
         },
         "current_week": {
-            "start": 1554012000001,
-            "end": 1554616800000
+            "start": 1556470800001,
+            "end": 1557075600000
         },
         "ranking": [
             ["U7VAPLNCR"],// 1st place
@@ -255,6 +277,7 @@ module.exports = {
         "in_progress": {
             "scoreboard": {
                 "U8A96RCEA": {
+                    "initial_coins": 1,
                     "stand_points": 0,
                     "points": 3,
                     "coins": 1,
@@ -262,6 +285,7 @@ module.exports = {
                     "completed_challenges": []
                 },
                 "U61MBQTR8": {
+                    "initial_coins": 1,
                     "stand_points": 0,
                     "points": 45,
                     "coins": 1,
@@ -269,20 +293,23 @@ module.exports = {
                     "completed_challenges": []
                 },
                 "U7VAPLNCR": {
+                    "initial_coins": 0,
                     "stand_points": 0,
-                    "points": 46,
+                    "points": 45,
                     "coins": 0,
                     "range": 0,
                     "completed_challenges": []
                 },
                 "UBRMBGR6Z": {
+                    "initial_coins": 1,
                     "stand_points": 0,
-                    "points": 35,
+                    "points": 34,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
                 },
                 "UDR61HJCD": {
+                    "initial_coins": 1,
                     "stand_points": 0,
                     "points": 35,
                     "coins": 1,
@@ -290,7 +317,7 @@ module.exports = {
                     "completed_challenges": []
                 }
             },
-            "last_update_ts": 27
+            "last_update_ts": 1556470800000
         }
     },
 
