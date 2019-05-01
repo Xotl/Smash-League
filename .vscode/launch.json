@@ -46,7 +46,7 @@
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
             "disableOptimisticBPs": true,
-            "console":"integratedTerminal",
+            // "console":"integratedTerminal",
             // "internalConsoleOptions":"neverOpen"
         }
     ]
