@@ -49,12 +49,21 @@ async function Main() {
 
     // Only post in slack if it's a master Job
     if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
-        let messageToPost;
-        if (process.env.TRAVIS_EVENT_TYPE === 'push') {
+        const isUpdate = process.env.TRAVIS_EVENT_TYPE === 'push'
+        let messageToPost = '';
+        if (isUpdate) {
             messageToPost = `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n`
         }
 
-        messageToPost += SmashLeague.getMessageToNotifyUsers(isItTimeToCommit, )
+        messageToPost += SmashLeague.getMessageToNotifyUsers(
+            isItTimeToCommit,
+            activities.reportedResults.length,
+            ignoredActivities, 
+            activities.ignoredMessagesCount,
+            newRankingObj.season,
+            isUpdate
+        )
+
         Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID)
     }
     console.log('Finished Successfully.')
