@@ -356,7 +356,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
             '\nRecuerden seguir el formato para poder entenderles.'
     }
 
-    let ignoredActivities = ''
+    let ignoredActivitiesTxt = ''
     if (ignoredActivities.length > 0) {
         const ignoredMessages = Object.keys(ignoredActivities).map(
             type => {
@@ -366,7 +366,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
             }
         ).join('\n')
 
-        ignoredActivities = '\n\nAdemás, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar ' + 
+        ignoredActivitiesTxt = '\n\nAdemás, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar ' + 
                             ignoredActivities.length + ' mensajes en donde me taggearon. :unamused:' +
                             '\nEstos fueron los motivos:\n' + '```\n' + ignoredMessages  + '\n```' +
                             '\nLéanse las reglas por favor -> https://github.com/Xotl/Smash-League#ranking-rules'
@@ -375,7 +375,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
 
     return 'Aquí reportando que ya actualicé el scoreboard.\n' +
            'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md' +
-           + ignoredMessagesTxt + ignoredActivities
+           + ignoredMessagesTxt + ignoredActivitiesTxt
 }
 
 
