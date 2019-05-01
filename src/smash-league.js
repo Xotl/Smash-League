@@ -351,8 +351,9 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
     let ignoredMessagesTxt = ''
     if (ignoredMessagesCount > 0) {
         ignoredMessagesTxt = '\n\nPor cierto, les recuerdo que sólo soy una máquina y hubo ' + ignoredMessagesCount +
-            ' mensajes donde me taggearon pero no entedí qué querían. :sweat_smile:' + 
-            '\nRecuerden seguir el formato para poder entenderles'
+            (ignoredMessagesCount > 0 ? ' mensajes' : ' mensaje')  + 
+            ' donde me taggearon pero no entedí qué querían. :sweat_smile:' + 
+            '\nRecuerden seguir el formato para poder entenderles.'
     }
 
     let ignoredActivities = ''
