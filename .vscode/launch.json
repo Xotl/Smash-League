@@ -15,15 +15,13 @@
                 "-p", "9229:9229",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "-v", "${workspaceFolder}/ranking-info:/usr/app/ranking-info",
-                "-e", "SLACK_API_TOKEN=Your-token-here",
                 "smash-league",
-                "node", "--inspect-brk=0.0.0.0:9229", "src/"
+                "npm", "run", "start:debug"
             ],
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
             "port": 9229,
             // "console":"integratedTerminal",
-            // "internalConsoleOptions":"neverOpen"
         },
         {
             "type": "node",
@@ -47,7 +45,6 @@
             "protocol": "inspector",
             "disableOptimisticBPs": true,
             // "console":"integratedTerminal",
-            // "internalConsoleOptions":"neverOpen"
         }
     ]
 }
