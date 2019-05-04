@@ -70,7 +70,7 @@ const categorizeSlackMessages = (messagesArray) => {
                 }
 
                 // if it comes here, is just a random message where the bot got tagged
-                result.ignoredMessages.push({message, user, ts})
+                result.ignoredMessages.push({text: message, user, ts})
                 return result
             }
         }, 
