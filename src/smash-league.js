@@ -357,7 +357,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
     let totalValidActivitiesTxt = ''
     if (totalValidActivities === 0) {
         if (isNewVersion) {
-            totalValidActivitiesTxt = 'Aprovechando el update revisé y no encontré actividad nueva. :disapointed:'
+            totalValidActivitiesTxt = 'Aprovechando el update revisé y no encontré actividad nueva. :disappointed:'
         }
         else {
             totalValidActivitiesTxt = 'Parece que no hubo actividad desde la ùltima vez que revisé, ' + 
