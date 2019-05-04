@@ -104,7 +104,7 @@ const getCompletedChallengesMarkdown = scoreboard => {
 
 const getUnrankedScore = unrankedPlaceNum => {
     const { coins, range, stand_points, points} = SmashLeague.getUnrankedPlayerScore(unrankedPlaceNum)
-    return '|Coins|Range|Stand points|Points|' +
+    return '|Coins|Range|Stand points|Points|\n' +
          '\n|-----|-----|------------|------|\n' +
         `|${coins}|${range}|${stand_points}|${points}|`
 }
