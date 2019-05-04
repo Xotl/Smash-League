@@ -13,7 +13,9 @@ const SMASH_SLACK_CHANNEL_ID = Config.slack_channel_id
 
 async function Main() {
     const now = new Date()
-    const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts)
+    
+    // Next milisecond after last update because it's inclusive search
+    const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
     const opts = { latest: now, oldest: lastInProgressUpdated }
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
     const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
@@ -59,7 +61,7 @@ async function Main() {
             isItTimeToCommit,
             activities.reportedResults.length,
             ignoredActivities, 
-            activities.ignoredMessagesCount,
+            activities.ignoredMessages.length,
             newRankingObj.season,
             isUpdate
         )
