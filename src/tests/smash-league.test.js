@@ -28,7 +28,7 @@ describe('Smash League Challenges & Scoreboard', () => {
         expect(
             categorizeSlackMessages(SLACK_MESSAGES1)
         ).toEqual({
-            ignoredMessagesCount: 3,
+            ignoredMessages: [ SLACK_MESSAGES1[4], SLACK_MESSAGES1[5], SLACK_MESSAGES1[6] ],
             challenges: [],
             reportedResults: [
                 {

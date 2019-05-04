@@ -3,6 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const Utils = require('./utils')
 const Config = require('../config.json')
+const SmashLeague = require('./smash-league')
 
 
 const getPlayerNameById = playerId => Config.users_dict[playerId] || playerId
@@ -101,15 +102,24 @@ const getCompletedChallengesMarkdown = scoreboard => {
     ).join('\n')
 }
 
+const getUnrankedScore = unrankedPlaceNum => {
+    const { coins, range, stand_points, points} = SmashLeague.getUnrankedPlayerScore(unrankedPlaceNum)
+    return '|Coins|Range|Stand points|Points|' +
+         '\n|-----|-----|------------|------|\n' +
+        `|${coins}|${range}|${stand_points}|${points}|`
+}
+
 const updateRankingMarkdownFile = async rankingObj => {
 
     const template = await getRankingTemplate()
     const output = template
         .replace(/\{\{last_updated\}\}/gm, (new Date(rankingObj.last_update_ts)).toUTCString())
         .replace(/\{\{ranking_bullets\}\}/gm, getRankingBulletsMarkdown(rankingObj.ranking, rankingObj.scoreboard))
+        .replace(/\{\{unranked_score\}\}/gm, getUnrankedScore(rankingObj.ranking.length))
         .replace(/\{\{inprogress_last_updated\}\}/gm, (new Date(rankingObj.in_progress.last_update_ts)).toUTCString())
         .replace(/\{\{inprogress_scoreboard\}\}/gm, getScoreboardMarkdown(rankingObj.in_progress.scoreboard))
         .replace(/\{\{completed_challenges\}\}/gm, getCompletedChallengesMarkdown(rankingObj.in_progress.scoreboard))
+        
         
 
     return new Promise(

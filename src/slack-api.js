@@ -53,7 +53,7 @@ const getMessagesFromPrivateChannel = async (channel, opts = {}) => {
         throw new Error('Slack channel ID is required.')
     }
 
-    let { latest, oldest, inclusive } = opts;
+    let { latest, oldest, inclusive = true } = opts;
 
     if (latest instanceof Date) {
         latest = Utils.GetEpochUnixFromDate(latest)

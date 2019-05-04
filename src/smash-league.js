@@ -21,7 +21,7 @@ const categorizeSlackMessages = (messagesArray) => {
     )
 
     const resultCategorized = messagesArray.reduce(
-        (result, { text:message, user }) => {
+        (result, { text:message, user, ts }) => {
             if (-1 === message.indexOf(BOT_SLACK_TAG)) {
                 return result// Slack bot is not tagged in this message, just ignore it
             }
@@ -53,6 +53,12 @@ const categorizeSlackMessages = (messagesArray) => {
                     
                     const player1 = GetUserIDFromUserTag(reportedResultMatch[1])
                     const player2 = GetUserIDFromUserTag(reportedResultMatch[4])
+
+
+                    if (player1 === BOT_SLACK_TAG || player2 === BOT_SLACK_TAG) {
+                        // Someone wants the bot to be in the League ¬¬'
+                        return result
+                    }
                     
                     result.reportedResults.push({
                         winner: player1Result > player2Result ? player1 : player2,
@@ -64,14 +70,14 @@ const categorizeSlackMessages = (messagesArray) => {
                 }
 
                 // if it comes here, is just a random message where the bot got tagged
-                result.ignoredMessagesCount++
+                result.ignoredMessages.push({text: message, user, ts})
                 return result
             }
         }, 
         {
             challenges: [],
             reportedResults: [],
-            ignoredMessagesCount: 0
+            ignoredMessages: []
         }
     )
 
@@ -262,7 +268,13 @@ const getInitialCoinsForPlayer = playerPlace => {
 
 const calculatePointsFromPlayerScore = playerScore => {
     const { stand_points, points, coins, range, initial_coins} = playerScore
-    return points + stand_points + range - initial_coins - coins
+    const result = points + stand_points + range - initial_coins - coins
+
+    if (result < 0) {// Avoid negative points
+        return 0
+    }
+
+    return result
 }
 
 const getRankingFromScoreboard = scoreboard => {
@@ -300,7 +312,6 @@ const commitInProgress = rankingObj => {
                 ...inProgress.scoreboard[playerId],
                 points: calculatePointsFromPlayerScore(inProgress.scoreboard[playerId], playerPlace)
             }
-            // tmpScoreboard[playerId] = applyEndOfWeekRulesToPlayerScore(inProgress.scoreboard[playerId], playerPlace)
             return tmpScoreboard
         },
         {}
@@ -346,7 +357,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
     let totalValidActivitiesTxt = ''
     if (totalValidActivities === 0) {
         if (isNewVersion) {
-            totalValidActivitiesTxt = 'Aprovechando el update revisé y no encontré actividad nueva. :disapointed:'
+            totalValidActivitiesTxt = 'Aprovechando el update revisé y no encontré actividad nueva. :disappointed:'
         }
         else {
             totalValidActivitiesTxt = 'Parece que no hubo actividad desde la ùltima vez que revisé, ' + 
@@ -367,7 +378,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
     let ignoredMessagesTxt = ''
     if (ignoredMessagesCount > 0) {
         ignoredMessagesTxt = '\n\nPor cierto, les recuerdo que sólo soy una máquina y hubo ' + ignoredMessagesCount +
-            (ignoredMessagesCount > 0 ? ' mensajes' : ' mensaje')  + 
+            (ignoredMessagesCount > 1 ? ' mensajes' : ' mensaje')  + 
             ' donde me taggearon pero no entedí qué querían. :sweat_smile:' + 
             '\nRecuerden seguir el formato para poder entenderles.'
     }
@@ -383,7 +394,7 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
         ).join('\n')
 
         ignoredActivitiesTxt = '\n\nAdemás, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar ' + 
-                            ignoredActivities.length + (ignoredActivities.length > 0 ? ' mensajes' : ' mensaje')  + 
+                            ignoredActivities.length + (ignoredActivities.length > 1 ? ' mensajes' : ' mensaje')  + 
                             ' en donde me taggearon. :unamused:' +
                             '\nEstos fueron los motivos:\n' + '```\n' + ignoredMessages  + '\n```' +
                             '\nLéanse las reglas por favor -> https://github.com/Xotl/Smash-League#ranking-rules'
@@ -403,5 +414,6 @@ module.exports = {
     updateInProgressScoreboard,
     getMessageToNotifyUsers,
     calculatePointsFromPlayerScore,
-    getNextWeekObject
+    getNextWeekObject,
+    getUnrankedPlayerScore
 }
