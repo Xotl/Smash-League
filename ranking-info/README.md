@@ -20,12 +20,12 @@ Last updated **Sun, 28 Apr 2019 17:00:00 GMT**.
 |14|`Carlos López`, `Niightz`|1|
 
 Unranked players and players that have 0 points will start with this score:
-|Coins|Range|Stand points|Points|
 
+|Coins|Range|Stand points|Points|
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Sat, 04 May 2019 17:42:48 GMT*
+## In progress this week *Sun, 05 May 2019 03:41:07 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
