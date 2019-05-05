@@ -21,7 +21,6 @@ async function Main() {
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
     const activities = SmashLeagueInteractions.categorizeSlackMessages(slackResponse.messages)
     
-
     // We create & set the Object that will have all the data of the 
     // ignored activites logged by "logIgnoredActivity" function
     const ignoredActivities = {}
@@ -55,10 +54,11 @@ async function Main() {
 
     // Only post in slack if it's a master Job
     if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
+
         const isUpdate = process.env.TRAVIS_EVENT_TYPE === 'push'
         let messageToPost = '';
         if (isUpdate) {
-            messageToPost = `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n`
+            messageToPost = `¡He sido actualizado a la versiòn v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n`
         }
 
         messageToPost += SmashLeagueInteractions.getMessageToNotifyUsers(
@@ -70,7 +70,8 @@ async function Main() {
             isUpdate
         )
 
-        Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID)
+        await Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID)
+        await SmashLeagueInteractions.notifyInThreadThatMeesagesGotIgnored(activities.ignoredMessages, Slack.postMessageInChannel)
     }
     console.log('Finished Successfully.')
 }

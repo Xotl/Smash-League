@@ -1,6 +1,7 @@
 {
     "slack_channel_id": "GBK09PBQS",
     "bot_id": "UFY8P0WRF",
+    "slack_workspace": "intersysconsulting",
     "users_dict": {
         "U8A96RCEA": "Carlos López",
         "U61MBQTR8": "Xotl",

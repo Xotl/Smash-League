@@ -18,7 +18,7 @@ const categorizeSlackMessages = (messagesArray) => {
     )
 
     const resultCategorized = messagesArray.reduce(
-        (result, { text:message, user, ts }) => {
+        (result, { text:message, user, ts, thread_ts }) => {
             if (-1 === message.indexOf(BOT_SLACK_TAG)) {
                 return result// Slack bot is not tagged in this message, just ignore it
             }
@@ -67,7 +67,7 @@ const categorizeSlackMessages = (messagesArray) => {
                 }
 
                 // if it comes here, is just a random message where the bot got tagged
-                result.ignoredMessages.push({text: message, user, ts})
+                result.ignoredMessages.push({text: message, user, ts, thread_ts})
                 return result
             }
         }, 
@@ -138,7 +138,28 @@ const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
     return totalValidActivitiesTxt + ignoredMessagesTxt + ignoredActivitiesTxt
 }
 
+const getSlackUrlForMessage = (msgtTs, thread_ts) => {
+    const tsId = msgtTs.toString().replace('.', '')
+    const baseUrl = `https://${Config.slack_workspace}.slack.com/archives/${Config.slack_channel_id}/p${tsId}`
+
+    let threadQueryParams = ''
+    if (thread_ts) {
+        threadQueryParams = `?thread_ts=${thread_ts}&cid=${Config.slack_channel_id}`
+    }
+
+    return baseUrl + threadQueryParams
+}
+
+const notifyInThreadThatMeesagesGotIgnored = async (ignoredMessagesArray, postMessageFn = async () => {}) => {
+    for (let index = 0; index < ignoredMessagesArray.length; index++) {
+        const { user, ts, thread_ts } = ignoredMessagesArray[index] 
+        const msg = `¿Qué onda con <${getSlackUrlForMessage(ts, thread_ts)}|tu mensaje> <@${user}>?. No entendí qué querías, sólo soy una máquina. :robot_face:`
+        await postMessageFn(msg, 'D61Q9K50D', { thread_ts: '1557086377.000200' })
+    }
+}
+
 module.exports = {
     categorizeSlackMessages,
-    getMessageToNotifyUsers
+    getMessageToNotifyUsers,
+    notifyInThreadThatMeesagesGotIgnored
 }
