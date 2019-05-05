@@ -56,21 +56,16 @@ async function Main() {
     if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
 
         const isUpdate = process.env.TRAVIS_EVENT_TYPE === 'push'
-        let messageToPost = '';
-        if (isUpdate) {
-            messageToPost = `¡He sido actualizado a la versiòn v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n`
-        }
-
-        messageToPost += SmashLeagueInteractions.getMessageToNotifyUsers(
-            isItTimeToCommit,
+        const blocksToPost = SmashLeagueInteractions.getUpdatesToNotifyUsers(
+            isItTimeToCommit ? {/* TODO: send weeks times */} : null,
             activities.reportedResults.length,
             ignoredActivities, 
             activities.ignoredMessages.length,
             newRankingObj.season,
-            isUpdate
+            isUpdate ? version : null
         )
-
-        await Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID)
+        
+        await Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID, { blocks: JSON.stringify(blocksToPost) })
         await SmashLeagueInteractions.notifyInThreadThatMeesagesGotIgnored(activities.ignoredMessages, Slack.postMessageInChannel)
     }
     console.log('Finished Successfully.')

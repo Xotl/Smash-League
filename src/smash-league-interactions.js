@@ -81,61 +81,139 @@ const categorizeSlackMessages = (messagesArray) => {
     return resultCategorized
 }
 
-const getMessageToNotifyUsers = (weekCommited, totalValidActivities, ignoredActivities, 
-    ignoredMessagesCount, season, isNewVersion) => {
-    if (weekCommited) {
-    return '¡Ha iniciando un nuevo ranking esta semana!, ya pueden revisar en qué lugar quedaron.\n' +
-            'https://github.com/Xotl/Smash-League/tree/master/ranking-info'
-    }
+const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActivities, 
+    ignoredMessagesCount, season, newVersion) => {
 
-    let totalValidActivitiesTxt = ''
-    if (totalValidActivities === 0) {
-    if (isNewVersion) {
-        totalValidActivitiesTxt = 'Aprovechando el update revisé y no encontré actividad nueva. :disappointed:'
-    }
-    else {
-        totalValidActivitiesTxt = 'Parece que no hubo actividad desde la ùltima vez que revisé, ' + 
-            '¿será que son vacaciones o fin de semana?. :thinking_face:'
-    }
-    }
-    else {
-    if (isNewVersion) {
-        totalValidActivitiesTxt = 'Aprovechando el update actualicé el scoreboard.\n' + 
-            'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md'
-    }
-    else {
-        totalValidActivitiesTxt = 'Aquí reportando que ya actualicé el scoreboard.\n' +
-        'https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md'
-    }
-    }
-
-    let ignoredMessagesTxt = ''
-    if (ignoredMessagesCount > 0) {
-    ignoredMessagesTxt = '\n\nPor cierto, les recuerdo que sólo soy una máquina y hubo ' + ignoredMessagesCount +
-        (ignoredMessagesCount > 1 ? ' mensajes' : ' mensaje')  + 
-        ' donde me taggearon pero no entedí qué querían. :sweat_smile:' + 
-        '\nRecuerden seguir el formato para poder entenderles.'
-    }
-
-    let ignoredActivitiesTxt = ''
-    if (ignoredActivities.length > 0) {
-    const ignoredMessages = Object.keys(ignoredActivities).map(
-        type => {
-            ignoredActivities[type].map(
-                ({ reason }) => `* ${reason}`
-            ).join('\n')
+    const slackBlocks = []
+    if (newVersion) {
+        const newVersionStuff = []
+        newVersionStuff.push({
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": `¡He sido actualizado a la versiòn *v${newVersion}*!... espero que sean nuevos features y no sólo bugs. :unamused:`
+            }
+        })
+        
+        if (totalValidActivities === 0) {
+            newVersionStuff.push({
+                "type": "context",
+                "elements": [
+                    {
+                        "type": "mrkdwn",
+                        "text": "Aprovechando el update revisé y no encontré actividad nueva. :disappointed:"
+                    }
+                ]
+            })
         }
-    ).join('\n')
+        else {
+            newVersionStuff.push({
+                "type": "context",
+                "elements": [
+                    {
+                        "type": "mrkdwn",
+                        "text": "Aprovechando el update actualicé " + 
+                                "<https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md|el scoreboard>."
+                    }
+                ]
+            })
+        }
 
-    ignoredActivitiesTxt = '\n\nAdemás, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar ' + 
-                        ignoredActivities.length + (ignoredActivities.length > 1 ? ' mensajes' : ' mensaje')  + 
-                        ' en donde me taggearon. :unamused:' +
-                        '\nEstos fueron los motivos:\n' + '```\n' + ignoredMessages  + '\n```' +
-                        '\nLéanse las reglas por favor -> https://github.com/Xotl/Smash-League#ranking-rules'
-
+        slackBlocks.push(newVersionStuff)
+    }
+    else if (!weekCommited) {// If week commited then there's no need to show this
+        if (totalValidActivities === 0) {
+            slackBlocks.push({
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Parece que no hubo actividad desde la ùltima vez que revisé, " + 
+                            "¿será que son vacaciones o fin de semana?. :thinking_face:"
+                }
+            })
+        }
+        else {
+            slackBlocks.push({
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Aquí reportando que ya actualicé " + 
+                            "<https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md|el scoreboard>."
+                }
+            })
+        }
     }
 
-    return totalValidActivitiesTxt + ignoredMessagesTxt + ignoredActivitiesTxt
+
+    if (weekCommited) {
+        slackBlocks.push(
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "¡Ha iniciando un nuevo ranking esta semana!, ya " +
+                            "<https://github.com/Xotl/Smash-League/tree/master/ranking-info/README.md|pueden revisar>" + 
+                            " en qué lugar quedaron."
+                }
+            }
+        )
+    }
+
+    if (ignoredMessagesCount > 0) {
+        slackBlocks.push([
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Por cierto, les recuerdo que sólo soy una máquina y hubo " + ignoredMessagesCount +
+                            (ignoredMessagesCount > 1 ? " mensajes" : " mensaje")  + 
+                            " donde me taggearon pero no entedí qué querían. :sweat_smile:"
+                }
+            },
+            {
+                "type": "context",
+                "elements": [
+                    {
+                        "type": "mrkdwn",
+                        "text": "Recuerden seguir " + 
+                                "<https://github.com/Xotl/Smash-League#How-do-i-report-a-result|el formato>" +
+                                " para poder entenderles. También les avisé en el thread de los mensajes para " +
+                                "que vean a cualés mensajes me refiero."
+                    }
+                ]
+            }
+        ])
+    }
+
+    if (ignoredActivities.length > 0) {
+        const ignoredMessages = Object.keys(ignoredActivities).map(
+            type => {
+                ignoredActivities[type].map(
+                    ({ reason }) => `* ${reason}`
+                ).join('\n')
+            }
+        ).join('\n')
+
+        slackBlocks.push(
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "Además, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar " + 
+                            ignoredActivities.length + (ignoredActivities.length > 1 ? " mensajes" : " mensaje")  + 
+                            " en donde me taggearon. :unamused:" + 
+                            "\nEstos fueron los motivos:" + 
+                            "\n```\n" + ignoredMessages + "\n```" + 
+                            "\nLéanse <https://github.com/Xotl/Smash-League#ranking-rules|las reglas> por favor."
+                }
+            }
+        )
+    }
+
+
+    return slackBlocks.join({
+        "type": "divider"
+    }).flat()
 }
 
 const getSlackUrlForMessage = (msgtTs, thread_ts) => {
@@ -160,6 +238,6 @@ const notifyInThreadThatMeesagesGotIgnored = async (ignoredMessagesArray, postMe
 
 module.exports = {
     categorizeSlackMessages,
-    getMessageToNotifyUsers,
+    getUpdatesToNotifyUsers,
     notifyInThreadThatMeesagesGotIgnored
 }
