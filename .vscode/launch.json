@@ -13,6 +13,7 @@
             "runtimeArgs": [
                 "run", "--rm",
                 "-p", "9229:9229",
+                "-v", "${workspaceFolder}/.env:/usr/app/.env",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "-v", "${workspaceFolder}/ranking-info:/usr/app/ranking-info",
                 "smash-league",
