@@ -1,4 +1,5 @@
 'use strict'
+const Config = require('../config.json')
 
 const GetDateObjFromEpochTS = (epoch) => (new Date( Number(epoch) * 1000 ))
 const GetEpochUnixFromDate = (dateObj) => {
@@ -41,11 +42,14 @@ const showInConsoleIgnoredActivities = ignoredActivities => {
     )
 }
 
+const getPlayerAlias = playerId => Config.users_dict[playerId] || playerId
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
     logIgnoredChallenge,
     logIgnoredActivity,
     setIgnoredActivityLogObject,
-    showInConsoleIgnoredActivities
+    showInConsoleIgnoredActivities,
+    getPlayerAlias
 }

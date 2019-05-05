@@ -2,11 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 const Utils = require('./utils')
-const Config = require('../config.json')
 const SmashLeague = require('./smash-league')
-
-
-const getPlayerNameById = playerId => Config.users_dict[playerId] || playerId
 
 const getRankingTemplate = () => new Promise(
     (resolve, reject) => {
@@ -42,7 +38,7 @@ const getRankingBulletsMarkdown = (rankingArray, scoreboardObj) => {
     return '|#|Player|Score|\n|-|------|-----|\n' + rankingArray.map(
         (players, idx) => {
             const { points } = scoreboardObj[ players[0] ]
-            const playersNames = players.map( playerId => `\`${getPlayerNameById(playerId)}\`` ).join(', ')
+            const playersNames = players.map( playerId => `\`${Utils.getPlayerAlias(playerId)}\`` ).join(', ')
             return `|${1 + idx}|${playersNames}|${points}|`
         }
     ).join('\n')
@@ -57,7 +53,7 @@ const getScoreboardMarkdown = scoreboardObj => {
         .map(
             playerId => {
                 const { stand_points, points, coins, range} = scoreboardObj[playerId]
-                return `|${getPlayerNameById(playerId)}|${coins}|${range}|${stand_points}|${points}|`
+                return `|${Utils.getPlayerAlias(playerId)}|${coins}|${range}|${stand_points}|${points}|`
             }
         )
         .join('\n')
@@ -72,7 +68,7 @@ const getEndOfWeekSummaryMarkdown = scoreboardObj => {
         .map(
             playerId => {
                 const { stand_points, points, coins, range} = scoreboardObj[playerId]
-                return `|${getPlayerNameById(playerId)} - ${points}pts|${coins}|${range}|${stand_points}|`
+                return `|${Utils.getPlayerAlias(playerId)} - ${points}pts|${coins}|${range}|${stand_points}|`
             }
         )
         .join('\n')
@@ -83,8 +79,8 @@ const getCompletedChallengesMarkdown = scoreboard => {
         (resultArray, challengerId) => {
             const str = scoreboard[challengerId].completed_challenges.map(
                 challenge => {
-                    const challengerName = getPlayerNameById(challengerId)
-                    const challengedPlayerName = getPlayerNameById(challenge.player1 !== challengerId ? challenge.player1 : challenge.player2)
+                    const challengerName = Utils.getPlayerAlias(challengerId)
+                    const challengedPlayerName = Utils.getPlayerAlias(challenge.player1 !== challengerId ? challenge.player1 : challenge.player2)
                     const winnerPlayer = challenge.winner === challenge.player1 ? 'player1' : 'player2'
                     const loserPlayer = challenge.winner !== challenge.player1 ? 'player1' : 'player2'
                     const nonNumericResult = challengerId === challenge.winner ? 'won' : 'lost'
@@ -102,20 +98,19 @@ const getCompletedChallengesMarkdown = scoreboard => {
     ).join('\n')
 }
 
-const getUnrankedScore = unrankedPlaceNum => {
-    const { coins, range, stand_points, points} = SmashLeague.getUnrankedPlayerScore(unrankedPlaceNum)
-    return '|Coins|Range|Stand points|Points|' +
-         '\n|-----|-----|------------|------|\n' +
-        `|${coins}|${range}|${stand_points}|${points}|`
-}
+const getUnrankedScore = ({ coins, range, stand_points, points}) => 
+      '|Coins|Range|Stand points|Points|' +
+    '\n|-----|-----|------------|------|\n' +
+    `|${coins}|${range}|${stand_points}|${points}|`
 
-const updateRankingMarkdownFile = async rankingObj => {
+
+const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
 
     const template = await getRankingTemplate()
     const output = template
         .replace(/\{\{last_updated\}\}/gm, (new Date(rankingObj.last_update_ts)).toUTCString())
         .replace(/\{\{ranking_bullets\}\}/gm, getRankingBulletsMarkdown(rankingObj.ranking, rankingObj.scoreboard))
-        .replace(/\{\{unranked_score\}\}/gm, getUnrankedScore(rankingObj.ranking.length))
+        .replace(/\{\{unranked_score\}\}/gm, getUnrankedScore(unrankedScore))
         .replace(/\{\{inprogress_last_updated\}\}/gm, (new Date(rankingObj.in_progress.last_update_ts)).toUTCString())
         .replace(/\{\{inprogress_scoreboard\}\}/gm, getScoreboardMarkdown(rankingObj.in_progress.scoreboard))
         .replace(/\{\{completed_challenges\}\}/gm, getCompletedChallengesMarkdown(rankingObj.in_progress.scoreboard))
