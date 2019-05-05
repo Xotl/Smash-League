@@ -5,6 +5,7 @@ Last updated **{{last_updated}}**.
 {{ranking_bullets}}
 
 Unranked players and players that have 0 points will start with this score:
+
 {{unranked_score}}
 
 ## In progress this week *{{inprogress_last_updated}}*
