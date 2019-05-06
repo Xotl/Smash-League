@@ -1,13 +1,13 @@
 'use strict'
 const Config = require('../config.json')
 
-const GetDateObjFromEpochTS = (epoch) => (new Date( Number(epoch) * 1000000 ))
+const GetDateObjFromEpochTS = (epoch) => (new Date( Number(epoch) * 1000 ))
 const GetEpochUnixFromDate = (dateObj) => {
     if ( !(dateObj instanceof Date) ) {
         throw new Error('Argument received is not a Date object.')
     }
 
-    return dateObj.getTime() / 1000000
+    return dateObj.getTime() / 1000
 }
 
 let ignoredActivityObject
