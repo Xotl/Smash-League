@@ -1,5 +1,8 @@
+'use strict'
 const express = require('express')
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser')
+const fs = require('fs')
+const path = require('path')
 const Config = require('../../config.json')
 const Slack = require('../slack-api')
 
@@ -8,6 +11,38 @@ const port = process.env.PORT || 3000
 
 app.use(bodyParser.json()); // for parsing application/json
 
+const getLastState = () => new Promise(
+    (resolve, reject) => {
+        fs.readFile(
+            path.join(__dirname, './', 'heroku.state.json'),
+            { encoding: 'utf8'},
+            (err, data) => {
+                if (err) {
+                    reject(err)
+                }
+                resolve(data)
+            }
+        )
+    }
+)
+const writeFile = output => {
+    return new Promise(
+        (resolve, reject) => {
+            fs.writeFile(
+                path.join(__dirname, './', 'heroku.state.json'),
+                output,
+                { encoding: 'utf8'},
+                (err) => {
+                    if (err) {
+                        reject(err)
+                    }
+                    resolve()
+                }
+            )
+        }
+    )
+}
+
 app.get('/', (req, res) => {
     console.log(`[${(new Date()).toISOString()}]`, req.originalUrl, req.query, req.body)
     return res.send('¡Si charcha!')
@@ -15,8 +50,6 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     let slackRequest = req.body || {}
-
-    console.log(`[${(new Date()).toISOString()}] Llegó un POST request, yay!`, slackRequest)
 
     if (!slackRequest.type) {
         console.log(`[${(new Date()).toISOString()}] ¡No parece Slack!`)
@@ -32,25 +65,25 @@ app.post('/', (req, res) => {
     const slackEvent = slackRequest.event || slackRequest
     
     if (slackEvent.type === 'app_mention') {
-        const isTest = slackEvent.text.trim().toLocaleLowerCase().includes('probando heroku')
+        const isTest = slackEvent.text.trim().toLocaleLowerCase().includes('recuerdame')
 
         if (isTest) {
-            console.log(`[${(new Date()).toISOString()}] Se va a enviar un mensaje`)
-            Slack.postMessageInChannel(
-                'Hola :simple_smile:',
-                Config.slack_channel_id,
-                { thread_ts: slackEvent.thread_ts || slackEvent.ts }
+            getLastState().then(
+                data => {
+                    Slack.postMessageInChannel(
+                        'Lo último que tengo es:\n\n' + data,
+                        Config.slack_channel_id,
+                        { thread_ts: slackEvent.thread_ts || slackEvent.ts }
+                    )
+                }
             )
-            .then(() => console.log(`[${(new Date()).toISOString()}] Se debió lanzar el mensaje`))
-            .catch(console.error)
-        }
-        else {
-            console.log(`[${(new Date()).toISOString()}] No es una prueba`)
+            .then( () => writeFile(slackEvent.text) )
+            .then( () => console.log(`[${(new Date()).toISOString()}] Todo salió bien`) )
+            .catch( console.error )
         }
     }
 
     return res.send('¡Si charcha!')
-
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
