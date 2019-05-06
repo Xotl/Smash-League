@@ -51,6 +51,8 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     let slackRequest = req.body || {}
 
+    console.log(`[${(new Date()).toISOString()}] retry header: `, req.get('X-Slack-Retry-Num'))
+
     if (!slackRequest.type) {
         console.log(`[${(new Date()).toISOString()}] ¡No parece Slack!`)
         return res.send('¡No parece Slack!')
