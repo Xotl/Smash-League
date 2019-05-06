@@ -8,6 +8,7 @@ const Slack = require('../slack-api')
 
 const app = express()
 const port = process.env.PORT || 3000
+const slackRetryDict = {}
 
 app.use(bodyParser.json()); // for parsing application/json
 
@@ -48,10 +49,18 @@ app.get('/', (req, res) => {
     return res.send('¡Si charcha!')
 })
 
+
 app.post('/', (req, res) => {
     let slackRequest = req.body || {}
-
     console.log(`[${(new Date()).toISOString()}] retry header: `, req.get('X-Slack-Retry-Num'))
+
+    if (slackRetryDict[ slackRequest.event_id ]) {
+        console.log(`[${(new Date()).toISOString()}] it's a retry!`)
+        return res.send('¡Si charcha!')
+    }
+
+    slackRetryDict[ slackRequest.event_id ] = true
+    
 
     if (!slackRequest.type) {
         console.log(`[${(new Date()).toISOString()}] ¡No parece Slack!`)
