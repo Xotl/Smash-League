@@ -123,30 +123,30 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
     }
     else if (!weekCommited) {// If week commited then there's no need to show this
         if (totalValidActivities === 0) {
-            slackBlocks.push({
+            slackBlocks.push([{
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
                     "text": "Parece que no hubo actividad desde la ùltima vez que revisé, " + 
                             "¿será que son vacaciones o fin de semana?. :thinking_face:"
                 }
-            })
+            }])
         }
         else {
-            slackBlocks.push({
+            slackBlocks.push([{
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
                     "text": "Aquí reportando que ya actualicé " + 
                             "<https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md|el scoreboard>."
                 }
-            })
+            }])
         }
     }
 
 
     if (weekCommited) {
-        slackBlocks.push(
+        slackBlocks.push([
             {
                 "type": "section",
                 "text": {
@@ -156,7 +156,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                             " en qué lugar quedaron."
                 }
             }
-        )
+        ])
     }
 
     if (ignoredMessagesCount > 0) {
@@ -194,7 +194,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
             }
         ).join('\n')
 
-        slackBlocks.push(
+        slackBlocks.push([
             {
                 "type": "section",
                 "text": {
@@ -207,13 +207,18 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                             "\nLéanse <https://github.com/Xotl/Smash-League#ranking-rules|las reglas> por favor."
                 }
             }
-        )
+        ])
     }
 
 
-    return slackBlocks.join({
-        "type": "divider"
-    }).flat()
+    return slackBlocks.flatMap(
+        block => {
+            block.push({
+                "type": "divider"
+            })
+            return block
+        }
+    )
 }
 
 const getSlackUrlForMessage = (msgtTs, thread_ts) => {
