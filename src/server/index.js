@@ -29,11 +29,7 @@ app.post('/', (req, res) => {
     }
     
     if (slackRequest.type === 'app_mention') {
-        const isTest = slackRequest.text.trim().toLowercase().includes('probando heroku')
-
-        if (!SLACK_API_TOKEN) {
-            return res.send('No hay token')
-        }
+        const isTest = slackRequest.text.trim().toLocaleLowerCase().includes('probando heroku')
 
         if (isTest) {
             Slack.postMessageInChannel(
