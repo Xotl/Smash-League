@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "slack:listener": "node src/server",
-    "start": "node src/",
+    "start:slack-listener": "node src/server",
+    "start:smash-league": "node src/",
+    "start": "npm run slack:listener",
     "start:debug": "export $(grep -v '^#' .env | xargs) && node --inspect-brk=0.0.0.0:9229 src/",
     "test": "jest --coverage"
   },
