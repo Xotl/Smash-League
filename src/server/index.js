@@ -65,24 +65,42 @@ app.post('/', (req, res) => {
     const slackEvent = slackRequest.event || slackRequest
     
     if (slackEvent.type === 'app_mention' && slackEvent.user !== Config.bot_id) {
-        const isTest = slackEvent.text.trim().toLocaleLowerCase().includes('guarda esto')
+        const slackMsg = slackEvent.text.trim().toLocaleLowerCase()
         
-        if (isTest) {
-            const messageWithoutBotTag = slackEvent.text.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '')
+        if (slackMsg.includes('guarda esto')) {
             getLastState().then(
                 data => {
-                    Slack.postMessageInChannel(
-                        'Lo último que tengo es:\n\n' + data,
-                        Config.slack_channel_id,
-                        { thread_ts: slackEvent.thread_ts || slackEvent.ts }
-                    )
+                    const messageWithoutBotTag = slackEvent.text.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '')
+                    const state = JSON.parse(data)
+                    if ( !Array.isArray(state.messages) ) {
+                        state.messages = []
+                    }
+
+                    state.messages.push(messageWithoutBotTag)
+                    return state
                 }
             )
-            .then( () => writeFile(messageWithoutBotTag) )
+            .then( state => writeFile(JSON.stringify( state, null, 4 )) )
+            .then( () => Slack.postMessageInChannel(
+                'Guardado :thumbs_up:',
+                Config.slack_channel_id,
+                { thread_ts: slackEvent.thread_ts || slackEvent.ts }
+            ) )
             .then( () => console.log(`[${(new Date()).toISOString()}] Todo salió bien`) )
             .catch( console.error )
         }
-        else {
+        else if (slackMsg.includes('muestra el estado')) {
+            getLastState().then(
+                data => {
+                    return Slack.postMessageInChannel(
+                        'Lo último que tengo es:\n\n' + data,
+                        Config.slack_channel_id,
+                        { thread_ts: slackEvent.thread_ts || slackEvent.ts }
+                    ).then( () => console.log(`[${(new Date()).toISOString()}] Todo salió bien`) )
+                }
+            )
+        }
+        else {        
             console.log(`[${(new Date()).toISOString()}] No es de prueba`)
         }
     }
