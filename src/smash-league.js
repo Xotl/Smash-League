@@ -137,6 +137,11 @@ const updateInProgressScoreboard = (activities, rankingObj) => {
             
             if (winner === challengerId) {
                 currentScoreboard[challengerId] = applyChallengerWinsScoringRules(challengerScore)
+                const playerWentToTheTop = (challengerPlace - currentScoreboard[challengerId].range) <= 0
+                if (playerWentToTheTop) {
+                    // Player basically see the credits & waits to start over
+                    currentScoreboard[challengerId].coins = 0
+                }
             }
             else {// Winner is player challenged
                 currentScoreboard[challengerId] = applyChallengerLosesScoringRules(challengerScore)
@@ -222,10 +227,9 @@ const commitInProgress = rankingObj => {
     // Creates a clone of all player's score with updated points
     const newScoreboard = Object.keys(inProgress.scoreboard).reduce(
         (tmpScoreboard, playerId) => {
-            const playerPlace = getRankingPlaceByPlayerId(playerId, rankingObj.ranking)
             tmpScoreboard[playerId] = {
                 ...inProgress.scoreboard[playerId],
-                points: calculatePointsFromPlayerScore(inProgress.scoreboard[playerId], playerPlace)
+                points: calculatePointsFromPlayerScore(inProgress.scoreboard[playerId])
             }
             return tmpScoreboard
         },
