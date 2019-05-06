@@ -35,12 +35,14 @@ app.post('/', (req, res) => {
         const isTest = slackRequest.text.trim().toLocaleLowerCase().includes('probando heroku')
 
         if (isTest) {
+            console.log(`[${(new Date()).toISOString()}] Se va a enviar un mensaje`, slackRequest)
             Slack.postMessageInChannel(
                 'Hola :simple_smile:',
                 Config.slack_channel_id,
                 { thread_ts: slackRequest.thread_ts || slackRequest.ts }
             )
-            console.log(`[${(new Date()).toISOString()}] Se debió lanzar el mensaje`, slackRequest)
+            .then(() => console.log(`[${(new Date()).toISOString()}] Se debió lanzar el mensaje`))
+            .catch(console.error)
         }
         else {
             console.log(`[${(new Date()).toISOString()}] No es una prueba`, slackRequest)
