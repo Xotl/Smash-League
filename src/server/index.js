@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
+    console.log(`[${(new Date()).toISOString()}] Llegó un POST request, yay!`)
 
     let slackRequest = req.body || {}
     if (typeof req.body === 'string') {
