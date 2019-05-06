@@ -27,16 +27,19 @@ app.post('/', (req, res) => {
         console.log(`[${(new Date()).toISOString()}] Verificación de URL`)
         return res.send(slackRequest.challenge)
     }
+
+
+    const slackEvent = slackRequest.event || slackRequest
     
-    if (slackRequest.type === 'app_mention') {
-        const isTest = slackRequest.text.trim().toLocaleLowerCase().includes('probando heroku')
+    if (slackEvent.type === 'app_mention') {
+        const isTest = slackEvent.text.trim().toLocaleLowerCase().includes('probando heroku')
 
         if (isTest) {
             console.log(`[${(new Date()).toISOString()}] Se va a enviar un mensaje`)
             Slack.postMessageInChannel(
                 'Hola :simple_smile:',
                 Config.slack_channel_id,
-                { thread_ts: slackRequest.thread_ts || slackRequest.ts }
+                { thread_ts: slackEvent.thread_ts || slackEvent.ts }
             )
             .then(() => console.log(`[${(new Date()).toISOString()}] Se debió lanzar el mensaje`))
             .catch(console.error)
