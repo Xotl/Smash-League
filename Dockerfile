@@ -15,4 +15,5 @@ COPY . .
 RUN if [ $NODE_ENV != "dev" ] ; then npm version patch; fi
 
 EXPOSE 9229
+EXPOSE 3000
 CMD ["node", "./src/index.js"]

@@ -27,6 +27,27 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Run express server",
+            "preLaunchTask": "Build Docker image",
+            "runtimeExecutable": "docker",
+            "runtimeArgs": [
+                "run", "--rm",
+                "-p", "9229:9229",
+                "-p", "3000:3000",
+                "-v", "${workspaceFolder}/.env:/usr/app/.env",
+                "-v", "${workspaceFolder}/src:/usr/app/src",
+                "-v", "${workspaceFolder}/ranking-info:/usr/app/ranking-info",
+                "smash-league",
+                "npm", "run", "slack:listener"
+            ],
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "/usr/app",
+            "port": 9229,
+            // "console":"integratedTerminal",
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Debug tests",
             "preLaunchTask": "Build Docker image",
             "runtimeExecutable": "docker",

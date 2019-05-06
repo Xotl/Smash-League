@@ -1,9 +1,10 @@
 {
   "name": "smash-league",
-  "version": "2.0.13",
+  "version": "2.0.10",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "slack:listener": "node src/server",
     "start": "node src/",
     "start:debug": "export $(grep -v '^#' .env | xargs) && node --inspect-brk=0.0.0.0:9229 src/",
     "test": "jest --coverage"
@@ -25,6 +26,7 @@
   "author": "Edgardo Campos (Xotl)",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.4",
     "request": "^2.88.0"
   },
   "devDependencies": {
