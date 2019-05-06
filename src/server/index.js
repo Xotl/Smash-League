@@ -64,10 +64,11 @@ app.post('/', (req, res) => {
 
     const slackEvent = slackRequest.event || slackRequest
     
-    if (slackEvent.type === 'app_mention') {
+    if (slackEvent.type === 'app_mention' && slackEvent.user !== Config.bot_id) {
         const isTest = slackEvent.text.trim().toLocaleLowerCase().includes('guarda esto')
-
+        
         if (isTest) {
+            const messageWithoutBotTag = slackEvent.text.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '')
             getLastState().then(
                 data => {
                     Slack.postMessageInChannel(
@@ -77,7 +78,7 @@ app.post('/', (req, res) => {
                     )
                 }
             )
-            .then( () => writeFile(slackEvent.text) )
+            .then( () => writeFile(messageWithoutBotTag) )
             .then( () => console.log(`[${(new Date()).toISOString()}] Todo salió bien`) )
             .catch( console.error )
         }
