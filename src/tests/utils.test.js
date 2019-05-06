@@ -9,7 +9,7 @@ const {
 describe('Utils', () => {
 
     test('GetDateObjFromEpochTS', () => {
-        expect( GetDateObjFromEpochTS(1554012202.785).toISOString() )
+        expect( GetDateObjFromEpochTS(1554012.202785).toISOString() )
         .toBe( '2019-03-31T06:03:22.785Z' )
     })
 
@@ -18,7 +18,7 @@ describe('Utils', () => {
         .toThrow()
 
         expect( GetEpochUnixFromDate( new Date(1554012202785) ) )
-        .toBe( 1554012202.785 )
+        .toBe( 1554012.202785 )
     })
 
     const reason = 'My message',  tmpActivities = {}, activity = {},

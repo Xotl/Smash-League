@@ -70,8 +70,8 @@ module.exports = {
             "initial_coins": 0,
             "stand_points": 0,
             "points": 40,
-            "coins": 0,
-            "range": 0,
+            "coins": 1,
+            "range": 1,
             "completed_challenges": []
         },
         "UEWUZCYJF": {
@@ -353,16 +353,16 @@ module.exports = {
             players: ['U6457D5KQ', 'UBA5M220K']
         },
         {// Valid index #5
-            winner: 'UDBD59WLT',
-            player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+            winner: 'UBA5M220K',
+            player1: 'UBA5M220K', player2: 'UB616ENA0', 
             player1Result: 3, player2Result: 0,
-            players: ['U61MBQTR8', 'UDBD59WLT']
+            players: ['UB616ENA0', 'UBA5M220K']
         },
         {// Invalid because doesn't have coins left
-            winner: 'U61MBQTR8',
-            player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
+            winner: 'UB616ENA0',
+            player1: 'UBA5M220K', player2: 'UB616ENA0', 
             player1Result: 2, player2Result: 3,
-            players: ['U61MBQTR8', 'UDBD59WLT']
+            players: ['UB616ENA0', 'UBA5M220K']
         },
         {// Valid index #7: new player joins the battle! and won
             winner: 'newPlayer',
@@ -381,7 +381,13 @@ module.exports = {
             player1: 'newPlayer', player2: 'U7VAPLNCR',
             player1Result: 0, player2Result: 3,
             players: ['newPlayer', 'U7VAPLNCR']
-        }
+        },
+        {// Valid index #10: Just another battle but this one defeats first place
+            winner: 'U61MBQTR8',
+            player1: 'UDBD59WLT', player2: 'U61MBQTR8',
+            player1Result: 1, player2Result: 3,
+            players: ['UDBD59WLT', 'U61MBQTR8']
+        },
     ],
 
     SLACK_MESSAGES1: [

@@ -6,7 +6,7 @@ const {
 
 const {
     getNextWeekObject, calculatePointsFromPlayerScore, updateInProgressScoreboard,
-    categorizeSlackMessages, commitInProgress
+    commitInProgress
 } = require('../smash-league')
 
 
@@ -17,45 +17,6 @@ describe('Smash League Challenges & Scoreboard', () => {
         .toEqual({
             ...RANKING_OBJECT2, 
             scoreboard: RANKING_OBJECT2.in_progress.scoreboard
-        })
-    })
-
-
-    test('categorizeSlackMessages', () => {
-        expect( _ => categorizeSlackMessages() )
-            .toThrowError('The argument messagesArray must be an Array.')
-
-        expect(
-            categorizeSlackMessages(SLACK_MESSAGES1)
-        ).toEqual({
-            ignoredMessages: [ SLACK_MESSAGES1[4], SLACK_MESSAGES1[5], SLACK_MESSAGES1[6] ],
-            challenges: [],
-            reportedResults: [
-                {
-                    winner: 'U61MBQTR8',
-                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
-                    player1Result: 1, player2Result: 3,
-                    players: ['UDBD59WLT', 'U61MBQTR8']
-                },
-                {
-                    winner: 'UDBD59WLT',
-                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
-                    player1Result: 3, player2Result: 2,
-                    players: ['UDBD59WLT', 'U61MBQTR8']
-                },
-                {
-                    winner: 'UDBD59WLT',
-                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
-                    player1Result: 3, player2Result: 2,
-                    players: ['UDBD59WLT', 'U61MBQTR8']
-                },
-                {
-                    winner: 'U61MBQTR8',
-                    player1: 'UDBD59WLT', player2: 'U61MBQTR8', 
-                    player1Result: 1, player2Result: 3,
-                    players: ['UDBD59WLT', 'U61MBQTR8']
-                },
-            ]
         })
     })
 
@@ -106,7 +67,7 @@ describe('Smash League Challenges & Scoreboard', () => {
             },
             "UBA5M220K": {
                 "initial_coins": 0,
-                "stand_points": 1,
+                "stand_points": 2,
                 "points": 37,
                 "coins": 1,
                 "range": 1,
@@ -117,12 +78,20 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "stand_points": 2,
                 "points": 44,
                 "coins": 0,
+                "range": 2,
+                "completed_challenges": [ ACTIVITIES1[10] ]
+            },
+            "UB616ENA0": {
+                "initial_coins": 0,
+                "stand_points": 0,
+                "points": 40,
+                "coins": 0,
                 "range": 1,
                 "completed_challenges": [ ACTIVITIES1[5] ]
             },
             "UDBD59WLT": {
                 "initial_coins": 0,
-                "stand_points": 1,
+                "stand_points": 0,
                 "points": 42,
                 "coins": 0,
                 "range": 0,

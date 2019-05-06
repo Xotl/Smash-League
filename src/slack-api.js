@@ -75,7 +75,17 @@ const getMessagesFromPrivateChannel = async (channel, opts = {}) => {
     )
 }
 
-const postMessageInChannel = (text, channel) => {
+const waitAtLeastOneSecondFromDate = date => {
+    const msDiff = (new Date()).getTime() - date.getTime()
+    if (msDiff >= 1000) {// A second already passed since date
+        return Promise.resolve()
+    }
+
+    return new Promise(resolve => setTimeout(resolve, 1000 - msDiff))
+}
+
+let lastPostedMessage
+const postMessageInChannel = async (text, channel, opts) => {
     if (channel === undefined) {
         throw new Error('Slack channel ID is required.')
     }
@@ -89,16 +99,26 @@ const postMessageInChannel = (text, channel) => {
         throw new Error('Text cannot be an empty string to post in Slack.')
     }
 
-    return slackHttpRequest(
+    if (lastPostedMessage) {
+        // Limits posting to 1 message per second acording to Slack rules:
+        // https://api.slack.com/docs/rate-limits
+        await waitAtLeastOneSecondFromDate(lastPostedMessage)
+    }
+
+    const response = await slackHttpRequest(
         SLACK_CHAT_MESSAGE_METHOD,
         {
             qs: {
                 token: SLACK_API_TOKEN,
-                text, channel
+                text, channel,
+                ...opts
             }
         },
         'post'
     )
+
+    lastPostedMessage = new Date()
+    return response
 }
 
 module.exports = {

@@ -24,7 +24,9 @@ describe('Utils', () => {
 
     test('updateRankingMarkdownFile', async () => {
         expect.assertions(2);
-        await expect( updateRankingMarkdownFile(RANKING_OBJ1) ).resolves.not.toThrow()
+        await expect( updateRankingMarkdownFile(RANKING_OBJ1, { 
+            stand_points: 0, points: 0, initial_coins: 0, coins: 0, range: 0
+        }) ).resolves.not.toThrow()
         expect( writeFileFnSpy ).toHaveBeenCalledTimes(1)
     })
 

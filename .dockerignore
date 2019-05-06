@@ -4,5 +4,6 @@
 Dockerfile
 LICENSE
 README.md
+.env
 .vscode
 node_modules/

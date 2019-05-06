@@ -1,6 +1,7 @@
 'use strict'
 const Slack = require('./slack-api')
 const SmashLeague = require('./smash-league')
+const SmashLeagueInteractions = require('./smash-league-interactions')
 const Ranking = require('../ranking-info/ranking.json')
 const Config = require('../config.json')
 const { version } = require('../package.json')
@@ -18,9 +19,8 @@ async function Main() {
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
     const opts = { latest: now, oldest: lastInProgressUpdated }
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
-    const activities = SmashLeague.categorizeSlackMessages(slackResponse.messages)
+    const activities = SmashLeagueInteractions.categorizeSlackMessages(slackResponse.messages)
     
-
     // We create & set the Object that will have all the data of the 
     // ignored activites logged by "logIgnoredActivity" function
     const ignoredActivities = {}
@@ -46,27 +46,27 @@ async function Main() {
     }
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
-    await OutputGenerator.updateRankingMarkdownFile(newRankingObj)
+    await OutputGenerator.updateRankingMarkdownFile(
+        newRankingObj,
+        SmashLeague.getUnrankedPlayerScore(newRankingObj.ranking.length)
+    )
 
 
     // Only post in slack if it's a master Job
     if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
-        const isUpdate = process.env.TRAVIS_EVENT_TYPE === 'push'
-        let messageToPost = '';
-        if (isUpdate) {
-            messageToPost = `¡He sido actualizado a la version v${version}!... espero que sean nuevos features y no sólo bugs. :unamused:\n\n`
-        }
 
-        messageToPost += SmashLeague.getMessageToNotifyUsers(
-            isItTimeToCommit,
+        const isUpdate = process.env.TRAVIS_EVENT_TYPE === 'push'
+        const blocksToPost = SmashLeagueInteractions.getUpdatesToNotifyUsers(
+            isItTimeToCommit ? {/* TODO: send weeks times */} : null,
             activities.reportedResults.length,
             ignoredActivities, 
             activities.ignoredMessages.length,
             newRankingObj.season,
-            isUpdate
+            isUpdate ? version : null
         )
-
-        Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID)
+        
+        await Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID, { blocks: JSON.stringify(blocksToPost) })
+        await SmashLeagueInteractions.notifyInThreadThatMeesagesGotIgnored(activities.ignoredMessages, Slack.postMessageInChannel)
     }
     console.log('Finished Successfully.')
 }
