@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
+const Config = require('../../config.json')
+const Slack = require('../slack-api')
+
 app.get('/', (req, res) => {
     console.log(`[${(new Date()).toISOString()}]`, req.originalUrl, req.query, req.body)
     return res.send('¡Si charcha!')
@@ -14,10 +17,29 @@ app.post('/', (req, res) => {
         slackRequest = JSON.parse(slackRequest)
     }
 
-    if (slackRequest.type && slackRequest.type === 'url_verification') {
+    if (!slackRequest.type) {
+        return res.send('¡No parece Slack!')
+    }
+
+    if (slackRequest.type === 'url_verification') {
         return res.send(slackRequest.challenge)
     }
     
+    if (slackRequest.type === 'app_mention') {
+        const isTest = slackRequest.text.trim().toLowercase().includes('probando heroku')
+
+        if (!SLACK_API_TOKEN) {
+            return res.send('No hay token')
+        }
+
+        if (isTest) {
+            Slack.postMessageInChannel(
+                'Hola :simple_smile:',
+                Config.slack_channel_id,
+                { thread_ts: slackRequest.thread_ts || slackRequest.ts }
+            )
+        }
+    }
 
     console.log(`[${(new Date()).toISOString()}]`, req.originalUrl, req.query, req.body)
     return res.send('¡Si charcha!')
