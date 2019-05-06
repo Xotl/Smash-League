@@ -21,7 +21,6 @@ The week started at *Sun, 28 Apr 2019 14:00:00 GMT* and ended *Sun, 05 May 2019 
 |Niightz - 1pts|0|0|0|
 |Carlos López - 1pts|0|0|0|
 ### Completed challenges
-**None**
 
 
 
