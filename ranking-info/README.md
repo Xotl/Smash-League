@@ -1,12 +1,12 @@
 # Ranking
 
-Last updated **Mon, 06 May 2019 02:21:50 GMT**.
+Last updated **Mon, 06 May 2019 02:30:58 GMT**.
 
 |#|Player|Score|
 |-|------|-----|
-|1|`Xotl`|15|
-|2|`José "El Iceberg" Rosales`|14|
-|3|`César Gutman`|14|
+|1|`César Gutman`|15|
+|2|`Xotl`|15|
+|3|`José "El Iceberg" Rosales`|14|
 |4|`Angel Lee`|12|
 |5|`Neku`|11|
 |6|`El Minion`, `D.I.O.`|10|
@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Mon, 06 May 2019 02:21:50 GMT*
+## In progress this week *Mon, 06 May 2019 02:30:58 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -30,8 +30,8 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
-|Xotl|0|0|0|15|
-|César Gutman|1|1|0|14|
+|Xotl|1|1|0|15|
+|César Gutman|0|0|0|15|
 |José "El Iceberg" Rosales|1|1|0|14|
 |Angel Lee|1|1|0|12|
 |Neku|1|1|0|11|
