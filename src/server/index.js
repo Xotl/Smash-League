@@ -14,12 +14,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-    console.log(`[${(new Date()).toISOString()}] Llegó un POST request, yay!`)
-
     let slackRequest = req.body || {}
-    if (typeof req.body === 'string') {
-        slackRequest = JSON.parse(slackRequest)
-    }
+
+    console.log(`[${(new Date()).toISOString()}] Llegó un POST request, yay!`, slackRequest)
 
     if (!slackRequest.type) {
         console.log(`[${(new Date()).toISOString()}] ¡No parece Slack!`)
@@ -35,7 +32,7 @@ app.post('/', (req, res) => {
         const isTest = slackRequest.text.trim().toLocaleLowerCase().includes('probando heroku')
 
         if (isTest) {
-            console.log(`[${(new Date()).toISOString()}] Se va a enviar un mensaje`, slackRequest)
+            console.log(`[${(new Date()).toISOString()}] Se va a enviar un mensaje`)
             Slack.postMessageInChannel(
                 'Hola :simple_smile:',
                 Config.slack_channel_id,
@@ -45,11 +42,10 @@ app.post('/', (req, res) => {
             .catch(console.error)
         }
         else {
-            console.log(`[${(new Date()).toISOString()}] No es una prueba`, slackRequest)
+            console.log(`[${(new Date()).toISOString()}] No es una prueba`)
         }
     }
 
-    console.log(`[${(new Date()).toISOString()}] Nada pasó`)
     return res.send('¡Si charcha!')
 
 })
