@@ -21,10 +21,12 @@ app.post('/', (req, res) => {
     }
 
     if (!slackRequest.type) {
+        console.log(`[${(new Date()).toISOString()}] ¡No parece Slack!`)
         return res.send('¡No parece Slack!')
     }
 
     if (slackRequest.type === 'url_verification') {
+        console.log(`[${(new Date()).toISOString()}] Verificación de URL`)
         return res.send(slackRequest.challenge)
     }
     
@@ -37,10 +39,14 @@ app.post('/', (req, res) => {
                 Config.slack_channel_id,
                 { thread_ts: slackRequest.thread_ts || slackRequest.ts }
             )
+            console.log(`[${(new Date()).toISOString()}] Se debió lanzar el mensaje`, slackRequest)
+        }
+        else {
+            console.log(`[${(new Date()).toISOString()}] No es una prueba`, slackRequest)
         }
     }
 
-    console.log(`[${(new Date()).toISOString()}]`, req.originalUrl, req.query, req.body)
+    console.log(`[${(new Date()).toISOString()}] Nada pasó`)
     return res.send('¡Si charcha!')
 
 })
