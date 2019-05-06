@@ -65,7 +65,7 @@ async function Main() {
             isUpdate ? version : null
         )
         
-        await Slack.postMessageInChannel(messageToPost, SMASH_SLACK_CHANNEL_ID, { blocks: JSON.stringify(blocksToPost) })
+        await Slack.postMessageInChannel('Smash League Update!', SMASH_SLACK_CHANNEL_ID, { blocks: JSON.stringify(blocksToPost) })
         await SmashLeagueInteractions.notifyInThreadThatMeesagesGotIgnored(activities.ignoredMessages, Slack.postMessageInChannel)
     }
     console.log('Finished Successfully.')
