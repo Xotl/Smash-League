@@ -237,7 +237,7 @@ const notifyInThreadThatMeesagesGotIgnored = async (ignoredMessagesArray, postMe
     for (let index = 0; index < ignoredMessagesArray.length; index++) {
         const { user, ts, thread_ts } = ignoredMessagesArray[index] 
         const msg = `¿Qué onda con <${getSlackUrlForMessage(ts, thread_ts)}|tu mensaje> <@${user}>?. No entendí qué querías, sólo soy una máquina. :robot_face:`
-        await postMessageFn(msg, 'D61Q9K50D', { thread_ts: '1557086377.000200' })
+        await postMessageFn(msg, Config.slack_channel_id, { thread_ts: thread_ts || ts })
     }
 }
 
