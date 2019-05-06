@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: npm run slack:listener
+  web: npm run start:slack-listener
