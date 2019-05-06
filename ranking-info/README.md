@@ -1,6 +1,6 @@
 # Ranking
 
-Last updated **Mon, 06 May 2019 02:08:43 GMT**.
+Last updated **Mon, 06 May 2019 02:21:50 GMT**.
 
 |#|Player|Score|
 |-|------|-----|
@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Mon, 06 May 2019 02:08:43 GMT*
+## In progress this week *Mon, 06 May 2019 02:21:50 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
