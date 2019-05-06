@@ -7,4 +7,9 @@ app.get('/', (req, res) => {
     return res.send('¡Si charcha!')
 })
 
+app.post('/', (req, res) => {
+    console.log(`[${(new Date()).toISOString()}]`, req.originalUrl, req.query, req.body)
+    return res.send('¡Si charcha!')
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
