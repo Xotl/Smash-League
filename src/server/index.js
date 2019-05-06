@@ -65,7 +65,7 @@ app.post('/', (req, res) => {
     const slackEvent = slackRequest.event || slackRequest
     
     if (slackEvent.type === 'app_mention') {
-        const isTest = slackEvent.text.trim().toLocaleLowerCase().includes('recuerdame')
+        const isTest = slackEvent.text.trim().toLocaleLowerCase().includes('guarda esto')
 
         if (isTest) {
             getLastState().then(
@@ -80,6 +80,9 @@ app.post('/', (req, res) => {
             .then( () => writeFile(slackEvent.text) )
             .then( () => console.log(`[${(new Date()).toISOString()}] Todo salió bien`) )
             .catch( console.error )
+        }
+        else {
+            console.log(`[${(new Date()).toISOString()}] No es de prueba`)
         }
     }
 
