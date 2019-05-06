@@ -1,9 +1,12 @@
 const express = require('express')
+var bodyParser = require('body-parser');
+const Config = require('../../config.json')
+const Slack = require('../slack-api')
+
 const app = express()
 const port = process.env.PORT || 3000
 
-const Config = require('../../config.json')
-const Slack = require('../slack-api')
+app.use(bodyParser.json()); // for parsing application/json
 
 app.get('/', (req, res) => {
     console.log(`[${(new Date()).toISOString()}]`, req.originalUrl, req.query, req.body)
@@ -12,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
 
-    let slackRequest = req.body
+    let slackRequest = req.body || {}
     if (typeof req.body === 'string') {
         slackRequest = JSON.parse(slackRequest)
     }

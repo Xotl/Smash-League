@@ -6,8 +6,9 @@
   "scripts": {
     "start:slack-listener": "node src/server",
     "start:smash-league": "node src/",
+    "debug:slack-listener": "export $(grep -v '^#' .env | xargs) && node --inspect-brk=0.0.0.0:9229 src/server",
+    "debug:smash-league": "export $(grep -v '^#' .env | xargs) && node --inspect-brk=0.0.0.0:9229 src/",
     "start": "npm run start:slack-listener",
-    "start:debug": "export $(grep -v '^#' .env | xargs) && node --inspect-brk=0.0.0.0:9229 src/",
     "test": "jest --coverage"
   },
   "jest": {
@@ -27,6 +28,7 @@
   "author": "Edgardo Campos (Xotl)",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.16.4",
     "request": "^2.88.0"
   },

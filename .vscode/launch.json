@@ -12,12 +12,13 @@
             "runtimeExecutable": "docker",
             "runtimeArgs": [
                 "run", "--rm",
+                "--name", "smash-league",
                 "-p", "9229:9229",
                 "-v", "${workspaceFolder}/.env:/usr/app/.env",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "-v", "${workspaceFolder}/ranking-info:/usr/app/ranking-info",
                 "smash-league",
-                "npm", "run", "start:debug"
+                "npm", "run", "debug:smash-league"
             ],
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
@@ -32,13 +33,14 @@
             "runtimeExecutable": "docker",
             "runtimeArgs": [
                 "run", "--rm",
+                "--name", "smash-league",
                 "-p", "9229:9229",
                 "-p", "3000:3000",
                 "-v", "${workspaceFolder}/.env:/usr/app/.env",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "-v", "${workspaceFolder}/ranking-info:/usr/app/ranking-info",
                 "smash-league",
-                "npm", "run", "slack:listener"
+                "npm", "run", "debug:slack-listener"
             ],
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
