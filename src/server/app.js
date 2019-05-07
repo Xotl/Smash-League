@@ -55,7 +55,8 @@ const notifyPlayerWhichPlayersCanChallenge = (slackEvent) => {
 
                     return '- ' +  playersString + ( placeArray.length > 1 ? ' _(sólo uno de los ' + placeArray.length + ', tendrás que elegir a quién)_' : '' )
                 }
-            )
+            ).join('\n')
+
             const isPlural = playersArray.length > 1
             if (isUnrankedPlayer) {
                 blocksToPost.push({
@@ -63,7 +64,7 @@ const notifyPlayerWhichPlayersCanChallenge = (slackEvent) => {
                     "text": {
                         "type": "mrkdwn",
                         "text": "Parece que no estas rankeado, o bien, tienes 0 puntos... así que " + 
-                                isPlural ? "serían estos:" : "sería este:" + "\n\n" + playersList
+                                ( isPlural ? "serían estos:" : "sería este:" ) + "\n\n" + playersList
                     }
                 })
             }
