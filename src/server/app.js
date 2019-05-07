@@ -1,6 +1,6 @@
 'use strict'
 const Config = require('../../config.json')
-const Ranking = require('../ranking-info/ranking.json')
+const Ranking = require('../../ranking-info/ranking.json')
 const SmashLeague = require('../smash-league')
 const Slack = require('../slack-api')
 const Utils = require('../utils')
