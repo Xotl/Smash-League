@@ -39,7 +39,7 @@ app.post('/', (req, res) => {
         return res.send(slackRequest.challenge)
     }
 
-    if ( MyApp.isAppMention(slackRequest) ) {
+    if ( MyApp.isChallengeListRequest(slackRequest) ) {
         MyApp.notifyPlayerWhichPlayersCanChallenge(slackRequest.event)
             .then( () => console.log('Mensaje enviado exitosamente.'))
             .catch( console.error )

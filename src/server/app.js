@@ -6,12 +6,12 @@ const Slack = require('../slack-api')
 const Utils = require('../utils')
 
 
-const isAppMention = (slackEvent = {}) => {
+const isChallengeListRequest = (slackEvent = {}) => {
     if (!slackEvent.event) {
         return false
     }
 
-    return slackEvent.event.type === 'app_mention' && slackEvent.event.user !== Config.bot_id
+    return slackEvent.event.type === 'app_mention' && slackEvent.event.user !== Config.bot_id && slackEvent.event.text.toLowerCase().includes('mis retos')
 }
 
 const notifyPlayerWhichPlayersCanChallenge = (slackEvent) => {
@@ -102,6 +102,6 @@ const notifyPlayerWhichPlayersCanChallenge = (slackEvent) => {
 }
 
 module.export = {
-    isAppMention,
+    isChallengeListRequest,
     notifyPlayerWhichPlayersCanChallenge
 }
