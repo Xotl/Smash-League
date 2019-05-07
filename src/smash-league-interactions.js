@@ -18,9 +18,10 @@ const categorizeSlackMessages = (messagesArray) => {
     )
 
     const resultCategorized = messagesArray.reduce(
-        (result, { text:message, user, ts, thread_ts }) => {
-            if (-1 === message.indexOf(BOT_SLACK_TAG)) {
-                return result// Slack bot is not tagged in this message, just ignore it
+        (result, { text:message, user, ts, thread_ts, subtype }) => {
+            if (subtype === 'bot_message' || -1 === message.indexOf(BOT_SLACK_TAG)) {
+                // Slack bot is not tagged in this message or a bot message, just ignore it
+                return result
             }
 
             const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG, 'gm'), '')
@@ -63,6 +64,11 @@ const categorizeSlackMessages = (messagesArray) => {
                         players: [player1, player2]
                     })
 
+                    return result
+                }
+
+                if ( message.toLowerCase().includes('mis retos') ) {
+                    // Request to RTM bot, just ignore it
                     return result
                 }
 
