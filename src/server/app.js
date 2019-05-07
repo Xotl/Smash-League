@@ -53,7 +53,7 @@ const notifyPlayerWhichPlayersCanChallenge = (slackEvent) => {
                         playerId => '`' + Utils.getPlayerAlias(playerId) + '`'
                     ).join(', ')
 
-                    return '* ' +  playersString + ( placeArray.length > 1 ? ' _(sólo uno de los ' + placeArray.length + ', tendrás que elegir a quién)_' : '' )
+                    return '- ' +  playersString + ( placeArray.length > 1 ? ' _(sólo uno de los ' + placeArray.length + ', tendrás que elegir a quién)_' : '' )
                 }
             )
             const isPlural = playersArray.length > 1
@@ -73,7 +73,7 @@ const notifyPlayerWhichPlayersCanChallenge = (slackEvent) => {
                     "text": {
                         "type": "mrkdwn",
                         "text": ( isPlural ? "Estos son los jugadores" : "Este sería el jugador" ) + 
-                                "que puedes retar:\n\n" + playersList
+                                " que puedes retar:\n\n" + playersList
                     }
                 })
             }
