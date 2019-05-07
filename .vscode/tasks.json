@@ -13,6 +13,14 @@
             }
         },
         {
+            "label": "Prepare to run smash-league image",
+            "type": "shell",
+            "command": "docker kill smash-league || true",
+            "dependsOn": [
+                "Build Docker image"
+            ]
+        },
+        {
             "label": "Run Tests",
             "type": "shell",
             "command": "docker run --rm smash-league npm test",

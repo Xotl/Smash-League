@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Run project",
-            "preLaunchTask": "Build Docker image",
+            "preLaunchTask": "Prepare to run smash-league image",
             "runtimeExecutable": "docker",
             "runtimeArgs": [
                 "run", "--rm",
@@ -29,7 +29,7 @@
             "type": "node",
             "request": "launch",
             "name": "Run express server",
-            "preLaunchTask": "Build Docker image",
+            "preLaunchTask": "Prepare to run smash-league image",
             "runtimeExecutable": "docker",
             "runtimeArgs": [
                 "run", "--rm",
@@ -51,10 +51,11 @@
             "type": "node",
             "request": "launch",
             "name": "Debug tests",
-            "preLaunchTask": "Build Docker image",
+            "preLaunchTask": "Prepare to run smash-league image",
             "runtimeExecutable": "docker",
             "runtimeArgs": [
                 "run", "--rm",
+                "--name", "smash-league",
                 "-p", "9229:9229",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
                 "smash-league",
