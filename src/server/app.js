@@ -101,7 +101,7 @@ const notifyPlayerWhichPlayersCanChallenge = (slackEvent) => {
     )
 }
 
-module.export = {
+module.exports = {
     isChallengeListRequest,
     notifyPlayerWhichPlayersCanChallenge
 }

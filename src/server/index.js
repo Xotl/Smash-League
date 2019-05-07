@@ -5,7 +5,7 @@ const fs = require('fs')
 const path = require('path')
 const Config = require('../../config.json')
 const Slack = require('../slack-api')
-const MyApp = require('./app')
+const MyApp = require('./app.js')
 
 const app = express()
 const port = process.env.PORT || 3000
