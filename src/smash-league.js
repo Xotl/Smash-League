@@ -265,6 +265,14 @@ const commitInProgress = rankingObj => {
     return result
 }
 
+const getPlayersThatCanBeChallenged = (playerPlace, playerRange, rankingTable) => {
+    let index = playerPlace - playerRange - 1
+    if (index < 0) {
+        index = 0
+    }
+    return rankingTable.slice(index, index + playerRange)
+}
+
 
 module.exports = {
     getRankingFromScoreboard,
@@ -274,5 +282,6 @@ module.exports = {
     updateInProgressScoreboard,
     calculatePointsFromPlayerScore,
     getNextWeekObject,
-    getUnrankedPlayerScore
+    getUnrankedPlayerScore,
+    getPlayersThatCanBeChallenged
 }
