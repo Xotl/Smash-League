@@ -6,4 +6,5 @@ LICENSE
 README.md
 .env
 .vscode
+heroku.yml
 node_modules/
