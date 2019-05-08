@@ -20,7 +20,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Tue, 07 May 2019 18:18:00 GMT*
+## In progress this week *Wed, 08 May 2019 02:23:18 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -37,9 +37,9 @@ The current points earned by winning matches this week.
 |D.I.O.|2|2|0|10|
 |Gilberto "Gil" Ruelas|2|2|0|6|
 |Alan|2|2|0|6|
-|Sammy|0|2|0|6|
+|Sammy|0|2|1|6|
 |El Chino|2|2|0|5|
-|Fer Señior|2|2|0|5|
+|Fer Señior|0|2|0|5|
 |David|2|2|0|2|
 |Michel|3|3|0|1|
 |Carlos López|3|3|0|0|
@@ -53,5 +53,7 @@ Matches that already happened during this week.
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 * `El Minion` challenged `Neku` and **won** *3-2*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-1*.
+* `Fer Señior` challenged `Sammy` and **lost** *3-0*.
+* `Fer Señior` challenged `Sammy` and **lost** *3-0*.
 * `Sammy` challenged `Neku` and **lost** *3-0*.
 * `Sammy` challenged `Neku` and **lost** *3-2*.
