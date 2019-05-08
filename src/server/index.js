@@ -1,10 +1,6 @@
 'use strict'
 const express = require('express')
 var bodyParser = require('body-parser')
-const fs = require('fs')
-const path = require('path')
-const Config = require('../../config.json')
-const Slack = require('../slack-api')
 const MyApp = require('./app.js')
 
 const app = express()
@@ -13,12 +9,12 @@ const slackRetryDict = {}
 
 app.use(bodyParser.json()); // for parsing application/json
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     console.log(`[${(new Date()).toISOString()}]`, req.originalUrl, req.query, req.body)
     return res.send('¡Si charcha!')
 })
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
     let slackRequest = req.body || {}
     console.log(`[${(new Date()).toISOString()}] retry header: `, req.get('X-Slack-Retry-Num'))
 
@@ -39,12 +35,7 @@ app.post('/', (req, res) => {
         return res.send(slackRequest.challenge)
     }
 
-    if ( MyApp.isChallengeListRequest(slackRequest) ) {
-        MyApp.notifyPlayerWhichPlayersCanChallenge(slackRequest.event)
-            .then( () => console.log('Mensaje enviado exitosamente.'))
-            .catch( console.error )
-    }
-
+    await MyApp.digetsWitReponseFromSlackEvent(slackRequest.event)
     return res.send('¡Si charcha!')
 })
 
