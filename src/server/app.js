@@ -33,13 +33,16 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
             }
 
             if (confidence < 0.6) {
-                let msgToPost = 'Español por favor, soy sólo una máquina. :robot_face:'
+                let msgToPost = 'Lo siento, no entendí. Sólo soy una máquina. :disappointed:'
                 return Slack.postMessageInChannel(msgToPost, Config.slack_channel_id, { thread_ts })
             }
 
             if (confidence < 0.8) {
                 let msgToPost = null
                 switch (value) {
+                    case 'grateful':
+                        msgToPost = "Pa' servirle. :wink:"
+
                     case 'lookup_challengers':
                         msgToPost = 'No estoy muy seguro, pero creo que quieres ver a quién puedes retar ¿no?. :thinking_face:'
 
@@ -48,7 +51,7 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
                                     ( entities.slack_user_id && entities.slack_user_id.length > 0 ?
                                         entities.slack_user_id.map(e => e.value ).join(', ') :
                                         'alguien'
-                                    )
+                                    ) +
                                     '. ¿O me equivoco?. :thinking_face:'
                 }
                 return Slack.postMessageInChannel(msgToPost, Config.slack_channel_id, { thread_ts })
@@ -56,6 +59,9 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
 
             let blocks, title
             switch(value) {
+                case 'grateful':
+                    title = 'No, de nada. :wink:'
+                    break
                 case 'lookup_challengers':
                     title = 'Respondiendo a lo de tus retos...'
                     blocks = getBlocksForLookUpChallengers(slackEvent.user)
@@ -116,7 +122,7 @@ const getBlocksForLookUpChallengers = playerId => {
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": "Ya no te quedan monedas, así que ya no pedes retar a nadie. :disappointed:"
+                "text": "Ya no te quedan monedas, así que ya no puedes retar a nadie. :disappointed:"
             }
         })
     }
