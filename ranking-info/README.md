@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Wed, 08 May 2019 03:29:34 GMT*
+## In progress this week *Thu, 09 May 2019 04:36:33 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -32,17 +32,17 @@ The current points earned by winning matches this week.
 |------|-----|-----|------------|-----|
 |Xotl|0|1|0|15|
 |César Gutman|0|0|1|15|
-|José "El Iceberg" Rosales|1|1|1|14|
-|Angel Lee|0|1|1|12|
-|Neku|1|1|1|11|
-|El Minion|1|3|0|10|
+|José "El Iceberg" Rosales|1|1|2|14|
+|Angel Lee|0|1|2|12|
+|Neku|0|1|1|11|
+|El Minion|0|4|0|10|
 |D.I.O.|2|2|0|10|
 |Gilberto "Gil" Ruelas|2|2|0|6|
 |Alan|2|2|0|6|
 |Sammy|0|2|1|6|
 |El Chino|2|2|0|5|
 |Fer Señior|0|2|0|5|
-|David|2|2|0|2|
+|David|2|3|0|2|
 |Michel|3|3|0|1|
 |Carlos López|3|3|0|0|
 |Niightz|3|3|0|0|
@@ -56,7 +56,11 @@ Matches that already happened during this week.
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 * `El Minion` challenged `Neku` and **won** *3-2*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-1*.
+* `El Minion` challenged `Angel Lee` and **won** *3-0*.
+* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
 * `Fer Señior` challenged `Sammy` and **lost** *3-0*.
 * `Fer Señior` challenged `Sammy` and **lost** *3-0*.
+* `Neku` challenged `Angel Lee` and **lost** *3-0*.
 * `Sammy` challenged `Neku` and **lost** *3-0*.
 * `Sammy` challenged `Neku` and **lost** *3-2*.
+* `David` challenged `El Chino` and **won** *3-0*.
