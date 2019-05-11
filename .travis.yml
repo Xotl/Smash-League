@@ -8,7 +8,16 @@ install:
 
 script:
       - docker run --rm smash-league npm test
-      - docker run --name smash-league-bot -e SLACK_API_TOKEN=${SLACK_API_TOKEN} -e TRAVIS_BRANCH=${TRAVIS_BRANCH} -e TRAVIS_EVENT_TYPE=${TRAVIS_EVENT_TYPE} -e CI=${CI} smash-league npm run start:smash-league
+      - >-
+        docker run
+        --name smash-league-bot
+        -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
+        -e WIT_TOKEN=${WIT_TOKEN}
+        -e TRAVIS_BRANCH=${TRAVIS_BRANCH}
+        -e TRAVIS_EVENT_TYPE=${TRAVIS_EVENT_TYPE}
+        -e CI=${CI}
+        smash-league
+        npm run start:smash-league
       - docker cp smash-league-bot:/usr/app/package.json ${TRAVIS_BUILD_DIR}/package.json
       - docker cp smash-league-bot:/usr/app/ranking-info/. ${TRAVIS_BUILD_DIR}/ranking-info/
 
