@@ -39,9 +39,11 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
                 switch (value) {
                     case 'grateful':
                         msgToPost = "Pa' servirle. :wink:"
+                        break
 
                     case 'lookup_challengers':
                         msgToPost = 'No estoy muy seguro, pero creo que quieres ver a quién puedes retar ¿no?. :thinking_face:'
+                        break
 
                     case 'validate_challenge':
                         msgToPost = 'No estoy muy seguro, pero pareciera que quieres saber si puedes retar a ' +
@@ -50,6 +52,9 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
                                         'alguien'
                                     ) +
                                     '. ¿O me equivoco?. :thinking_face:'
+                        break
+                    default:
+                        msgToPost = 'Sospecho con el pecho y calculo con el... pie derecho que hace falta un PR para que funcione eso. _(' + value +')_'
                 }
                 return Slack.postMessageInChannel(msgToPost, Config.slack_channel_id, { thread_ts })
             }
