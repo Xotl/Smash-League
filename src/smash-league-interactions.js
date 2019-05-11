@@ -1,90 +1,141 @@
 'use strict'
 const Config = require('../config.json')
+const {Wit, log} = require('node-wit');
 
-const CHALLENGE_REGEX = `^.*?reto.*?<@.*?>`
-const REPORTED_RESULT_REGEX = String.raw`(<@\w+?>)\s*?(\d)\s*?\-\s*?(\d)\s*?(<@\w+?>)`
-const USERS_TAGGED_REGEX = `<@.*?>`
+const WIT_TOKEN =  process.env.WIT_TOKEN
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
 
 const GetUserIDFromUserTag = userTag => userTag.slice(2, -1)
 
-const categorizeSlackMessages = (messagesArray) => {
+const sortWitEntityArrayByConfidence = entityArray => entityArray && entityArray.sort( entity => entity.confidence)
+
+const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEntity, player2Entity, player2ScoreEntity, match_result) => {
+    if (!player1ScoreEntity || !player2ScoreEntity) {// Missing score
+        return {// Not enough data to generate result object, so ignoring it
+            ok: false, error: 'Falta el puntaje de alguno de los jugadores'
+        }
+    }
+
+    if (match_result && !player1Entity && !player2Entity) {// Match result with both players missing
+        return {// Not enough data to generate result object, so ignoring it
+            ok: false, error: `Indicaste que ${match_result === 'win' ? 'ganaste': 'perdiste'} pero no dijiste contra quién`
+        }
+    }
+
+    if (!player1Entity || !player2Entity) {// One player missing with no match result
+        return {// Not enough data to generate result object, so ignoring it
+            ok: false, error: `Te faltó indicar ${!player1Entity && !player2Entity ? 'los jugadores involucrados' : 'quién es el otro jugador'}`
+        }
+    }
+
+    player1Entity = sortWitEntityArrayByConfidence(player1Entity)
+    player2Entity = sortWitEntityArrayByConfidence(player2Entity)
+    player1ScoreEntity = sortWitEntityArrayByConfidence(player1ScoreEntity)
+    player2ScoreEntity = sortWitEntityArrayByConfidence(player2ScoreEntity)
+    match_result = sortWitEntityArrayByConfidence(match_result)
+
+    const player1ScoreAbs = Math.abs( player1ScoreEntity[0].value ), player2ScoreAbs = Math.abs( player2ScoreEntity[0].value )
+    
+    let player1, player2, player1Score, player2Score
+    if (match_result) {
+        player1 = user
+        player2 = player1Entity ? GetUserIDFromUserTag(player1Entity[0].value) : GetUserIDFromUserTag(player2Entity[0].value)
+        if (match_result[0].value === 'win') {
+            player1Score = player1ScoreAbs > player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
+            player2Score = player1ScoreAbs < player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
+        }
+        else {// lose
+            player2Score = player1ScoreAbs > player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
+            player1Score = player1ScoreAbs < player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
+        }
+    }
+    else {
+        player1 = GetUserIDFromUserTag(player1Entity[0].value)
+        player2 = GetUserIDFromUserTag(player2Entity[0].value)
+        player1Score = player1ScoreAbs
+        player2Score = player2ScoreAbs
+    }
+
+    return {
+        ok: true,
+        value: {
+            winner: player1Score > player2Score ? player1 : player2,
+            player1, player2, player1Score, player2Score,
+            players: [player1, player2]
+        }
+    }
+}
+
+const categorizeSlackMessages = async (messagesArray) => {
     if (!Array.isArray(messagesArray)) {
         throw new Error('The argument messagesArray must be an Array.')
     }
 
-    messagesArray = messagesArray.sort(// Sorts from oldest to latest
-        (a, b) => Number(a.ts) - Number(b.ts)
+    const WitClient = new Wit({
+        accessToken: WIT_TOKEN,
+        logger: new log.Logger(log.DEBUG) // optional
+    })
+
+    const promiseArray = messagesArray.filter(
+        // Slack bot is not tagged in this message or a bot message, just ignore it
+        ({ text, subtype }) => !(subtype === 'bot_message' || -1 === text.indexOf(BOT_SLACK_TAG))
+    ).map(
+        async ({ text:message, user, ts, thread_ts }) => {
+            const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG, 'gm'), '')
+            const { entities } = await WitClient.message(messageWithoutBotTag, {})
+
+            if (!entities.intent) {
+                return// Ignore all messages that doesn't have an intent
+            }
+
+            return entities.intent.reduce(
+                (result, { value, confidence }) => {
+                    if (confidence < 0.8) {
+                        // not enough confidence, no sure what the user wants
+                        // resultCategorized.ignoredMessages.push({text: message, user, ts, thread_ts})
+                        return
+                    }
+
+                    switch(value) {
+                        case 'reported_result':
+                            const reportedResult = getReportedResultObjFromWitEntities(
+                                user, entities.player1, entities.player1_score,
+                                entities.player2, entities.player2_score, entities.match_result
+                            )
+
+                            if (reportedResult.ok) {
+                                if ( !Array.isArray(result.reportedResults) ) {
+                                    result.reportedResults = []
+                                }
+                                result.reportedResults.push(reportedResult.value)
+                                return result
+                            }
+                        default:
+                    }
+                },
+                { ts }
+            )
+        }
     )
 
-    const resultCategorized = messagesArray.reduce(
-        (result, { text:message, user, ts, thread_ts, subtype }) => {
-            if (subtype === 'bot_message' || -1 === message.indexOf(BOT_SLACK_TAG)) {
-                // Slack bot is not tagged in this message or a bot message, just ignore it
-                return result
-            }
-
-            const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG, 'gm'), '')
-            const isChallengeMessage = (new RegExp(CHALLENGE_REGEX, 'gm')).test(messageWithoutBotTag)
-
-            if (isChallengeMessage) {
-                const taggedUsersMatch = messageWithoutBotTag.match(new RegExp(USERS_TAGGED_REGEX, 'gm'))
-                result.challenges.push({
-                    challenger: user,
-                    peopleChallenged: taggedUsersMatch.map( GetUserIDFromUserTag )
-                })
-                return result
-            }
-            else {
-                const reportedResultMatch = (new RegExp(REPORTED_RESULT_REGEX, 'gm')).exec(messageWithoutBotTag)
-                if (reportedResultMatch) {
-                    let player1Result, player2Result
-
-                    try {
-                        player1Result = Number(reportedResultMatch[2])
-                        player2Result = Number(reportedResultMatch[3])
-                    }
-                    catch (err) {
-                        console.error(new Error(`Bad reported result format for message "${message}". Ignoring this message.`))
-                        return result
-                    }
-                    
-                    const player1 = GetUserIDFromUserTag(reportedResultMatch[1])
-                    const player2 = GetUserIDFromUserTag(reportedResultMatch[4])
-
-
-                    if (player1 === BOT_SLACK_TAG || player2 === BOT_SLACK_TAG) {
-                        // Someone wants the bot to be in the League ¬¬'
-                        return result
-                    }
-                    
-                    result.reportedResults.push({
-                        winner: player1Result > player2Result ? player1 : player2,
-                        player1, player2, player1Result, player2Result,
-                        players: [player1, player2]
-                    })
-
-                    return result
-                }
-
-                if ( message.toLowerCase().includes('mis retos') ) {
-                    // Request to RTM bot, just ignore it
-                    return result
-                }
-
-                // if it comes here, is just a random message where the bot got tagged
-                result.ignoredMessages.push({text: message, user, ts, thread_ts})
-                return result
-            }
-        }, 
+    const allResults = await Promise.all(promiseArray)
+    return allResults.filter(// Filters the undefined values
+        value => value
+    ).sort(// Sorts from oldest to latest
+        (a, b) => Number(a.ts) - Number(b.ts)
+    ).reduce(
+        (result, activityObj) => {
+            result.challenges = activityObj.challenges && [...result.challenges, ...activityObj.challenges]
+            result.reportedResults = activityObj.reportedResults && [...result.reportedResults, ...activityObj.reportedResults]
+            result.ignoredMessages = activityObj.ignoredMessages && [...result.ignoredMessages, ...activityObj.ignoredMessages]
+            return result
+        },
         {
             challenges: [],
             reportedResults: [],
             ignoredMessages: []
         }
     )
-
-    return resultCategorized
 }
 
 const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActivities, 
@@ -250,5 +301,6 @@ const notifyInThreadThatMeesagesGotIgnored = async (ignoredMessagesArray, postMe
 module.exports = {
     categorizeSlackMessages,
     getUpdatesToNotifyUsers,
-    notifyInThreadThatMeesagesGotIgnored
+    notifyInThreadThatMeesagesGotIgnored,
+    getReportedResultObjFromWitEntities
 }
