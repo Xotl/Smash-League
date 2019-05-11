@@ -19,7 +19,7 @@ async function Main() {
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
     const opts = { latest: now, oldest: lastInProgressUpdated }
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
-    const activities = SmashLeagueInteractions.categorizeSlackMessages(slackResponse.messages)
+    const activities = await SmashLeagueInteractions.categorizeSlackMessages(slackResponse.messages)
     
     // We create & set the Object that will have all the data of the 
     // ignored activites logged by "logIgnoredActivity" function
