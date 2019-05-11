@@ -10,6 +10,9 @@ const OutputGenerator = require('./output-generator')
 
 
 const SMASH_SLACK_CHANNEL_ID = Config.slack_channel_id
+const IS_UPDATE = process.env.TRAVIS_EVENT_TYPE === 'push'
+const IS_MASTER_BRANCH = process.env.TRAVIS_BRANCH === 'master'
+const IS_CI = process.env.CI
 
 
 async function Main() {
@@ -52,19 +55,17 @@ async function Main() {
     )
 
 
-    // Only post in slack if it's a master Job
-    if (process.env.CI && process.env.TRAVIS_BRANCH === 'master') {
-
-        const isUpdate = process.env.TRAVIS_EVENT_TYPE === 'push'
-        const blocksToPost = SmashLeagueInteractions.getUpdatesToNotifyUsers(
-            isItTimeToCommit ? {/* TODO: send weeks times */} : null,
-            activities.reportedResults.length,
-            ignoredActivities, 
-            activities.ignoredMessages.length,
-            newRankingObj.season,
-            isUpdate ? version : null
-        )
+    const blocksToPost = SmashLeagueInteractions.getUpdatesToNotifyUsers(
+        isItTimeToCommit ? {/* TODO: send weeks times */} : null,
+        activities.reportedResults.length,
+        ignoredActivities, 
+        activities.ignoredMessages.length,
+        newRankingObj.season,
+        IS_UPDATE ? version : null
+    )
         
+    // Only post in slack if it's a master Job
+    if (IS_CI && IS_MASTER_BRANCH) {
         await Slack.postMessageInChannel('Smash League Update!', SMASH_SLACK_CHANNEL_ID, { blocks: JSON.stringify(blocksToPost) })
         await SmashLeagueInteractions.notifyInThreadThatMeesagesGotIgnored(activities.ignoredMessages, Slack.postMessageInChannel)
     }
