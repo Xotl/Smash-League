@@ -125,9 +125,18 @@ const categorizeSlackMessages = async (messagesArray) => {
         (a, b) => Number(a.ts) - Number(b.ts)
     ).reduce(
         (result, activityObj) => {
-            result.challenges = activityObj.challenges && [...result.challenges, ...activityObj.challenges]
-            result.reportedResults = activityObj.reportedResults && [...result.reportedResults, ...activityObj.reportedResults]
-            result.ignoredMessages = activityObj.ignoredMessages && [...result.ignoredMessages, ...activityObj.ignoredMessages]
+            if (activityObj.challenges) {
+                result.challenges = [...result.challenges, ...activityObj.challenges]
+            }
+
+            if (activityObj.reportedResults) {
+                result.reportedResults = [...result.reportedResults, ...activityObj.reportedResults]
+            }
+
+            if (activityObj.ignoredMessages) {
+                result.ignoredMessages = [...result.ignoredMessages, ...activityObj.ignoredMessages]
+            }
+            
             return result
         },
         {
