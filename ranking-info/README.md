@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Sat, 11 May 2019 02:00:48 GMT*
+## In progress this week *Sat, 11 May 2019 02:37:09 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -54,7 +54,7 @@ Matches that already happened during this week.
 
 * `Xotl` challenged `César Gutman` and **lost** *3-0*.
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
-* `El Chino` challenged `Sammy` and **lost** *undefined-undefined*.
+* `El Chino` challenged `Sammy` and **lost** *3-2*.
 * `El Minion` challenged `Neku` and **won** *3-2*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-1*.
 * `El Minion` challenged `Angel Lee` and **won** *3-0*.
@@ -65,4 +65,4 @@ Matches that already happened during this week.
 * `Sammy` challenged `Neku` and **lost** *3-0*.
 * `Sammy` challenged `Neku` and **lost** *3-2*.
 * `David` challenged `El Chino` and **won** *3-0*.
-* `Medininja` challenged `El Chino` and **won** *undefined-undefined*.
+* `Medininja` challenged `El Chino` and **won** *3-0*.
