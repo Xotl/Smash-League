@@ -95,12 +95,12 @@ module.exports = {
         },
         {
             "text": "<@UFY8P0WRF> El viento de las gardenias toca la puerta 3 veces",
-            "user": "UEWUZCYJF",
+            "user": "U6H8DDV25",
             "ts": 6
         },
         {// Valid spaces only on one side of result
             "text": "<@UFY8P0WRF> <@UB616ENA0> 2 - 3 <@U6457D5KQ>",
-            "user": "U6H8DDV25",
+            "user": "UEWUZCYJF",
             "ts": 1
         },
         {// Valid, spaces both sides of result

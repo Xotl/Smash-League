@@ -1,7 +1,7 @@
 'use strict'
-const Config = require('../config.json')
 const {Wit, log} = require('node-wit');
 
+const Config = require('../config.json')
 const WIT_TOKEN =  process.env.WIT_TOKEN
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
 
@@ -38,15 +38,15 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
     
     let player1, player2, player1Result, player2Result
     if (match_result) {
-        player1 = user
-        player2 = player1Entity ? GetUserIDFromUserTag(player1Entity[0].value) : GetUserIDFromUserTag(player2Entity[0].value)
+        player1 = player1Entity ? GetUserIDFromUserTag(player1Entity[0].value) : GetUserIDFromUserTag(player2Entity[0].value)
+        player2 = user
         if (match_result[0].value === 'win') {
-            player1Result = player1ResultAbs > player2ResultAbs ? player1ResultAbs : player2ResultAbs
-            player2Result = player1ResultAbs < player2ResultAbs ? player1ResultAbs : player2ResultAbs
+            player1Result = player1ResultAbs < player2ResultAbs ? player1ResultAbs : player2ResultAbs
+            player2Result = player1ResultAbs > player2ResultAbs ? player1ResultAbs : player2ResultAbs
         }
         else {// lose
-            player2Result = player1ResultAbs > player2ResultAbs ? player1ResultAbs : player2ResultAbs
-            player1Result = player1ResultAbs < player2ResultAbs ? player1ResultAbs : player2ResultAbs
+            player1Result = player1ResultAbs > player2ResultAbs ? player1ResultAbs : player2ResultAbs
+            player2Result = player1ResultAbs < player2ResultAbs ? player1ResultAbs : player2ResultAbs
         }
     }
     else {
@@ -66,6 +66,38 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
     }
 }
 
+const getReportedResultFromWitTrait = (user, witEntities) => {
+    const result = []
+    
+    witEntities.reported_result.forEach(
+        entity => {
+            const { confidence, value } = entity
+            
+            if (confidence < 0.8) {
+                return// Not enough confidence, no sure what the user wants
+            }
+
+            const reportedResult = getReportedResultObjFromWitEntities(
+                user, witEntities.player1, witEntities.player1_score,
+                witEntities.player2, witEntities.player2_score, witEntities.match_result
+            )
+            
+            if (!reportedResult.ok) {
+                return// Missing some values to determine what's the reported result
+            }
+
+            // Valid resported result, let's add it to the final result
+            result.push(reportedResult.value)
+        }
+    )
+
+    if (result.length === 0) {
+        return
+    }
+
+    return result    
+}
+
 const categorizeSlackMessages = async (messagesArray) => {
     if (!Array.isArray(messagesArray)) {
         throw new Error('The argument messagesArray must be an Array.')
@@ -83,38 +115,17 @@ const categorizeSlackMessages = async (messagesArray) => {
         async ({ text:message, user, ts, thread_ts }) => {
             const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG, 'gm'), '')
             const { entities } = await WitClient.message(messageWithoutBotTag, {})
+            let result
 
-            if (!entities.intent) {
-                return// Ignore all messages that doesn't have an intent
+            if (entities.reported_result) {
+                result = { reportedResults: getReportedResultFromWitTrait(user, entities) }
             }
 
-            return entities.intent.reduce(
-                (result, { value, confidence }) => {
-                    if (confidence < 0.8) {
-                        // not enough confidence, no sure what the user wants
-                        // resultCategorized.ignoredMessages.push({text: message, user, ts, thread_ts})
-                        return
-                    }
+            if (result) {
+                result.ts = ts
+            }
 
-                    switch(value) {
-                        case 'reported_result':
-                            const reportedResult = getReportedResultObjFromWitEntities(
-                                user, entities.player1, entities.player1_score,
-                                entities.player2, entities.player2_score, entities.match_result
-                            )
-
-                            if (reportedResult.ok) {
-                                if ( !Array.isArray(result.reportedResults) ) {
-                                    result.reportedResults = []
-                                }
-                                result.reportedResults.push(reportedResult.value)
-                                return result
-                            }
-                        default:
-                    }
-                },
-                { ts }
-            )
+            return result
         }
     )
 
