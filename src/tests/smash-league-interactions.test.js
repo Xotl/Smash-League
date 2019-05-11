@@ -8,7 +8,10 @@ const {
 } = require('../smash-league-interactions')
 
 
-// describe('Smash League interactions', () => {
+describe('Smash League interactions', () => {
+    test('categorizeSlackMessages', () => {
+        expect( 'TODO: missing test' ).toBe('TODO: missing test')
+    })
 
 //     test('categorizeSlackMessages', () => {
 //         expect( _ => categorizeSlackMessages() )
@@ -47,4 +50,4 @@ const {
 //             ]
 //         })
 //     })
-// })
+})
