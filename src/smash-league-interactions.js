@@ -21,8 +21,7 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
             ok: false, error: `Indicaste que ${match_result === 'win' ? 'ganaste': 'perdiste'} pero no dijiste contra quién`
         }
     }
-
-    if (!player1Entity || !player2Entity) {// One player missing with no match result
+    else if (!player1Entity || !player2Entity) {// One player missing with no match result
         return {// Not enough data to generate result object, so ignoring it
             ok: false, error: `Te faltó indicar ${!player1Entity && !player2Entity ? 'los jugadores involucrados' : 'quién es el otro jugador'}`
         }
