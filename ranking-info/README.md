@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Fri, 10 May 2019 04:37:26 GMT*
+## In progress this week *Sat, 11 May 2019 02:00:48 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -39,14 +39,14 @@ The current points earned by winning matches this week.
 |D.I.O.|2|2|0|10|
 |Gilberto "Gil" Ruelas|2|2|0|6|
 |Alan|2|2|0|6|
-|Sammy|0|2|1|6|
-|El Chino|2|2|0|5|
+|Sammy|0|2|2|6|
+|El Chino|1|2|0|5|
 |Fer Señior|0|2|0|5|
 |David|2|3|0|2|
 |Michel|3|3|0|1|
 |Carlos López|3|3|0|0|
 |Niightz|3|3|0|0|
-|Medininja|3|3|0|0|
+|Medininja|3|4|0|0|
 |El Plebe|3|3|0|0|
 
 ### Completed challenges
@@ -54,6 +54,7 @@ Matches that already happened during this week.
 
 * `Xotl` challenged `César Gutman` and **lost** *3-0*.
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `El Chino` challenged `Sammy` and **lost** *undefined-undefined*.
 * `El Minion` challenged `Neku` and **won** *3-2*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-1*.
 * `El Minion` challenged `Angel Lee` and **won** *3-0*.
@@ -64,3 +65,4 @@ Matches that already happened during this week.
 * `Sammy` challenged `Neku` and **lost** *3-0*.
 * `Sammy` challenged `Neku` and **lost** *3-2*.
 * `David` challenged `El Chino` and **won** *3-0*.
+* `Medininja` challenged `El Chino` and **won** *undefined-undefined*.
