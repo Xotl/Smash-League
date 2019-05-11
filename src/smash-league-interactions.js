@@ -12,13 +12,13 @@ const sortWitEntityArrayByConfidence = entityArray => entityArray && entityArray
 const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEntity, player2Entity, player2ScoreEntity, match_result) => {
     if (!player1ScoreEntity || !player2ScoreEntity) {// Missing score
         return {// Not enough data to generate result object, so ignoring it
-            ok: false, error: 'Falta el puntaje de alguno de los jugadores'
+            ok: false, error: `Falta el puntaje de ${!player1ScoreEntity && !player2ScoreEntity ? 'ambos jugadores' : 'uno de los jugadores'}`
         }
     }
     
     if (match_result && !player1Entity && !player2Entity) {// Match result with both players missing
         return {// Not enough data to generate result object, so ignoring it
-            ok: false, error: `Indicaste que ${match_result === 'win' ? 'ganaste': 'perdiste'} pero no dijiste contra quién`
+            ok: false, error: `Indicaste que ${match_result === 'win' ? 'ganaste': 'perdiste'} aunque no dijiste contra quién`
         }
     }
 
