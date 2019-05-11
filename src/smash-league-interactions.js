@@ -34,33 +34,33 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
     player2ScoreEntity = sortWitEntityArrayByConfidence(player2ScoreEntity)
     match_result = sortWitEntityArrayByConfidence(match_result)
 
-    const player1ScoreAbs = Math.abs( player1ScoreEntity[0].value ), player2ScoreAbs = Math.abs( player2ScoreEntity[0].value )
+    const player1ResultAbs = Math.abs( player1ScoreEntity[0].value ), player2ResultAbs = Math.abs( player2ScoreEntity[0].value )
     
-    let player1, player2, player1Score, player2Score
+    let player1, player2, player1Result, player2Result
     if (match_result) {
         player1 = user
         player2 = player1Entity ? GetUserIDFromUserTag(player1Entity[0].value) : GetUserIDFromUserTag(player2Entity[0].value)
         if (match_result[0].value === 'win') {
-            player1Score = player1ScoreAbs > player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
-            player2Score = player1ScoreAbs < player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
+            player1Result = player1ResultAbs > player2ResultAbs ? player1ResultAbs : player2ResultAbs
+            player2Result = player1ResultAbs < player2ResultAbs ? player1ResultAbs : player2ResultAbs
         }
         else {// lose
-            player2Score = player1ScoreAbs > player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
-            player1Score = player1ScoreAbs < player2ScoreAbs ? player1ScoreAbs : player2ScoreAbs
+            player2Result = player1ResultAbs > player2ResultAbs ? player1ResultAbs : player2ResultAbs
+            player1Result = player1ResultAbs < player2ResultAbs ? player1ResultAbs : player2ResultAbs
         }
     }
     else {
         player1 = GetUserIDFromUserTag(player1Entity[0].value)
         player2 = GetUserIDFromUserTag(player2Entity[0].value)
-        player1Score = player1ScoreAbs
-        player2Score = player2ScoreAbs
+        player1Result = player1ResultAbs
+        player2Result = player2ResultAbs
     }
 
     return {
         ok: true,
         value: {
-            winner: player1Score > player2Score ? player1 : player2,
-            player1, player2, player1Score, player2Score,
+            winner: player1Result > player2Result ? player1 : player2,
+            player1, player2, player1Result, player2Result,
             players: [player1, player2]
         }
     }

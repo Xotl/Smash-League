@@ -95,9 +95,9 @@ const getBlocksForReportedResult = (reportedResult) => {
         }])
     }
 
-    const { winner, player1, player2, player1Score, player2Score} = reportedResult.value
-    const highScore = player1Score > player2Score ? player1Score : player2Score
-    const lowScore = player1Score > player2Score ? player2Score : player1Score
+    const { winner, player1, player2, player1Result, player2Result} = reportedResult.value
+    const highScore = player1Result > player2Result ? player1Result : player2Result
+    const lowScore = player1Result > player2Result ? player2Result : player1Result
 
     return JSON.stringify([
         {
