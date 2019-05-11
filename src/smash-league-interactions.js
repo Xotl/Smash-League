@@ -1,5 +1,6 @@
 'use strict'
 const {Wit, log} = require('node-wit');
+const Utils = require('./utils')
 
 const Config = require('../config.json')
 const WIT_TOKEN =  process.env.WIT_TOKEN
@@ -66,8 +67,8 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
     }
 }
 
-const getReportedResultFromWitTrait = (user, witEntities) => {
-    const result = []
+const getReportedResultFromWitResponse = (user, witEntities) => {
+    const results = [], errors = []
     
     witEntities.reported_result.forEach(
         entity => {
@@ -83,19 +84,19 @@ const getReportedResultFromWitTrait = (user, witEntities) => {
             )
             
             if (!reportedResult.ok) {
+                errors.push( reportedResult.error )
                 return// Missing some values to determine what's the reported result
             }
 
             // Valid resported result, let's add it to the final result
-            result.push(reportedResult.value)
+            results.push(reportedResult.value)
         }
     )
 
-    if (result.length === 0) {
-        return
-    }
-
-    return result    
+    return {
+        reportedResults: results.length === 0 ? undefined : results,
+        errors: errors.length === 0 ? undefined : errors
+    }    
 }
 
 const categorizeSlackMessages = async (messagesArray) => {
@@ -109,16 +110,19 @@ const categorizeSlackMessages = async (messagesArray) => {
     })
 
     const promiseArray = messagesArray.filter(
-        // Slack bot is not tagged in this message or a bot message, just ignore it
+        // Ignore it if Slack bot is not tagged in this message or is bot message
         ({ text, subtype }) => !(subtype === 'bot_message' || -1 === text.indexOf(BOT_SLACK_TAG))
     ).map(
         async ({ text:message, user, ts, thread_ts }) => {
-            const messageWithoutBotTag = message.replace(new RegExp(BOT_SLACK_TAG, 'gm'), '')
+            const messageWithoutBotTag = Utils.removesUserTagFromSlackMessage(message)
             const { entities } = await WitClient.message(messageWithoutBotTag, {})
             let result
 
             if (entities.reported_result) {
-                result = { reportedResults: getReportedResultFromWitTrait(user, entities) }
+                const res = getReportedResultFromWitResponse(user, entities)
+                if ( res.reportedResults ) {
+                    result = { reportedResults: res.reportedResults }
+                }
             }
 
             if (result) {
