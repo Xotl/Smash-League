@@ -3,6 +3,7 @@ const {Wit, log} = require('node-wit');
 const Config = require('../../config.json')
 const Ranking = require('../../ranking-info/ranking.json')
 const SmashLeague = require('../smash-league')
+const SmashLeagueInteractions = require('../smash-league-interactions')
 const Slack = require('../slack-api')
 const Utils = require('../utils')
 
@@ -27,11 +28,7 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
     const { entities } = await WitClient.message(msg, {})
     entities.intent.forEach(
         ({ value, confidence }) => {
-
-            if (confidence < 0.4) {
-                return// No idea what user said
-            }
-
+            
             if (confidence < 0.6) {
                 let msgToPost = 'Lo siento, no entendí. Sólo soy una máquina. :disappointed:'
                 return Slack.postMessageInChannel(msgToPost, Config.slack_channel_id, { thread_ts })
@@ -60,7 +57,7 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
             let blocks, title
             switch(value) {
                 case 'grateful':
-                    title = 'No, de nada. :wink:'
+                    title = 'De nada. :wink:'
                     break
                 case 'lookup_challengers':
                     title = 'Respondiendo a lo de tus retos...'
@@ -70,6 +67,14 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
                     title = 'La respuesta a tu pregunta...'
                     blocks = getBlocksForChallengeValidation(slackEvent.user, ...entities.slack_user_id.map(e => e.value.slice(2, -1) ))
                     break
+                case 'reported_result':
+                    const reportedResult = SmashLeagueInteractions.getReportedResultObjFromWitEntities(
+                        slackEvent.user, entities.player1, entities.player1_score,
+                        entities.player2, entities.player2_score, entities.match_result
+                    )
+                    title = 'Resultado reportado...'
+                    blocks = getBlocksForReportedResult(reportedResult)
+                    break
                 default:
                     title = `Se está trabajando para que si charche esa función _(${value})_. Puedes hacer tu PR también. :simple_smile:`
             }
@@ -77,6 +82,41 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
             return Slack.postMessageInChannel(title, Config.slack_channel_id, { blocks, thread_ts })
         }
     )
+}
+
+const getBlocksForReportedResult = (reportedResult) => {
+    if (!reportedResult.ok) {
+        return JSON.stringify([{
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": `Parece que quieres reportar un resultado, pero ${reportedResult.error.toLowerCase()}. :sweat:`
+            }
+        }])
+    }
+
+    const { winner, player1, player2, player1Score, player2Score} = reportedResult.value
+    const highScore = player1Score > player2Score ? player1Score : player2Score
+    const lowScore = player1Score > player2Score ? player2Score : player1Score
+
+    return JSON.stringify([
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": `Enterado... <@${winner}> le ganó a <@${winner === player1 ? player2 : player1}> ${highScore} - ${lowScore}`
+            }
+        },
+        {
+            "type": "context",
+            "elements": [
+                {
+                    "type": "mrkdwn",
+                    "text": "Durante la noche es cuando los cambios se aplican, puede que aún estés a tiempo de hacer alguna corrección."
+                }
+            ]
+        }
+    ])
 }
 
 const getBlocksForChallengeValidation = (challengerId, playerChallengedId) => {

@@ -10,12 +10,22 @@ const GetUserIDFromUserTag = userTag => userTag.slice(2, -1)
 const sortWitEntityArrayByConfidence = entityArray => entityArray && entityArray.sort( entity => entity.confidence)
 
 const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEntity, player2Entity, player2ScoreEntity, match_result) => {
-    if (
-        (!player1ScoreEntity || !player2ScoreEntity)// Missing score
-        || (match_result && !player1Entity && !player2Entity)// Match result with both players missing
-        || (!player1Entity || !player2Entity)// One player missing with no match result
-    ) {
-        return// Not enough data to generate result object, so ignoring it
+    if (!player1ScoreEntity || !player2ScoreEntity) {// Missing score
+        return {// Not enough data to generate result object, so ignoring it
+            ok: false, error: 'Falta el puntaje de alguno de los jugadores'
+        }
+    }
+
+    if (match_result && !player1Entity && !player2Entity) {// Match result with both players missing
+        return {// Not enough data to generate result object, so ignoring it
+            ok: false, error: `Indicaste que ${match_result === 'win' ? 'ganaste': 'perdiste'} pero no dijiste contra quién`
+        }
+    }
+
+    if (!player1Entity || !player2Entity) {// One player missing with no match result
+        return {// Not enough data to generate result object, so ignoring it
+            ok: false, error: `Te faltó indicar ${!player1Entity && !player2Entity ? 'los jugadores involucrados' : 'quién es el otro jugador'}`
+        }
     }
 
     player1Entity = sortWitEntityArrayByConfidence(player1Entity)
@@ -47,9 +57,12 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
     }
 
     return {
-        winner: player1Score > player2Score ? player1 : player2,
-        player1, player2, player1Score, player2Score,
-        players: [player1, player2]
+        ok: true,
+        value: {
+            winner: player1Score > player2Score ? player1 : player2,
+            player1, player2, player1Score, player2Score,
+            players: [player1, player2]
+        }
     }
 }
 
@@ -90,11 +103,11 @@ const categorizeSlackMessages = async (messagesArray) => {
                                 entities.player2, entities.player2_score, entities.match_result
                             )
 
-                            if (reportedResult) {
+                            if (reportedResult.ok) {
                                 if ( !Array.isArray(result.reportedResults) ) {
                                     result.reportedResults = []
                                 }
-                                result.reportedResults.push(reportedResult)
+                                result.reportedResults.push(reportedResult.value)
                                 return result
                             }
                         default:
@@ -288,5 +301,6 @@ const notifyInThreadThatMeesagesGotIgnored = async (ignoredMessagesArray, postMe
 module.exports = {
     categorizeSlackMessages,
     getUpdatesToNotifyUsers,
-    notifyInThreadThatMeesagesGotIgnored
+    notifyInThreadThatMeesagesGotIgnored,
+    getReportedResultObjFromWitEntities
 }
