@@ -1,27 +1,33 @@
 'use strict'
-jest.mock('node-wit')
-const WitLib = require('node-wit');
 const {
     SLACK_MESSAGES1, WIT_RESPONSE1, WIT_RESPONSE2, WIT_RESPONSE3
 } = require('./smash-league-interactions.test.constants')
 
-const {
-    categorizeSlackMessages
-} = require('../smash-league-interactions')
-
-
 describe('Smash League interactions', () => {
 
+    const messageMockFn = jest.fn()
+    beforeAll(() => {
+        jest.mock('node-wit')
+    })
+
+    afterAll( () => {
+        jest.restoreAllMocks()
+        jest.resetAllMocks()
+        jest.resetModules()
+    } )
+
     test('categorizeSlackMessages', async () => {
-        const messageMockFn = jest.fn()
-            .mockResolvedValueOnce(WIT_RESPONSE1)// partial result
-            .mockResolvedValueOnce(WIT_RESPONSE3)// no entities
-            .mockResolvedValueOnce(WIT_RESPONSE2)// complete result
-            .mockResolvedValue(WIT_RESPONSE1)
+        const WitLib = require('node-wit')
         const witFnSpy = jest.spyOn(WitLib, 'Wit').mockImplementation( function () {
             return { message: messageMockFn }
         } )
-
+        
+        messageMockFn.mockResolvedValueOnce(WIT_RESPONSE1)// partial result
+                     .mockResolvedValueOnce(WIT_RESPONSE3)// no entities
+                     .mockResolvedValueOnce(WIT_RESPONSE2)// complete result
+                     .mockResolvedValue(WIT_RESPONSE1)
+        
+        const { categorizeSlackMessages } = require('../smash-league-interactions')
         await expect( categorizeSlackMessages() )
             .rejects.toThrow('The argument messagesArray must be an Array.')
 
