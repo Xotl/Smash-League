@@ -1,6 +1,6 @@
 'use strict'
 const Config = require('../config.json')
-const Messages = require('./messages.constants')
+const Messages = require('./messages')
 
 const GetDateObjFromEpochTS = (epoch) => (new Date( Number(epoch) * 1000 ))
 const GetEpochUnixFromDate = (dateObj) => {
@@ -64,11 +64,12 @@ const templateString = (strings, ...keys) =>  (
     }
 )
 
+const MESSAGES_LIST = Messages(templateString)// Used in getRandomMessageById function
 const getRandomMessageById = (msgId, values = {}) => {
-    if (!Messages[msgId] || Messages[msgId].length === 0) {
+    if (!MESSAGES_LIST[msgId] || MESSAGES_LIST[msgId].length === 0) {
         return `Missing messages in "${msgId}" list`
     }
-    const template = getRandomItemFromArray( Messages[msgId] )
+    const template = getRandomItemFromArray( MESSAGES_LIST[msgId] )
 
     if (typeof template === 'string') {
         return template

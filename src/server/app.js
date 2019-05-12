@@ -1,8 +1,6 @@
 'use strict'
 const {Wit, log} = require('node-wit');
 const Config = require('../../config.json')
-const Ranking = require('../../ranking-info/ranking.json')
-const SmashLeague = require('../smash-league')
 const SmashLeagueInteractions = require('../smash-league-interactions')
 const Slack = require('../slack-api')
 const Utils = require('../utils')
@@ -86,26 +84,20 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
 }
 
 const getBlocksForReportedResult = (reportedResult) => {
-    if (!reportedResult.ok) {
-        return JSON.stringify([{
-            "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": `Parece que quieres reportar un resultado, pero ${reportedResult.error.toLowerCase()}. :sweat:`
-            }
-        }])
-    }
-
     const { winner, player1, player2, player1Result, player2Result} = reportedResult.value
     const highScore = player1Result > player2Result ? player1Result : player2Result
     const lowScore = player1Result > player2Result ? player2Result : player1Result
 
-    return JSON.stringify([
+    return [
         {
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": `Enterado... <@${winner}> le ganó a <@${winner === player1 ? player2 : player1}> ${highScore} - ${lowScore}`
+                "text": Utils.getRandomMessageById('reported_result valid', {
+                    winner, loser: winner === player1 ? player2 : player1,
+                    highScore, lowScore
+                })
+
             }
         },
         {
@@ -117,7 +109,7 @@ const getBlocksForReportedResult = (reportedResult) => {
                 }
             ]
         }
-    ])
+    ]
 }
 
 module.exports = {

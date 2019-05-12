@@ -3,7 +3,7 @@ const {Wit, log} = require('node-wit');
 const Utils = require('./utils')
 
 const Config = require('../config.json')
-const Ranking = require('../../ranking-info/ranking.json')
+const Ranking = require('../ranking-info/ranking.json')
 
 const WIT_TOKEN =  process.env.WIT_TOKEN
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
@@ -117,8 +117,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 })
             }
 
-            let playersArray = SmashLeague.getPlayersThatCanBeChallenged(playerPlace, playerScore.range, Ranking.ranking)
-
+            const playersArray = SmashLeague.getPlayersThatCanBeChallenged(playerPlace, playerScore.range, Ranking.ranking)
             if (value.includes('_all')) {
                 return results.push({
                     ok: true,
@@ -131,11 +130,11 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                                         playerId => '`<@' + playerId + '>`'
                                     ).join(', ')
                 
-                                    return `- ${playersString} ` + (
+                                    return `- ${playersString} _(` + (
                                         placeArray.length > 1 ? 
                                             Utils.getRandomMessageById('lookup_challengers select_one', { num: placeArray.length})
                                             : ''
-                                    )
+                                    ) + ')_'
                                 }
                             ).join('\n') 
                         }
@@ -151,34 +150,28 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                     })
                 }
 
-                let allMentionedPlayersMatched = true
-                playersArray = playersArray.filter(
-                    placeArray => witEntities.slack_user_id.find(
-                        e => {
-                            if (placeArray.includes( GetUserIDFromUserTag(e.value) )) {
-                                return true
-                            }
-                            return allMentionedPlayersMatched = false
-                        }
-                    )
+                const playersArrayFlat = playersArray.flat()
+                const mentionedPlayers = witEntities.slack_user_id.map( e => GetUserIDFromUserTag(e.value) )
+                const mentionedAndValidPlayers = mentionedPlayers.filter(
+                    mentionedPlayer => playersArrayFlat.includes( mentionedPlayer )
                 )
 
-                if (playersArray.length === 0) {
+                if (mentionedAndValidPlayers.length === 0) {
                     return results.push({
                         ok: false,
                         error: Utils.getRandomMessageById(
-                            'lookup_challengers specific_no_players_found',
-                            { mentionedPlayersQty: witEntities.slack_user_id.length }
+                            'lookup_challengers specific_cannot_challenge',
+                            { mentionedPlayersQty: mentionedPlayers.length }
                         )
                     })
                 }
 
-                if (allMentionedPlayersMatched) {
+                if (mentionedAndValidPlayers.length === mentionedPlayers.length) {
                     return results.push({
                         ok: true,
                         value: Utils.getRandomMessageById(
                             'lookup_challengers specific_all_players_found',
-                            { mentionedPlayersQty: witEntities.slack_user_id.length }
+                            { mentionedPlayersQty: mentionedPlayers.length }
                         )
                     })
                 }
@@ -187,7 +180,9 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                     ok: true,
                     value: Utils.getRandomMessageById(
                         'lookup_challengers specific_some_players_found',
-                        { listOfValidPlayers: witEntities.slack_user_id.map( e => e.value ) }
+                        { 
+                            listOfValidPlayers: mentionedAndValidPlayers.map(p => `<@${p}>`).join(', ')
+                        }
                     )
                 })
             }
@@ -427,6 +422,7 @@ module.exports = {
     categorizeSlackMessages,
     getUpdatesToNotifyUsers,
     getReportedResultObjFromWitEntities,
+    getReportedResultFromWitEntities,
     getLookupChallengersResponseFromWitEntities,
     getSlackUrlForMessage,
     notifyInThreadThatMeesagesGotIgnored,

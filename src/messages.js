@@ -1,32 +1,48 @@
 'use strict'
-const { templateString:Tag } = require('./utils')
-module.exports = {
+module.exports = Tag => ({
     // ########## Lookup Challengers ################
     "lookup_challengers confidence_low" : [
         'Es como si quisieras preguntar a quien puedes retar, pero no estoy seguro. :thinking_face:',
     ],
-    "lookup_challengers onbehalf_missing": [],
+    "lookup_challengers onbehalf_missing": [
+        'Creo que preguntas por alguien más, pero no entiendo quién.'
+    ],
     "lookup_challengers no_coins": [
         'Parece que ya no te quedan monedas, así que no puedes retar nadie. :disappointed:',
         'Veo que no te quedan monedas... ya no puedes retar nadie. :disappointed:',
         'Sin monedas no puedes retar a nadie, ni modo así son las reglas. :disappointed:',
     ],
-    "lookup_challengers all": [],
-    "lookup_challengers specific_missing_players": [],
-    "lookup_challengers specific_no_players_found": [],
-    "lookup_challengers specific_all_players_found": [],
-    "lookup_challengers specific_some_players_found": [],
+    "lookup_challengers all": [
+        Tag `Estos son los jugadores que puedes retar:\n\n${'listOfValidPlayers'}`
+    ],
+    "lookup_challengers specific_missing_players": [
+        'Parece que quieres preguntar si puedes retar a alguien en particular, pero no estoy seguro de a quién. :thinking_face:'
+    ],
+    "lookup_challengers specific_cannot_challenge": [
+        ({mentionedPlayersQty}) => `No puedes retar a ${mentionedPlayersQty > 0 ? `ninguno de los ${mentionedPlayersQty} que mencionaste` : 'ese jugador' }.`
+    ],
+    "lookup_challengers specific_all_players_found": [
+        ({mentionedPlayersQty}) => `Claro que puedes retar a ${mentionedPlayersQty > 0 ? `los ${mentionedPlayersQty} que mencionaste` : 'ese jugador' }.`
+    ],
+    "lookup_challengers specific_some_players_found": [
+        Tag `Si puedes, pero nada más a ${'listOfValidPlayers'}.`
+    ],
     "lookup_challengers not_implemented": [
         Tag `La función _${'type'}_ aún no está implementada. Dale calma.`,
         Tag `Estoy esperando tu PR para que _${'type'}_ si jale. :simple_smile:`,
         Tag `Aún no charcha la función _${'type'}_... No veo tu PR :unamused:`,
     ],
     "lookup_challengers select_one": [
-        Tag `_(sólo uno de los ${'num'}, tendrás que elegir a quién)_`
+        Tag `sólo uno de los ${'num'}, tendrás que elegir a quién`
     ],
 
 
     // ########## Reported Results ################
+    "reported_result valid": [
+        Tag `Enterado... <@${'winner'}> le ganó a <@${'loser'}> ${'highScore'} - ${'lowScore'}.`,
+        Tag `Órale, así que <@${'loser'}> perdió ${'highScore'} - ${'lowScore'} contra <@${'winner'}>... ¿quién lo habría imaginado?.`,
+        Tag `¿${'highScore'} - ${'lowScore'} contra <@${'loser'}>?. Ése <@${'winner'}> va subiendo como la espuma.`
+    ],
     "reported_result confidence_low": [
         'Es como si quisieras reportar un resultado, pero no estoy seguro. :thinking_face:',
     ],
@@ -42,7 +58,7 @@ module.exports = {
     "reported_result not_implemented": [],
 
 
-    // ########## new_version ################
+    // ########## New Version ################
     "new_version": [
         Tag `¡He sido actualizado a la versiòn *v${'newVersion'}*!... espero que sean nuevos features y no sólo bugs. :unamused:`
     ],
@@ -53,7 +69,8 @@ module.exports = {
         "Aprovechando el update actualicé <https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md|el scoreboard>."
     ],
 
-    // ########## daily_update ################
+
+    // ########## Daily Update ################
     "daily_update no_activity": [
         "Parece que no hubo actividad desde la ùltima vez que revisé, ¿será que son vacaciones o fin de semana?. :thinking_face:"
     ],
@@ -75,4 +92,4 @@ module.exports = {
     "no_interpretation": [
         Tag `¿Qué onda con <${'msgUrl'}|tu mensaje> <@${'user'}>?. No entendí qué querías, sólo soy una máquina. :robot_face:`
     ],
-}
+})
