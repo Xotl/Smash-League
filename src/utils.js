@@ -52,13 +52,15 @@ const getRandomIndex = max => {
 
 const getRandomItemFromArray = array => array[ getRandomIndex(array.length - 1) ]
 
-const templateString = dict => (
-    (strings, ...keys) => {
-        var result = [strings[0]];
+const templateString = (strings, ...keys) =>  (
+    (dict = {}) => {
+        var result = [strings[0]]
         keys.forEach(
-            (key, i) => result.push(dict[key] || '', strings[i + 1])
+            (key, i) => {
+                result.push(dict[key], strings[i + 1])
+            }
         )
-        return result.join('');
+        return result.join('')
     }
 )
 
@@ -66,20 +68,18 @@ const getRandomMessageById = (msgId, values = {}) => {
     if (!Messages[msgId] || Messages[msgId].length === 0) {
         return `Missing messages in "${msgId}" list`
     }
-
     const template = getRandomItemFromArray( Messages[msgId] )
 
-    if (typeof template === 'function') {
-        return template(values)
+    if (typeof template === 'string') {
+        return template
     }
 
-    return (templateString( values ))(template)
+    return template( values )
 }
 
 const removesBotTagFromString = msg => {
     return msg.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '').trim()
 }
-
 
 module.exports = {
     GetDateObjFromEpochTS,

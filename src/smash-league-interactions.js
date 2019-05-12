@@ -78,7 +78,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
             if (confidence < 0.8) {// Not enough confidence, no sure what the user wants
                 return results.push({
                     ok: false,
-                    error: Utils.getRandomMessageById('lookup_challengers confidence_low')
+                    error: Utils.getRandomMessageById('lookup_challengers confidence_low', {type: value})
                 })
             }
 
@@ -207,7 +207,7 @@ const getReportedResultFromWitEntities = (user, witEntities) => {
             if (confidence < 0.8) { // Not enough confidence, no sure what the user wants
                 return results.push({
                     ok: false,
-                    error: Utils.getRandomMessageById('reported_result confidence_low')
+                    error: Utils.getRandomMessageById('reported_result confidence_low', {type: value})
                 })
             }
 
