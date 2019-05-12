@@ -89,6 +89,7 @@ module.exports = {
     setIgnoredActivityLogObject,
     showInConsoleIgnoredActivities,
     getPlayerAlias,
+    templateString,
     getRandomMessageById,
-    removesBotTagFromString
+    removesBotTagFromString,
 }

@@ -67,7 +67,11 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
 
     if (!validIntentDetected) {
         // TODO: Add custom Regexp messages
-        messagesToPost.push({ title: Utils.getRandomMessageById('no_interpretation') })
+        messagesToPost.push({
+            title: Utils.getRandomMessageById('no_interpretation', {
+                user, msgUrl: SmashLeagueInteractions.getSlackUrlForMessage(slackEvent.ts, slackEvent.thread_ts)
+            })
+        })
     }
 
     // Post all messages into Slack

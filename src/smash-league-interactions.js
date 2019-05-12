@@ -15,19 +15,19 @@ const sortWitEntityArrayByConfidence = entityArray => entityArray && entityArray
 const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEntity, player2Entity, player2ScoreEntity, match_result) => {
     if (!player1ScoreEntity || !player2ScoreEntity) {// Missing score
         return {// Not enough data to generate result object, so ignoring it
-            ok: false, error: `Falta el puntaje de ${!player1ScoreEntity && !player2ScoreEntity ? 'ambos jugadores' : 'uno de los jugadores'}`
+            ok: false, error: Utils.getRandomMessageById('reported_result missing_score', {bothScoresMissing: !player1ScoreEntity && !player2ScoreEntity})
         }
     }
     
     if (match_result && !player1Entity && !player2Entity) {// Match result with both players missing
         return {// Not enough data to generate result object, so ignoring it
-            ok: false, error: `Indicaste que ${match_result === 'win' ? 'ganaste': 'perdiste'} aunque no dijiste contra quién`
+            ok: false, error: Utils.getRandomMessageById('reported_result myself_missing_player', { match_result })
         }
     }
 
     if ( !match_result && (!player1Entity || !player2Entity) ) {// One player missing with no match result
         return {// Not enough data to generate result object, so ignoring it
-            ok: false, error: `Te faltó indicar ${!player1Entity && !player2Entity ? 'los jugadores involucrados' : 'quién es el otro jugador'}`
+            ok: false, error: Utils.getRandomMessageById('reported_result normal_missing_player', {bothPlayersMissing: !player1Entity && !player2Entity})
         }
     }
 
@@ -131,7 +131,11 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                                         playerId => '`<@' + playerId + '>`'
                                     ).join(', ')
                 
-                                    return '- ' +  playersString + ( placeArray.length > 1 ? ' _(sólo uno de los ' + placeArray.length + ', tendrás que elegir a quién)_' : '' )
+                                    return `- ${playersString} ` + (
+                                        placeArray.length > 1 ? 
+                                            Utils.getRandomMessageById('lookup_challengers select_one', { num: placeArray.length})
+                                            : ''
+                                    )
                                 }
                             ).join('\n') 
                         }
@@ -303,7 +307,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": `¡He sido actualizado a la versiòn *v${newVersion}*!... espero que sean nuevos features y no sólo bugs. :unamused:`
+                "text": Utils.getRandomMessageById('new_version', {newVersion})
             }
         })
         
@@ -313,7 +317,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "elements": [
                     {
                         "type": "mrkdwn",
-                        "text": "Aprovechando el update revisé y no encontré actividad nueva. :disappointed:"
+                        "text": Utils.getRandomMessageById('new_version no_activity')
                     }
                 ]
             })
@@ -324,8 +328,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "elements": [
                     {
                         "type": "mrkdwn",
-                        "text": "Aprovechando el update actualicé " + 
-                                "<https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md|el scoreboard>."
+                        "text": Utils.getRandomMessageById('new_version with_activity')
                     }
                 ]
             })
@@ -339,8 +342,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "Parece que no hubo actividad desde la ùltima vez que revisé, " + 
-                            "¿será que son vacaciones o fin de semana?. :thinking_face:"
+                    "text": Utils.getRandomMessageById('daily_update no_activity')
                 }
             }])
         }
@@ -349,8 +351,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "Aquí reportando que ya actualicé " + 
-                            "<https://github.com/Xotl/Smash-League/blob/master/ranking-info/README.md|el scoreboard>."
+                    "text": Utils.getRandomMessageById('daily_update with_activity')
                 }
             }])
         }
@@ -363,36 +364,8 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "¡Ha iniciando un nuevo ranking esta semana!, ya " +
-                            "<https://github.com/Xotl/Smash-League/tree/master/ranking-info/README.md|pueden revisar>" + 
-                            " en qué lugar quedaron."
+                    "text": Utils.getRandomMessageById('daily_update with_activity')
                 }
-            }
-        ])
-    }
-
-    if (ignoredMessagesCount > 0) {
-        slackBlocks.push([
-            {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": "Por cierto, les recuerdo que sólo soy una máquina y hubo " + ignoredMessagesCount +
-                            (ignoredMessagesCount > 1 ? " mensajes" : " mensaje")  + 
-                            " donde me taggearon pero no entedí qué querían. :sweat_smile:"
-                }
-            },
-            {
-                "type": "context",
-                "elements": [
-                    {
-                        "type": "mrkdwn",
-                        "text": "Recuerden seguir " + 
-                                "<https://github.com/Xotl/Smash-League#How-do-i-report-a-result|el formato>" +
-                                " para poder entenderles. También les avisé en el thread de los mensajes para " +
-                                "que vean a cualés mensajes me refiero."
-                    }
-                ]
             }
         ])
     }
@@ -411,12 +384,9 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": "Además, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar " + 
-                            ignoredActivities.length + (ignoredActivities.length > 1 ? " mensajes" : " mensaje")  + 
-                            " en donde me taggearon. :unamused:" + 
-                            "\nEstos fueron los motivos:" + 
-                            "\n```\n" + ignoredMessages + "\n```" + 
-                            "\nLéanse <https://github.com/Xotl/Smash-League#ranking-rules|las reglas> por favor."
+                    "text": Utils.getRandomMessageById('daily_update ignored_activities', {
+                        numIgnoredActivities: ignoredActivities.length, ignoredMessages
+                    })
                 }
             }
         ])
@@ -456,7 +426,8 @@ const notifyInThreadThatMeesagesGotIgnored = async (ignoredMessagesArray, postMe
 module.exports = {
     categorizeSlackMessages,
     getUpdatesToNotifyUsers,
-    notifyInThreadThatMeesagesGotIgnored,
     getReportedResultObjFromWitEntities,
-    getLookupChallengersResponseFromWitEntities
+    getLookupChallengersResponseFromWitEntities,
+    getSlackUrlForMessage,
+    notifyInThreadThatMeesagesGotIgnored,
 }
