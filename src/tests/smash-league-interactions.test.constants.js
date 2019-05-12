@@ -87,6 +87,18 @@ module.exports = {
         "entities": { },
         "msg_id": "52UT9ThOTNIOmj5Dd"
     },
+    WIT_RESPONSE4: {
+        "_text": "El viento de las gardenias toca la puerta 3 veces",
+        "entities": {
+            "reported_result": [
+                {
+                    "confidence": 0.58849031005298,
+                    "value": "normal"
+                }
+            ]
+        },
+        "msg_id": "52UT9ThOTNIOmj5Dd"
+    },
     SLACK_MESSAGES1: [
         {// Valid, spaces both sides of result
             "text": "<@UFY8P0WRF> le gané a <@UDBD59WLT> 3 - 0",

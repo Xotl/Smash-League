@@ -1,5 +1,6 @@
 'use strict'
 const Config = require('../config.json')
+const Messages = require('./messages.constants')
 
 const GetDateObjFromEpochTS = (epoch) => (new Date( Number(epoch) * 1000 ))
 const GetEpochUnixFromDate = (dateObj) => {
@@ -44,6 +45,42 @@ const showInConsoleIgnoredActivities = ignoredActivities => {
 
 const getPlayerAlias = playerId => Config.users_dict[playerId] || playerId
 
+const getRandomIndex = max => {
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max + 1)); //The maximum is inclusive
+}
+
+const getRandomItemFromArray = array => array[ getRandomIndex(array.length - 1) ]
+
+const templateString = dict => (
+    (strings, ...keys) => {
+        var result = [strings[0]];
+        keys.forEach(
+            (key, i) => result.push(dict[key] || '', strings[i + 1])
+        )
+        return result.join('');
+    }
+)
+
+const getRandomMessageById = (msgId, values = {}) => {
+    if (!Messages[msgId] || Messages[msgId].length === 0) {
+        return `Missing messages in "${msgId}" list`
+    }
+
+    const template = getRandomItemFromArray( Messages[msgId] )
+
+    if (typeof template === 'function') {
+        return template(values)
+    }
+
+    return (templateString( values ))(template)
+}
+
+const removesBotTagFromString = msg => {
+    return msg.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '').trim()
+}
+
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
@@ -51,5 +88,7 @@ module.exports = {
     logIgnoredActivity,
     setIgnoredActivityLogObject,
     showInConsoleIgnoredActivities,
-    getPlayerAlias
+    getPlayerAlias,
+    getRandomMessageById,
+    removesBotTagFromString
 }

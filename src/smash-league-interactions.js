@@ -3,6 +3,8 @@ const {Wit, log} = require('node-wit');
 const Utils = require('./utils')
 
 const Config = require('../config.json')
+const Ranking = require('../../ranking-info/ranking.json')
+
 const WIT_TOKEN =  process.env.WIT_TOKEN
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
 
@@ -67,36 +69,163 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
     }
 }
 
-const getReportedResultFromWitResponse = (user, witEntities) => {
-    const results = [], errors = []
-    
+const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
+    const results = []
+    witEntities.lookup_challengers.forEach(
+        entity => {
+            const { confidence, value } = entity
+            
+            if (confidence < 0.8) {// Not enough confidence, no sure what the user wants
+                return results.push({
+                    ok: false,
+                    error: Utils.getRandomMessageById('lookup_challengers confidence_low')
+                })
+            }
+
+            if (['onbehalf_specific', 'onbehalf_all', 'inverse_myself_specific', 'inverse_myself_all'].includes(value)) {
+                return results.push({
+                    ok: false,
+                    error: Utils.getRandomMessageById('lookup_challengers not_implemented', {type: value})
+                })
+            }
+
+            let whoWantsToKnow = user
+            if (value.includes('onbehalf')) {
+                if (!witEntities.onbehalf) {
+                    return results.push({
+                        ok: false,
+                        error: Utils.getRandomMessageById('lookup_challengers onbehalf_missing')
+                    })
+                }
+
+                whoWantsToKnow = GetUserIDFromUserTag(witEntities.onbehalf[0].value)
+            }
+
+
+            const playerPlace = SmashLeague.getRankingPlaceByPlayerId(whoWantsToKnow, Ranking.ranking)
+            let playerScore = Ranking.in_progress.scoreboard[whoWantsToKnow]
+            const isUnrankedPlayer = !playerScore
+
+            if (isUnrankedPlayer) {// Unranked Player
+                playerScore = SmashLeague.getUnrankedPlayerScore(playerPlace)
+            }
+
+            if (playerScore.coins <= 0) {
+                return results.push({
+                    ok: false,
+                    error: Utils.getRandomMessageById('lookup_challengers no_coins')
+                })
+            }
+
+            let playersArray = SmashLeague.getPlayersThatCanBeChallenged(playerPlace, playerScore.range, Ranking.ranking)
+
+            if (value.includes('_all')) {
+                return results.push({
+                    ok: true,
+                    value: Utils.getRandomMessageById(
+                        'lookup_challengers all',
+                        { 
+                            listOfValidPlayers: playersArray.map(
+                                placeArray => {
+                                    const playersString = placeArray.map(
+                                        playerId => '`<@' + playerId + '>`'
+                                    ).join(', ')
+                
+                                    return '- ' +  playersString + ( placeArray.length > 1 ? ' _(sólo uno de los ' + placeArray.length + ', tendrás que elegir a quién)_' : '' )
+                                }
+                            ).join('\n') 
+                        }
+                    )
+                })
+            }
+
+            if (value.includes('_specific')) {
+                if (!witEntities.slack_user_id) {
+                    return results.push({
+                        ok: false,
+                        error: Utils.getRandomMessageById('lookup_challengers specific_missing_players')
+                    })
+                }
+
+                let allMentionedPlayersMatched = true
+                playersArray = playersArray.filter(
+                    placeArray => witEntities.slack_user_id.find(
+                        e => {
+                            if (placeArray.includes( GetUserIDFromUserTag(e.value) )) {
+                                return true
+                            }
+                            return allMentionedPlayersMatched = false
+                        }
+                    )
+                )
+
+                if (playersArray.length === 0) {
+                    return results.push({
+                        ok: false,
+                        error: Utils.getRandomMessageById(
+                            'lookup_challengers specific_no_players_found',
+                            { mentionedPlayersQty: witEntities.slack_user_id.length }
+                        )
+                    })
+                }
+
+                if (allMentionedPlayersMatched) {
+                    return results.push({
+                        ok: true,
+                        value: Utils.getRandomMessageById(
+                            'lookup_challengers specific_all_players_found',
+                            { mentionedPlayersQty: witEntities.slack_user_id.length }
+                        )
+                    })
+                }
+
+                return results.push({
+                    ok: true,
+                    value: Utils.getRandomMessageById(
+                        'lookup_challengers specific_some_players_found',
+                        { listOfValidPlayers: witEntities.slack_user_id.map( e => e.value ) }
+                    )
+                })
+            }
+
+            return results.push({
+                ok: false,
+                error: Utils.getRandomMessageById('lookup_challengers not_implemented', {type: value})
+            })
+        }
+    )
+
+    return results
+}
+
+const getReportedResultFromWitEntities = (user, witEntities) => {
+    const results = []
     witEntities.reported_result.forEach(
         entity => {
             const { confidence, value } = entity
             
-            if (confidence < 0.8) {
-                return// Not enough confidence, no sure what the user wants
+            if (confidence < 0.8) { // Not enough confidence, no sure what the user wants
+                return results.push({
+                    ok: false,
+                    error: Utils.getRandomMessageById('reported_result confidence_low')
+                })
             }
 
-            const reportedResult = getReportedResultObjFromWitEntities(
+            if ( !['normal', 'myself'].includes(value) ) {// Wit is trained but there's no implemententation yet
+                return results.push({
+                    ok: false,
+                    error: Utils.getRandomMessageById('reported_result not_implemented')
+                })
+            }
+
+            results.push( getReportedResultObjFromWitEntities(
                 user, witEntities.player1, witEntities.player1_score,
                 witEntities.player2, witEntities.player2_score, witEntities.match_result
-            )
-            
-            if (!reportedResult.ok) {
-                errors.push( reportedResult.error )
-                return// Missing some values to determine what's the reported result
-            }
-
-            // Valid resported result, let's add it to the final result
-            results.push(reportedResult.value)
+            ) )
         }
     )
 
-    return {
-        reportedResults: results.length === 0 ? undefined : results,
-        errors: errors.length === 0 ? undefined : errors
-    }    
+    return results
 }
 
 const categorizeSlackMessages = async (messagesArray) => {
@@ -114,14 +243,16 @@ const categorizeSlackMessages = async (messagesArray) => {
         ({ text, subtype }) => !(subtype === 'bot_message' || -1 === text.indexOf(BOT_SLACK_TAG))
     ).map(
         async ({ text:message, user, ts, thread_ts }) => {
-            const messageWithoutBotTag = Utils.removesUserTagFromSlackMessage(message)
+            const messageWithoutBotTag = Utils.removesBotTagFromString(message)
             const { entities } = await WitClient.message(messageWithoutBotTag, {})
             let result
 
             if (entities.reported_result) {
-                const res = getReportedResultFromWitResponse(user, entities)
-                if ( res.reportedResults ) {
-                    result = { reportedResults: res.reportedResults }
+                const reportedResults = getReportedResultFromWitEntities(user, entities)
+                                            .filter(i => i.ok).map(i => i.value)
+
+                if ( reportedResults.length > 0 ) {
+                    result = { reportedResults }
                 }
             }
 
@@ -326,5 +457,6 @@ module.exports = {
     categorizeSlackMessages,
     getUpdatesToNotifyUsers,
     notifyInThreadThatMeesagesGotIgnored,
-    getReportedResultObjFromWitEntities
+    getReportedResultObjFromWitEntities,
+    getLookupChallengersResponseFromWitEntities
 }
