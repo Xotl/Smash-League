@@ -131,11 +131,13 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                                         playerId => '`<@' + playerId + '>`'
                                     ).join(', ')
                 
-                                    return `- ${playersString} _(` + (
+                                    return `- ${playersString} ${
                                         placeArray.length > 1 ? 
-                                            Utils.getRandomMessageById('lookup_challengers select_one', { num: placeArray.length})
+                                            '_(' + Utils.getRandomMessageById(
+                                                'lookup_challengers select_one', { num: placeArray.length}
+                                            ) + ')_'
                                             : ''
-                                    ) + ')_'
+                                    }`
                                 }
                             ).join('\n') 
                         }
