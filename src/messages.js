@@ -9,7 +9,7 @@ module.exports = Tag => ({
     "lookup_challengers onbehalf_missing": [
         'Creo que preguntas por alguien más, pero no entiendo quién.',
         'Parece que quieres preguntar en lugar de otra persona, pero no entiendo bien a quién.',
-        '¿Estás preguntando por alguien más?, no esoty seguro de entender. :thinking_face:',
+        '¿Estás preguntando por alguien más?, no estoy seguro de entender. :thinking_face:',
     ],
     "lookup_challengers no_coins": [
         'Parece que ya no te quedan monedas, así que no puedes retar nadie. :disappointed:',
@@ -79,7 +79,7 @@ module.exports = Tag => ({
     "new_version": [
         Tag `¡He sido actualizado a la versiòn *v${'newVersion'}*!... espero que sean nuevos features y no sólo bugs. :unamused:`,
         Tag `¡Nuevo Update! ahora a la versión *v${'newVersion'}*.`,
-        Tag `¡Ahora esoty en la versión *v${'newVersion'}*! Esperemos sean buenas noticias. :sweat_smile:`,
+        Tag `¡Ahora estoy en la versión *v${'newVersion'}*! Esperemos sean buenas noticias. :sweat_smile:`,
     ],
     "new_version no_activity": [
         "Aprovechando el update revisé y no encontré actividad nueva. :disappointed:",
