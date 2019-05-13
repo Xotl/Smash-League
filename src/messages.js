@@ -118,7 +118,7 @@ module.exports = Tag => ({
     // ########## Other ################
     "no_interpretation": [
         Tag `¿Qué onda con <${'msgUrl'}|tu mensaje> <@${'user'}>?. No entendí qué querías, sólo soy una máquina. :robot_face:`,
-        Tag `<${'msgUrl'}|¿Qué?...?>. No entendí qué quieres <@${'user'}>. :robot_face:`,
-        Tag `¿Podrías se más claro en <${'msgUrl'}|tu mensaje>. Ni idea qué quieres <@${'user'}>. :robot_face:`,
+        Tag `<${'msgUrl'}|¿Qué?...>. No entendí qué quieres <@${'user'}>. :robot_face:`,
+        Tag `¿Podrías se más claro en <${'msgUrl'}|tu mensaje>?. Ni idea qué quieres <@${'user'}>. :robot_face:`,
     ],
 })
