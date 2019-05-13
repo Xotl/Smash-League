@@ -19,7 +19,7 @@ module.exports = Tag => ({
     "lookup_challengers all": [
         Tag `Estos son los jugadores que puedes retar:\n\n${'listOfValidPlayers'}.`,
         Tag `Revisando la tabla, veo que estos son los que puedes retar:\n\n${'listOfValidPlayers'}.`,
-        Tag `${'listOfValidPlayers'}\n\nLos de esa lista de arriba son los jugadores que puedes retar.`,
+        Tag `${'listOfValidPlayers'}\n\nLa lista de arriba muestra a quiénes puedes retar.`,
     ],
     "lookup_challengers specific_missing_players": [
         'Parece que quieres preguntar si puedes retar a alguien en particular, pero no estoy seguro de a quién. :thinking_face:',
