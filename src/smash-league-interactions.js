@@ -1,6 +1,7 @@
 'use strict'
-const {Wit, log} = require('node-wit');
+const {Wit, log} = require('node-wit')
 const Utils = require('./utils')
+const SmashLeague = require('./smash-league')
 
 const Config = require('../config.json')
 const Ranking = require('../ranking-info/ranking.json')
