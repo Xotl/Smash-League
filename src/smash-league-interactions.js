@@ -115,7 +115,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
             if (playerScore.coins <= 0) {
                 return results.push({
                     ok: false,
-                    error: Utils.getRandomMessageById(`lookup_challengers ${whoWantsToKnow} no_coins`, {user: `<${userWhoWantstoKnow}>`})
+                    error: Utils.getRandomMessageById(`lookup_challengers ${whoWantsToKnow} no_coins`, {user: `<@${userWhoWantstoKnow}>`})
                 })
             }
 
@@ -126,7 +126,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                     value: Utils.getRandomMessageById(
                         `lookup_challengers ${whoWantsToKnow}_all`,
                         { 
-                            user: `<${userWhoWantstoKnow}>`,
+                            user: `<@${userWhoWantstoKnow}>`,
                             listOfValidPlayers: playersArray.map(
                                 placeArray => {
                                     const playersString = placeArray.map(
@@ -153,7 +153,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                         ok: false,
                         error: Utils.getRandomMessageById(
                             `lookup_challengers ${whoWantsToKnow}_specific missing_players`,
-                            {user: `<${userWhoWantstoKnow}>`}
+                            {user: `<@${userWhoWantstoKnow}>`}
                         )
                     })
                 }
@@ -170,7 +170,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                         error: Utils.getRandomMessageById(
                             `lookup_challengers ${whoWantsToKnow}_specific cannot_challenge`,
                             {
-                                user: `<${userWhoWantstoKnow}>`,
+                                user: `<@${userWhoWantstoKnow}>`,
                                 mentionedPlayersQty: mentionedPlayers.length,
                                 mentionedPlayers: mentionedPlayers.map(p => `<@${p}>`)
                             }
@@ -184,7 +184,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                         value: Utils.getRandomMessageById(
                             `lookup_challengers ${whoWantsToKnow}_specific all_players_found`,
                             {
-                                user: `<${userWhoWantstoKnow}>`,
+                                user: `<@${userWhoWantstoKnow}>`,
                                 mentionedPlayersQty: mentionedPlayers.length,
                                 mentionedPlayers: mentionedPlayers.map(p => `<@${p}>`)
 
@@ -198,7 +198,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                     value: Utils.getRandomMessageById(
                         `lookup_challengers ${whoWantsToKnow}_specific some_players_found`,
                         { 
-                            user: `<${userWhoWantstoKnow}>`,
+                            user: `<@${userWhoWantstoKnow}>`,
                             listOfValidPlayers: mentionedAndValidPlayers.map(p => `<@${p}>`).join(', ')
                         }
                     )
