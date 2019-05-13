@@ -242,7 +242,7 @@ const commitInProgress = rankingObj => {
     result.ranking = getRankingFromScoreboard(newScoreboard)
     
     // Now that the new score has been calculated that's how the week ended
-    result.scoreboard = newScoreboard
+    result.scoreboard = {...newScoreboard}
 
     // Applies inital completed_challenges, initial_coins, stand_points, coins and range
     Object.keys(newScoreboard).forEach(

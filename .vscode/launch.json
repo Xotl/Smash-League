@@ -20,10 +20,13 @@
                 "smash-league",
                 "npm", "run", "debug:smash-league"
             ],
+            "protocol": "inspector",
+            "trace": true,
+            "outputCapture":"std",
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
             "port": 9229,
-            // "console":"integratedTerminal",
+            // "console": "integratedTerminal",
         },
         {
             "type": "node",
@@ -58,10 +61,13 @@
                 "--name", "smash-league",
                 "-p", "9229:9229",
                 "-v", "${workspaceFolder}/src:/usr/app/src",
+                "-v", "${workspaceFolder}/.git:/usr/app/.git",
+                "-v", "${workspaceFolder}/.gitignore:/usr/app/.gitignore",
                 "smash-league",
                 "node", "--inspect-brk=0.0.0.0:9229",
                 "./node_modules/.bin/jest", 
                 "--runInBand", "--no-cache", "--coverage",
+                "-o"
             ],
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/app",
@@ -69,6 +75,7 @@
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
             "disableOptimisticBPs": true,
+            "internalConsoleOptions":"openOnSessionStart",
             // "console":"integratedTerminal",
         }
     ]

@@ -10,6 +10,10 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation":{
+                "reveal": "never",
+                "clear": true
             }
         },
         {
@@ -18,7 +22,11 @@
             "command": "docker kill smash-league || true",
             "dependsOn": [
                 "Build Docker image"
-            ]
+            ],
+            "presentation":{
+                "reveal": "never",
+                "clear": true
+            }
         },
         {
             "label": "Run Tests",

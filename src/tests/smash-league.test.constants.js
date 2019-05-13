@@ -388,48 +388,5 @@ module.exports = {
             player1Result: 1, player2Result: 3,
             players: ['UDBD59WLT', 'U61MBQTR8']
         },
-    ],
-
-    SLACK_MESSAGES1: [
-        {// Valid, spaces both sides of result
-            "text": "<@UFY8P0WRF> <@UDBD59WLT> 3 - 2 <@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 2
-        },
-        {// Valid spaces only on one side of result
-            "text": "<@UFY8P0WRF> <@UDBD59WLT>1- 3 <@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 1
-        },
-        {// Valid spaces only on one second side of result
-            "text": "<@UFY8P0WRF> <@UDBD59WLT> 1 -3<@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 10
-        },
-        {// Invalid first result
-            "text": "<@UFY8P0WRF> <@UDBD59WLT> adasd - 3 <@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 7
-        },
-        {// Invalid second result
-            "text": "<@UFY8P0WRF> <@UDBD59WLT> 2 - 12sdasd <@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 8
-        },
-        {// Invalid both results
-            "text": "<@UFY8P0WRF> <@UDBD59WLT> 122adasd - tres <@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 9
-        },
-        {// Invalid, bot not tagged
-            "text": "<@sasdasdas> <@UDBD59WLT> 3 - 2 <@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 5
-        },
-        {// Valid no spaces
-            "text": "<@UFY8P0WRF><@UDBD59WLT>3-2<@U61MBQTR8>",
-            "user": "UDBD59WLT",
-            "ts": 6
-        }
     ]
 }
