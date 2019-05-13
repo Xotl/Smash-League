@@ -63,6 +63,11 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
         )
     }
 
+    if (entities.grateful) {
+        validIntentDetected = true
+        messagesToPost.push({ title: Utils.getRandomMessageById('grateful') })
+    }
+
     if (!validIntentDetected) {
         // TODO: Add custom Regexp messages
         messagesToPost.push({

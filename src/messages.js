@@ -121,4 +121,9 @@ module.exports = Tag => ({
         Tag `<${'msgUrl'}|¿Qué?...>. No entendí qué quieres <@${'user'}>. :robot_face:`,
         Tag `¿Podrías se más claro en <${'msgUrl'}|tu mensaje>?. Ni idea qué quieres <@${'user'}>. :robot_face:`,
     ],
+    "grateful": [
+        Tag `De nada. :wink:`,
+        Tag `Pa' servirle.`,
+        Tag `Se hace lo que se puede. :wink:`,
+    ],
 })
