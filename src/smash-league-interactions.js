@@ -214,7 +214,7 @@ const getReportedResultFromWitEntities = (user, witEntities) => {
             if ( !['normal', 'myself'].includes(value) ) {// Wit is trained but there's no implemententation yet
                 return results.push({
                     ok: false,
-                    error: Utils.getRandomMessageById('reported_result not_implemented')
+                    error: Utils.getRandomMessageById('reported_result not_implemented', {type: value})
                 })
             }
 
