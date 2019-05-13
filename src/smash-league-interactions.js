@@ -397,10 +397,12 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
 
 
     return slackBlocks.flatMap(
-        block => {
-            block.push({
-                "type": "divider"
-            })
+        (block, idx, arr) => {
+            if (idx < arr.length - 1) {// Avoid adding a divider on last item
+                block.push({
+                    "type": "divider"
+                })
+            }
             return block
         }
     )
