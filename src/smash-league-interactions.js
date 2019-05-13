@@ -83,7 +83,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 })
             }
 
-            if (['onbehalf_specific', 'onbehalf_all', 'inverse_myself_specific', 'inverse_myself_all'].includes(value)) {
+            if (!['onbehalf_specific', 'onbehalf_all', 'myself_all', 'myself_specific'].includes(value)) {
                 return results.push({
                     ok: false,
                     error: Utils.getRandomMessageById('lookup_challengers not_implemented', {type: value})

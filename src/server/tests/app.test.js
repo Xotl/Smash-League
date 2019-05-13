@@ -1,6 +1,11 @@
 'use strict'
 
 describe('app.js - digetsWitReponseFromSlackEvent', () => {
+    const slackEvent1 = {
+        ts: "500000000", user: 'U622XCTAA', //thread_ts,
+        text: 'valid reported_result'
+    }
+
     let messageMockFn = jest.fn(), randomMsgSpy
     beforeAll( () => {
         const { RANKING_OBJ1 } = require('./app.test.constants')
@@ -37,7 +42,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
     } )
 
     describe('Reported Results', () => {
-        const slackEvent = {
+        const slackEvent1 = {
             ts: "500000000", user: 'U622XCTAA', //thread_ts,
             text: 'valid reported_result'
         }
@@ -52,7 +57,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
                     "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
-            await digetsWitReponseFromSlackEvent(slackEvent)
+            await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', expect.anything())
         })
@@ -67,7 +72,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
                     "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
-            await digetsWitReponseFromSlackEvent(slackEvent)
+            await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', expect.anything())
         })
@@ -78,7 +83,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
                     "reported_result": [ { "confidence": 0.78849031005298, "value": "Non existent value" } ]
             } })
     
-            await digetsWitReponseFromSlackEvent(slackEvent)
+            await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result confidence_low', expect.anything())
         })
@@ -90,7 +95,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
                     "reported_result": [ { "confidence": 0.98849031005298, "value": invalidType } ]
             } })
     
-            await digetsWitReponseFromSlackEvent(slackEvent)
+            await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result not_implemented', {type: invalidType})
         })
@@ -104,7 +109,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
                     "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
-            await digetsWitReponseFromSlackEvent(slackEvent)
+            await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result missing_score', expect.anything())
         })
@@ -118,7 +123,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
                     "match_result": [ { "confidence": 0.98849031005298, "value": "win" } ]
             } })
     
-            await digetsWitReponseFromSlackEvent(slackEvent)
+            await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result myself_missing_player', expect.anything())
         })
@@ -132,7 +137,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
                 "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
-            await digetsWitReponseFromSlackEvent(slackEvent)
+            await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result normal_missing_player', expect.anything())
         })
@@ -159,7 +164,119 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers select_one', expect.anything())
             expect(randomMsgSpy).toHaveBeenNthCalledWith(2, 'lookup_challengers all', expect.anything())
         })
+
+        test('Low confidence', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "lookup_challengers": [ { "confidence": 0.78849031005298, "value": "myself_all" } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers confidence_low', expect.anything())
+        })
+
+        test('Not implemented', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            const invalidType = 'Non valid type'
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": invalidType } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers not_implemented', {type: invalidType})
+        })
+
+        test('Onbehalf missing', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'onbehalf_all' } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers onbehalf_missing')
+        })
+
+        test('Valid Onbehalf', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "onbehalf": [ { "confidence": 0.98849031005298, "value": '<@U6457D5KQ>' } ],
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'onbehalf_all' } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers all', expect.anything())
+        })
+
+        test('No coins', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "onbehalf": [ { "confidence": 0.98849031005298, "value": '<@U61MBQTR8>' } ],
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'onbehalf_all' } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers no_coins')
+        })
+
+        test('Specific request', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'myself_specific' } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_missing_players')
+        })
+
+        test('Cannot challenge mentioned players', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "slack_user_id": [ { "confidence": 0.99038589888413, "value": "<@U61MBQTR8>" } ],
+                    "onbehalf": [ { "confidence": 0.98849031005298, "value": '<@U8CEKPXQR>' } ],
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'onbehalf_specific' } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_cannot_challenge', expect.anything())
+        })
+
+        test('Can challenge all mentioned players', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "slack_user_id": [
+                        { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" },
+                        { "confidence": 0.99038589888413, "value": "<@U8THDCVJ7>" }
+                    ],
+                    "onbehalf": [ { "confidence": 0.98849031005298, "value": '<@U6457D5KQ>' } ],
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'onbehalf_specific' } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_all_players_found', expect.anything())
+        })
+
+        test('Can challenge just some of the mentioned players', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "slack_user_id": [
+                        { "confidence": 0.99038589888413, "value": "<@U8THDCVJ7>" },
+                        { "confidence": 0.99038589888413, "value": "<@U61MBQTR8>" }
+                    ],
+                    "onbehalf": [ { "confidence": 0.98849031005298, "value": '<@U6457D5KQ>' } ],
+                    "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'onbehalf_specific' } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_some_players_found', expect.anything())
+        })
     })
-
-
 })
