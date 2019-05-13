@@ -162,7 +162,10 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                         ok: false,
                         error: Utils.getRandomMessageById(
                             'lookup_challengers specific_cannot_challenge',
-                            { mentionedPlayersQty: mentionedPlayers.length }
+                            {
+                                mentionedPlayersQty: mentionedPlayers.length,
+                                mentionedPlayers: mentionedPlayers.map(p => `<@${p}>`)
+                            }
                         )
                     })
                 }
@@ -172,7 +175,11 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                         ok: true,
                         value: Utils.getRandomMessageById(
                             'lookup_challengers specific_all_players_found',
-                            { mentionedPlayersQty: mentionedPlayers.length }
+                            {
+                                mentionedPlayersQty: mentionedPlayers.length,
+                                mentionedPlayers: mentionedPlayers.map(p => `<@${p}>`)
+
+                            }
                         )
                     })
                 }
