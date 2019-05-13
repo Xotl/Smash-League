@@ -90,21 +90,22 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 })
             }
 
-            let whoWantsToKnow = user
+            let userWhoWantstoKnow = user, whoWantsToKnow = 'myself'
             if (value.includes('onbehalf')) {
+                whoWantsToKnow = 'onbehalf'
                 if (!witEntities.onbehalf) {
                     return results.push({
                         ok: false,
-                        error: Utils.getRandomMessageById('lookup_challengers onbehalf_missing')
+                        error: Utils.getRandomMessageById(`lookup_challengers ${whoWantsToKnow}_missing`)
                     })
                 }
 
-                whoWantsToKnow = GetUserIDFromUserTag(witEntities.onbehalf[0].value)
+                userWhoWantstoKnow = GetUserIDFromUserTag(witEntities.onbehalf[0].value)
             }
 
 
-            const playerPlace = SmashLeague.getRankingPlaceByPlayerId(whoWantsToKnow, Ranking.ranking)
-            let playerScore = Ranking.in_progress.scoreboard[whoWantsToKnow]
+            const playerPlace = SmashLeague.getRankingPlaceByPlayerId(userWhoWantstoKnow, Ranking.ranking)
+            let playerScore = Ranking.in_progress.scoreboard[userWhoWantstoKnow]
             const isUnrankedPlayer = !playerScore
 
             if (isUnrankedPlayer) {// Unranked Player
@@ -114,7 +115,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
             if (playerScore.coins <= 0) {
                 return results.push({
                     ok: false,
-                    error: Utils.getRandomMessageById('lookup_challengers no_coins')
+                    error: Utils.getRandomMessageById(`lookup_challengers ${whoWantsToKnow} no_coins`, {user: `<${userWhoWantstoKnow}>`})
                 })
             }
 
@@ -123,8 +124,9 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 return results.push({
                     ok: true,
                     value: Utils.getRandomMessageById(
-                        'lookup_challengers all',
+                        `lookup_challengers ${whoWantsToKnow}_all`,
                         { 
+                            user: `<${userWhoWantstoKnow}>`,
                             listOfValidPlayers: playersArray.map(
                                 placeArray => {
                                     const playersString = placeArray.map(
@@ -149,7 +151,10 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 if (!witEntities.slack_user_id) {
                     return results.push({
                         ok: false,
-                        error: Utils.getRandomMessageById('lookup_challengers specific_missing_players')
+                        error: Utils.getRandomMessageById(
+                            `lookup_challengers ${whoWantsToKnow}_specific missing_players`,
+                            {user: `<${userWhoWantstoKnow}>`}
+                        )
                     })
                 }
 
@@ -163,8 +168,9 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                     return results.push({
                         ok: false,
                         error: Utils.getRandomMessageById(
-                            'lookup_challengers specific_cannot_challenge',
+                            `lookup_challengers ${whoWantsToKnow}_specific cannot_challenge`,
                             {
+                                user: `<${userWhoWantstoKnow}>`,
                                 mentionedPlayersQty: mentionedPlayers.length,
                                 mentionedPlayers: mentionedPlayers.map(p => `<@${p}>`)
                             }
@@ -176,8 +182,9 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                     return results.push({
                         ok: true,
                         value: Utils.getRandomMessageById(
-                            'lookup_challengers specific_all_players_found',
+                            `lookup_challengers ${whoWantsToKnow}_specific all_players_found`,
                             {
+                                user: `<${userWhoWantstoKnow}>`,
                                 mentionedPlayersQty: mentionedPlayers.length,
                                 mentionedPlayers: mentionedPlayers.map(p => `<@${p}>`)
 
@@ -189,8 +196,9 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 return results.push({
                     ok: true,
                     value: Utils.getRandomMessageById(
-                        'lookup_challengers specific_some_players_found',
+                        `lookup_challengers ${whoWantsToKnow}_specific some_players_found`,
                         { 
+                            user: `<${userWhoWantstoKnow}>`,
                             listOfValidPlayers: mentionedAndValidPlayers.map(p => `<@${p}>`).join(', ')
                         }
                     )
