@@ -20,9 +20,7 @@
             "UB616ENA0"
         ],
         [
-            "U8M6QT7EF"
-        ],
-        [
+            "U8M6QT7EF",
             "U8THDCVJ7"
         ],
         [
@@ -337,7 +335,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1557716216499,
+        "last_update_ts": 1557717595151,
         "reported_results": []
     }
 }
