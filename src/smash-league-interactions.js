@@ -367,7 +367,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": Utils.getRandomMessageById('daily_update with_activity')
+                    "text": Utils.getRandomMessageById('daily_update week_commited')
                 }
             }
         ])
