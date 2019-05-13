@@ -9,35 +9,63 @@ module.exports = Tag => ({
     "lookup_challengers onbehalf_missing": [
         'Creo que preguntas por alguien más, pero no entiendo quién.',
         'Parece que quieres preguntar en lugar de otra persona, pero no entiendo bien a quién.',
-        '¿Estás preguntando por alguien más?, no esoty seguro de entender. :thinking_face:',
+        '¿Estás preguntando por alguien más?, no estoy seguro de entender. :thinking_face:',
     ],
-    "lookup_challengers no_coins": [
+    "lookup_challengers myself no_coins": [
         'Parece que ya no te quedan monedas, así que no puedes retar nadie. :disappointed:',
         'Veo que no te quedan monedas... ya no puedes retar nadie. :disappointed:',
         'Sin monedas no puedes retar a nadie, ni modo así son las reglas. :disappointed:',
     ],
-    "lookup_challengers all": [
+    "lookup_challengers onbehalf no_coins": [
+        Tag `Parece que a ${'user'} no le quedan monedas, así que no puede retar nadie. :disappointed:`,
+        Tag `Veo que a ${'user'} no le quedan monedas... ya no puede retar nadie. :disappointed:Tag `,
+        Tag `Sin monedas ${'user'} no puede retar a nadie, ni modo así son las reglas. :disappointed:`,
+    ],
+    "lookup_challengers myself_all": [
         Tag `Estos son los jugadores que puedes retar:\n\n${'listOfValidPlayers'}.`,
         Tag `Revisando la tabla, veo que estos son los que puedes retar:\n\n${'listOfValidPlayers'}.`,
         Tag `${'listOfValidPlayers'}\n\nLa lista de arriba muestra a quiénes puedes retar.`,
     ],
-    "lookup_challengers specific_missing_players": [
+    "lookup_challengers onbehalf_all": [
+        Tag `Estos son los jugadores que ${'user'} puede retar:\n\n${'listOfValidPlayers'}.`,
+        Tag `Revisando la tabla, veo que estos son los que puede retar ${'user'}:\n\n${'listOfValidPlayers'}.`,
+        Tag `${'listOfValidPlayers'}\n\nLa lista de arriba muestra a quiénes puede retar ${'user'}.`,
+    ],
+    "lookup_challengers myself_specific missing_players": [
         'Parece que quieres preguntar si puedes retar a alguien en particular, pero no estoy seguro de a quién. :thinking_face:',
         '¿Quieres saber si puedes retar a alguien en particular?, no te entendí bien. Se más claro. :thinking_face:',
         '¿Será que quieres saber si puedes retar a alguien?, yo no lo sé. :thinking_face:',
     ],
-    "lookup_challengers specific_cannot_challenge": [
+    "lookup_challengers onbehalf_specific missing_players": [
+        Tag `Parece que quieres preguntar si ${'user'} puede retar a alguien en particular, pero no estoy seguro de a quién. :thinking_face:`,
+        Tag `¿Quieres saber si ${'user'} puede retar a alguien en particular?, no te entendí bien. Se más claro. :thinking_face:`,
+        Tag `¿Será que quieres saber si ${'user'} puede retar a alguien?, yo no lo sé. :thinking_face:`,
+    ],
+    "lookup_challengers myself_specific cannot_challenge": [
         ({mentionedPlayersQty}) => `No puedes retar a ${mentionedPlayersQty > 1 ? `ninguno de los ${mentionedPlayersQty} que mencionaste` : 'ese jugador' }.`,
         ({mentionedPlayersQty}) => `${mentionedPlayersQty > 1 ? `De todos los jugadores que mencionas, no puedes retar a ninguno` : 'A ese jugador no lo puedes retar' }.`,
         ({mentionedPlayersQty, mentionedPlayers}) => `${mentionedPlayersQty > 1 ? `Veamos, creo que no puedes retar a ${mentionedPlayers.join(', ni a ')}` : 'Nope, a ése jugador no lo puedes retar' }.`,
     ],
-    "lookup_challengers specific_all_players_found": [
+    "lookup_challengers onbehalf_specific cannot_challenge": [
+        ({mentionedPlayersQty, user}) => `${user} No puede retar a ${mentionedPlayersQty > 1 ? `ninguno de los ${mentionedPlayersQty} que mencionaste` : 'ese jugador' }.`,
+        ({mentionedPlayersQty, user}) => `${mentionedPlayersQty > 1 ? `De todos los jugadores que mencionas, ${user} no puedes retar a ninguno` : `A ese jugador no lo puede retar ${user}` }.`,
+        ({mentionedPlayersQty, mentionedPlayers, user}) => `${mentionedPlayersQty > 1 ? `Veamos, creo que ${user} no puede retar a ${mentionedPlayers.join(', ni a ')}` : `Nope, a ése jugador no lo puede retar ${user}` }.`,
+    ],
+    "lookup_challengers myself_specific all_players_found": [
         ({mentionedPlayersQty}) => `Claro que puedes retar a ${mentionedPlayersQty > 1 ? `los ${mentionedPlayersQty} que mencionaste` : 'ese jugador' }.`,
         ({mentionedPlayersQty}) => `${mentionedPlayersQty > 1 ? `A todos esos que mencionaste los puedes retar` : 'Si puedes, ¡Ahora ve gánale!. :simple_smile:' }.`,
         ({mentionedPlayers}) => `Déjame ver... parece que sí puedes jugar contra los de esta lista:\n\n${mentionedPlayers.map(p => `- ${p}\n`)}\n¡Suerte! :simple_smile:`,
     ],
-    "lookup_challengers specific_some_players_found": [
+    "lookup_challengers onbehalf_specific all_players_found": [
+        ({mentionedPlayersQty, user}) => `Claro que ${user} puede retar a ${mentionedPlayersQty > 1 ? `los ${mentionedPlayersQty} que mencionaste` : 'ese jugador' }.`,
+        ({mentionedPlayersQty, user}) => `${mentionedPlayersQty > 1 ? `A todos esos que mencionaste los puede retar ${user}` : `Sí puede, ahora sólo falta que ${user} le gane. :simple_smile:` }.`,
+        ({mentionedPlayers, user}) => `Déjame ver... parece que sí ${user} puede jugar contra los de esta lista:\n\n${mentionedPlayers.map(p => `- ${p}\n`)}\n¡Suerte! :simple_smile:`,
+    ],
+    "lookup_challengers myself_specific some_players_found": [
         Tag `Si puedes, pero nada más a ${'listOfValidPlayers'}.`
+    ],
+    "lookup_challengers onbehalf_specific some_players_found": [
+        Tag `${'user'} sí puede, pero nada más a ${'listOfValidPlayers'}.`
     ],
     "lookup_challengers not_implemented": [
         Tag `La función _${'type'}_ aún no está implementada. Dale calma.`,
@@ -46,7 +74,7 @@ module.exports = Tag => ({
     ],
     "lookup_challengers select_one": [
         Tag `sólo uno de los ${'num'}, tendrás que elegir a quién`,
-        Tag `deberás elegir sólo uno de los${'num'}`
+        Tag `deberás elegir sólo uno de los ${'num'}`
     ],
 
 
@@ -79,7 +107,7 @@ module.exports = Tag => ({
     "new_version": [
         Tag `¡He sido actualizado a la versiòn *v${'newVersion'}*!... espero que sean nuevos features y no sólo bugs. :unamused:`,
         Tag `¡Nuevo Update! ahora a la versión *v${'newVersion'}*.`,
-        Tag `¡Ahora esoty en la versión *v${'newVersion'}*! Esperemos sean buenas noticias. :sweat_smile:`,
+        Tag `¡Ahora estoy en la versión *v${'newVersion'}*! Esperemos sean buenas noticias. :sweat_smile:`,
     ],
     "new_version no_activity": [
         "Aprovechando el update revisé y no encontré actividad nueva. :disappointed:",

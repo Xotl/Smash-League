@@ -170,7 +170,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             })
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers select_one', expect.anything())
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(2, 'lookup_challengers all', expect.anything())
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(2, 'lookup_challengers myself_all', expect.anything())
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
@@ -220,7 +220,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers all', expect.anything())
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers onbehalf_all', expect.anything())
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
@@ -233,7 +233,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers no_coins')
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers onbehalf no_coins', expect.anything())
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
@@ -245,7 +245,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_missing_players')
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers myself_specific missing_players', expect.anything())
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
@@ -259,7 +259,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_cannot_challenge', expect.anything())
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers onbehalf_specific cannot_challenge', expect.anything())
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
@@ -276,7 +276,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_all_players_found', expect.anything())
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers onbehalf_specific all_players_found', expect.anything())
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
@@ -293,7 +293,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_some_players_found', expect.anything())
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers onbehalf_specific some_players_found', expect.anything())
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
     })
