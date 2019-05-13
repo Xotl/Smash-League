@@ -6,7 +6,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         text: 'valid reported_result'
     }
 
-    let messageMockFn = jest.fn(), randomMsgSpy
+    let messageMockFn = jest.fn(), slackPostMessageMockFn = jest.fn(), randomMsgSpy
     beforeAll( () => {
         const { RANKING_OBJ1 } = require('./app.test.constants')
         jest.mock('../../slack-api', () => jest.fn())
@@ -24,13 +24,14 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         } )
 
         const Slack = require('../../slack-api')
-        Slack.postMessageInChannel = jest.fn()
+        Slack.postMessageInChannel = slackPostMessageMockFn
 
         const Utils = require('../../utils')
         randomMsgSpy = jest.spyOn(Utils, 'getRandomMessageById')
     } )
 
     beforeEach(() => {
+        slackPostMessageMockFn.mockReset()
         messageMockFn.mockReset()
         randomMsgSpy.mockClear()
     })
@@ -60,6 +61,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
     
         test('Valid myself', async () => {
@@ -75,6 +77,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Low Confidence', async () => {
@@ -86,6 +89,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result confidence_low', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Not implemented', async () => {
@@ -98,6 +102,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result not_implemented', {type: invalidType})
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Missing Score', async () => {
@@ -112,6 +117,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result missing_score', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Missing players with match result', async () => {
@@ -126,6 +132,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result myself_missing_player', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Missing players', async () => {
@@ -140,6 +147,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result normal_missing_player', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
     })
@@ -163,6 +171,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers select_one', expect.anything())
             expect(randomMsgSpy).toHaveBeenNthCalledWith(2, 'lookup_challengers all', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Low confidence', async () => {
@@ -174,6 +183,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers confidence_low', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Not implemented', async () => {
@@ -186,6 +196,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers not_implemented', {type: invalidType})
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Onbehalf missing', async () => {
@@ -197,6 +208,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers onbehalf_missing')
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Valid Onbehalf', async () => {
@@ -209,6 +221,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers all', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('No coins', async () => {
@@ -221,6 +234,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers no_coins')
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Specific request', async () => {
@@ -232,6 +246,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_missing_players')
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Cannot challenge mentioned players', async () => {
@@ -245,6 +260,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_cannot_challenge', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Can challenge all mentioned players', async () => {
@@ -261,6 +277,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_all_players_found', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
         test('Can challenge just some of the mentioned players', async () => {
@@ -277,6 +294,15 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
             expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'lookup_challengers specific_some_players_found', expect.anything())
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
+    })
+
+    test('No valid intent detected', async () => {
+        const { digetsWitReponseFromSlackEvent } = require('../app')
+        messageMockFn.mockResolvedValueOnce({ "entities": { } })
+        await digetsWitReponseFromSlackEvent(slackEvent1)
+        expect(messageMockFn).toHaveBeenCalled()
+        expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'no_interpretation', expect.anything())
     })
 })
