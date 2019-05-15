@@ -74,7 +74,8 @@ module.exports = Tag => ({
     ],
     "lookup_challengers select_one": [
         Tag `sólo uno de los ${'num'}, tendrás que elegir a quién`,
-        Tag `deberás elegir sólo uno de los ${'num'}`
+        Tag `deberás elegir sólo uno de los ${'num'}`,
+        Tag `sólo a uno le puedes partir la madre, elige uno de los ${'num'}`
     ],
 
 
@@ -82,7 +83,11 @@ module.exports = Tag => ({
     "reported_result valid": [
         Tag `Enterado... <@${'winner'}> le ganó a <@${'loser'}> ${'highScore'} - ${'lowScore'}.`,
         Tag `Órale, así que <@${'loser'}> perdió ${'highScore'} - ${'lowScore'} contra <@${'winner'}>... ¿quién lo habría imaginado?.`,
-        Tag `¿${'highScore'} - ${'lowScore'} contra <@${'loser'}>?. Ése <@${'winner'}> va subiendo como la espuma.`
+        Tag `¿${'highScore'} - ${'lowScore'} contra <@${'loser'}>?. Ése <@${'winner'}> va subiendo como la espuma.`,
+        Tag `:musical_note: Nada... ese <@${'loser'}> no trae nada... :musical_note: ¡Buen trabajo, <@${'winner'}>, por ganar ${'highScore'} - ${'lowScore'}!`,
+        Tag `Changos, ${'highScore'} - ${'lowScore'}... Que putiza te puso <@${'winner'}>, ¿eh, <@${'loser'}>?`,
+        Tag `Eres un maldito perdedor <@${'loser'}>, mejor retirate del Smash. Felicidades por tú ${'highScore'} - ${'lowScore'}, <@${'winner'}>, sigue así.`,
+        Tag `¿Para eso juegas <@${'loser'}>? ¿Para perder ${'highScore'} - ${'lowScore'}? Ya mejor ponte a trabajar. Sigue así <@${'winner'}>, eres un campeón.`
     ],
     "reported_result confidence_low": [
         'Es como si quisieras reportar un resultado, pero no estoy seguro. :thinking_face:',
@@ -90,7 +95,8 @@ module.exports = Tag => ({
         '¿Quieres reportar un resultado?, creo que no entiendo :robot_face:',
     ],
     "reported_result missing_score": [
-        ({bothScoresMissing}) => `Falta el puntaje de ${bothScoresMissing ? 'ambos jugadores' : 'uno de los jugadores'}`
+        ({bothScoresMissing}) => `Falta el puntaje de ${bothScoresMissing ? 'ambos jugadores' : 'uno de los jugadores'}`,
+        ({bothScoresMissing}) => `Creo que no reportaste el puntaje para ${bothScoresMissing ? 'ambos jugadores' : 'uno de los jugadores'}`
     ],
     "reported_result myself_missing_player": [
         ({match_result}) => `Indicaste que ${match_result === 'win' ? 'ganaste': 'perdiste'} aunque no dijiste contra quién`
@@ -153,5 +159,7 @@ module.exports = Tag => ({
         Tag `De nada. :wink:`,
         Tag `Pa' servirle.`,
         Tag `Se hace lo que se puede. :wink:`,
+        Tag `Es un placer servirle, patrón.`,
+        Tag `Gracias a ti. :fast_parrot:`,
     ],
 })
