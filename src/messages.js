@@ -84,10 +84,10 @@ module.exports = Tag => ({
         Tag `Enterado... <@${'winner'}> le ganó a <@${'loser'}> ${'highScore'} - ${'lowScore'}.`,
         Tag `Órale, así que <@${'loser'}> perdió ${'highScore'} - ${'lowScore'} contra <@${'winner'}>... ¿quién lo habría imaginado?.`,
         Tag `¿${'highScore'} - ${'lowScore'} contra <@${'loser'}>?. Ése <@${'winner'}> va subiendo como la espuma.`,
-        Tag `:musical_note: Nada... ese <@${'loser'}> no trae nada... :musical_note: ¡Buen trabajo, <@${'winner'}>!`,
+        Tag `:musical_note: Nada... ese <@${'loser'}> no trae nada... :musical_note: ¡Buen trabajo, <@${'winner'}>, por ganar ${'highScore'} - ${'lowScore'}!`,
         Tag `Changos, ${'highScore'} - ${'lowScore'}... Que putiza te puso <@${'winner'}>, ¿eh, <@${'loser'}>?`,
         Tag `Eres un maldito perdedor <@${'loser'}>, mejor retirate del Smash. Felicidades por tú ${'highScore'} - ${'lowScore'}, <@${'winner'}>, sigue así.`,
-        Tag `¿Para eso juegas <@${'loser'}>? ¿Para perder? Ya mejor ponte a trabajar. Sigue así <@${'winner'}>, eres un campeón.`
+        Tag `¿Para eso juegas <@${'loser'}>? ¿Para perder ${'highScore'} - ${'lowScore'}? Ya mejor ponte a trabajar. Sigue así <@${'winner'}>, eres un campeón.`
     ],
     "reported_result confidence_low": [
         'Es como si quisieras reportar un resultado, pero no estoy seguro. :thinking_face:',
