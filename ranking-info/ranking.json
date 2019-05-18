@@ -464,7 +464,7 @@
                 "stand_points": 0,
                 "points": 1,
                 "coins": 1,
-                "range": 3,
+                "range": 4,
                 "completed_challenges": [
                     {
                         "winner": "UBD38N45P",
@@ -486,6 +486,17 @@
                         "players": [
                             "UBRMBGR6Z",
                             "UBD38N45P"
+                        ]
+                    },
+                    {
+                        "winner": "UBD38N45P",
+                        "player1": "UBD38N45P",
+                        "player2": "UEWUZCYJF",
+                        "player1Result": 3,
+                        "player2Result": 1,
+                        "players": [
+                            "UBD38N45P",
+                            "UEWUZCYJF"
                         ]
                     }
                 ]
@@ -509,7 +520,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1558067532200,
+        "last_update_ts": 1558153957492,
         "reported_results": []
     }
 }

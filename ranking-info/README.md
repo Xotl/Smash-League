@@ -19,7 +19,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Fri, 17 May 2019 04:32:12 GMT*
+## In progress this week *Sat, 18 May 2019 04:32:37 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -39,7 +39,7 @@ The current points earned by winning matches this week.
 |Gilberto "Gil" Ruelas|2|2|0|4|
 |Alan|2|2|1|4|
 |El Chino|2|3|0|4|
-|David|1|3|0|1|
+|David|1|4|0|1|
 |Carlos López|2|2|0|0|
 |Michel|2|2|0|0|
 |Niightz|2|2|0|0|
@@ -64,3 +64,4 @@ Matches that already happened during this week.
 * `Sammy` challenged `Neku` and **lost** *3-0*.
 * `David` challenged `Fer Señior` and **won** *3-1*.
 * `David` challenged `Alan` and **lost** *3-0*.
+* `David` challenged `El Chino` and **won** *3-1*.
