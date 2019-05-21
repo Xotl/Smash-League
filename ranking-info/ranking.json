@@ -13,12 +13,8 @@
             "UDBD59WLT"
         ],
         [
-            "U8THDCVJ7"
-        ],
-        [
-            "U61MBQTR8"
-        ],
-        [
+            "U61MBQTR8",
+            "U8THDCVJ7",
             "UBA5M220K"
         ],
         [
@@ -31,22 +27,16 @@
             "UDR61HJCD"
         ],
         [
-            "U87CK0E4A"
-        ],
-        [
+            "U87CK0E4A",
             "U6457D5KQ"
         ],
         [
+            "UBRMBGR6Z",
             "UEWUZCYJF"
         ],
         [
-            "UBRMBGR6Z"
-        ],
-        [
+            "U7VAPLNCR",
             "UBD38N45P"
-        ],
-        [
-            "U7VAPLNCR"
         ]
     ],
     "scoreboard": {
@@ -235,8 +225,20 @@
                 "stand_points": 0,
                 "points": 15,
                 "coins": 1,
-                "range": 1,
-                "completed_challenges": []
+                "range": 2,
+                "completed_challenges": [
+                    {
+                        "winner": "UB616ENA0",
+                        "player1": "UBA5M220K",
+                        "player2": "UB616ENA0",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UBA5M220K",
+                            "UB616ENA0"
+                        ]
+                    }
+                ]
             },
             "UEWUZCYJF": {
                 "initial_coins": 2,
@@ -323,8 +325,20 @@
                 "stand_points": 0,
                 "points": 2,
                 "coins": 3,
-                "range": 3,
-                "completed_challenges": []
+                "range": 4,
+                "completed_challenges": [
+                    {
+                        "winner": "UBD38N45P",
+                        "player1": "UBRMBGR6Z",
+                        "player2": "UBD38N45P",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UBRMBGR6Z",
+                            "UBD38N45P"
+                        ]
+                    }
+                ]
             },
             "U6H8DDV25": {
                 "initial_coins": 3,
@@ -345,7 +359,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1558326782551,
+        "last_update_ts": 1558413194737,
         "reported_results": []
     }
 }
