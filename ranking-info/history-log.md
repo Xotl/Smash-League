@@ -1,5 +1,5 @@
-## Commit from Mon, 20 May 2019 04:33:02 GMT
-The week started at *Mon, 20 May 2019 04:33:02 GMT* and ended *Mon, 27 May 2019 04:33:02 GMT*.
+## Commit from Sun, 19 May 2019 16:00:00 GMT
+The week started at *Sun, 19 May 2019 16:00:00 GMT* and ended *Sun, 26 May 2019 16:00:00 GMT*.
 ### End of week players score summary
 |Player|Coins|Range|Stand points|
 |------|-----|-----|------------|
