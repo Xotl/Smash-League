@@ -188,7 +188,7 @@ const getInitialCoinsForPlayer = playerPlace => {
 
 const calculatePointsFromPlayerScore = playerScore => {
     const { stand_points, points, coins, range, initial_coins} = playerScore
-    const result = points + stand_points + range - initial_coins - coins
+    const result = points + stand_points + range - (coins === initial_coins ? 1 : 0)
 
     if (result < 0) {// Avoid negative points
         return 0
