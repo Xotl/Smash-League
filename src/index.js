@@ -16,7 +16,7 @@ const IS_CI = process.env.CI
 
 
 async function Main() {
-    const now = new Date()
+    const now = new Date(1558285200000)
     
     // Next milisecond after last update because it's inclusive search
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
