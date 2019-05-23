@@ -38,7 +38,7 @@ describe('Smash League Challenges & Scoreboard', () => {
         const playerScore2 = { "initial_coins": 2, "stand_points": 3, "points": 4, "coins": 1, "range": 5 }
         expect(
             calculatePointsFromPlayerScore( playerScore2 )// lrgilberto
-        ).toBe( 9 )
+        ).toBe( 10 )
     })
 
     test('updateInProgressScoreboard', () => {

@@ -303,7 +303,7 @@ module.exports = {
                 "UBRMBGR6Z": {
                     "initial_coins": 1,
                     "stand_points": 0,
-                    "points": 34,
+                    "points": 35,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
