@@ -240,25 +240,26 @@ const commitInProgress = rankingObj => {
     // the players should get at the end of week. Also we use the old ranking to 
     // calculatethe initial coins they have for the Tie-breaker.
     result.ranking = getRankingFromScoreboard(newScoreboard)
-    
-    // Now that the new score has been calculated that's how the week ended
-    result.scoreboard = {...newScoreboard}
+
 
     // Applies inital completed_challenges, initial_coins, stand_points, coins and range
-    Object.keys(newScoreboard).forEach(
-        playerId => {
+    const newInProgressScoreboard = Object.keys(newScoreboard).reduce(
+        (tmpScoreboard, playerId) => {
             const playerPlace = getRankingPlaceByPlayerId(playerId, result.ranking)
             const initialCoins = getInitialCoinsForPlayer(playerPlace)
-            newScoreboard[playerId].initial_coins = initialCoins
-            newScoreboard[playerId].coins = initialCoins
-            newScoreboard[playerId].range = initialCoins
-            newScoreboard[playerId].stand_points = 0
-            newScoreboard[playerId].completed_challenges = []
-        }
+            tmpScoreboard[playerId] = {
+                initial_coins: initialCoins, coins: initialCoins, range: initialCoins,
+                points: newScoreboard[playerId].points, 
+                stand_points: 0, completed_challenges: [],
+            }
+            return tmpScoreboard
+        },
+        {}
     )
 
     
-    inProgress.scoreboard = newScoreboard
+    result.scoreboard = newScoreboard
+    inProgress.scoreboard = newInProgressScoreboard
     result.last_update_ts = inProgress.last_update_ts
     result.in_progress = inProgress
     result.current_week = getNextWeekObject(result.last_update_ts)
