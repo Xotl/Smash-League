@@ -13,37 +13,36 @@ const GetUserIDFromUserTag = userTag => userTag.slice(2, -1)
 
 const sortWitEntityArrayByConfidence = entityArray => entityArray && entityArray.sort( entity => entity.confidence)
 
-const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEntity, player2Entity, player2ScoreEntity, match_result) => {
-    if (!player1ScoreEntity || !player2ScoreEntity) {// Missing score
+const getReportedResultObjFromWitEntities = (user, players = [], score = [], match_result, onbehalf) => {
+    if (score.length < 2) {// Missing score
         return {// Not enough data to generate result object, so ignoring it
-            ok: false, error: Utils.getRandomMessageById('reported_result missing_score', {bothScoresMissing: !player1ScoreEntity && !player2ScoreEntity})
+            ok: false, error: Utils.getRandomMessageById('reported_result missing_score', {bothScoresMissing: score.length === 0})
         }
     }
     
-    if (match_result && !player1Entity && !player2Entity) {// Match result with both players missing
+    if (match_result && players.length === 0) {// Match result with players missing
         return {// Not enough data to generate result object, so ignoring it
             ok: false, error: Utils.getRandomMessageById('reported_result myself_missing_player', { match_result })
         }
     }
 
-    if ( !match_result && (!player1Entity || !player2Entity) ) {// One player missing with no match result
+    if (!match_result && players.length < 2) {// One player missing with no match result
         return {// Not enough data to generate result object, so ignoring it
-            ok: false, error: Utils.getRandomMessageById('reported_result normal_missing_player', {bothPlayersMissing: !player1Entity && !player2Entity})
+            ok: false, error: Utils.getRandomMessageById('reported_result normal_missing_player', {bothPlayersMissing: players.length === 0})
         }
     }
 
-    player1Entity = sortWitEntityArrayByConfidence(player1Entity)
-    player2Entity = sortWitEntityArrayByConfidence(player2Entity)
-    player1ScoreEntity = sortWitEntityArrayByConfidence(player1ScoreEntity)
-    player2ScoreEntity = sortWitEntityArrayByConfidence(player2ScoreEntity)
-    match_result = sortWitEntityArrayByConfidence(match_result)
+    const player1Entity = players[0]
+    const player2Entity = onbehalf ? onbehalf[0] : players[1]
+    const player1ScoreEntity = score[0]
+    const player2ScoreEntity = score[1]
 
-    const player1ResultAbs = Math.abs( player1ScoreEntity[0].value ), player2ResultAbs = Math.abs( player2ScoreEntity[0].value )
+    const player1ResultAbs = Math.abs( player1ScoreEntity.value ), player2ResultAbs = Math.abs( player2ScoreEntity.value )
     
     let player1, player2, player1Result, player2Result
     if (match_result) {
-        player1 = player1Entity ? GetUserIDFromUserTag(player1Entity[0].value) : GetUserIDFromUserTag(player2Entity[0].value)
-        player2 = user
+        player1 = GetUserIDFromUserTag(player1Entity.value)
+        player2 = player2Entity ? GetUserIDFromUserTag(player2Entity.value) : user
         if (match_result[0].value === 'win') {
             player1Result = player1ResultAbs < player2ResultAbs ? player1ResultAbs : player2ResultAbs
             player2Result = player1ResultAbs > player2ResultAbs ? player1ResultAbs : player2ResultAbs
@@ -54,8 +53,8 @@ const getReportedResultObjFromWitEntities = (user, player1Entity, player1ScoreEn
         }
     }
     else {
-        player1 = GetUserIDFromUserTag(player1Entity[0].value)
-        player2 = GetUserIDFromUserTag(player2Entity[0].value)
+        player1 = GetUserIDFromUserTag(player1Entity.value)
+        player2 = GetUserIDFromUserTag(player2Entity.value)
         player1Result = player1ResultAbs
         player2Result = player2ResultAbs
     }
@@ -148,7 +147,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
             }
 
             if (value.includes('_specific')) {
-                if (!witEntities.slack_user_id) {
+                if (!witEntities.player) {
                     return results.push({
                         ok: false,
                         error: Utils.getRandomMessageById(
@@ -159,7 +158,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 }
 
                 const playersArrayFlat = playersArray.flat()
-                const mentionedPlayers = witEntities.slack_user_id.map( e => GetUserIDFromUserTag(e.value) )
+                const mentionedPlayers = witEntities.player.map( e => GetUserIDFromUserTag(e.value) )
                 const mentionedAndValidPlayers = mentionedPlayers.filter(
                     mentionedPlayer => playersArrayFlat.includes( mentionedPlayer )
                 )
@@ -228,7 +227,7 @@ const getReportedResultFromWitEntities = (user, witEntities) => {
                 })
             }
 
-            if ( !['normal', 'myself'].includes(value) ) {// Wit is trained but there's no implemententation yet
+            if ( !['normal', 'myself', 'onbehalf'].includes(value) ) {// Wit is trained but there's no implemententation yet
                 return results.push({
                     ok: false,
                     error: Utils.getRandomMessageById('reported_result not_implemented', {type: value})
@@ -236,8 +235,8 @@ const getReportedResultFromWitEntities = (user, witEntities) => {
             }
 
             results.push( getReportedResultObjFromWitEntities(
-                user, witEntities.player1, witEntities.player1_score,
-                witEntities.player2, witEntities.player2_score, witEntities.match_result
+                user, witEntities.player, witEntities.score,
+                witEntities.match_result, witEntities.onbehalf
             ) )
         }
     )
@@ -255,6 +254,7 @@ const categorizeSlackMessages = async (messagesArray) => {
         logger: new log.Logger(log.DEBUG) // optional
     })
 
+    const ignoredMessages = []
     const promiseArray = messagesArray.filter(
         // Ignore it if Slack bot is not tagged in this message or is bot message
         ({ text, subtype }) => !(subtype === 'bot_message' || -1 === text.indexOf(BOT_SLACK_TAG))
@@ -276,12 +276,21 @@ const categorizeSlackMessages = async (messagesArray) => {
             if (result) {
                 result.ts = ts
             }
+            else {// Ignored message
+                ignoredMessages.push(`[${Utils.getPlayerAlias(user)}] - ${message}`)
+            }
 
             return result
         }
     )
 
     const allResults = await Promise.all(promiseArray)
+
+    if (ignoredMessages.length > 0) {
+        console.log('########## Ignored Messages ########')
+        console.log(ignoredMessages.join('\n'))
+    }
+
     return allResults.filter(// Filters the undefined values
         value => value
     ).sort(// Sorts from oldest to latest
@@ -383,11 +392,11 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
         ])
     }
 
-    if (ignoredActivities.length > 0) {
+    if (ignoredActivities) {
         const ignoredMessages = Object.keys(ignoredActivities).map(
             type => {
                 ignoredActivities[type].map(
-                    ({ reason }) => `* ${reason}`
+                    ({ reason }) => `* [${type}]: ${reason}`
                 ).join('\n')
             }
         ).join('\n')

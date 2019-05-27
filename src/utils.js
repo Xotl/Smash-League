@@ -25,8 +25,8 @@ const logIgnoredActivity = (reason, activity, type) => {
     ignoredActivityObject[type].push({ reason, activity })
 }
 
-const logIgnoredChallenge = (reason, activity) => {
-    logIgnoredActivity(reason, activity, 'challenge')
+const logIgnoredMatch = (reason, activity) => {
+    logIgnoredActivity(reason, activity, 'match')
 }
 
 const showInConsoleIgnoredActivities = ignoredActivities => {
@@ -85,7 +85,7 @@ const removesBotTagFromString = msg => {
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
-    logIgnoredChallenge,
+    logIgnoredMatch,
     logIgnoredActivity,
     setIgnoredActivityLogObject,
     showInConsoleIgnoredActivities,

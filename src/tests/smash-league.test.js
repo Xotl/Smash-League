@@ -13,10 +13,20 @@ const {
 describe('Smash League Challenges & Scoreboard', () => {
 
     test('commitInProgress', () => {
+        const endOfWeekScoreboard = RANKING_OBJECT1.in_progress.scoreboard
         expect( commitInProgress(RANKING_OBJECT1) )
         .toEqual({
             ...RANKING_OBJECT2, 
-            scoreboard: RANKING_OBJECT2.in_progress.scoreboard
+            scoreboard: Object.keys(endOfWeekScoreboard).reduce(
+                (finalScore, playerId) => {
+                    finalScore[playerId] = {
+                        ...endOfWeekScoreboard[playerId], 
+                        points: RANKING_OBJECT2.in_progress.scoreboard[playerId].points
+                    }
+                    return finalScore
+                },
+                {}
+            )
         })
     })
 

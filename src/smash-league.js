@@ -1,5 +1,5 @@
 'use strict'
-const { logIgnoredChallenge, getPlayerAlias } = require('./utils')
+const { logIgnoredMatch, getPlayerAlias } = require('./utils')
 
 const getRankingPlaceByPlayerId = (userId, ranking) => {
     for (let idx = 0; idx < ranking.length; idx++) {
@@ -60,24 +60,24 @@ const isReportedResultValid = (identifiedPlayersObj, rankingTable, playerScorebo
     } = identifiedPlayersObj
 
     if (challengerPlace === playerChallengedPlace) {// They cannot challenge people in the same place
-        logIgnoredChallenge(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place.`, reportedResult)
+        logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place.`, reportedResult)
         return false
     }
 
     const challenger = playerScoreboard
 
     if (challenger.coins < 1) {// No remaining coins, so no more challenges
-        logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" has 0 coins, so he cannot challenge "${getPlayerAlias(playerChallengedId)}"`, reportedResult)
+        logIgnoredMatch(`Ignored result because "${getPlayerAlias(challengerId)}" has 0 coins, so he cannot challenge "${getPlayerAlias(playerChallengedId)}"`, reportedResult)
         return false
     }
 
     if ( (challengerPlace - playerChallengedPlace) > challenger.range ) {// Challenger out of range
-        logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" (place ${challengerPlace}) cannot reach "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace}) with only ${challenger.range} of range`, reportedResult)
+        logIgnoredMatch(`Ignored result because "${getPlayerAlias(challengerId)}" (place ${challengerPlace}) cannot reach "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace}) with only ${challenger.range} of range`, reportedResult)
         return false
     }
 
     if ( doesPlayerAAlreadyWonAgainstThatPlace(challengerId, challenger.completed_challenges, playerChallengedPlace, rankingTable) ) {
-        logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" already won against a player in the same place as "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace})`, reportedResult)
+        logIgnoredMatch(`Ignored result because "${getPlayerAlias(challengerId)}" already won against a player in the same place as "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace})`, reportedResult)
         return false
     }
 
@@ -240,25 +240,26 @@ const commitInProgress = rankingObj => {
     // the players should get at the end of week. Also we use the old ranking to 
     // calculatethe initial coins they have for the Tie-breaker.
     result.ranking = getRankingFromScoreboard(newScoreboard)
-    
-    // Now that the new score has been calculated that's how the week ended
-    result.scoreboard = {...newScoreboard}
+
 
     // Applies inital completed_challenges, initial_coins, stand_points, coins and range
-    Object.keys(newScoreboard).forEach(
-        playerId => {
+    const newInProgressScoreboard = Object.keys(newScoreboard).reduce(
+        (tmpScoreboard, playerId) => {
             const playerPlace = getRankingPlaceByPlayerId(playerId, result.ranking)
             const initialCoins = getInitialCoinsForPlayer(playerPlace)
-            newScoreboard[playerId].initial_coins = initialCoins
-            newScoreboard[playerId].coins = initialCoins
-            newScoreboard[playerId].range = initialCoins
-            newScoreboard[playerId].stand_points = 0
-            newScoreboard[playerId].completed_challenges = []
-        }
+            tmpScoreboard[playerId] = {
+                initial_coins: initialCoins, coins: initialCoins, range: initialCoins,
+                points: newScoreboard[playerId].points, 
+                stand_points: 0, completed_challenges: [],
+            }
+            return tmpScoreboard
+        },
+        {}
     )
 
     
-    inProgress.scoreboard = newScoreboard
+    result.scoreboard = newScoreboard
+    inProgress.scoreboard = newInProgressScoreboard
     result.last_update_ts = inProgress.last_update_ts
     result.in_progress = inProgress
     result.current_week = getNextWeekObject(result.last_update_ts)
