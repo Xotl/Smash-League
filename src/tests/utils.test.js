@@ -2,7 +2,7 @@
 
 const {
     GetEpochUnixFromDate, GetDateObjFromEpochTS, setIgnoredActivityLogObject, logIgnoredActivity,
-    logIgnoredChallenge, showInConsoleIgnoredActivities
+    logIgnoredMatch, showInConsoleIgnoredActivities
 } = require('../utils')
 
 
@@ -33,17 +33,17 @@ describe('Utils', () => {
         expect( tmpActivities ).toEqual(expectObj1)
     })
 
-    test('logIgnoredChallenge', () => {
-        logIgnoredChallenge(reason, activity)
+    test('logIgnoredMatch', () => {
+        logIgnoredMatch(reason, activity)
         expect( tmpActivities ).toEqual({
             ...expectObj1, 
-            challenge: [ ignoredActivityObj ]
+            match: [ ignoredActivityObj ]
         })
 
-        logIgnoredChallenge(reason, activity)
+        logIgnoredMatch(reason, activity)
         expect( tmpActivities ).toEqual({
             ...expectObj1, 
-            challenge: [ ignoredActivityObj, ignoredActivityObj ]
+            match: [ ignoredActivityObj, ignoredActivityObj ]
         })
     })
 
@@ -54,7 +54,7 @@ describe('Utils', () => {
         showInConsoleIgnoredActivities(tmpActivities)
         expect( logFnSpy ).toHaveBeenCalledTimes(6)
         expect( logFnSpy ).toHaveBeenNthCalledWith(3, 'A total of 1 test activities ignored.');
-        expect( logFnSpy ).toHaveBeenNthCalledWith(6, 'A total of 2 challenge activities ignored.');
+        expect( logFnSpy ).toHaveBeenNthCalledWith(6, 'A total of 2 match activities ignored.');
 
         logFnSpy.mockRestore()
     })

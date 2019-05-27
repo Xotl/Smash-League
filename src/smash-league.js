@@ -1,5 +1,5 @@
 'use strict'
-const { logIgnoredChallenge, getPlayerAlias } = require('./utils')
+const { logIgnoredMatch, getPlayerAlias } = require('./utils')
 
 const getRankingPlaceByPlayerId = (userId, ranking) => {
     for (let idx = 0; idx < ranking.length; idx++) {
@@ -60,24 +60,24 @@ const isReportedResultValid = (identifiedPlayersObj, rankingTable, playerScorebo
     } = identifiedPlayersObj
 
     if (challengerPlace === playerChallengedPlace) {// They cannot challenge people in the same place
-        logIgnoredChallenge(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place.`, reportedResult)
+        logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place.`, reportedResult)
         return false
     }
 
     const challenger = playerScoreboard
 
     if (challenger.coins < 1) {// No remaining coins, so no more challenges
-        logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" has 0 coins, so he cannot challenge "${getPlayerAlias(playerChallengedId)}"`, reportedResult)
+        logIgnoredMatch(`Ignored result because "${getPlayerAlias(challengerId)}" has 0 coins, so he cannot challenge "${getPlayerAlias(playerChallengedId)}"`, reportedResult)
         return false
     }
 
     if ( (challengerPlace - playerChallengedPlace) > challenger.range ) {// Challenger out of range
-        logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" (place ${challengerPlace}) cannot reach "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace}) with only ${challenger.range} of range`, reportedResult)
+        logIgnoredMatch(`Ignored result because "${getPlayerAlias(challengerId)}" (place ${challengerPlace}) cannot reach "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace}) with only ${challenger.range} of range`, reportedResult)
         return false
     }
 
     if ( doesPlayerAAlreadyWonAgainstThatPlace(challengerId, challenger.completed_challenges, playerChallengedPlace, rankingTable) ) {
-        logIgnoredChallenge(`Ignored result because "${getPlayerAlias(challengerId)}" already won against a player in the same place as "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace})`, reportedResult)
+        logIgnoredMatch(`Ignored result because "${getPlayerAlias(challengerId)}" already won against a player in the same place as "${getPlayerAlias(playerChallengedId)}" (place ${playerChallengedPlace})`, reportedResult)
         return false
     }
 

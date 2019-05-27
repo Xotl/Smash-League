@@ -51,32 +51,69 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         test('Valid normal', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                    "player1": [ { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" } ],
-                    "player1_score": [ { "confidence": 0.98622021352969, "value": 2 } ],
-                    "player2_score": [ { "confidence": 0.98620547818029, "value": -3 } ],
-                    "player2": [ { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" } ],
+                    "player": [
+                        { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" },
+                        { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" }
+                     ],
+                    "score": [
+                        { "confidence": 0.98622021352969, "value": 2 },
+                        { "confidence": 0.98620547818029, "value": -3 }
+                    ],
                     "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', expect.anything())
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', {
+                winner: '<@U6457D5KQ>', loser: '<@UB616ENA0>', highScore: 3, lowScore: 2
+            })
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
     
         test('Valid myself', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                    "player1": [ { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" } ],
-                    "player1_score": [ { "confidence": 0.98622021352969, "value": 2 } ],
-                    "player2_score": [ { "confidence": 0.98620547818029, "value": -3 } ],
-                    "player2": [ { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" } ],
+                    "player": [
+                        { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" },
+                        { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" }
+                    ],
+                    "score": [
+                        { "confidence": 0.98622021352969, "value": 2 },
+                        { "confidence": 0.98620547818029, "value": -3 }
+                    ],
                     "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
             await digetsWitReponseFromSlackEvent(slackEvent1)
             expect(messageMockFn).toHaveBeenCalled()
-            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', expect.anything())
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', {
+                winner: '<@U6457D5KQ>', loser: '<@UB616ENA0>', highScore: 3, lowScore: 2
+            })
+            expect(slackPostMessageMockFn).toHaveBeenCalled()
+        })
+
+        test('Valid onbehalf', async () => {
+            const { digetsWitReponseFromSlackEvent } = require('../app')
+            messageMockFn.mockResolvedValueOnce({ "entities": {
+                    "player": [
+                        { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" },
+                    ],
+                    "onbehalf": [
+                        { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" }
+                    ],
+                    "match_result": [ { "confidence": 0.98849031005298, "value": "win" } ],
+                    "score": [
+                        { "confidence": 0.98622021352969, "value": 2 },
+                        { "confidence": 0.98620547818029, "value": -3 }
+                    ],
+                    "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
+            } })
+    
+            await digetsWitReponseFromSlackEvent(slackEvent1)
+            expect(messageMockFn).toHaveBeenCalled()
+            expect(randomMsgSpy).toHaveBeenNthCalledWith(1, 'reported_result valid', {
+                winner: '<@U6457D5KQ>', loser: '<@UB616ENA0>', highScore: 3, lowScore: 2
+            })
             expect(slackPostMessageMockFn).toHaveBeenCalled()
         })
 
@@ -108,9 +145,11 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         test('Missing Score', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                    "player1": [ { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" } ],
-                    "player2_score": [ { "confidence": 0.98620547818029, "value": -3 } ],
-                    "player2": [ { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" } ],
+                    "player": [
+                        { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" },
+                        { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" }
+                    ],
+                    "score": [ { "confidence": 0.98620547818029, "value": -3 } ],
                     "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
@@ -123,8 +162,10 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         test('Missing players with match result', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                    "player1_score": [ { "confidence": 0.98622021352969, "value": 2 } ],
-                    "player2_score": [ { "confidence": 0.98620547818029, "value": -3 } ],
+                    "score": [
+                        { "confidence": 0.98622021352969, "value": 2 },
+                        { "confidence": 0.98620547818029, "value": -3 }
+                    ],
                     "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ],
                     "match_result": [ { "confidence": 0.98849031005298, "value": "win" } ]
             } })
@@ -138,9 +179,11 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         test('Missing players', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                "player1_score": [ { "confidence": 0.98622021352969, "value": 2 } ],
-                "player2_score": [ { "confidence": 0.98620547818029, "value": -3 } ],
-                "player2": [ { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" } ],
+                "score": [
+                    { "confidence": 0.98622021352969, "value": 2 },
+                    { "confidence": 0.98620547818029, "value": -3 }
+                ],
+                "player": [ { "confidence": 0.95310457331374, "value": "<@U6457D5KQ>" } ],
                 "reported_result": [ { "confidence": 0.98849031005298, "value": "normal" } ]
             } })
     
@@ -252,7 +295,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         test('Cannot challenge mentioned players', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                    "slack_user_id": [ { "confidence": 0.99038589888413, "value": "<@U61MBQTR8>" } ],
+                    "player": [ { "confidence": 0.99038589888413, "value": "<@U61MBQTR8>" } ],
                     "onbehalf": [ { "confidence": 0.98849031005298, "value": '<@U8CEKPXQR>' } ],
                     "lookup_challengers": [ { "confidence": 0.98849031005298, "value": 'onbehalf_specific' } ]
             } })
@@ -266,7 +309,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         test('Can challenge all mentioned players', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                    "slack_user_id": [
+                    "player": [
                         { "confidence": 0.99038589888413, "value": "<@UB616ENA0>" },
                         { "confidence": 0.99038589888413, "value": "<@U8THDCVJ7>" }
                     ],
@@ -283,7 +326,7 @@ describe('app.js - digetsWitReponseFromSlackEvent', () => {
         test('Can challenge just some of the mentioned players', async () => {
             const { digetsWitReponseFromSlackEvent } = require('../app')
             messageMockFn.mockResolvedValueOnce({ "entities": {
-                    "slack_user_id": [
+                    "player": [
                         { "confidence": 0.99038589888413, "value": "<@U8THDCVJ7>" },
                         { "confidence": 0.99038589888413, "value": "<@U61MBQTR8>" }
                     ],

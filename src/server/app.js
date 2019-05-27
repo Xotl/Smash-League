@@ -99,10 +99,9 @@ const getBlocksForReportedResult = (reportedResult) => {
             "text": {
                 "type": "mrkdwn",
                 "text": Utils.getRandomMessageById('reported_result valid', {
-                    winner, loser: winner === player1 ? player2 : player1,
+                    winner: `<@${winner}>`, loser: winner === player1 ? `<@${player2}>` : `<@${player1}>`,
                     highScore, lowScore
                 })
-
             }
         },
         {
