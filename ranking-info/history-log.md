@@ -1,3 +1,42 @@
+## Commit from Mon, 27 May 2019 23:18:34 GMT
+The week started at *Mon, 27 May 2019 23:18:34 GMT* and ended *Mon, 03 Jun 2019 23:18:34 GMT*.
+### End of week players score summary
+|Player|Coins|Range|Stand points|
+|------|-----|-----|------------|
+|César Gutman - 18pts|0|0|0|
+|Xotl - 16pts|0|1|1|
+|Neku - 16pts|0|2|1|
+|José "El Iceberg" Rosales - 16pts|0|1|1|
+|Angel Lee - 15pts|1|2|0|
+|El Minion - 13pts|0|3|1|
+|Sammy - 8pts|1|2|1|
+|D.I.O. - 7pts|2|2|0|
+|Fer Señior - 6pts|1|3|0|
+|Alan - 4pts|3|3|0|
+|El Chino - 4pts|2|2|0|
+|Gilberto "Gil" Ruelas - 3pts|3|3|0|
+|David - 3pts|3|6|0|
+|Carlos López - 0pts|3|3|0|
+|Michel - 0pts|3|3|0|
+|Niightz - 0pts|3|3|0|
+|Medininja - 0pts|3|3|0|
+|El Plebe - 0pts|3|3|0|
+### Completed challenges
+* `Xotl` challenged `Neku` and **lost** *3-2*.
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
+* `El Minion` challenged `Angel Lee` and **won** *3-1*.
+* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `Fer Señior` challenged `Sammy` and **lost** *3-1*.
+* `Fer Señior` challenged `Sammy` and **won** *3-2*.
+* `Neku` challenged `César Gutman` and **won** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-2*.
+* `Sammy` challenged `El Minion` and **lost** *3-1*.
+* `David` challenged `Alan` and **won** *3-1*.
+* `David` challenged `El Chino` and **won** *3-0*.
+* `David` challenged `Fer Señior` and **won** *3-0*.
+
+
 ## Commit from Mon, 20 May 2019 02:56:56 GMT
 The week started at *Mon, 20 May 2019 02:56:56 GMT* and ended *Mon, 27 May 2019 02:56:56 GMT*.
 ### End of week players score summary
