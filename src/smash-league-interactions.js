@@ -392,7 +392,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
         ])
     }
 
-    if (ignoredActivities) {
+    if (Array.isArray(ignoredActivities) && ignoredActivities.length > 0) {
         const ignoredMessages = Object.keys(ignoredActivities).map(
             type => {
                 ignoredActivities[type].map(
