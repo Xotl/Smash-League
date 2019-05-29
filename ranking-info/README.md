@@ -4,7 +4,7 @@ Last updated **Mon, 27 May 2019 23:18:34 GMT**.
 
 |#|Player|Score|
 |-|------|-----|
-|1|`Neku`|18|
+|1|`Neku`|19|
 |2|`César Gutman`|18|
 |3|`Angel Lee`|17|
 |4|`Xotl`, `José "El Iceberg" Rosales`|17|
@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Wed, 29 May 2019 15:01:17 GMT*
+## In progress this week *Wed, 29 May 2019 15:11:58 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
