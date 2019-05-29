@@ -403,7 +403,7 @@
                 "initial_coins": 1,
                 "coins": 1,
                 "range": 1,
-                "points": 15,
+                "points": 17,
                 "stand_points": 0,
                 "completed_challenges": []
             },
@@ -466,7 +466,7 @@
                 "initial_coins": 0,
                 "coins": 0,
                 "range": 0,
-                "points": 18,
+                "points": 19,
                 "stand_points": 0,
                 "completed_challenges": []
             },
