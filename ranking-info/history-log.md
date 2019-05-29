@@ -5,7 +5,7 @@ The week started at *Mon, 27 May 2019 23:18:34 GMT* and ended *Mon, 03 Jun 2019 
 |------|-----|-----|------------|
 |César Gutman - 18pts|0|0|0|
 |Xotl - 16pts|0|1|1|
-|Neku - 16pts|0|2|1|
+|Neku - 16pts|0|2|2|
 |José "El Iceberg" Rosales - 16pts|0|1|1|
 |Angel Lee - 15pts|0|3|0|
 |El Minion - 13pts|0|3|1|

@@ -225,8 +225,8 @@
             "initial_coins": 1,
             "coins": 0,
             "range": 2,
-            "points": 18,
-            "stand_points": 1,
+            "points": 19,
+            "stand_points": 2,
             "completed_challenges": [
                 {
                     "winner": "U8THDCVJ7",
