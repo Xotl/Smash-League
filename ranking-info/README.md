@@ -21,7 +21,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Tue, 28 May 2019 04:25:41 GMT*
+## In progress this week *Wed, 29 May 2019 04:05:09 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -35,8 +35,8 @@ The current points earned by winning matches this week.
 |José "El Iceberg" Rosales|1|1|0|17|
 |Angel Lee|1|1|0|15|
 |El Minion|1|1|0|15|
-|Sammy|1|1|0|9|
-|Fer Señior|2|2|0|7|
+|Sammy|1|1|1|9|
+|Fer Señior|0|2|0|7|
 |D.I.O.|2|2|0|6|
 |David|2|2|0|5|
 |Alan|2|2|0|3|
@@ -51,4 +51,5 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Fer Señior` challenged `Sammy` and **lost** *3-1*.
+* `Fer Señior` challenged `Sammy` and **lost** *3-1*.
