@@ -7,7 +7,7 @@ The week started at *Mon, 27 May 2019 23:18:34 GMT* and ended *Mon, 03 Jun 2019 
 |Xotl - 16pts|0|1|1|
 |Neku - 16pts|0|2|1|
 |José "El Iceberg" Rosales - 16pts|0|1|1|
-|Angel Lee - 15pts|1|2|0|
+|Angel Lee - 15pts|0|3|0|
 |El Minion - 13pts|0|3|1|
 |Sammy - 8pts|1|2|1|
 |D.I.O. - 7pts|2|2|0|
@@ -24,6 +24,8 @@ The week started at *Mon, 27 May 2019 23:18:34 GMT* and ended *Mon, 03 Jun 2019 
 ### Completed challenges
 * `Xotl` challenged `Neku` and **lost** *3-2*.
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
+* `Angel Lee` challenged `Xotl` and **won** *3-2*.
+* `Angel Lee` challenged `Neku` and **lost** *3-2*.
 * `El Minion` challenged `Angel Lee` and **won** *3-1*.
 * `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 * `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
