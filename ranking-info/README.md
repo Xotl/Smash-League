@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Wed, 29 May 2019 15:19:13 GMT*
+## In progress this week *Thu, 30 May 2019 04:05:32 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -31,9 +31,9 @@ The current points earned by winning matches this week.
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
 |Neku|0|0|0|19|
-|César Gutman|1|1|0|18|
+|César Gutman|0|2|1|18|
 |Xotl|1|1|0|17|
-|Angel Lee|1|1|0|17|
+|Angel Lee|0|1|0|17|
 |José "El Iceberg" Rosales|1|1|0|17|
 |El Minion|1|1|0|15|
 |Sammy|1|1|1|9|
@@ -52,5 +52,7 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Angel Lee` challenged `César Gutman` and **lost** *3-1*.
+* `César Gutman` challenged `Neku` and **won** *3-0*.
 * `Fer Señior` challenged `Sammy` and **lost** *3-1*.
 * `Fer Señior` challenged `Sammy` and **lost** *3-1*.
