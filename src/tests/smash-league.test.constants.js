@@ -264,8 +264,8 @@ module.exports = {
             "end": 1557075600000
         },
         "current_week": {
-            "start": 1556470800001,
-            "end": 1557075600000
+            "start": 1554012000001,
+            "end": 1554616800000
         },
         "ranking": [
             ["U7VAPLNCR"],// 1st place
