@@ -16,7 +16,6 @@ Last updated **Mon, 03 Jun 2019 15:24:30 GMT**.
 |10|`David`|4|
 |11|`El Chino`|3|
 |12|`Alan`|2|
-|13|`Gilberto "Gil" Ruelas`|1|
 
 Unranked players and players that have 0 points will start with this score:
 
@@ -24,7 +23,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Mon, 03 Jun 2019 15:24:30 GMT*
+## In progress this week *Mon, 03 Jun 2019 18:02:56 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -44,7 +43,6 @@ The current points earned by winning matches this week.
 |David|2|2|0|4|
 |El Chino|3|3|0|3|
 |Alan|3|3|0|2|
-|Gilberto "Gil" Ruelas|3|3|0|1|
 |Carlos López|3|3|0|0|
 |Michel|3|3|0|0|
 |Niightz|3|3|0|0|

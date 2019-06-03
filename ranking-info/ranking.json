@@ -44,9 +44,6 @@
         ],
         [
             "UBRMBGR6Z"
-        ],
-        [
-            "U7VAPLNCR"
         ]
     ],
     "scoreboard": {
@@ -469,7 +466,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1559575470534,
+        "last_update_ts": 1559584976486,
         "reported_results": []
     }
 }
