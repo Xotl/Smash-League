@@ -262,7 +262,7 @@ const commitInProgress = rankingObj => {
     inProgress.scoreboard = newInProgressScoreboard
     result.last_update_ts = inProgress.last_update_ts
     result.in_progress = inProgress
-    result.current_week = getNextWeekObject(result.last_update_ts)
+    result.current_week = getNextWeekObject(result.current_week.end)
     return result
 }
 
