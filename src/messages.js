@@ -22,7 +22,7 @@ module.exports = Tag => ({
         Tag `Parece que a ${'user'} no le quedan monedas, así que no puede retar nadie. :disappointed:`,
         Tag `Veo que a ${'user'} no le quedan monedas... ya no puede retar nadie. :disappointed:Tag `,
         Tag `Sin monedas ${'user'} no puede retar a nadie, ni modo así son las reglas. :disappointed:`,
-        Tag `*Que te valga verga morrro*. ${'user'}, al igual que tu, no trae nada... :mepanchea:`
+        Tag `*Que te valga verga morrro, tu no traes nada*, ${'user'} no tiene monedas... :mepanchea:`
     ],
     "lookup_challengers myself_all": [
         Tag `Estos son los jugadores que puedes retar:\n\n${'listOfValidPlayers'}.`,
