@@ -10,26 +10,31 @@ module.exports = Tag => ({
         'Creo que preguntas por alguien más, pero no entiendo quién.',
         'Parece que quieres preguntar en lugar de otra persona, pero no entiendo bien a quién.',
         '¿Estás preguntando por alguien más?, no estoy seguro de entender. :thinking_face:',
+        'Que te valga verga morro.',
     ],
     "lookup_challengers myself no_coins": [
         'Parece que ya no te quedan monedas, así que no puedes retar nadie. :disappointed:',
         'Veo que no te quedan monedas... ya no puedes retar nadie. :disappointed:',
         'Sin monedas no puedes retar a nadie, ni modo así son las reglas. :disappointed:',
+        'No traes nada... de monedas :mepanchea:',
     ],
     "lookup_challengers onbehalf no_coins": [
         Tag `Parece que a ${'user'} no le quedan monedas, así que no puede retar nadie. :disappointed:`,
         Tag `Veo que a ${'user'} no le quedan monedas... ya no puede retar nadie. :disappointed:Tag `,
         Tag `Sin monedas ${'user'} no puede retar a nadie, ni modo así son las reglas. :disappointed:`,
+        Tag `*Que te valga verga morrro*. ${'user'}, al igual que tu, no trae nada... :mepanchea:`
     ],
     "lookup_challengers myself_all": [
         Tag `Estos son los jugadores que puedes retar:\n\n${'listOfValidPlayers'}.`,
         Tag `Revisando la tabla, veo que estos son los que puedes retar:\n\n${'listOfValidPlayers'}.`,
         Tag `${'listOfValidPlayers'}\n\nLa lista de arriba muestra a quiénes puedes retar.`,
+        Tag `Ni les vas a ganar, pero a los jugadores que puedes retar son:\n\n${'listOfValidPlayers'}.`,
     ],
     "lookup_challengers onbehalf_all": [
         Tag `Estos son los jugadores que ${'user'} puede retar:\n\n${'listOfValidPlayers'}.`,
         Tag `Revisando la tabla, veo que estos son los que puede retar ${'user'}:\n\n${'listOfValidPlayers'}.`,
         Tag `${'listOfValidPlayers'}\n\nLa lista de arriba muestra a quiénes puede retar ${'user'}.`,
+        Tag `*A ti que te valga verga morro*. ${'user'} puede retar a quien se le antoje de estos: \n\n${'listOfValidPlayers'}.`,
     ],
     "lookup_challengers myself_specific missing_players": [
         'Parece que quieres preguntar si puedes retar a alguien en particular, pero no estoy seguro de a quién. :thinking_face:',
