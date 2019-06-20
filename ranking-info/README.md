@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Wed, 19 Jun 2019 04:16:42 GMT*
+## In progress this week *Thu, 20 Jun 2019 01:34:54 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -38,7 +38,7 @@ The current points earned by winning matches this week.
 |Angel Lee|1|3|0|19|
 |Sammy|0|2|1|11|
 |Fer Señior|2|2|0|8|
-|David|0|2|1|5|
+|David|1|2|1|5|
 |D.I.O.|2|2|0|4|
 |El Chino|3|3|0|3|
 |Carlos López|3|3|0|0|
@@ -60,5 +60,4 @@ Matches that already happened during this week.
 * `Michel` challenged `David` and **lost** *3-0*.
 * `Sammy` challenged `El Minion` and **lost** *3-2*.
 * `Sammy` challenged `El Minion` and **lost** *3-0*.
-* `David` challenged `Sammy` and **lost** *3-2*.
 * `David` challenged `Sammy` and **lost** *3-2*.
