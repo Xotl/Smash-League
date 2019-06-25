@@ -21,7 +21,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Mon, 24 Jun 2019 04:17:00 GMT*
+## In progress this week *Tue, 25 Jun 2019 04:17:22 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -29,13 +29,13 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
-|Xotl|0|0|0|25|
-|César Gutman|1|1|0|25|
+|Xotl|0|0|1|25|
+|César Gutman|0|1|0|25|
 |Neku|1|1|0|25|
-|José "El Iceberg" Rosales|1|1|0|22|
-|Angel Lee|1|1|0|21|
+|José "El Iceberg" Rosales|1|1|2|22|
+|Angel Lee|0|1|1|21|
 |El Minion|1|1|0|21|
-|Sammy|2|2|0|13|
+|Sammy|0|3|0|13|
 |Fer Señior|2|2|0|8|
 |David|2|2|0|7|
 |D.I.O.|2|2|0|3|
@@ -50,4 +50,8 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `César Gutman` challenged `Xotl` and **lost** *3-2*.
+* `Sammy` challenged `Angel Lee` and **lost** *3-2*.
+* `Sammy` challenged `Angel Lee` and **won** *3-2*.
+* `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
