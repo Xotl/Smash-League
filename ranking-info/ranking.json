@@ -347,7 +347,7 @@
                 "coins": 0,
                 "range": 0,
                 "points": 25,
-                "stand_points": 2,
+                "stand_points": 3,
                 "completed_challenges": []
             },
             "UBRMBGR6Z": {
@@ -464,7 +464,7 @@
             },
             "UBA5M220K": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 2,
                 "points": 22,
                 "stand_points": 2,
@@ -478,6 +478,17 @@
                         "players": [
                             "U8THDCVJ7",
                             "UBA5M220K"
+                        ]
+                    },
+                    {
+                        "winner": "U61MBQTR8",
+                        "player1": "UBA5M220K",
+                        "player2": "U61MBQTR8",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "UBA5M220K",
+                            "U61MBQTR8"
                         ]
                     }
                 ]
@@ -587,7 +598,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1561522665937,
+        "last_update_ts": 1561609085690,
         "reported_results": []
     }
 }
