@@ -4,25 +4,24 @@ Last updated **Mon, 08 Jul 2019 20:55:32 GMT**.
 
 |#|Player|Score|
 |-|------|-----|
-|1|`Xotl`|11|
+|1|`Xotl`, `Neku`|11|
 |2|`José "El Iceberg" Rosales`|10|
-|3|`Neku`|9|
-|4|`Angel Lee`|8|
-|5|`El Minion`|7|
-|6|`César Gutman`|6|
-|7|`Sammy`|5|
-|8|`David`|4|
-|9|`Fer Señior`|3|
-|10|`El Chino`|2|
-|11|`D.I.O.`, `Medininja`, `El Plebe`, `Paco`|1|
+|3|`Angel Lee`|8|
+|4|`El Minion`|7|
+|5|`César Gutman`|6|
+|6|`Sammy`|5|
+|7|`David`|4|
+|8|`Fer Señior`|3|
+|9|`El Chino`|2|
+|10|`D.I.O.`, `Medininja`, `El Plebe`, `Paco`|1|
 
 Unranked players and players that have 0 points will start with this score:
 
 |Coins|Range|Stand points|Points|
 |-----|-----|------------|------|
-|3|3|0|0|
+|2|2|0|0|
 
-## In progress this week *Tue, 09 Jul 2019 15:43:11 GMT*
+## In progress this week *Wed, 10 Jul 2019 16:15:51 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -30,16 +29,15 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
-|Xotl|0|0|0|11|
-|José "El Iceberg" Rosales|1|1|0|10|
+|Xotl|0|0|1|11|
+|José "El Iceberg" Rosales|0|1|1|10|
 |Neku|1|1|0|9|
-|Angel Lee|1|2|0|8|
-|El Minion|1|1|0|7|
+|Angel Lee|0|2|1|8|
+|El Minion|0|1|0|7|
 |César Gutman|2|5|0|6|
-|Sammy|2|2|0|5|
 |David|2|2|0|4|
-|Fer Señior|2|2|0|3|
-|El Chino|2|2|0|2|
+|Fer Señior|1|2|1|3|
+|El Chino|1|2|0|2|
 |D.I.O.|3|3|0|1|
 |Medininja|3|3|0|1|
 |El Plebe|3|3|0|1|
@@ -48,11 +46,17 @@ The current points earned by winning matches this week.
 |Alan|3|3|0|0|
 |Michel|3|3|0|0|
 |Niightz|3|3|0|0|
+|Sammy|0|2|1|0|
 
 ### Completed challenges
 Matches that already happened during this week.
 
 * `Angel Lee` challenged `Neku` and **won** *3-0*.
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `El Chino` challenged `Fer Señior` and **lost** *3-0*.
 * `César Gutman` challenged `El Minion` and **won** *3-0*.
 * `César Gutman` challenged `Angel Lee` and **won** *3-1*.
 * `César Gutman` challenged `Neku` and **won** *3-0*.
+* `El Minion` challenged `Angel Lee` and **lost** *3-2*.
+* `Fer Señior` challenged `Sammy` and **lost** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-0*.
