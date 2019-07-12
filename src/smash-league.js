@@ -1,5 +1,5 @@
 'use strict'
-const { logIgnoredMatch, getPlayerAlias } = require('./utils')
+const { getPlayerAlias, logIgnoredMatch, removeAlreadyChallengedPlayers, removeEmptyArray } = require('./utils')
 
 const getRankingPlaceByPlayerId = (userId, ranking) => {
     for (let idx = 0; idx < ranking.length; idx++) {
@@ -266,12 +266,13 @@ const commitInProgress = rankingObj => {
     return result
 }
 
-const getPlayersThatCanBeChallenged = (playerPlace, playerRange, rankingTable) => {
+const getPlayersThatCanBeChallenged = (playerPlace, playerRange, rankingTable, playerId) => {
     let index = playerPlace - playerRange - 1
     if (index < 0) {
         index = 0
     }
-    return rankingTable.slice(index, index + playerRange)
+
+    return removeEmptyArray(removeAlreadyChallengedPlayers(rankingTable.slice(index, index + playerRange), playerId))
 }
 
 
