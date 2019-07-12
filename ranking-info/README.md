@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Fri, 12 Jul 2019 13:03:37 GMT*
+## In progress this week *Fri, 12 Jul 2019 14:40:06 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -48,7 +48,7 @@ The current points earned by winning matches this week.
 |Michel|3|3|0|0|
 |Niightz|3|3|0|0|
 |Sammy|0|2|3|0|
-|UHHD243DH|2|3|0|0|
+|Paolo|2|3|0|0|
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -72,4 +72,4 @@ Matches that already happened during this week.
 * `El Plebe` challenged `El Chino` and **lost** *3-2*.
 * `El Plebe` challenged `El Chino` and **won** *3-1*.
 * `Paco` challenged `El Chino` and **won** *3-0*.
-* `UHHD243DH` challenged `Fer Señior` and **lost** *3-0*.
+* `Paolo` challenged `Fer Señior` and **lost** *3-0*.
