@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Fri, 12 Jul 2019 14:40:06 GMT*
+## In progress this week *Sat, 13 Jul 2019 04:56:41 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -41,13 +41,13 @@ The current points earned by winning matches this week.
 |El Chino|1|2|1|2|
 |D.I.O.|3|3|0|1|
 |Medininja|2|4|0|1|
-|El Plebe|2|4|0|1|
-|Paco|3|4|0|1|
+|El Plebe|2|4|1|1|
+|Paco|2|4|0|1|
 |Carlos López|3|3|0|0|
 |Alan|3|3|0|0|
-|Michel|3|3|0|0|
+|Michel|2|4|0|0|
 |Niightz|3|3|0|0|
-|Sammy|0|2|3|0|
+|Sammy|0|2|4|0|
 |Paolo|2|3|0|0|
 
 ### Completed challenges
@@ -65,6 +65,8 @@ Matches that already happened during this week.
 * `Fer Señior` challenged `Sammy` and **lost** *3-2*.
 * `Neku` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-0*.
+* `Michel` challenged `El Plebe` and **lost** *3-1*.
+* `Michel` challenged `El Chino` and **won** *3-0*.
 * `David` challenged `Sammy` and **lost** *3-1*.
 * `David` challenged `César Gutman` and **lost** *3-2*.
 * `Medininja` challenged `El Chino` and **won** *3-2*.
@@ -72,4 +74,5 @@ Matches that already happened during this week.
 * `El Plebe` challenged `El Chino` and **lost** *3-2*.
 * `El Plebe` challenged `El Chino` and **won** *3-1*.
 * `Paco` challenged `El Chino` and **won** *3-0*.
+* `Paco` challenged `Sammy` and **lost** *3-0*.
 * `Paolo` challenged `Fer Señior` and **lost** *3-0*.
