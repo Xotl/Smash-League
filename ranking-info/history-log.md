@@ -1,3 +1,53 @@
+## Commit from Sun, 14 Jul 2019 16:54:29 GMT
+The week started at *Sun, 14 Jul 2019 15:00:00 GMT* and ended *Sun, 21 Jul 2019 15:00:00 GMT*.
+### End of week players score summary
+|Player|Coins|Range|Stand points|
+|------|-----|-----|------------|
+|Xotl - 11pts|0|0|1|
+|Neku - 11pts|1|2|0|
+|José "El Iceberg" Rosales - 10pts|0|1|2|
+|Angel Lee - 8pts|0|2|1|
+|El Minion - 7pts|0|1|0|
+|César Gutman - 6pts|0|5|1|
+|David - 4pts|0|2|0|
+|Fer Señior - 3pts|1|2|2|
+|El Chino - 2pts|1|2|1|
+|D.I.O. - 1pts|3|3|0|
+|Medininja - 1pts|2|4|0|
+|El Plebe - 1pts|2|4|1|
+|Paco - 1pts|2|4|0|
+|Carlos López - 0pts|3|3|0|
+|Alan - 0pts|3|3|0|
+|Michel - 0pts|2|4|0|
+|Niightz - 0pts|3|3|0|
+|Sammy - 0pts|0|2|4|
+|Paolo - 0pts|2|3|0|
+### Completed challenges
+* `Angel Lee` challenged `Neku` and **won** *3-0*.
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `El Chino` challenged `Fer Señior` and **lost** *3-0*.
+* `César Gutman` challenged `El Minion` and **won** *3-0*.
+* `César Gutman` challenged `Angel Lee` and **won** *3-1*.
+* `César Gutman` challenged `Neku` and **won** *3-0*.
+* `César Gutman` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
+* `César Gutman` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `El Minion` challenged `Angel Lee` and **lost** *3-2*.
+* `Fer Señior` challenged `Sammy` and **lost** *3-2*.
+* `Neku` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-0*.
+* `Michel` challenged `El Plebe` and **lost** *3-1*.
+* `Michel` challenged `El Chino` and **won** *3-0*.
+* `David` challenged `Sammy` and **lost** *3-1*.
+* `David` challenged `César Gutman` and **lost** *3-2*.
+* `Medininja` challenged `El Chino` and **won** *3-2*.
+* `Medininja` challenged `Sammy` and **lost** *3-2*.
+* `El Plebe` challenged `El Chino` and **lost** *3-2*.
+* `El Plebe` challenged `El Chino` and **won** *3-1*.
+* `Paco` challenged `El Chino` and **won** *3-0*.
+* `Paco` challenged `Sammy` and **lost** *3-0*.
+* `Paolo` challenged `Fer Señior` and **lost** *3-0*.
+
+
 ## Commit from Mon, 08 Jul 2019 20:55:32 GMT
 The week started at *Sun, 07 Jul 2019 15:00:00 GMT* and ended *Sun, 14 Jul 2019 15:00:00 GMT*.
 ### End of week players score summary
