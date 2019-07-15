@@ -6,13 +6,13 @@ Last updated **Sun, 14 Jul 2019 16:54:29 GMT**.
 |-|------|-----|
 |1|`Xotl`, `José "El Iceberg" Rosales`|12|
 |2|`Neku`|11|
-|3|`César Gutman`|10|
-|4|`Angel Lee`|10|
+|3|`César Gutman`|10<sub>5</sub>|
+|4|`Angel Lee`|10<sub>2</sub>|
 |5|`El Minion`|7|
 |6|`Fer Señior`|5|
 |7|`Sammy`, `David`|4|
-|8|`El Plebe`|3|
-|9|`El Chino`|3|
+|8|`El Plebe`|3<sub>4</sub>|
+|9|`El Chino`|3<sub>2</sub>|
 |10|`Medininja`, `Paco`|2|
 |11|`Michel`|1|
 
@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Mon, 15 Jul 2019 04:57:41 GMT*
+## In progress this week *Mon, 15 Jul 2019 15:34:38 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
