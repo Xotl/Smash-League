@@ -146,9 +146,10 @@ This is the recommended ruleset for the offcial league matches:
 - Mii Fighters: All moveset combinations are legal.
 - Game one striking: (p1 - p2 - p2 - p1). In case both players don’t want to strike, the default starter stage will be **Pokémon Stadium 2**. You may not play on a stage that is not on the available stages list. This will result in a double disqualification/penalization.
 
-If case of time out, the winner will be decided by the winner screen. In case of a tie, the winner will be the player with less damage at the end of the match. In case of a tie of damage or double KO, the players will play a one stock 3 minutes round on the same stage to decide the winner. In case of a player SD, the winner will be decided by the winner screen.
+In case of time out, the winner will be decided by the winner screen. In case of a tie, the winner will be the player with less damage at the end of the match. In case of a tie of damage or double KO, the players will play a one stock 3 minutes round on the same stage to decide the winner. In case of a player SD, the winner will be decided by the winner screen.
 
 After each game, the winner bans 2 stages. Players may not counter pick to any stage they have won on during the set unless both players mutually agreed to.
+
 Winning player is not locked into the same character for the next match, in case any player wants to switch characters between rounds, the winner player should change first. Once the loser player changes character the winner player cannot do it.
 
 If both players agree, they can play on any stage without bans nor restrictions, but the players should pick only legal stages. If the players can't decide the stage to pick, then they should use the striking rules.
