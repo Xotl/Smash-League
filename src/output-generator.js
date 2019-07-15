@@ -37,9 +37,16 @@ const updateRankingJsonFile = rankingObj => new Promise(
 const getRankingBulletsMarkdown = (rankingArray, scoreboardObj) => {
     return '|#|Player|Score|\n|-|------|-----|\n' + rankingArray.map(
         (players, idx) => {
-            const { points } = scoreboardObj[ players[0] ]
+            const { points, range } = scoreboardObj[ players[0] ]
+            let rangeSup = ''
+            if (// Checks if current place is contigous to another place with same points
+                (idx !== 0 && scoreboardObj[ rankingArray[idx - 1][0] ].points === points) // Checks previous place
+                || (idx !== rankingArray.length - 1 && scoreboardObj[ rankingArray[idx + 1][0] ].points === points)// Checks next place
+            ) {
+                rangeSup = `<sub>${range}</sub>`
+            }
             const playersNames = players.map( playerId => `\`${Utils.getPlayerAlias(playerId)}\`` ).join(', ')
-            return `|${1 + idx}|${playersNames}|${points}|`
+            return `|${1 + idx}|${playersNames}|${points}${rangeSup}|`
         }
     ).join('\n')
 }
