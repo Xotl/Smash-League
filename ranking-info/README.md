@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Mon, 15 Jul 2019 15:34:38 GMT*
+## In progress this week *Tue, 16 Jul 2019 04:58:25 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -33,17 +33,17 @@ The current points earned by winning matches this week.
 |Xotl|0|0|0|12|
 |José "El Iceberg" Rosales|0|0|0|12|
 |Neku|1|1|0|11|
-|Angel Lee|1|1|0|10|
-|César Gutman|1|1|0|10|
-|El Minion|1|1|0|7|
+|Angel Lee|0|1|1|10|
+|César Gutman|1|2|1|10|
+|El Minion|0|1|0|7|
 |Fer Señior|2|2|0|5|
-|Sammy|2|2|0|4|
+|Sammy|2|3|0|4|
 |David|2|2|0|4|
 |El Chino|2|2|0|3|
 |El Plebe|2|2|0|3|
 |Medininja|2|2|0|2|
-|Paco|2|2|0|2|
-|Michel|3|3|0|1|
+|Paco|2|3|1|2|
+|Michel|2|3|0|1|
 |Carlos López|3|3|0|0|
 |Alan|3|3|0|0|
 |D.I.O.|3|3|0|0|
@@ -53,4 +53,9 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Angel Lee` challenged `César Gutman` and **lost** *3-0*.
+* `César Gutman` challenged `Neku` and **won** *3-1*.
+* `El Minion` challenged `Angel Lee` and **lost** *3-2*.
+* `Michel` challenged `Paco` and **lost** *3-0*.
+* `Sammy` challenged `El Minion` and **won** *3-2*.
+* `Paco` challenged `El Chino` and **won** *3-1*.
