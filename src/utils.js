@@ -1,7 +1,6 @@
 'use strict'
 const Config = require('../config.json')
 const Messages = require('./messages')
-const { in_progress } = require('../ranking-info/ranking.json')
 
 const GetDateObjFromEpochTS = (epoch) => (new Date( Number(epoch) * 1000 ))
 const GetEpochUnixFromDate = (dateObj) => {
@@ -83,7 +82,7 @@ const removesBotTagFromString = msg => {
     return msg.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '').trim()
 }
 
-const removeAlreadyChallengedPlayers = (players, playerId) => {
+const removeAlreadyChallengedPlayers = (players, playerId, in_progress) => {
     const { scoreboard } = in_progress
     const { completed_challenges } = scoreboard[playerId]
 
@@ -91,7 +90,7 @@ const removeAlreadyChallengedPlayers = (players, playerId) => {
         let canBeChallenged = null;
 
         for (const i in completed_challenges) {
-            canBeChallenged = (completed_challenges[i].player1 === id || completed_challenges[i].player2 === id) ? false : true;
+            canBeChallenged = (completed_challenges[i].player1 === id || completed_challenges[i].player2 === id) ? false : true
         }
 
         return canBeChallenged

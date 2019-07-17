@@ -118,7 +118,7 @@ const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
                 })
             }
 
-            const playersArray = SmashLeague.getPlayersThatCanBeChallenged(playerPlace, playerScore.range, Ranking.ranking, userWhoWantstoKnow)
+            const playersArray = SmashLeague.getPlayersThatCanBeChallenged(playerPlace, playerScore.range, Ranking, userWhoWantstoKnow)
             if (value.includes('_all')) {
                 return results.push({
                     ok: true,
