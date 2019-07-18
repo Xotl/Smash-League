@@ -22,7 +22,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |3|3|0|0|
 
-## In progress this week *Wed, 17 Jul 2019 04:58:52 GMT*
+## In progress this week *Thu, 18 Jul 2019 04:59:07 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -37,7 +37,7 @@ The current points earned by winning matches this week.
 |César Gutman|1|2|1|10|
 |El Minion|0|1|0|7|
 |Fer Señior|2|2|0|5|
-|Sammy|2|3|0|4|
+|Sammy|2|4|0|4|
 |David|2|2|0|4|
 |El Chino|2|2|0|3|
 |El Plebe|2|2|0|3|
@@ -58,4 +58,5 @@ Matches that already happened during this week.
 * `El Minion` challenged `Angel Lee` and **lost** *3-2*.
 * `Michel` challenged `Paco` and **lost** *3-0*.
 * `Sammy` challenged `El Minion` and **won** *3-2*.
+* `Sammy` challenged `Fer Señior` and **won** *3-2*.
 * `Paco` challenged `El Chino` and **won** *3-1*.

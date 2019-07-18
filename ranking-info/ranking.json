@@ -624,7 +624,7 @@
             "UDR61HJCD": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 3,
+                "range": 4,
                 "points": 4,
                 "stand_points": 0,
                 "completed_challenges": [
@@ -637,6 +637,17 @@
                         "players": [
                             "UDR61HJCD",
                             "U8M6QT7EF"
+                        ]
+                    },
+                    {
+                        "winner": "UDR61HJCD",
+                        "player1": "UDR61HJCD",
+                        "player2": "U87CK0E4A",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "UDR61HJCD",
+                            "U87CK0E4A"
                         ]
                     }
                 ]
@@ -696,7 +707,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1563339532606,
+        "last_update_ts": 1563425947418,
         "reported_results": []
     }
 }
