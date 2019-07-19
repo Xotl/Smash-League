@@ -498,7 +498,7 @@
                 "coins": 0,
                 "range": 1,
                 "points": 10,
-                "stand_points": 1,
+                "stand_points": 2,
                 "completed_challenges": [
                     {
                         "winner": "UDBD59WLT",
@@ -623,7 +623,7 @@
             },
             "UDR61HJCD": {
                 "initial_coins": 2,
-                "coins": 2,
+                "coins": 1,
                 "range": 4,
                 "points": 4,
                 "stand_points": 0,
@@ -648,6 +648,17 @@
                         "players": [
                             "UDR61HJCD",
                             "U87CK0E4A"
+                        ]
+                    },
+                    {
+                        "winner": "UB616ENA0",
+                        "player1": "UDR61HJCD",
+                        "player2": "UB616ENA0",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "UDR61HJCD",
+                            "UB616ENA0"
                         ]
                     }
                 ]
@@ -679,7 +690,7 @@
             "UKPTK422K": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 3,
+                "range": 4,
                 "points": 2,
                 "stand_points": 1,
                 "completed_challenges": [
@@ -691,6 +702,17 @@
                         "player2Result": 3,
                         "players": [
                             "UEWUZCYJF",
+                            "UKPTK422K"
+                        ]
+                    },
+                    {
+                        "winner": "UKPTK422K",
+                        "player1": "UDR61HJCD",
+                        "player2": "UKPTK422K",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "UDR61HJCD",
                             "UKPTK422K"
                         ]
                     }
@@ -707,7 +729,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1563425947418,
+        "last_update_ts": 1563512361052,
         "reported_results": []
     }
 }
