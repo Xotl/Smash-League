@@ -273,7 +273,6 @@ const commitInProgress = rankingObj => {
 
 const getPlayersThatCanBeChallenged = (playerPlace, playerRange, completeRanking, playerId) => {
     const { in_progress, ranking } = completeRanking
-    console.log(`culos ${in_progress} y: `, ranking)
     let index = playerPlace - playerRange - 1
 
     if (index < 0) {
