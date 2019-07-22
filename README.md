@@ -124,15 +124,33 @@ Couching during an in progress game is not allowed. Please stick to the rules.
 This is the recommended ruleset for the offcial league matches:
 
 - Stocks: 3
-- Time limit: 8 min.
-- Hazards: off.
-- Miis: Any moveset.
-- Game one striking: (p1 - p2 - p2 - p1). In case both players don’t want to strike, the default starter stage will be **Smashville**.
+- Time limit: 7 min.
+- Final Smash Meter: Off.
+- Spirits: Off.
+- Damage Handicap: Off.
+- Stage Selection: Anyone.
+- Items: Off and None.
+- First to: 1 Win.
+- Stage Morph: Off.
+- Stage Hazards: Off.
+- Team Attack: On.
+- Launch Rate: 1.0x.
+- Underdog Boost: Off.
+- Pausing: On.
+- Score Display: Off.
+- % Show Damage: Yes.
+- Custom Balance: Off.
+- Echo Fighters: Separate.
+- Radar: Big.
+- Allowed Controllers: Nintendo GameCube, Nintendo Pro Controller, Nintendo Joy-Con, SmashBox.
+- Mii Fighters: All moveset combinations are legal.
+- Game one striking: (p1 - p2 - p2 - p1). In case both players don’t want to strike, the default starter stage will be **Pokémon Stadium 2**. You may not play on a stage that is not on the available stages list. This will result in a double disqualification/penalization.
 
-If case of time out, the winner will be decided by the winner screen. In case of a tie, the winner will be the player with less damage at the end of the match. In case of a tie of damage or double KO, the players will play a one stock 3 minutes round on the same stage to decide the winner. In case of a player SD, the winner will be decided by the winner screen.
+In case of time out, the winner will be decided by the winner screen. In case of a tie, the winner will be the player with less damage at the end of the match. In case of a tie of damage or double KO, the players will play a one stock 3 minutes round on the same stage to decide the winner. In case of a player SD, the winner will be decided by the winner screen.
 
-After each game, the winner bans 2 stages. Players may not counter pick to any stage they have won on during the set.
-In case any player wants to switch characters between rounds, the winner player should change first. Once the loser player changes character the winner player cannot do it.
+After each game, the winner bans 2 stages. Players may not counter pick to any stage they have won on during the set unless both players mutually agreed to.
+
+Winning player is not locked into the same character for the next match, in case any player wants to switch characters between rounds, the winner player should change first. Once the loser player changes character the winner player cannot do it.
 
 If both players agree, they can play on any stage without bans nor restrictions, but the players should pick only legal stages. If the players can't decide the stage to pick, then they should use the striking rules.
 
@@ -142,16 +160,14 @@ A player cannot deliberately persuade another player to play on a stage that the
 
 - Smashville
 - Pokemon Stadium 2
-- Lylat Cruise
+- Town And City
 - Battlefield (or any stage on Battlefield)
 - Final Destination (or any omega)
 
 #### Counterpicks:
 
-- Unova Pokemon League
-- Town and City
+- Lylat Cruise
 - Kalos Pokemon League
-- Castle Siege
 - Yoshi’s Story
 - Yoshi’s Island (Brawl)
 
