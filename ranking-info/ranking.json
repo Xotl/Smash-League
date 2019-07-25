@@ -666,10 +666,33 @@
             "UKPTK422K": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 2,
+                "range": 4,
                 "points": 6,
                 "stand_points": 1,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "UKPTK422K",
+                        "player1": "U8M6QT7EF",
+                        "player2": "UKPTK422K",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "U8M6QT7EF",
+                            "UKPTK422K"
+                        ]
+                    },
+                    {
+                        "winner": "UKPTK422K",
+                        "player1": "UDR61HJCD",
+                        "player2": "UKPTK422K",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "UDR61HJCD",
+                            "UKPTK422K"
+                        ]
+                    }
+                ]
             },
             "UHHD243DH": {
                 "initial_coins": 3,
@@ -682,7 +705,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1563944529614,
+        "last_update_ts": 1564030952650,
         "reported_results": []
     }
 }
