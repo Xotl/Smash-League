@@ -497,11 +497,23 @@
             },
             "U8M6QT7EF": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 1,
                 "points": 8,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "U8THDCVJ7",
+                        "player1": "U8M6QT7EF",
+                        "player2": "U8THDCVJ7",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "U8M6QT7EF",
+                            "U8THDCVJ7"
+                        ]
+                    }
+                ]
             },
             "U87CK0E4A": {
                 "initial_coins": 2,
@@ -539,7 +551,7 @@
                 "coins": 0,
                 "range": 3,
                 "points": 11,
-                "stand_points": 1,
+                "stand_points": 2,
                 "completed_challenges": [
                     {
                         "winner": "U8THDCVJ7",
@@ -705,7 +717,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1564030952650,
+        "last_update_ts": 1564117400310,
         "reported_results": []
     }
 }
