@@ -452,7 +452,7 @@
                 "coins": 0,
                 "range": 1,
                 "points": 12,
-                "stand_points": 0,
+                "stand_points": 1,
                 "completed_challenges": [
                     {
                         "winner": "UDBD59WLT",
@@ -551,7 +551,7 @@
                 "coins": 0,
                 "range": 3,
                 "points": 11,
-                "stand_points": 2,
+                "stand_points": 3,
                 "completed_challenges": [
                     {
                         "winner": "U8THDCVJ7",
@@ -677,7 +677,7 @@
             },
             "UKPTK422K": {
                 "initial_coins": 2,
-                "coins": 2,
+                "coins": 0,
                 "range": 4,
                 "points": 6,
                 "stand_points": 1,
@@ -703,6 +703,28 @@
                             "UDR61HJCD",
                             "UKPTK422K"
                         ]
+                    },
+                    {
+                        "winner": "UB616ENA0",
+                        "player1": "UKPTK422K",
+                        "player2": "UB616ENA0",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "UKPTK422K",
+                            "UB616ENA0"
+                        ]
+                    },
+                    {
+                        "winner": "U8THDCVJ7",
+                        "player1": "U8THDCVJ7",
+                        "player2": "UKPTK422K",
+                        "player1Result": 3,
+                        "player2Result": 1,
+                        "players": [
+                            "U8THDCVJ7",
+                            "UKPTK422K"
+                        ]
                     }
                 ]
             },
@@ -717,7 +739,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1564117400310,
+        "last_update_ts": 1564203825463,
         "reported_results": []
     }
 }
