@@ -21,7 +21,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Fri, 02 Aug 2019 05:08:13 GMT*
+## In progress this week *Sat, 03 Aug 2019 05:08:16 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -30,16 +30,16 @@ The current points earned by winning matches this week.
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
 |Neku|0|0|0|16|
-|José "El Iceberg" Rosales|1|1|0|15|
-|Xotl|0|3|1|14|
+|José "El Iceberg" Rosales|0|2|0|15|
+|Xotl|0|3|2|14|
 |César Gutman|0|1|2|14|
-|Angel Lee|0|1|1|13|
-|Paco|1|3|2|9|
+|Angel Lee|0|1|2|13|
+|Paco|0|3|3|9|
 |El Minion|0|2|0|8|
-|Sammy|2|2|0|8|
+|Sammy|0|2|0|8|
 |Fer Señior|0|3|1|5|
 |El Plebe|2|2|0|3|
-|El Chino|1|2|0|2|
+|El Chino|0|2|0|2|
 |David|2|2|0|2|
 |Carlos López|3|3|0|0|
 |Alan|3|3|0|0|
@@ -56,13 +56,18 @@ Matches that already happened during this week.
 * `Xotl` challenged `Neku` and **won** *3-2*.
 * `Angel Lee` challenged `César Gutman` and **lost** *3-0*.
 * `El Chino` challenged `Fer Señior` and **lost** *3-0*.
+* `El Chino` challenged `Fer Señior` and **lost** *3-2*.
 * `César Gutman` challenged `Xotl` and **lost** *3-0*.
 * `El Minion` challenged `Paco` and **lost** *3-1*.
 * `El Minion` challenged `Paco` and **lost** *3-0*.
 * `Fer Señior` challenged `Paco` and **lost** *3-1*.
 * `Fer Señior` challenged `Sammy` and **won** *3-2*.
 * `Fer Señior` challenged `Angel Lee` and **lost** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Neku` and **won** *3-0*.
+* `Sammy` challenged `Angel Lee` and **lost** *3-1*.
+* `Sammy` challenged `Paco` and **lost** *3-1*.
 * `Paco` challenged `Angel Lee` and **won** *3-2*.
 * `Paco` challenged `César Gutman` and **lost** *3-1*.
+* `Paco` challenged `Xotl` and **lost** *3-1*.
 * `Paolo` challenged `El Chino` and **won** *3-0*.
 * `Paolo` challenged `Fer Señior` and **won** *3-1*.
