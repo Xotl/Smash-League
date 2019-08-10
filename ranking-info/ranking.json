@@ -684,15 +684,27 @@
             "UHHD243DH": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 2,
+                "range": 3,
                 "points": 1,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "UHHD243DH",
+                        "player1": "UHHD243DH",
+                        "player2": "UHM2TH85S",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "UHHD243DH",
+                            "UHM2TH85S"
+                        ]
+                    }
+                ]
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1565327485564,
+        "last_update_ts": 1565413890598,
         "reported_results": []
     }
 }

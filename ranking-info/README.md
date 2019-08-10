@@ -21,7 +21,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Fri, 09 Aug 2019 05:11:25 GMT*
+## In progress this week *Sat, 10 Aug 2019 05:11:30 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -41,7 +41,7 @@ The current points earned by winning matches this week.
 |El Chino|2|2|0|2|
 |El Plebe|2|2|0|2|
 |David|2|3|0|1|
-|Paolo|2|2|0|1|
+|Paolo|2|3|0|1|
 |Carlos López|3|3|0|0|
 |Alan|3|3|0|0|
 |D.I.O.|3|3|0|0|
@@ -62,3 +62,4 @@ Matches that already happened during this week.
 * `David` challenged `Paolo` and **won** *3-1*.
 * `Paco` challenged `Angel Lee` and **won** *3-2*.
 * `Paco` challenged `César Gutman` and **lost** *3-2*.
+* `Paolo` challenged `El Plebe` and **won** *3-2*.
