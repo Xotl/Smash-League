@@ -1,19 +1,17 @@
 # Ranking
 
-Last updated **Mon, 05 Aug 2019 05:09:54 GMT**.
+Last updated **Mon, 12 Aug 2019 05:11:42 GMT**.
 
 |#|Player|Score|
 |-|------|-----|
-|1|`Xotl`|18|
-|2|`José "El Iceberg" Rosales`|16<sub>2</sub>|
-|3|`César Gutman`, `Neku`|16<sub>1</sub>|
-|4|`Angel Lee`|15|
-|5|`Paco`|13|
-|6|`El Minion`, `Sammy`|8|
-|7|`Fer Señior`|7|
-|8|`El Chino`, `El Plebe`|2|
-|9|`Paolo`|1<sub>5</sub>|
-|10|`David`|1<sub>2</sub>|
+|1|`José "El Iceberg" Rosales`|19|
+|2|`Xotl`|18|
+|3|`Angel Lee`, `César Gutman`, `Neku`|17|
+|4|`Paco`|15|
+|5|`El Minion`, `Sammy`|8|
+|6|`Fer Señior`|6|
+|7|`David`, `Paolo`|1<sub>3</sub>|
+|8|`El Chino`, `El Plebe`|1<sub>2</sub>|
 
 Unranked players and players that have 0 points will start with this score:
 
@@ -21,7 +19,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Sun, 11 Aug 2019 05:11:40 GMT*
+## In progress this week *Mon, 12 Aug 2019 05:11:42 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -29,37 +27,27 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
-|Xotl|0|0|0|18|
-|César Gutman|0|1|1|16|
-|Neku|0|1|1|16|
-|José "El Iceberg" Rosales|0|2|2|16|
-|Angel Lee|0|1|2|15|
-|Paco|0|2|1|13|
-|El Minion|1|2|0|8|
-|Sammy|0|2|0|8|
-|Fer Señior|2|2|0|7|
-|El Chino|2|2|0|2|
-|El Plebe|2|2|0|2|
-|David|2|3|0|1|
-|Paolo|2|3|0|1|
-|Carlos López|3|3|0|0|
-|Alan|3|3|0|0|
-|D.I.O.|3|3|0|0|
-|Michel|3|3|0|0|
-|Niightz|3|3|0|0|
-|Medininja|3|3|0|0|
+|José "El Iceberg" Rosales|0|0|0|19|
+|Xotl|1|1|0|18|
+|Angel Lee|1|1|0|17|
+|César Gutman|1|1|0|17|
+|Neku|1|1|0|17|
+|Paco|1|1|0|15|
+|El Minion|1|1|0|8|
+|Sammy|1|1|0|8|
+|Fer Señior|2|2|0|6|
+|El Chino|2|2|0|1|
+|David|2|2|0|1|
+|El Plebe|2|2|0|1|
+|Paolo|2|2|0|1|
+|Carlos López|2|2|0|0|
+|Alan|2|2|0|0|
+|D.I.O.|2|2|0|0|
+|Michel|2|2|0|0|
+|Niightz|2|2|0|0|
+|Medininja|2|2|0|0|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-* `Angel Lee` challenged `Neku` and **lost** *3-0*.
-* `César Gutman` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
-* `El Minion` challenged `Angel Lee` and **lost** *3-2*.
-* `Neku` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
-* `José "El Iceberg" Rosales` challenged `Xotl` and **won** *3-2*.
-* `Sammy` challenged `Angel Lee` and **lost** *3-2*.
-* `Sammy` challenged `Paco` and **lost** *3-0*.
-* `David` challenged `Paolo` and **won** *3-1*.
-* `Paco` challenged `Angel Lee` and **won** *3-2*.
-* `Paco` challenged `César Gutman` and **lost** *3-2*.
-* `Paolo` challenged `El Plebe` and **won** *3-2*.
+
