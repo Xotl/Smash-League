@@ -339,7 +339,7 @@
                 "coins": 1,
                 "range": 1,
                 "points": 18,
-                "stand_points": 0,
+                "stand_points": 1,
                 "completed_challenges": []
             },
             "UBRMBGR6Z": {
@@ -368,11 +368,23 @@
             },
             "UDBD59WLT": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 1,
                 "points": 17,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "U61MBQTR8",
+                        "player1": "U61MBQTR8",
+                        "player2": "UDBD59WLT",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "U61MBQTR8",
+                            "UDBD59WLT"
+                        ]
+                    }
+                ]
             },
             "U8M6QT7EF": {
                 "initial_coins": 1,
@@ -481,7 +493,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1565586702153,
+        "last_update_ts": 1565673152456,
         "reported_results": []
     }
 }
