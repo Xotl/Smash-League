@@ -19,7 +19,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Wed, 14 Aug 2019 05:13:23 GMT*
+## In progress this week *Thu, 15 Aug 2019 05:13:39 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -32,7 +32,7 @@ The current points earned by winning matches this week.
 |Angel Lee|0|1|0|17|
 |César Gutman|0|1|0|17|
 |Neku|0|1|0|17|
-|Paco|1|1|2|15|
+|Paco|1|2|2|15|
 |El Minion|0|1|0|8|
 |Sammy|0|1|0|8|
 |Fer Señior|2|2|0|6|
@@ -55,3 +55,4 @@ Matches that already happened during this week.
 * `El Minion` challenged `Paco` and **lost** *3-1*.
 * `Neku` challenged `Xotl` and **lost** *3-0*.
 * `Sammy` challenged `Paco` and **lost** *3-0*.
+* `Paco` challenged `Angel Lee` and **won** *3-1*.
