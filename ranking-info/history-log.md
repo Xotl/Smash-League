@@ -1,3 +1,39 @@
+## Commit from Mon, 19 Aug 2019 05:15:58 GMT
+The week started at *Sun, 18 Aug 2019 15:00:00 GMT* and ended *Sun, 25 Aug 2019 15:00:00 GMT*.
+### End of week players score summary
+|Player|Coins|Range|Stand points|
+|------|-----|-----|------------|
+|José "El Iceberg" Rosales - 19pts|0|0|0|
+|Xotl - 18pts|1|1|4|
+|Angel Lee - 17pts|0|1|0|
+|César Gutman - 17pts|0|1|0|
+|Neku - 17pts|0|1|0|
+|Paco - 15pts|0|2|2|
+|El Minion - 8pts|0|1|1|
+|Sammy - 8pts|0|1|1|
+|Fer Señior - 6pts|2|2|0|
+|El Chino - 1pts|2|2|0|
+|David - 1pts|2|2|0|
+|El Plebe - 1pts|2|2|0|
+|Paolo - 1pts|0|2|0|
+|Carlos López - 0pts|2|2|0|
+|Alan - 0pts|2|2|0|
+|D.I.O. - 0pts|2|2|0|
+|Michel - 0pts|2|2|0|
+|Niightz - 0pts|2|2|0|
+|Medininja - 0pts|2|2|0|
+### Completed challenges
+* `Angel Lee` challenged `Xotl` and **lost** *3-0*.
+* `César Gutman` challenged `Xotl` and **lost** *3-0*.
+* `El Minion` challenged `Paco` and **lost** *3-1*.
+* `Neku` challenged `Xotl` and **lost** *3-0*.
+* `Sammy` challenged `Paco` and **lost** *3-0*.
+* `Paco` challenged `Angel Lee` and **won** *3-1*.
+* `Paco` challenged `Xotl` and **lost** *3-2*.
+* `Paolo` challenged `El Minion` and **lost** *3-0*.
+* `Paolo` challenged `Sammy` and **lost** *3-0*.
+
+
 ## Commit from Mon, 12 Aug 2019 05:11:42 GMT
 The week started at *Sun, 11 Aug 2019 15:00:00 GMT* and ended *Sun, 18 Aug 2019 15:00:00 GMT*.
 ### End of week players score summary

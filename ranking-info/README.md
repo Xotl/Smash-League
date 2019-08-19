@@ -1,17 +1,16 @@
 # Ranking
 
-Last updated **Mon, 12 Aug 2019 05:11:42 GMT**.
+Last updated **Mon, 19 Aug 2019 05:15:58 GMT**.
 
 |#|Player|Score|
 |-|------|-----|
-|1|`José "El Iceberg" Rosales`|19|
-|2|`Xotl`|18|
-|3|`Angel Lee`, `César Gutman`, `Neku`|17|
-|4|`Paco`|15|
-|5|`El Minion`, `Sammy`|8|
-|6|`Fer Señior`|6|
-|7|`David`, `Paolo`|1<sub>3</sub>|
-|8|`El Chino`, `El Plebe`|1<sub>2</sub>|
+|1|`Xotl`|21|
+|2|`José "El Iceberg" Rosales`|19|
+|3|`Paco`|18|
+|4|`Angel Lee`, `César Gutman`, `Neku`|17|
+|5|`El Minion`, `Sammy`|9|
+|6|`Fer Señior`|5|
+|7|`Paolo`|1|
 
 Unranked players and players that have 0 points will start with this score:
 
@@ -19,7 +18,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Sun, 18 Aug 2019 05:15:32 GMT*
+## In progress this week *Mon, 19 Aug 2019 05:15:58 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -27,35 +26,27 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
-|José "El Iceberg" Rosales|0|0|0|19|
-|Xotl|1|1|4|18|
-|Angel Lee|0|1|0|17|
-|César Gutman|0|1|0|17|
-|Neku|0|1|0|17|
-|Paco|0|2|2|15|
-|El Minion|0|1|1|8|
-|Sammy|0|1|1|8|
-|Fer Señior|2|2|0|6|
-|El Chino|2|2|0|1|
-|David|2|2|0|1|
-|El Plebe|2|2|0|1|
-|Paolo|0|2|0|1|
+|Xotl|0|0|0|21|
+|José "El Iceberg" Rosales|1|1|0|19|
+|Paco|1|1|0|18|
+|Angel Lee|1|1|0|17|
+|César Gutman|1|1|0|17|
+|Neku|1|1|0|17|
+|El Minion|1|1|0|9|
+|Sammy|1|1|0|9|
+|Fer Señior|2|2|0|5|
+|Paolo|2|2|0|1|
 |Carlos López|2|2|0|0|
 |Alan|2|2|0|0|
+|El Chino|2|2|0|0|
 |D.I.O.|2|2|0|0|
 |Michel|2|2|0|0|
 |Niightz|2|2|0|0|
+|David|2|2|0|0|
 |Medininja|2|2|0|0|
+|El Plebe|2|2|0|0|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-* `Angel Lee` challenged `Xotl` and **lost** *3-0*.
-* `César Gutman` challenged `Xotl` and **lost** *3-0*.
-* `El Minion` challenged `Paco` and **lost** *3-1*.
-* `Neku` challenged `Xotl` and **lost** *3-0*.
-* `Sammy` challenged `Paco` and **lost** *3-0*.
-* `Paco` challenged `Angel Lee` and **won** *3-1*.
-* `Paco` challenged `Xotl` and **lost** *3-2*.
-* `Paolo` challenged `El Minion` and **lost** *3-0*.
-* `Paolo` challenged `Sammy` and **lost** *3-0*.
+
