@@ -310,7 +310,7 @@
                 "coins": 0,
                 "range": 0,
                 "points": 21,
-                "stand_points": 0,
+                "stand_points": 1,
                 "completed_challenges": []
             },
             "UBRMBGR6Z": {
@@ -323,11 +323,23 @@
             },
             "UB616ENA0": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 1,
                 "points": 17,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "UKPTK422K",
+                        "player1": "UKPTK422K",
+                        "player2": "UB616ENA0",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "UKPTK422K",
+                            "UB616ENA0"
+                        ]
+                    }
+                ]
             },
             "UEWUZCYJF": {
                 "initial_coins": 2,
@@ -340,18 +352,42 @@
             "UDBD59WLT": {
                 "initial_coins": 1,
                 "coins": 1,
-                "range": 1,
+                "range": 2,
                 "points": 17,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "UDBD59WLT",
+                        "player1": "UDBD59WLT",
+                        "player2": "UKPTK422K",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "UDBD59WLT",
+                            "UKPTK422K"
+                        ]
+                    }
+                ]
             },
             "U8M6QT7EF": {
                 "initial_coins": 1,
                 "coins": 1,
-                "range": 1,
+                "range": 2,
                 "points": 9,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "U8M6QT7EF",
+                        "player1": "U8M6QT7EF",
+                        "player2": "UB616ENA0",
+                        "player1Result": 3,
+                        "player2Result": 1,
+                        "players": [
+                            "U8M6QT7EF",
+                            "UB616ENA0"
+                        ]
+                    }
+                ]
             },
             "U87CK0E4A": {
                 "initial_coins": 2,
@@ -379,11 +415,23 @@
             },
             "UBA5M220K": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 1,
                 "points": 19,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "U61MBQTR8",
+                        "player1": "UBA5M220K",
+                        "player2": "U61MBQTR8",
+                        "player1Result": 2,
+                        "player2Result": 3,
+                        "players": [
+                            "UBA5M220K",
+                            "U61MBQTR8"
+                        ]
+                    }
+                ]
             },
             "UAGR4S57G": {
                 "initial_coins": 2,
@@ -438,7 +486,7 @@
                 "coins": 1,
                 "range": 1,
                 "points": 18,
-                "stand_points": 0,
+                "stand_points": 1,
                 "completed_challenges": []
             },
             "UHHD243DH": {
@@ -452,7 +500,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1566278208372,
+        "last_update_ts": 1566364616922,
         "reported_results": []
     }
 }
