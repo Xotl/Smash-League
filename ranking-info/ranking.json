@@ -360,7 +360,7 @@
             },
             "U8M6QT7EF": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 2,
                 "points": 9,
                 "stand_points": 0,
@@ -374,6 +374,17 @@
                         "players": [
                             "U8M6QT7EF",
                             "UB616ENA0"
+                        ]
+                    },
+                    {
+                        "winner": "UKPTK422K",
+                        "player1": "U8M6QT7EF",
+                        "player2": "UKPTK422K",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "U8M6QT7EF",
+                            "UKPTK422K"
                         ]
                     }
                 ]
@@ -447,7 +458,7 @@
                 "coins": 1,
                 "range": 1,
                 "points": 9,
-                "stand_points": 0,
+                "stand_points": 1,
                 "completed_challenges": []
             },
             "UBD38N45P": {
@@ -479,7 +490,7 @@
                 "coins": 1,
                 "range": 2,
                 "points": 18,
-                "stand_points": 2,
+                "stand_points": 3,
                 "completed_challenges": [
                     {
                         "winner": "UKPTK422K",
@@ -496,16 +507,28 @@
             },
             "UHHD243DH": {
                 "initial_coins": 2,
-                "coins": 2,
+                "coins": 1,
                 "range": 2,
                 "points": 1,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "UDR61HJCD",
+                        "player1": "UDR61HJCD",
+                        "player2": "UHHD243DH",
+                        "player1Result": 3,
+                        "player2Result": 1,
+                        "players": [
+                            "UDR61HJCD",
+                            "UHHD243DH"
+                        ]
+                    }
+                ]
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1566451065567,
+        "last_update_ts": 1566537510364,
         "reported_results": []
     }
 }
