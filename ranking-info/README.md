@@ -17,7 +17,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Fri, 23 Aug 2019 05:18:30 GMT*
+## In progress this week *Sat, 24 Aug 2019 05:18:47 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -25,14 +25,14 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
-|Xotl|0|0|1|21|
+|Xotl|0|0|2|21|
 |José "El Iceberg" Rosales|0|1|0|19|
-|Paco|1|2|3|18|
-|Angel Lee|0|1|0|17|
+|Paco|0|2|3|18|
+|Angel Lee|0|1|1|17|
 |César Gutman|1|2|0|17|
 |Neku|0|1|0|17|
 |El Minion|0|2|0|9|
-|Sammy|1|1|1|9|
+|Sammy|0|1|1|9|
 |Paolo|1|2|0|1|
 |Carlos López|2|2|0|0|
 |Alan|2|2|0|0|
@@ -53,5 +53,7 @@ Matches that already happened during this week.
 * `El Minion` challenged `Paco` and **lost** *3-0*.
 * `Neku` challenged `Paco` and **lost** *3-0*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-2*.
+* `Sammy` challenged `Angel Lee` and **lost** *3-2*.
 * `Paco` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
+* `Paco` challenged `Xotl` and **lost** *3-2*.
 * `Paolo` challenged `Sammy` and **lost** *3-1*.
