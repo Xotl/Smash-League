@@ -21,7 +21,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Mon, 26 Aug 2019 05:19:55 GMT*
+## In progress this week *Tue, 27 Aug 2019 05:19:56 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -31,10 +31,10 @@ The current points earned by winning matches this week.
 |------|-----|-----|------------|-----|
 |Xotl|0|0|0|23|
 |Paco|1|1|0|22|
-|José "El Iceberg" Rosales|1|1|0|19|
-|Angel Lee|1|1|0|18|
-|César Gutman|1|1|0|17|
-|Neku|2|2|0|17|
+|José "El Iceberg" Rosales|1|2|1|19|
+|Angel Lee|0|1|0|18|
+|César Gutman|1|2|1|17|
+|Neku|1|2|0|17|
 |Sammy|2|2|0|11|
 |El Minion|2|2|0|10|
 |D.I.O.|2|2|0|1|
@@ -51,4 +51,7 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
+* `César Gutman` challenged `Angel Lee` and **won** *3-1*.
+* `Neku` challenged `César Gutman` and **lost** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Paco` and **won** *3-0*.
