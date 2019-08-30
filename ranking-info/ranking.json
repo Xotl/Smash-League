@@ -427,7 +427,7 @@
             "U8M6QT7EF": {
                 "initial_coins": 2,
                 "coins": 1,
-                "range": 2,
+                "range": 3,
                 "points": 10,
                 "stand_points": 1,
                 "completed_challenges": [
@@ -440,6 +440,17 @@
                         "players": [
                             "UDR61HJCD",
                             "U8M6QT7EF"
+                        ]
+                    },
+                    {
+                        "winner": "U8M6QT7EF",
+                        "player1": "U8M6QT7EF",
+                        "player2": "UDR61HJCD",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "U8M6QT7EF",
+                            "UDR61HJCD"
                         ]
                     }
                 ]
@@ -606,7 +617,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1567056043782,
+        "last_update_ts": 1567142458199,
         "reported_results": []
     }
 }
