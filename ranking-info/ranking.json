@@ -384,8 +384,8 @@
             },
             "UDBD59WLT": {
                 "initial_coins": 1,
-                "coins": 1,
-                "range": 4,
+                "coins": 0,
+                "range": 5,
                 "points": 17,
                 "stand_points": 2,
                 "completed_challenges": [
@@ -420,6 +420,17 @@
                         "players": [
                             "UDBD59WLT",
                             "UKPTK422K"
+                        ]
+                    },
+                    {
+                        "winner": "UDBD59WLT",
+                        "player1": "UDBD59WLT",
+                        "player2": "U61MBQTR8",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "UDBD59WLT",
+                            "U61MBQTR8"
                         ]
                     }
                 ]
@@ -617,7 +628,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1567142458199,
+        "last_update_ts": 1567228884801,
         "reported_results": []
     }
 }
