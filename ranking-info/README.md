@@ -20,7 +20,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Fri, 06 Sep 2019 05:24:03 GMT*
+## In progress this week *Fri, 06 Sep 2019 17:52:49 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -46,8 +46,8 @@ The current points earned by winning matches this week.
 |David|2|2|0|0|
 |Medininja|2|2|0|0|
 |El Plebe|1|2|0|0|
-|UMY200LSC|2|3|0|0|
-|ULBS05D3M|2|3|0|0|
+|Roberto|2|3|0|0|
+|Alfredo|2|3|0|0|
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -68,5 +68,5 @@ Matches that already happened during this week.
 * `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
 * `El Plebe` challenged `Sammy` and **lost** *3-1*.
 * `Paco` challenged `César Gutman` and **lost** *3-0*.
-* `UMY200LSC` challenged `Sammy` and **won** *3-0*.
-* `ULBS05D3M` challenged `Sammy` and **won** *3-0*.
+* `Roberto` challenged `Sammy` and **won** *3-0*.
+* `Alfredo` challenged `Sammy` and **won** *3-0*.
