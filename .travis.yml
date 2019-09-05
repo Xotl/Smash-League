@@ -10,8 +10,6 @@ jobs:
   include:
     - stage: Test
       script: docker run --rm smash-league npm test
-    - # stage name not required, will continue to use `test`
-      script: ./test 2
     - stage: Run
       if: branch = master
       script: 
