@@ -84,17 +84,20 @@ const removesBotTagFromString = msg => {
 
 const removeAlreadyChallengedPlayers = (players, playerId, in_progress) => {
     const { scoreboard } = in_progress
-    const { completed_challenges } = scoreboard[playerId]
+    const { completed_challenges = [] } = scoreboard[playerId] || {}
 
-    return players.map(rankPlayers => rankPlayers.filter(id => {
-        let canBeChallenged = null;
-
-        for (const i in completed_challenges) {
-            canBeChallenged = (completed_challenges[i].player1 === id || completed_challenges[i].player2 === id) ? false : true
-        }
-
-        return canBeChallenged
-    }))
+    return players.map(
+        rankPlayers => rankPlayers.filter(
+            id => {
+                for (const challenge of completed_challenges) {
+                    if ( challenge.players.includes(id) && challenge.winner === playerId ) {
+                        return false
+                    }
+                }
+                return true
+            }
+        )
+    )
 }
 
 const removeEmptyArray = array => array.filter(i => (i.length === 0) ? false : true)
