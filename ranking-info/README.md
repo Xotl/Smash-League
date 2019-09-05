@@ -20,7 +20,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Wed, 04 Sep 2019 05:22:32 GMT*
+## In progress this week *Thu, 05 Sep 2019 05:23:19 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -31,8 +31,8 @@ The current points earned by winning matches this week.
 |Xotl|0|0|1|24|
 |César Gutman|0|1|0|23|
 |Paco|1|1|0|22|
-|José "El Iceberg" Rosales|1|1|0|20|
-|Angel Lee|1|1|1|19|
+|José "El Iceberg" Rosales|1|2|1|20|
+|Angel Lee|0|1|1|19|
 |Neku|2|2|0|17|
 |El Minion|0|2|0|12|
 |Sammy|2|3|1|12|
@@ -47,13 +47,17 @@ The current points earned by winning matches this week.
 |Medininja|2|2|0|0|
 |El Plebe|2|2|0|0|
 |UMY200LSC|2|3|0|0|
+|ULBS05D3M|2|3|0|0|
 
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
 * `César Gutman` challenged `Xotl` and **lost** *3-0*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-2*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-2*.
 * `D.I.O.` challenged `Sammy` and **lost** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Paco` and **won** *3-0*.
 * `Sammy` challenged `El Minion` and **won** *3-1*.
 * `UMY200LSC` challenged `Sammy` and **won** *3-0*.
+* `ULBS05D3M` challenged `Sammy` and **won** *3-0*.
