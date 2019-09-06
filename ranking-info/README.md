@@ -20,7 +20,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Thu, 05 Sep 2019 05:23:19 GMT*
+## In progress this week *Fri, 06 Sep 2019 05:24:03 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -28,14 +28,14 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Stand points|Score|
 |------|-----|-----|------------|-----|
-|Xotl|0|0|1|24|
-|César Gutman|0|1|0|23|
-|Paco|1|1|0|22|
-|José "El Iceberg" Rosales|1|2|1|20|
-|Angel Lee|0|1|1|19|
-|Neku|2|2|0|17|
+|Xotl|0|0|2|24|
+|César Gutman|0|1|1|23|
+|Paco|0|1|0|22|
+|José "El Iceberg" Rosales|0|3|2|20|
+|Angel Lee|0|1|2|19|
+|Neku|0|2|0|17|
 |El Minion|0|2|0|12|
-|Sammy|2|3|1|12|
+|Sammy|1|5|2|12|
 |Paolo|2|2|0|1|
 |Carlos López|2|2|0|0|
 |Alan|2|2|0|0|
@@ -45,7 +45,7 @@ The current points earned by winning matches this week.
 |Niightz|2|2|0|0|
 |David|2|2|0|0|
 |Medininja|2|2|0|0|
-|El Plebe|2|2|0|0|
+|El Plebe|1|2|0|0|
 |UMY200LSC|2|3|0|0|
 |ULBS05D3M|2|3|0|0|
 
@@ -56,8 +56,17 @@ Matches that already happened during this week.
 * `César Gutman` challenged `Xotl` and **lost** *3-0*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-2*.
 * `El Minion` challenged `Angel Lee` and **lost** *3-2*.
+* `Neku` challenged `Angel Lee` and **lost** *3-2*.
+* `Neku` challenged `Angel Lee` and **lost** *3-1*.
 * `D.I.O.` challenged `Sammy` and **lost** *3-1*.
 * `José "El Iceberg" Rosales` challenged `Paco` and **won** *3-0*.
+* `José "El Iceberg" Rosales` challenged `César Gutman` and **won** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-2*.
 * `Sammy` challenged `El Minion` and **won** *3-1*.
+* `Sammy` challenged `Angel Lee` and **won** *3-2*.
+* `Sammy` challenged `Neku` and **won** *3-2*.
+* `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
+* `El Plebe` challenged `Sammy` and **lost** *3-1*.
+* `Paco` challenged `César Gutman` and **lost** *3-0*.
 * `UMY200LSC` challenged `Sammy` and **won** *3-0*.
 * `ULBS05D3M` challenged `Sammy` and **won** *3-0*.
