@@ -20,7 +20,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Fri, 06 Sep 2019 19:44:06 GMT*
+## In progress this week *Fri, 06 Sep 2019 20:45:04 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -33,7 +33,7 @@ The current points earned by winning matches this week.
 |Paco|0|1|0|22|
 |José "El Iceberg" Rosales|0|3|2|20|
 |Angel Lee|0|1|2|19|
-|Neku|0|2|0|17|
+|Neku|0|2|1|17|
 |El Minion|0|2|0|12|
 |Sammy|1|5|2|12|
 |Paolo|2|2|0|1|
@@ -46,8 +46,8 @@ The current points earned by winning matches this week.
 |David|2|2|0|0|
 |Medininja|2|2|0|0|
 |El Plebe|1|2|0|0|
-|Roberto|2|4|-1|0|
-|Alfredo|2|4|-1|0|
+|Roberto|1|4|-1|0|
+|Alfredo|2|5|-1|0|
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -69,4 +69,6 @@ Matches that already happened during this week.
 * `El Plebe` challenged `Sammy` and **lost** *3-1*.
 * `Paco` challenged `César Gutman` and **lost** *3-0*.
 * `Roberto` challenged `Sammy` and **won** *3-0*.
+* `Roberto` challenged `Neku` and **lost** *3-2*.
 * `Alfredo` challenged `Sammy` and **won** *3-0*.
+* `Alfredo` challenged `Neku` and **won** *3-2*.
