@@ -11,7 +11,7 @@ jobs:
     - stage: Test
       script: docker run --rm smash-league npm test
     - stage: Run
-      if: branch = master
+      if: branch = master AND type != pull_request
       script: 
         - >-
           docker run --rm smash-league npm test &&
