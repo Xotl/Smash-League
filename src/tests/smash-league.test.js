@@ -6,7 +6,7 @@ const {
 
 const {
     getNextWeekObject, calculatePointsFromPlayerScore, updateInProgressScoreboard,
-    commitInProgress
+    commitInProgress, isReportedResultValid
 } = require('../smash-league')
 
 
@@ -124,5 +124,60 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "completed_challenges": []
             }
         })
+    })
+
+    test('isReportedResultValid', () => {
+        const rankingTable = [
+            ['Xotl'],
+            ['José', 'Lee'],
+            ['Paco'],
+            ['Neku'],
+            ['Roberto']
+        ]
+
+        expect(
+            isReportedResultValid(
+                {
+                    challengerId: 'Medininja', challengerPlace: 6,
+                    playerChallengedId: 'Manco', playerChallengedPlace: 6
+                },
+                rankingTable,
+                {
+                    "initial_coins": 2, "coins": 2, "range": 2,
+                    "points": 0, "stand_points": 0, "completed_challenges": []
+                },
+                {}
+            )
+        ).toBe(true)
+
+        expect(
+            isReportedResultValid(
+                {
+                    challengerId: 'Medininja', challengerPlace: 6,
+                    playerChallengedId: 'Paco', playerChallengedPlace: 4
+                },
+                rankingTable,
+                {
+                    "initial_coins": 2, "coins": 2, "range": 2,
+                    "points": 0, "stand_points": 0, "completed_challenges": []
+                },
+                {}
+            )
+        ).toBe(true)
+
+        expect(
+            isReportedResultValid(
+                {
+                    challengerId: 'Medininja', challengerPlace: 6,
+                    playerChallengedId: 'Xotl', playerChallengedPlace: 1
+                },
+                rankingTable,
+                {
+                    "initial_coins": 2, "coins": 2, "range": 2,
+                    "points": 0, "stand_points": 0, "completed_challenges": []
+                },
+                {}
+            )
+        ).toBe(false)
     })
 })
