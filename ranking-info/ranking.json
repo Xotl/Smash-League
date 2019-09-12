@@ -611,7 +611,7 @@
             },
             "UDR61HJCD": {
                 "initial_coins": 2,
-                "coins": 1,
+                "coins": 0,
                 "range": 3,
                 "points": 17,
                 "stand_points": 2,
@@ -636,6 +636,17 @@
                         "players": [
                             "UDR61HJCD",
                             "UB616ENA0"
+                        ]
+                    },
+                    {
+                        "winner": "UKPTK422K",
+                        "player1": "UDR61HJCD",
+                        "player2": "UKPTK422K",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UDR61HJCD",
+                            "UKPTK422K"
                         ]
                     }
                 ]
@@ -669,7 +680,7 @@
                 "coins": 0,
                 "range": 2,
                 "points": 23,
-                "stand_points": 1,
+                "stand_points": 2,
                 "completed_challenges": [
                     {
                         "winner": "UKPTK422K",
@@ -802,7 +813,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1568179716631,
+        "last_update_ts": 1568263377522,
         "reported_results": []
     }
 }
