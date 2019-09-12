@@ -82,6 +82,26 @@ const removesBotTagFromString = msg => {
     return msg.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '').trim()
 }
 
+const removeAlreadyChallengedPlayers = (players, playerId, in_progress) => {
+    const { scoreboard } = in_progress
+    const { completed_challenges = [] } = scoreboard[playerId] || {}
+
+    return players.map(
+        rankPlayers => rankPlayers.filter(
+            id => {
+                for (const challenge of completed_challenges) {
+                    if ( challenge.players.includes(id) && challenge.winner === playerId ) {
+                        return false
+                    }
+                }
+                return true
+            }
+        )
+    )
+}
+
+const removeEmptyArray = array => array.filter(i => (i.length === 0) ? false : true)
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
@@ -93,4 +113,6 @@ module.exports = {
     templateString,
     getRandomMessageById,
     removesBotTagFromString,
+    removeAlreadyChallengedPlayers,
+    removeEmptyArray,
 }
