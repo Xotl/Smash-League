@@ -92,13 +92,14 @@ const getBlocksForReportedResult = (reportedResult) => {
     const { winner, player1, player2, player1Result, player2Result} = reportedResult.value
     const highScore = player1Result > player2Result ? player1Result : player2Result
     const lowScore = player1Result > player2Result ? player2Result : player1Result
+    const messageType = lowScore == 0 ? 'reported_result valid_obliterated' : 'reported_result valid'; 
 
     return [
         {
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": Utils.getRandomMessageById('reported_result valid', {
+                "text": Utils.getRandomMessageById(messageType, {
                     winner: `<@${winner}>`, loser: winner === player1 ? `<@${player2}>` : `<@${player1}>`,
                     highScore, lowScore
                 })
