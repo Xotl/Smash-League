@@ -64,8 +64,9 @@ const isReportedResultValid = (identifiedPlayersObj, rankingTable, playerScorebo
         playerChallengedId, playerChallengedPlace
     } = identifiedPlayersObj
 
-    if (challengerPlace === playerChallengedPlace) {// They cannot challenge people in the same place
-        logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place.`, reportedResult)
+    if (challengerPlace === playerChallengedPlace && challengerPlace <= 5) {
+        // They cannot challenge people in the same place above place 5
+        logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place if you're top 5.`, reportedResult)
         return false
     }
 
@@ -292,5 +293,6 @@ module.exports = {
     calculatePointsFromPlayerScore,
     getNextWeekObject,
     getUnrankedPlayerScore,
-    getPlayersThatCanBeChallenged
+    getPlayersThatCanBeChallenged,
+    isReportedResultValid
 }
