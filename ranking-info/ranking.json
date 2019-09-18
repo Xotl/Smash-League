@@ -556,21 +556,33 @@
                 "coins": 2,
                 "range": 2,
                 "points": 4,
-                "stand_points": 0,
+                "stand_points": 1,
                 "completed_challenges": []
             },
             "ULBS05D3M": {
                 "initial_coins": 2,
-                "coins": 2,
+                "coins": 1,
                 "range": 2,
                 "points": 4,
                 "stand_points": 0,
-                "completed_challenges": []
+                "completed_challenges": [
+                    {
+                        "winner": "UMY200LSC",
+                        "player1": "UMY200LSC",
+                        "player2": "ULBS05D3M",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "UMY200LSC",
+                            "ULBS05D3M"
+                        ]
+                    }
+                ]
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1568830536745,
+        "last_update_ts": 1568839966113,
         "reported_results": []
     }
 }
