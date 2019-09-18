@@ -506,9 +506,9 @@
             "UDR61HJCD": {
                 "initial_coins": 1,
                 "coins": 1,
-                "range": 1,
+                "range": 2,
                 "points": 20,
-                "stand_points": 0,
+                "stand_points": -1,
                 "completed_challenges": []
             },
             "UBD38N45P": {
