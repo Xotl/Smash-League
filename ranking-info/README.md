@@ -19,7 +19,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Tue, 17 Sep 2019 15:26:03 GMT*
+## In progress this week *Wed, 18 Sep 2019 05:31:52 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
