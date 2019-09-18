@@ -46,7 +46,6 @@ module.exports = Tag => ({
         Tag `Revisando la tabla, veo que estos son los que puedes retar:\n\n${'listOfValidPlayers'}.`,
         Tag `${'listOfValidPlayers'}\n\nLa lista de arriba muestra a quiénes puedes retar.`,
         Tag `Ni les vas a ganar, pero a los jugadores que puedes retar son:\n\n${'listOfValidPlayers'}.`,
-        Tag `You expected the challenge list? too bad!\n https://tenor.com/FlMC.gif`,
         Tag `Te picho una coca si le ganas a todos:\n\n${'listOfValidPlayers'}.`,
         Tag `A la orden jefe, servido:\n\n${'listOfValidPlayers'}.`,
         Tag `Usted pide, el bot provee:\n\n${'listOfValidPlayers'}.`,
