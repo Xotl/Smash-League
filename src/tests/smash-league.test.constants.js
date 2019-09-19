@@ -394,5 +394,11 @@ module.exports = {
             player1Result: 1, player2Result: 3,
             players: ['Another unranked player', 'Unranked player']
         },
+        {// Invalid index #12: Because they already played an untie match against each other
+            winner: 'Another unranked player',
+            player1: 'Unranked player', player2: 'Another unranked player',
+            player1Result: 1, player2Result: 3,
+            players: ['Unranked player', 'Another unranked player']
+        },
     ]
 }

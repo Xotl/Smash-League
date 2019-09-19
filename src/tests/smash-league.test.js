@@ -151,18 +151,18 @@ describe('Smash League Challenges & Scoreboard', () => {
             ['Roberto']
         ]
 
+        const unrankedScore = {
+            "initial_coins": 2, "coins": 2, "range": 2,
+            "points": 0, "stand_points": 0, "completed_challenges": []
+        }
+
         expect(
             isReportedResultValid(
                 {
                     challengerId: 'Medininja', challengerPlace: 6,
                     playerChallengedId: 'Manco', playerChallengedPlace: 6
                 },
-                rankingTable,
-                {
-                    "initial_coins": 2, "coins": 2, "range": 2,
-                    "points": 0, "stand_points": 0, "completed_challenges": []
-                },
-                {}
+                rankingTable, unrankedScore, unrankedScore, {}
             )
         ).toBe(true)
 
@@ -177,7 +177,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                     "initial_coins": 2, "coins": 2, "range": 2,
                     "points": 0, "stand_points": 0, "completed_challenges": []
                 },
-                {}
+                unrankedScore, unrankedScore, {}
             )
         ).toBe(true)
 
@@ -187,12 +187,7 @@ describe('Smash League Challenges & Scoreboard', () => {
                     challengerId: 'Medininja', challengerPlace: 6,
                     playerChallengedId: 'Xotl', playerChallengedPlace: 1
                 },
-                rankingTable,
-                {
-                    "initial_coins": 2, "coins": 2, "range": 2,
-                    "points": 0, "stand_points": 0, "completed_challenges": []
-                },
-                {}
+                rankingTable, unrankedScore, unrankedScore, {}
             )
         ).toBe(false)
     })

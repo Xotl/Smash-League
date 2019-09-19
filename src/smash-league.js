@@ -78,6 +78,15 @@ const isReportedResultValid = (identifiedPlayersObj, rankingTable, challenger, p
             logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place but at least one of them has 0 coins.`, reportedResult)
             return false
         }
+
+        if (
+            doesPlayerChallengedAlreadyWonAgainstThatChallenger(challengerId, playerChallenged.completed_challenges) ||
+            doesPlayerChallengedAlreadyWonAgainstThatChallenger(playerChallengedId, challenger.completed_challenges)
+        ) {
+            // They cannot challenge each each other more than once if both are in same place
+            logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they already reported the untie match before.`, reportedResult)
+            return false
+        }
     }
     
 
