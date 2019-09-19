@@ -122,7 +122,23 @@ describe('Smash League Challenges & Scoreboard', () => {
                 "coins": 0,
                 "range": 0,
                 "completed_challenges": []
-            }
+            },
+            "Another unranked player": {
+                "initial_coins": 3,
+                "stand_points": 0,
+                "points": 0,
+                "coins": 2,
+                "range": 3,
+                "completed_challenges": [ ACTIVITIES1[11] ]
+            },
+            "Unranked player": {
+                "initial_coins": 3,
+                "stand_points": 1,
+                "points": 0,
+                "coins": 3,
+                "range": 3,
+                "completed_challenges": [ ACTIVITIES1[11] ]
+            },
         })
     })
 

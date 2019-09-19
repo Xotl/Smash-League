@@ -388,5 +388,11 @@ module.exports = {
             player1Result: 1, player2Result: 3,
             players: ['UDBD59WLT', 'U61MBQTR8']
         },
+        {// Valid index #11: Two unranked players fight each other
+            winner: 'Unranked player',
+            player1: 'Another unranked player', player2: 'Unranked player',
+            player1Result: 1, player2Result: 3,
+            players: ['Another unranked player', 'Unranked player']
+        },
     ]
 }

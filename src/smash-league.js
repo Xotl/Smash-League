@@ -57,20 +57,29 @@ const getUnrankedPlayerScore = playerPlace => {
     }
 }
 
-const isReportedResultValid = (identifiedPlayersObj, rankingTable, playerScoreboard, reportedResult) => {
+const isReportedResultValid = (identifiedPlayersObj, rankingTable, challenger, playerChallenged, reportedResult) => {
 
     const {
         challengerId, challengerPlace,
         playerChallengedId, playerChallengedPlace
     } = identifiedPlayersObj
 
-    if (challengerPlace === playerChallengedPlace && challengerPlace <= 5) {
-        // They cannot challenge people in the same place above place 5
-        logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place if you're top 5.`, reportedResult)
-        return false
-    }
 
-    const challenger = playerScoreboard
+
+    if (challengerPlace === playerChallengedPlace) {
+        if (challengerPlace <= 5) {
+            // They cannot challenge each other in the same place above place 5
+            logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place but are in the top 5.`, reportedResult)
+            return false
+        }
+
+        if (challenger.coins < 1 || playerChallenged.coins < 1) {
+            // They cannot challenge each other unless both has at least 1 coin
+            logIgnoredMatch(`Ignored result between players "${getPlayerAlias(challengerId)}" & "${getPlayerAlias(playerChallengedId)}" because they are in the same place but at least one of them has 0 coins.`, reportedResult)
+            return false
+        }
+    }
+    
 
     if (challenger.coins < 1) {// No remaining coins, so no more challenges
         logIgnoredMatch(`Ignored result because "${getPlayerAlias(challengerId)}" has 0 coins, so he cannot challenge "${getPlayerAlias(playerChallengedId)}"`, reportedResult)
@@ -105,6 +114,11 @@ const applyPlayerChallengedWinsScoringRules = playerChallengedScore => ({
     stand_points: playerChallengedScore.stand_points + 1
 })
 
+const applyPlayersUntieScoringRules = winnerInSamePlaceScore => ({
+    ...winnerInSamePlaceScore,
+    stand_points: winnerInSamePlaceScore.stand_points + 1
+})
+
 const updateInProgressScoreboard = (activities, rankingObj) => {
 
     if (typeof activities !== 'object') {
@@ -130,33 +144,56 @@ const updateInProgressScoreboard = (activities, rankingObj) => {
                 challengerId, challengerPlace,
                 playerChallengedId, playerChallengedPlace
             } = identifiedPlayersObj
+            const loserId = winner === challengerId ? playerChallengedId : challengerId 
             const challengerScore = currentScoreboard[challengerId] || getUnrankedPlayerScore(challengerPlace)
+            const playerChallengedScore = currentScoreboard[playerChallengedId] || getUnrankedPlayerScore(playerChallengedPlace)
 
 
-            if ( !isReportedResultValid(identifiedPlayersObj, rankingTable, challengerScore, match) ) {
+            if ( !isReportedResultValid(identifiedPlayersObj, rankingTable, challengerScore, playerChallengedScore, match) ) {
                 return currentScoreboard // if not valid we simply ignore this match
             }
 
             if (scoreboard[challengerId] && challengerScore.completed_challenges === scoreboard[challengerId].completed_challenges) {
+                // Clones completed challenges to avoid manipulating the old state. 
                 challengerScore.completed_challenges = [...scoreboard[challengerId].completed_challenges]
             }
             
-            if (winner === challengerId) {
-                currentScoreboard[challengerId] = applyChallengerWinsScoringRules(challengerScore)
-                const playerWentToTheTop = (challengerPlace - currentScoreboard[challengerId].range) <= 0
-                if (playerWentToTheTop) {
-                    // Player basically see the credits & waits to start over
-                    currentScoreboard[challengerId].coins = 0
+            if (challengerPlace === playerChallengedPlace) {// Challenge between players in same place
+                let winnerScore = playerChallengedScore
+                let loserScore = challengerScore
+                
+                if (winner === challengerId) {
+                    winnerScore = challengerScore
+                    loserScore = playerChallengedScore
                 }
-            }
-            else {// Winner is player challenged
-                currentScoreboard[challengerId] = applyChallengerLosesScoringRules(challengerScore)
-                if ( !doesPlayerChallengedAlreadyWonAgainstThatChallenger(playerChallengedId, challengerScore.completed_challenges) ) {
-                    currentScoreboard[playerChallengedId] = applyPlayerChallengedWinsScoringRules(currentScoreboard[playerChallengedId])
-                }
-            }
 
-            challengerScore.completed_challenges.push(match)
+                // Apply scoring adjustment
+                currentScoreboard[winner] = applyPlayersUntieScoringRules(winnerScore)
+                currentScoreboard[loserId] = applyChallengerLosesScoringRules(loserScore)
+
+                // Add a record of the match
+                currentScoreboard[winner].completed_challenges.push(match)
+                currentScoreboard[loserId].completed_challenges.push(match)
+            }
+            else {// Normal challenge
+                if (winner === challengerId) {
+                    currentScoreboard[challengerId] = applyChallengerWinsScoringRules(challengerScore)
+                    const playerWentToTheTop = (challengerPlace - currentScoreboard[challengerId].range) <= 0
+                    if (playerWentToTheTop) {
+                        // Player basically see the credits & waits to start over
+                        currentScoreboard[challengerId].coins = 0
+                    }
+                }
+                else {// Winner is player challenged
+                    currentScoreboard[challengerId] = applyChallengerLosesScoringRules(challengerScore)
+                    if ( !doesPlayerChallengedAlreadyWonAgainstThatChallenger(playerChallengedId, challengerScore.completed_challenges) ) {
+                        currentScoreboard[playerChallengedId] = applyPlayerChallengedWinsScoringRules(currentScoreboard[playerChallengedId])
+                    }
+                }
+
+                // Add a record of the match
+                challengerScore.completed_challenges.push(match)
+            }
 
             return currentScoreboard
         },
