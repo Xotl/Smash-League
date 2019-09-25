@@ -19,7 +19,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------------|------|
 |2|2|0|0|
 
-## In progress this week *Tue, 24 Sep 2019 05:35:04 GMT*
+## In progress this week *Wed, 25 Sep 2019 05:35:27 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -30,7 +30,7 @@ The current points earned by winning matches this week.
 |Xotl|0|0|0|30|
 |Paco|1|1|1|28|
 |José "El Iceberg" Rosales|0|1|0|26|
-|Angel Lee|1|1|0|23|
+|Angel Lee|1|2|0|23|
 |Sammy|1|1|1|21|
 |El Minion|1|2|0|18|
 |Neku|2|2|0|18|
@@ -51,5 +51,6 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
 * `El Minion` challenged `Sammy` and **lost** *3-2*.
 * `José "El Iceberg" Rosales` challenged `Paco` and **lost** *3-0*.
