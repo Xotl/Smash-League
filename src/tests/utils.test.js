@@ -3,7 +3,7 @@
 const {
     GetEpochUnixFromDate, GetDateObjFromEpochTS, setIgnoredActivityLogObject, logIgnoredActivity,
     logIgnoredMatch, showInConsoleIgnoredActivities, removeAlreadyChallengedPlayers, 
-    removeEmptyArray
+    removeEmptyArray, eloCalculation
 } = require('../utils')
 
 
@@ -114,6 +114,60 @@ describe('Utils', () => {
         ).toEqual(
             [ ["Paco"], ["Sammy"] ]
         )
+    })
+
+    test('EloCalculateForPlayerAIFPlayerAIsBetterAndWinsBy3to2', () => {
+        expect(
+            eloCalculation(100, 50, 3, 2)
+        ).toEqual({
+            playerANewElo: 125,
+            playerBNewElo: 65
+        })
+    })
+
+    test('EloCalculateForPlayerBIFPlayerAIsBetterAndWinsBy3to2', () => {
+        expect(
+            eloCalculation(100, 50, 2, 3)
+        ).toEqual({
+            playerANewElo: 115,
+            playerBNewElo: 75
+        })
+    })
+
+    test('EloCalculateForPlayerAIFPlayerAIsBetterAndWinsBy3to0', () => {
+        expect(
+            eloCalculation(100, 50, 3, 0)
+        ).toEqual({
+            playerANewElo: 125,
+            playerBNewElo: 45
+        })
+    })
+
+    test('EloCalculateForPlayerBIFPlayerAIsBetterAndWinsBy3to0', () => {
+        expect(
+            eloCalculation(100, 50, 0, 3)
+        ).toEqual({
+            playerANewElo: 95,
+            playerBNewElo: 75
+        })
+    })
+
+    test('EloCalculateForPlayerAIFSimilarEloAndWinsBy3to0', () => {
+        expect(
+            eloCalculation(100, 100, 3, 0)
+        ).toEqual({
+            playerANewElo: 125,
+            playerBNewElo: 95
+        })
+    })
+
+    test('EloCalculateForPlayerBIFAIsAGodAndWinsBy3to0', () => {
+        expect(
+            eloCalculation(1000, 100, 0, 3)
+        ).toEqual({
+            playerANewElo: 995,
+            playerBNewElo: 125
+        })
     })
 
 })

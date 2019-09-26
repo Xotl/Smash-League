@@ -102,6 +102,16 @@ const removeAlreadyChallengedPlayers = (players, playerId, in_progress) => {
 
 const removeEmptyArray = array => array.filter(i => (i.length === 0) ? false : true)
 
+const eloCalculation = (playerAElo, playerBElo, playerAScore, playerBScore) => {
+    const probabilityOfWinPlayerA = 1.0 * 1.0 / (1 + 1.0 * Math.pow(1, 1.0 * (playerAElo - playerBElo) / 400))
+    const probabilityOfWinPlayerB = 1.0 * 1.0 / (1 + 1.0 * Math.pow(1, 1.0 * (playerBElo - playerAElo) / 400))
+
+    return {
+        playerANewElo: playerAElo + 10 * (playerAScore - probabilityOfWinPlayerA),
+        playerBNewElo: playerBElo + 10 * (playerBScore - probabilityOfWinPlayerB),
+    }
+}
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
@@ -115,4 +125,5 @@ module.exports = {
     removesBotTagFromString,
     removeAlreadyChallengedPlayers,
     removeEmptyArray,
+    eloCalculation,
 }
