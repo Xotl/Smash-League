@@ -118,55 +118,55 @@ describe('Utils', () => {
 
     test('EloCalculateForPlayerAIFPlayerAIsBetterAndWinsBy3to2', () => {
         expect(
-            eloCalculation(100, 50, 3, 2)
+            eloCalculation(2400, 1500, 3, 2)
         ).toEqual({
-            playerANewElo: 125,
-            playerBNewElo: 65
+            playerANewElo: 2480,
+            playerBNewElo: 1548
         })
     })
 
     test('EloCalculateForPlayerBIFPlayerAIsBetterAndWinsBy3to2', () => {
         expect(
-            eloCalculation(100, 50, 2, 3)
+            eloCalculation(2500, 1500, 2, 3)
         ).toEqual({
-            playerANewElo: 115,
-            playerBNewElo: 75
+            playerANewElo: 2548,
+            playerBNewElo: 1580
         })
     })
 
     test('EloCalculateForPlayerAIFPlayerAIsBetterAndWinsBy3to0', () => {
         expect(
-            eloCalculation(100, 50, 3, 0)
+            eloCalculation(2500, 1500, 3, 0)
         ).toEqual({
-            playerANewElo: 125,
-            playerBNewElo: 45
+            playerANewElo: 2580,
+            playerBNewElo: 1484
         })
     })
 
     test('EloCalculateForPlayerBIFPlayerAIsBetterAndWinsBy3to0', () => {
         expect(
-            eloCalculation(100, 50, 0, 3)
+            eloCalculation(2500, 1500, 0, 3)
         ).toEqual({
-            playerANewElo: 95,
-            playerBNewElo: 75
+            playerANewElo: 2484,
+            playerBNewElo: 1580
         })
     })
 
     test('EloCalculateForPlayerAIFSimilarEloAndWinsBy3to0', () => {
         expect(
-            eloCalculation(100, 100, 3, 0)
+            eloCalculation(1500, 1500, 3, 0)
         ).toEqual({
-            playerANewElo: 125,
-            playerBNewElo: 95
+            playerANewElo: 1580,
+            playerBNewElo: 1484
         })
     })
 
     test('EloCalculateForPlayerBIFAIsAGodAndWinsBy3to0', () => {
         expect(
-            eloCalculation(1000, 100, 0, 3)
+            eloCalculation(3000, 1000, 0, 3)
         ).toEqual({
-            playerANewElo: 995,
-            playerBNewElo: 125
+            playerANewElo: 2984,
+            playerBNewElo: 1080
         })
     })
 

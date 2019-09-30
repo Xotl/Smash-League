@@ -102,13 +102,26 @@ const removeAlreadyChallengedPlayers = (players, playerId, in_progress) => {
 
 const removeEmptyArray = array => array.filter(i => (i.length === 0) ? false : true)
 
+const factorKCaculator = elo => {
+    switch (elo) {
+        case (elo < 2100):
+            return 32
+        case (elo >= 2100 && elo <= 2400):
+            return 24
+        case (elo > 2400):
+            return 16
+        default:
+            return 32
+    }
+}
+
 const eloCalculation = (playerAElo, playerBElo, playerAScore, playerBScore) => {
     const probabilityOfWinPlayerA = 1.0 * 1.0 / (1 + 1.0 * Math.pow(1, 1.0 * (playerAElo - playerBElo) / 400))
     const probabilityOfWinPlayerB = 1.0 * 1.0 / (1 + 1.0 * Math.pow(1, 1.0 * (playerBElo - playerAElo) / 400))
 
     return {
-        playerANewElo: playerAElo + 10 * (playerAScore - probabilityOfWinPlayerA),
-        playerBNewElo: playerBElo + 10 * (playerBScore - probabilityOfWinPlayerB),
+        playerANewElo: playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA),
+        playerBNewElo: playerBElo + factorKCaculator(playerBElo) * (playerBScore - probabilityOfWinPlayerB),
     }
 }
 
