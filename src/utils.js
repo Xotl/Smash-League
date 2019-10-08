@@ -103,16 +103,13 @@ const removeAlreadyChallengedPlayers = (players, playerId, in_progress) => {
 const removeEmptyArray = array => array.filter(i => (i.length === 0) ? false : true)
 
 const factorKCaculator = elo => {
-    switch (elo) {
-        case (elo < 2100):
-            return 32
-        case (elo >= 2100 && elo <= 2400):
-            return 24
-        case (elo > 2400):
-            return 16
-        default:
-            return 32
-    }
+    if (elo < 2100)
+        return 32
+
+    if (elo >= 2100 && elo <= 2400)
+        return 24
+
+    return 16
 }
 
 const eloCalculation = (playerAElo, playerBElo, playerAScore, playerBScore) => {
