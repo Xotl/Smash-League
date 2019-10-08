@@ -120,7 +120,7 @@ describe('Utils', () => {
         expect(
             eloCalculation(2400, 1500, 3, 2)
         ).toEqual({
-            playerANewElo: 2480,
+            playerANewElo: 2460,
             playerBNewElo: 1548
         })
     })
@@ -129,7 +129,7 @@ describe('Utils', () => {
         expect(
             eloCalculation(2500, 1500, 2, 3)
         ).toEqual({
-            playerANewElo: 2548,
+            playerANewElo: 2524,
             playerBNewElo: 1580
         })
     })
@@ -138,7 +138,7 @@ describe('Utils', () => {
         expect(
             eloCalculation(2500, 1500, 3, 0)
         ).toEqual({
-            playerANewElo: 2580,
+            playerANewElo: 2540,
             playerBNewElo: 1484
         })
     })
@@ -147,7 +147,7 @@ describe('Utils', () => {
         expect(
             eloCalculation(2500, 1500, 0, 3)
         ).toEqual({
-            playerANewElo: 2484,
+            playerANewElo: 2492,
             playerBNewElo: 1580
         })
     })
@@ -165,7 +165,7 @@ describe('Utils', () => {
         expect(
             eloCalculation(3000, 1000, 0, 3)
         ).toEqual({
-            playerANewElo: 2984,
+            playerANewElo: 2992,
             playerBNewElo: 1080
         })
     })
