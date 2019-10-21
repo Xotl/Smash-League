@@ -106,15 +106,18 @@ const factorKCaculator = elo => {
     if (elo < 2100)
         return 32
 
-    if (elo >= 2100 && elo <= 2400)
+    if (elo < 2400)
         return 24
 
     return 16
 }
 
 const eloCalculation = (playerAElo, playerBElo, playerAScore) => {
-    const probabilityOfWinPlayerA = 1 / (1 + Math.pow(10, (playerAElo - playerBElo) / 400))
-    return playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA)
+    if (playerAScore < 0) {// Avoids negative score
+        playerAScore = 0// 0 is a lose
+    }
+    const probabilityOfWinPlayerA = 1 / (1 + Math.pow(10, (playerBElo - playerAElo) / 400))
+    return Math.trunc(playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA))
 }
 
 module.exports = {
