@@ -52,30 +52,30 @@ const getRankingBulletsMarkdown = (rankingArray, scoreboardObj) => {
 }
 
 const getScoreboardMarkdown = scoreboardObj => {
-    return '|Player|Coins|Range|Stand points|Score|' +
-         '\n|------|-----|-----|------------|-----|\n' +
+    return '|Player|Coins|Range|Score|' +
+         '\n|------|-----|-----|-----|\n' +
         Object.keys(scoreboardObj).sort(
             (a, b) => scoreboardObj[b].points - scoreboardObj[a].points
         )
         .map(
             playerId => {
-                const { stand_points, points, coins, range} = scoreboardObj[playerId]
-                return `|${Utils.getPlayerAlias(playerId)}|${coins}|${range}|${stand_points}|${points}|`
+                const { points, coins, range} = scoreboardObj[playerId]
+                return `|${Utils.getPlayerAlias(playerId)}|${coins}|${range}|${points}|`
             }
         )
         .join('\n')
 } 
 
 const getEndOfWeekSummaryMarkdown = scoreboardObj => {
-    return '|Player|Coins|Range|Stand points|' +
-         '\n|------|-----|-----|------------|\n' +
+    return '|Player|Coins|Range|' +
+         '\n|------|-----|-----|\n' +
         Object.keys(scoreboardObj).sort(
             (a, b) => scoreboardObj[b].points - scoreboardObj[a].points
         )
         .map(
             playerId => {
-                const { stand_points, points, coins, range} = scoreboardObj[playerId]
-                return `|${Utils.getPlayerAlias(playerId)} - ${points}pts|${coins}|${range}|${stand_points}|`
+                const { points, coins, range} = scoreboardObj[playerId]
+                return `|${Utils.getPlayerAlias(playerId)} - ${points}pts|${coins}|${range}|`
             }
         )
         .join('\n')
@@ -105,10 +105,10 @@ const getCompletedChallengesMarkdown = scoreboard => {
     ).join('\n')
 }
 
-const getUnrankedScore = ({ coins, range, stand_points, points}) => 
-      '|Coins|Range|Stand points|Points|' +
-    '\n|-----|-----|------------|------|\n' +
-    `|${coins}|${range}|${stand_points}|${points}|`
+const getUnrankedScore = ({ coins, range, points}) => 
+      '|Coins|Range|Points|' +
+    '\n|-----|-----|------|\n' +
+    `|${coins}|${range}|${points}|`
 
 
 const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
