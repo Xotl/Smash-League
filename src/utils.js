@@ -113,8 +113,8 @@ const factorKCaculator = elo => {
 }
 
 const eloCalculation = (playerAElo, playerBElo, playerAScore, playerBScore) => {
-    const probabilityOfWinPlayerA = 1.0 * 1.0 / (1 + 1.0 * Math.pow(1, 1.0 * (playerAElo - playerBElo) / 400))
-    const probabilityOfWinPlayerB = 1.0 * 1.0 / (1 + 1.0 * Math.pow(1, 1.0 * (playerBElo - playerAElo) / 400))
+    const probabilityOfWinPlayerA = 1 / (1 + Math.pow(10, (playerAElo - playerBElo) / 400))
+    const probabilityOfWinPlayerB = 1 / (1 + Math.pow(10, (playerBElo - playerAElo) / 400))
 
     return {
         playerANewElo: playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA),
