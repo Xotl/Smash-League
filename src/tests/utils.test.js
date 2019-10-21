@@ -116,57 +116,48 @@ describe('Utils', () => {
         )
     })
 
-    test('EloCalculateForPlayerAIFPlayerAIsBetterAndWinsBy3to2', () => {
-        expect(
-            eloCalculation(2400, 1500, 3, 2)
-        ).toEqual({
-            playerANewElo: 2460,
-            playerBNewElo: 1548
-        })
-    })
 
-    test('EloCalculateForPlayerBIFPlayerAIsBetterAndWinsBy3to2', () => {
-        expect(
-            eloCalculation(2500, 1500, 2, 3)
-        ).toEqual({
-            playerANewElo: 2524,
-            playerBNewElo: 1580
+    describe('Elo Calculation', () => {
+        test('PlayerA is better than PlayerB and PlayerA wins 3-2', () => {
+            expect({
+                PlayerA: eloCalculation(2500, 1500, 3-2),
+                PlayerB: eloCalculation(1500, 2500, 2-3)
+            }).toEqual({ PlayerA: 2500, PlayerB: 1499 })
         })
-    })
-
-    test('EloCalculateForPlayerAIFPlayerAIsBetterAndWinsBy3to0', () => {
-        expect(
-            eloCalculation(2500, 1500, 3, 0)
-        ).toEqual({
-            playerANewElo: 2540,
-            playerBNewElo: 1484
+    
+        test('PlayerA is better than PlayerB and PlayerA loses 3-2', () => {
+            expect({
+                PlayerA: eloCalculation(2500, 1500, 2-3),
+                PlayerB: eloCalculation(1500, 2500, 3-2)
+            }).toEqual({ PlayerA: 2484, PlayerB: 1531 })
         })
-    })
-
-    test('EloCalculateForPlayerBIFPlayerAIsBetterAndWinsBy3to0', () => {
-        expect(
-            eloCalculation(2500, 1500, 0, 3)
-        ).toEqual({
-            playerANewElo: 2492,
-            playerBNewElo: 1580
+    
+        test('PlayerA is better than PlayerB and PlayerA wins 3-0', () => {
+            expect({
+                PlayerA: eloCalculation(2500, 1500, 3-0),
+                PlayerB: eloCalculation(1500, 2500, 0-3)
+            }).toEqual({ PlayerA: 2532, PlayerB: 1499 })
         })
-    })
-
-    test('EloCalculateForPlayerAIFSimilarEloAndWinsBy3to0', () => {
-        expect(
-            eloCalculation(1500, 1500, 3, 0)
-        ).toEqual({
-            playerANewElo: 1580,
-            playerBNewElo: 1484
+    
+        test('PlayerA is better than PlayerB and PlayerA loses 3-0', () => {
+            expect({
+                PlayerA: eloCalculation(2500, 1500, 0-3),
+                PlayerB: eloCalculation(1500, 2500, 3-0)
+            }).toEqual({ PlayerA: 2484, PlayerB: 1595 })
         })
-    })
-
-    test('EloCalculateForPlayerBIFAIsAGodAndWinsBy3to0', () => {
-        expect(
-            eloCalculation(3000, 1000, 0, 3)
-        ).toEqual({
-            playerANewElo: 2992,
-            playerBNewElo: 1080
+    
+        test('PlayerA & PlayerB have same skill and PlayerA wins 3-0', () => {
+            expect({
+                PlayerA: eloCalculation(1500, 1500, 3-0),
+                PlayerB: eloCalculation(1500, 1500, 0-3)
+            }).toEqual({ PlayerA: 1580, PlayerB: 1484 })
+        })
+    
+        test('PlayerA is superior than PlayerB and PlayerA loses 3-0', () => {
+            expect({
+                PlayerA: eloCalculation(3000, 1000, 0-3),
+                PlayerB: eloCalculation(1000, 3000, 3-0)
+            }).toEqual({ PlayerA: 2984, PlayerB: 1095 })
         })
     })
 
