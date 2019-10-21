@@ -112,14 +112,9 @@ const factorKCaculator = elo => {
     return 16
 }
 
-const eloCalculation = (playerAElo, playerBElo, playerAScore, playerBScore) => {
+const eloCalculation = (playerAElo, playerBElo, playerAScore) => {
     const probabilityOfWinPlayerA = 1 / (1 + Math.pow(10, (playerAElo - playerBElo) / 400))
-    const probabilityOfWinPlayerB = 1 / (1 + Math.pow(10, (playerBElo - playerAElo) / 400))
-
-    return {
-        playerANewElo: playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA),
-        playerBNewElo: playerBElo + factorKCaculator(playerBElo) * (playerBScore - probabilityOfWinPlayerB),
-    }
+    return playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA)
 }
 
 module.exports = {
