@@ -13,11 +13,11 @@ Last updated **Sun, 13 Oct 2019 17:49:15 GMT**.
 |7|`Sammy`|1800|
 |8|`El Minion`|1700|
 
-Unranked players and players that have 0 points will start with this score:
+Unranked players and players that have less than 1000 Elo points will start with this score:
 
 |Coins|Range|Stand points|Points|
 |-----|-----|------------|------|
-|2|2|0|0|
+|2|2|0|1000|
 
 ## In progress this week *Sun, 13 Oct 2019 17:49:15 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
