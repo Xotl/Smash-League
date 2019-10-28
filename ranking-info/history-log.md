@@ -1,32 +1,3 @@
-## Commit from Sun, 13 Oct 2019 17:49:15 GMT
-The week started at *Sun, 06 Oct 2019 15:00:00 GMT* and ended *Sun, 13 Oct 2019 15:00:00 GMT*.
-### End of week players score summary
-|Player|Coins|Range|Stand points|
-|------|-----|-----|------------|
-|Xotl - 33pts|0|0|0|
-|Paco - 29pts|1|1|0|
-|José "El Iceberg" Rosales - 28pts|1|1|0|
-|Angel Lee - 25pts|1|1|0|
-|Sammy - 21pts|1|1|0|
-|Roberto - 20pts|2|2|0|
-|Neku - 19pts|2|2|0|
-|El Minion - 18pts|2|2|0|
-|Alfredo - 4pts|2|2|0|
-|Carlos López - 0pts|2|2|0|
-|Alan - 0pts|2|2|0|
-|El Chino - 0pts|2|2|0|
-|César Gutman - 0pts|2|2|0|
-|D.I.O. - 0pts|2|2|0|
-|Michel - 0pts|2|2|0|
-|Niightz - 0pts|2|2|0|
-|David - 0pts|2|2|0|
-|Medininja - 0pts|2|2|0|
-|El Plebe - 0pts|2|2|0|
-|Paolo - 0pts|2|2|0|
-### Completed challenges
-
-
-
 ## Commit from Mon, 30 Sep 2019 05:38:11 GMT
 The week started at *Sun, 29 Sep 2019 15:00:00 GMT* and ended *Sun, 06 Oct 2019 15:00:00 GMT*.
 ### End of week players score summary

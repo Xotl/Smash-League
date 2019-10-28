@@ -36,7 +36,6 @@ module.exports = {
     SCOREBOARD1: {
         "U8A96RCEA": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 3,
             "coins": 0,
             "range": 0,
@@ -44,7 +43,6 @@ module.exports = {
         },
         "U61MBQTR8": {
             "initial_coins": 0,
-            "stand_points": 2,
             "points": 44,
             "coins": 1,
             "range": 1,
@@ -52,7 +50,6 @@ module.exports = {
         },
         "U7VAPLNCR": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 31,
             "coins": 0,
             "range": 0,
@@ -60,7 +57,6 @@ module.exports = {
         },
         "UBRMBGR6Z": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 29,
             "coins": 0,
             "range": 0,
@@ -68,7 +64,6 @@ module.exports = {
         },
         "UB616ENA0": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 40,
             "coins": 1,
             "range": 1,
@@ -76,7 +71,6 @@ module.exports = {
         },
         "UEWUZCYJF": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 18,
             "coins": 0,
             "range": 0,
@@ -84,7 +78,6 @@ module.exports = {
         },
         "UDBD59WLT": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 42,
             "coins": 0,
             "range": 0,
@@ -92,7 +85,6 @@ module.exports = {
         },
         "U8M6QT7EF": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 33,
             "coins": 0,
             "range": 0,
@@ -100,7 +92,6 @@ module.exports = {
         },
         "U87CK0E4A": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 27,
             "coins": 0,
             "range": 0,
@@ -108,7 +99,6 @@ module.exports = {
         },
         "U8THDCVJ7": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 36,
             "coins": 0,
             "range": 0,
@@ -116,7 +106,6 @@ module.exports = {
         },
         "U6457D5KQ": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 37,
             "coins": 2,
             "range": 2,
@@ -124,7 +113,6 @@ module.exports = {
         },
         "UBA5M220K": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 37,
             "coins": 1,
             "range": 1,
@@ -132,7 +120,6 @@ module.exports = {
         },
         "UAGR4S57G": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 16,
             "coins": 0,
             "range": 0,
@@ -140,7 +127,6 @@ module.exports = {
         },
         "UBRCZ6G4B": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 3,
             "coins": 0,
             "range": 0,
@@ -148,7 +134,6 @@ module.exports = {
         },
         "UDR61HJCD": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 27,
             "coins": 0,
             "range": 0,
@@ -156,7 +141,6 @@ module.exports = {
         },
         "UBD38N45P": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 10,
             "coins": 0,
             "range": 0,
@@ -164,7 +148,6 @@ module.exports = {
         },
         "U6H8DDV25": {
             "initial_coins": 0,
-            "stand_points": 0,
             "points": 9,
             "coins": 0,
             "range": 0,
@@ -195,7 +178,6 @@ module.exports = {
             "scoreboard": {
                 "UDR61HJCD": {
                     "initial_coins": 2,
-                    "stand_points": 4,
                     "points": 27,
                     "coins": 0,
                     "range": 6,
@@ -203,7 +185,6 @@ module.exports = {
                 },
                 "U8A96RCEA": {
                     "initial_coins": 3,
-                    "stand_points": 0,
                     "points": 3,
                     "coins": 0,
                     "range": 3,
@@ -220,7 +201,6 @@ module.exports = {
                 },
                 "U61MBQTR8": {
                     "initial_coins": 0,
-                    "stand_points": 1,
                     "points": 44,
                     "coins": 0,
                     "range": 0,
@@ -233,7 +213,6 @@ module.exports = {
                 },
                 "U7VAPLNCR": {
                     "initial_coins": 1,
-                    "stand_points": 2,
                     "points": 43,
                     "coins": 1,
                     "range": 2,
@@ -246,7 +225,6 @@ module.exports = {
                 },
                 "UBRMBGR6Z": {
                     "initial_coins": 2,
-                    "stand_points": 4,
                     "points": 29,
                     "coins": 1,
                     "range": 4,
@@ -268,50 +246,45 @@ module.exports = {
             "end": 1554616800000
         },
         "ranking": [
-            ["U7VAPLNCR"],// 1st place
-            ["U61MBQTR8"],// 2nd place
-            ["UDR61HJCD"],
+            ["U61MBQTR8"],// 1st place
+            ["U7VAPLNCR"],// 2nd place
             ["UBRMBGR6Z"],
+            ["UDR61HJCD"],
             ["U8A96RCEA"]// 5th place
         ],
         "in_progress": {
             "scoreboard": {
                 "U8A96RCEA": {
                     "initial_coins": 1,
-                    "stand_points": 0,
                     "points": 3,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
                 },
                 "U61MBQTR8": {
-                    "initial_coins": 1,
-                    "stand_points": 0,
-                    "points": 45,
-                    "coins": 1,
-                    "range": 1,
-                    "completed_challenges": []
-                },
-                "U7VAPLNCR": {
                     "initial_coins": 0,
-                    "stand_points": 0,
-                    "points": 45,
+                    "points": 44,
                     "coins": 0,
                     "range": 0,
                     "completed_challenges": []
                 },
+                "U7VAPLNCR": {
+                    "initial_coins": 1,
+                    "points": 43,
+                    "coins": 1,
+                    "range": 1,
+                    "completed_challenges": []
+                },
                 "UBRMBGR6Z": {
                     "initial_coins": 1,
-                    "stand_points": 0,
-                    "points": 35,
+                    "points": 29,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
                 },
                 "UDR61HJCD": {
                     "initial_coins": 1,
-                    "stand_points": 0,
-                    "points": 35,
+                    "points": 27,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
