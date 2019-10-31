@@ -29,7 +29,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------|
 |4|4|1000|
 
-## In progress this week *Wed, 30 Oct 2019 06:39:41 GMT*
+## In progress this week *Thu, 31 Oct 2019 06:40:07 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -39,16 +39,16 @@ The current points earned by winning matches this week.
 |------|-----|-----|-----|
 |Xotl|0|0|2400|
 |Paco|1|1|2300|
-|Roberto|1|1|2200|
-|José "El Iceberg" Rosales|2|4|2184|
-|Neku|1|1|2100|
-|Angel Lee|1|2|2052|
+|Roberto|1|2|2299|
+|José "El Iceberg" Rosales|0|6|2234|
+|Neku|0|1|2092|
+|Angel Lee|0|2|2042|
 |Sammy|0|2|1785|
-|El Minion|2|2|1700|
+|El Minion|2|2|1739|
 |Alfredo|2|2|1600|
 |D.I.O.|2|2|1510|
-|Paolo|3|3|1500|
 |El Chino|3|3|1495|
+|Paolo|2|3|1492|
 |El Plebe|3|3|1490|
 |Alan|3|3|1480|
 |Niightz|3|3|1470|
@@ -62,7 +62,13 @@ The current points earned by winning matches this week.
 Matches that already happened during this week.
 
 * `Angel Lee` challenged `Neku` and **won** *3-1*.
+* `Angel Lee` challenged `Roberto` and **lost** *3-1*.
+* `Neku` challenged `Roberto` and **lost** *3-1*.
 * `José "El Iceberg" Rosales` challenged `Angel Lee` and **won** *3-0*.
 * `José "El Iceberg" Rosales` challenged `Neku` and **won** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Roberto` and **won** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Paco` and **won** *3-2*.
 * `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 * `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `Paolo` challenged `El Minion` and **lost** *3-1*.
+* `Roberto` challenged `Paco` and **won** *3-1*.
