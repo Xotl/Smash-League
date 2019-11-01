@@ -133,7 +133,7 @@ const applyPlayersUntieScoringRules = (winnerInSamePlaceScore, loserScore, winne
 
 const applyPlayerChallengedLosesScoringRules = (playerChallengedScore, challengerScore) => ({
     ...playerChallengedScore,
-    points: eloCalculation(challengerScore.points, playerChallengedScore.score, 1)
+    points: eloCalculation(challengerScore.points, playerChallengedScore.points, 0)
 })
 
 const updateInProgressScoreboard = (activities, rankingObj) => {
