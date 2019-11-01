@@ -221,7 +221,7 @@
                 "initial_coins": 0,
                 "coins": 0,
                 "range": 0,
-                "points": 2400,
+                "points": 2405,
                 "completed_challenges": []
             },
             "UBRMBGR6Z": {
@@ -427,16 +427,28 @@
             },
             "UKPTK422K": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 1,
-                "points": 2300,
-                "completed_challenges": []
+                "points": 2291,
+                "completed_challenges": [
+                    {
+                        "winner": "U61MBQTR8",
+                        "player1": "U61MBQTR8",
+                        "player2": "UKPTK422K",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "U61MBQTR8",
+                            "UKPTK422K"
+                        ]
+                    }
+                ]
             },
             "UHHD243DH": {
                 "initial_coins": 3,
-                "coins": 2,
+                "coins": 1,
                 "range": 3,
-                "points": 1492,
+                "points": 1480,
                 "completed_challenges": [
                     {
                         "winner": "U8M6QT7EF",
@@ -447,6 +459,17 @@
                         "players": [
                             "UHHD243DH",
                             "U8M6QT7EF"
+                        ]
+                    },
+                    {
+                        "winner": "ULBS05D3M",
+                        "player1": "UHHD243DH",
+                        "player2": "ULBS05D3M",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UHHD243DH",
+                            "ULBS05D3M"
                         ]
                     }
                 ]
@@ -474,13 +497,13 @@
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1600,
+                "points": 1643,
                 "completed_challenges": []
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1572504007283,
+        "last_update_ts": 1572590409745,
         "reported_results": []
     }
 }
