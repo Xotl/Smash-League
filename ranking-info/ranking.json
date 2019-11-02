@@ -221,7 +221,7 @@
                 "initial_coins": 0,
                 "coins": 0,
                 "range": 0,
-                "points": 2405,
+                "points": 2410,
                 "completed_challenges": []
             },
             "UBRMBGR6Z": {
@@ -476,9 +476,9 @@
             },
             "UMY200LSC": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 2,
-                "points": 2299,
+                "points": 2290,
                 "completed_challenges": [
                     {
                         "winner": "UMY200LSC",
@@ -489,6 +489,17 @@
                         "players": [
                             "UMY200LSC",
                             "UKPTK422K"
+                        ]
+                    },
+                    {
+                        "winner": "U61MBQTR8",
+                        "player1": "U61MBQTR8",
+                        "player2": "UMY200LSC",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "U61MBQTR8",
+                            "UMY200LSC"
                         ]
                     }
                 ]
@@ -503,7 +514,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1572590409745,
+        "last_update_ts": 1572676848118,
         "reported_results": []
     }
 }
