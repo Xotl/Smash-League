@@ -131,6 +131,11 @@ const applyPlayersUntieScoringRules = (winnerInSamePlaceScore, loserScore, winne
     points: eloCalculation(winnerInSamePlaceScore.points, loserScore.points, winnerMatchScoreDiff)
 })
 
+const applyPlayerChallengedLosesScoringRules = (playerChallengedScore, challengerScore) => ({
+    ...playerChallengedScore,
+    points: eloCalculation(challengerScore.points, playerChallengedScore.points, 0)
+})
+
 const updateInProgressScoreboard = (activities, rankingObj) => {
 
     if (typeof activities !== 'object') {
@@ -191,11 +196,7 @@ const updateInProgressScoreboard = (activities, rankingObj) => {
             else {// Normal challenge
                 if (winner === challengerId) {
                     currentScoreboard[challengerId] = applyChallengerWinsScoringRules(challengerScore, playerChallengedScore, winnerMatchDiffResult)
-                    const playerWentToTheTop = (challengerPlace - currentScoreboard[challengerId].range) <= 0
-                    if (playerWentToTheTop) {
-                        // Player basically see the credits & waits to start over
-                        currentScoreboard[challengerId].coins = 0
-                    }
+                    currentScoreboard[playerChallengedId] = applyPlayerChallengedLosesScoringRules(playerChallengedScore, challengerScore)
                 }
                 else {// Winner is player challenged
                     currentScoreboard[challengerId] = applyChallengerLosesScoringRules(challengerScore, playerChallengedScore)

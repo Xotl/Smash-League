@@ -48,6 +48,7 @@ The current points earned by winning matches this week.
 |Alfredo|2|2|1643|
 |D.I.O.|2|2|1510|
 |El Chino|3|3|1495|
+|Paolo|2|3|1492|
 |El Plebe|3|3|1490|
 |Alan|3|3|1480|
 |Paolo|1|3|1480|
