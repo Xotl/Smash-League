@@ -197,11 +197,6 @@ const updateInProgressScoreboard = (activities, rankingObj) => {
                 if (winner === challengerId) {
                     currentScoreboard[challengerId] = applyChallengerWinsScoringRules(challengerScore, playerChallengedScore, winnerMatchDiffResult)
                     currentScoreboard[playerChallengedId] = applyPlayerChallengedLosesScoringRules(playerChallengedScore, challengerScore)
-                    const playerWentToTheTop = (challengerPlace - currentScoreboard[challengerId].range) <= 0
-                    if (playerWentToTheTop) {
-                        // Player basically see the credits & waits to start over
-                        currentScoreboard[challengerId].coins = 0
-                    }
                 }
                 else {// Winner is player challenged
                     currentScoreboard[challengerId] = applyChallengerLosesScoringRules(challengerScore, playerChallengedScore)
