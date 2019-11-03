@@ -72,7 +72,7 @@ describe('Smash League Challenges & Scoreboard', () => {
             "U61MBQTR8": {
                 "initial_coins": 0,
                 "points": 4419,
-                "coins": 0,
+                "coins": 1,
                 "range": 2,
                 "completed_challenges": [ ACTIVITIES1[10] ]
             },
