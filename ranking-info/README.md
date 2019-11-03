@@ -29,7 +29,7 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------|
 |4|4|1000|
 
-## In progress this week *Thu, 31 Oct 2019 06:40:07 GMT*
+## In progress this week *Sun, 03 Nov 2019 06:41:39 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -37,20 +37,21 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Xotl|0|0|2400|
-|Paco|1|1|2300|
-|Roberto|1|2|2299|
+|Xotl|0|0|2410|
+|Paco|0|1|2291|
+|Roberto|0|2|2290|
 |José "El Iceberg" Rosales|0|6|2234|
 |Neku|0|1|2092|
 |Angel Lee|0|2|2042|
 |Sammy|0|2|1785|
 |El Minion|2|2|1739|
-|Alfredo|2|2|1600|
+|Alfredo|2|2|1643|
 |D.I.O.|2|2|1510|
 |El Chino|3|3|1495|
 |Paolo|2|3|1492|
 |El Plebe|3|3|1490|
 |Alan|3|3|1480|
+|Paolo|1|3|1480|
 |Niightz|3|3|1470|
 |Michel|4|4|1440|
 |Medininja|4|4|1420|
@@ -70,5 +71,8 @@ Matches that already happened during this week.
 * `José "El Iceberg" Rosales` challenged `Paco` and **won** *3-2*.
 * `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 * `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `Paco` challenged `Xotl` and **lost** *3-2*.
 * `Paolo` challenged `El Minion` and **lost** *3-1*.
+* `Paolo` challenged `Alfredo` and **lost** *3-1*.
 * `Roberto` challenged `Paco` and **won** *3-1*.
+* `Roberto` challenged `Xotl` and **lost** *3-2*.
