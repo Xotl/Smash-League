@@ -55,7 +55,7 @@ describe('Smash League Challenges & Scoreboard', () => {
             ...SCOREBOARD1,
             "U6457D5KQ": {
                 "initial_coins": 0,
-                "points": 22,
+                "points": 3690,
                 "coins": 0,
                 "range": 3,
                 "completed_challenges": [
@@ -64,42 +64,42 @@ describe('Smash League Challenges & Scoreboard', () => {
             },
             "UBA5M220K": {
                 "initial_coins": 0,
-                "points": 235,
+                "points": 3807,
                 "coins": 1,
                 "range": 1,
                 "completed_challenges": []
             },
             "U61MBQTR8": {
                 "initial_coins": 0,
-                "points": 91,
+                "points": 4419,
                 "coins": 0,
                 "range": 2,
                 "completed_challenges": [ ACTIVITIES1[10] ]
             },
             "UB616ENA0": {
                 "initial_coins": 0,
-                "points": 29,
+                "points": 3987,
                 "coins": 0,
                 "range": 1,
                 "completed_challenges": [ ACTIVITIES1[5] ]
             },
             "UDBD59WLT": {
                 "initial_coins": 0,
-                "points": 42,
+                "points": 4387,
                 "coins": 0,
                 "range": 0,
                 "completed_challenges": []
             },
             "newPlayer": {
                 "initial_coins": 3,
-                "points": 936,
+                "points": 1013,
                 "coins": 1,
                 "range": 4,
                 "completed_challenges": [ ACTIVITIES1[7], ACTIVITIES1[8], ACTIVITIES1[9] ]
             },
             "U7VAPLNCR": {
                 "initial_coins": 0,
-                "points": 157,
+                "points": 3132,
                 "coins": 0,
                 "range": 0,
                 "completed_challenges": []

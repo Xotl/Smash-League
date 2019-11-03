@@ -36,119 +36,119 @@ module.exports = {
     SCOREBOARD1: {
         "U8A96RCEA": {
             "initial_coins": 0,
-            "points": 3,
+            "points": 3000,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "U61MBQTR8": {
             "initial_coins": 0,
-            "points": 44,
+            "points": 4400,
             "coins": 1,
             "range": 1,
             "completed_challenges": []
         },
         "U7VAPLNCR": {
             "initial_coins": 0,
-            "points": 31,
+            "points": 3100,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "UBRMBGR6Z": {
             "initial_coins": 0,
-            "points": 29,
+            "points": 2900,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "UB616ENA0": {
             "initial_coins": 0,
-            "points": 40,
+            "points": 4000,
             "coins": 1,
             "range": 1,
             "completed_challenges": []
         },
         "UEWUZCYJF": {
             "initial_coins": 0,
-            "points": 18,
+            "points": 1800,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "UDBD59WLT": {
             "initial_coins": 0,
-            "points": 42,
+            "points": 4200,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "U8M6QT7EF": {
             "initial_coins": 0,
-            "points": 33,
+            "points": 3300,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "U87CK0E4A": {
             "initial_coins": 0,
-            "points": 27,
+            "points": 3691,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "U8THDCVJ7": {
             "initial_coins": 0,
-            "points": 36,
+            "points": 3600,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "U6457D5KQ": {
             "initial_coins": 0,
-            "points": 37,
+            "points": 3700,
             "coins": 2,
             "range": 2,
             "completed_challenges": []
         },
         "UBA5M220K": {
             "initial_coins": 0,
-            "points": 37,
+            "points": 3700,
             "coins": 1,
             "range": 1,
             "completed_challenges": []
         },
         "UAGR4S57G": {
             "initial_coins": 0,
-            "points": 16,
+            "points": 983,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "UBRCZ6G4B": {
             "initial_coins": 0,
-            "points": 3,
+            "points": 1300,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "UDR61HJCD": {
             "initial_coins": 0,
-            "points": 27,
+            "points": 2700,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "UBD38N45P": {
             "initial_coins": 0,
-            "points": 10,
+            "points": 1000,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
         },
         "U6H8DDV25": {
             "initial_coins": 0,
-            "points": 9,
+            "points": 1900,
             "coins": 0,
             "range": 0,
             "completed_challenges": []
@@ -178,14 +178,14 @@ module.exports = {
             "scoreboard": {
                 "UDR61HJCD": {
                     "initial_coins": 2,
-                    "points": 27,
+                    "points": 2700,
                     "coins": 0,
                     "range": 6,
                     "completed_challenges": []
                 },
                 "U8A96RCEA": {
                     "initial_coins": 3,
-                    "points": 3,
+                    "points": 1300,
                     "coins": 0,
                     "range": 3,
                     "completed_challenges": [
@@ -201,7 +201,7 @@ module.exports = {
                 },
                 "U61MBQTR8": {
                     "initial_coins": 0,
-                    "points": 44,
+                    "points": 4400,
                     "coins": 0,
                     "range": 0,
                     "completed_challenges": [
@@ -213,7 +213,7 @@ module.exports = {
                 },
                 "U7VAPLNCR": {
                     "initial_coins": 1,
-                    "points": 43,
+                    "points": 4300,
                     "coins": 1,
                     "range": 2,
                     "completed_challenges": [
@@ -225,7 +225,7 @@ module.exports = {
                 },
                 "UBRMBGR6Z": {
                     "initial_coins": 2,
-                    "points": 29,
+                    "points": 2900,
                     "coins": 1,
                     "range": 4,
                     "completed_challenges": []
@@ -256,35 +256,35 @@ module.exports = {
             "scoreboard": {
                 "U8A96RCEA": {
                     "initial_coins": 1,
-                    "points": 3,
+                    "points": 1300,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
                 },
                 "U61MBQTR8": {
                     "initial_coins": 0,
-                    "points": 44,
+                    "points": 4400,
                     "coins": 0,
                     "range": 0,
                     "completed_challenges": []
                 },
                 "U7VAPLNCR": {
                     "initial_coins": 1,
-                    "points": 43,
+                    "points": 4300,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
                 },
                 "UBRMBGR6Z": {
                     "initial_coins": 1,
-                    "points": 29,
+                    "points": 2900,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
                 },
                 "UDR61HJCD": {
                     "initial_coins": 1,
-                    "points": 27,
+                    "points": 2700,
                     "coins": 1,
                     "range": 1,
                     "completed_challenges": []
