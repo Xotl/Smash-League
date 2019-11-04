@@ -1,6 +1,6 @@
 # Ranking
 
-Last updated **Sun, 03 Nov 2019 19:52:41 GMT**.
+Last updated **Mon, 04 Nov 2019 01:14:27 GMT**.
 
 |#|Player|Score|
 |-|------|-----|
@@ -19,8 +19,8 @@ Last updated **Sun, 03 Nov 2019 19:52:41 GMT**.
 |13|`Alan`, `Paolo`|1480|
 |14|`Niightz`|1470|
 |15|`Michel`|1440|
-|16|`Medininja`|1420|
-|17|`Carlos López`, `David`|1000|
+|16|`UKB40CVF0`|1093|
+|17|`Medininja`|997|
 
 Unranked players and players that have 0 points will start with this score:
 
@@ -28,7 +28,18 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------|
 |4|4|1000|
 
-## In progress this week *Sun, 03 Nov 2019 19:52:41 GMT*
+### Inactive players
+* Carlos López - Deleted this week after 4 week(s).
+* Alan - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+* César Gutman - Deleted this week after 1 week(s).
+* D.I.O. - 1 week(s) inactive.
+* Michel - 1 week(s) inactive.
+* Niightz - 1 week(s) inactive.
+* David - Deleted this week after 1 week(s).
+* El Plebe - 1 week(s) inactive.
+
+## In progress this week *Mon, 04 Nov 2019 01:14:27 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -52,10 +63,8 @@ The current points earned by winning matches this week.
 |Paolo|3|3|1480|
 |Niightz|3|3|1470|
 |Michel|3|3|1440|
-|Medininja|4|4|1420|
-|Carlos López|4|4|1000|
-|David|4|4|1000|
-|César Gutman|4|4|0|
+|UKB40CVF0|4|4|1093|
+|Medininja|4|4|997|
 
 ### Completed challenges
 Matches that already happened during this week.

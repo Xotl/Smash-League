@@ -45,7 +45,9 @@ async function Main() {
 
     if (isItTimeToCommit) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
-        OutputGenerator.updateHistoryLog(newInProgressObj, newRankingObj.current_week)
+        OutputGenerator.updateHistoryLog(
+            newInProgressObj, newRankingObj.current_week, newRankingObj.inactive_players
+        )
     }
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)

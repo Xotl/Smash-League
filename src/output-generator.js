@@ -2,7 +2,6 @@
 const fs = require('fs')
 const path = require('path')
 const Utils = require('./utils')
-const SmashLeague = require('./smash-league')
 
 const getRankingTemplate = () => new Promise(
     (resolve, reject) => {
@@ -111,6 +110,25 @@ const getUnrankedScore = ({ coins, range, points}) =>
     `|${coins}|${range}|${points}|`
 
 
+const getInactivivityMarkdown = (inactivePlayersObj) => {
+    const inactivePlayersList = Object.keys(inactivePlayersObj)
+    if (inactivePlayersList.length === 0) {
+        return ''
+    }
+    return (
+        '### Inactive players' +
+        inactivePlayersList.reduce((result, playerId) => {
+            const hasDeleted = inactivePlayersObj[playerId].deleted_by_inactivity
+            const details = hasDeleted ? 
+                `Deleted this week after ${inactivePlayersObj[playerId].weeks_count} week(s).` 
+                : `${inactivePlayersObj[playerId].weeks_count} week(s) inactive.`
+            return result + 
+                `\n* ${Utils.getPlayerAlias(playerId)} - ${details}`
+        }, '')
+    )
+}
+
+
 const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
 
     const template = await getRankingTemplate()
@@ -118,6 +136,7 @@ const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
         .replace(/\{\{last_updated\}\}/gm, (new Date(rankingObj.last_update_ts)).toUTCString())
         .replace(/\{\{ranking_bullets\}\}/gm, getRankingBulletsMarkdown(rankingObj.ranking, rankingObj.scoreboard))
         .replace(/\{\{unranked_score\}\}/gm, getUnrankedScore(unrankedScore))
+        .replace(/\{\{inactive_players\}\}/gm, getInactivivityMarkdown(rankingObj.inactive_players))
         .replace(/\{\{inprogress_last_updated\}\}/gm, (new Date(rankingObj.in_progress.last_update_ts)).toUTCString())
         .replace(/\{\{inprogress_scoreboard\}\}/gm, getScoreboardMarkdown(rankingObj.in_progress.scoreboard))
         .replace(/\{\{completed_challenges\}\}/gm, getCompletedChallengesMarkdown(rankingObj.in_progress.scoreboard))
@@ -142,7 +161,7 @@ const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
 }
 
 
-const updateHistoryLog = async (inProgressObj, weekObj) => {
+const updateHistoryLog = async (inProgressObj, weekObj, inactivityObj) => {
     const filePath = path.join(__dirname, '..', 'ranking-info', 'history-log.md')
     const newStringToAppend = 
 // Start of srting
@@ -152,7 +171,7 @@ The week started at *${(new Date(weekObj.start)).toUTCString()}* and ended *${(n
 ${getEndOfWeekSummaryMarkdown(inProgressObj.scoreboard)}
 ### Completed challenges
 ${getCompletedChallengesMarkdown(inProgressObj.scoreboard)}
-
+${getInactivivityMarkdown(inactivityObj)}
 
 `// end of srting
     const newDataBuffer = Buffer.from(newStringToAppend)

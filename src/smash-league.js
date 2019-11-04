@@ -267,12 +267,65 @@ const getRankingFromScoreboard = scoreboard => {
 const commitInProgress = rankingObj => {
     const result = { ...rankingObj }
     const inProgress = { ...result.in_progress }
+    const newInactivePlayers = { ...rankingObj.inactive_players }
+
+    // Update inactive players list
+    Object.keys(inProgress.scoreboard).forEach(
+        (playerId) => {
+            const isPlayerInactiveThisWeek = !Object.keys(inProgress.scoreboard).find(
+                (anotherPlayerId) => {
+                    const anotherPlayerScoreboard = inProgress.scoreboard[anotherPlayerId]
+                    const anotherPlayerChallenges = anotherPlayerScoreboard.completed_challenges
+                    return anotherPlayerChallenges.find(
+                        (challenge) => {
+                            return playerId === challenge.player1 || playerId === challenge.player2
+                        }
+                    )
+                }
+            )
+
+            if ( !isPlayerInactiveThisWeek || (
+                newInactivePlayers[playerId] && newInactivePlayers[playerId].deleted_by_inactivity
+            ) ) {
+                // Player was active this week or was previuosly marked as deleted, so we 
+                // remove the player from the list.
+                delete newInactivePlayers[playerId]
+                return
+            }
+
+            if (!newInactivePlayers[playerId]) {// New inactive player, let's create the profile 
+                newInactivePlayers[playerId] = {
+                    weeks_count: 0,
+                    inactive_since: inProgress.last_update_ts
+                }
+            }
+            newInactivePlayers[playerId].weeks_count++
+        }
+    )
 
     // Creates a clone of all player's score with updated points
     const newScoreboard = Object.keys(inProgress.scoreboard).reduce(
         (tmpScoreboard, playerId) => {
             tmpScoreboard[playerId] = {
                 ...inProgress.scoreboard[playerId]
+            }
+
+            if (newInactivePlayers[playerId]) {
+                const unrankedPlayerScore = getUnrankedPlayerScore(0)
+                if (newInactivePlayers[playerId].weeks_count > 1) {
+                    // Punish inactive player by losing against an unranked player
+                    tmpScoreboard[playerId] = applyPlayerChallengedLosesScoringRules(
+                        tmpScoreboard[playerId],
+                        unrankedPlayerScore
+                    )
+                }
+    
+                if (tmpScoreboard[playerId].points <= unrankedPlayerScore.points) {
+                    // Remove player for it's inactivity, but we want to keep 
+                    // track of what happened, so we just mark the player
+                    newInactivePlayers[playerId].deleted_by_inactivity = true
+                    delete tmpScoreboard[playerId]
+                }
             }
             return tmpScoreboard
         },
@@ -300,6 +353,7 @@ const commitInProgress = rankingObj => {
     )
 
     
+    result.inactive_players = newInactivePlayers
     result.scoreboard = newScoreboard
     inProgress.scoreboard = newInProgressScoreboard
     result.last_update_ts = inProgress.last_update_ts

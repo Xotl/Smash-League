@@ -228,7 +228,12 @@ module.exports = {
                     "points": 2900,
                     "coins": 1,
                     "range": 4,
-                    "completed_challenges": []
+                    "completed_challenges": [
+                        // Adding some data for inactivity test
+                        { player1: "U8A96RCEA", player2: "U61MBQTR8"},
+                        { player1: "U7VAPLNCR", player2: "UBRMBGR6Z"},
+                        { player1: "UBRMBGR6Z", player2: "U61MBQTR8"},
+                    ]
                 }
             },
             "last_update_ts": 1556470800000
@@ -291,6 +296,12 @@ module.exports = {
                 }
             },
             "last_update_ts": 1556470800000
+        },
+        "inactive_players": {
+            "UDR61HJCD": {
+                inactive_since: 1556470800000,
+                weeks_count: 1
+            } 
         }
     },
 
