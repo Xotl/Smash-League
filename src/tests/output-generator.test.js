@@ -43,7 +43,7 @@ describe('Utils', () => {
         const closeSyncFnSpy = jest.spyOn(fs, 'closeSync').mockImplementation(jest.fn())
 
         expect.assertions(3);
-        await expect( updateHistoryLog(RANKING_OBJ1.in_progress, RANKING_OBJ1.current_week) ).resolves.not.toThrow()
+        await expect( updateHistoryLog(RANKING_OBJ1.in_progress, RANKING_OBJ1.current_week, {}) ).resolves.not.toThrow()
         expect( writeSyncFnSpy ).toHaveBeenCalledTimes(2)
         expect( closeSyncFnSpy ).toHaveBeenCalledTimes(1)
     })

@@ -305,6 +305,17 @@ module.exports = {
             "completed_challenges": [],
             "last_update_ts": 1554012202785,
             "reported_results": []
+        },
+        "inactive_players": {
+            "U8A96RCEA": {
+                "weeks_count": 4,
+                "inactive_since": 1572810761549,
+                "deleted_by_inactivity": true
+            },
+            "UBRMBGR6Z": {
+                "weeks_count": 1,
+                "inactive_since": 1572830067930
+            }
         }
     }
 }
