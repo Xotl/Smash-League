@@ -1,3 +1,58 @@
+## Commit from Mon, 04 Nov 2019 01:14:27 GMT
+The week started at *Sun, 27 Oct 2019 15:00:00 GMT* and ended *Sun, 03 Nov 2019 15:00:00 GMT*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|José "El Iceberg" Rosales - 2290pts|1|7|
+|Roberto - 2258pts|0|2|
+|Xotl - 2218pts|0|0|
+|Paco - 2201pts|0|1|
+|Angel Lee - 1938pts|0|2|
+|Neku - 1876pts|0|1|
+|Sammy - 1785pts|0|2|
+|El Minion - 1739pts|2|2|
+|Alfredo - 1643pts|2|2|
+|D.I.O. - 1510pts|2|2|
+|El Chino - 1495pts|3|3|
+|El Plebe - 1490pts|3|3|
+|Alan - 1480pts|3|3|
+|Paolo - 1480pts|1|3|
+|Niightz - 1470pts|3|3|
+|Michel - 1440pts|4|4|
+|UKB40CVF0 - 1093pts|4|5|
+|Carlos López - 1000pts|4|4|
+|David - 1000pts|4|4|
+|Medininja - 997pts|4|4|
+|César Gutman - 0pts|4|4|
+### Completed challenges
+* `Angel Lee` challenged `Neku` and **won** *3-1*.
+* `Angel Lee` challenged `Roberto` and **lost** *3-1*.
+* `Neku` challenged `Roberto` and **lost** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Angel Lee` and **won** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Neku` and **won** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Roberto` and **won** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Paco` and **won** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **won** *3-0*.
+* `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `Sammy` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `Paco` challenged `Xotl` and **lost** *3-2*.
+* `Paolo` challenged `El Minion` and **lost** *3-1*.
+* `Paolo` challenged `Alfredo` and **lost** *3-1*.
+* `Roberto` challenged `Paco` and **won** *3-1*.
+* `Roberto` challenged `Xotl` and **lost** *3-2*.
+* `UKB40CVF0` challenged `Medininja` and **won** *3-0*.
+### Inactive players
+* Carlos López - Deleted this week after 4 week(s).
+* Alan - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+* César Gutman - Deleted this week after 1 week(s).
+* D.I.O. - 1 week(s) inactive.
+* Michel - 1 week(s) inactive.
+* Niightz - 1 week(s) inactive.
+* David - Deleted this week after 1 week(s).
+* El Plebe - 1 week(s) inactive.
+
 ## Commit from Sun, 03 Nov 2019 19:52:41 GMT
 The week started at *Sun, 27 Oct 2019 15:00:00 GMT* and ended *Sun, 03 Nov 2019 15:00:00 GMT*.
 ### End of week players score summary

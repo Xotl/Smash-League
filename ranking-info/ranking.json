@@ -1,5 +1,5 @@
 {
-    "last_update_ts": 1572810761549,
+    "last_update_ts": 1572830067930,
     "season": {
         "start": 1562511600001,
         "end": 1573142400001
@@ -56,21 +56,13 @@
             "UAGR4S57G"
         ],
         [
-            "U6H8DDV25"
+            "UKB40CVF0"
         ],
         [
-            "U8A96RCEA",
-            "UBD38N45P"
+            "U6H8DDV25"
         ]
     ],
     "scoreboard": {
-        "U8A96RCEA": {
-            "initial_coins": 4,
-            "coins": 4,
-            "range": 4,
-            "points": 1000,
-            "completed_challenges": []
-        },
         "U61MBQTR8": {
             "initial_coins": 0,
             "coins": 0,
@@ -120,13 +112,6 @@
             "coins": 3,
             "range": 3,
             "points": 1495,
-            "completed_challenges": []
-        },
-        "UDBD59WLT": {
-            "initial_coins": 4,
-            "coins": 4,
-            "range": 4,
-            "points": 0,
             "completed_challenges": []
         },
         "U8M6QT7EF": {
@@ -280,18 +265,11 @@
                 }
             ]
         },
-        "UBD38N45P": {
-            "initial_coins": 4,
-            "coins": 4,
-            "range": 4,
-            "points": 1000,
-            "completed_challenges": []
-        },
         "U6H8DDV25": {
             "initial_coins": 4,
             "coins": 4,
             "range": 4,
-            "points": 1420,
+            "points": 997,
             "completed_challenges": []
         },
         "UHM2TH85S": {
@@ -386,18 +364,30 @@
             "range": 2,
             "points": 1643,
             "completed_challenges": []
+        },
+        "UKB40CVF0": {
+            "points": 1093,
+            "initial_coins": 4,
+            "coins": 4,
+            "range": 5,
+            "completed_challenges": [
+                {
+                    "winner": "UKB40CVF0",
+                    "player1": "UKB40CVF0",
+                    "player2": "U6H8DDV25",
+                    "player1Result": 3,
+                    "player2Result": 0,
+                    "players": [
+                        "UKB40CVF0",
+                        "U6H8DDV25"
+                    ]
+                }
+            ]
         }
     },
     "unknown_users": [],
     "in_progress": {
         "scoreboard": {
-            "U8A96RCEA": {
-                "initial_coins": 4,
-                "coins": 4,
-                "range": 4,
-                "points": 1000,
-                "completed_challenges": []
-            },
             "U61MBQTR8": {
                 "initial_coins": 1,
                 "coins": 1,
@@ -424,13 +414,6 @@
                 "coins": 3,
                 "range": 3,
                 "points": 1495,
-                "completed_challenges": []
-            },
-            "UDBD59WLT": {
-                "initial_coins": 4,
-                "coins": 4,
-                "range": 4,
-                "points": 0,
                 "completed_challenges": []
             },
             "U8M6QT7EF": {
@@ -482,18 +465,11 @@
                 "points": 1785,
                 "completed_challenges": []
             },
-            "UBD38N45P": {
-                "initial_coins": 4,
-                "coins": 4,
-                "range": 4,
-                "points": 1000,
-                "completed_challenges": []
-            },
             "U6H8DDV25": {
                 "initial_coins": 4,
                 "coins": 4,
                 "range": 4,
-                "points": 1420,
+                "points": 997,
                 "completed_challenges": []
             },
             "UHM2TH85S": {
@@ -530,11 +506,59 @@
                 "range": 2,
                 "points": 1643,
                 "completed_challenges": []
+            },
+            "UKB40CVF0": {
+                "initial_coins": 4,
+                "coins": 4,
+                "range": 4,
+                "points": 1093,
+                "completed_challenges": []
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1572810761549,
+        "last_update_ts": 1572830067930,
         "reported_results": []
+    },
+    "inactive_players": {
+        "U8A96RCEA": {
+            "weeks_count": 4,
+            "inactive_since": 1572810761549,
+            "deleted_by_inactivity": true
+        },
+        "UBRMBGR6Z": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930
+        },
+        "UEWUZCYJF": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930
+        },
+        "UDBD59WLT": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930,
+            "deleted_by_inactivity": true
+        },
+        "U6457D5KQ": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930
+        },
+        "UAGR4S57G": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930
+        },
+        "UBRCZ6G4B": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930
+        },
+        "UBD38N45P": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930,
+            "deleted_by_inactivity": true
+        },
+        "UHM2TH85S": {
+            "weeks_count": 1,
+            "inactive_since": 1572830067930
+        }
     }
 }
