@@ -390,9 +390,21 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 }
             }
         ])
+
+        if (weekCommited.newChampionName) {
+            slackBlocks.push([
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": Utils.getRandomMessageById('daily_update week_commited_new_champion', { newChampionName })
+                    }
+                }
+            ])
+        }
     }
 
-    if (weekCommited.newChampionName) {
+    if (weekCommited && weekCommited.newChampionName) {
         slackBlocks.push([
             {
                 "type": "section",
