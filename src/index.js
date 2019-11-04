@@ -56,6 +56,7 @@ async function Main() {
         SmashLeague.getUnrankedPlayerScore(newRankingObj.ranking.length)
     )
 
+    const newChampion = Utils.aNewChampion(Ranking.ranking, newRankingObj.ranking)
 
     const blocksToPost = SmashLeagueInteractions.getUpdatesToNotifyUsers(
         isItTimeToCommit ? {/* TODO: send weeks times */} : null,
@@ -63,7 +64,8 @@ async function Main() {
         ignoredActivities, 
         activities.ignoredMessages.length,
         newRankingObj.season,
-        IS_UPDATE ? version : null
+        IS_UPDATE ? version : null,
+        newChampion
     )
         
     // Only post in slack if it's a master Job

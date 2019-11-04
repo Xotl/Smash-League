@@ -320,7 +320,7 @@ const categorizeSlackMessages = async (messagesArray) => {
 }
 
 const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActivities, 
-    ignoredMessagesCount, season, newVersion) => {
+    ignoredMessagesCount, season, newVersion, newChampionName) => {
 
     const slackBlocks = []
     if (newVersion) {
@@ -387,6 +387,18 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
                 "text": {
                     "type": "mrkdwn",
                     "text": Utils.getRandomMessageById('daily_update week_commited')
+                }
+            }
+        ])
+    }
+
+    if (newChampionName) {
+        slackBlocks.push([
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": Utils.getRandomMessageById('daily_update week_commited_new_champion', { newChampionName })
                 }
             }
         ])
