@@ -1,3 +1,51 @@
+## Commit from Mon, 04 Nov 2019 03:21:13 GMT
+The week started at *Sun, 03 Nov 2019 15:00:00 GMT* and ended *Sun, 10 Nov 2019 15:00:00 GMT*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|José "El Iceberg" Rosales - 2290pts|0|0|
+|Roberto - 2258pts|1|1|
+|Xotl - 2218pts|1|1|
+|Paco - 2201pts|1|1|
+|Angel Lee - 1938pts|1|1|
+|Neku - 1876pts|2|2|
+|Sammy - 1785pts|2|2|
+|El Minion - 1739pts|2|2|
+|Alfredo - 1643pts|2|2|
+|D.I.O. - 1510pts|2|2|
+|El Chino - 1495pts|3|3|
+|El Plebe - 1490pts|3|3|
+|Alan - 1480pts|3|3|
+|Paolo - 1480pts|3|3|
+|Niightz - 1470pts|3|3|
+|Michel - 1440pts|3|3|
+|UKB40CVF0 - 1093pts|4|4|
+|Medininja - 997pts|4|4|
+### Completed challenges
+
+### Inactive players
+* Carlos López - Deleted this week after 4 week(s).
+* Alan - Deleted this week after 2 week(s).
+* El Chino - Deleted this week after 2 week(s).
+* César Gutman - Deleted this week after 1 week(s).
+* D.I.O. - Deleted this week after 2 week(s).
+* Michel - Deleted this week after 2 week(s).
+* Niightz - Deleted this week after 2 week(s).
+* David - Deleted this week after 1 week(s).
+* El Plebe - Deleted this week after 2 week(s).
+* Xotl - 1 week(s) inactive.
+* Angel Lee - 1 week(s) inactive.
+* El Minion - 1 week(s) inactive.
+* Neku - 1 week(s) inactive.
+* José "El Iceberg" Rosales - 1 week(s) inactive.
+* Sammy - 1 week(s) inactive.
+* Medininja - Deleted this week after 1 week(s).
+* Paco - 1 week(s) inactive.
+* Paolo - 1 week(s) inactive.
+* Roberto - 1 week(s) inactive.
+* Alfredo - 1 week(s) inactive.
+* UKB40CVF0 - 1 week(s) inactive.
+
 ## Commit from Mon, 04 Nov 2019 01:14:27 GMT
 The week started at *Sun, 27 Oct 2019 15:00:00 GMT* and ended *Sun, 03 Nov 2019 15:00:00 GMT*.
 ### End of week players score summary
