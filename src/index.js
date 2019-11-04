@@ -64,8 +64,7 @@ async function Main() {
         ignoredActivities, 
         activities.ignoredMessages.length,
         newRankingObj.season,
-        IS_UPDATE ? version : null,
-        newChampion
+        IS_UPDATE ? version : null
     )
         
     // Only post in slack if it's a master Job

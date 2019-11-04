@@ -320,7 +320,7 @@ const categorizeSlackMessages = async (messagesArray) => {
 }
 
 const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActivities, 
-    ignoredMessagesCount, season, newVersion, newChampionName) => {
+    ignoredMessagesCount, season, newVersion) => {
 
     const slackBlocks = []
     if (newVersion) {
@@ -392,7 +392,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
         ])
     }
 
-    if (newChampionName) {
+    if (weekCommited.newChampionName) {
         slackBlocks.push([
             {
                 "type": "section",
