@@ -56,9 +56,10 @@ async function Main() {
         SmashLeague.getUnrankedPlayerScore(newRankingObj.ranking.length)
     )
 
+    const newChampion = Utils.aNewChampion(Ranking.ranking, newRankingObj.ranking)
 
     const blocksToPost = SmashLeagueInteractions.getUpdatesToNotifyUsers(
-        isItTimeToCommit ? {/* TODO: send weeks times */} : null,
+        isItTimeToCommit ? { newChampion } : null,
         activities.reportedResults.length,
         ignoredActivities, 
         activities.ignoredMessages.length,

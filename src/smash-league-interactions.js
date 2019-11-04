@@ -392,6 +392,18 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
         ])
     }
 
+    if (weekCommited.newChampionName) {
+        slackBlocks.push([
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": Utils.getRandomMessageById('daily_update week_commited_new_champion', { newChampionName })
+                }
+            }
+        ])
+    }
+
     if (Array.isArray(ignoredActivities) && ignoredActivities.length > 0) {
         const ignoredMessages = Object.keys(ignoredActivities).map(
             type => {

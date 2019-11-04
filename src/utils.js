@@ -120,6 +120,21 @@ const eloCalculation = (playerAElo, playerBElo, playerAScore) => {
     return Math.trunc(playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA))
 }
 
+/**
+ * 
+ * @param {Array} oldRank Contains the old ranking
+ * @param {Array} newRank Contains the new ranking
+ *
+ * @returns {(boolean|string)} If there is a new champion, returns the name, if not, false.
+ */
+const aNewChampion = (oldRank, newRank) => {
+    if (oldRank[0][0] !== newRank[0][0]) {
+        return getPlayerAlias(newRank[0][0])
+    }
+
+    return false
+}
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
@@ -134,4 +149,5 @@ module.exports = {
     removeAlreadyChallengedPlayers,
     removeEmptyArray,
     eloCalculation,
+    aNewChampion
 }

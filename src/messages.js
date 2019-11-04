@@ -201,7 +201,12 @@ module.exports = Tag => ({
     "daily_update week_commited": [
         "¡Ha iniciando un nuevo ranking esta semana!, ya <https://github.com/Xotl/Smash-League/tree/master/ranking-info/README.md|pueden revisar> en qué lugar quedaron.",
         "¡Nueva semana! <https://github.com/Xotl/Smash-League/tree/master/ranking-info/README.md|pueden revisar> en qué lugar quedaron.",
-        "<https://github.com/Xotl/Smash-League/tree/master/ranking-info/README.md|Pueden revisar> en qué lugar quedaron. ¡Ha iniciado otra semans de la liga!.",
+        "<https://github.com/Xotl/Smash-League/tree/master/ranking-info/README.md|Pueden revisar> en qué lugar quedaron. ¡Ha iniciado otra semana de la liga!.",
+    ],
+    "daily_update week_commited_new_champion": [
+        ({ newChampionName }) => `Contra todo pronostico, ¡${newChampionName} se corona como el nuevo campeón de la liga! :crown:`,
+        ({ newChampionName }) => `¿Pero qué demonios esta pasando? ¿${newChampionName} quedando primero? ¿Qué sigue? ¿Tiburosos voladores de papantla? :bearboss:`,
+        ({ newChampionName }) => `Y como nuevo campeón de la liga ha quedado ${newChampionName}, nada fuera de lo esperado... ¿Verdad? ¡¿Verdad?! :sweat_smile:`
     ],
     "daily_update ignored_activities": [
         ({numIgnoredActivities, ignoredMessages}) => "Además, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar " + 
