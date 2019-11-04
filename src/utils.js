@@ -129,7 +129,7 @@ const eloCalculation = (playerAElo, playerBElo, playerAScore) => {
  */
 const aNewChampion = (oldRank, newRank) => {
     if (oldRank[0][0] !== newRank[0][0]) {
-        return Config.users_dict[newRank[0][0]]
+        return getPlayerAlias(newRank[0][0])
     }
 
     return false
