@@ -143,7 +143,7 @@
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1876,
+                "points": 1914,
                 "completed_challenges": []
             },
             "U8THDCVJ7": {
@@ -213,10 +213,22 @@
             },
             "ULBS05D3M": {
                 "initial_coins": 2,
-                "coins": 2,
+                "coins": 1,
                 "range": 2,
-                "points": 1643,
-                "completed_challenges": []
+                "points": 1636,
+                "completed_challenges": [
+                    {
+                        "winner": "U8M6QT7EF",
+                        "player1": "ULBS05D3M",
+                        "player2": "U8M6QT7EF",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "ULBS05D3M",
+                            "U8M6QT7EF"
+                        ]
+                    }
+                ]
             },
             "UKB40CVF0": {
                 "initial_coins": 3,
@@ -270,7 +282,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1572936159662,
+        "last_update_ts": 1573022574499,
         "reported_results": []
     },
     "inactive_players": {
