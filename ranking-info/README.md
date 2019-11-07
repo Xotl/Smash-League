@@ -45,7 +45,7 @@ Unranked players and players that have 0 points will start with this score:
 * Alfredo - 1 week(s) inactive.
 * UKB40CVF0 - 1 week(s) inactive.
 
-## In progress this week *Wed, 06 Nov 2019 06:42:54 GMT*
+## In progress this week *Thu, 07 Nov 2019 06:43:15 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -55,9 +55,9 @@ The current points earned by winning matches this week.
 |------|-----|-----|-----|
 |José "El Iceberg" Rosales|0|0|2290|
 |Roberto|1|1|2258|
+|Paco|1|1|2229|
 |Xotl|1|1|2218|
-|Paco|1|1|2201|
-|Angel Lee|1|1|1938|
+|Angel Lee|0|1|1932|
 |El Minion|2|2|1914|
 |Neku|2|2|1876|
 |Sammy|2|2|1785|
@@ -69,6 +69,7 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Angel Lee` challenged `Paco` and **lost** *3-1*.
 * `Paolo` challenged `El Minion` and **lost** *3-0*.
 * `Paolo` challenged `El Minion` and **lost** *3-2*.
 * `Alfredo` challenged `El Minion` and **lost** *3-1*.
