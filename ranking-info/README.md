@@ -45,7 +45,7 @@ Unranked players and players that have 0 points will start with this score:
 * Alfredo - 1 week(s) inactive.
 * UKB40CVF0 - 1 week(s) inactive.
 
-## In progress this week *Thu, 07 Nov 2019 06:43:15 GMT*
+## In progress this week *Fri, 08 Nov 2019 06:43:46 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
