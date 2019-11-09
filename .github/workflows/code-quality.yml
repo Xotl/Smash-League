@@ -1,6 +1,6 @@
 name: Code quality
 
-on: [push]
+on: [pull_request, push]
 
 jobs:
   
@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
-    
-    - name: Run tests inside container
-      run: docker run --rm smash-league npm test
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+      
+      - name: Run tests inside container
+        run: docker run --rm smash-league npm test
