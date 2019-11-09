@@ -1,9 +1,9 @@
 name: Run League
 
 on: 
-  - push
-  - schedule: 
-      - cron: '0 6 * * *'
+  push
+  schedule: 
+    - cron: '0 6 * * *'
 
 jobs:
   
