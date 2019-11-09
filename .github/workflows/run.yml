@@ -1,0 +1,19 @@
+name: Run League
+
+on: [push]
+
+jobs:
+  
+  main:
+    name: 'Run League'
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+    
+    - name: Run league code
+      run: echo "Some code to run"
