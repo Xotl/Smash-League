@@ -19,7 +19,7 @@ async function Main() {
     const today = new Date()
     const isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(today, Ranking.current_week)
     
-    let now = new Date()
+    let now = today
     if (isItTimeToCommit) {
         // We make sure to only commit stuff that happened during the defined week period
         now = new Date(Ranking.current_week.end)
