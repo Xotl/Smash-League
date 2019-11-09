@@ -2,6 +2,10 @@
     "slack_channel_id": "GBK09PBQS",
     "bot_id": "UFY8P0WRF",
     "slack_workspace": "intersysconsulting",
+    "date_format": {
+        "timeZone": "America/Mexico_City",
+        "locale": "en-US"
+    },
     "users_dict": {
         "U8A96RCEA": "Carlos López",
         "U61MBQTR8": "Xotl",
@@ -28,6 +32,7 @@
         "UKPTK422K": "Paco",
         "UHHD243DH": "Paolo",
         "ULBS05D3M": "Alfredo",
-        "UMY200LSC": "Roberto"
+        "UMY200LSC": "Roberto",
+        "UKB40CVF0": "Kyttyan"
     }
 }

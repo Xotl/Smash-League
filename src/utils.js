@@ -135,6 +135,18 @@ const aNewChampion = (oldRank, newRank) => {
     return false
 }
 
+const getLocaleStringDate = (date) => {
+    if (typeof date === 'number') {
+        date = new Date(date)
+    }
+    const { locale, timeZone } = Config.date_format
+    return date.toLocaleString(locale, {
+        weekday: 'short', day: '2-digit', month: 'short', year: 'numeric',
+        hour: 'numeric', minute: '2-digit',
+        timeZone, timeZoneName: 'short'
+    })
+}
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
@@ -149,5 +161,6 @@ module.exports = {
     removeAlreadyChallengedPlayers,
     removeEmptyArray,
     eloCalculation,
-    aNewChampion
+    aNewChampion,
+    getLocaleStringDate
 }

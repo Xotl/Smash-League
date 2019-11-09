@@ -133,11 +133,11 @@ const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
 
     const template = await getRankingTemplate()
     const output = template
-        .replace(/\{\{last_updated\}\}/gm, (new Date(rankingObj.last_update_ts)).toUTCString())
+        .replace(/\{\{last_updated\}\}/gm, Utils.getLocaleStringDate(rankingObj.last_update_ts))
         .replace(/\{\{ranking_bullets\}\}/gm, getRankingBulletsMarkdown(rankingObj.ranking, rankingObj.scoreboard))
         .replace(/\{\{unranked_score\}\}/gm, getUnrankedScore(unrankedScore))
         .replace(/\{\{inactive_players\}\}/gm, getInactivivityMarkdown(rankingObj.inactive_players))
-        .replace(/\{\{inprogress_last_updated\}\}/gm, (new Date(rankingObj.in_progress.last_update_ts)).toUTCString())
+        .replace(/\{\{inprogress_last_updated\}\}/gm, Utils.getLocaleStringDate(rankingObj.in_progress.last_update_ts))
         .replace(/\{\{inprogress_scoreboard\}\}/gm, getScoreboardMarkdown(rankingObj.in_progress.scoreboard))
         .replace(/\{\{completed_challenges\}\}/gm, getCompletedChallengesMarkdown(rankingObj.in_progress.scoreboard))
         
@@ -165,8 +165,8 @@ const updateHistoryLog = async (inProgressObj, weekObj, inactivityObj) => {
     const filePath = path.join(__dirname, '..', 'ranking-info', 'history-log.md')
     const newStringToAppend = 
 // Start of srting
-`## Commit from ${(new Date(inProgressObj.last_update_ts)).toUTCString()}
-The week started at *${(new Date(weekObj.start)).toUTCString()}* and ended *${(new Date(weekObj.end)).toUTCString()}*.
+`## Commit from ${Utils.getLocaleStringDate(inProgressObj.last_update_ts)}
+The week started at *${Utils.getLocaleStringDate(weekObj.start)}* and ended *${Utils.getLocaleStringDate(weekObj.end)}*.
 ### End of week players score summary
 ${getEndOfWeekSummaryMarkdown(inProgressObj.scoreboard)}
 ### Completed challenges
