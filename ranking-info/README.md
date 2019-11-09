@@ -1,6 +1,6 @@
 # Ranking
 
-Last updated **Mon, 04 Nov 2019 03:21:13 GMT**.
+Last updated **Sat, Nov 09, 2019, 3:30 PM CST**.
 
 |#|Player|Score|
 |-|------|-----|
@@ -14,7 +14,7 @@ Last updated **Mon, 04 Nov 2019 03:21:13 GMT**.
 |8|`El Minion`|1739|
 |9|`Alfredo`|1643|
 |10|`Paolo`|1480|
-|11|`UKB40CVF0`|1093|
+|11|`Kyttyan`|1093|
 
 Unranked players and players that have 0 points will start with this score:
 
@@ -43,9 +43,9 @@ Unranked players and players that have 0 points will start with this score:
 * Paolo - 1 week(s) inactive.
 * Roberto - 1 week(s) inactive.
 * Alfredo - 1 week(s) inactive.
-* UKB40CVF0 - 1 week(s) inactive.
+* Kyttyan - 1 week(s) inactive.
 
-## In progress this week *Sat, 09 Nov 2019 06:48:06 GMT*
+## In progress this week *Sat, Nov 09, 2019, 3:35 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -62,7 +62,7 @@ The current points earned by winning matches this week.
 |Sammy|1|2|1880|
 |Neku|1|2|1862|
 |Alfredo|1|2|1636|
-|UKB40CVF0|1|3|1088|
+|Kyttyan|1|3|1088|
 |D.I.O.|3|4|1031|
 |Paolo|0|2|999|
 |El Plebe|1|3|996|
@@ -83,8 +83,8 @@ Matches that already happened during this week.
 * `Paolo` challenged `El Minion` and **lost** *3-2*.
 * `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
 * `Alfredo` challenged `El Minion` and **lost** *3-1*.
-* `UKB40CVF0` challenged `Paolo` and **lost** *3-1*.
-* `UKB40CVF0` challenged `El Minion` and **lost** *3-0*.
+* `Kyttyan` challenged `Paolo` and **lost** *3-1*.
+* `Kyttyan` challenged `El Minion` and **lost** *3-0*.
 * `El Plebe` challenged `Paolo` and **lost** *3-0*.
 * `El Plebe` challenged `Paolo` and **lost** *3-0*.
 * `D.I.O.` challenged `Paolo` and **won** *3-2*.
