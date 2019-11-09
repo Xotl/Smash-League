@@ -4,7 +4,8 @@ on: [push]
 
 jobs:
   
-  "Build and Test":
+  main:
+    name: 'Build & Test'
 
     runs-on: ubuntu-latest
     
