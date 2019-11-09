@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league --tag latest
+      run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
     - name: Run tests inside container
       run: docker run --rm smash-league npm test
