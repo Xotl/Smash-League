@@ -26,23 +26,25 @@ jobs:
           --name smash-league
           -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
           -e WIT_TOKEN=${WIT_TOKEN}
-          -e TRAVIS_BRANCH="master"
-          -e CI=true
+          # -e TRAVIS_BRANCH="master"
+          # -e CI=true
           smash-league
           npm run start:smash-league
 
       - name: Extract ranking info
         run: | 
           mkdir hola-morro
-          docker cp smash-league:/usr/app/ranking-info/. ./hola-morro/ranking-info/
+          pwd
+          ls 
+          docker cp smash-league:/usr/app/ranking-info/. hola-morro/ranking-info/
 
       - name: Show structure
         run: |
           ls
           ls hola-morro
       
-      # - name: Save files
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: homework
-      #     path: math-homework.txt
+      - name: Save files
+        uses: actions/upload-artifact@v1
+        with:
+          name: ranking
+          path: ./hola-morro/ranking-info/
