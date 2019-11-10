@@ -88,4 +88,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: ranking
-          path: ./hola-morro/ranking-info/
+          path: ./hola-morro/
