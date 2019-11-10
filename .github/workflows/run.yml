@@ -36,7 +36,7 @@ jobs:
           mkdir hola-morro
           pwd
           ls 
-          docker cp smash-league:/usr/app/ranking-info/. hola-morro/ranking-info/
+          docker cp smash-league:/usr/app/ranking-info/. hola-morro/
 
       - name: Show structure
         run: |
