@@ -1,9 +1,9 @@
 name: Run League
 
-# on: [push]
-on: 
-  schedule:
-    - cron: '*/5 * * * *'
+on: [pull_request]
+# on: 
+#   schedule:
+#     - cron: '*/5 * * * *'
 
 jobs:
   main:
