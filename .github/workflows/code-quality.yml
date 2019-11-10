@@ -20,10 +20,6 @@ jobs:
         with:
           path: docker-cache/
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
-          restore-keys: |
-            ${{ runner.OS }}-docker-${{ env.cache-name }}-
-            ${{ runner.OS }}-docker-
-            ${{ runner.OS }}-
 
       - name: Build the Docker image
         if: steps.cached-docker-build.outputs.cache-hit != 'true'
@@ -48,10 +44,6 @@ jobs:
         with:
           path: docker-cache/
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
-          restore-keys: |
-            ${{ runner.OS }}-docker-${{ env.cache-name }}-
-            ${{ runner.OS }}-docker-
-            ${{ runner.OS }}-
 
       - name: Load Docker image file
         run: docker load -i docker-cache/smash-league-docker-image.tar
