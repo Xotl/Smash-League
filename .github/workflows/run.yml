@@ -96,7 +96,11 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Check structure
-        run: echo ${STUFF}
+        run: |
+          echo ${REMOTE_REF}
+          echo ${REMOTE_REPO} | cut -c 1-11
+          echo ${REMOTE_REPO} | cut -c -16
+          echo ${STUFF}
 
       - name: Clean old ranking-info
         run: rm -rf ranking-info
@@ -105,11 +109,17 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: ranking-info
+      
+      - name: Update version
+        run: |
+          npm view package.json version
+          npm version patch 
+          npm view package.json version
 
-      - name: Commit back new ranking info
+      - name: Commit new ranking info
         run: |
           git config user.name "github"
           git config user.email "github@users.noreply.github.com"
           git add .
-          git commit -m 'Auto pushed from Github Actions'
+          git commit -m 'v(npm view package.json version) | Auto pushed from Github Actions'
           git push ${REMOTE_REPO} HEAD:${REMOTE_REF}
