@@ -1,6 +1,9 @@
 name: Run League
 
-on: [push]
+# on: [push]
+on: 
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   main:
@@ -10,21 +13,25 @@ jobs:
     env: 
       WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
       SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
+      STUFF:  ${{ toJson(github) }}
 
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v1
-
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+      - name: Debug
+        run: echo ${STUFF}
       
-      - name: Run league code
-        run: >-
-          docker run
-          --name smash-league-bot
-          -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
-          -e WIT_TOKEN=${WIT_TOKEN}
-          smash-league
-          npm run start:smash-league
+      # - uses: actions/checkout@v1
+
+      # - name: Build the Docker image
+      #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+      
+      # - name: Run league code
+      #   run: >-
+      #     docker run
+      #     --name smash-league-bot
+      #     -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
+      #     -e WIT_TOKEN=${WIT_TOKEN}
+      #     smash-league
+      #     npm run start:smash-league
 
