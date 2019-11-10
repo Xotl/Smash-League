@@ -35,12 +35,6 @@ jobs:
           mkdir docker-cache
           docker save -o docker-cache/smash-league-docker-image.tar smash-league
 
-      # - name: Persist Docker image file
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: smash-league-docker-image
-      #     path: docker-cache/smash-league-docker-image.tar
-
   test:
     name: "Test"
     needs: build
@@ -49,14 +43,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # - name: Restore Docker image file
-      #   uses: actions/download-artifact@v1
-      #   with:
-      #     name: smash-league-docker-image
-
       - name: Cache Docker image
         uses: actions/cache@v1
-        id: cached-docker-build
         with:
           path: docker-cache/
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
@@ -73,7 +61,7 @@ jobs:
           docker run
           --rm
           --name smash-league-tests
-          -v ./ranking-info:/usr/app/ranking-info
-          -v ./src:/usr/app/src
+          -v ranking-info:/usr/app/ranking-info
+          -v src:/usr/app/src
           smash-league
           npm test

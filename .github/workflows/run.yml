@@ -53,21 +53,24 @@ jobs:
     steps:      
       - uses: actions/checkout@v1
 
-      - name: Restore Docker image file
-        uses: actions/download-artifact@v1
+      - name: Cache Docker image
+        uses: actions/cache@v1
         with:
-          name: smash-league-docker-image
-        run: docker load -i smash-league-docker-image/smash-league-docker-image.tar
+          path: docker-cache/
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+          restore-keys: |
+            ${{ runner.OS }}-docker-${{ env.cache-name }}-
+            ${{ runner.OS }}-docker-
+            ${{ runner.OS }}-
 
-      # - name: Build the Docker image
-      #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
-      
       - name: Run league code
         run: >-
           docker run
           --name smash-league
           -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
           -e WIT_TOKEN=${WIT_TOKEN}
+          -v ranking-info:/usr/app/ranking-info
+          -v src:/usr/app/src
           smash-league
           npm run start:smash-league
 # -e TRAVIS_BRANCH="master"
