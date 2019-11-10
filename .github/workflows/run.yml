@@ -5,18 +5,26 @@ on: [push]
 jobs:
   main:
     name: 'Run League'
+    if: github.ref === 'refs/heads/github-actions'
     
     env: 
-      branch: ${{ toJson(job) }}, 
+      WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
+      SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
 
     runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v1
 
-      # - name: Build the Docker image
-      #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
       
       - name: Run league code
-        run: echo "${branch}"
+        run: >-
+          docker run
+          --name smash-league-bot
+          -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
+          -e WIT_TOKEN=${WIT_TOKEN}
+          smash-league
+          npm run start:smash-league
 
