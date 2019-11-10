@@ -38,7 +38,7 @@ jobs:
           name: smash-league-docker-image
           path: smash-league-docker-image.tar
 
-  build:
+  test:
       name: 'Test'
       needs: build
       runs-on: ubuntu-latest
