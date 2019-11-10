@@ -7,7 +7,7 @@ jobs:
     name: 'Run League'
     
     env: 
-      branch: ${{ env }}, 
+      branch: ${{ toJson(job) }}, 
 
     runs-on: ubuntu-latest
     
