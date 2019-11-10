@@ -97,10 +97,10 @@ jobs:
 
       - name: Check structure
         run: |
+          echo "Testing context values ${{ github.ref }}"
           echo ${REMOTE_REF}
-          echo ${REMOTE_REPO} | cut -c 1-11
           echo ${REMOTE_REPO} | cut -c -16
-          echo ${STUFF}
+          echo ${REMOTE_REPO} | cut -c 22-
 
       - name: Clean old ranking-info
         run: rm -rf ranking-info
@@ -109,17 +109,20 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: ranking-info
-      
+
       - name: Update version
         run: |
-          npm view package.json version
-          npm version patch 
-          npm view package.json version
+          npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
+          npm --no-git-tag-version version patch
+          npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
 
-      - name: Commit new ranking info
+      - name: Update repo
         run: |
+          NEW_VERSION=$(npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2)
           git config user.name "github"
           git config user.email "github@users.noreply.github.com"
           git add .
-          git commit -m 'v(npm view package.json version) | Auto pushed from Github Actions'
+          git commit -m 'v${NEW_VERSION} | Auto pushed from Github Actions'
           git push ${REMOTE_REPO} HEAD:${REMOTE_REF}
+          git tag -a "v${NEW_VERSION}" -m 'v${NEW_VERSION} | Auto pushed from Github Actions'
+          git push origin "v${NEW_VERSION}"
