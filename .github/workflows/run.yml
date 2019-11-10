@@ -5,20 +5,61 @@ on: push
   #   - cron:  '0 6 * * *'
 
 jobs:
-  main:
+
+
+ build:
+    name: 'Build'
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache Docker image
+        uses: actions/cache@v1
+        id: cached-docker-build
+        with:
+          path: path/to/dependencies
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+
+      - name: Build the Docker image
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+
+      - name: Save Docker image into file
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: docker save -o smash-league-docker-image.tar smash-league 
+
+
+      - name: Persist Docker image file
+        uses: actions/upload-artifact@v1
+        with:
+          name: smash-league-docker-image
+          path: smash-league-docker-image.tar
+
+
+  run:
     name: 'Run League'
+    needs: build
+    runs-on: ubuntu-latest
 
     env: 
       WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
       SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
-
-    runs-on: ubuntu-latest
     
     steps:      
       - uses: actions/checkout@v1
 
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+      - name: Restore Docker image file
+          uses: actions/download-artifact@v1
+          with:
+            name: smash-league-docker-image
+
+      - name: Load Docker image file
+        run: docker load -i smash-league-docker-image
+
+      # - name: Build the Docker image
+      #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
       
       - name: Run league code
         run: >-
