@@ -3,10 +3,11 @@ name: Run League
 on: [push]
 
 jobs:
-  env: 
-    branch: ${{ github.ref }}
   main:
     name: 'Run League'
+    
+    env: 
+      branch: ${{ github.ref }}
 
     runs-on: ubuntu-latest
     
