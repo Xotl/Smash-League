@@ -26,10 +26,10 @@ jobs:
           --name smash-league
           -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
           -e WIT_TOKEN=${WIT_TOKEN}
-          # -e TRAVIS_BRANCH="master"
-          # -e CI=true
           smash-league
           npm run start:smash-league
+# -e TRAVIS_BRANCH="master"
+# -e CI=true
 
       - name: Extract ranking info
         run: | 
