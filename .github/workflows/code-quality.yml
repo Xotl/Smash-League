@@ -38,7 +38,7 @@ jobs:
       - name: Persist Docker image file
         uses: actions/upload-artifact@v1
         with:
-          name: docker/smash-league-docker-image.tar
+          name: smash-league-docker-image
           path: docker/smash-league-docker-image.tar
 
   test:
@@ -50,7 +50,7 @@ jobs:
       - name: Restore Docker image file
         uses: actions/download-artifact@v1
         with:
-          name: docker/smash-league-docker-image.tar
+          name: smash-league-docker-image
 
       - name: Load Docker image file
         run: docker load -i docker/smash-league-docker-image.tar
