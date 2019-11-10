@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     # Avoids running 2 checks when using a branch in the same repository
-    if: github.event_name == 'push' || github.repositoryUrl != 'git://github.com/Xotl/Smash-League.git'
+    if: >-
+      github.head_commit.author.name != github &&  
+      ( github.event_name == 'push' || github.repository != 'Xotl/Smash-League' )
 
     env:
       STUFF: ${{ toJson(github) }}

@@ -9,7 +9,9 @@ jobs:
   build:
     name: 'Build'
     runs-on: ubuntu-latest
-    
+
+    if: github.head_commit.author.name != 'github' 
+
     steps:
       - uses: actions/checkout@v1
 
@@ -116,5 +118,5 @@ jobs:
           git add .
           git commit -m "v${NEW_VERSION} | Auto pushed from Github Actions"
           git push ${REMOTE_REPO} HEAD:${REMOTE_REF}
-          git tag -a "v${NEW_VERSION}" -m "v${NEW_VERSION}" | Auto pushed from Github Actions'
+          git tag -a "v${NEW_VERSION}" -m "v${NEW_VERSION} | Auto pushed from Github Actions"
           git push ${REMOTE_REPO} "v${NEW_VERSION}"
