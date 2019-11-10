@@ -63,6 +63,9 @@ jobs:
             ${{ runner.OS }}-docker-
             ${{ runner.OS }}-
 
+      - name: Load Docker image file
+        run: docker load -i docker-cache/smash-league-docker-image.tar
+      
       - name: Run league code
         run: >-
           docker run
