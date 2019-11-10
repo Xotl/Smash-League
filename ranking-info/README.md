@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 * David - Deleted this week after 1 week(s).
 * Medininja - Deleted this week after 1 week(s).
 
-## In progress this week *Sun, 10 Nov 2019 18:25:11 GMT*
+## In progress this week *Sun, 10 Nov 2019 18:30:27 GMT*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
