@@ -57,9 +57,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: smash-league-docker-image
-
-      - name: Load Docker image file
-        run: docker load -i smash-league-docker-image
+        run: docker load -i smash-league-docker-image/smash-league-docker-image.tar
 
       # - name: Build the Docker image
       #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
