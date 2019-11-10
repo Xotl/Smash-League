@@ -56,7 +56,7 @@ jobs:
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
 
       - name: Load Docker image file
-        run: docker load -i docker-cache/smash-league-docker-image.tar
+        run: docker load -q -i docker-cache/smash-league-docker-image.tar
       
       - name: Run league code
         run: >-
@@ -88,19 +88,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      REMOTE_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      REMOTE_REPO: https://${{ secrets.GITHUB_OAUTH_TOKEN }}@github.com/${{ github.repository }}.git
       REMOTE_REF: ${{ github.ref }}
-      STUFF: ${{ toJson(github) }}
 
     steps:
       - uses: actions/checkout@v1
-
-      - name: Check structure
-        run: |
-          echo "Testing context values ${{ github.ref }}"
-          echo ${REMOTE_REF}
-          echo ${REMOTE_REPO} | cut -c -16
-          echo ${REMOTE_REPO} | cut -c 22-
 
       - name: Clean old ranking-info
         run: rm -rf ranking-info
@@ -125,4 +117,4 @@ jobs:
           git commit -m 'v${NEW_VERSION} | Auto pushed from Github Actions'
           git push ${REMOTE_REPO} HEAD:${REMOTE_REF}
           git tag -a "v${NEW_VERSION}" -m 'v${NEW_VERSION} | Auto pushed from Github Actions'
-          git push origin "v${NEW_VERSION}"
+          git push ${REMOTE_REPO} "v${NEW_VERSION}"

@@ -46,7 +46,7 @@ jobs:
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
 
       - name: Load Docker image file
-        run: docker load -i docker-cache/smash-league-docker-image.tar
+        run: docker load -q -i docker-cache/smash-league-docker-image.tar
 
       - name: Run tests inside container
         run: >-
