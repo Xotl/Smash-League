@@ -5,7 +5,7 @@ on: [push]
 jobs:
   main:
     name: 'Run League'
-    if: github.ref === 'refs/heads/github-actions'
+    if: github.ref == 'refs/heads/github-actions'
     
     env: 
       WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
