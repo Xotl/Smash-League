@@ -28,14 +28,14 @@ jobs:
 
       - name: Save Docker image into file
         if: steps.cached-docker-build.outputs.cache-hit != 'true'
-        run: docker save -o smash-league-docker-image.tar smash-league 
+        run: docker save -o smash-league-docker-image smash-league 
 
 
       - name: Persist Docker image file
         uses: actions/upload-artifact@v1
         with:
           name: smash-league-docker-image
-          path: smash-league-docker-image.tar
+          path: smash-league-docker-image
 
 
   run:
