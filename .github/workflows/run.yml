@@ -31,7 +31,7 @@ jobs:
       - name: Save Docker image into file
         if: steps.cached-docker-build.outputs.cache-hit != 'true'
         run: |
-          mkdir docker 
+          mkdir docker-cache 
           docker save -o docker-cache/smash-league-docker-image.tar smash-league 
 
       - name: Persist Docker image file
