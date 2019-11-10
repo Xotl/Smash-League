@@ -2,13 +2,14 @@ name: Code quality
 
 on: [pull_request, push]
 
-# Avoids running 2 checks when using a branch in the same repository
-if: github.event_name == 'push' || github.repositoryUrl != 'git://github.com/Xotl/Smash-League.git'
 
 jobs:
   
   build:
     name: 'Build'
+
+    # Avoids running 2 checks when using a branch in the same repository
+    if: github.event_name == 'push' || github.repositoryUrl != 'git://github.com/Xotl/Smash-League.git'
 
     runs-on: ubuntu-latest
     
@@ -53,4 +54,11 @@ jobs:
           run: docker load -i smash-league-docker-image.tar
 
         - name: Run tests inside container
-          run: docker run --rm smash-league npm test
+          run: >-
+            docker run
+            --rm
+            --name smash-league-tests
+            -v ./ranking-info:/usr/app/ranking-info
+            -v ./src:/usr/app/src
+            smash-league
+            npm test
