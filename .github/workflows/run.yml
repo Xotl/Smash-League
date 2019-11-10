@@ -17,7 +17,7 @@ jobs:
         uses: actions/cache@v1
         id: cached-docker-build
         with:
-          path: smash-league-docker-image
+          path: docker/smash-league-docker-image.tar
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
           restore-keys: |
             ${{ runner.OS }}-docker-${{ env.cache-name }}-
@@ -30,14 +30,15 @@ jobs:
 
       - name: Save Docker image into file
         if: steps.cached-docker-build.outputs.cache-hit != 'true'
-        run: docker save -o smash-league-docker-image smash-league 
-
+        run: |
+          mkdir docker 
+          docker save -o docker/smash-league-docker-image.tar smash-league 
 
       - name: Persist Docker image file
         uses: actions/upload-artifact@v1
         with:
-          name: smash-league-docker-image
-          path: smash-league-docker-image
+          name: docker/smash-league-docker-image.tar
+          path: docker/smash-league-docker-image.tar
 
 
   run:
@@ -55,10 +56,10 @@ jobs:
       - name: Restore Docker image file
         uses: actions/download-artifact@v1
         with:
-          name: smash-league-docker-image
+          name: docker/smash-league-docker-image.tar
 
       - name: Load Docker image file
-        run: docker load -i smash-league-docker-image
+        run: docker load -i docker/smash-league-docker-image.tar
 
       # - name: Build the Docker image
       #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
