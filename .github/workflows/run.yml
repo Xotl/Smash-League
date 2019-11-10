@@ -1,12 +1,10 @@
 name: Run League
 
-on: 
-  push
-  schedule: 
-    - cron: '0 6 * * *'
+on: [push]
 
 jobs:
-  
+  env: 
+    branch: ${{ github.ref }}
   main:
     name: 'Run League'
 
@@ -15,8 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+      # - name: Build the Docker image
+      #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
       
       - name: Run league code
-        run: echo "Some code to run"
+        run: echo "${branch}"
+
