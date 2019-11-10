@@ -1,36 +1,48 @@
 name: 'Smash League | Scheduled'
 
-on:
-  schedule:
-    - cron:  '*/6 * * * *'
+on: push
+  # schedule:
+  #   - cron:  '0 6 * * *'
 
 jobs:
   main:
     name: 'Run League'
-    # if: github.ref == 'refs/heads/github-actions'
-    
+
     env: 
       WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
       SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
-      STUFF:  ${{ toJson(github) }}
 
     runs-on: ubuntu-latest
     
-    steps:
-      - name: Debug
-        run: echo ${STUFF}
-      
-      # - uses: actions/checkout@v1
+    steps:      
+      - uses: actions/checkout@v1
 
-      # - name: Build the Docker image
-      #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
       
-      # - name: Run league code
-      #   run: >-
-      #     docker run
-      #     --name smash-league-bot
-      #     -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
-      #     -e WIT_TOKEN=${WIT_TOKEN}
-      #     smash-league
-      #     npm run start:smash-league
+      - name: Run league code
+        run: >-
+          docker run
+          --name smash-league
+          -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
+          -e WIT_TOKEN=${WIT_TOKEN}
+          -e TRAVIS_BRANCH="master"
+          -e CI=true
+          smash-league
+          npm run start:smash-league
 
+      - name: Extract ranking info
+        run: | 
+          mkdir hola-morro
+          docker cp smash-league:/usr/app/ranking-info/. ./hola-morro/ranking-info/
+
+      - name: Show structure
+        run: |
+          ls
+          ls hola-morro
+      
+      # - name: Save files
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: homework
+      #     path: math-homework.txt
