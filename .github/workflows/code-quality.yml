@@ -7,6 +7,8 @@ jobs:
   main:
     name: 'Build & Test'
 
+    if: github.repositoryUrl != git://github.com/Xotl/Smash-League.git
+
     runs-on: ubuntu-latest
     
     steps:
