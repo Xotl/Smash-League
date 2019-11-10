@@ -3,7 +3,7 @@ name: Run League
 # on: [push]
 on: 
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   main:
