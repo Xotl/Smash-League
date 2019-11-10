@@ -18,7 +18,7 @@ jobs:
         uses: actions/cache@v1
         id: cached-docker-build
         with:
-          path: docker/smash-league-docker-image.tar
+          path: docker-cach/
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
           restore-keys: |
             ${{ runner.OS }}-docker-${{ env.cache-name }}-
@@ -33,13 +33,13 @@ jobs:
         if: steps.cached-docker-build.outputs.cache-hit != 'true'
         run: |
           mkdir docker
-          docker save -o docker/smash-league-docker-image.tar smash-league
+          docker save -o docker-cach/smash-league-docker-image.tar smash-league
 
       - name: Persist Docker image file
         uses: actions/upload-artifact@v1
         with:
           name: smash-league-docker-image
-          path: docker/smash-league-docker-image.tar
+          path: docker-cach/smash-league-docker-image.tar
 
   test:
     name: "Test"
@@ -53,7 +53,7 @@ jobs:
           name: smash-league-docker-image
 
       - name: Load Docker image file
-        run: docker load -i docker/smash-league-docker-image.tar
+        run: docker load -i docker-cach/smash-league-docker-image.tar
 
       - name: Run tests inside container
         run: >-
