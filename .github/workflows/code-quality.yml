@@ -11,6 +11,9 @@ jobs:
     # Avoids running 2 checks when using a branch in the same repository
     if: github.event_name == 'push' || github.repositoryUrl != 'git://github.com/Xotl/Smash-League.git'
 
+    env:
+      STUFF: ${{ toJson(github) }}
+
     steps:
       - uses: actions/checkout@v1
 
