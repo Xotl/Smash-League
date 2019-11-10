@@ -59,7 +59,7 @@ jobs:
           name: smash-league-docker-image
 
       - name: Load Docker image file
-        run: docker load -i docker-cache/smash-league-docker-image.tar
+        run: docker load -i smash-league-docker-image
 
       # - name: Build the Docker image
       #   run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
