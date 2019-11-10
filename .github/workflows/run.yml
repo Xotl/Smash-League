@@ -79,7 +79,7 @@ jobs:
       - name: Save files
         uses: actions/upload-artifact@v1
         with:
-          name: ranking
+          name: ranking-info
           path: ./new-ranking-info/
 
   commit:
@@ -95,23 +95,23 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Download ranking info
-        uses: actions/download-artifact@v1
-        with:
-          name: ranking
-
       - name: Check structure
         run: echo ${STUFF}
 
-      - name: Check structure
+      - name: Clean old ranking-info
         run: |
-          git branch | grep \*
-          echo "-----------------"
           ls
           echo "-----------------"
-          ls new-ranking-info
+          rm -rf ranking-info
+          echo "-----------------"
+          ls
 
-      - name: Commit back 
+      - name: Download new ranking info
+        uses: actions/download-artifact@v1
+        with:
+          name: ranking-info
+
+      - name: Commit back new ranking info
         run: |
           git config user.name "github"
           git config user.email "github@users.noreply.github.com"
