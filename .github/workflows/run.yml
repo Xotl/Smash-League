@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      REMOTE_REPO: https://${{ github.token }}@github.com/${{ github.repository }}.git"
+      REMOTE_REPO: https://${{ github.token }}@github.com/${{ github.repository }}.git
       REMOTE_REF: ${{ github.ref }}
       STUFF: ${{ toJson(github) }}
 
