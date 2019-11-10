@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      REMOTE_REPO: https://${{ github.token }}@github.com/${{ github.repository }}.git
+      REMOTE_REPO: https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
       REMOTE_REF: ${{ github.ref }}
       STUFF: ${{ toJson(github) }}
 
@@ -99,12 +99,7 @@ jobs:
         run: echo ${STUFF}
 
       - name: Clean old ranking-info
-        run: |
-          ls
-          echo "-----------------"
-          rm -rf ranking-info
-          echo "-----------------"
-          ls
+        run: rm -rf ranking-info
 
       - name: Download new ranking info
         uses: actions/download-artifact@v1
