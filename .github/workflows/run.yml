@@ -6,10 +6,8 @@ on: push
 
 jobs:
 
-
- build:
+  build:
     name: 'Build'
-
     runs-on: ubuntu-latest
     
     steps:
@@ -19,8 +17,12 @@ jobs:
         uses: actions/cache@v1
         id: cached-docker-build
         with:
-          path: path/to/dependencies
+          path: smash-league-docker-image
           key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+          restore-keys: |
+            ${{ runner.OS }}-docker-${{ env.cache-name }}-
+            ${{ runner.OS }}-docker-
+            ${{ runner.OS }}-
 
       - name: Build the Docker image
         if: steps.cached-docker-build.outputs.cache-hit != 'true'
@@ -51,9 +53,9 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Restore Docker image file
-          uses: actions/download-artifact@v1
-          with:
-            name: smash-league-docker-image
+        uses: actions/download-artifact@v1
+        with:
+          name: smash-league-docker-image
 
       - name: Load Docker image file
         run: docker load -i smash-league-docker-image
