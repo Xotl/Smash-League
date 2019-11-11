@@ -1,6 +1,6 @@
 # Ranking
 
-Last updated **Sun, 10 Nov 2019 18:16:09 GMT**.
+Last updated **Sun, Nov 10, 2019, 11:59 PM CST**.
 
 |#|Player|Score|
 |-|------|-----|
@@ -13,7 +13,7 @@ Last updated **Sun, 10 Nov 2019 18:16:09 GMT**.
 |7|`Sammy`|1880|
 |8|`Neku`|1862|
 |9|`Alfredo`|1636|
-|10|`UKB40CVF0`|1088|
+|10|`Kyttyan`|1088|
 |11|`D.I.O.`|1031|
 |12|`Paolo`|999|
 |13|`El Plebe`|996|
@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 * David - Deleted this week after 1 week(s).
 * Medininja - Deleted this week after 1 week(s).
 
-## In progress this week *Mon, 11 Nov 2019 15:49:51 GMT*
+## In progress this week *Sun, Nov 10, 2019, 11:59 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -51,7 +51,7 @@ The current points earned by winning matches this week.
 |Sammy|2|2|1880|
 |Neku|2|2|1862|
 |Alfredo|2|2|1636|
-|UKB40CVF0|2|2|1088|
+|Kyttyan|2|2|1088|
 |D.I.O.|3|3|1031|
 |Paolo|3|3|999|
 |El Plebe|3|3|996|

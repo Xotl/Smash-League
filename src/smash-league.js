@@ -318,13 +318,13 @@ const commitInProgress = rankingObj => {
                         tmpScoreboard[playerId],
                         unrankedPlayerScore
                     )
-                }
-    
-                if (tmpScoreboard[playerId].points <= unrankedPlayerScore.points) {
-                    // Remove player for it's inactivity, but we want to keep 
-                    // track of what happened, so we just mark the player
-                    newInactivePlayers[playerId].deleted_by_inactivity = true
-                    delete tmpScoreboard[playerId]
+
+                    if (tmpScoreboard[playerId].points <= unrankedPlayerScore.points) {
+                        // Remove player for it's inactivity, but we want to keep 
+                        // track of what happened, so we just mark the player
+                        newInactivePlayers[playerId].deleted_by_inactivity = true
+                        delete tmpScoreboard[playerId]
+                    }
                 }
             }
             return tmpScoreboard

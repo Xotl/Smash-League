@@ -1,5 +1,5 @@
-## Commit from Sun, 10 Nov 2019 18:16:09 GMT
-The week started at *Sun, 10 Nov 2019 15:00:00 GMT* and ended *Sun, 17 Nov 2019 15:00:00 GMT*.
+## Commit from Sun, Nov 10, 2019, 11:59 PM CST
+The week started at *Sun, Nov 03, 2019, 11:59 PM CST* and ended *Sun, Nov 10, 2019, 11:59 PM CST*.
 ### End of week players score summary
 |Player|Coins|Range|
 |------|-----|-----|
@@ -12,7 +12,7 @@ The week started at *Sun, 10 Nov 2019 15:00:00 GMT* and ended *Sun, 17 Nov 2019 
 |Sammy - 1880pts|1|2|
 |Neku - 1862pts|1|2|
 |Alfredo - 1636pts|1|2|
-|UKB40CVF0 - 1088pts|1|3|
+|Kyttyan - 1088pts|1|3|
 |D.I.O. - 1031pts|3|4|
 |Paolo - 999pts|0|2|
 |El Plebe - 996pts|1|3|
@@ -30,8 +30,8 @@ The week started at *Sun, 10 Nov 2019 15:00:00 GMT* and ended *Sun, 17 Nov 2019 
 * `Paolo` challenged `El Minion` and **lost** *3-2*.
 * `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
 * `Alfredo` challenged `El Minion` and **lost** *3-1*.
-* `UKB40CVF0` challenged `Paolo` and **lost** *3-1*.
-* `UKB40CVF0` challenged `El Minion` and **lost** *3-0*.
+* `Kyttyan` challenged `Paolo` and **lost** *3-1*.
+* `Kyttyan` challenged `El Minion` and **lost** *3-0*.
 * `El Plebe` challenged `Paolo` and **lost** *3-0*.
 * `El Plebe` challenged `Paolo` and **lost** *3-0*.
 * `D.I.O.` challenged `Paolo` and **won** *3-2*.
@@ -46,7 +46,7 @@ The week started at *Sun, 10 Nov 2019 15:00:00 GMT* and ended *Sun, 17 Nov 2019 
 * Medininja - Deleted this week after 1 week(s).
 
 ## Commit from Mon, 04 Nov 2019 03:21:13 GMT
-The week started at *Sun, 03 Nov 2019 15:00:00 GMT* and ended *Sun, 10 Nov 2019 15:00:00 GMT*.
+The week started at *Sun, 27 Oct 2019 15:00:00 GMT* and ended *Sun, 03 Nov 2019 15:00:00 GMT*.
 ### End of week players score summary
 |Player|Coins|Range|
 |------|-----|-----|
@@ -190,34 +190,6 @@ The week started at *Sun, 27 Oct 2019 15:00:00 GMT* and ended *Sun, 03 Nov 2019 
 * `Paolo` challenged `Alfredo` and **lost** *3-1*.
 * `Roberto` challenged `Paco` and **won** *3-1*.
 * `Roberto` challenged `Xotl` and **lost** *3-2*.
-
-
-## Commit from Mon, 28 Oct 2019 06:39:15 GMT
-The week started at *Sun, 27 Oct 2019 15:00:00 GMT* and ended *Sun, 03 Nov 2019 15:00:00 GMT*.
-### End of week players score summary
-|Player|Coins|Range|
-|------|-----|-----|
-|Xotl - 2400pts|0|0|
-|Paco - 2300pts|1|1|
-|Roberto - 2200pts|1|1|
-|Neku - 2100pts|1|1|
-|Angel Lee - 2000pts|1|1|
-|José "El Iceberg" Rosales - 1900pts|2|2|
-|Sammy - 1800pts|2|2|
-|El Minion - 1700pts|2|2|
-|Alfredo - 1600pts|2|2|
-|D.I.O. - 1510pts|2|2|
-|Paolo - 1500pts|3|3|
-|El Chino - 1495pts|3|3|
-|El Plebe - 1490pts|3|3|
-|Alan - 1480pts|3|3|
-|Niightz - 1470pts|3|3|
-|Michel - 1440pts|4|4|
-|Medininja - 1420pts|4|4|
-|Carlos López - 1000pts|4|4|
-|David - 1000pts|4|4|
-|César Gutman - 0pts|4|4|
-### Completed challenges
 
 
 
