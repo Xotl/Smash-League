@@ -19,26 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Cache Docker image
-        uses: actions/cache@v1
-        id: cached-docker-build
-        with:
-          path: docker-cache/
-          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+      - name: Update version to match the update
+        run: |
+          npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
+          npm --no-git-tag-version version minor
 
       - name: Build the Docker image
-        if: steps.cached-docker-build.outputs.cache-hit != 'true'
-        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
-
-      - name: Save Docker image into file
-        if: steps.cached-docker-build.outputs.cache-hit != 'true'
-        run: |
-          mkdir docker-cache 
-          docker save -o docker-cache/smash-league-docker-image.tar smash-league 
-
-      - name: Load cached Docker image file
-        if: steps.cached-docker-build.outputs.cache-hit == 'true'
-        run: docker load -q -i docker-cache/smash-league-docker-image.tar
+        run: docker build . --file Dockerfile --build-arg --tag smash-league
           
       - name: Run league code
         run: >-
@@ -54,7 +41,7 @@ jobs:
           smash-league
           npm run start:smash-league
 
-      - name: Extract ranking info
+      - name: Extracts ranking info
         run: | 
           mkdir new-ranking-info
           docker cp smash-league:/usr/app/ranking-info/. new-ranking-info/
@@ -89,7 +76,6 @@ jobs:
         run: |
           npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
           npm --no-git-tag-version version minor
-          npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
 
       - name: Update repo
         run: |
