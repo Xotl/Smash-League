@@ -16,8 +16,15 @@ const IS_CI = process.env.CI
 
 
 async function Main() {
-    const now = new Date()
+    const today = new Date()
+    const isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(today, Ranking.current_week)
     
+    let now = today
+    if (isItTimeToCommit) {
+        // We make sure to only commit stuff that happened during the defined week period
+        now = new Date(Ranking.current_week.end)
+    }
+
     // Next milisecond after last update because it's inclusive search
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
     const opts = { latest: now, oldest: lastInProgressUpdated }
@@ -41,12 +48,12 @@ async function Main() {
 
 
     let newRankingObj = { ...Ranking, in_progress: newInProgressObj }
-    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, newRankingObj.current_week)
+    
 
     if (isItTimeToCommit) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
         OutputGenerator.updateHistoryLog(
-            newInProgressObj, newRankingObj.current_week, newRankingObj.inactive_players
+            newInProgressObj, Ranking.current_week, newRankingObj.inactive_players
         )
     }
 

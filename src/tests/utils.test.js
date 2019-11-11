@@ -3,7 +3,7 @@
 const {
     GetEpochUnixFromDate, GetDateObjFromEpochTS, setIgnoredActivityLogObject, logIgnoredActivity,
     logIgnoredMatch, showInConsoleIgnoredActivities, removeAlreadyChallengedPlayers, 
-    removeEmptyArray, eloCalculation
+    removeEmptyArray, eloCalculation, getLocaleStringDate
 } = require('../utils')
 
 
@@ -161,4 +161,13 @@ describe('Utils', () => {
         })
     })
 
+    describe('getLocaleStringDate', () => {
+        expect(
+            getLocaleStringDate(1571633999001)
+        ).toEqual('Sun, Oct 20, 2019, 11:59 PM CDT')
+
+        expect(
+            getLocaleStringDate(new Date(1571633999001))
+        ).toEqual('Sun, Oct 20, 2019, 11:59 PM CDT')
+    })
 })
