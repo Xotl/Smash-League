@@ -1,4 +1,5 @@
-# Smash League [![Travis Status](https://travis-ci.org/Xotl/Smash-League.svg?branch=master)](https://travis-ci.org/Xotl/Smash-League)
+# Smash League [![Code Quality Badge](https://github.com/Xotl/Smash-League/workflows/Code%20quality/badge.svg?branch=master)](https://github.com/Xotl/Smash-League/actions?query=workflow%3A"Code+quality")
+
 
 ## Looking for the current ranking?
 If your are looking for the current rank table and scoreboard [visit the `ranking-info` folder](./ranking-info/README.md) of this repo.
