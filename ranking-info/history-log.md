@@ -1,3 +1,50 @@
+## Commit from Sun, Nov 10, 2019, 11:59 PM CST
+The week started at *Sun, Nov 03, 2019, 11:59 PM CST* and ended *Sun, Nov 10, 2019, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Xotl - 2275pts|0|2|
+|Roberto - 2265pts|1|2|
+|José "El Iceberg" Rosales - 2260pts|0|0|
+|Paco - 2216pts|0|1|
+|Angel Lee - 2107pts|0|1|
+|El Minion - 1899pts|0|3|
+|Sammy - 1880pts|1|2|
+|Neku - 1862pts|1|2|
+|Alfredo - 1636pts|1|2|
+|Kyttyan - 1088pts|1|3|
+|D.I.O. - 1031pts|3|4|
+|Paolo - 999pts|0|2|
+|El Plebe - 996pts|1|3|
+### Completed challenges
+* `Xotl` challenged `Roberto` and **won** *3-2*.
+* `Xotl` challenged `José "El Iceberg" Rosales` and **lost** *3-2*.
+* `Angel Lee` challenged `Paco` and **lost** *3-1*.
+* `El Minion` challenged `Sammy` and **won** *3-2*.
+* `El Minion` challenged `Angel Lee` and **lost** *3-2*.
+* `El Minion` challenged `Angel Lee` and **lost** *3-0*.
+* `Neku` challenged `Angel Lee` and **lost** *3-1*.
+* `Sammy` challenged `Angel Lee` and **lost** *3-1*.
+* `Paco` challenged `Xotl` and **lost** *3-0*.
+* `Paolo` challenged `El Minion` and **lost** *3-0*.
+* `Paolo` challenged `El Minion` and **lost** *3-2*.
+* `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
+* `Alfredo` challenged `El Minion` and **lost** *3-1*.
+* `Kyttyan` challenged `Paolo` and **lost** *3-1*.
+* `Kyttyan` challenged `El Minion` and **lost** *3-0*.
+* `El Plebe` challenged `Paolo` and **lost** *3-0*.
+* `El Plebe` challenged `Paolo` and **lost** *3-0*.
+* `D.I.O.` challenged `Paolo` and **won** *3-2*.
+### Inactive players
+* Carlos López - Deleted this week after 4 week(s).
+* Alan - Deleted this week after 2 week(s).
+* El Chino - Deleted this week after 2 week(s).
+* César Gutman - Deleted this week after 1 week(s).
+* Michel - Deleted this week after 2 week(s).
+* Niightz - Deleted this week after 2 week(s).
+* David - Deleted this week after 1 week(s).
+* Medininja - Deleted this week after 1 week(s).
+
 ## Commit from Mon, 04 Nov 2019 03:21:13 GMT
 The week started at *Sun, 27 Oct 2019 15:00:00 GMT* and ended *Sun, 03 Nov 2019 15:00:00 GMT*.
 ### End of week players score summary
