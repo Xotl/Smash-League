@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     if: >- 
-      github.head_commit.author.name != 'github'
+      github.event.head_commit.author.name != 'github'
 
 # github.ref == 'refs/heads/master' && github.repository == 'Xotl/Smash-League'
     
