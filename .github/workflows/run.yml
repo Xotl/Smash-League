@@ -1,0 +1,98 @@
+name: 'Smash League | Scheduled'
+
+on:
+  schedule:
+    - cron:  '0 6 * * *'
+
+jobs:
+
+  build:
+    name: 'Build'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache Docker image
+        uses: actions/cache@v1
+        id: cached-docker-build
+        with:
+          path: docker-cache/
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+          restore-keys: |
+            ${{ runner.OS }}-docker-${{ env.cache-name }}-
+            ${{ runner.OS }}-docker-
+            ${{ runner.OS }}-
+
+      - name: Build the Docker image
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+
+      - name: Save Docker image into file
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: |
+          mkdir docker-cache 
+          docker save -o docker-cache/smash-league-docker-image.tar smash-league 
+
+      - name: Persist Docker image file
+        uses: actions/upload-artifact@v1
+        with:
+          name: smash-league-docker-image
+          path: docker-cache/smash-league-docker-image.tar
+
+
+  run:
+    name: 'Run League'
+    needs: build
+    runs-on: ubuntu-latest
+
+    env: 
+      WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
+      SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
+    
+    steps:      
+      - uses: actions/checkout@v1
+
+      - name: Cache Docker image
+        uses: actions/cache@v1
+        with:
+          path: docker-cache/
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+          restore-keys: |
+            ${{ runner.OS }}-docker-${{ env.cache-name }}-
+            ${{ runner.OS }}-docker-
+            ${{ runner.OS }}-
+
+      - name: Load Docker image file
+        run: docker load -i docker-cache/smash-league-docker-image.tar
+      
+      - name: Run league code
+        run: >-
+          docker run
+          --name smash-league
+          -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
+          -e WIT_TOKEN=${WIT_TOKEN}
+          -v ranking-info:/usr/app/ranking-info
+          -v src:/usr/app/src
+          smash-league
+          npm run start:smash-league
+# -e TRAVIS_BRANCH="master"
+# -e CI=true
+
+      - name: Extract ranking info
+        run: | 
+          mkdir hola-morro
+          pwd
+          ls 
+          docker cp smash-league:/usr/app/ranking-info/. hola-morro/
+
+      - name: Show structure
+        run: |
+          ls
+          ls hola-morro
+      
+      - name: Save files
+        uses: actions/upload-artifact@v1
+        with:
+          name: ranking
+          path: ./hola-morro/
