@@ -25,7 +25,7 @@ jobs:
           npm --no-git-tag-version version minor
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --build-arg --tag smash-league
+        run: docker build . --file Dockerfile --tag smash-league
           
       - name: Run league code
         run: >-
