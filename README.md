@@ -1,4 +1,4 @@
-# Smash League [![Code Quality Badge](https://github.com/Xotl/Smash-League/workflows/Code quality/badge.svg)](https://github.com/Xotl/Smash-League/actions?query=workflow%3A"Code+quality")
+# Smash League [![Code Quality Badge](https://github.com/Xotl/Smash-League/workflows/Code%20quality/badge.svg?branch=master)](https://github.com/Xotl/Smash-League/actions?query=workflow%3A"Code+quality")
 
 
 ## Looking for the current ranking?
