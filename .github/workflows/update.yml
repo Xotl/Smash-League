@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     if: >- 
-      github.event.head_commit.author.name != 'github'
-
-# github.ref == 'refs/heads/master' && github.repository == 'Xotl/Smash-League'
+      github.event.head_commit.author.name != 'github' &&
+      github.ref == 'refs/heads/master' && github.repository == 'Xotl/Smash-League'
     
     env: 
       WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
@@ -49,12 +48,12 @@ jobs:
           -e WIT_TOKEN=${WIT_TOKEN}
           -v ranking-info:/usr/app/ranking-info
           -v src:/usr/app/src
+          -e TRAVIS_EVENT_TYPE="push"
+          -e TRAVIS_BRANCH="master"
           -e CI=true
           smash-league
           npm run start:smash-league
 
-# -e TRAVIS_EVENT_TYPE="push"
-# -e TRAVIS_BRANCH="master"
       - name: Extract ranking info
         run: | 
           mkdir new-ranking-info
