@@ -72,8 +72,6 @@ jobs:
         with:
           name: ranking-info
 
-      - name: Prepare version files
-
       - name: Update version
         run: |
           npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
