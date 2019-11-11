@@ -5,7 +5,7 @@ on: [pull_request, push]
 jobs:
 
   build:
-    name: "Build"
+    name: "Build & Test"
     runs-on: ubuntu-latest
 
     # Avoids running 2 checks when using a branch in the same repository
@@ -36,21 +36,8 @@ jobs:
           mkdir docker-cache
           docker save -o docker-cache/smash-league-docker-image.tar smash-league
 
-  test:
-    name: "Test"
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: Cache Docker image
-        uses: actions/cache@v1
-        with:
-          path: docker-cache/
-          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
-
       - name: Load Docker image file
+        if: steps.cached-docker-build.outputs.cache-hit == 'true'
         run: docker load -q -i docker-cache/smash-league-docker-image.tar
 
       - name: Run tests inside container

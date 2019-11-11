@@ -7,10 +7,14 @@ on: push
 jobs:
 
   build:
-    name: 'Build'
+    name: 'Build & Run'
     runs-on: ubuntu-latest
 
     if: github.head_commit.author.name != 'github' 
+    
+    env: 
+      WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
+      SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
 
     steps:
       - uses: actions/checkout@v1
@@ -32,34 +36,10 @@ jobs:
           mkdir docker-cache 
           docker save -o docker-cache/smash-league-docker-image.tar smash-league 
 
-      # - name: Persist Docker image file
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: smash-league-docker-image
-      #     path: docker-cache/smash-league-docker-image.tar
-
-
-  run:
-    name: 'Run League'
-    needs: build
-    runs-on: ubuntu-latest
-
-    env: 
-      WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
-      SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
-    
-    steps:      
-      - uses: actions/checkout@v1
-
-      - name: Cache Docker image
-        uses: actions/cache@v1
-        with:
-          path: docker-cache/
-          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
-
-      - name: Load Docker image file
+      - name: Load cached Docker image file
+        if: steps.cached-docker-build.outputs.cache-hit == 'true'
         run: docker load -q -i docker-cache/smash-league-docker-image.tar
-      
+          
       - name: Run league code
         run: >-
           docker run
@@ -86,7 +66,7 @@ jobs:
 
   commit:
     name: 'Commit new ranking'
-    needs: run
+    needs: build
     runs-on: ubuntu-latest
 
     env: 
@@ -117,6 +97,5 @@ jobs:
           git config user.email "github@users.noreply.github.com"
           git add .
           git commit -m "v${NEW_VERSION} | Auto pushed from Github Actions"
-          git push ${REMOTE_REPO} HEAD:${REMOTE_REF}
           git tag -a "v${NEW_VERSION}" -m "v${NEW_VERSION} | Auto pushed from Github Actions"
-          git push ${REMOTE_REPO} "v${NEW_VERSION}"
+          git push --follow-tags ${REMOTE_REPO} HEAD:${REMOTE_REF}
