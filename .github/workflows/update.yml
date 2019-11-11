@@ -1,3 +1,118 @@
+name: 'Smash League | push'
+
+on: push
+
+jobs:
+
+  build:
+    name: 'Build & Run'
+    runs-on: ubuntu-latest
+
+    if: >- 
+      github.head_commit.author.name != 'github'
+       
+      # github.ref == 'refs/heads/master' && github.repository == 'Xotl/Smash-League'
+    
+    env: 
+      WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
+      SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache Docker image
+        uses: actions/cache@v1
+        id: cached-docker-build
+        with:
+          path: docker-cache/
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+
+      - name: Build the Docker image
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+
+      - name: Save Docker image into file
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: |
+          mkdir docker-cache 
+          docker save -o docker-cache/smash-league-docker-image.tar smash-league 
+
+      - name: Load cached Docker image file
+        if: steps.cached-docker-build.outputs.cache-hit == 'true'
+        run: docker load -q -i docker-cache/smash-league-docker-image.tar
+          
+      - name: Run league code
+        run: >-
+          docker run
+          --name smash-league
+          -e SLACK_API_TOKEN=${SLACK_API_TOKEN}
+          -e WIT_TOKEN=${WIT_TOKEN}
+          -v ranking-info:/usr/app/ranking-info
+          -v src:/usr/app/src
+          -e CI=true
+          smash-league
+          npm run start:smash-league
+
+          # -e TRAVIS_EVENT_TYPE="push"
+          # -e TRAVIS_BRANCH="master"
+      - name: Extract ranking info
+        run: | 
+          mkdir new-ranking-info
+          docker cp smash-league:/usr/app/ranking-info/. new-ranking-info/
+      
+      - name: Save files
+        uses: actions/upload-artifact@v1
+        with:
+          name: ranking-info
+          path: ./new-ranking-info/
+
+  commit:
+    name: 'Commit new ranking'
+    needs: build
+    runs-on: ubuntu-latest
+
+    env: 
+      REMOTE_REPO: https://${{ secrets.GITHUB_OAUTH_TOKEN }}@github.com/${{ github.repository }}.git
+      REMOTE_REF: ${{ github.ref }}
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Clean old ranking-info
+        run: rm -rf ranking-info
+
+      - name: Download new ranking info
+        uses: actions/download-artifact@v1
+        with:
+          name: ranking-info
+
+      - name: Update version
+        run: |
+          npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
+          npm --no-git-tag-version version minor
+          npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
+
+      - name: Update repo
+        run: |
+          NEW_VERSION=$(npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2)
+          git config user.name "github"
+          git config user.email "github@users.noreply.github.com"
+          git add .
+          git commit -m "v${NEW_VERSION} | Auto pushed from Github Actions"
+          git tag -a "v${NEW_VERSION}" -m "v${NEW_VERSION} | Auto pushed from Github Actions"
+          git push --follow-tags ${REMOTE_REPO} HEAD:${REMOTE_REF}
+
+
+
+
+
+
+
+
+
+
+
+
 name: 'Smash League | Scheduled'
 
 on: push
@@ -25,32 +140,28 @@ jobs:
           npm --no-git-tag-version version minor
           npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
 
+      - name: Update repo
+        run: |
+          NEW_VERSION=$(npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2)
+          git config user.name "github"
+          git config user.email "github@users.noreply.github.com"
+          git add .
+          git commit -m "v${NEW_VERSION} | Auto pushed from Github Actions"
+          git tag -a "v${NEW_VERSION}" -m "v${NEW_VERSION} | Auto pushed from Github Actions"
+          git push --follow-tags ${REMOTE_REPO} HEAD:${REMOTE_REF}
 
-      - name: Confirm stuff
-        run: npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --build-arg --tag smash-league
 
-      # - name: Update repo
-      #   run: |
-      #     NEW_VERSION=$(npm version | grep "smash-league" | cut -d ':' -f2 | cut -d \' -f2)
-      #     git config user.name "github"
-      #     git config user.email "github@users.noreply.github.com"
-      #     git add .
-      #     git commit -m "v${NEW_VERSION} | Auto pushed from Github Actions"
-      #     git tag -a "v${NEW_VERSION}" -m "v${NEW_VERSION} | Auto pushed from Github Actions"
-      #     git push --follow-tags ${REMOTE_REPO} HEAD:${REMOTE_REF}
-
-      # - name: Build the Docker image
-      #   run: docker build . --file Dockerfile --build-arg --tag smash-league
-
-      # - name: Notify
-      #   run: >-
-      #     docker run
-      #     --rm
-      #     --name smash-league-tests
-      #     -v ranking-info:/usr/app/ranking-info
-      #     -v src:/usr/app/src
-      #     -e TRAVIS_EVENT_TYPE="push"
-      #     -e TRAVIS_BRANCH="master"
-      #     -e CI=true
-      #     smash-league
-      #     npm run start:smash-league
+      - name: Notify
+        run: >-
+          docker run
+          --rm
+          --name smash-league-tests
+          -v ranking-info:/usr/app/ranking-info
+          -v src:/usr/app/src
+          -e TRAVIS_EVENT_TYPE="push"
+          -e TRAVIS_BRANCH="master"
+          -e CI=true
+          smash-league
+          npm run start:smash-league

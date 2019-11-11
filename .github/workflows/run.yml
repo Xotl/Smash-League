@@ -1,8 +1,8 @@
 name: 'Smash League | Scheduled'
 
-on: push
-  # schedule:
-  #   - cron:  '0 6 * * *'
+on:
+  schedule:
+    - cron:  '0 6 * * *'
 
 jobs:
 
@@ -10,8 +10,6 @@ jobs:
     name: 'Build & Run'
     runs-on: ubuntu-latest
 
-    if: github.head_commit.author.name != 'github' 
-    
     env: 
       WIT_TOKEN: ${{ secrets.WIT_TOKEN }}
       SLACK_API_TOKEN:  ${{ secrets.SLACK_API_TOKEN }}
@@ -48,10 +46,10 @@ jobs:
           -e WIT_TOKEN=${WIT_TOKEN}
           -v ranking-info:/usr/app/ranking-info
           -v src:/usr/app/src
+          -e TRAVIS_BRANCH="master"
+          -e CI=true
           smash-league
           npm run start:smash-league
-# -e TRAVIS_BRANCH="master"
-# -e CI=true
 
       - name: Extract ranking info
         run: | 
