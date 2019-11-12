@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 * David - Deleted this week after 1 week(s).
 * Medininja - Deleted this week after 1 week(s).
 
-## In progress this week *Mon, Nov 11, 2019, 12:27 PM CST*
+## In progress this week *Tue, Nov 12, 2019, 12:08 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -42,21 +42,22 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
+|Roberto|1|1|2276|
 |Xotl|0|0|2275|
-|Roberto|1|1|2265|
-|José "El Iceberg" Rosales|1|1|2260|
+|José "El Iceberg" Rosales|0|1|2248|
 |Paco|1|1|2216|
 |Angel Lee|1|1|2107|
 |El Minion|2|2|1899|
 |Sammy|2|2|1880|
 |Neku|2|2|1862|
 |Alfredo|2|2|1636|
-|Kyttyan|2|2|1088|
+|Paolo|3|4|1083|
 |D.I.O.|3|3|1031|
-|Paolo|3|3|999|
 |El Plebe|3|3|996|
+|Kyttyan|2|2|987|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `José "El Iceberg" Rosales` challenged `Roberto` and **lost** *3-2*.
+* `Paolo` challenged `Kyttyan` and **won** *3-0*.

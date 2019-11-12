@@ -385,10 +385,22 @@
             },
             "UBA5M220K": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 1,
-                "points": 2260,
-                "completed_challenges": []
+                "points": 2248,
+                "completed_challenges": [
+                    {
+                        "winner": "UMY200LSC",
+                        "player1": "UMY200LSC",
+                        "player2": "UBA5M220K",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "UMY200LSC",
+                            "UBA5M220K"
+                        ]
+                    }
+                ]
             },
             "UDR61HJCD": {
                 "initial_coins": 2,
@@ -407,15 +419,27 @@
             "UHHD243DH": {
                 "initial_coins": 3,
                 "coins": 3,
-                "range": 3,
-                "points": 999,
-                "completed_challenges": []
+                "range": 4,
+                "points": 1083,
+                "completed_challenges": [
+                    {
+                        "winner": "UHHD243DH",
+                        "player1": "UHHD243DH",
+                        "player2": "UKB40CVF0",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "UHHD243DH",
+                            "UKB40CVF0"
+                        ]
+                    }
+                ]
             },
             "UMY200LSC": {
                 "initial_coins": 1,
                 "coins": 1,
                 "range": 1,
-                "points": 2265,
+                "points": 2276,
                 "completed_challenges": []
             },
             "ULBS05D3M": {
@@ -429,7 +453,7 @@
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1088,
+                "points": 987,
                 "completed_challenges": []
             },
             "UHM2TH85S": {
@@ -449,7 +473,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1573496856314,
+        "last_update_ts": 1573538935316,
         "reported_results": []
     },
     "inactive_players": {
