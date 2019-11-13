@@ -365,9 +365,21 @@
             "UB616ENA0": {
                 "initial_coins": 1,
                 "coins": 1,
-                "range": 1,
-                "points": 2107,
-                "completed_challenges": []
+                "range": 2,
+                "points": 2146,
+                "completed_challenges": [
+                    {
+                        "winner": "UB616ENA0",
+                        "player1": "UKPTK422K",
+                        "player2": "UB616ENA0",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UKPTK422K",
+                            "UB616ENA0"
+                        ]
+                    }
+                ]
             },
             "U8M6QT7EF": {
                 "initial_coins": 2,
@@ -413,7 +425,7 @@
                 "initial_coins": 1,
                 "coins": 1,
                 "range": 1,
-                "points": 2216,
+                "points": 2098,
                 "completed_challenges": []
             },
             "UHHD243DH": {
@@ -473,7 +485,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1573538935316,
+        "last_update_ts": 1573625343121,
         "reported_results": []
     },
     "inactive_players": {
