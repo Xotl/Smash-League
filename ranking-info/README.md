@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 * David - Deleted this week after 1 week(s).
 * Medininja - Deleted this week after 1 week(s).
 
-## In progress this week *Thu, Nov 14, 2019, 12:09 AM CST*
+## In progress this week *Fri, Nov 15, 2019, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -45,22 +45,26 @@ The current points earned by winning matches this week.
 |Roberto|1|2|2287|
 |José "El Iceberg" Rosales|0|1|2280|
 |Xotl|0|0|2263|
-|Angel Lee|0|2|2137|
+|Angel Lee|0|2|2195|
 |Paco|1|1|2098|
-|El Minion|2|2|1899|
-|Sammy|2|2|1880|
+|El Minion|0|2|1962|
+|Sammy|1|2|1864|
 |Neku|2|2|1862|
 |Alfredo|2|2|1636|
+|D.I.O.|3|4|1108|
 |Paolo|3|4|1083|
-|D.I.O.|3|3|1031|
+|Kyttyan|2|2|1012|
 |El Plebe|3|3|996|
-|Kyttyan|2|2|987|
 
 ### Completed challenges
 Matches that already happened during this week.
 
 * `Angel Lee` challenged `Paco` and **won** *3-1*.
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
+* `El Minion` challenged `Angel Lee` and **lost** *3-2*.
+* `El Minion` challenged `Angel Lee` and **lost** *3-0*.
 * `José "El Iceberg" Rosales` challenged `Roberto` and **lost** *3-2*.
+* `Sammy` challenged `El Minion` and **lost** *3-0*.
 * `Paolo` challenged `Kyttyan` and **won** *3-0*.
 * `Roberto` challenged `Xotl` and **won** *3-2*.
+* `D.I.O.` challenged `Kyttyan` and **won** *3-0*.
