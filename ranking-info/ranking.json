@@ -476,9 +476,9 @@
             },
             "UHHD243DH": {
                 "initial_coins": 3,
-                "coins": 3,
+                "coins": 2,
                 "range": 4,
-                "points": 1083,
+                "points": 1068,
                 "completed_challenges": [
                     {
                         "winner": "UHHD243DH",
@@ -489,6 +489,17 @@
                         "players": [
                             "UHHD243DH",
                             "UKB40CVF0"
+                        ]
+                    },
+                    {
+                        "winner": "U6457D5KQ",
+                        "player1": "UHHD243DH",
+                        "player2": "U6457D5KQ",
+                        "player1Result": 2,
+                        "player2Result": 3,
+                        "players": [
+                            "UHHD243DH",
+                            "U6457D5KQ"
                         ]
                     }
                 ]
@@ -529,15 +540,27 @@
             "UHM2TH85S": {
                 "initial_coins": 3,
                 "coins": 3,
-                "range": 3,
-                "points": 996,
-                "completed_challenges": []
+                "range": 4,
+                "points": 1017,
+                "completed_challenges": [
+                    {
+                        "winner": "UHM2TH85S",
+                        "player1": "U6457D5KQ",
+                        "player2": "UHM2TH85S",
+                        "player1Result": 2,
+                        "player2Result": 3,
+                        "players": [
+                            "U6457D5KQ",
+                            "UHM2TH85S"
+                        ]
+                    }
+                ]
             },
             "U6457D5KQ": {
                 "initial_coins": 3,
                 "coins": 3,
                 "range": 4,
-                "points": 1108,
+                "points": 985,
                 "completed_challenges": [
                     {
                         "winner": "U6457D5KQ",
@@ -555,7 +578,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1573798190673,
+        "last_update_ts": 1573884602984,
         "reported_results": []
     },
     "inactive_players": {
