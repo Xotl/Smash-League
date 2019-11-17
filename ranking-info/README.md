@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 * David - Deleted this week after 1 week(s).
 * Medininja - Deleted this week after 1 week(s).
 
-## In progress this week *Sat, Nov 16, 2019, 12:10 AM CST*
+## In progress this week *Sun, Nov 17, 2019, 12:10 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -51,9 +51,10 @@ The current points earned by winning matches this week.
 |Sammy|1|2|1864|
 |Neku|2|2|1862|
 |Alfredo|2|2|1636|
-|Paolo|2|4|1068|
-|El Plebe|3|4|1017|
+|Paolo|2|4|1155|
 |Kyttyan|2|2|1012|
+|El Plebe|2|4|1003|
+|El Chino|2|3|989|
 |D.I.O.|3|4|985|
 
 ### Completed challenges
@@ -69,4 +70,6 @@ Matches that already happened during this week.
 * `Paolo` challenged `D.I.O.` and **lost** *3-2*.
 * `Roberto` challenged `Xotl` and **won** *3-2*.
 * `El Plebe` challenged `D.I.O.` and **won** *3-2*.
+* `El Plebe` challenged `Paolo` and **lost** *3-1*.
 * `D.I.O.` challenged `Kyttyan` and **won** *3-0*.
+* `El Chino` challenged `Paolo` and **lost** *3-1*.
