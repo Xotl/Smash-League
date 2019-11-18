@@ -3,7 +3,7 @@ name: 'Smash League | Update'
 on:
   push: 
     branches: 
-    - master
+      - master
 
 jobs:
 
