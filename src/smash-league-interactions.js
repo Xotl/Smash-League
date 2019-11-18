@@ -4,7 +4,6 @@ const Utils = require('./utils')
 const SmashLeague = require('./smash-league')
 
 const Config = require('../config.json')
-const Ranking = require('../ranking-info/ranking.json')
 
 const WIT_TOKEN =  process.env.WIT_TOKEN
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
@@ -70,7 +69,7 @@ const getReportedResultObjFromWitEntities = (user, players = [], score = [], mat
     }
 }
 
-const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
+const getLookupChallengersResponseFromWitEntities = (user, witEntities, Ranking) => {
     const results = []
     witEntities.lookup_challengers.forEach(
         entity => {
