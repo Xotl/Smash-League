@@ -4,6 +4,8 @@ const Config = require('../../config.json')
 const SmashLeagueInteractions = require('../smash-league-interactions')
 const Slack = require('../slack-api')
 const Utils = require('../utils')
+const Ranking = require('../../ranking-info/ranking.json')
+
 
 const WitClient = new Wit({
     accessToken: process.env.WIT_TOKEN,
@@ -52,7 +54,7 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
 
     if (entities.lookup_challengers) {
         validIntentDetected = true
-        const res = SmashLeagueInteractions.getLookupChallengersResponseFromWitEntities(slackEvent.user, entities)
+        const res = SmashLeagueInteractions.getLookupChallengersResponseFromWitEntities(slackEvent.user, entities, Ranking)
         messagesToPost.push(
             ...getSlackMessagesObjFromInteractions(
                 res,

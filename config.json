@@ -6,6 +6,10 @@
         "timeZone": "America/Mexico_City",
         "locale": "en-US"
     },
+    "admin_users": [
+        "U61MBQTR8", 
+        "U6457D5KQ"
+    ],
     "users_dict": {
         "U8A96RCEA": "Carlos López",
         "U61MBQTR8": "Xotl",

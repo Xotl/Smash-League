@@ -4,10 +4,10 @@ const Utils = require('./utils')
 const SmashLeague = require('./smash-league')
 
 const Config = require('../config.json')
-const Ranking = require('../ranking-info/ranking.json')
 
 const WIT_TOKEN =  process.env.WIT_TOKEN
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
+const INVALID_MSG_REACTION_NAME = 'no_entry'
 
 const GetUserIDFromUserTag = userTag => userTag.slice(2, -1)
 
@@ -69,7 +69,7 @@ const getReportedResultObjFromWitEntities = (user, players = [], score = [], mat
     }
 }
 
-const getLookupChallengersResponseFromWitEntities = (user, witEntities) => {
+const getLookupChallengersResponseFromWitEntities = (user, witEntities, Ranking) => {
     const results = []
     witEntities.lookup_challengers.forEach(
         entity => {
@@ -244,7 +244,7 @@ const getReportedResultFromWitEntities = (user, witEntities) => {
     return results
 }
 
-const categorizeSlackMessages = async (messagesArray) => {
+const categorizeSlackMessages = async (messagesArray, adminUsers) => {
     if (!Array.isArray(messagesArray)) {
         throw new Error('The argument messagesArray must be an Array.')
     }
@@ -256,8 +256,37 @@ const categorizeSlackMessages = async (messagesArray) => {
 
     const ignoredMessages = []
     const promiseArray = messagesArray.filter(
-        // Ignore it if Slack bot is not tagged in this message or is bot message
-        ({ text, subtype }) => !(subtype === 'bot_message' || -1 === text.indexOf(BOT_SLACK_TAG))
+        ({ user, text, subtype, reactions}) => {
+            // Ignore it if Slack bot is not tagged in this message or is bot message
+            if (subtype === 'bot_message' || -1 === text.indexOf(BOT_SLACK_TAG)) {
+                return false
+            }
+
+            if (!reactions) {// No reactions to check if the message got invalidated 
+                return true
+            }
+
+            const gotInvalidatedByAdmin = reactions.find(
+                ({ name, users }) => {
+                    if ( INVALID_MSG_REACTION_NAME !== name ) {
+                        // These are not the Droids you are looking for...
+                        return false
+                    }
+
+                    // Check if an admin invalidated this message
+                    return adminUsers.find(
+                        admin => users.includes(admin)
+                    )
+                }
+            )
+
+            if (gotInvalidatedByAdmin) {// Message invalidated by an admin
+                ignoredMessages.push(`Invalidated by Admin | [${Utils.getPlayerAlias(user)}] - ${text}`)
+                return false
+            }
+
+            return true
+        }
     ).map(
         async ({ text:message, user, ts, thread_ts }) => {
             const messageWithoutBotTag = Utils.removesBotTagFromString(message)
@@ -404,7 +433,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
         }
     }
 
-    if (Array.isArray(ignoredActivities) && ignoredActivities.length > 0) {
+    if (ignoredActivities) {
         const ignoredMessages = Object.keys(ignoredActivities).map(
             type => {
                 ignoredActivities[type].map(
@@ -458,6 +487,8 @@ const notifyInThreadThatMeesagesGotIgnored = async (ignoredMessagesArray, postMe
         await postMessageFn(msg, Config.slack_channel_id, { thread_ts: thread_ts || ts })
     }
 }
+
+
 
 module.exports = {
     categorizeSlackMessages,

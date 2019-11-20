@@ -17,6 +17,9 @@ describe('Smash League interactions', () => {
     } )
 
     test('categorizeSlackMessages', async () => {
+        const logFnSpy = jest.spyOn(console, 'log')
+                            .mockImplementation(_ => { return })// NoOp
+
         const WitLib = require('node-wit')
         const witFnSpy = jest.spyOn(WitLib, 'Wit').mockImplementation( function () {
             return { message: messageMockFn }
@@ -34,7 +37,7 @@ describe('Smash League interactions', () => {
         expect(witFnSpy).not.toHaveBeenCalled()
 
         await expect(
-            categorizeSlackMessages(SLACK_MESSAGES1)
+            categorizeSlackMessages(SLACK_MESSAGES1, [ "admin_user1" ])
         ).resolves.toEqual({
             ignoredMessages: [ ],
             challenges: [],
@@ -59,6 +62,10 @@ describe('Smash League interactions', () => {
                 }
             ]
         })
+
+        expect(logFnSpy).toHaveBeenCalled()
+
+        logFnSpy.mockRestore()
         witFnSpy.mockRestore()
     })
 })
