@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * Neku - 1 week(s) inactive.
 * Alfredo - 1 week(s) inactive.
 
-## In progress this week *Wed, Nov 20, 2019, 12:11 AM CST*
+## In progress this week *Wed, Nov 20, 2019, 12:31 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
