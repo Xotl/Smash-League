@@ -318,15 +318,38 @@
                 "initial_coins": 1,
                 "coins": 1,
                 "range": 1,
-                "points": 2195,
+                "points": 1944,
                 "completed_challenges": []
             },
             "U8M6QT7EF": {
                 "initial_coins": 2,
-                "coins": 2,
-                "range": 2,
-                "points": 1962,
-                "completed_challenges": []
+                "coins": 1,
+                "range": 3,
+                "points": 2040,
+                "completed_challenges": [
+                    {
+                        "winner": "UKPTK422K",
+                        "player1": "U8M6QT7EF",
+                        "player2": "UKPTK422K",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "U8M6QT7EF",
+                            "UKPTK422K"
+                        ]
+                    },
+                    {
+                        "winner": "U8M6QT7EF",
+                        "player1": "U8M6QT7EF",
+                        "player2": "UB616ENA0",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "U8M6QT7EF",
+                            "UB616ENA0"
+                        ]
+                    }
+                ]
             },
             "U8THDCVJ7": {
                 "initial_coins": 2,
@@ -353,7 +376,7 @@
                 "initial_coins": 1,
                 "coins": 1,
                 "range": 1,
-                "points": 2098,
+                "points": 2140,
                 "completed_challenges": []
             },
             "UHHD243DH": {
@@ -408,7 +431,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1574143866572,
+        "last_update_ts": 1574230265716,
         "reported_results": []
     },
     "inactive_players": {
