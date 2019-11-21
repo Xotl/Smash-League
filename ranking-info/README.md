@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * Neku - 1 week(s) inactive.
 * Alfredo - 1 week(s) inactive.
 
-## In progress this week *Wed, Nov 20, 2019, 12:31 PM CST*
+## In progress this week *Thu, Nov 21, 2019, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -44,16 +44,16 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Roberto|0|0|2287|
-|José "El Iceberg" Rosales|1|1|2280|
-|Xotl|1|1|2263|
+|Roberto|0|0|2346|
+|Xotl|1|2|2303|
+|José "El Iceberg" Rosales|0|1|2279|
 |Paco|1|1|2140|
-|El Minion|1|3|2040|
+|El Minion|0|3|2073|
 |Angel Lee|1|1|1944|
-|Sammy|2|2|1864|
 |Neku|2|2|1862|
-|Alfredo|2|2|1636|
-|Paolo|2|2|1155|
+|Sammy|1|2|1855|
+|Alfredo|2|2|1669|
+|Paolo|1|2|1153|
 |Kyttyan|3|3|1012|
 |El Plebe|3|3|1003|
 |El Chino|3|3|989|
@@ -62,5 +62,10 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Xotl` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
 * `El Minion` challenged `Paco` and **lost** *3-1*.
 * `El Minion` challenged `Angel Lee` and **won** *3-0*.
+* `El Minion` challenged `Xotl` and **lost** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Roberto` and **lost** *3-0*.
+* `Sammy` challenged `El Minion` and **lost** *3-1*.
+* `Paolo` challenged `Alfredo` and **lost** *3-1*.
