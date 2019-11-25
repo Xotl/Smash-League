@@ -1,3 +1,51 @@
+## Commit from Sun, Nov 24, 2019, 11:59 PM CST
+The week started at *Sun, Nov 17, 2019, 11:59 PM CST* and ended *Sun, Nov 24, 2019, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Xotl - 2388pts|1|3|
+|Roberto - 2340pts|0|0|
+|José "El Iceberg" Rosales - 2279pts|0|1|
+|El Minion - 2144pts|0|3|
+|Paco - 2121pts|0|1|
+|Angel Lee - 2028pts|0|1|
+|Sammy - 1888pts|0|2|
+|Neku - 1862pts|2|2|
+|Alfredo - 1691pts|1|2|
+|Paolo - 1265pts|1|2|
+|Kyttyan - 1009pts|0|3|
+|El Chino - 989pts|3|3|
+|El Plebe - 986pts|2|3|
+|D.I.O. - 985pts|3|3|
+### Completed challenges
+* `Xotl` challenged `José "El Iceberg" Rosales` and **won** *3-2*.
+* `Xotl` challenged `Roberto` and **won** *3-1*.
+* `Angel Lee` challenged `Xotl` and **lost** *3-0*.
+* `El Minion` challenged `Paco` and **lost** *3-1*.
+* `El Minion` challenged `Angel Lee` and **won** *3-0*.
+* `El Minion` challenged `Xotl` and **lost** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Roberto` and **lost** *3-0*.
+* `Sammy` challenged `El Minion` and **lost** *3-1*.
+* `Sammy` challenged `El Minion` and **lost** *3-0*.
+* `Paco` challenged `Angel Lee` and **lost** *3-0*.
+* `Paolo` challenged `Alfredo` and **lost** *3-1*.
+* `Alfredo` challenged `Sammy` and **lost** *3-1*.
+* `Kyttyan` challenged `Alfredo` and **lost** *3-1*.
+* `Kyttyan` challenged `Paolo` and **lost** *3-0*.
+* `Kyttyan` challenged `Paolo` and **lost** *3-1*.
+* `El Plebe` challenged `Kyttyan` and **lost** *3-2*.
+### Inactive players
+* Carlos López - Deleted this week after 4 week(s).
+* Alan - Deleted this week after 2 week(s).
+* César Gutman - Deleted this week after 1 week(s).
+* Michel - Deleted this week after 2 week(s).
+* Niightz - Deleted this week after 2 week(s).
+* David - Deleted this week after 1 week(s).
+* Medininja - Deleted this week after 1 week(s).
+* Neku - Deleted this week after 2 week(s).
+* D.I.O. - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+
 ## Commit from Sun, Nov 17, 2019, 11:59 PM CST
 The week started at *Sun, Nov 10, 2019, 11:59 PM CST* and ended *Sun, Nov 17, 2019, 11:59 PM CST*.
 ### End of week players score summary
