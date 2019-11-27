@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * D.I.O. - 1 week(s) inactive.
 * El Chino - 1 week(s) inactive.
 
-## In progress this week *Tue, Nov 26, 2019, 12:12 AM CST*
+## In progress this week *Wed, Nov 27, 2019, 12:12 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -44,21 +44,25 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Xotl|0|0|2388|
-|Roberto|1|1|2340|
-|José "El Iceberg" Rosales|1|1|2279|
+|Xotl|0|0|2444|
+|José "El Iceberg" Rosales|1|2|2293|
+|Roberto|0|1|2260|
 |El Minion|1|1|2144|
-|Paco|1|1|2121|
-|Angel Lee|2|2|2028|
+|Paco|1|1|2129|
+|Angel Lee|1|2|2020|
 |Sammy|2|2|1888|
-|Alfredo|2|2|1691|
+|Alfredo|1|2|1686|
 |Paolo|2|2|1265|
+|D.I.O.|3|4|1033|
 |Kyttyan|2|2|1009|
 |El Chino|3|3|989|
-|El Plebe|3|3|986|
-|D.I.O.|3|3|985|
+|El Plebe|3|3|969|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Angel Lee` challenged `Paco` and **lost** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Roberto` and **won** *3-2*.
+* `Roberto` challenged `Xotl` and **lost** *3-0*.
+* `Alfredo` challenged `Angel Lee` and **lost** *3-2*.
+* `D.I.O.` challenged `El Plebe` and **won** *3-1*.
