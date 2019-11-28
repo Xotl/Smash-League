@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * D.I.O. - 1 week(s) inactive.
 * El Chino - 1 week(s) inactive.
 
-## In progress this week *Wed, Nov 27, 2019, 12:12 AM CST*
+## In progress this week *Thu, Nov 28, 2019, 12:10 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -50,9 +50,9 @@ The current points earned by winning matches this week.
 |El Minion|1|1|2144|
 |Paco|1|1|2129|
 |Angel Lee|1|2|2020|
-|Sammy|2|2|1888|
+|Sammy|2|2|1920|
 |Alfredo|1|2|1686|
-|Paolo|2|2|1265|
+|Paolo|1|2|1264|
 |D.I.O.|3|4|1033|
 |Kyttyan|2|2|1009|
 |El Chino|3|3|989|
@@ -63,6 +63,7 @@ Matches that already happened during this week.
 
 * `Angel Lee` challenged `Paco` and **lost** *3-2*.
 * `José "El Iceberg" Rosales` challenged `Roberto` and **won** *3-2*.
+* `Paolo` challenged `Sammy` and **lost** *3-1*.
 * `Roberto` challenged `Xotl` and **lost** *3-0*.
 * `Alfredo` challenged `Angel Lee` and **lost** *3-2*.
 * `D.I.O.` challenged `El Plebe` and **won** *3-1*.

@@ -387,7 +387,7 @@
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1888,
+                "points": 1920,
                 "completed_challenges": []
             },
             "UKPTK422K": {
@@ -399,10 +399,22 @@
             },
             "UHHD243DH": {
                 "initial_coins": 2,
-                "coins": 2,
+                "coins": 1,
                 "range": 2,
-                "points": 1265,
-                "completed_challenges": []
+                "points": 1264,
+                "completed_challenges": [
+                    {
+                        "winner": "UDR61HJCD",
+                        "player1": "UDR61HJCD",
+                        "player2": "UHHD243DH",
+                        "player1Result": 3,
+                        "player2Result": 1,
+                        "players": [
+                            "UDR61HJCD",
+                            "UHHD243DH"
+                        ]
+                    }
+                ]
             },
             "UMY200LSC": {
                 "initial_coins": 1,
@@ -485,7 +497,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1574835155508,
+        "last_update_ts": 1574921453370,
         "reported_results": []
     },
     "inactive_players": {
