@@ -77,8 +77,8 @@ async function Main() {
     )
         
     // Only post in slack if it's a master Job
-    if (true) {
-        await Slack.postMessageInChannel('Smash League Update!', 'D61Q9K50D', { blocks: JSON.stringify(blocksToPost) })
+    if (IS_CI && IS_MASTER_BRANCH) {
+        await Slack.postMessageInChannel('Smash League Update!', SMASH_SLACK_CHANNEL_ID, { blocks: JSON.stringify(blocksToPost) })
         await SmashLeagueInteractions.notifyInThreadThatMeesagesGotIgnored(activities.ignoredMessages, Slack.postMessageInChannel)
     }
     console.log('Finished Successfully.')
