@@ -34,9 +34,10 @@ const showInConsoleIgnoredActivities = ignoredActivities => {
     Object.keys(ignoredActivities).forEach(
         type => {
             ignoredActivities[type].forEach(
-                ignoredActivity => console.log(
-                    `---- ${ignoredActivity.reason}: ${JSON.stringify(ignoredActivity.activity)}` 
-                )
+                ({reason, activity}) => {
+                    const activityText = typeof activity === 'object' ? JSON.stringify(activity) : activity
+                    console.log(`---- ${reason}: ${activityText}`)
+                }
             )
             console.log(`A total of ${ignoredActivities[type].length} ${type} activities ignored.`)
         }
@@ -147,6 +148,8 @@ const getLocaleStringDate = (date) => {
     })
 }
 
+const getSeeMessageUrl = (ts, thread_ts) => `https://intersysconsulting.slack.com/archives/${Config.slack_channel_id}/p${ts}?thread_ts=${thread_ts}`
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
@@ -162,5 +165,6 @@ module.exports = {
     removeEmptyArray,
     eloCalculation,
     aNewChampion,
-    getLocaleStringDate
+    getLocaleStringDate,
+    getSeeMessageUrl
 }

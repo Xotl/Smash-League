@@ -24,6 +24,11 @@ async function Main() {
         // We make sure to only commit stuff that happened during the defined week period
         now = new Date(Ranking.current_week.end)
     }
+    
+    // We create & set the Object that will have all the data of the 
+    // ignored activites logged by "logIgnoredActivity" function
+    const ignoredActivities = {}
+    Utils.setIgnoredActivityLogObject(ignoredActivities)
 
     // Next milisecond after last update because it's inclusive search
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
@@ -32,11 +37,6 @@ async function Main() {
     const activities = await SmashLeagueInteractions.categorizeSlackMessages(
         slackResponse.messages, Config.admin_users
     )
-    
-    // We create & set the Object that will have all the data of the 
-    // ignored activites logged by "logIgnoredActivity" function
-    const ignoredActivities = {}
-    Utils.setIgnoredActivityLogObject(ignoredActivities)
 
     // Updates ranking table in case there's a manual change in current scoreboard
     Ranking.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard)
@@ -77,8 +77,8 @@ async function Main() {
     )
         
     // Only post in slack if it's a master Job
-    if (IS_CI && IS_MASTER_BRANCH) {
-        await Slack.postMessageInChannel('Smash League Update!', SMASH_SLACK_CHANNEL_ID, { blocks: JSON.stringify(blocksToPost) })
+    if (true) {
+        await Slack.postMessageInChannel('Smash League Update!', 'D61Q9K50D', { blocks: JSON.stringify(blocksToPost) })
         await SmashLeagueInteractions.notifyInThreadThatMeesagesGotIgnored(activities.ignoredMessages, Slack.postMessageInChannel)
     }
     console.log('Finished Successfully.')
