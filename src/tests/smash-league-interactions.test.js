@@ -46,19 +46,22 @@ describe('Smash League interactions', () => {
                     winner: 'U6457D5KQ',
                     player1: 'UB616ENA0', player2: 'U6457D5KQ', 
                     player1Result: 2, player2Result: 3,
-                    players: ['UB616ENA0', 'U6457D5KQ']
+                    players: ['UB616ENA0', 'U6457D5KQ'],
+                    "ts": 1, "thread_ts": 1
                 },
                 {
                     winner: 'U8A96RCEA',
                     player1: 'UDBD59WLT', player2: 'U8A96RCEA', 
                     player1Result: 0, player2Result: 3,
-                    players: ['UDBD59WLT', 'U8A96RCEA']
+                    players: ['UDBD59WLT', 'U8A96RCEA'],
+                    "ts": 2, "thread_ts": 2
                 },
                 {
                     winner: 'U6H8DDV25',
                     player1: 'UDBD59WLT', player2: 'U6H8DDV25', 
                     player1Result: 0, player2Result: 3,
-                    players: ['UDBD59WLT', 'U6H8DDV25']
+                    players: ['UDBD59WLT', 'U6H8DDV25'],
+                    "ts": 10, "thread_ts": 10
                 }
             ]
         })
