@@ -211,7 +211,7 @@ module.exports = Tag => ({
     "daily_update ignored_activities": [
         ({numIgnoredActivities, ignoredMessages}) => "Además, parece que aún hay gente que no conoce las reglas, ya que tuve que ignorar " + 
             numIgnoredActivities + (numIgnoredActivities > 1 ? " mensajes" : " mensaje")  + " en donde me taggearon. :unamused:" + 
-            "\nEstos fueron los motivos:" +  "\n```\n" + ignoredMessages + "\n```" +  
+            "\nEstos fueron los motivos:\n" + ignoredMessages +  
             "\nLéanse <https://github.com/Xotl/Smash-League#ranking-rules|las reglas> por favor."
     ],
 

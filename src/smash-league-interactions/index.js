@@ -1,9 +1,10 @@
 'use strict'
 const {Wit, log} = require('node-wit')
-const Utils = require('./utils')
-const SmashLeague = require('./smash-league')
+const Utils = require('../utils')
+const SmashLeague = require('../smash-league')
+const Helpers = require('./helpers')
 
-const Config = require('../config.json')
+const Config = require('../../config.json')
 
 const WIT_TOKEN =  process.env.WIT_TOKEN
 const BOT_SLACK_TAG = `<@${Config.bot_id}>`
@@ -256,7 +257,7 @@ const categorizeSlackMessages = async (messagesArray, adminUsers) => {
 
     const ignoredMessages = []
     const promiseArray = messagesArray.filter(
-        ({ user, text, subtype, reactions}) => {
+        ({ user, text, subtype, reactions, ts, thread_ts }) => {
             // Ignore it if Slack bot is not tagged in this message or is bot message
             if (subtype === 'bot_message' || -1 === text.indexOf(BOT_SLACK_TAG)) {
                 return false
@@ -281,7 +282,11 @@ const categorizeSlackMessages = async (messagesArray, adminUsers) => {
             )
 
             if (gotInvalidatedByAdmin) {// Message invalidated by an admin
-                ignoredMessages.push(`Invalidated by Admin | [${Utils.getPlayerAlias(user)}] - ${text}`)
+                Utils.logIgnoredActivity(
+                    `Message from <@${user}> invalidated by an administrator`,
+                    { text, ts, thread_ts }, 'admin'
+                )
+                ignoredMessages.push(`Invalidated by an administrator | [${Utils.getPlayerAlias(user)}] - ${text}`)
                 return false
             }
 
@@ -295,7 +300,7 @@ const categorizeSlackMessages = async (messagesArray, adminUsers) => {
 
             if (entities.reported_result) {
                 const reportedResults = getReportedResultFromWitEntities(user, entities)
-                                            .filter(i => i.ok).map(i => i.value)
+                                            .filter(i => i.ok).map(i => ({ ...i.value, ts, thread_ts }) )
 
                 if ( reportedResults.length > 0 ) {
                     result = { reportedResults }
@@ -433,28 +438,7 @@ const getUpdatesToNotifyUsers = (weekCommited, totalValidActivities, ignoredActi
         }
     }
 
-    if (ignoredActivities) {
-        const ignoredMessages = Object.keys(ignoredActivities).map(
-            type => {
-                ignoredActivities[type].map(
-                    ({ reason }) => `* [${type}]: ${reason}`
-                ).join('\n')
-            }
-        ).join('\n')
-
-        slackBlocks.push([
-            {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": Utils.getRandomMessageById('daily_update ignored_activities', {
-                        numIgnoredActivities: ignoredActivities.length, ignoredMessages
-                    })
-                }
-            }
-        ])
-    }
-
+    Helpers.addIgnoredActivitiesToBlocks(slackBlocks, ignoredActivities)
 
     return slackBlocks.flatMap(
         (block, idx, arr) => {
