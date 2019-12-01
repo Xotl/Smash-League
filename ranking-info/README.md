@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * D.I.O. - 1 week(s) inactive.
 * El Chino - 1 week(s) inactive.
 
-## In progress this week *Sat, Nov 30, 2019, 12:12 AM CST*
+## In progress this week *Sun, Dec 01, 2019, 12:11 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
