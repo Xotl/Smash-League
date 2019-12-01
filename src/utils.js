@@ -148,7 +148,21 @@ const getLocaleStringDate = (date) => {
     })
 }
 
-const getSeeMessageUrl = (ts, thread_ts) => `https://intersysconsulting.slack.com/archives/${Config.slack_channel_id}/p${ts}?thread_ts=${thread_ts}`
+/**
+ * 
+ * @param {Number} ts 
+ * @param {Number} thread_ts 
+ * 
+ * @returns {string} Url that will link to a Slack message
+ */
+const getSeeMessageUrl = (ts, thread_ts) => {
+    let params = ''
+    if (thread_ts !== ts) {
+        params = `?thread_ts=${thread_ts}&cid=${Config.slack_channel_id}`
+    }
+    ts = ts.toString().replace('.', '')
+    return `https://intersysconsulting.slack.com/archives/${Config.slack_channel_id}/p${ts}${params}`
+}
 
 module.exports = {
     GetDateObjFromEpochTS,
