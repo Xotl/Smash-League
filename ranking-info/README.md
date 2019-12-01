@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * D.I.O. - 1 week(s) inactive.
 * El Chino - 1 week(s) inactive.
 
-## In progress this week *Sun, Dec 01, 2019, 12:13 PM CST*
+## In progress this week *Sun, Dec 01, 2019, 1:09 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -47,16 +47,16 @@ The current points earned by winning matches this week.
 |José "El Iceberg" Rosales|0|2|2366|
 |Roberto|1|2|2285|
 |Xotl|0|0|2261|
-|Paco|0|2|2158|
+|Paco|0|2|2238|
 |El Minion|0|1|2117|
 |Angel Lee|0|2|2009|
-|Sammy|0|2|1920|
-|Alfredo|1|2|1722|
-|Paolo|0|2|1366|
+|Sammy|0|2|1907|
+|Alfredo|1|2|1816|
+|Paolo|0|2|1368|
 |El Plebe|3|5|1063|
 |El Chino|3|3|1031|
 |D.I.O.|1|4|1020|
-|Kyttyan|0|2|952|
+|Kyttyan|0|2|954|
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -66,6 +66,8 @@ Matches that already happened during this week.
 * `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 * `José "El Iceberg" Rosales` challenged `Roberto` and **won** *3-2*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
+* `Sammy` challenged `Paco` and **lost** *3-1*.
+* `Sammy` challenged `Paco` and **lost** *3-0*.
 * `Paco` challenged `El Minion` and **won** *3-1*.
 * `Paco` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
 * `Paolo` challenged `Sammy` and **lost** *3-1*.
