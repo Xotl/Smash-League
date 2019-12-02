@@ -16,7 +16,7 @@ const IS_CI = process.env.CI
 
 
 async function Main() {
-    const today = new Date()
+    const today = new Date(1576479600000)
     const isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(today, Ranking.current_week)
     
     let now = today
@@ -32,6 +32,7 @@ async function Main() {
 
     // Next milisecond after last update because it's inclusive search
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
+    
     const opts = { latest: now, oldest: lastInProgressUpdated }
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
     const activities = await SmashLeagueInteractions.categorizeSlackMessages(
