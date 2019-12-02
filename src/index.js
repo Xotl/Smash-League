@@ -16,7 +16,7 @@ const IS_CI = process.env.CI
 
 
 async function Main() {
-    const today = new Date(1576479600000)
+    const today = new Date()
     const isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(today, Ranking.current_week)
     
     let now = today
