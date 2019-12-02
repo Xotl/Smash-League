@@ -1,3 +1,52 @@
+## Commit from Sun, Dec 01, 2019, 11:59 PM CST
+The week started at *Sun, Nov 24, 2019, 11:59 PM CST* and ended *Sun, Dec 01, 2019, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|José "El Iceberg" Rosales - 2366pts|0|2|
+|Roberto - 2285pts|1|2|
+|Xotl - 2261pts|0|0|
+|Paco - 2238pts|0|2|
+|El Minion - 2117pts|0|1|
+|Angel Lee - 2009pts|0|2|
+|Sammy - 1907pts|0|2|
+|Alfredo - 1816pts|1|2|
+|Paolo - 1368pts|0|2|
+|El Plebe - 1063pts|3|5|
+|El Chino - 1031pts|3|3|
+|D.I.O. - 1020pts|1|4|
+|Kyttyan - 954pts|0|2|
+### Completed challenges
+* `Angel Lee` challenged `Paco` and **lost** *3-2*.
+* `Angel Lee` challenged `El Minion` and **lost** *3-2*.
+* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Roberto` and **won** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
+* `Sammy` challenged `Paco` and **lost** *3-1*.
+* `Sammy` challenged `Paco` and **lost** *3-0*.
+* `Paco` challenged `El Minion` and **won** *3-1*.
+* `Paco` challenged `José "El Iceberg" Rosales` and **lost** *3-1*.
+* `Paolo` challenged `Sammy` and **lost** *3-1*.
+* `Paolo` challenged `Alfredo` and **lost** *3-1*.
+* `Roberto` challenged `Xotl` and **won** *3-2*.
+* `Alfredo` challenged `Angel Lee` and **lost** *3-2*.
+* `Kyttyan` challenged `Alfredo` and **lost** *3-1*.
+* `Kyttyan` challenged `Alfredo` and **lost** *3-0*.
+* `El Plebe` challenged `Kyttyan` and **won** *3-0*.
+* `El Plebe` challenged `El Chino` and **won** *3-2*.
+* `D.I.O.` challenged `El Plebe` and **won** *3-1*.
+* `D.I.O.` challenged `Paolo` and **lost** *3-1*.
+* `D.I.O.` challenged `Paolo` and **lost** *3-0*.
+### Inactive players
+* Carlos López - Deleted this week after 4 week(s).
+* Alan - Deleted this week after 2 week(s).
+* César Gutman - Deleted this week after 1 week(s).
+* Michel - Deleted this week after 2 week(s).
+* Niightz - Deleted this week after 2 week(s).
+* David - Deleted this week after 1 week(s).
+* Medininja - Deleted this week after 1 week(s).
+* Neku - Deleted this week after 2 week(s).
+
 ## Commit from Sun, Nov 24, 2019, 11:59 PM CST
 The week started at *Sun, Nov 17, 2019, 11:59 PM CST* and ended *Sun, Nov 24, 2019, 11:59 PM CST*.
 ### End of week players score summary
