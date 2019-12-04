@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - Deleted this week after 1 week(s).
 * Neku - Deleted this week after 2 week(s).
 
-## In progress this week *Tue, Dec 03, 2019, 12:08 AM CST*
+## In progress this week *Wed, Dec 04, 2019, 12:04 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -45,18 +45,24 @@ The current points earned by winning matches this week.
 |José "El Iceberg" Rosales|0|0|2366|
 |Roberto|1|1|2285|
 |Xotl|1|1|2261|
-|Paco|1|1|2238|
-|El Minion|1|1|2117|
-|Angel Lee|2|2|2009|
+|Paco|1|1|2171|
+|Angel Lee|1|4|2162|
+|El Minion|0|1|2022|
 |Sammy|2|2|1907|
-|Alfredo|2|2|1816|
-|Paolo|2|2|1368|
-|El Plebe|2|2|1063|
+|Alfredo|1|2|1808|
+|D.I.O.|3|4|1104|
+|Paolo|2|2|1058|
 |El Chino|3|3|1031|
-|D.I.O.|3|3|1020|
+|El Plebe|2|3|1008|
 |Kyttyan|3|3|954|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Angel Lee` challenged `El Minion` and **won** *3-0*.
+* `Angel Lee` challenged `Paco` and **lost** *3-2*.
+* `Angel Lee` challenged `Paco` and **won** *3-1*.
+* `El Minion` challenged `Paco` and **lost** *3-0*.
+* `Alfredo` challenged `Angel Lee` and **lost** *3-1*.
+* `El Plebe` challenged `Paolo` and **won** *3-1*.
+* `D.I.O.` challenged `El Plebe` and **won** *3-0*.
