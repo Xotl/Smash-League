@@ -418,16 +418,30 @@
         "scoreboard": {
             "U61MBQTR8": {
                 "initial_coins": 1,
-                "coins": 1,
+                "coins": 0,
                 "range": 1,
-                "points": 2261,
-                "completed_challenges": []
+                "points": 2249,
+                "completed_challenges": [
+                    {
+                        "winner": "UMY200LSC",
+                        "player1": "UMY200LSC",
+                        "player2": "U61MBQTR8",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "UMY200LSC",
+                            "U61MBQTR8"
+                        ],
+                        "ts": "1575491081.089400",
+                        "thread_ts": "1575491081.089400"
+                    }
+                ]
             },
             "UB616ENA0": {
                 "initial_coins": 2,
-                "coins": 1,
+                "coins": 0,
                 "range": 4,
-                "points": 2162,
+                "points": 2155,
                 "completed_challenges": [
                     {
                         "winner": "UB616ENA0",
@@ -467,6 +481,19 @@
                         ],
                         "ts": "1575408836.082100",
                         "thread_ts": "1575408836.082100"
+                    },
+                    {
+                        "winner": "UMY200LSC",
+                        "player1": "UMY200LSC",
+                        "player2": "UB616ENA0",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "UMY200LSC",
+                            "UB616ENA0"
+                        ],
+                        "ts": "1575493435.093500",
+                        "thread_ts": "1575493435.093500"
                     }
                 ]
             },
@@ -516,14 +543,14 @@
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1058,
+                "points": 1085,
                 "completed_challenges": []
             },
             "UMY200LSC": {
                 "initial_coins": 1,
                 "coins": 1,
                 "range": 1,
-                "points": 2285,
+                "points": 2398,
                 "completed_challenges": []
             },
             "ULBS05D3M": {
@@ -578,8 +605,8 @@
             "U6457D5KQ": {
                 "initial_coins": 3,
                 "coins": 3,
-                "range": 4,
-                "points": 1104,
+                "range": 5,
+                "points": 1117,
                 "completed_challenges": [
                     {
                         "winner": "U6457D5KQ",
@@ -593,6 +620,19 @@
                         ],
                         "ts": "1575416209.086100",
                         "thread_ts": "1575416209.086100"
+                    },
+                    {
+                        "winner": "U6457D5KQ",
+                        "player1": "UHHD243DH",
+                        "player2": "U6457D5KQ",
+                        "player1Result": 2,
+                        "player2Result": 3,
+                        "players": [
+                            "UHHD243DH",
+                            "U6457D5KQ"
+                        ],
+                        "ts": "1575492794.092800",
+                        "thread_ts": "1575492794.092800"
                     }
                 ]
             },
@@ -606,7 +646,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1575439469214,
+        "last_update_ts": 1575525877975,
         "reported_results": []
     },
     "inactive_players": {
