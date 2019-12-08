@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - Deleted this week after 1 week(s).
 * Neku - Deleted this week after 2 week(s).
 
-## In progress this week *Sat, Dec 07, 2019, 12:06 AM CST*
+## In progress this week *Sun, Dec 08, 2019, 12:04 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
