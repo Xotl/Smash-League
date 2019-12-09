@@ -1,3 +1,47 @@
+## Commit from Sun, Dec 08, 2019, 11:59 PM CST
+The week started at *Sun, Dec 01, 2019, 11:59 PM CST* and ended *Sun, Dec 08, 2019, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Roberto - 2456pts|1|2|
+|José "El Iceberg" Rosales - 2384pts|0|0|
+|Xotl - 2306pts|0|1|
+|Paco - 2161pts|0|1|
+|Angel Lee - 2155pts|0|4|
+|El Minion - 2022pts|0|1|
+|Sammy - 1939pts|2|2|
+|Alfredo - 1808pts|1|2|
+|D.I.O. - 1117pts|3|5|
+|Paolo - 1084pts|1|2|
+|El Chino - 1031pts|3|3|
+|El Plebe - 1008pts|2|3|
+|Kyttyan - 954pts|3|3|
+### Completed challenges
+* `Xotl` challenged `Roberto` and **lost** *3-0*.
+* `Angel Lee` challenged `El Minion` and **won** *3-0*.
+* `Angel Lee` challenged `Paco` and **lost** *3-2*.
+* `Angel Lee` challenged `Paco` and **won** *3-1*.
+* `Angel Lee` challenged `Roberto` and **lost** *3-0*.
+* `El Minion` challenged `Paco` and **lost** *3-0*.
+* `Paco` challenged `Xotl` and **lost** *3-0*.
+* `Paolo` challenged `Sammy` and **lost** *3-1*.
+* `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Alfredo` challenged `Angel Lee` and **lost** *3-1*.
+* `El Plebe` challenged `Paolo` and **won** *3-1*.
+* `D.I.O.` challenged `El Plebe` and **won** *3-0*.
+* `D.I.O.` challenged `Paolo` and **won** *3-2*.
+### Inactive players
+* Carlos López - Deleted this week after 4 week(s).
+* Alan - Deleted this week after 2 week(s).
+* César Gutman - Deleted this week after 1 week(s).
+* Michel - Deleted this week after 2 week(s).
+* Niightz - Deleted this week after 2 week(s).
+* David - Deleted this week after 1 week(s).
+* Medininja - Deleted this week after 1 week(s).
+* Neku - Deleted this week after 2 week(s).
+* Kyttyan - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+
 ## Commit from Sun, Dec 01, 2019, 11:59 PM CST
 The week started at *Sun, Nov 24, 2019, 11:59 PM CST* and ended *Sun, Dec 01, 2019, 11:59 PM CST*.
 ### End of week players score summary
