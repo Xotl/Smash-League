@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * Kyttyan - 1 week(s) inactive.
 * El Chino - 1 week(s) inactive.
 
-## In progress this week *Sun, Dec 08, 2019, 11:59 PM CST*
+## In progress this week *Tue, Dec 10, 2019, 12:06 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
