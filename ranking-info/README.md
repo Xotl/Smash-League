@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * Kyttyan - 1 week(s) inactive.
 * El Chino - 1 week(s) inactive.
 
-## In progress this week *Wed, Dec 11, 2019, 12:05 AM CST*
+## In progress this week *Thu, Dec 12, 2019, 12:05 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -45,13 +45,13 @@ The current points earned by winning matches this week.
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
 |Roberto|0|0|2456|
-|José "El Iceberg" Rosales|1|1|2384|
-|Xotl|1|1|2306|
-|Paco|1|1|2161|
-|Angel Lee|1|1|2155|
-|El Minion|2|2|2022|
+|Xotl|1|2|2368|
+|José "El Iceberg" Rosales|1|1|2296|
+|El Minion|2|3|2081|
+|Angel Lee|1|2|2033|
+|Paco|1|1|2001|
 |Sammy|2|2|1939|
-|Alfredo|2|2|1808|
+|Alfredo|1|2|1801|
 |D.I.O.|2|2|1117|
 |Paolo|2|2|1084|
 |El Chino|3|3|1031|
@@ -61,4 +61,7 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Xotl` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Angel Lee` challenged `Paco` and **won** *3-2*.
+* `El Minion` challenged `Angel Lee` and **won** *3-2*.
+* `Alfredo` challenged `El Minion` and **lost** *3-1*.
