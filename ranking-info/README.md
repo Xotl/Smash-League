@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * Kyttyan - 1 week(s) inactive.
 * El Chino - 1 week(s) inactive.
 
-## In progress this week *Fri, Dec 13, 2019, 12:03 AM CST*
+## In progress this week *Sat, Dec 14, 2019, 12:06 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -44,16 +44,16 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Roberto|0|0|2456|
-|Paco|1|3|2181|
+|Paco|1|4|2206|
+|Roberto|0|0|2182|
 |José "El Iceberg" Rosales|1|1|2085|
 |El Minion|2|3|2081|
-|Angel Lee|0|2|2028|
 |Xotl|1|2|1997|
-|Sammy|2|2|1939|
+|Angel Lee|0|2|1917|
 |Alfredo|1|2|1801|
-|D.I.O.|2|2|1117|
-|Paolo|2|2|1084|
+|D.I.O.|2|3|1203|
+|Sammy|0|3|1116|
+|Paolo|0|2|1059|
 |El Chino|3|3|1031|
 |El Plebe|3|3|1008|
 |Kyttyan|3|3|954|
@@ -65,6 +65,13 @@ Matches that already happened during this week.
 * `Angel Lee` challenged `Paco` and **won** *3-2*.
 * `Angel Lee` challenged `Xotl` and **lost** *3-2*.
 * `El Minion` challenged `Angel Lee` and **won** *3-2*.
+* `Sammy` challenged `Angel Lee` and **lost** *3-1*.
+* `Sammy` challenged `Angel Lee` and **won** *3-0*.
+* `Sammy` challenged `Paco` and **lost** *3-2*.
 * `Paco` challenged `Xotl` and **won** *3-0*.
 * `Paco` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Paco` challenged `Roberto` and **won** *3-2*.
+* `Paolo` challenged `D.I.O.` and **lost** *3-1*.
+* `Paolo` challenged `D.I.O.` and **lost** *3-2*.
 * `Alfredo` challenged `El Minion` and **lost** *3-1*.
+* `D.I.O.` challenged `Sammy` and **won** *3-2*.
