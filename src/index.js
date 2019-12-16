@@ -32,7 +32,6 @@ async function Main() {
 
     // Next milisecond after last update because it's inclusive search
     const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
-    
     const opts = { latest: now, oldest: lastInProgressUpdated }
     const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
     const activities = await SmashLeagueInteractions.categorizeSlackMessages(
