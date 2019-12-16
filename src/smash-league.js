@@ -267,7 +267,15 @@ const getRankingFromScoreboard = scoreboard => {
 const commitInProgress = rankingObj => {
     const result = { ...rankingObj }
     const inProgress = { ...result.in_progress }
-    const newInactivePlayers = { ...rankingObj.inactive_players }
+    const newInactivePlayers = Object.keys(rankingObj.inactive_players).reduce(
+        (inactivePlayersResult, playerId) => {// Cleans up the already deleted players
+            const inactivePlayerProfile = rankingObj.inactive_players[playerId]
+            if (!inactivePlayerProfile.deleted_by_inactivity) {
+                inactivePlayersResult[playerId] = inactivePlayerProfile
+            }
+            return inactivePlayersResult
+        }
+    , {})
 
     // Update inactive players list
     Object.keys(inProgress.scoreboard).forEach(
@@ -284,11 +292,8 @@ const commitInProgress = rankingObj => {
                 }
             )
 
-            if ( !isPlayerInactiveThisWeek || (
-                newInactivePlayers[playerId] && newInactivePlayers[playerId].deleted_by_inactivity
-            ) ) {
-                // Player was active this week or was previuosly marked as deleted, so we 
-                // remove the player from the list.
+            if ( !isPlayerInactiveThisWeek) {
+                // Player was active this week so we remove the player from the list.
                 delete newInactivePlayers[playerId]
                 return
             }
@@ -319,7 +324,10 @@ const commitInProgress = rankingObj => {
                         unrankedPlayerScore
                     )
 
-                    if (tmpScoreboard[playerId].points <= unrankedPlayerScore.points) {
+                    if (
+                        newInactivePlayers[playerId].weeks_count > 2 &&
+                        tmpScoreboard[playerId].points <= unrankedPlayerScore.points
+                    ) {
                         // Remove player for it's inactivity, but we want to keep 
                         // track of what happened, so we just mark the player
                         newInactivePlayers[playerId].deleted_by_inactivity = true
