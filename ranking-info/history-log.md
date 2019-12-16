@@ -1,3 +1,41 @@
+## Commit from Sun, Dec 15, 2019, 11:59 PM CST
+The week started at *Sun, Dec 08, 2019, 11:59 PM CST* and ended *Sun, Dec 15, 2019, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Paco - 2206pts|1|4|
+|Roberto - 2182pts|0|0|
+|José "El Iceberg" Rosales - 2085pts|1|1|
+|El Minion - 2081pts|2|3|
+|Xotl - 1997pts|1|2|
+|Angel Lee - 1917pts|0|2|
+|Alfredo - 1801pts|1|2|
+|D.I.O. - 1203pts|2|3|
+|Sammy - 1116pts|0|3|
+|Paolo - 1059pts|0|2|
+|El Chino - 1031pts|3|3|
+|El Plebe - 1008pts|3|3|
+|Kyttyan - 954pts|3|3|
+### Completed challenges
+* `Xotl` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Angel Lee` challenged `Paco` and **won** *3-2*.
+* `Angel Lee` challenged `Xotl` and **lost** *3-2*.
+* `El Minion` challenged `Angel Lee` and **won** *3-2*.
+* `Sammy` challenged `Angel Lee` and **lost** *3-1*.
+* `Sammy` challenged `Angel Lee` and **won** *3-0*.
+* `Sammy` challenged `Paco` and **lost** *3-2*.
+* `Paco` challenged `Xotl` and **won** *3-0*.
+* `Paco` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Paco` challenged `Roberto` and **won** *3-2*.
+* `Paolo` challenged `D.I.O.` and **lost** *3-1*.
+* `Paolo` challenged `D.I.O.` and **lost** *3-2*.
+* `Alfredo` challenged `El Minion` and **lost** *3-1*.
+* `D.I.O.` challenged `Sammy` and **won** *3-2*.
+### Inactive players
+* Kyttyan - 2 week(s) inactive.
+* El Chino - 2 week(s) inactive.
+* El Plebe - 1 week(s) inactive.
+
 ## Commit from Sun, Dec 08, 2019, 11:59 PM CST
 The week started at *Sun, Dec 01, 2019, 11:59 PM CST* and ended *Sun, Dec 08, 2019, 11:59 PM CST*.
 ### End of week players score summary
