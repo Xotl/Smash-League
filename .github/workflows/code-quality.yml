@@ -1,0 +1,49 @@
+name: Code quality
+
+on: [pull_request, push]
+
+jobs:
+
+  build:
+    name: "Build & Test"
+    runs-on: ubuntu-latest
+
+    # Avoids running 2 checks when using a branch in the same repository
+    if: github.event_name == 'push' || github.repository != 'Xotl/Smash-League'
+
+    env:
+      STUFF: ${{ toJson(github) }}
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache Docker image
+        uses: actions/cache@v1
+        id: cached-docker-build
+        with:
+          path: docker-cache/
+          key: ${{ runner.os }}-docker-${{ hashFiles('**/package*.json')}}
+
+      - name: Build the Docker image
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: docker build . --file Dockerfile --build-arg NODE_ENV=prod --tag smash-league
+
+      - name: Save Docker image into file
+        if: steps.cached-docker-build.outputs.cache-hit != 'true'
+        run: |
+          mkdir docker-cache
+          docker save -o docker-cache/smash-league-docker-image.tar smash-league
+
+      - name: Load Docker image file
+        if: steps.cached-docker-build.outputs.cache-hit == 'true'
+        run: docker load -q -i docker-cache/smash-league-docker-image.tar
+
+      - name: Run tests inside container
+        run: >-
+          docker run
+          --rm
+          --name smash-league-tests
+          -v ranking-info:/usr/app/ranking-info
+          -v src:/usr/app/src
+          smash-league
+          npm test

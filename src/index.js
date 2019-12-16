@@ -16,18 +16,27 @@ const IS_CI = process.env.CI
 
 
 async function Main() {
-    const now = new Date()
+    const today = new Date()
+    const isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(today, Ranking.current_week)
     
-    // Next milisecond after last update because it's inclusive search
-    const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
-    const opts = { latest: now, oldest: lastInProgressUpdated }
-    const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
-    const activities = await SmashLeagueInteractions.categorizeSlackMessages(slackResponse.messages)
+    let now = today
+    if (isItTimeToCommit) {
+        // We make sure to only commit stuff that happened during the defined week period
+        now = new Date(Ranking.current_week.end)
+    }
     
     // We create & set the Object that will have all the data of the 
     // ignored activites logged by "logIgnoredActivity" function
     const ignoredActivities = {}
     Utils.setIgnoredActivityLogObject(ignoredActivities)
+
+    // Next milisecond after last update because it's inclusive search
+    const lastInProgressUpdated = new Date(Ranking.in_progress.last_update_ts + 1)
+    const opts = { latest: now, oldest: lastInProgressUpdated }
+    const slackResponse = await Slack.getMessagesFromPrivateChannel(SMASH_SLACK_CHANNEL_ID, opts)
+    const activities = await SmashLeagueInteractions.categorizeSlackMessages(
+        slackResponse.messages, Config.admin_users
+    )
 
     // Updates ranking table in case there's a manual change in current scoreboard
     Ranking.ranking = SmashLeague.getRankingFromScoreboard(Ranking.scoreboard)
@@ -41,11 +50,13 @@ async function Main() {
 
 
     let newRankingObj = { ...Ranking, in_progress: newInProgressObj }
-    let isItTimeToCommit = SmashLeague.isItTimeToCommitInProgress(now, newRankingObj.current_week)
+    
 
     if (isItTimeToCommit) {
         newRankingObj = SmashLeague.commitInProgress(newRankingObj)
-        OutputGenerator.updateHistoryLog(newInProgressObj, newRankingObj.current_week)
+        OutputGenerator.updateHistoryLog(
+            newInProgressObj, Ranking.current_week, newRankingObj.inactive_players
+        )
     }
 
     await OutputGenerator.updateRankingJsonFile(newRankingObj)
@@ -54,9 +65,10 @@ async function Main() {
         SmashLeague.getUnrankedPlayerScore(newRankingObj.ranking.length)
     )
 
+    const newChampion = Utils.aNewChampion(Ranking.ranking, newRankingObj.ranking)
 
     const blocksToPost = SmashLeagueInteractions.getUpdatesToNotifyUsers(
-        isItTimeToCommit ? {/* TODO: send weeks times */} : null,
+        isItTimeToCommit ? { newChampion } : null,
         activities.reportedResults.length,
         ignoredActivities, 
         activities.ignoredMessages.length,

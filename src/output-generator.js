@@ -2,7 +2,6 @@
 const fs = require('fs')
 const path = require('path')
 const Utils = require('./utils')
-const SmashLeague = require('./smash-league')
 
 const getRankingTemplate = () => new Promise(
     (resolve, reject) => {
@@ -37,38 +36,45 @@ const updateRankingJsonFile = rankingObj => new Promise(
 const getRankingBulletsMarkdown = (rankingArray, scoreboardObj) => {
     return '|#|Player|Score|\n|-|------|-----|\n' + rankingArray.map(
         (players, idx) => {
-            const { points } = scoreboardObj[ players[0] ]
+            const { points, range } = scoreboardObj[ players[0] ]
+            let rangeSup = ''
+            if (// Checks if current place is contigous to another place with same points
+                (idx !== 0 && scoreboardObj[ rankingArray[idx - 1][0] ].points === points) // Checks previous place
+                || (idx !== rankingArray.length - 1 && scoreboardObj[ rankingArray[idx + 1][0] ].points === points)// Checks next place
+            ) {
+                rangeSup = `<sub>${range}</sub>`
+            }
             const playersNames = players.map( playerId => `\`${Utils.getPlayerAlias(playerId)}\`` ).join(', ')
-            return `|${1 + idx}|${playersNames}|${points}|`
+            return `|${1 + idx}|${playersNames}|${points}${rangeSup}|`
         }
     ).join('\n')
 }
 
 const getScoreboardMarkdown = scoreboardObj => {
-    return '|Player|Coins|Range|Stand points|Score|' +
-         '\n|------|-----|-----|------------|-----|\n' +
+    return '|Player|Coins|Range|Score|' +
+         '\n|------|-----|-----|-----|\n' +
         Object.keys(scoreboardObj).sort(
             (a, b) => scoreboardObj[b].points - scoreboardObj[a].points
         )
         .map(
             playerId => {
-                const { stand_points, points, coins, range} = scoreboardObj[playerId]
-                return `|${Utils.getPlayerAlias(playerId)}|${coins}|${range}|${stand_points}|${points}|`
+                const { points, coins, range} = scoreboardObj[playerId]
+                return `|${Utils.getPlayerAlias(playerId)}|${coins}|${range}|${points}|`
             }
         )
         .join('\n')
 } 
 
 const getEndOfWeekSummaryMarkdown = scoreboardObj => {
-    return '|Player|Coins|Range|Stand points|' +
-         '\n|------|-----|-----|------------|\n' +
+    return '|Player|Coins|Range|' +
+         '\n|------|-----|-----|\n' +
         Object.keys(scoreboardObj).sort(
             (a, b) => scoreboardObj[b].points - scoreboardObj[a].points
         )
         .map(
             playerId => {
-                const { stand_points, points, coins, range} = scoreboardObj[playerId]
-                return `|${Utils.getPlayerAlias(playerId)} - ${points}pts|${coins}|${range}|${stand_points}|`
+                const { points, coins, range} = scoreboardObj[playerId]
+                return `|${Utils.getPlayerAlias(playerId)} - ${points}pts|${coins}|${range}|`
             }
         )
         .join('\n')
@@ -98,20 +104,40 @@ const getCompletedChallengesMarkdown = scoreboard => {
     ).join('\n')
 }
 
-const getUnrankedScore = ({ coins, range, stand_points, points}) => 
-      '|Coins|Range|Stand points|Points|' +
-    '\n|-----|-----|------------|------|\n' +
-    `|${coins}|${range}|${stand_points}|${points}|`
+const getUnrankedScore = ({ coins, range, points}) => 
+      '|Coins|Range|Points|' +
+    '\n|-----|-----|------|\n' +
+    `|${coins}|${range}|${points}|`
+
+
+const getInactivivityMarkdown = (inactivePlayersObj) => {
+    const inactivePlayersList = Object.keys(inactivePlayersObj)
+    if (inactivePlayersList.length === 0) {
+        return ''
+    }
+    return (
+        '### Inactive players' +
+        inactivePlayersList.reduce((result, playerId) => {
+            const hasDeleted = inactivePlayersObj[playerId].deleted_by_inactivity
+            const details = hasDeleted ? 
+                `Deleted this week after ${inactivePlayersObj[playerId].weeks_count} week(s).` 
+                : `${inactivePlayersObj[playerId].weeks_count} week(s) inactive.`
+            return result + 
+                `\n* ${Utils.getPlayerAlias(playerId)} - ${details}`
+        }, '')
+    )
+}
 
 
 const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
 
     const template = await getRankingTemplate()
     const output = template
-        .replace(/\{\{last_updated\}\}/gm, (new Date(rankingObj.last_update_ts)).toUTCString())
+        .replace(/\{\{last_updated\}\}/gm, Utils.getLocaleStringDate(rankingObj.last_update_ts))
         .replace(/\{\{ranking_bullets\}\}/gm, getRankingBulletsMarkdown(rankingObj.ranking, rankingObj.scoreboard))
         .replace(/\{\{unranked_score\}\}/gm, getUnrankedScore(unrankedScore))
-        .replace(/\{\{inprogress_last_updated\}\}/gm, (new Date(rankingObj.in_progress.last_update_ts)).toUTCString())
+        .replace(/\{\{inactive_players\}\}/gm, getInactivivityMarkdown(rankingObj.inactive_players))
+        .replace(/\{\{inprogress_last_updated\}\}/gm, Utils.getLocaleStringDate(rankingObj.in_progress.last_update_ts))
         .replace(/\{\{inprogress_scoreboard\}\}/gm, getScoreboardMarkdown(rankingObj.in_progress.scoreboard))
         .replace(/\{\{completed_challenges\}\}/gm, getCompletedChallengesMarkdown(rankingObj.in_progress.scoreboard))
         
@@ -135,17 +161,17 @@ const updateRankingMarkdownFile = async (rankingObj, unrankedScore) => {
 }
 
 
-const updateHistoryLog = async (inProgressObj, weekObj) => {
+const updateHistoryLog = async (inProgressObj, weekObj, inactivityObj) => {
     const filePath = path.join(__dirname, '..', 'ranking-info', 'history-log.md')
     const newStringToAppend = 
 // Start of srting
-`## Commit from ${(new Date(inProgressObj.last_update_ts)).toUTCString()}
-The week started at *${(new Date(weekObj.start)).toUTCString()}* and ended *${(new Date(weekObj.end)).toUTCString()}*.
+`## Commit from ${Utils.getLocaleStringDate(inProgressObj.last_update_ts)}
+The week started at *${Utils.getLocaleStringDate(weekObj.start)}* and ended *${Utils.getLocaleStringDate(weekObj.end)}*.
 ### End of week players score summary
 ${getEndOfWeekSummaryMarkdown(inProgressObj.scoreboard)}
 ### Completed challenges
 ${getCompletedChallengesMarkdown(inProgressObj.scoreboard)}
-
+${getInactivivityMarkdown(inactivityObj)}
 
 `// end of srting
     const newDataBuffer = Buffer.from(newStringToAppend)

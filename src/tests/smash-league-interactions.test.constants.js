@@ -97,22 +97,41 @@ module.exports = {
         {// Valid, spaces both sides of result
             "text": "<@UFY8P0WRF> le gané a <@UDBD59WLT> 3 - 0",
             "user": "U8A96RCEA",
-            "ts": 2
+            "ts": 2,
+            "thread_ts": 2
         },
-        {
+        {// invalidated by administrator
+            "text": "<@UFY8P0WRF> le gané a <@UDBD59WLT> 3 - 0",
+            "user": "U8A96RCEA",
+            "ts": 2,
+            "thread_ts": 2,
+            "reactions": [
+                { name: "no_entry", users: [ "admin_user1" ] }
+            ],
+        },
+        {// Ignored, but not invalidated by admin
             "text": "<@UFY8P0WRF> El viento de las gardenias toca la puerta 3 veces",
             "user": "U6H8DDV25",
-            "ts": 6
+            "ts": 6,
+            "thread_ts": 6,
+            "reactions": [
+                { name: "fast_parrot", users: [ "admin_user1" ] }
+            ],
         },
         {// Valid spaces only on one side of result
             "text": "<@UFY8P0WRF> <@UB616ENA0> 2 - 3 <@U6457D5KQ>",
             "user": "UEWUZCYJF",
-            "ts": 1
+            "ts": 1,
+            "thread_ts": 1,
+            "reactions": [
+                { name: "no_entry", users: [ "non_admin_user" ] }
+            ],
         },
         {// Valid, spaces both sides of result
             "text": "<@UFY8P0WRF> le gané a <@UDBD59WLT> 3 - 0",
             "user": "U6H8DDV25",
-            "ts": 10
+            "ts": 10,
+            "thread_ts": 10
         },
     ]
 }

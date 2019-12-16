@@ -34,9 +34,10 @@ const showInConsoleIgnoredActivities = ignoredActivities => {
     Object.keys(ignoredActivities).forEach(
         type => {
             ignoredActivities[type].forEach(
-                ignoredActivity => console.log(
-                    `---- ${ignoredActivity.reason}: ${JSON.stringify(ignoredActivity.activity)}` 
-                )
+                ({reason, activity}) => {
+                    const activityText = typeof activity === 'object' ? JSON.stringify(activity) : activity
+                    console.log(`---- ${reason}: ${activityText}`)
+                }
             )
             console.log(`A total of ${ignoredActivities[type].length} ${type} activities ignored.`)
         }
@@ -82,6 +83,87 @@ const removesBotTagFromString = msg => {
     return msg.replace(new RegExp(`<@${Config.bot_id}>`, 'gm'), '').trim()
 }
 
+const removeAlreadyChallengedPlayers = (players, playerId, in_progress) => {
+    const { scoreboard } = in_progress
+    const { completed_challenges = [] } = scoreboard[playerId] || {}
+
+    return players.map(
+        rankPlayers => rankPlayers.filter(
+            id => {
+                for (const challenge of completed_challenges) {
+                    if ( challenge.players.includes(id) && challenge.winner === playerId ) {
+                        return false
+                    }
+                }
+                return true
+            }
+        )
+    )
+}
+
+const removeEmptyArray = array => array.filter(i => (i.length === 0) ? false : true)
+
+const factorKCaculator = elo => {
+    if (elo < 2100)
+        return 32
+
+    if (elo < 2400)
+        return 24
+
+    return 16
+}
+
+const eloCalculation = (playerAElo, playerBElo, playerAScore) => {
+    if (playerAScore < 0) {// Avoids negative score
+        playerAScore = 0// 0 is a lose
+    }
+    const probabilityOfWinPlayerA = 1 / (1 + Math.pow(10, (playerBElo - playerAElo) / 400))
+    return Math.trunc(playerAElo + factorKCaculator(playerAElo) * (playerAScore - probabilityOfWinPlayerA))
+}
+
+/**
+ * 
+ * @param {Array} oldRank Contains the old ranking
+ * @param {Array} newRank Contains the new ranking
+ *
+ * @returns {(boolean|string)} If there is a new champion, returns the name, if not, false.
+ */
+const aNewChampion = (oldRank, newRank) => {
+    if (oldRank[0][0] !== newRank[0][0]) {
+        return getPlayerAlias(newRank[0][0])
+    }
+
+    return false
+}
+
+const getLocaleStringDate = (date) => {
+    if (typeof date === 'number') {
+        date = new Date(date)
+    }
+    const { locale, timeZone } = Config.date_format
+    return date.toLocaleString(locale, {
+        weekday: 'short', day: '2-digit', month: 'short', year: 'numeric',
+        hour: 'numeric', minute: '2-digit',
+        timeZone, timeZoneName: 'short'
+    })
+}
+
+/**
+ * 
+ * @param {Number} ts 
+ * @param {Number} thread_ts 
+ * 
+ * @returns {string} Url that will link to a Slack message
+ */
+const getSeeMessageUrl = (ts, thread_ts) => {
+    let params = ''
+    if (thread_ts !== ts) {
+        params = `?thread_ts=${thread_ts}&cid=${Config.slack_channel_id}`
+    }
+    ts = ts.toString().replace('.', '')
+    return `https://intersysconsulting.slack.com/archives/${Config.slack_channel_id}/p${ts}${params}`
+}
+
 module.exports = {
     GetDateObjFromEpochTS,
     GetEpochUnixFromDate,
@@ -93,4 +175,10 @@ module.exports = {
     templateString,
     getRandomMessageById,
     removesBotTagFromString,
+    removeAlreadyChallengedPlayers,
+    removeEmptyArray,
+    eloCalculation,
+    aNewChampion,
+    getLocaleStringDate,
+    getSeeMessageUrl
 }

@@ -4,6 +4,8 @@ const Config = require('../../config.json')
 const SmashLeagueInteractions = require('../smash-league-interactions')
 const Slack = require('../slack-api')
 const Utils = require('../utils')
+const Ranking = require('../../ranking-info/ranking.json')
+
 
 const WitClient = new Wit({
     accessToken: process.env.WIT_TOKEN,
@@ -52,7 +54,7 @@ const digetsWitReponseFromSlackEvent = async (slackEvent = {}) => {
 
     if (entities.lookup_challengers) {
         validIntentDetected = true
-        const res = SmashLeagueInteractions.getLookupChallengersResponseFromWitEntities(slackEvent.user, entities)
+        const res = SmashLeagueInteractions.getLookupChallengersResponseFromWitEntities(slackEvent.user, entities, Ranking)
         messagesToPost.push(
             ...getSlackMessagesObjFromInteractions(
                 res,
@@ -92,13 +94,14 @@ const getBlocksForReportedResult = (reportedResult) => {
     const { winner, player1, player2, player1Result, player2Result} = reportedResult.value
     const highScore = player1Result > player2Result ? player1Result : player2Result
     const lowScore = player1Result > player2Result ? player2Result : player1Result
+    const messageType = lowScore == 0 ? 'reported_result valid_obliterated' : 'reported_result valid'; 
 
     return [
         {
             "type": "section",
             "text": {
                 "type": "mrkdwn",
-                "text": Utils.getRandomMessageById('reported_result valid', {
+                "text": Utils.getRandomMessageById(messageType, {
                     winner: `<@${winner}>`, loser: winner === player1 ? `<@${player2}>` : `<@${player1}>`,
                     highScore, lowScore
                 })

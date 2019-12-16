@@ -1,4 +1,5 @@
-# Smash League [![Travis Status](https://travis-ci.org/Xotl/Smash-League.svg?branch=master)](https://travis-ci.org/Xotl/Smash-League)
+# Smash League [![Code Quality Badge](https://github.com/Xotl/Smash-League/workflows/Code%20quality/badge.svg?branch=master)](https://github.com/Xotl/Smash-League/actions?query=workflow%3A"Code+quality")
+
 
 ## Looking for the current ranking?
 If your are looking for the current rank table and scoreboard [visit the `ranking-info` folder](./ranking-info/README.md) of this repo.
@@ -10,6 +11,7 @@ If your are looking for the current rank table and scoreboard [visit the `rankin
     * [How many range do i start with?](#How-many-range-do-i-start-with)
     * [How many people can i challenge?](#How-many-people-can-i-challenge)
     * [Example of how the points are calculated & earned](#Example-of-how-the-points-are-calculated-&-earned)
+    * [Inactivity](#Inactivity)
 * [How do i report a result?](#How-do-i-report-a-result)
 * [Match Rules](#match-rules)
     * [Initial stages](#initial-stages)
@@ -65,53 +67,20 @@ You can challenge as many people you want only if you still have **coins** and i
 
 To see the rules during a match see [the Match Rules](#Match-Rules) section below.
 
+### how the points are calculated & earned
+This league uses the [ELO system](https://en.wikipedia.org/wiki/Elo_rating_system) to calculate the points between players. 
 
-### Example of how the points are calculated & earned
+The score is important for the winner, so winning _3-0_ will give mora points than winning _3-2_. For the loser, it's the same points that he loses.
 
-> Player _Mai Sakurajima_ (rank 8) started the week with 2 **coins**, 2 of **range** and 10 **points** on the 
-> scoreboard. Then she won a match against _Chika Fujiwara_ (rank 7) so the **range** of _Mai_ incresaed 
-> by 1 resulting in having now a **range** of 3. This means she now can challenge places _6_ & _5_ (She can no 
-> longer challenge place 7 because she won already against that place).
-> 
-> Then she (_Mai Sakurajima_) challenges player _Nadeko_ (5) and loses, so she lost a **coin** and _Nadeko_ won 
-> a **stand point**. The match between _Mai Sakurajima_ & _Nadeko_ was a close one, so _Mai Sakurajima_ tries 
-> again betting her last coin in another match but unfortunately _Nadeko_ is too much for her to handle so she
-> rans out of coins and therefore she can no longer challenge players in that week. In this case _Nadeko_ doesn't
-> increases her **stand points** because players only can get 1 **stand point** per player, this is to avoid 
-> farming players.
->
-> During the same week player _Shinobu_ (rank 10) challenges _Mai Sakurajima_, the match was close but 
-> _Mai Sakurajima_ stands in his place strongly not letting _Shinobu_ increase her **range** and earning 1
-> **stand point** for winning.
+### Inactivity
+Inactive players will be punished after a week of inactivity. A person that didn't participate in any combat during a week is considered inactive.
 
-Well it was a fun week, so let's calculate how many points _Mai Sakurajima_ earned this week. At the end of the week she ended up like this:
-
-|                | Coins | Range | Stand Points | Points |
-|----------------|-------|-------|--------------|--------|
-| Mai Sakurajima |   0   |   3   |      1       |   10   |
-
-So we can calculate the earned points using the formula above and replacing the values, like this: 
-````
-Earned Points = 3 - 2 - 0 + 1
-
-Result: 2
-````
-
-Then we add the earned points to the points we have, in this case 10 **points**. So _Mai Sakurajima_ now will have a total of 12 points.
+The punish of an inactive player consist is losing to an _unranked player_, also if the ianctive player has ELO below an _unranked player_ is removed from the league and it will considered an _unranked player_.
 
 ## How do i report a result?
 Use the `@Smash League` bot that lives in the `mdc-smash` channel. Always tag it so he can listen to your message, **otherwise will ignore it**.
 
-Tag the bot and then post the result in the next format: {playerA} {result A}-{result B} {playerB}
-
-Examples of valid results expressions:
-* `@Smash League` `@Xotl` 3-1 `@César`
-* `@Smash League` ¡Toma Pancho! `@Ángel` 3-0 `@Pancho`
-* `@Smash League` :snowman: `@Pancho` 2-3 `@José`, ése Pancho no trae nada
-
-**NOTE: Any non valid result will be ignored by the bot**
-You can check [the regexp used](src/smash-league.js#L7) for more details.
-
+Tag the bot and then post the result, it uses a natural language engine so it should be reported in a natural way. If a person can understand it the bot should too.
 
 ## Match Rules
 
@@ -124,15 +93,33 @@ Couching during an in progress game is not allowed. Please stick to the rules.
 This is the recommended ruleset for the offcial league matches:
 
 - Stocks: 3
-- Time limit: 8 min.
-- Hazards: off.
-- Miis: Any moveset.
-- Game one striking: (p1 - p2 - p2 - p1). In case both players don’t want to strike, the default starter stage will be **Smashville**.
+- Time limit: 7 min.
+- Final Smash Meter: Off.
+- Spirits: Off.
+- Damage Handicap: Off.
+- Stage Selection: Anyone.
+- Items: Off and None.
+- First to: 1 Win.
+- Stage Morph: Off.
+- Stage Hazards: Off.
+- Team Attack: On.
+- Launch Rate: 1.0x.
+- Underdog Boost: Off.
+- Pausing: On.
+- Score Display: Off.
+- % Show Damage: Yes.
+- Custom Balance: Off.
+- Echo Fighters: Separate.
+- Radar: Big.
+- Allowed Controllers: Nintendo GameCube, Nintendo Pro Controller, Nintendo Joy-Con, SmashBox.
+- Mii Fighters: All moveset combinations are legal.
+- Game one striking: (p1 - p2 - p2 - p1). In case both players don’t want to strike, the default starter stage will be **Pokémon Stadium 2**. You may not play on a stage that is not on the available stages list. This will result in a double disqualification/penalization.
 
-If case of time out, the winner will be decided by the winner screen. In case of a tie, the winner will be the player with less damage at the end of the match. In case of a tie of damage or double KO, the players will play a one stock 3 minutes round on the same stage to decide the winner. In case of a player SD, the winner will be decided by the winner screen.
+In case of time out, the winner will be decided by the winner screen. In case of a tie, the winner will be the player with less damage at the end of the match. In case of a tie of damage or double KO, the players will play a one stock 3 minutes round on the same stage to decide the winner. In case of a player SD, the winner will be decided by the winner screen.
 
-After each game, the winner bans 2 stages. Players may not counter pick to any stage they have won on during the set.
-In case any player wants to switch characters between rounds, the winner player should change first. Once the loser player changes character the winner player cannot do it.
+After each game, the winner bans 2 stages. Players may not counter pick to any stage they have won on during the set unless both players mutually agreed to.
+
+Winning player is not locked into the same character for the next match, in case any player wants to switch characters between rounds, the winner player should change first. Once the loser player changes character the winner player cannot do it.
 
 If both players agree, they can play on any stage without bans nor restrictions, but the players should pick only legal stages. If the players can't decide the stage to pick, then they should use the striking rules.
 
@@ -142,16 +129,14 @@ A player cannot deliberately persuade another player to play on a stage that the
 
 - Smashville
 - Pokemon Stadium 2
-- Lylat Cruise
+- Town And City
 - Battlefield (or any stage on Battlefield)
 - Final Destination (or any omega)
 
 #### Counterpicks:
 
-- Unova Pokemon League
-- Town and City
+- Lylat Cruise
 - Kalos Pokemon League
-- Castle Siege
 - Yoshi’s Story
 - Yoshi’s Island (Brawl)
 
