@@ -29,7 +29,7 @@ Unranked players and players that have 0 points will start with this score:
 * El Chino - 2 week(s) inactive.
 * El Plebe - 1 week(s) inactive.
 
-## In progress this week *Mon, Dec 16, 2019, 9:26 AM CST*
+## In progress this week *Tue, Dec 17, 2019, 12:05 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -37,15 +37,15 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Paco|0|0|2206|
-|Roberto|1|1|2182|
+|Roberto|1|2|2242|
+|Paco|0|0|2170|
 |José "El Iceberg" Rosales|1|1|2085|
 |El Minion|1|1|2081|
 |Xotl|1|1|1997|
-|Angel Lee|2|2|1917|
-|Alfredo|2|2|1801|
-|D.I.O.|2|2|1203|
-|Sammy|2|2|1116|
+|Angel Lee|2|2|1959|
+|Alfredo|1|2|1790|
+|Sammy|2|3|1199|
+|D.I.O.|2|2|1103|
 |Paolo|2|2|1059|
 |El Plebe|3|3|1008|
 |El Chino|3|3|985|
@@ -54,4 +54,6 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Sammy` challenged `D.I.O.` and **won** *3-0*.
+* `Roberto` challenged `Paco` and **won** *3-0*.
+* `Alfredo` challenged `Angel Lee` and **lost** *3-1*.
