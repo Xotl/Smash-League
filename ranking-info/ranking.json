@@ -1,5 +1,5 @@
 {
-    "last_update_ts": 1576475999000,
+    "last_update_ts": 1580536800000,
     "season": {
         "start": 1562511600001,
         "end": 1573142400001
@@ -54,7 +54,7 @@
             "initial_coins": 1,
             "coins": 1,
             "range": 2,
-            "points": 1997,
+            "points": 2100,
             "completed_challenges": [
                 {
                     "winner": "U61MBQTR8",
@@ -75,7 +75,7 @@
             "initial_coins": 1,
             "coins": 0,
             "range": 2,
-            "points": 1917,
+            "points": 2000,
             "completed_challenges": [
                 {
                     "winner": "UB616ENA0",
@@ -109,7 +109,7 @@
             "initial_coins": 2,
             "coins": 2,
             "range": 3,
-            "points": 2081,
+            "points": 1300,
             "completed_challenges": [
                 {
                     "winner": "U8M6QT7EF",
@@ -130,14 +130,14 @@
             "initial_coins": 1,
             "coins": 1,
             "range": 1,
-            "points": 2085,
+            "points": 2400,
             "completed_challenges": []
         },
         "UDR61HJCD": {
             "initial_coins": 2,
             "coins": 0,
             "range": 3,
-            "points": 1116,
+            "points": 1500,
             "completed_challenges": [
                 {
                     "winner": "UB616ENA0",
@@ -184,7 +184,7 @@
             "initial_coins": 1,
             "coins": 1,
             "range": 4,
-            "points": 2206,
+            "points": 2200,
             "completed_challenges": [
                 {
                     "winner": "UKPTK422K",
@@ -231,7 +231,7 @@
             "initial_coins": 2,
             "coins": 0,
             "range": 2,
-            "points": 1059,
+            "points": 1600,
             "completed_challenges": [
                 {
                     "winner": "U6457D5KQ",
@@ -265,14 +265,14 @@
             "initial_coins": 0,
             "coins": 0,
             "range": 0,
-            "points": 2182,
+            "points": 2300,
             "completed_challenges": []
         },
         "ULBS05D3M": {
             "initial_coins": 2,
             "coins": 1,
             "range": 2,
-            "points": 1801,
+            "points": 1800,
             "completed_challenges": [
                 {
                     "winner": "U8M6QT7EF",
@@ -293,21 +293,21 @@
             "initial_coins": 3,
             "coins": 3,
             "range": 3,
-            "points": 981,
+            "points": 1950,
             "completed_challenges": []
         },
         "UHM2TH85S": {
             "initial_coins": 3,
             "coins": 3,
             "range": 3,
-            "points": 1008,
+            "points": 1650,
             "completed_challenges": []
         },
         "U6457D5KQ": {
             "initial_coins": 2,
             "coins": 2,
             "range": 3,
-            "points": 1203,
+            "points": 1750,
             "completed_challenges": [
                 {
                     "winner": "U6457D5KQ",
@@ -328,7 +328,63 @@
             "initial_coins": 3,
             "coins": 3,
             "range": 3,
-            "points": 985,
+            "points": 1700,
+            "completed_challenges": []
+        },
+        "U8THDCVJ7": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 2050,
+            "completed_challenges": []
+        },
+        "USN14R22Z": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1900,
+            "completed_challenges": []
+        },
+        "UBRMBGR6Z": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1550,
+            "completed_challenges": []
+        },
+        "URFUN9LG3": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1525,
+            "completed_challenges": []
+        },
+        "UEX17D8Q2": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1575,
+            "completed_challenges": []
+        },
+        "UBRCZ6G4B": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1300,
+            "completed_challenges": []
+        },
+        "U6H8DDV25": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1470,
+            "completed_challenges": []
+        },
+        "U6JSYEK2T": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1450,
             "completed_challenges": []
         }
     },
