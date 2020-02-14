@@ -1,11 +1,11 @@
 {
-    "last_update_ts": 1580536800000,
+    "last_update_ts": 1581314399000,
     "season": {
         "start": 1562511600001,
         "end": 1573142400001
     },
     "current_week": {
-        "start": 1581314399000,
+        "start": 1581314399001,
         "end": 1581919199000
     },
     "ranking": [
@@ -636,7 +636,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1576735318623,
+        "last_update_ts": 1581314399000,
         "reported_results": []
     },
     "inactive_players": {
