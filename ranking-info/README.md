@@ -37,7 +37,7 @@ Unranked players and players that have 0 points will start with this score:
 * El Chino - 2 week(s) inactive.
 * El Plebe - 1 week(s) inactive.
 
-## In progress this week *Fri, Feb 14, 2020, 10:09 AM CST*
+## In progress this week *Sat, Feb 15, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -45,17 +45,18 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Roberto|1|2|2251|
+|Roberto|1|3|2283|
+|José "El Iceberg" Rosales|0|1|2235|
 |Paco|0|0|2170|
-|José "El Iceberg" Rosales|0|1|2155|
 |El Minion|0|1|2121|
-|Xotl|0|1|2059|
+|Xotl|0|1|2091|
 |Angel Lee|0|2|1965|
 |Alfredo|1|2|1790|
 |Sammy|1|3|1207|
 |D.I.O.|2|2|1180|
 |Paolo|0|2|1035|
 |El Plebe|3|3|1008|
+|Neku|0|1|999|
 |El Chino|3|3|985|
 |Kyttyan|3|3|981|
 
@@ -72,4 +73,6 @@ Matches that already happened during this week.
 * `Paolo` challenged `D.I.O.` and **lost** *3-0*.
 * `Paolo` challenged `Sammy` and **lost** *3-2*.
 * `Roberto` challenged `Paco` and **won** *3-0*.
+* `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
 * `Alfredo` challenged `Angel Lee` and **lost** *3-1*.
+* `Neku` challenged `Xotl` and **lost** *3-1*.

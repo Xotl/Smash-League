@@ -419,7 +419,7 @@
                 "initial_coins": 1,
                 "coins": 0,
                 "range": 1,
-                "points": 2059,
+                "points": 2091,
                 "completed_challenges": [
                     {
                         "winner": "U8M6QT7EF",
@@ -495,7 +495,7 @@
                 "initial_coins": 1,
                 "coins": 0,
                 "range": 1,
-                "points": 2155,
+                "points": 2235,
                 "completed_challenges": [
                     {
                         "winner": "UMY200LSC",
@@ -590,8 +590,8 @@
             "UMY200LSC": {
                 "initial_coins": 1,
                 "coins": 1,
-                "range": 2,
-                "points": 2251,
+                "range": 3,
+                "points": 2283,
                 "completed_challenges": [
                     {
                         "winner": "UMY200LSC",
@@ -605,6 +605,19 @@
                         ],
                         "ts": "1576546303.015700",
                         "thread_ts": "1576546303.015700"
+                    },
+                    {
+                        "winner": "UMY200LSC",
+                        "player1": "UBA5M220K",
+                        "player2": "UMY200LSC",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UBA5M220K",
+                            "UMY200LSC"
+                        ],
+                        "ts": "1581713228.129800",
+                        "thread_ts": "1581713228.129800"
                     }
                 ]
             },
@@ -656,11 +669,32 @@
                 "range": 3,
                 "points": 985,
                 "completed_challenges": []
+            },
+            "U8THDCVJ7": {
+                "points": 999,
+                "initial_coins": 1,
+                "coins": 0,
+                "range": 1,
+                "completed_challenges": [
+                    {
+                        "winner": "U61MBQTR8",
+                        "player1": "U8THDCVJ7",
+                        "player2": "U61MBQTR8",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "U8THDCVJ7",
+                            "U61MBQTR8"
+                        ],
+                        "ts": "1581733056.134200",
+                        "thread_ts": "1581733056.134200"
+                    }
+                ]
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1581696599586,
+        "last_update_ts": 1581746967850,
         "reported_results": []
     },
     "inactive_players": {
