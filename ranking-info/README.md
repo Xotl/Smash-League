@@ -32,12 +32,9 @@ Unranked players and players that have 0 points will start with this score:
 |-----|-----|------|
 |5|5|1000|
 
-### Inactive players
-* Kyttyan - 2 week(s) inactive.
-* El Chino - 2 week(s) inactive.
-* El Plebe - 1 week(s) inactive.
 
-## In progress this week *Sun, Feb 16, 2020, 12:09 AM CST*
+
+## In progress this week *Sun, Feb 16, 2020, 4:27 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -45,34 +42,33 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Roberto|1|3|2283|
-|José "El Iceberg" Rosales|0|1|2235|
-|Paco|0|0|2170|
-|El Minion|0|1|2121|
-|Xotl|0|1|2091|
-|Angel Lee|0|2|1965|
-|Alfredo|1|2|1790|
-|Sammy|1|3|1207|
-|D.I.O.|2|2|1180|
-|Paolo|0|2|1035|
-|El Plebe|3|3|1008|
-|Neku|0|1|999|
-|El Chino|3|3|985|
-|Kyttyan|3|3|981|
+|Roberto|1|2|2339|
+|José "El Iceberg" Rosales|0|0|2291|
+|Paco|1|1|2200|
+|Neku|0|1|2144|
+|Xotl|1|1|2137|
+|Angel Lee|0|2|1976|
+|Kyttyan|2|2|1950|
+|Cristhian Ramos|2|2|1900|
+|Alfredo|2|2|1800|
+|D.I.O.|2|2|1750|
+|El Chino|3|3|1700|
+|El Plebe|3|3|1650|
+|GeorgeEvans115|3|3|1575|
+|Sammy|4|5|1552|
+|Alan|3|3|1550|
+|RLanderos|4|4|1525|
+|Paolo|3|3|1488|
+|Medininja|4|4|1470|
+|deov31|4|4|1450|
+|El Minion|4|4|1300|
+|Niightz|5|5|1300|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-* `Xotl` challenged `El Minion` and **lost** *3-2*.
-* `Angel Lee` challenged `Xotl` and **lost** *3-0*.
-* `Angel Lee` challenged `El Minion` and **lost** *3-1*.
-* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
-* `José "El Iceberg" Rosales` challenged `Roberto` and **lost** *3-2*.
-* `Sammy` challenged `D.I.O.` and **won** *3-0*.
-* `Sammy` challenged `Angel Lee` and **lost** *3-1*.
-* `Paolo` challenged `D.I.O.` and **lost** *3-0*.
-* `Paolo` challenged `Sammy` and **lost** *3-2*.
-* `Roberto` challenged `Paco` and **won** *3-0*.
+* `Angel Lee` challenged `Neku` and **lost** *3-0*.
+* `Angel Lee` challenged `Neku` and **lost** *3-1*.
+* `Sammy` challenged `Paolo` and **won** *3-1*.
 * `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
-* `Alfredo` challenged `Angel Lee` and **lost** *3-1*.
 * `Neku` challenged `Xotl` and **lost** *3-1*.
