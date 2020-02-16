@@ -1,34 +1,37 @@
 {
-    "last_update_ts": 1575871199000,
+    "last_update_ts": 1581314399000,
     "season": {
         "start": 1562511600001,
         "end": 1573142400001
     },
     "current_week": {
-        "start": 1575871199001,
-        "end": 1576475999000
+        "start": 1581314399001,
+        "end": 1581919199000
     },
     "ranking": [
-        [
-            "UMY200LSC"
-        ],
         [
             "UBA5M220K"
         ],
         [
-            "U61MBQTR8"
+            "UMY200LSC"
         ],
         [
             "UKPTK422K"
         ],
         [
+            "U61MBQTR8"
+        ],
+        [
+            "U8THDCVJ7"
+        ],
+        [
             "UB616ENA0"
         ],
         [
-            "U8M6QT7EF"
+            "UKB40CVF0"
         ],
         [
-            "UDR61HJCD"
+            "USN14R22Z"
         ],
         [
             "ULBS05D3M"
@@ -37,286 +40,185 @@
             "U6457D5KQ"
         ],
         [
-            "UHHD243DH"
-        ],
-        [
             "UEWUZCYJF"
         ],
         [
             "UHM2TH85S"
         ],
         [
-            "UKB40CVF0"
+            "UHHD243DH"
+        ],
+        [
+            "UEX17D8Q2"
+        ],
+        [
+            "UBRMBGR6Z"
+        ],
+        [
+            "URFUN9LG3"
+        ],
+        [
+            "UDR61HJCD"
+        ],
+        [
+            "U6H8DDV25"
+        ],
+        [
+            "U6JSYEK2T"
+        ],
+        [
+            "U8M6QT7EF"
+        ],
+        [
+            "UBRCZ6G4B"
         ]
     ],
     "scoreboard": {
         "U61MBQTR8": {
             "initial_coins": 1,
-            "coins": 0,
-            "range": 1,
-            "points": 2306,
-            "completed_challenges": [
-                {
-                    "winner": "UMY200LSC",
-                    "player1": "UMY200LSC",
-                    "player2": "U61MBQTR8",
-                    "player1Result": 3,
-                    "player2Result": 0,
-                    "players": [
-                        "UMY200LSC",
-                        "U61MBQTR8"
-                    ],
-                    "ts": "1575491081.089400",
-                    "thread_ts": "1575491081.089400"
-                }
-            ]
+            "coins": 1,
+            "range": 2,
+            "points": 2100,
+            "completed_challenges": []
         },
         "UB616ENA0": {
-            "initial_coins": 2,
-            "coins": 0,
-            "range": 4,
-            "points": 2155,
-            "completed_challenges": [
-                {
-                    "winner": "UB616ENA0",
-                    "player1": "U8M6QT7EF",
-                    "player2": "UB616ENA0",
-                    "player1Result": 0,
-                    "player2Result": 3,
-                    "players": [
-                        "U8M6QT7EF",
-                        "UB616ENA0"
-                    ],
-                    "ts": "1575408795.080900",
-                    "thread_ts": "1575408795.080900"
-                },
-                {
-                    "winner": "UKPTK422K",
-                    "player1": "UKPTK422K",
-                    "player2": "UB616ENA0",
-                    "player1Result": 3,
-                    "player2Result": 2,
-                    "players": [
-                        "UKPTK422K",
-                        "UB616ENA0"
-                    ],
-                    "ts": "1575408813.081300",
-                    "thread_ts": "1575408813.081300"
-                },
-                {
-                    "winner": "UB616ENA0",
-                    "player1": "UB616ENA0",
-                    "player2": "UKPTK422K",
-                    "player1Result": 3,
-                    "player2Result": 1,
-                    "players": [
-                        "UB616ENA0",
-                        "UKPTK422K"
-                    ],
-                    "ts": "1575408836.082100",
-                    "thread_ts": "1575408836.082100"
-                },
-                {
-                    "winner": "UMY200LSC",
-                    "player1": "UMY200LSC",
-                    "player2": "UB616ENA0",
-                    "player1Result": 3,
-                    "player2Result": 0,
-                    "players": [
-                        "UMY200LSC",
-                        "UB616ENA0"
-                    ],
-                    "ts": "1575493435.093500",
-                    "thread_ts": "1575493435.093500"
-                }
-            ]
-        },
-        "U8M6QT7EF": {
             "initial_coins": 1,
             "coins": 0,
-            "range": 1,
-            "points": 2022,
-            "completed_challenges": [
-                {
-                    "winner": "UKPTK422K",
-                    "player1": "UKPTK422K",
-                    "player2": "U8M6QT7EF",
-                    "player1Result": 3,
-                    "player2Result": 0,
-                    "players": [
-                        "UKPTK422K",
-                        "U8M6QT7EF"
-                    ],
-                    "ts": "1575413739.084400",
-                    "thread_ts": "1575413739.084400"
-                }
-            ]
+            "range": 2,
+            "points": 2000,
+            "completed_challenges": []
+        },
+        "U8M6QT7EF": {
+            "initial_coins": 2,
+            "coins": 2,
+            "range": 3,
+            "points": 1300,
+            "completed_challenges": []
         },
         "UBA5M220K": {
-            "initial_coins": 0,
-            "coins": 0,
-            "range": 0,
-            "points": 2384,
+            "initial_coins": 1,
+            "coins": 1,
+            "range": 1,
+            "points": 2400,
             "completed_challenges": []
         },
         "UDR61HJCD": {
             "initial_coins": 2,
-            "coins": 2,
-            "range": 2,
-            "points": 1939,
+            "coins": 0,
+            "range": 3,
+            "points": 1500,
             "completed_challenges": []
         },
         "UKPTK422K": {
             "initial_coins": 1,
-            "coins": 0,
-            "range": 1,
-            "points": 2161,
-            "completed_challenges": [
-                {
-                    "winner": "U61MBQTR8",
-                    "player1": "UKPTK422K",
-                    "player2": "U61MBQTR8",
-                    "player1Result": 0,
-                    "player2Result": 3,
-                    "players": [
-                        "UKPTK422K",
-                        "U61MBQTR8"
-                    ],
-                    "ts": "1575675424.116000",
-                    "thread_ts": "1575675424.116000"
-                }
-            ]
+            "coins": 1,
+            "range": 4,
+            "points": 2200,
+            "completed_challenges": []
         },
         "UHHD243DH": {
             "initial_coins": 2,
-            "coins": 1,
+            "coins": 0,
             "range": 2,
-            "points": 1084,
-            "completed_challenges": [
-                {
-                    "winner": "UDR61HJCD",
-                    "player1": "UDR61HJCD",
-                    "player2": "UHHD243DH",
-                    "player1Result": 3,
-                    "player2Result": 1,
-                    "players": [
-                        "UDR61HJCD",
-                        "UHHD243DH"
-                    ],
-                    "ts": "1575682464.116700",
-                    "thread_ts": "1575682464.116700"
-                }
-            ]
+            "points": 1600,
+            "completed_challenges": []
         },
         "UMY200LSC": {
-            "initial_coins": 1,
-            "coins": 1,
-            "range": 2,
-            "points": 2456,
-            "completed_challenges": [
-                {
-                    "winner": "UMY200LSC",
-                    "player1": "UMY200LSC",
-                    "player2": "UBA5M220K",
-                    "player1Result": 3,
-                    "player2Result": 0,
-                    "players": [
-                        "UMY200LSC",
-                        "UBA5M220K"
-                    ],
-                    "ts": "1575671531.113800",
-                    "thread_ts": "1575671531.113800"
-                }
-            ]
+            "initial_coins": 0,
+            "coins": 0,
+            "range": 0,
+            "points": 2300,
+            "completed_challenges": []
         },
         "ULBS05D3M": {
             "initial_coins": 2,
             "coins": 1,
             "range": 2,
-            "points": 1808,
-            "completed_challenges": [
-                {
-                    "winner": "UB616ENA0",
-                    "player1": "UB616ENA0",
-                    "player2": "ULBS05D3M",
-                    "player1Result": 3,
-                    "player2Result": 1,
-                    "players": [
-                        "UB616ENA0",
-                        "ULBS05D3M"
-                    ],
-                    "ts": "1575406475.080100",
-                    "thread_ts": "1575406475.080100"
-                }
-            ]
+            "points": 1800,
+            "completed_challenges": []
         },
         "UKB40CVF0": {
             "initial_coins": 3,
             "coins": 3,
             "range": 3,
-            "points": 954,
+            "points": 1950,
             "completed_challenges": []
         },
         "UHM2TH85S": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1650,
+            "completed_challenges": []
+        },
+        "U6457D5KQ": {
             "initial_coins": 2,
             "coins": 2,
             "range": 3,
-            "points": 1008,
-            "completed_challenges": [
-                {
-                    "winner": "UHM2TH85S",
-                    "player1": "UHHD243DH",
-                    "player2": "UHM2TH85S",
-                    "player1Result": 1,
-                    "player2Result": 3,
-                    "players": [
-                        "UHHD243DH",
-                        "UHM2TH85S"
-                    ],
-                    "ts": "1575413851.085500",
-                    "thread_ts": "1575413851.085500"
-                }
-            ]
-        },
-        "U6457D5KQ": {
-            "initial_coins": 3,
-            "coins": 3,
-            "range": 5,
-            "points": 1117,
-            "completed_challenges": [
-                {
-                    "winner": "U6457D5KQ",
-                    "player1": "UHM2TH85S",
-                    "player2": "U6457D5KQ",
-                    "player1Result": 0,
-                    "player2Result": 3,
-                    "players": [
-                        "UHM2TH85S",
-                        "U6457D5KQ"
-                    ],
-                    "ts": "1575416209.086100",
-                    "thread_ts": "1575416209.086100"
-                },
-                {
-                    "winner": "U6457D5KQ",
-                    "player1": "UHHD243DH",
-                    "player2": "U6457D5KQ",
-                    "player1Result": 2,
-                    "player2Result": 3,
-                    "players": [
-                        "UHHD243DH",
-                        "U6457D5KQ"
-                    ],
-                    "ts": "1575492794.092800",
-                    "thread_ts": "1575492794.092800"
-                }
-            ]
+            "points": 1750,
+            "completed_challenges": []
         },
         "UEWUZCYJF": {
             "initial_coins": 3,
             "coins": 3,
             "range": 3,
-            "points": 1031,
+            "points": 1700,
+            "completed_challenges": []
+        },
+        "U8THDCVJ7": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 2050,
+            "completed_challenges": []
+        },
+        "USN14R22Z": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1900,
+            "completed_challenges": []
+        },
+        "UBRMBGR6Z": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1550,
+            "completed_challenges": []
+        },
+        "URFUN9LG3": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1525,
+            "completed_challenges": []
+        },
+        "UEX17D8Q2": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1575,
+            "completed_challenges": []
+        },
+        "UBRCZ6G4B": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1300,
+            "completed_challenges": []
+        },
+        "U6H8DDV25": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1470,
+            "completed_challenges": []
+        },
+        "U6JSYEK2T": {
+            "initial_coins": 3,
+            "coins": 3,
+            "range": 3,
+            "points": 1450,
             "completed_challenges": []
         }
     },
@@ -326,338 +228,224 @@
             "U61MBQTR8": {
                 "initial_coins": 1,
                 "coins": 1,
-                "range": 2,
-                "points": 1997,
-                "completed_challenges": [
-                    {
-                        "winner": "U61MBQTR8",
-                        "player1": "U61MBQTR8",
-                        "player2": "UBA5M220K",
-                        "player1Result": 3,
-                        "player2Result": 0,
-                        "players": [
-                            "U61MBQTR8",
-                            "UBA5M220K"
-                        ],
-                        "ts": "1576091655.138200",
-                        "thread_ts": "1576091655.138200"
-                    }
-                ]
-            },
-            "UB616ENA0": {
-                "initial_coins": 1,
-                "coins": 0,
-                "range": 2,
-                "points": 1917,
-                "completed_challenges": [
-                    {
-                        "winner": "UB616ENA0",
-                        "player1": "UB616ENA0",
-                        "player2": "UKPTK422K",
-                        "player1Result": 3,
-                        "player2Result": 2,
-                        "players": [
-                            "UB616ENA0",
-                            "UKPTK422K"
-                        ],
-                        "ts": "1576093099.143100",
-                        "thread_ts": "1576093099.143100"
-                    },
-                    {
-                        "winner": "U61MBQTR8",
-                        "player1": "UB616ENA0",
-                        "player2": "U61MBQTR8",
-                        "player1Result": 2,
-                        "player2Result": 3,
-                        "players": [
-                            "UB616ENA0",
-                            "U61MBQTR8"
-                        ],
-                        "ts": "1576194950.155600",
-                        "thread_ts": "1576194950.155600"
-                    }
-                ]
-            },
-            "U8M6QT7EF": {
-                "initial_coins": 2,
-                "coins": 2,
-                "range": 3,
-                "points": 2081,
-                "completed_challenges": [
-                    {
-                        "winner": "U8M6QT7EF",
-                        "player1": "UB616ENA0",
-                        "player2": "U8M6QT7EF",
-                        "player1Result": 2,
-                        "player2Result": 3,
-                        "players": [
-                            "UB616ENA0",
-                            "U8M6QT7EF"
-                        ],
-                        "ts": "1576091752.139500",
-                        "thread_ts": "1576091752.139500"
-                    }
-                ]
-            },
-            "UBA5M220K": {
-                "initial_coins": 1,
-                "coins": 1,
                 "range": 1,
-                "points": 2085,
+                "points": 2137,
                 "completed_challenges": []
             },
-            "UDR61HJCD": {
+            "UB616ENA0": {
                 "initial_coins": 2,
                 "coins": 0,
-                "range": 3,
-                "points": 1116,
+                "range": 2,
+                "points": 1976,
                 "completed_challenges": [
                     {
-                        "winner": "UB616ENA0",
+                        "winner": "U8THDCVJ7",
                         "player1": "UB616ENA0",
-                        "player2": "UDR61HJCD",
-                        "player1Result": 3,
-                        "player2Result": 1,
-                        "players": [
-                            "UB616ENA0",
-                            "UDR61HJCD"
-                        ],
-                        "ts": "1576252724.005500",
-                        "thread_ts": "1576247043.001100"
-                    },
-                    {
-                        "winner": "UDR61HJCD",
-                        "player1": "UB616ENA0",
-                        "player2": "UDR61HJCD",
+                        "player2": "U8THDCVJ7",
                         "player1Result": 0,
                         "player2Result": 3,
                         "players": [
                             "UB616ENA0",
-                            "UDR61HJCD"
+                            "U8THDCVJ7"
                         ],
-                        "ts": "1576252750.005900",
-                        "thread_ts": "1576247043.001100"
+                        "ts": "1581713106.128500",
+                        "thread_ts": "1581713106.128500"
                     },
                     {
-                        "winner": "UKPTK422K",
-                        "player1": "UDR61HJCD",
-                        "player2": "UKPTK422K",
-                        "player1Result": 2,
+                        "winner": "U8THDCVJ7",
+                        "player1": "UB616ENA0",
+                        "player2": "U8THDCVJ7",
+                        "player1Result": 1,
                         "player2Result": 3,
                         "players": [
-                            "UDR61HJCD",
-                            "UKPTK422K"
+                            "UB616ENA0",
+                            "U8THDCVJ7"
                         ],
-                        "ts": "1576254252.008800",
-                        "thread_ts": "1576247043.001100"
+                        "ts": "1581713119.128800",
+                        "thread_ts": "1581713119.128800"
+                    }
+                ]
+            },
+            "U8M6QT7EF": {
+                "initial_coins": 4,
+                "coins": 4,
+                "range": 4,
+                "points": 1300,
+                "completed_challenges": []
+            },
+            "UBA5M220K": {
+                "initial_coins": 0,
+                "coins": 0,
+                "range": 0,
+                "points": 2291,
+                "completed_challenges": []
+            },
+            "UDR61HJCD": {
+                "initial_coins": 4,
+                "coins": 4,
+                "range": 5,
+                "points": 1552,
+                "completed_challenges": [
+                    {
+                        "winner": "UDR61HJCD",
+                        "player1": "UHHD243DH",
+                        "player2": "UDR61HJCD",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UHHD243DH",
+                            "UDR61HJCD"
+                        ],
+                        "ts": "1581786720.136100",
+                        "thread_ts": "1581786720.136100"
                     }
                 ]
             },
             "UKPTK422K": {
                 "initial_coins": 1,
                 "coins": 1,
-                "range": 4,
-                "points": 2206,
-                "completed_challenges": [
-                    {
-                        "winner": "UKPTK422K",
-                        "player1": "UKPTK422K",
-                        "player2": "U61MBQTR8",
-                        "player1Result": 3,
-                        "player2Result": 0,
-                        "players": [
-                            "UKPTK422K",
-                            "U61MBQTR8"
-                        ],
-                        "ts": "1576195038.156700",
-                        "thread_ts": "1576195038.156700"
-                    },
-                    {
-                        "winner": "UKPTK422K",
-                        "player1": "UKPTK422K",
-                        "player2": "UBA5M220K",
-                        "player1Result": 3,
-                        "player2Result": 0,
-                        "players": [
-                            "UKPTK422K",
-                            "UBA5M220K"
-                        ],
-                        "ts": "1576196487.158000",
-                        "thread_ts": "1576196487.158000"
-                    },
-                    {
-                        "winner": "UKPTK422K",
-                        "player1": "UMY200LSC",
-                        "player2": "UKPTK422K",
-                        "player1Result": 2,
-                        "player2Result": 3,
-                        "players": [
-                            "UMY200LSC",
-                            "UKPTK422K"
-                        ],
-                        "ts": "1576254376.010500",
-                        "thread_ts": "1576254376.010500"
-                    }
-                ]
-            },
-            "UHHD243DH": {
-                "initial_coins": 2,
-                "coins": 0,
-                "range": 2,
-                "points": 1059,
-                "completed_challenges": [
-                    {
-                        "winner": "U6457D5KQ",
-                        "player1": "UHHD243DH",
-                        "player2": "U6457D5KQ",
-                        "player1Result": 1,
-                        "player2Result": 3,
-                        "players": [
-                            "UHHD243DH",
-                            "U6457D5KQ"
-                        ],
-                        "ts": "1576273549.015800",
-                        "thread_ts": "1576273549.015800"
-                    },
-                    {
-                        "winner": "U6457D5KQ",
-                        "player1": "UHHD243DH",
-                        "player2": "U6457D5KQ",
-                        "player1Result": 2,
-                        "player2Result": 3,
-                        "players": [
-                            "UHHD243DH",
-                            "U6457D5KQ"
-                        ],
-                        "ts": "1576273562.015900",
-                        "thread_ts": "1576273549.015800"
-                    }
-                ]
-            },
-            "UMY200LSC": {
-                "initial_coins": 0,
-                "coins": 0,
-                "range": 0,
-                "points": 2182,
+                "range": 1,
+                "points": 2200,
                 "completed_challenges": []
             },
-            "ULBS05D3M": {
-                "initial_coins": 2,
-                "coins": 1,
-                "range": 2,
-                "points": 1801,
-                "completed_challenges": [
-                    {
-                        "winner": "U8M6QT7EF",
-                        "player1": "ULBS05D3M",
-                        "player2": "U8M6QT7EF",
-                        "player1Result": 1,
-                        "player2Result": 3,
-                        "players": [
-                            "ULBS05D3M",
-                            "U8M6QT7EF"
-                        ],
-                        "ts": "1576094277.146600",
-                        "thread_ts": "1576094277.146600"
-                    }
-                ]
-            },
-            "UKB40CVF0": {
+            "UHHD243DH": {
                 "initial_coins": 3,
                 "coins": 3,
                 "range": 3,
-                "points": 954,
+                "points": 1488,
+                "completed_challenges": []
+            },
+            "UMY200LSC": {
+                "initial_coins": 1,
+                "coins": 1,
+                "range": 2,
+                "points": 2339,
+                "completed_challenges": [
+                    {
+                        "winner": "UMY200LSC",
+                        "player1": "UBA5M220K",
+                        "player2": "UMY200LSC",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UBA5M220K",
+                            "UMY200LSC"
+                        ],
+                        "ts": "1581713228.129800",
+                        "thread_ts": "1581713228.129800"
+                    }
+                ]
+            },
+            "ULBS05D3M": {
+                "initial_coins": 2,
+                "coins": 2,
+                "range": 2,
+                "points": 1800,
+                "completed_challenges": []
+            },
+            "UKB40CVF0": {
+                "initial_coins": 2,
+                "coins": 2,
+                "range": 2,
+                "points": 1950,
                 "completed_challenges": []
             },
             "UHM2TH85S": {
                 "initial_coins": 3,
                 "coins": 3,
                 "range": 3,
-                "points": 1008,
+                "points": 1650,
                 "completed_challenges": []
             },
             "U6457D5KQ": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 3,
-                "points": 1203,
-                "completed_challenges": [
-                    {
-                        "winner": "U6457D5KQ",
-                        "player1": "UDR61HJCD",
-                        "player2": "U6457D5KQ",
-                        "player1Result": 2,
-                        "player2Result": 3,
-                        "players": [
-                            "UDR61HJCD",
-                            "U6457D5KQ"
-                        ],
-                        "ts": "1576254524.011700",
-                        "thread_ts": "1576254524.011700"
-                    }
-                ]
+                "range": 2,
+                "points": 1750,
+                "completed_challenges": []
             },
             "UEWUZCYJF": {
                 "initial_coins": 3,
                 "coins": 3,
                 "range": 3,
-                "points": 1031,
+                "points": 1700,
+                "completed_challenges": []
+            },
+            "U8THDCVJ7": {
+                "initial_coins": 1,
+                "coins": 0,
+                "range": 1,
+                "points": 2144,
+                "completed_challenges": [
+                    {
+                        "winner": "U61MBQTR8",
+                        "player1": "U8THDCVJ7",
+                        "player2": "U61MBQTR8",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "U8THDCVJ7",
+                            "U61MBQTR8"
+                        ],
+                        "ts": "1581733056.134200",
+                        "thread_ts": "1581733056.134200"
+                    }
+                ]
+            },
+            "USN14R22Z": {
+                "initial_coins": 2,
+                "coins": 2,
+                "range": 2,
+                "points": 1900,
+                "completed_challenges": []
+            },
+            "UBRMBGR6Z": {
+                "initial_coins": 3,
+                "coins": 3,
+                "range": 3,
+                "points": 1550,
+                "completed_challenges": []
+            },
+            "URFUN9LG3": {
+                "initial_coins": 4,
+                "coins": 4,
+                "range": 4,
+                "points": 1525,
+                "completed_challenges": []
+            },
+            "UEX17D8Q2": {
+                "initial_coins": 3,
+                "coins": 3,
+                "range": 3,
+                "points": 1575,
+                "completed_challenges": []
+            },
+            "UBRCZ6G4B": {
+                "initial_coins": 5,
+                "coins": 5,
+                "range": 5,
+                "points": 1300,
+                "completed_challenges": []
+            },
+            "U6H8DDV25": {
+                "initial_coins": 4,
+                "coins": 4,
+                "range": 4,
+                "points": 1470,
+                "completed_challenges": []
+            },
+            "U6JSYEK2T": {
+                "initial_coins": 4,
+                "coins": 4,
+                "range": 4,
+                "points": 1450,
                 "completed_challenges": []
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1576390069897,
+        "last_update_ts": 1581892068149,
         "reported_results": []
     },
-    "inactive_players": {
-        "U8A96RCEA": {
-            "weeks_count": 4,
-            "inactive_since": 1572810761549,
-            "deleted_by_inactivity": true
-        },
-        "UBRMBGR6Z": {
-            "weeks_count": 2,
-            "inactive_since": 1572830067930,
-            "deleted_by_inactivity": true
-        },
-        "UDBD59WLT": {
-            "weeks_count": 1,
-            "inactive_since": 1572830067930,
-            "deleted_by_inactivity": true
-        },
-        "UAGR4S57G": {
-            "weeks_count": 2,
-            "inactive_since": 1572830067930,
-            "deleted_by_inactivity": true
-        },
-        "UBRCZ6G4B": {
-            "weeks_count": 2,
-            "inactive_since": 1572830067930,
-            "deleted_by_inactivity": true
-        },
-        "UBD38N45P": {
-            "weeks_count": 1,
-            "inactive_since": 1572830067930,
-            "deleted_by_inactivity": true
-        },
-        "U6H8DDV25": {
-            "weeks_count": 1,
-            "inactive_since": 1572837673008,
-            "deleted_by_inactivity": true
-        },
-        "U8THDCVJ7": {
-            "weeks_count": 2,
-            "inactive_since": 1574056799000,
-            "deleted_by_inactivity": true
-        },
-        "UKB40CVF0": {
-            "weeks_count": 1,
-            "inactive_since": 1575871199000
-        },
-        "UEWUZCYJF": {
-            "weeks_count": 1,
-            "inactive_since": 1575871199000
-        }
-    }
+    "inactive_players": {}
 }

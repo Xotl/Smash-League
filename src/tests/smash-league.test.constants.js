@@ -237,7 +237,8 @@ module.exports = {
                 }
             },
             "last_update_ts": 1556470800000
-        }
+        },
+        "inactive_players": {}
     },
 
     RANKING_OBJECT2: {
