@@ -34,7 +34,7 @@ Unranked players and players that have 0 points will start with this score:
 
 
 
-## In progress this week *Sun, Feb 16, 2020, 4:27 PM CST*
+## In progress this week *Sun, Feb 16, 2020, 5:04 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
