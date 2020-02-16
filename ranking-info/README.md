@@ -37,7 +37,7 @@ Unranked players and players that have 0 points will start with this score:
 * El Chino - 2 week(s) inactive.
 * El Plebe - 1 week(s) inactive.
 
-## In progress this week *Sat, Feb 15, 2020, 12:09 AM CST*
+## In progress this week *Sun, Feb 16, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
