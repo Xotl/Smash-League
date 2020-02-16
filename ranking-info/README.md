@@ -33,11 +33,29 @@ Unranked players and players that have 0 points will start with this score:
 |5|5|1000|
 
 ### Inactive players
-* Kyttyan - 2 week(s) inactive.
-* El Chino - 2 week(s) inactive.
+* Xotl - 1 week(s) inactive.
+* Angel Lee - 1 week(s) inactive.
+* El Minion - 1 week(s) inactive.
+* José "El Iceberg" Rosales - 1 week(s) inactive.
+* Sammy - 1 week(s) inactive.
+* Paco - 1 week(s) inactive.
+* Paolo - 1 week(s) inactive.
+* Roberto - 1 week(s) inactive.
+* Alfredo - 1 week(s) inactive.
+* Kyttyan - 1 week(s) inactive.
 * El Plebe - 1 week(s) inactive.
+* D.I.O. - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+* Neku - 1 week(s) inactive.
+* Cristhian Ramos - 1 week(s) inactive.
+* Alan - 1 week(s) inactive.
+* RLanderos - 1 week(s) inactive.
+* GeorgeEvans115 - 1 week(s) inactive.
+* Niightz - 1 week(s) inactive.
+* Medininja - 1 week(s) inactive.
+* deov31 - 1 week(s) inactive.
 
-## In progress this week *Sun, Feb 16, 2020, 12:09 AM CST*
+## In progress this week *Sun, Feb 09, 2020, 11:59 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -45,34 +63,29 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Roberto|1|3|2283|
-|José "El Iceberg" Rosales|0|1|2235|
-|Paco|0|0|2170|
-|El Minion|0|1|2121|
-|Xotl|0|1|2091|
-|Angel Lee|0|2|1965|
-|Alfredo|1|2|1790|
-|Sammy|1|3|1207|
-|D.I.O.|2|2|1180|
-|Paolo|0|2|1035|
-|El Plebe|3|3|1008|
-|Neku|0|1|999|
-|El Chino|3|3|985|
-|Kyttyan|3|3|981|
+|José "El Iceberg" Rosales|0|0|2400|
+|Roberto|1|1|2300|
+|Paco|1|1|2200|
+|Xotl|1|1|2100|
+|Neku|1|1|2050|
+|Angel Lee|2|2|2000|
+|Kyttyan|2|2|1950|
+|Cristhian Ramos|2|2|1900|
+|Alfredo|2|2|1800|
+|D.I.O.|2|2|1750|
+|El Chino|3|3|1700|
+|El Plebe|3|3|1650|
+|Paolo|3|3|1600|
+|GeorgeEvans115|3|3|1575|
+|Alan|3|3|1550|
+|RLanderos|4|4|1525|
+|Sammy|4|4|1500|
+|Medininja|4|4|1470|
+|deov31|4|4|1450|
+|El Minion|4|4|1300|
+|Niightz|5|5|1300|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-* `Xotl` challenged `El Minion` and **lost** *3-2*.
-* `Angel Lee` challenged `Xotl` and **lost** *3-0*.
-* `Angel Lee` challenged `El Minion` and **lost** *3-1*.
-* `El Minion` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
-* `José "El Iceberg" Rosales` challenged `Roberto` and **lost** *3-2*.
-* `Sammy` challenged `D.I.O.` and **won** *3-0*.
-* `Sammy` challenged `Angel Lee` and **lost** *3-1*.
-* `Paolo` challenged `D.I.O.` and **lost** *3-0*.
-* `Paolo` challenged `Sammy` and **lost** *3-2*.
-* `Roberto` challenged `Paco` and **won** *3-0*.
-* `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
-* `Alfredo` challenged `Angel Lee` and **lost** *3-1*.
-* `Neku` challenged `Xotl` and **lost** *3-1*.
+
