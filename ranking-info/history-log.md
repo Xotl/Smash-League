@@ -1,3 +1,51 @@
+## Commit from Sun, Feb 16, 2020, 11:59 PM CST
+The week started at *Sun, Feb 09, 2020, 11:59 PM CST* and ended *Sun, Feb 16, 2020, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Roberto - 2339pts|1|2|
+|José "El Iceberg" Rosales - 2291pts|0|0|
+|Paco - 2200pts|1|1|
+|Neku - 2144pts|0|1|
+|Xotl - 2137pts|1|1|
+|Angel Lee - 1976pts|0|2|
+|Kyttyan - 1950pts|2|2|
+|Cristhian Ramos - 1900pts|2|2|
+|Alfredo - 1800pts|2|2|
+|D.I.O. - 1750pts|2|2|
+|El Chino - 1700pts|3|3|
+|El Plebe - 1650pts|3|3|
+|GeorgeEvans115 - 1575pts|3|3|
+|Sammy - 1552pts|4|5|
+|Alan - 1550pts|3|3|
+|RLanderos - 1525pts|4|4|
+|Paolo - 1488pts|3|3|
+|Medininja - 1470pts|4|4|
+|deov31 - 1450pts|4|4|
+|El Minion - 1300pts|4|4|
+|Niightz - 1300pts|5|5|
+### Completed challenges
+* `Angel Lee` challenged `Neku` and **lost** *3-0*.
+* `Angel Lee` challenged `Neku` and **lost** *3-1*.
+* `Sammy` challenged `Paolo` and **won** *3-1*.
+* `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
+* `Neku` challenged `Xotl` and **lost** *3-1*.
+### Inactive players
+* El Minion - 1 week(s) inactive.
+* Paco - 1 week(s) inactive.
+* Alfredo - 1 week(s) inactive.
+* Kyttyan - 1 week(s) inactive.
+* El Plebe - 1 week(s) inactive.
+* D.I.O. - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+* Cristhian Ramos - 1 week(s) inactive.
+* Alan - 1 week(s) inactive.
+* RLanderos - 1 week(s) inactive.
+* GeorgeEvans115 - 1 week(s) inactive.
+* Niightz - 1 week(s) inactive.
+* Medininja - 1 week(s) inactive.
+* deov31 - 1 week(s) inactive.
+
 ## Commit from Sun, Feb 09, 2020, 11:59 PM CST
 The week started at *Sun, Feb 02, 2020, 11:59 PM CST* and ended *Sun, Feb 09, 2020, 11:59 PM CST*.
 ### End of week players score summary
