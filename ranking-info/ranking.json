@@ -351,15 +351,29 @@
             "ULBS05D3M": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 2,
-                "points": 1800,
-                "completed_challenges": []
+                "range": 3,
+                "points": 1886,
+                "completed_challenges": [
+                    {
+                        "winner": "ULBS05D3M",
+                        "player1": "UKB40CVF0",
+                        "player2": "ULBS05D3M",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "UKB40CVF0",
+                            "ULBS05D3M"
+                        ],
+                        "ts": "1581979382.150200",
+                        "thread_ts": "1581979382.150200"
+                    }
+                ]
             },
             "UKB40CVF0": {
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1950,
+                "points": 1790,
                 "completed_challenges": []
             },
             "UHM2TH85S": {
@@ -442,7 +456,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1581919199000,
+        "last_update_ts": 1582006084436,
         "reported_results": []
     },
     "inactive_players": {

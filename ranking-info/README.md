@@ -47,7 +47,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 1 week(s) inactive.
 * deov31 - 1 week(s) inactive.
 
-## In progress this week *Sun, Feb 16, 2020, 11:59 PM CST*
+## In progress this week *Tue, Feb 18, 2020, 12:08 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -61,9 +61,9 @@ The current points earned by winning matches this week.
 |Neku|1|1|2144|
 |Xotl|1|1|2137|
 |Angel Lee|2|2|1976|
-|Kyttyan|2|2|1950|
 |Cristhian Ramos|2|2|1900|
-|Alfredo|2|2|1800|
+|Alfredo|2|3|1886|
+|Kyttyan|2|2|1790|
 |D.I.O.|2|2|1750|
 |El Chino|3|3|1700|
 |El Plebe|3|3|1650|
@@ -80,4 +80,4 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Alfredo` challenged `Kyttyan` and **won** *3-0*.
