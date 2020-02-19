@@ -47,7 +47,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 1 week(s) inactive.
 * deov31 - 1 week(s) inactive.
 
-## In progress this week *Tue, Feb 18, 2020, 12:08 AM CST*
+## In progress this week *Wed, Feb 19, 2020, 12:08 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -61,23 +61,28 @@ The current points earned by winning matches this week.
 |Neku|1|1|2144|
 |Xotl|1|1|2137|
 |Angel Lee|2|2|1976|
-|Cristhian Ramos|2|2|1900|
-|Alfredo|2|3|1886|
+|Alfredo|2|4|1966|
+|Cristhian Ramos|2|2|1870|
 |Kyttyan|2|2|1790|
 |D.I.O.|2|2|1750|
 |El Chino|3|3|1700|
 |El Plebe|3|3|1650|
+|RLanderos|4|4|1623|
 |GeorgeEvans115|3|3|1575|
 |Sammy|3|3|1552|
 |Alan|3|3|1550|
-|RLanderos|4|4|1525|
 |Paolo|4|4|1488|
 |Medininja|4|4|1470|
 |deov31|4|4|1450|
 |El Minion|4|4|1300|
 |Niightz|4|4|1300|
+|ULFUJB0SD|4|5|998|
+|UMBULR0BY|4|5|998|
 
 ### Completed challenges
 Matches that already happened during this week.
 
 * `Alfredo` challenged `Kyttyan` and **won** *3-0*.
+* `Alfredo` challenged `Cristhian Ramos` and **won** *3-0*.
+* `ULFUJB0SD` challenged `RLanderos` and **lost** *3-0*.
+* `UMBULR0BY` challenged `RLanderos` and **lost** *3-1*.

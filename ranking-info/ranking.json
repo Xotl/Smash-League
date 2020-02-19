@@ -351,8 +351,8 @@
             "ULBS05D3M": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 3,
-                "points": 1886,
+                "range": 4,
+                "points": 1966,
                 "completed_challenges": [
                     {
                         "winner": "ULBS05D3M",
@@ -366,6 +366,19 @@
                         ],
                         "ts": "1581979382.150200",
                         "thread_ts": "1581979382.150200"
+                    },
+                    {
+                        "winner": "ULBS05D3M",
+                        "player1": "USN14R22Z",
+                        "player2": "ULBS05D3M",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "USN14R22Z",
+                            "ULBS05D3M"
+                        ],
+                        "ts": "1582055177.177600",
+                        "thread_ts": "1582055177.177600"
                     }
                 ]
             },
@@ -408,7 +421,7 @@
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1900,
+                "points": 1870,
                 "completed_challenges": []
             },
             "UBRMBGR6Z": {
@@ -422,7 +435,7 @@
                 "initial_coins": 4,
                 "coins": 4,
                 "range": 4,
-                "points": 1525,
+                "points": 1623,
                 "completed_challenges": []
             },
             "UEX17D8Q2": {
@@ -452,11 +465,53 @@
                 "range": 4,
                 "points": 1450,
                 "completed_challenges": []
+            },
+            "ULFUJB0SD": {
+                "points": 998,
+                "initial_coins": 5,
+                "coins": 4,
+                "range": 5,
+                "completed_challenges": [
+                    {
+                        "winner": "URFUN9LG3",
+                        "player1": "ULFUJB0SD",
+                        "player2": "URFUN9LG3",
+                        "player1Result": 0,
+                        "player2Result": 3,
+                        "players": [
+                            "ULFUJB0SD",
+                            "URFUN9LG3"
+                        ],
+                        "ts": "1582054132.176700",
+                        "thread_ts": "1582054132.176700"
+                    }
+                ]
+            },
+            "UMBULR0BY": {
+                "points": 998,
+                "initial_coins": 5,
+                "coins": 4,
+                "range": 5,
+                "completed_challenges": [
+                    {
+                        "winner": "URFUN9LG3",
+                        "player1": "UMBULR0BY",
+                        "player2": "URFUN9LG3",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UMBULR0BY",
+                            "URFUN9LG3"
+                        ],
+                        "ts": "1582066199.182800",
+                        "thread_ts": "1582066199.182800"
+                    }
+                ]
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1582006084436,
+        "last_update_ts": 1582092505532,
         "reported_results": []
     },
     "inactive_players": {
