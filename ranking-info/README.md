@@ -33,7 +33,7 @@ Unranked players and players that have 0 points will start with this score:
 
 
 
-## In progress this week *Wed, Feb 19, 2020, 8:48 PM CST*
+## In progress this week *Thu, Feb 20, 2020, 12:08 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -53,7 +53,7 @@ The current points earned by winning matches this week.
 |D.I.O.|2|2|1750|
 |El Chino|3|3|1700|
 |El Plebe|3|3|1696|
-|Paolo|4|5|1604|
+|Paolo|4|5|1668|
 |GeorgeEvans115|3|3|1575|
 |Sammy|3|3|1552|
 |Alan|3|3|1550|
@@ -62,7 +62,7 @@ The current points earned by winning matches this week.
 |deov31|4|4|1450|
 |El Minion|4|4|1300|
 |Niightz|4|4|1300|
-|Banda|4|5|998|
+|Banda|3|5|997|
 |Tecuanotl|3|5|996|
 
 ### Completed challenges
@@ -76,3 +76,4 @@ Matches that already happened during this week.
 * `Tecuanotl` challenged `Landeros` and **lost** *3-0*.
 * `Tecuanotl` challenged `Paolo` and **lost** *3-1*.
 * `Banda` challenged `Landeros` and **lost** *3-1*.
+* `Banda` challenged `Paolo` and **lost** *3-0*.

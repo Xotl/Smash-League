@@ -338,7 +338,7 @@
                 "initial_coins": 4,
                 "coins": 4,
                 "range": 5,
-                "points": 1604,
+                "points": 1668,
                 "completed_challenges": [
                     {
                         "winner": "UHHD243DH",
@@ -542,9 +542,9 @@
                 ]
             },
             "UMBULR0BY": {
-                "points": 998,
+                "points": 997,
                 "initial_coins": 5,
-                "coins": 4,
+                "coins": 3,
                 "range": 5,
                 "completed_challenges": [
                     {
@@ -559,13 +559,26 @@
                         ],
                         "ts": "1582066199.182800",
                         "thread_ts": "1582066199.182800"
+                    },
+                    {
+                        "winner": "UHHD243DH",
+                        "player1": "UHHD243DH",
+                        "player2": "UMBULR0BY",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "UHHD243DH",
+                            "UMBULR0BY"
+                        ],
+                        "ts": "1582172725.222900",
+                        "thread_ts": "1582172725.222900"
                     }
                 ]
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1582166920677,
+        "last_update_ts": 1582178912007,
         "reported_results": []
     },
     "inactive_players": {}
