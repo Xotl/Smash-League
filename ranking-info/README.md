@@ -33,7 +33,7 @@ Unranked players and players that have 0 points will start with this score:
 
 
 
-## In progress this week *Thu, Feb 20, 2020, 12:08 AM CST*
+## In progress this week *Fri, Feb 21, 2020, 12:08 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -42,14 +42,14 @@ The current points earned by winning matches this week.
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
 |Roberto|0|0|2339|
+|Xotl|1|3|2307|
 |José "El Iceberg" Rosales|1|1|2291|
-|Paco|1|1|2200|
-|Xotl|1|1|2191|
-|Neku|1|1|2144|
+|Paco|1|1|2269|
+|Neku|0|1|2166|
 |Angel Lee|2|2|1976|
 |Alfredo|1|4|1957|
-|Cristhian Ramos|2|2|1870|
-|Kyttyan|2|2|1790|
+|Cristhian Ramos|2|3|1946|
+|Kyttyan|2|2|1850|
 |D.I.O.|2|2|1750|
 |El Chino|3|3|1700|
 |El Plebe|3|3|1696|
@@ -68,10 +68,14 @@ The current points earned by winning matches this week.
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Xotl` challenged `Neku` and **won** *3-0*.
+* `Xotl` challenged `Paco` and **won** *3-0*.
 * `Paolo` challenged `Landeros` and **won** *3-0*.
 * `Alfredo` challenged `Kyttyan` and **won** *3-0*.
 * `Alfredo` challenged `Cristhian Ramos` and **won** *3-0*.
 * `Alfredo` challenged `Xotl` and **lost** *3-0*.
+* `Neku` challenged `Paco` and **lost** *3-1*.
+* `Cristhian Ramos` challenged `Kyttyan` and **won** *3-0*.
 * `Landeros` challenged `El Plebe` and **lost** *3-1*.
 * `Tecuanotl` challenged `Landeros` and **lost** *3-0*.
 * `Tecuanotl` challenged `Paolo` and **lost** *3-1*.
