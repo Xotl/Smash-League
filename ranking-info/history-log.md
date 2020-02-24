@@ -1,3 +1,64 @@
+## Commit from Sun, Feb 23, 2020, 11:59 PM CST
+The week started at *Sun, Feb 16, 2020, 11:59 PM CST* and ended *Sun, Feb 23, 2020, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Xotl - 2434pts|1|5|
+|José "El Iceberg" Rosales - 2332pts|1|2|
+|Roberto - 2284pts|0|0|
+|Paco - 2269pts|1|1|
+|Neku - 2166pts|0|1|
+|Cristhian Ramos - 2023pts|1|4|
+|Alfredo - 1957pts|1|4|
+|Kyttyan - 1933pts|2|3|
+|Angel Lee - 1837pts|2|2|
+|Paolo - 1732pts|4|5|
+|El Chino - 1700pts|3|3|
+|Sammy - 1658pts|3|5|
+|D.I.O. - 1626pts|2|2|
+|GeorgeEvans115 - 1575pts|3|3|
+|Alan - 1550pts|3|3|
+|El Plebe - 1542pts|3|3|
+|Landeros - 1508pts|3|4|
+|Medininja - 1470pts|4|4|
+|deov31 - 1450pts|4|4|
+|El Minion - 1300pts|4|4|
+|Niightz - 1300pts|4|4|
+|UNPUDUNP8 - 999pts|4|5|
+|Banda - 997pts|3|5|
+|Tecuanotl - 996pts|3|5|
+### Completed challenges
+* `Xotl` challenged `Neku` and **won** *3-0*.
+* `Xotl` challenged `Paco` and **won** *3-0*.
+* `Xotl` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Xotl` challenged `Roberto` and **won** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Roberto` and **won** *3-1*.
+* `Sammy` challenged `El Plebe` and **won** *3-0*.
+* `Sammy` challenged `D.I.O.` and **won** *3-2*.
+* `Paolo` challenged `Landeros` and **won** *3-0*.
+* `Alfredo` challenged `Kyttyan` and **won** *3-0*.
+* `Alfredo` challenged `Cristhian Ramos` and **won** *3-0*.
+* `Alfredo` challenged `Xotl` and **lost** *3-0*.
+* `Kyttyan` challenged `Angel Lee` and **won** *3-0*.
+* `Neku` challenged `Paco` and **lost** *3-1*.
+* `Cristhian Ramos` challenged `Kyttyan` and **won** *3-0*.
+* `Cristhian Ramos` challenged `Angel Lee` and **won** *3-0*.
+* `Cristhian Ramos` challenged `Xotl` and **lost** *3-0*.
+* `Landeros` challenged `El Plebe` and **lost** *3-1*.
+* `Tecuanotl` challenged `Landeros` and **lost** *3-0*.
+* `Tecuanotl` challenged `Paolo` and **lost** *3-1*.
+* `Banda` challenged `Landeros` and **lost** *3-1*.
+* `Banda` challenged `Paolo` and **lost** *3-0*.
+* `UNPUDUNP8` challenged `Paolo` and **lost** *3-0*.
+### Inactive players
+* El Minion - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+* Alan - 1 week(s) inactive.
+* GeorgeEvans115 - 1 week(s) inactive.
+* Niightz - 1 week(s) inactive.
+* Medininja - 1 week(s) inactive.
+* deov31 - 1 week(s) inactive.
+
 ## Commit from Sun, Feb 16, 2020, 11:59 PM CST
 The week started at *Sun, Feb 09, 2020, 11:59 PM CST* and ended *Sun, Feb 16, 2020, 11:59 PM CST*.
 ### End of week players score summary
