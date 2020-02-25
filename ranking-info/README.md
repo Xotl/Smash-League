@@ -43,7 +43,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 1 week(s) inactive.
 * deov31 - 1 week(s) inactive.
 
-## In progress this week *Sun, Feb 23, 2020, 11:59 PM CST*
+## In progress this week *Tue, Feb 25, 2020, 12:08 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -51,8 +51,8 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Xotl|0|0|2434|
-|José "El Iceberg" Rosales|1|1|2332|
+|Xotl|0|0|2455|
+|José "El Iceberg" Rosales|0|1|2323|
 |Roberto|1|1|2284|
 |Paco|1|1|2269|
 |Neku|1|1|2166|
@@ -60,23 +60,28 @@ The current points earned by winning matches this week.
 |Alfredo|2|2|1957|
 |Kyttyan|2|2|1933|
 |Angel Lee|2|2|1837|
-|Paolo|2|2|1732|
+|Paolo|2|2|1807|
 |El Chino|3|3|1700|
 |Sammy|3|3|1658|
-|D.I.O.|3|3|1626|
+|D.I.O.|2|3|1614|
+|Landeros|4|4|1606|
 |GeorgeEvans115|3|3|1575|
 |Alan|3|3|1550|
 |El Plebe|4|4|1542|
-|Landeros|4|4|1508|
 |Medininja|4|4|1470|
 |deov31|4|4|1450|
 |El Minion|4|4|1300|
 |Niightz|4|4|1300|
-|UNPUDUNP8|5|5|999|
-|Banda|5|5|997|
+|Banda|5|5|1013|
 |Tecuanotl|5|5|996|
+|UNPUDUNP8|3|5|995|
+|UM4GY3KTR|4|5|983|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
+* `D.I.O.` challenged `Paolo` and **lost** *3-0*.
+* `UNPUDUNP8` challenged `Landeros` and **lost** *3-0*.
+* `UNPUDUNP8` challenged `Landeros` and **lost** *3-1*.
+* `UM4GY3KTR` challenged `Banda` and **lost** *3-2*.
