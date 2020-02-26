@@ -43,7 +43,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 1 week(s) inactive.
 * deov31 - 1 week(s) inactive.
 
-## In progress this week *Tue, Feb 25, 2020, 12:08 AM CST*
+## In progress this week *Wed, Feb 26, 2020, 12:08 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -52,19 +52,19 @@ The current points earned by winning matches this week.
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
 |Xotl|0|0|2455|
-|José "El Iceberg" Rosales|0|1|2323|
-|Roberto|1|1|2284|
-|Paco|1|1|2269|
-|Neku|1|1|2166|
-|Cristhian Ramos|2|2|2023|
-|Alfredo|2|2|1957|
+|Roberto|1|2|2432|
+|José "El Iceberg" Rosales|0|1|2273|
+|Neku|0|2|2212|
+|Paco|0|1|2198|
+|Cristhian Ramos|2|3|2003|
 |Kyttyan|2|2|1933|
-|Angel Lee|2|2|1837|
+|Angel Lee|1|3|1849|
+|Alfredo|1|3|1812|
 |Paolo|2|2|1807|
+|Landeros|4|4|1735|
 |El Chino|3|3|1700|
 |Sammy|3|3|1658|
 |D.I.O.|2|3|1614|
-|Landeros|4|4|1606|
 |GeorgeEvans115|3|3|1575|
 |Alan|3|3|1550|
 |El Plebe|4|4|1542|
@@ -72,16 +72,27 @@ The current points earned by winning matches this week.
 |deov31|4|4|1450|
 |El Minion|4|4|1300|
 |Niightz|4|4|1300|
-|Banda|5|5|1013|
+|Banda|4|5|1011|
 |Tecuanotl|5|5|996|
-|UNPUDUNP8|3|5|995|
+|UNPUDUNP8|2|5|994|
 |UM4GY3KTR|4|5|983|
 
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Angel Lee` challenged `Alfredo` and **lost** *3-2*.
+* `Angel Lee` challenged `Alfredo` and **won** *3-2*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
+* `Paco` challenged `Roberto` and **lost** *3-1*.
+* `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Alfredo` challenged `Cristhian Ramos` and **won** *3-2*.
+* `Alfredo` challenged `Paco` and **lost** *3-0*.
 * `D.I.O.` challenged `Paolo` and **lost** *3-0*.
+* `Neku` challenged `Paco` and **won** *3-0*.
+* `Neku` challenged `Roberto` and **lost** *3-0*.
+* `Cristhian Ramos` challenged `Paco` and **won** *3-1*.
+* `Banda` challenged `Landeros` and **lost** *3-0*.
 * `UNPUDUNP8` challenged `Landeros` and **lost** *3-0*.
 * `UNPUDUNP8` challenged `Landeros` and **lost** *3-1*.
+* `UNPUDUNP8` challenged `Landeros` and **lost** *3-0*.
 * `UM4GY3KTR` challenged `Banda` and **lost** *3-2*.
