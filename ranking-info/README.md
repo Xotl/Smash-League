@@ -43,7 +43,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 1 week(s) inactive.
 * deov31 - 1 week(s) inactive.
 
-## In progress this week *Fri, Feb 28, 2020, 12:09 AM CST*
+## In progress this week *Sat, Feb 29, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -51,30 +51,30 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Roberto|1|2|2465|
-|Xotl|0|0|2455|
+|Xotl|0|0|2463|
+|Roberto|0|2|2456|
+|Paco|0|1|2302|
 |José "El Iceberg" Rosales|0|1|2273|
-|Paco|0|1|2248|
-|Neku|0|2|2212|
-|Angel Lee|1|5|1978|
-|Cristhian Ramos|1|3|1882|
-|Kyttyan|2|2|1830|
-|Paolo|2|3|1828|
-|Alfredo|0|3|1808|
-|Landeros|4|5|1805|
-|El Plebe|4|4|1773|
-|El Chino|3|3|1700|
-|Sammy|3|3|1658|
-|D.I.O.|2|3|1614|
+|Angel Lee|0|6|2063|
+|Cristhian Ramos|1|3|2032|
+|Neku|0|2|1971|
+|Sammy|3|3|1895|
+|Alfredo|0|3|1888|
+|Kyttyan|0|2|1806|
+|Paolo|0|3|1805|
+|Landeros|3|5|1782|
+|El Plebe|2|4|1739|
+|D.I.O.|1|4|1706|
+|El Chino|3|3|1591|
 |GeorgeEvans115|3|3|1575|
 |Alan|3|3|1550|
 |Medininja|4|4|1470|
 |deov31|4|4|1450|
 |El Minion|4|4|1300|
 |Niightz|4|4|1300|
-|Tecuanotl|5|5|1012|
+|Tecuanotl|5|6|1059|
 |Banda|4|5|1011|
-|UNPUDUNP8|0|5|992|
+|UNPUDUNP8|0|5|995|
 |UM4GY3KTR|4|5|983|
 |UM2AV3CPN|4|5|983|
 
@@ -85,19 +85,32 @@ Matches that already happened during this week.
 * `Angel Lee` challenged `Alfredo` and **won** *3-2*.
 * `Angel Lee` challenged `Kyttyan` and **won** *3-1*.
 * `Angel Lee` challenged `Cristhian Ramos` and **won** *3-0*.
+* `Angel Lee` challenged `Neku` and **won** *3-0*.
+* `Angel Lee` challenged `Paco` and **lost** *3-0*.
 * `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
 * `Paco` challenged `Roberto` and **lost** *3-1*.
 * `Paolo` challenged `Kyttyan` and **won** *3-2*.
+* `Paolo` challenged `Alfredo` and **lost** *3-0*.
+* `Paolo` challenged `Angel Lee` and **lost** *3-2*.
 * `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Roberto` challenged `Xotl` and **lost** *3-2*.
 * `Alfredo` challenged `Cristhian Ramos` and **won** *3-2*.
 * `Alfredo` challenged `Paco` and **lost** *3-0*.
 * `Alfredo` challenged `Paco` and **lost** *3-0*.
+* `Kyttyan` challenged `Cristhian Ramos` and **lost** *3-0*.
+* `Kyttyan` challenged `Cristhian Ramos` and **lost** *3-0*.
+* `El Plebe` challenged `D.I.O.` and **lost** *3-2*.
+* `El Plebe` challenged `Sammy` and **lost** *3-0*.
 * `D.I.O.` challenged `Paolo` and **lost** *3-0*.
+* `D.I.O.` challenged `Sammy` and **lost** *3-0*.
+* `D.I.O.` challenged `El Chino` and **won** *3-0*.
 * `Neku` challenged `Paco` and **won** *3-0*.
 * `Neku` challenged `Roberto` and **lost** *3-0*.
 * `Cristhian Ramos` challenged `Paco` and **won** *3-1*.
 * `Cristhian Ramos` challenged `Roberto` and **lost** *3-0*.
 * `Landeros` challenged `El Plebe` and **won** *3-1*.
+* `Landeros` challenged `Sammy` and **lost** *3-0*.
+* `Tecuanotl` challenged `UNPUDUNP8` and **won** *3-1*.
 * `Banda` challenged `Landeros` and **lost** *3-0*.
 * `UNPUDUNP8` challenged `Landeros` and **lost** *3-0*.
 * `UNPUDUNP8` challenged `Landeros` and **lost** *3-1*.
