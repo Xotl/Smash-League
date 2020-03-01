@@ -43,7 +43,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 1 week(s) inactive.
 * deov31 - 1 week(s) inactive.
 
-## In progress this week *Sat, Feb 29, 2020, 12:09 AM CST*
+## In progress this week *Sun, Mar 01, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
