@@ -24,7 +24,7 @@ Last updated **Sun, Feb 23, 2020, 11:59 PM CST**.
 |18|`Medininja`|1470|
 |19|`deov31`|1450|
 |20|`El Minion`, `Niightz`|1300|
-|21|`UNPUDUNP8`|999|
+|21|`Malagón`|999|
 |22|`Banda`|997|
 |23|`Tecuanotl`|996|
 
@@ -43,7 +43,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 1 week(s) inactive.
 * deov31 - 1 week(s) inactive.
 
-## In progress this week *Sun, Mar 01, 2020, 12:09 AM CST*
+## In progress this week *Sun, Mar 01, 2020, 2:02 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -74,9 +74,9 @@ The current points earned by winning matches this week.
 |Niightz|4|4|1300|
 |Tecuanotl|5|6|1059|
 |Banda|4|5|1011|
-|UNPUDUNP8|0|5|995|
-|UM4GY3KTR|4|5|983|
-|UM2AV3CPN|4|5|983|
+|Malagón|0|5|995|
+|Pablo|4|5|983|
+|Jorge|4|5|983|
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -110,12 +110,12 @@ Matches that already happened during this week.
 * `Cristhian Ramos` challenged `Roberto` and **lost** *3-0*.
 * `Landeros` challenged `El Plebe` and **won** *3-1*.
 * `Landeros` challenged `Sammy` and **lost** *3-0*.
-* `Tecuanotl` challenged `UNPUDUNP8` and **won** *3-1*.
+* `Tecuanotl` challenged `Malagón` and **won** *3-1*.
 * `Banda` challenged `Landeros` and **lost** *3-0*.
-* `UNPUDUNP8` challenged `Landeros` and **lost** *3-0*.
-* `UNPUDUNP8` challenged `Landeros` and **lost** *3-1*.
-* `UNPUDUNP8` challenged `Landeros` and **lost** *3-0*.
-* `UNPUDUNP8` challenged `Landeros` and **lost** *3-1*.
-* `UNPUDUNP8` challenged `El Plebe` and **lost** *3-1*.
-* `UM4GY3KTR` challenged `Banda` and **lost** *3-2*.
-* `UM2AV3CPN` challenged `Tecuanotl` and **lost** *3-2*.
+* `Malagón` challenged `Landeros` and **lost** *3-0*.
+* `Malagón` challenged `Landeros` and **lost** *3-1*.
+* `Malagón` challenged `Landeros` and **lost** *3-0*.
+* `Malagón` challenged `Landeros` and **lost** *3-1*.
+* `Malagón` challenged `El Plebe` and **lost** *3-1*.
+* `Pablo` challenged `Banda` and **lost** *3-2*.
+* `Jorge` challenged `Tecuanotl` and **lost** *3-2*.
