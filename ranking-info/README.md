@@ -10,8 +10,8 @@ Last updated **Sun, Mar 01, 2020, 11:59 PM CST**.
 |4|`José "El Iceberg" Rosales`|2273|
 |5|`Angel Lee`|2063|
 |6|`Cristhian Ramos`|2032|
-|7|`Neku`|1971|
-|8|`Sammy`|1895|
+|7|`Sammy`|1971|
+|8|`Neku`|1895|
 |9|`Alfredo`|1888|
 |10|`Kyttyan`|1806|
 |11|`Paolo`|1805|
@@ -40,7 +40,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 2 week(s) inactive.
 * deov31 - 2 week(s) inactive.
 
-## In progress this week *Sun, Mar 01, 2020, 11:59 PM CST*
+## In progress this week *Mon, Mar 02, 2020, 5:26 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -48,21 +48,22 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
+|Roberto|1|1|2476|
 |Xotl|0|0|2463|
-|Roberto|1|1|2456|
-|Paco|1|1|2302|
-|José "El Iceberg" Rosales|1|1|2273|
-|Angel Lee|1|1|2063|
-|Cristhian Ramos|2|2|2032|
-|Neku|2|2|1971|
-|Sammy|2|2|1895|
-|Alfredo|2|2|1888|
+|José "El Iceberg" Rosales|0|1|2313|
+|Paco|0|1|2306|
+|Angel Lee|0|1|2069|
+|Cristhian Ramos|1|2|2017|
+|Sammy|2|2|1971|
+|Alfredo|2|2|1963|
+|Neku|2|2|1895|
+|Paolo|3|3|1851|
 |Kyttyan|2|2|1806|
-|Paolo|3|3|1805|
-|Landeros|3|3|1782|
+|Landeros|1|3|1755|
 |El Plebe|3|3|1739|
 |D.I.O.|3|3|1706|
 |El Chino|3|3|1591|
+|Jorge|5|6|1063|
 |Tecuanotl|4|4|1059|
 |Banda|4|4|1011|
 |Alan|4|4|998|
@@ -71,11 +72,16 @@ The current points earned by winning matches this week.
 |deov31|4|4|997|
 |El Minion|4|4|995|
 |Niightz|4|4|995|
-|Malagón|4|4|995|
 |Pablo|5|5|983|
-|Jorge|5|5|983|
+|Malagón|4|4|967|
 
 ### Completed challenges
 Matches that already happened during this week.
 
-
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Paco` and **lost** *3-2*.
+* `Paco` challenged `Roberto` and **lost** *3-1*.
+* `Cristhian Ramos` challenged `Angel Lee` and **lost** *3-2*.
+* `Landeros` challenged `Alfredo` and **lost** *3-0*.
+* `Landeros` challenged `Paolo` and **lost** *3-1*.
+* `Jorge` challenged `Malagón` and **won** *3-0*.
