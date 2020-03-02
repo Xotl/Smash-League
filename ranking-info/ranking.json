@@ -28,10 +28,10 @@
             "USN14R22Z"
         ],
         [
-            "U8THDCVJ7"
+            "UDR61HJCD"
         ],
         [
-            "UDR61HJCD"
+            "U8THDCVJ7"
         ],
         [
             "ULBS05D3M"
@@ -204,7 +204,7 @@
             "initial_coins": 3,
             "coins": 3,
             "range": 3,
-            "points": 1895,
+            "points": 1971,
             "completed_challenges": []
         },
         "UKPTK422K": {
@@ -482,7 +482,7 @@
             "initial_coins": 1,
             "coins": 0,
             "range": 2,
-            "points": 1971,
+            "points": 1895,
             "completed_challenges": [
                 {
                     "winner": "U8THDCVJ7",
@@ -804,7 +804,7 @@
                 "points": 2273,
                 "completed_challenges": []
             },
-            "UDR61HJCD": {
+            "U8THDCVJ7": {
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
@@ -867,7 +867,7 @@
                 "points": 1591,
                 "completed_challenges": []
             },
-            "U8THDCVJ7": {
+            "UDR61HJCD": {
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
