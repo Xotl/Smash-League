@@ -1,3 +1,81 @@
+## Commit from Sun, Mar 01, 2020, 11:59 PM CST
+The week started at *Sun, Feb 23, 2020, 11:59 PM CST* and ended *Sun, Mar 01, 2020, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Xotl - 2463pts|0|0|
+|Roberto - 2456pts|0|2|
+|Paco - 2302pts|0|1|
+|José "El Iceberg" Rosales - 2273pts|0|1|
+|Angel Lee - 2063pts|0|6|
+|Cristhian Ramos - 2032pts|1|3|
+|Neku - 1971pts|0|2|
+|Sammy - 1895pts|3|3|
+|Alfredo - 1888pts|0|3|
+|Kyttyan - 1806pts|0|2|
+|Paolo - 1805pts|0|3|
+|Landeros - 1782pts|3|5|
+|El Plebe - 1739pts|2|4|
+|D.I.O. - 1706pts|1|4|
+|El Chino - 1591pts|3|3|
+|GeorgeEvans115 - 1575pts|3|3|
+|Alan - 1550pts|3|3|
+|Medininja - 1470pts|4|4|
+|deov31 - 1450pts|4|4|
+|El Minion - 1300pts|4|4|
+|Niightz - 1300pts|4|4|
+|Tecuanotl - 1059pts|5|6|
+|Banda - 1011pts|4|5|
+|Malagón - 995pts|0|5|
+|Pablo - 983pts|4|5|
+|Jorge - 983pts|4|5|
+### Completed challenges
+* `Angel Lee` challenged `Alfredo` and **lost** *3-2*.
+* `Angel Lee` challenged `Alfredo` and **won** *3-2*.
+* `Angel Lee` challenged `Kyttyan` and **won** *3-1*.
+* `Angel Lee` challenged `Cristhian Ramos` and **won** *3-0*.
+* `Angel Lee` challenged `Neku` and **won** *3-0*.
+* `Angel Lee` challenged `Paco` and **lost** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Xotl` and **lost** *3-1*.
+* `Paco` challenged `Roberto` and **lost** *3-1*.
+* `Paolo` challenged `Kyttyan` and **won** *3-2*.
+* `Paolo` challenged `Alfredo` and **lost** *3-0*.
+* `Paolo` challenged `Angel Lee` and **lost** *3-2*.
+* `Roberto` challenged `José "El Iceberg" Rosales` and **won** *3-0*.
+* `Roberto` challenged `Xotl` and **lost** *3-2*.
+* `Alfredo` challenged `Cristhian Ramos` and **won** *3-2*.
+* `Alfredo` challenged `Paco` and **lost** *3-0*.
+* `Alfredo` challenged `Paco` and **lost** *3-0*.
+* `Kyttyan` challenged `Cristhian Ramos` and **lost** *3-0*.
+* `Kyttyan` challenged `Cristhian Ramos` and **lost** *3-0*.
+* `El Plebe` challenged `D.I.O.` and **lost** *3-2*.
+* `El Plebe` challenged `Sammy` and **lost** *3-0*.
+* `D.I.O.` challenged `Paolo` and **lost** *3-0*.
+* `D.I.O.` challenged `Sammy` and **lost** *3-0*.
+* `D.I.O.` challenged `El Chino` and **won** *3-0*.
+* `Neku` challenged `Paco` and **won** *3-0*.
+* `Neku` challenged `Roberto` and **lost** *3-0*.
+* `Cristhian Ramos` challenged `Paco` and **won** *3-1*.
+* `Cristhian Ramos` challenged `Roberto` and **lost** *3-0*.
+* `Landeros` challenged `El Plebe` and **won** *3-1*.
+* `Landeros` challenged `Sammy` and **lost** *3-0*.
+* `Tecuanotl` challenged `Malagón` and **won** *3-1*.
+* `Banda` challenged `Landeros` and **lost** *3-0*.
+* `Malagón` challenged `Landeros` and **lost** *3-0*.
+* `Malagón` challenged `Landeros` and **lost** *3-1*.
+* `Malagón` challenged `Landeros` and **lost** *3-0*.
+* `Malagón` challenged `Landeros` and **lost** *3-1*.
+* `Malagón` challenged `El Plebe` and **lost** *3-1*.
+* `Pablo` challenged `Banda` and **lost** *3-2*.
+* `Jorge` challenged `Tecuanotl` and **lost** *3-2*.
+### Inactive players
+* El Minion - 2 week(s) inactive.
+* Alan - 2 week(s) inactive.
+* GeorgeEvans115 - 2 week(s) inactive.
+* Niightz - 2 week(s) inactive.
+* Medininja - 2 week(s) inactive.
+* deov31 - 2 week(s) inactive.
+
 ## Commit from Sun, Feb 23, 2020, 11:59 PM CST
 The week started at *Sun, Feb 16, 2020, 11:59 PM CST* and ended *Sun, Feb 23, 2020, 11:59 PM CST*.
 ### End of week players score summary
