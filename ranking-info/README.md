@@ -40,7 +40,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 2 week(s) inactive.
 * deov31 - 2 week(s) inactive.
 
-## In progress this week *Wed, Mar 04, 2020, 12:09 AM CST*
+## In progress this week *Thu, Mar 05, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -50,20 +50,20 @@ The current points earned by winning matches this week.
 |------|-----|-----|-----|
 |Roberto|1|1|2476|
 |Xotl|0|0|2463|
-|Paco|0|1|2306|
-|Cristhian Ramos|1|3|2076|
-|Angel Lee|0|1|2069|
+|Paco|0|1|2359|
+|Cristhian Ramos|0|3|2069|
+|Sammy|2|3|2055|
 |José "El Iceberg" Rosales|0|1|2012|
-|Sammy|2|2|1971|
+|Neku|2|2|1972|
 |Alfredo|2|2|1963|
-|Neku|2|2|1895|
+|Angel Lee|0|1|1959|
 |Kyttyan|2|2|1883|
-|Paolo|3|3|1851|
+|Paolo|2|3|1837|
 |Landeros|0|3|1741|
 |El Plebe|3|3|1739|
 |D.I.O.|3|3|1706|
 |El Chino|3|3|1591|
-|Tecuanotl|4|4|1059|
+|Tecuanotl|4|4|1102|
 |Jorge|4|6|1044|
 |Banda|4|4|1029|
 |Alan|4|4|998|
@@ -73,7 +73,7 @@ The current points earned by winning matches this week.
 |El Minion|4|4|995|
 |Niightz|4|4|995|
 |Pablo|5|5|983|
-|Malagón|4|4|967|
+|Malagón|3|4|955|
 
 ### Completed challenges
 Matches that already happened during this week.
@@ -81,10 +81,14 @@ Matches that already happened during this week.
 * `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
 * `José "El Iceberg" Rosales` challenged `Paco` and **lost** *3-2*.
 * `Paco` challenged `Roberto` and **lost** *3-1*.
+* `Paolo` challenged `Neku` and **lost** *3-0*.
+* `Sammy` challenged `Angel Lee` and **won** *3-0*.
 * `Cristhian Ramos` challenged `Angel Lee` and **lost** *3-2*.
 * `Cristhian Ramos` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
+* `Cristhian Ramos` challenged `Paco` and **lost** *3-0*.
 * `Landeros` challenged `Alfredo` and **lost** *3-0*.
 * `Landeros` challenged `Paolo` and **lost** *3-1*.
 * `Landeros` challenged `Kyttyan` and **lost** *3-0*.
+* `Malagón` challenged `Tecuanotl` and **lost** *3-1*.
 * `Jorge` challenged `Malagón` and **won** *3-0*.
 * `Jorge` challenged `Banda` and **lost** *3-2*.
