@@ -40,7 +40,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 2 week(s) inactive.
 * deov31 - 2 week(s) inactive.
 
-## In progress this week *Thu, Mar 05, 2020, 12:09 AM CST*
+## In progress this week *Fri, Mar 06, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -63,8 +63,8 @@ The current points earned by winning matches this week.
 |El Plebe|3|3|1739|
 |D.I.O.|3|3|1706|
 |El Chino|3|3|1591|
-|Tecuanotl|4|4|1102|
-|Jorge|4|6|1044|
+|Tecuanotl|4|4|1147|
+|Jorge|3|6|1030|
 |Banda|4|4|1029|
 |Alan|4|4|998|
 |GeorgeEvans115|4|4|998|
@@ -92,3 +92,4 @@ Matches that already happened during this week.
 * `Malagón` challenged `Tecuanotl` and **lost** *3-1*.
 * `Jorge` challenged `Malagón` and **won** *3-0*.
 * `Jorge` challenged `Banda` and **lost** *3-2*.
+* `Jorge` challenged `Tecuanotl` and **lost** *3-1*.

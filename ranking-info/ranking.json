@@ -1077,7 +1077,7 @@
                 "initial_coins": 4,
                 "coins": 4,
                 "range": 4,
-                "points": 1102,
+                "points": 1147,
                 "completed_challenges": []
             },
             "UMBULR0BY": {
@@ -1117,9 +1117,9 @@
             },
             "UM2AV3CPN": {
                 "initial_coins": 5,
-                "coins": 4,
+                "coins": 3,
                 "range": 6,
-                "points": 1044,
+                "points": 1030,
                 "completed_challenges": [
                     {
                         "winner": "UM2AV3CPN",
@@ -1146,13 +1146,26 @@
                         ],
                         "ts": "1583264058.247800",
                         "thread_ts": "1583164460.190100"
+                    },
+                    {
+                        "winner": "ULFUJB0SD",
+                        "player1": "ULFUJB0SD",
+                        "player2": "UM2AV3CPN",
+                        "player1Result": 3,
+                        "player2Result": 1,
+                        "players": [
+                            "ULFUJB0SD",
+                            "UM2AV3CPN"
+                        ],
+                        "ts": "1583447577.302300",
+                        "thread_ts": "1583447577.302300"
                     }
                 ]
             }
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1583388545304,
+        "last_update_ts": 1583474946688,
         "reported_results": []
     },
     "inactive_players": {
