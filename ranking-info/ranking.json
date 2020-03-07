@@ -892,15 +892,42 @@
                 "initial_coins": 2,
                 "coins": 2,
                 "range": 2,
-                "points": 1963,
+                "points": 2018,
                 "completed_challenges": []
             },
             "UKB40CVF0": {
                 "initial_coins": 2,
-                "coins": 2,
+                "coins": 0,
                 "range": 2,
-                "points": 1883,
-                "completed_challenges": []
+                "points": 1858,
+                "completed_challenges": [
+                    {
+                        "winner": "ULBS05D3M",
+                        "player1": "ULBS05D3M",
+                        "player2": "UKB40CVF0",
+                        "player1Result": 3,
+                        "player2Result": 2,
+                        "players": [
+                            "ULBS05D3M",
+                            "UKB40CVF0"
+                        ],
+                        "ts": "1583535409.313700",
+                        "thread_ts": "1583535409.313700"
+                    },
+                    {
+                        "winner": "ULBS05D3M",
+                        "player1": "UKB40CVF0",
+                        "player2": "ULBS05D3M",
+                        "player1Result": 1,
+                        "player2Result": 3,
+                        "players": [
+                            "UKB40CVF0",
+                            "ULBS05D3M"
+                        ],
+                        "ts": "1583536856.314800",
+                        "thread_ts": "1583536856.314800"
+                    }
+                ]
             },
             "UHM2TH85S": {
                 "initial_coins": 3,
@@ -1165,7 +1192,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1583474946688,
+        "last_update_ts": 1583561345506,
         "reported_results": []
     },
     "inactive_players": {

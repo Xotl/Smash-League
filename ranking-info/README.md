@@ -40,7 +40,7 @@ Unranked players and players that have 0 points will start with this score:
 * Medininja - 2 week(s) inactive.
 * deov31 - 2 week(s) inactive.
 
-## In progress this week *Fri, Mar 06, 2020, 12:09 AM CST*
+## In progress this week *Sat, Mar 07, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -53,11 +53,11 @@ The current points earned by winning matches this week.
 |Paco|0|1|2359|
 |Cristhian Ramos|0|3|2069|
 |Sammy|2|3|2055|
+|Alfredo|2|2|2018|
 |José "El Iceberg" Rosales|0|1|2012|
 |Neku|2|2|1972|
-|Alfredo|2|2|1963|
 |Angel Lee|0|1|1959|
-|Kyttyan|2|2|1883|
+|Kyttyan|0|2|1858|
 |Paolo|2|3|1837|
 |Landeros|0|3|1741|
 |El Plebe|3|3|1739|
@@ -82,6 +82,8 @@ Matches that already happened during this week.
 * `José "El Iceberg" Rosales` challenged `Paco` and **lost** *3-2*.
 * `Paco` challenged `Roberto` and **lost** *3-1*.
 * `Paolo` challenged `Neku` and **lost** *3-0*.
+* `Kyttyan` challenged `Alfredo` and **lost** *3-2*.
+* `Kyttyan` challenged `Alfredo` and **lost** *3-1*.
 * `Sammy` challenged `Angel Lee` and **won** *3-0*.
 * `Cristhian Ramos` challenged `Angel Lee` and **lost** *3-2*.
 * `Cristhian Ramos` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
