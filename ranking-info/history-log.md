@@ -1,3 +1,65 @@
+## Commit from Sun, Mar 08, 2020, 11:59 PM CST
+The week started at *Sun, Mar 01, 2020, 11:59 PM CST* and ended *Sun, Mar 08, 2020, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Roberto - 2476pts|1|1|
+|Xotl - 2463pts|0|0|
+|Paco - 2359pts|0|1|
+|Cristhian Ramos - 2069pts|0|3|
+|Sammy - 2055pts|2|3|
+|Alfredo - 2018pts|2|2|
+|José "El Iceberg" Rosales - 2012pts|0|1|
+|Neku - 1972pts|2|2|
+|Angel Lee - 1959pts|0|1|
+|Kyttyan - 1858pts|0|2|
+|Paolo - 1837pts|2|3|
+|Landeros - 1741pts|0|3|
+|El Plebe - 1739pts|3|3|
+|D.I.O. - 1706pts|3|3|
+|El Chino - 1591pts|3|3|
+|Tecuanotl - 1147pts|4|4|
+|Jorge - 1030pts|3|6|
+|Banda - 1029pts|4|4|
+|Alan - 998pts|4|4|
+|GeorgeEvans115 - 998pts|4|4|
+|Medininja - 997pts|4|4|
+|deov31 - 997pts|4|4|
+|El Minion - 995pts|4|4|
+|Niightz - 995pts|4|4|
+|Pablo - 983pts|5|5|
+|Malagón - 955pts|3|4|
+### Completed challenges
+* `Angel Lee` challenged `José "El Iceberg" Rosales` and **lost** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Paco` and **lost** *3-2*.
+* `Paco` challenged `Roberto` and **lost** *3-1*.
+* `Paolo` challenged `Neku` and **lost** *3-0*.
+* `Kyttyan` challenged `Alfredo` and **lost** *3-2*.
+* `Kyttyan` challenged `Alfredo` and **lost** *3-1*.
+* `Sammy` challenged `Angel Lee` and **won** *3-0*.
+* `Cristhian Ramos` challenged `Angel Lee` and **lost** *3-2*.
+* `Cristhian Ramos` challenged `José "El Iceberg" Rosales` and **won** *3-1*.
+* `Cristhian Ramos` challenged `Paco` and **lost** *3-0*.
+* `Landeros` challenged `Alfredo` and **lost** *3-0*.
+* `Landeros` challenged `Paolo` and **lost** *3-1*.
+* `Landeros` challenged `Kyttyan` and **lost** *3-0*.
+* `Malagón` challenged `Tecuanotl` and **lost** *3-1*.
+* `Jorge` challenged `Malagón` and **won** *3-0*.
+* `Jorge` challenged `Banda` and **lost** *3-2*.
+* `Jorge` challenged `Tecuanotl` and **lost** *3-1*.
+### Inactive players
+* El Minion - Deleted this week after 3 week(s).
+* Alan - Deleted this week after 3 week(s).
+* GeorgeEvans115 - Deleted this week after 3 week(s).
+* Niightz - Deleted this week after 3 week(s).
+* Medininja - Deleted this week after 3 week(s).
+* deov31 - Deleted this week after 3 week(s).
+* Xotl - 1 week(s) inactive.
+* El Plebe - 1 week(s) inactive.
+* D.I.O. - 1 week(s) inactive.
+* El Chino - 1 week(s) inactive.
+* Pablo - 1 week(s) inactive.
+
 ## Commit from Sun, Mar 01, 2020, 11:59 PM CST
 The week started at *Sun, Feb 23, 2020, 11:59 PM CST* and ended *Sun, Mar 01, 2020, 11:59 PM CST*.
 ### End of week players score summary
