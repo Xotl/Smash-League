@@ -44,7 +44,7 @@ Unranked players and players that have 0 points will start with this score:
 * El Chino - 1 week(s) inactive.
 * Pablo - 1 week(s) inactive.
 
-## In progress this week *Tue, Mar 10, 2020, 12:09 AM CST*
+## In progress this week *Wed, Mar 11, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -55,11 +55,11 @@ The current points earned by winning matches this week.
 |Roberto|0|0|2476|
 |Xotl|1|1|2463|
 |Paco|1|1|2359|
-|Cristhian Ramos|1|1|2069|
+|Alfredo|2|3|2094|
 |Sammy|1|1|2055|
 |José "El Iceberg" Rosales|2|3|2028|
-|Angel Lee|2|3|2016|
-|Alfredo|2|2|1996|
+|Angel Lee|1|3|1999|
+|Cristhian Ramos|1|1|1998|
 |Neku|2|2|1943|
 |Kyttyan|1|2|1848|
 |Paolo|3|3|1837|
@@ -68,14 +68,19 @@ The current points earned by winning matches this week.
 |D.I.O.|3|3|1706|
 |El Chino|3|3|1591|
 |Tecuanotl|4|4|1147|
-|Jorge|4|4|1030|
+|ULRCYAEH1|5|6|1049|
 |Banda|4|4|1029|
+|Jorge|4|4|985|
 |Pablo|4|4|983|
-|Malagón|4|4|955|
+|Malagón|3|4|942|
 
 ### Completed challenges
 Matches that already happened during this week.
 
 * `Angel Lee` challenged `Neku` and **won** *3-1*.
+* `Angel Lee` challenged `Alfredo` and **lost** *3-2*.
 * `José "El Iceberg" Rosales` challenged `Alfredo` and **won** *3-2*.
+* `Alfredo` challenged `Cristhian Ramos` and **won** *3-0*.
 * `Kyttyan` challenged `Angel Lee` and **lost** *3-2*.
+* `Malagón` challenged `Jorge` and **lost** *3-2*.
+* `ULRCYAEH1` challenged `Jorge` and **won** *3-1*.
