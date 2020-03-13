@@ -503,8 +503,8 @@
             "UBA5M220K": {
                 "initial_coins": 2,
                 "coins": 2,
-                "range": 4,
-                "points": 2109,
+                "range": 5,
+                "points": 2165,
                 "completed_challenges": [
                     {
                         "winner": "UBA5M220K",
@@ -531,6 +531,19 @@
                         ],
                         "ts": "1583943190.360800",
                         "thread_ts": "1583943190.360800"
+                    },
+                    {
+                        "winner": "UBA5M220K",
+                        "player1": "UBA5M220K",
+                        "player2": "USN14R22Z",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "UBA5M220K",
+                            "USN14R22Z"
+                        ],
+                        "ts": "1584044550.387700",
+                        "thread_ts": "1584044550.387700"
                     }
                 ]
             },
@@ -636,7 +649,7 @@
                 "initial_coins": 1,
                 "coins": 1,
                 "range": 1,
-                "points": 1998,
+                "points": 2093,
                 "completed_challenges": []
             },
             "URFUN9LG3": {
@@ -712,7 +725,7 @@
                 "initial_coins": 4,
                 "coins": 4,
                 "range": 4,
-                "points": 983,
+                "points": 1029,
                 "completed_challenges": []
             },
             "UM2AV3CPN": {
@@ -723,10 +736,10 @@
                 "completed_challenges": []
             },
             "ULRCYAEH1": {
-                "points": 1049,
+                "points": 1125,
                 "initial_coins": 5,
                 "coins": 5,
-                "range": 6,
+                "range": 7,
                 "completed_challenges": [
                     {
                         "winner": "ULRCYAEH1",
@@ -740,6 +753,19 @@
                         ],
                         "ts": "1583882225.357700",
                         "thread_ts": "1583882225.357700"
+                    },
+                    {
+                        "winner": "ULRCYAEH1",
+                        "player1": "ULRCYAEH1",
+                        "player2": "UM4GY3KTR",
+                        "player1Result": 3,
+                        "player2Result": 0,
+                        "players": [
+                            "ULRCYAEH1",
+                            "UM4GY3KTR"
+                        ],
+                        "ts": "1584045543.388900",
+                        "thread_ts": "1584045543.388900"
                     }
                 ]
             },
@@ -767,7 +793,7 @@
         },
         "active_challenges": {},
         "completed_challenges": [],
-        "last_update_ts": 1583993365013,
+        "last_update_ts": 1584079767562,
         "reported_results": []
     },
     "inactive_players": {
