@@ -44,7 +44,7 @@ Unranked players and players that have 0 points will start with this score:
 * El Chino - 1 week(s) inactive.
 * Pablo - 1 week(s) inactive.
 
-## In progress this week *Fri, Mar 13, 2020, 12:09 AM CST*
+## In progress this week *Sat, Mar 14, 2020, 12:09 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -52,43 +52,47 @@ The current points earned by winning matches this week.
 
 |Player|Coins|Range|Score|
 |------|-----|-----|-----|
-|Roberto|0|0|2476|
-|Xotl|1|1|2463|
+|Xotl|1|2|2503|
+|Roberto|0|0|2455|
 |Paco|1|1|2359|
 |José "El Iceberg" Rosales|2|5|2165|
 |Alfredo|2|3|2137|
 |Cristhian Ramos|1|1|2093|
+|Neku|2|2|2022|
 |Sammy|1|1|2013|
 |Angel Lee|0|3|1987|
-|Neku|2|2|1943|
-|Paolo|3|3|1837|
+|Paolo|2|3|1827|
 |Landeros|2|4|1750|
 |El Plebe|3|3|1739|
-|Kyttyan|1|2|1718|
+|Kyttyan|0|2|1711|
 |D.I.O.|3|3|1706|
 |El Chino|3|3|1591|
+|Banda|4|4|1179|
 |Tecuanotl|4|4|1147|
 |ULRCYAEH1|5|7|1125|
-|Banda|4|4|1107|
 |Pablo|4|4|1029|
 |Jorge|4|4|985|
 |U62FSB10E|4|5|985|
-|Malagón|3|4|942|
+|Malagón|2|4|933|
 
 ### Completed challenges
 Matches that already happened during this week.
 
+* `Xotl` challenged `Roberto` and **won** *3-0*.
 * `Angel Lee` challenged `Neku` and **won** *3-1*.
 * `Angel Lee` challenged `Alfredo` and **lost** *3-2*.
 * `Angel Lee` challenged `Alfredo` and **lost** *3-1*.
 * `José "El Iceberg" Rosales` challenged `Alfredo` and **won** *3-2*.
 * `José "El Iceberg" Rosales` challenged `Sammy` and **won** *3-0*.
 * `José "El Iceberg" Rosales` challenged `Cristhian Ramos` and **won** *3-0*.
+* `Paolo` challenged `Neku` and **lost** *3-1*.
 * `Alfredo` challenged `Cristhian Ramos` and **won** *3-0*.
 * `Kyttyan` challenged `Angel Lee` and **lost** *3-2*.
+* `Kyttyan` challenged `Neku` and **lost** *3-1*.
 * `Landeros` challenged `Kyttyan` and **lost** *3-2*.
 * `Landeros` challenged `Kyttyan` and **won** *3-2*.
 * `Malagón` challenged `Jorge` and **lost** *3-2*.
+* `Malagón` challenged `Banda` and **lost** *3-0*.
 * `ULRCYAEH1` challenged `Jorge` and **won** *3-1*.
 * `ULRCYAEH1` challenged `Pablo` and **won** *3-0*.
 * `U62FSB10E` challenged `Banda` and **lost** *3-0*.
