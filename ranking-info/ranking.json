@@ -127,27 +127,6 @@
             "points": 1972,
             "completed_challenges": []
         },
-        "UKPTK422K": {
-            "initial_coins": 1,
-            "coins": 0,
-            "range": 1,
-            "points": 2359,
-            "completed_challenges": [
-                {
-                    "winner": "UMY200LSC",
-                    "player1": "UMY200LSC",
-                    "player2": "UKPTK422K",
-                    "player1Result": 3,
-                    "player2Result": 1,
-                    "players": [
-                        "UMY200LSC",
-                        "UKPTK422K"
-                    ],
-                    "ts": "1583186985.216500",
-                    "thread_ts": "1583186985.216500"
-                }
-            ]
-        },
         "UHHD243DH": {
             "initial_coins": 3,
             "coins": 2,
@@ -568,13 +547,6 @@
                 "points": 2022,
                 "completed_challenges": []
             },
-            "UKPTK422K": {
-                "initial_coins": 1,
-                "coins": 1,
-                "range": 1,
-                "points": 2359,
-                "completed_challenges": []
-            },
             "UHHD243DH": {
                 "initial_coins": 3,
                 "coins": 2,
@@ -900,6 +872,11 @@
         "UM4GY3KTR": {
             "weeks_count": 1,
             "inactive_since": 1583733599000
+        }
+    },
+    "fridge": {
+        "UKPTK422K": {
+            "points": 2359
         }
     }
 }
