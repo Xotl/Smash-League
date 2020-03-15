@@ -6,24 +6,23 @@ Last updated **Sun, Mar 08, 2020, 11:59 PM CST**.
 |-|------|-----|
 |1|`Roberto`|2476|
 |2|`Xotl`|2463|
-|3|`Paco`|2359|
-|4|`Cristhian Ramos`|2069|
-|5|`Sammy`|2055|
-|6|`Alfredo`|2018|
-|7|`José "El Iceberg" Rosales`|2012|
-|8|`Neku`|1972|
-|9|`Angel Lee`|1959|
-|10|`Kyttyan`|1858|
-|11|`Paolo`|1837|
-|12|`Landeros`|1741|
-|13|`El Plebe`|1739|
-|14|`D.I.O.`|1706|
-|15|`El Chino`|1591|
-|16|`Tecuanotl`|1147|
-|17|`Jorge`|1030|
-|18|`Banda`|1029|
-|19|`Pablo`|983|
-|20|`Malagón`|955|
+|3|`Cristhian Ramos`|2069|
+|4|`Sammy`|2055|
+|5|`Alfredo`|2018|
+|6|`José "El Iceberg" Rosales`|2012|
+|7|`Neku`|1972|
+|8|`Angel Lee`|1959|
+|9|`Kyttyan`|1858|
+|10|`Paolo`|1837|
+|11|`Landeros`|1741|
+|12|`El Plebe`|1739|
+|13|`D.I.O.`|1706|
+|14|`El Chino`|1591|
+|15|`Tecuanotl`|1147|
+|16|`Jorge`|1030|
+|17|`Banda`|1029|
+|18|`Pablo`|983|
+|19|`Malagón`|955|
 
 Unranked players and players that have 0 points will start with this score:
 
@@ -44,7 +43,7 @@ Unranked players and players that have 0 points will start with this score:
 * El Chino - 1 week(s) inactive.
 * Pablo - 1 week(s) inactive.
 
-## In progress this week *Sun, Mar 15, 2020, 12:09 AM CST*
+## In progress this week *Sun, Mar 15, 2020, 2:08 PM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
@@ -54,7 +53,6 @@ The current points earned by winning matches this week.
 |------|-----|-----|-----|
 |Xotl|1|2|2503|
 |Roberto|0|0|2455|
-|Paco|1|1|2359|
 |José "El Iceberg" Rosales|2|5|2165|
 |Alfredo|2|3|2137|
 |Cristhian Ramos|1|1|2093|
