@@ -1,3 +1,54 @@
+## Commit from Sun, Mar 15, 2020, 11:59 PM CST
+The week started at *Sun, Mar 08, 2020, 11:59 PM CST* and ended *Sun, Mar 15, 2020, 11:59 PM CST*.
+### End of week players score summary
+|Player|Coins|Range|
+|------|-----|-----|
+|Xotl - 2503pts|1|2|
+|Roberto - 2455pts|0|0|
+|José "El Iceberg" Rosales - 2165pts|2|5|
+|Alfredo - 2137pts|2|3|
+|Cristhian Ramos - 2093pts|1|1|
+|Neku - 2022pts|2|2|
+|Sammy - 2013pts|1|1|
+|Angel Lee - 1987pts|0|3|
+|Paolo - 1827pts|2|3|
+|Landeros - 1750pts|2|4|
+|El Plebe - 1739pts|3|3|
+|Kyttyan - 1711pts|0|2|
+|D.I.O. - 1706pts|3|3|
+|El Chino - 1591pts|3|3|
+|Banda - 1179pts|4|4|
+|Tecuanotl - 1147pts|4|4|
+|ULRCYAEH1 - 1125pts|5|7|
+|Pablo - 1029pts|4|4|
+|Jorge - 985pts|4|4|
+|U62FSB10E - 985pts|4|5|
+|Malagón - 933pts|2|4|
+### Completed challenges
+* `Xotl` challenged `Roberto` and **won** *3-0*.
+* `Angel Lee` challenged `Neku` and **won** *3-1*.
+* `Angel Lee` challenged `Alfredo` and **lost** *3-2*.
+* `Angel Lee` challenged `Alfredo` and **lost** *3-1*.
+* `José "El Iceberg" Rosales` challenged `Alfredo` and **won** *3-2*.
+* `José "El Iceberg" Rosales` challenged `Sammy` and **won** *3-0*.
+* `José "El Iceberg" Rosales` challenged `Cristhian Ramos` and **won** *3-0*.
+* `Paolo` challenged `Neku` and **lost** *3-1*.
+* `Alfredo` challenged `Cristhian Ramos` and **won** *3-0*.
+* `Kyttyan` challenged `Angel Lee` and **lost** *3-2*.
+* `Kyttyan` challenged `Neku` and **lost** *3-1*.
+* `Landeros` challenged `Kyttyan` and **lost** *3-2*.
+* `Landeros` challenged `Kyttyan` and **won** *3-2*.
+* `Malagón` challenged `Jorge` and **lost** *3-2*.
+* `Malagón` challenged `Banda` and **lost** *3-0*.
+* `ULRCYAEH1` challenged `Jorge` and **won** *3-1*.
+* `ULRCYAEH1` challenged `Pablo` and **won** *3-0*.
+* `U62FSB10E` challenged `Banda` and **lost** *3-0*.
+### Inactive players
+* El Plebe - 2 week(s) inactive.
+* D.I.O. - 2 week(s) inactive.
+* El Chino - 2 week(s) inactive.
+* Tecuanotl - 1 week(s) inactive.
+
 ## Commit from Sun, Mar 08, 2020, 11:59 PM CST
 The week started at *Sun, Mar 01, 2020, 11:59 PM CST* and ended *Sun, Mar 08, 2020, 11:59 PM CST*.
 ### End of week players score summary
