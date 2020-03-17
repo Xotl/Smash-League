@@ -36,7 +36,7 @@ Unranked players and players that have 0 points will start with this score:
 * El Chino - 2 week(s) inactive.
 * Tecuanotl - 1 week(s) inactive.
 
-## In progress this week *Sun, Mar 15, 2020, 11:59 PM CST*
+## In progress this week *Tue, Mar 17, 2020, 12:10 AM CST*
 This section shows the progress of the week. Every sunday the below categories will be reseted and the Ranking will get updated.
 
 ### Current Scoreboard
